@@ -1,0 +1,21 @@
+# 成功
+SUCCESS = 0
+
+# 用户提交数据校验失败
+VALIDATE_ERROR = 1001
+
+# 模拟盘api保存错误
+FLAG_1_ERROR = 1002
+
+# 认证失败
+AUTH_FAILED = 2000
+
+# 认证过期
+AUTH_OVERDUE = 2001
+
+# 无权访问
+PERMISSION_DENIED = 3000
+
+
+# 无权访问
+TOO_MANY_REQUESTS = 4000

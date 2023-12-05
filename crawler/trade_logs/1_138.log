@@ -1,0 +1,16 @@
+2023-12-03 17:14:44 | INFO | 跟单猿交易系统启动，跟随交易员：EEA569A04A98D4E9
+2023-12-03 17:15:13 | SUCCESS | 进行加仓操作，品种：BTC-USDT-SWAP，加仓量：11.0USDT，方向：short
+2023-12-03 17:15:52 | SUCCESS | 进行加仓操作，品种：BTC-USDT-SWAP，加仓量：11.0USDT，方向：short
+2023-12-03 17:19:12 | SUCCESS | 进行加仓操作，品种：BTC-USDT-SWAP，加仓量：11.0USDT，方向：short
+2023-12-03 18:05:21 | SUCCESS | 进行加仓操作，品种：BTC-USDT-SWAP，加仓量：11.0USDT，方向：short
+2023-12-03 18:09:20 | SUCCESS | 进行加仓操作，品种：BTC-USDT-SWAP，加仓量：11.0USDT，方向：short
+2023-12-03 18:26:25 | SUCCESS | 进行加仓操作，品种：BTC-USDT-SWAP，加仓量：11.0USDT，方向：short
+2023-12-03 18:40:41 | SUCCESS | 进行加仓操作，品种：BTC-USDT-SWAP，加仓量：11.0USDT，方向：short
+2023-12-03 18:51:08 | INFO | 跟单猿交易系统启动，跟随交易员：EEA569A04A98D4E9
+2023-12-03 18:51:38 | SUCCESS | 进行加仓操作，品种：BTC-USDT-SWAP，加仓量：11.0USDT，方向：short
+2023-12-03 18:52:18 | SUCCESS | 进行加仓操作，品种：BTC-USDT-SWAP，加仓量：11.0USDT，方向：short
+2023-12-03 18:53:33 | SUCCESS | 进行加仓操作，品种：BTC-USDT-SWAP，加仓量：11.0USDT，方向：short
+2023-12-03 18:55:39 | SUCCESS | 进行加仓操作，品种：BTC-USDT-SWAP，加仓量：11.0USDT，方向：short
+2023-12-03 18:57:09 | INFO | 跟单猿交易系统启动，跟随交易员：EEA569A04A98D4E9
+2023-12-03 18:57:46 | SUCCESS | 进行加仓操作，品种：BTC-USDT-SWAP，加仓量：11.0USDT，方向：short
+2023-12-03 19:01:07 | WARNING | 手动结束跟单，结束跟单并不会平仓。如有正在进行中的交易，请及时手动在交易所平仓，避免资金损失！
