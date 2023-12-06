@@ -5,7 +5,7 @@
 """
 
 from crawler.myokx import app
-import settings
+import settingsdev as settings
 import threading
 from crawler.utils.db import Connect
 import json

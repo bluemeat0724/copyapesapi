@@ -1,0 +1,2 @@
+INFO 2023-12-06 21:21:26,854 autoreload 25430 4624623104 Watching for file changes with StatReloader
+INFO 2023-12-06 21:21:35,332 basehttp 25430 123145496031232 "GET /api/traderdetial/106/?token=51eca73c-aa59-42e1-bcb6-ca37d8d40412 HTTP/1.1" 200 5552

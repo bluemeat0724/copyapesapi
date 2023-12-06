@@ -59,6 +59,7 @@ class Spider(threading.Thread):
 
         # 断线次数
         count = 0
+        max_count = 1
         # 是否打印日志的标记
         log_print = True
         # 网络超时判断
@@ -70,7 +71,7 @@ class Spider(threading.Thread):
                 # 网络恢复
                 if timeout:
                     timeout = False
-                    thread_logger.success("网络恢复")
+                    print(f"任务{self.task_id}网络恢复")
                     count = 0  # 重置计数器
                     log_print = True  # 重置日志打印标记
 
@@ -79,10 +80,10 @@ class Spider(threading.Thread):
             except:
                 timeout = True
                 count += 1
-                if count <= 3 and log_print:
-                    thread_logger.warning(f"网络中断，正在尝试重新连接网络...")
-                elif count > 3 and log_print:
-                    log_print = False  # 超过3次后停止打印日志
+                if count <= max_count and log_print:
+                    print(f"任务{self.task_id}网络中断，正在尝试重新连接网络...")
+                elif count > max_count and log_print:
+                    log_print = False  # 超过{max_count}次后停止打印日志
 
                 time.sleep(10)
                 continue

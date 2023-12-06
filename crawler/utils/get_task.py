@@ -1,5 +1,5 @@
 import redis
-from crawler import settings
+from crawler import settingsdev as settings
 from crawler.utils.db import Connect
 
 
