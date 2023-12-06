@@ -177,6 +177,8 @@ REST_FRAMEWORK = {
     "UNAUTHENTICATED_TOKEN": lambda: None,
     # # 分页配置
     # "DEFAULT_PAGINATION_CLASS": "api.extension.page.DigLimitOffsetPagination"
+    # 自定义异常处理
+    'EXCEPTION_HANDLER': 'copytrade.utils.exceptions.custom_exception_handler',
 }
 
 # 日志
