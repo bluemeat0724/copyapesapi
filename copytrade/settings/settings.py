@@ -190,7 +190,7 @@ REST_FRAMEWORK = {
     "DEFAULT_VERSION": "v1",
     "ALLOWED_VERSIONS": ["v1"],
     "VERSION_PARAM": "version",
-    # # 认证配置
+    # 认证配置
     "DEFAULT_AUTHENTICATION_CLASSES": ["api.extension.auth.TokenAuthentication", ],
     "UNAUTHENTICATED_USER": lambda: None,
     "UNAUTHENTICATED_TOKEN": lambda: None,
