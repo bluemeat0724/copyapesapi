@@ -1,13 +1,13 @@
 import threading
 import time
-from utils import get_task
+from crawler.utils import get_task
 import redis
-import settings
+from crawler import settings
 import requests
 import json
 from loguru import logger
 import random
-from utils.db import Connect
+from crawler.utils.db import Connect
 
 
 now = int(time.time()) * 1000

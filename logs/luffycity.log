@@ -1,3 +1,11 @@
 INFO 2023-12-06 21:21:26,854 autoreload 25430 4624623104 Watching for file changes with StatReloader
 INFO 2023-12-06 21:21:35,332 basehttp 25430 123145496031232 "GET /api/traderdetial/106/?token=51eca73c-aa59-42e1-bcb6-ca37d8d40412 HTTP/1.1" 200 5552
 INFO 2023-12-06 21:33:26,099 autoreload 25631 4427597312 Watching for file changes with StatReloader
+INFO 2023-12-08 23:48:24,283 autoreload 44108 4425274880 Watching for file changes with StatReloader
+INFO 2023-12-08 23:48:49,370 autoreload 44114 4809442816 Watching for file changes with StatReloader
+INFO 2023-12-08 23:50:50,392 autoreload 44114 4809442816 /Users/lichaoyuan/Desktop/copyapesapi/manage.py changed, reloading.
+INFO 2023-12-08 23:50:51,156 autoreload 44139 4690646528 Watching for file changes with StatReloader
+INFO 2023-12-08 23:53:35,457 autoreload 44180 4611872256 Watching for file changes with StatReloader
+INFO 2023-12-09 00:27:03,692 autoreload 44646 4693509632 Watching for file changes with StatReloader
+INFO 2023-12-09 00:27:23,738 basehttp 44646 123145589194752 "POST /api/login/ HTTP/1.1" 200 48
+INFO 2023-12-09 00:32:04,901 basehttp 44646 123145589194752 "POST /api/login/ HTTP/1.1" 200 48
