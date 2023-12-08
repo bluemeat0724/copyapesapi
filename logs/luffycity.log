@@ -9,3 +9,12 @@ INFO 2023-12-08 23:53:35,457 autoreload 44180 4611872256 Watching for file chang
 INFO 2023-12-09 00:27:03,692 autoreload 44646 4693509632 Watching for file changes with StatReloader
 INFO 2023-12-09 00:27:23,738 basehttp 44646 123145589194752 "POST /api/login/ HTTP/1.1" 200 48
 INFO 2023-12-09 00:32:04,901 basehttp 44646 123145589194752 "POST /api/login/ HTTP/1.1" 200 48
+INFO 2023-12-09 00:37:32,078 autoreload 44646 4693509632 /Users/lichaoyuan/Desktop/copyapesapi/copytrade/settings/settingsdev.py changed, reloading.
+INFO 2023-12-09 00:37:32,870 autoreload 44777 4698383872 Watching for file changes with StatReloader
+INFO 2023-12-09 00:40:20,154 autoreload 44777 4698383872 /Users/lichaoyuan/Desktop/copyapesapi/copytrade/settings/settingsdev.py changed, reloading.
+INFO 2023-12-09 00:40:20,949 autoreload 44795 4642559488 Watching for file changes with StatReloader
+INFO 2023-12-09 00:40:35,775 autoreload 44795 4642559488 /Users/lichaoyuan/Desktop/copyapesapi/copytrade/settings/settingsdev.py changed, reloading.
+INFO 2023-12-09 00:40:36,574 autoreload 44813 4764706304 Watching for file changes with StatReloader
+INFO 2023-12-09 00:41:37,784 autoreload 44813 4764706304 /Users/lichaoyuan/Desktop/copyapesapi/copytrade/settings/settingsdev.py changed, reloading.
+INFO 2023-12-09 00:41:38,594 autoreload 44830 4640073216 Watching for file changes with StatReloader
+INFO 2023-12-09 00:42:05,399 basehttp 44830 123145602097152 "POST /api/login/ HTTP/1.1" 200 48
