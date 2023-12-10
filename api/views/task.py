@@ -9,6 +9,7 @@ from django.conf import settings
 from api.extension.filter import SelfFilterBackend
 
 
+
 class TaskAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixin, CopyUpdateModelMixin):
     """用户跟单任务提交"""
     # 当前登录用户筛选
@@ -39,12 +40,14 @@ class TaskAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixi
         tid = serializer.data.get('id')
         conn.lpush(settings.QUEUE_TASK_NAME, tid)
 
+
     def perform_update(self, serializer):
         serializer.save()
-        # 写入Redis队列
+        # 写入Redis队列{'id': 1, 'status': 2}
         conn = get_redis_connection("default")
         tid = serializer.data.get('id')
         conn.lpush(settings.QUEUE_TASK_NAME, tid)
+
 
 
     def perform_destroy(self, instance):

@@ -1,5 +1,0 @@
-2023-11-28 00:59:04 | INFO | ################## 跟单系统启动 ##################
-2023-11-28 00:59:04 | INFO | 用户1任务98跟随的交易员EEA569A04A98D4E9有正在进行中的交易，等待新的交易发生后开始跟随！
-2023-11-28 00:59:04 | DEBUG | [{'availSubPos': '-40', 'instId': 'BTC-USDT-SWAP', 'mgnMode': 'isolated', 'posSide': 'net', 'lever': '20', 'openTime': '1698235930690', 'openAvgPx': '35585.7863874345549738', 'task_id': 98, 'trader_platform': 1, 'follow_type': 1, 'uniqueName': 'EEA569A04A98D4E9', 'sums': 99.0, 'lever_set': 1, 'first_order_set': 1, 'api_id': 17, 'user_id': 1}]
-2023-11-28 00:59:16 | INFO | 用户：1的跟随的交易员EEA569A04A98D4E9对现有仓位进行了操作，品种：BTC-USDT-SWAP，原仓位：-40，现仓位：-41
-2023-11-28 00:59:57 | INFO | 用户：1的跟随的交易员EEA569A04A98D4E9对现有仓位进行了操作，品种：BTC-USDT-SWAP，原仓位：-41，现仓位：-42

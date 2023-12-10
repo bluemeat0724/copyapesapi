@@ -9,7 +9,6 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -43,8 +42,6 @@ INSTALLED_APPS = [
     'corsheaders',
 
     'api.apps.ApiConfig',
-    'crawler.okspider',
-    # 'crawler.oktrade',
 ]
 
 MIDDLEWARE = [
@@ -252,10 +249,12 @@ result_backend = 'redis://:@127.0.0.1:6379/15'
 timezone = TIME_ZONE
 # 防止死锁
 worker_hijack_root_logger = False
+# 指定每个 worker 处理的并发任务数
+worker_concurrency = 200
+# 每个 worker 一次最多预取的任务数
+worker_prefetch_multiplier = 1
 # 在启动时重试连接
 broker_connection_retry_on_startup = True
-# 设置并发的worker数量
-worker_concurrency = 200
 # 任务失败后重试次数
 task_max_retries = 3
 # 设置失败允许重试[这个慎用，如果失败任务无法再次执行成功，会产生指数级别的失败记录]

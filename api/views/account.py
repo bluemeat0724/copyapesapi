@@ -11,7 +11,6 @@ from django.db.models import Q
 from api import models
 from api.extension import return_code
 
-from crawler.okspider.tasks import simple_task
 
 class RegisterView(CopyCreateModelMixin):
     """用户注册"""
@@ -31,7 +30,6 @@ class Login(APIView):
 
     # 2. 数据库校验用户名和密码的合法性
     def post(self, request):
-        simple_task.delay()  # 异步任务测试
         # 1. 获取用户请求 & 校验
         serializer = AuthSerializer(data=request.data)
         if not serializer.is_valid():

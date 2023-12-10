@@ -31,11 +31,11 @@ class TradeDetailView(APIView):
         user_id = request.user.id
 
         # 本地环境路径
-        # abs = os.path.abspath(__file__)
-        # base_dir = os.path.dirname(os.path.dirname(os.path.dirname(abs)))
+        abs = os.path.abspath(__file__)
+        base_dir = os.path.dirname(os.path.dirname(os.path.dirname(abs)))
 
         # 线上环境路径
-        base_dir = '/path/to/logs'
+        # base_dir = '/path/to/logs'
 
         spider_log_path = os.path.join(base_dir, 'crawler', 'spider_logs', f'{user_id}_{task_id}.log')
         trade_log_path = os.path.join(base_dir, 'crawler', 'trade_logs', f'{user_id}_{task_id}.log')
