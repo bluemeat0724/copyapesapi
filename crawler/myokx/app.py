@@ -1,4 +1,4 @@
-from okx.app.account import AccountSWAP
+from crawler.myokx.accountSWAP import AccountSWAP
 from okx.app.market import MarketSWAP
 from crawler.myokx.tradeSWAP import TradeSWAP
 

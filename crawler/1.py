@@ -1,71 +1,73 @@
-import requests
-from functools import wraps
-import time
-from okx import app
-from okx import api
+from crawler.myokx import app
 
+acc = {'key': 'dfe2ebb7-d9fb-44d0-ab7c-f54739e5b92e',
+       'secret': '3FAC73A01976ED04C31FE07A718A0BC1',
+       'passphrase': '112233Ww..',
+       # 'proxies': {
+       #              'http': 'socks5h://15755149931sct-5:8ivtkleb@38.147.173.111:5001',
+       #              'https': 'socks5h://15755149931sct-5:8ivtkleb@38.147.173.111:5001'
+       #             }
+       }
 
-def retry(max_attempts=5, delay=1):
-    def decorator(func):
-        @wraps(func)
-        def wrapper(*args, **kwargs):
-            attempts = 0
-            while attempts < max_attempts:
-                try:
-                    return func(*args, **kwargs)
-                except Exception as e:  # 捕获所有异常
-                    print(f"操作失败，原因: {e}. 正在重试...")
-                    attempts += 1
-                    time.sleep(delay)
-            print("多次尝试失败，继续执行程序的其他部分。")
-        return wrapper
-    return decorator
-
-class RetryDecoratorProxy:
-    def __init__(self, obj):
-        self._obj = obj
-
-    def __getattr__(self, name):
-        attr = getattr(self._obj, name)
-        if callable(attr):
-            return retry()(attr)
-        return attr
-
-class RetryNetworkOperations:
-    def __init__(self, network_operations):
-        self._operations = network_operations
-
-    def __getattr__(self, name):
-        attr = getattr(self._operations, name)
-        # 如果 attr 是对象实例，为其方法应用 retry 装饰器
-        if not callable(attr) and not name.startswith("__"):
-            return RetryDecoratorProxy(attr)
-        return attr
-
-
-acc = {
-    'key': 'dfe2ebb7-d9fb-44d0-ab7c-f54739e5b92e',
-    'secret': '3FAC73A01976ED04C31FE07A718A0BC1',
-    'passphrase': '112233Ww..',
-}
-
-obj = RetryNetworkOperations(app.OkxSWAP(**acc))
-
+obj = app.OkxSWAP(**acc)
 obj.account.api.flag = '1'
-obj.trade.api.flag = '1'
-# print(obj)
-# okx源码被注释部分，先初始化账户开平仓模式
-# set_position_mode_result = obj.account.set_position_mode(posMode='long_short_mode')
-# if set_position_mode_result['code'] == '0':
-#     print('[SUCCESS] 设置持仓方式为双向持仓成功，posMode="long_short_mode"')
-# else:
-#     print('[FAILURE] 设置持仓方式为双向持仓失败，请手动设置：posMode="long_short_mode"')
+# 当前持仓
+# a = obj.account.get_positions()
+# 历史持仓
+a = obj.account.get_positions_history()
 
-# b = obj.account.get_balances()
-# print(b)
-a = obj.trade.open_market(instId='ETH-USDT-SWAP', posSide='short', openMoney= 1000, tdMode='cross', lever=20)
-# print(a)
-
-# obj = api.API(**acc)
-# a = obj.trade.set_order(instId='ETH-USDT-SWAP', sz= 1000, tdMode='cross', side='buy', ordType='limit')
+"""
+实盘信息
+{'code': '0', 
+ 'data': [
+            {'adl': '1', 'availPos': '199', 'avgPx': '0.10045', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '',
+             'bePx': '0.1005505002501251', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702229518344', 'ccy': 'USDT',
+             'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.09994775', 'fundingFee': '0', 'gammaBS': '',
+             'gammaPA': '', 'idxPx': '0.100373', 'imr': '', 'instId': 'DOGE-USDT-SWAP', 'instType': 'SWAP', 'interest': '',
+             'last': '0.10045', 'lever': '3', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '0.0673870202781967',
+             'margin': '66.6318333333333333', 'markPx': '0.10046', 'mgnMode': 'isolated', 'mgnRatio': '60.618126315916484',
+             'mmr': '0.999577', 'notionalUsd': '199.96537885', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0',
+             'pos': '199', 'posCcy': '', 'posId': '654133243020668928', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '',
+             'quoteInterest': '', 'realizedPnl': '-0.09994775', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '',
+             'thetaPA': '', 'tradeId': '30646646', 'uTime': '1702229518344', 'upl': '0.0198999999999923', 'uplLastPx': '0',
+             'uplRatio': '0.0002986560477851', 'uplRatioLastPx': '0', 'usdPx': '', 'vegaBS': '', 'vegaPA': ''},
+        
+            {'adl': '1', 'availPos': '27', 'avgPx': '73.18', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '',
+             'bePx': '73.2312516258129', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702228492444', 'ccy': 'USDT',
+             'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.0395172', 'fundingFee': '0', 'gammaBS': '',
+             'gammaPA': '', 'idxPx': '72.6786', 'imr': '', 'instId': 'SOL-USDT-SWAP', 'instType': 'SWAP', 'interest': '',
+             'last': '72.7', 'lever': '3', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '49.06647729177141',
+             'margin': '65.862', 'markPx': '72.71', 'mgnMode': 'isolated', 'mgnRatio': '59.82254118686518', 'mmr': '0.981585',
+             'notionalUsd': '196.36607925', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0', 'pos': '27', 'posCcy': '',
+             'posId': '654128940084195328', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '', 'quoteInterest': '',
+             'realizedPnl': '-0.0395172', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '', 'thetaPA': '',
+             'tradeId': '46349075', 'uTime': '1702228492444', 'upl': '-1.2690000000000354', 'uplLastPx': '-1.296000000000011',
+             'uplRatio': '-0.0192675594424713', 'uplRatioLastPx': '-0.0196775075157147', 'usdPx': '', 'vegaBS': '',
+             'vegaPA': ''}
+         ], 
+ 'msg': ''
+ }
+ 
+ 历史持仓
+ {
+    'code': '0', 
+     'data': [
+                {'cTime': '1702256227724', 'ccy': 'USDT', 'closeAvgPx': '2277.59', 'closeTotalPos': '3849', 'direction': 'long',
+                 'fee': '-88.77616815', 'fundingFee': '0', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'lever': '100.0',
+                 'liqPenalty': '-350.6577564', 'mgnMode': 'cross', 'openAvgPx': '2335.3571628994544037', 'openMaxPos': '3849',
+                 'pnl': '-2223.4581', 'pnlRatio': '-2.9624589154923515', 'posId': '651930173952069635',
+                 'realizedPnl': '-2662.89202455', 'triggerPx': '2277.59', 'type': '3', 'uTime': '1702260761272', 'uly': 'ETH-USDT'},
+                {'cTime': '1702232959213', 'ccy': 'USDT', 'closeAvgPx': '2345.3531862938164632', 'closeTotalPos': '2539',
+                 'direction': 'short', 'fee': '-59.7383012', 'fundingFee': '12.852102471434275', 'instId': 'ETH-USDT-SWAP',
+                 'instType': 'SWAP', 'lever': '100.0', 'liqPenalty': '0', 'mgnMode': 'cross', 'openAvgPx': '2360.3026782197715636',
+                 'openMaxPos': '2539', 'pnl': '379.5676', 'pnlRatio': '0.555134376931007', 'posId': '649318532001398784',
+                 'realizedPnl': '332.681401271434275', 'triggerPx': '', 'type': '2', 'uTime': '1702256168356', 'uly': 'ETH-USDT'}
+            ], 
+     'msg': ''
+ }
+ 
+ 
+ """
 print(a)
+
+
