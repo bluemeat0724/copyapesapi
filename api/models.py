@@ -100,3 +100,31 @@ class IpInfo(models.Model):
     countryName = models.CharField(verbose_name="地区", max_length=32, null=True, blank=True, default='')
     countdown = models.FloatField(verbose_name="有效期", default=30)
     user = models.ForeignKey(verbose_name="用户", to="UserInfo", on_delete=models.CASCADE)
+
+
+class OrderInfo(models.Model):
+    """交易记录"""
+    user = models.ForeignKey(verbose_name="用户", to="UserInfo", on_delete=models.CASCADE, db_index=True)
+    task = models.ForeignKey(verbose_name="任务", to="TaskInfo", on_delete=models.CASCADE, db_index=True)
+    api = models.ForeignKey(verbose_name="api", to="ApiInfo", on_delete=models.CASCADE)
+    status_choice = (
+        (1, "进行中"),
+        (2, "结束"),
+    )
+    status = models.IntegerField(verbose_name="交易状态", choices=status_choice, default=1)
+    instId = models.CharField(verbose_name="交易品种", max_length=16)
+    cTime = models.BigIntegerField(verbose_name="开仓时间", default=int)
+    uTime = models.BigIntegerField(verbose_name="平仓时间", default=int, null=True, blank=True)
+    openAvgPx = models.FloatField(verbose_name="开仓均价", default=0)
+    closeAvgPx = models.FloatField(verbose_name="平仓均价", default=0, null=True, blank=True)
+    pnl = models.FloatField(verbose_name="收益", default=0)
+    pnlRatio = models.FloatField(verbose_name="收益率", default=0)
+    lever = models.CharField(verbose_name="杠杆", max_length=6, default="0")
+    mgnMode = models.CharField(verbose_name="保证金模式", max_length=10, default="cross")
+    posSide = models.CharField(verbose_name="持仓方向", max_length=10)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['user', 'task'], name='idx_user_task'),
+        ]
+

@@ -1873,3 +1873,67 @@ INFO 2023-12-11 12:02:24,432 basehttp 865 123145524969472 "GET /api/taskadd/?tok
 INFO 2023-12-11 12:02:27,613 basehttp 865 123145524969472 "GET /api/platform/ HTTP/1.1" 200 119
 INFO 2023-12-11 12:02:27,614 basehttp 865 123145541758976 "GET /api/apiadd/?token=b54151b1-7241-4be1-9c7d-174589eefbde HTTP/1.1" 200 1493
 INFO 2023-12-11 12:02:29,331 basehttp 865 123145541758976 "GET /api/taskadd/?token=b54151b1-7241-4be1-9c7d-174589eefbde HTTP/1.1" 200 35083
+INFO 2023-12-11 15:03:12,867 basehttp 865 123145524969472 "GET /api/traderdetial/208/?token=b54151b1-7241-4be1-9c7d-174589eefbde HTTP/1.1" 200 12832
+INFO 2023-12-11 16:20:47,016 basehttp 865 123145524969472 "GET /api/traderdetial/208/?token=b54151b1-7241-4be1-9c7d-174589eefbde HTTP/1.1" 200 13526
+INFO 2023-12-11 16:43:39,428 basehttp 865 123145524969472 "GET /api/taskadd/?token=b54151b1-7241-4be1-9c7d-174589eefbde HTTP/1.1" 200 35083
+INFO 2023-12-11 16:43:42,656 basehttp 865 123145524969472 "GET /api/traderdetial/207/?token=b54151b1-7241-4be1-9c7d-174589eefbde HTTP/1.1" 200 335
+INFO 2023-12-11 16:43:44,291 basehttp 865 123145524969472 "GET /api/taskadd/?token=b54151b1-7241-4be1-9c7d-174589eefbde HTTP/1.1" 200 35083
+INFO 2023-12-11 16:51:50,319 basehttp 865 123145524969472 "GET /api/apiadd/?token=b54151b1-7241-4be1-9c7d-174589eefbde HTTP/1.1" 200 1493
+INFO 2023-12-11 16:51:57,461 basehttp 865 123145524969472 "GET /api/ip/?token=b54151b1-7241-4be1-9c7d-174589eefbde HTTP/1.1" 200 144
+INFO 2023-12-11 16:51:59,129 basehttp 865 123145524969472 "GET /api/apiadd/?token=b54151b1-7241-4be1-9c7d-174589eefbde HTTP/1.1" 200 1493
+INFO 2023-12-11 18:20:14,899 basehttp 865 123145524969472 "OPTIONS /api/login/ HTTP/1.1" 200 0
+INFO 2023-12-11 18:20:14,909 basehttp 865 123145524969472 "POST /api/login/ HTTP/1.1" 200 80
+INFO 2023-12-11 18:20:19,322 basehttp 865 123145524969472 "GET /api/taskadd/?token=b2ac42ab-d33e-49e1-8681-72ff33b85b10 HTTP/1.1" 200 35083
+INFO 2023-12-11 18:20:20,419 basehttp 865 123145524969472 "GET /api/apiadd/?token=b2ac42ab-d33e-49e1-8681-72ff33b85b10 HTTP/1.1" 200 1493
+INFO 2023-12-11 22:06:12,220 autoreload 865 4589204992 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-11 22:06:13,429 autoreload 8918 4646712832 Watching for file changes with StatReloader
+INFO 2023-12-11 22:30:30,962 autoreload 8918 4646712832 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-11 22:30:31,667 autoreload 9115 4561626624 Watching for file changes with StatReloader
+INFO 2023-12-11 22:50:25,743 autoreload 9115 4561626624 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-11 22:50:26,618 autoreload 9249 4562703872 Watching for file changes with StatReloader
+INFO 2023-12-11 22:58:10,995 autoreload 9249 4562703872 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-11 22:58:11,675 autoreload 9320 4612503040 Watching for file changes with StatReloader
+INFO 2023-12-11 23:07:16,344 autoreload 9446 4644431360 Watching for file changes with StatReloader
+INFO 2023-12-11 23:08:33,971 autoreload 9446 4644431360 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-11 23:08:34,742 autoreload 9457 4691252736 Watching for file changes with StatReloader
+INFO 2023-12-11 23:35:30,435 basehttp 9457 123145590833152 "GET /api/taskadd/?token=b2ac42ab-d33e-49e1-8681-72ff33b85b10 HTTP/1.1" 200 35083
+INFO 2023-12-11 23:35:33,990 basehttp 9457 123145590833152 "GET /api/traderdetial/207/?token=b2ac42ab-d33e-49e1-8681-72ff33b85b10 HTTP/1.1" 200 335
+INFO 2023-12-11 23:35:35,661 basehttp 9457 123145590833152 "GET /api/taskadd/?token=b2ac42ab-d33e-49e1-8681-72ff33b85b10 HTTP/1.1" 200 35083
+INFO 2023-12-11 23:35:37,013 basehttp 9457 123145590833152 "GET /api/traderdetial/208/?token=b2ac42ab-d33e-49e1-8681-72ff33b85b10 HTTP/1.1" 200 15632
+INFO 2023-12-11 23:47:19,873 autoreload 9457 4691252736 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-11 23:47:20,647 autoreload 9840 4589188608 Watching for file changes with StatReloader
+INFO 2023-12-11 23:51:17,905 autoreload 9840 4589188608 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-11 23:51:18,617 autoreload 9876 4700915200 Watching for file changes with StatReloader
+INFO 2023-12-11 23:52:17,715 autoreload 9876 4700915200 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-11 23:52:18,410 autoreload 9891 4358948352 Watching for file changes with StatReloader
+INFO 2023-12-11 23:52:51,737 autoreload 9891 4358948352 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-11 23:52:52,533 autoreload 9897 4620981760 Watching for file changes with StatReloader
+INFO 2023-12-12 00:07:17,143 basehttp 9897 123145476280320 "GET /api/taskadd/?token=b2ac42ab-d33e-49e1-8681-72ff33b85b10 HTTP/1.1" 200 35083
+INFO 2023-12-12 01:00:08,284 autoreload 9897 4620981760 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 01:00:09,068 autoreload 10799 4587435520 Watching for file changes with StatReloader
+INFO 2023-12-12 01:02:19,284 autoreload 10799 4587435520 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 01:02:20,085 autoreload 10868 4660041216 Watching for file changes with StatReloader
+INFO 2023-12-12 01:03:58,292 autoreload 10868 4660041216 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 01:03:58,993 autoreload 10879 4551370240 Watching for file changes with StatReloader
+INFO 2023-12-12 01:04:16,495 autoreload 10879 4551370240 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 01:04:17,217 autoreload 10885 4717590016 Watching for file changes with StatReloader
+INFO 2023-12-12 01:04:57,772 autoreload 10885 4717590016 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 01:04:58,526 autoreload 10895 4385302016 Watching for file changes with StatReloader
+INFO 2023-12-12 01:07:42,643 autoreload 10895 4385302016 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 01:07:43,351 autoreload 10923 4430706176 Watching for file changes with StatReloader
+INFO 2023-12-12 01:33:44,853 autoreload 10923 4430706176 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 01:33:45,547 autoreload 11127 4685325824 Watching for file changes with StatReloader
+INFO 2023-12-12 01:34:48,697 autoreload 11127 4685325824 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 01:34:49,330 autoreload 11147 4411782656 Watching for file changes with StatReloader
+INFO 2023-12-12 01:40:43,063 autoreload 11147 4411782656 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 01:40:43,819 autoreload 11212 4560516608 Watching for file changes with StatReloader
+INFO 2023-12-12 01:41:17,116 autoreload 11212 4560516608 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 01:41:17,731 autoreload 11223 4624688640 Watching for file changes with StatReloader
+INFO 2023-12-12 01:42:18,846 autoreload 11223 4624688640 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 01:42:19,502 autoreload 11243 4633957888 Watching for file changes with StatReloader
+INFO 2023-12-12 01:50:54,933 autoreload 11243 4633957888 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 01:50:55,632 autoreload 11306 4647052800 Watching for file changes with StatReloader
+INFO 2023-12-12 01:51:56,854 autoreload 11306 4647052800 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 01:51:57,603 autoreload 11337 4561159680 Watching for file changes with StatReloader
+INFO 2023-12-12 01:54:01,633 autoreload 11337 4561159680 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 01:54:02,325 autoreload 11366 4671669760 Watching for file changes with StatReloader

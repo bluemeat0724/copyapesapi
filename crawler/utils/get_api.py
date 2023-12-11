@@ -16,4 +16,4 @@ def api(user_id, api_id):
 
 
 if __name__ == '__main__':
-    print(api(1, 2))
+    print(api(2, 18))

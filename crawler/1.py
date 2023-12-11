@@ -1,7 +1,7 @@
 from crawler.myokx import app
 
-acc = {'key': 'dfe2ebb7-d9fb-44d0-ab7c-f54739e5b92e',
-       'secret': '3FAC73A01976ED04C31FE07A718A0BC1',
+acc = {'key': '8af6ced4-5ea0-4dd9-9aef-f79529d72a68',
+       'secret': '6A840C3EC6D18D4E4127B13ADA7A1091',
        'passphrase': '112233Ww..',
        # 'proxies': {
        #              'http': 'socks5h://15755149931sct-5:8ivtkleb@38.147.173.111:5001',
@@ -11,10 +11,16 @@ acc = {'key': 'dfe2ebb7-d9fb-44d0-ab7c-f54739e5b92e',
 
 obj = app.OkxSWAP(**acc)
 obj.account.api.flag = '1'
+obj.trade.api.flag = '1'
+
+print(obj.trade.open_market(instId="BTC-USDT-SWAP", posSide="long", openMoney=100, tdMode='cross',
+                                  lever=20))
+
 # 当前持仓
 # a = obj.account.get_positions()
 # 历史持仓
 a = obj.account.get_positions_history()
+# print(a)
 
 """
 实盘信息
@@ -49,6 +55,7 @@ a = obj.account.get_positions_history()
  }
  
  历史持仓
+ {'code': '0', 'data': [], 'msg': ''}
  {
     'code': '0', 
      'data': [
@@ -68,6 +75,23 @@ a = obj.account.get_positions_history()
  
  
  """
-print(a)
 
 
+
+"""
+'instId':'ETH-USDT-SWAP',
+
+'cTime': '1702256227724',    开仓时间
+'uTime': '1702260761272',    平仓时间
+'openAvgPx': '2335.3571628994544037',     开仓均价avgPx
+'closeAvgPx': '2277.59',     平仓均价
+'pnl': '-2223.4581',       收益
+'pnlRatio': '-2.9624589154923515',       收益率
+
+'lever': '100.0',       杠杆
+'mgnMode': 'cross',     全仓   isolated：逐仓
+
+'posSide': 'long',   当前订单持仓方向
+'direction': 'long'，  历史订单持仓方向
+
+"""
