@@ -10,7 +10,7 @@ class TaskcSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.TaskInfo
         fields = ['id', "trader_platform", "uniqueName", "api", "follow_type", "sums", "lever_set", "first_order_set",
-                  'status', 'user', 'create_datetime', 'deleted']
+                  'status', 'user', 'create_datetime', 'deleted','pnl']
         # read_only_fields = ['status']
         # extra_kwargs = {
         #     'status': {'read_only': True}

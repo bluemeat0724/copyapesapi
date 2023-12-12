@@ -156,6 +156,7 @@ class OkxOrderInfo(object):
                         """
             with Connect() as db:
                 db.exec(update_sql, **params)
+            self.update_pnl()
 
 
 
