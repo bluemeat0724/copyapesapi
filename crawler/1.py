@@ -13,14 +13,14 @@ obj = app.OkxSWAP(**acc)
 obj.account.api.flag = '1'
 obj.trade.api.flag = '1'
 
-print(obj.trade.open_market(instId="BTC-USDT-SWAP", posSide="long", openMoney=100, tdMode='cross',
-                                  lever=20))
+# print(obj.trade.open_market(instId="BTC-USDT-SWAP", posSide="long", openMoney=100, tdMode='cross',
+#                                   lever=20))
 
 # 当前持仓
 # a = obj.account.get_positions()
 # 历史持仓
-a = obj.account.get_positions_history()
-print(a)
+# a = obj.account.get_positions_history()
+# print(a)
 
 """
 实盘信息
@@ -96,3 +96,12 @@ print(a)
 
 """
 
+acc = {
+        'key': 1,
+        'secret': 2,
+        'passphrase': 3,
+        'proxies': 4,
+    }
+
+a = acc.pop('key')
+print(a,acc)

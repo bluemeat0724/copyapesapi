@@ -214,6 +214,6 @@ class Trader(threading.Thread):
 
     # 手动结束跟单，打印日志
     def stop(self):
-        self.thread_logger.warning(f'手动结束跟单，结束跟单并不会平仓。如有正在进行中的交易，请及时手动在交易所平仓，避免资金损失！')
+        self.thread_logger.warning(f'手动结束跟单，未结束的交易将自动平仓。')
 
 

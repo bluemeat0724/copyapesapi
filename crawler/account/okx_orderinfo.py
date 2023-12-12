@@ -61,7 +61,7 @@ class OkxOrderInfo(object):
             lever = item.get('lever')
             mgnMode = item.get('mgnMode')
             posSide = item.get('posSide')
-            print(instId, cTime, openAvgPx, pnl, pnlRatio, lever, mgnMode, posSide)
+            # print(instId, cTime, openAvgPx, pnl, pnlRatio, lever, mgnMode, posSide)
 
             # 查询数据库，看是否存在具有相同 instId 和 cTime 的记录
             record_exists = self.check_order(instId, cTime)
