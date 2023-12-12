@@ -1937,3 +1937,4 @@ INFO 2023-12-12 01:51:56,854 autoreload 11306 4647052800 /Users/lichaoyuan/Deskt
 INFO 2023-12-12 01:51:57,603 autoreload 11337 4561159680 Watching for file changes with StatReloader
 INFO 2023-12-12 01:54:01,633 autoreload 11337 4561159680 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
 INFO 2023-12-12 01:54:02,325 autoreload 11366 4671669760 Watching for file changes with StatReloader
+INFO 2023-12-12 02:04:12,052 basehttp 11366 123145590542336 "GET /api/traderdetial/208/?token=b2ac42ab-d33e-49e1-8681-72ff33b85b10 HTTP/1.1" 200 16324

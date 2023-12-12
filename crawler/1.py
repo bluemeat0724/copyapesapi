@@ -20,7 +20,7 @@ print(obj.trade.open_market(instId="BTC-USDT-SWAP", posSide="long", openMoney=10
 # a = obj.account.get_positions()
 # 历史持仓
 a = obj.account.get_positions_history()
-# print(a)
+print(a)
 
 """
 实盘信息
@@ -95,3 +95,4 @@ a = obj.account.get_positions_history()
 'direction': 'long'，  历史订单持仓方向
 
 """
+

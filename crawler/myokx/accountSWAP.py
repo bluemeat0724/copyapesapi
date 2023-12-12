@@ -222,8 +222,9 @@ class AccountSWAP():
             self,
             mgnMode: str = '',
             posSide: str = '',
+            limit: str = '',
     ):
-        result = self.api.get_positions_history()
+        result = self.api.get_positions_history(limit=limit)
         if result['code'] != '0':
             return result
         datas_filtered = []  # 过滤mgnMode与posSide后的结果

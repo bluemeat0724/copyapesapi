@@ -17,6 +17,19 @@ class OkxOrderInfo(object):
             result = conn.fetch_one("select api_id from api_taskinfo where id = %(id)s",id={self.task_id})
             return result.get('api_id') if result else None
 
+    # 查询数据库，看是否存在具有相同 instId 和 cTime 的记录
+    def check_order(self, instId, cTime):
+        check_sql = "SELECT 1 FROM api_orderinfo WHERE instId = %(instId)s AND cTime = %(cTime)s LIMIT 1"
+        with Connect() as db:
+            record_exists = db.fetch_one(check_sql, instId=instId, cTime=cTime)
+            return record_exists
+
+    # 查询当前任务下所有正在进行中的交易
+    def get_order(self):
+        with Connect() as db:
+            result = db.fetch_all("select * from api_orderinfo where user_id = %(user_id)s and task_id = %(task_id)s and status = 1", user_id=self.user_id, task_id=self.task_id)
+            return result
+
     # 获取当前持仓，同时往数据库写入或更新数据
     def get_position(self):
         try:
@@ -37,12 +50,11 @@ class OkxOrderInfo(object):
             print(instId, cTime, openAvgPx, pnl, pnlRatio, lever, mgnMode, posSide)
 
             # 查询数据库，看是否存在具有相同 instId 和 cTime 的记录
-            check_sql = "SELECT 1 FROM api_orderinfo WHERE instId = %(instId)s AND cTime = %(cTime)s LIMIT 1"
-            with Connect() as db:
-                record_exists = db.fetch_one(check_sql, instId=instId, cTime=cTime)
+            record_exists = self.check_order(instId, cTime)
 
             params = {
                 'user_id': self.user_id,
+                'task_id': self.task_id,
                 'api_id': self.api_id,
                 'instId': instId,
                 'cTime': cTime,
@@ -68,17 +80,73 @@ class OkxOrderInfo(object):
             else:
                 # 如果不存在相同记录，执行插入操作
                 insert_sql = """
-                                INSERT INTO api_orderinfo (user_id, api_id, instId, cTime, openAvgPx, pnl, pnlRatio, lever, mgnMode, posSide, status)
-                                VALUES (%(user_id)s, %(api_id)s, %(instId)s, %(cTime)s, %(openAvgPx)s, %(pnl)s, %(pnlRatio)s, %(lever)s, %(mgnMode)s, %(posSide)s,1)
+                                INSERT INTO api_orderinfo (user_id, task_id, api_id, instId, cTime, openAvgPx, pnl, pnlRatio, lever, mgnMode, posSide, status)
+                                VALUES (%(user_id)s, %(task_id)s, %(api_id)s, %(instId)s, %(cTime)s, %(openAvgPx)s, %(pnl)s, %(pnlRatio)s, %(lever)s, %(mgnMode)s, %(posSide)s,1)
                             """
                 with Connect() as db:
                     db.exec(insert_sql, **params)
+
+    # 当发生平仓交易时，检查交易所账户历史数据，并更新数据库
+    # TODO 结束跟单任务，需要自动平仓所有正在进行中的交易
+    def get_position_history(self):
+        """
+        触发时机：跟单时发生平仓交易、以及结束跟单任务时
+        业务逻辑：1.检索数据库，找到当前跟单任务下正在进行中的交易（status=1），提取instId和cTime
+                2.获取交易所的历史数据
+                3.如果提取instId和cTime在历史交易数据中也出现，则更新uTime，stauts等数据
+        """
+        # 检索数据库
+        ongoing_data = self.get_order()
+        # 获取账户历史订单
+        try:
+            obj = app.OkxSWAP(**self.acc)
+        except:
+            return
+        obj.account.api.flag = self.flag
+        # 查看前5条交易记录
+        history_data = obj.account.get_positions_history(limit='5').get('data')
+
+        # 将 history_data 转换为字典，以便快速检查 instId 和 cTime 是否匹配
+        history_data_dict = {(item['instId'], int(item['cTime'])): item for item in history_data}
+
+        # 筛选出在 history_data 中并且在 ongoing_data 中存在的数据
+        matching_data = [history_data_dict.get((str(item['instId']), item['cTime']), None) for item in ongoing_data]
+
+        # 去除匹配数据中的 None
+        matching_data = [item for item in matching_data if item is not None]
+
+        if not matching_data:
+            return
+        # 跟新数据
+        for item in matching_data:
+            params = {
+                'instId': item.get('instId'),
+                'cTime': int(item.get('cTime')),
+                'uTime': int(item.get('uTime')),
+                'pnl': item.get('pnl'),
+                'pnlRatio': item.get('pnlRatio'),
+                'closeAvgPx': item.get('closeAvgPx'),
+                'status': 2
+            }
+            update_sql = """
+                            UPDATE api_orderinfo
+                            SET
+                                uTime = %(uTime)s,
+                                pnl = %(pnl)s,
+                                pnlRatio = %(pnlRatio)s,
+                                closeAvgPx = %(closeAvgPx)s,
+                                status = %(status)s
+                            WHERE instId = %(instId)s AND cTime = %(cTime)s;
+                        """
+            with Connect() as db:
+                db.exec(update_sql, **params)
+
 
 
 
 
 if __name__ == '__main__':
     obj = OkxOrderInfo(1, 208)
-    obj.get_position()
+    obj.get_position_history()
 
 
