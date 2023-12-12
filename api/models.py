@@ -90,6 +90,8 @@ class TaskInfo(DeletedModel):
     status = models.IntegerField(verbose_name="状态", choices=status_choice, default=1)
     user = models.ForeignKey(verbose_name="用户", to="UserInfo", on_delete=models.CASCADE)
     create_datetime = models.DateTimeField(verbose_name="创建时间", auto_now_add=True)
+    pnl = models.FloatField(verbose_name="跟单收益", default=0)
+
 
 
 class IpInfo(models.Model):
@@ -127,4 +129,3 @@ class OrderInfo(models.Model):
         indexes = [
             models.Index(fields=['user', 'task'], name='idx_user_task'),
         ]
-

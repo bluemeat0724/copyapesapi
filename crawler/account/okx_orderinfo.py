@@ -30,8 +30,22 @@ class OkxOrderInfo(object):
             result = db.fetch_all("select * from api_orderinfo where user_id = %(user_id)s and task_id = %(task_id)s and status = 1", user_id=self.user_id, task_id=self.task_id)
             return result
 
+    # 手动跟新taskinfo表中关联orderinfo中的pnl数据
+    def update_pnl(self):
+        update_pnl_sql = """
+            UPDATE api_taskinfo
+            SET pnl = (SELECT SUM(pnl) FROM api_orderinfo WHERE task_id = %(task_id)s AND user_id = %(user_id)s)
+            WHERE id = %(task_id)s AND user_id = %(user_id)s;
+        """
+        with Connect() as db:
+            db.exec(update_pnl_sql, task_id=self.task_id, user_id=self.user_id)
+
     # 获取当前持仓，同时往数据库写入或更新数据
     def get_position(self):
+        """
+        通过celery定期执行
+        :return:
+        """
         try:
             obj = app.OkxSWAP(**self.acc)
         except:
@@ -77,6 +91,7 @@ class OkxOrderInfo(object):
                             """
                 with Connect() as db:
                     db.exec(update_sql, **params)
+                self.update_pnl()
             else:
                 # 如果不存在相同记录，执行插入操作
                 insert_sql = """
@@ -85,6 +100,7 @@ class OkxOrderInfo(object):
                             """
                 with Connect() as db:
                     db.exec(insert_sql, **params)
+                self.update_pnl()
 
     # 当发生平仓交易时，检查交易所账户历史数据，并更新数据库
     # TODO 结束跟单任务，需要自动平仓所有正在进行中的交易
@@ -147,6 +163,6 @@ class OkxOrderInfo(object):
 
 if __name__ == '__main__':
     obj = OkxOrderInfo(1, 208)
-    obj.get_position_history()
+    obj.get_position()
 
 

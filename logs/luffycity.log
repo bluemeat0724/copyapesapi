@@ -1938,3 +1938,23 @@ INFO 2023-12-12 01:51:57,603 autoreload 11337 4561159680 Watching for file chang
 INFO 2023-12-12 01:54:01,633 autoreload 11337 4561159680 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
 INFO 2023-12-12 01:54:02,325 autoreload 11366 4671669760 Watching for file changes with StatReloader
 INFO 2023-12-12 02:04:12,052 basehttp 11366 123145590542336 "GET /api/traderdetial/208/?token=b2ac42ab-d33e-49e1-8681-72ff33b85b10 HTTP/1.1" 200 16324
+INFO 2023-12-12 16:14:17,443 autoreload 11366 4671669760 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 16:14:18,489 autoreload 17583 4507854336 Watching for file changes with StatReloader
+INFO 2023-12-12 16:15:57,798 autoreload 17583 4507854336 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 16:15:58,473 autoreload 17600 4451964416 Watching for file changes with StatReloader
+INFO 2023-12-12 16:20:26,697 autoreload 17600 4451964416 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 16:20:27,387 autoreload 17633 4696823296 Watching for file changes with StatReloader
+INFO 2023-12-12 16:22:01,873 autoreload 17633 4696823296 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 16:22:02,512 autoreload 17657 4430984704 Watching for file changes with StatReloader
+INFO 2023-12-12 16:24:04,367 autoreload 17657 4430984704 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 16:24:05,038 autoreload 17671 4526548480 Watching for file changes with StatReloader
+INFO 2023-12-12 16:24:52,907 autoreload 17671 4526548480 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 16:24:53,604 autoreload 17678 4808726016 Watching for file changes with StatReloader
+INFO 2023-12-12 16:26:21,951 autoreload 17678 4808726016 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 16:26:22,575 autoreload 17703 4500993536 Watching for file changes with StatReloader
+INFO 2023-12-12 16:36:09,968 autoreload 17703 4500993536 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 16:36:10,609 autoreload 17781 4333020672 Watching for file changes with StatReloader
+INFO 2023-12-12 16:36:32,622 autoreload 17781 4333020672 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 16:36:33,498 autoreload 17792 4598257152 Watching for file changes with StatReloader
+INFO 2023-12-12 16:51:31,307 autoreload 17792 4598257152 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-12 16:51:32,078 autoreload 17873 4580177408 Watching for file changes with StatReloader
