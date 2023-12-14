@@ -1,5 +1,5 @@
 [{
-  "availSubPos": "-588",
+  "availSubPos": "-595",
   "instId": "BTC-USDT-SWAP",
   "mgnMode": "isolated",
   "posSide": "net",

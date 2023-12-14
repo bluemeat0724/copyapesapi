@@ -6594,3 +6594,362 @@ requests.exceptions.ConnectionError: SOCKSHTTPSConnectionPool(host='www.okex.com
 2023-12-14 21:38:22,777 - INFO - Scheduler: Sending due task get_position (get_position)
 2023-12-14 21:38:22,784 - INFO - Task get_position[cfaeca64-d0f1-4d81-a975-7b35b54edc51] received
 2023-12-14 21:38:22,800 - INFO - Task get_position[cfaeca64-d0f1-4d81-a975-7b35b54edc51] succeeded in 0.00791138899512589s: None
+2023-12-14 23:03:59,264 - INFO - beat: Starting...
+2023-12-14 23:03:59,297 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:04:11,620 - INFO - Connected to redis://127.0.0.1:6379/14
+2023-12-14 23:04:11,625 - INFO - mingle: searching for neighbors
+2023-12-14 23:04:12,634 - INFO - mingle: all alone
+2023-12-14 23:04:12,650 - INFO - celery@mac ready.
+2023-12-14 23:04:12,662 - INFO - Task get_position[9dd3312e-91b7-47d5-8f29-87881097f71a] received
+2023-12-14 23:04:17,711 - INFO - Task get_position[9dd3312e-91b7-47d5-8f29-87881097f71a] succeeded in 5.043252207999998s: None
+2023-12-14 23:04:59,295 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:04:59,297 - INFO - Task get_position[8c969fd8-2a26-40d4-a277-5b2c514cfe89] received
+2023-12-14 23:05:03,528 - INFO - Task get_position[8c969fd8-2a26-40d4-a277-5b2c514cfe89] succeeded in 4.227878180999994s: None
+2023-12-14 23:05:59,295 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:05:59,298 - INFO - Task get_position[e3ae4e74-4e05-4b57-a699-2f5d220e9c87] received
+2023-12-14 23:06:03,881 - INFO - Task get_position[e3ae4e74-4e05-4b57-a699-2f5d220e9c87] succeeded in 4.580626077000005s: None
+2023-12-14 23:06:59,295 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:06:59,298 - INFO - Task get_position[24de4a45-3efb-4f48-ae52-8d60b428550d] received
+2023-12-14 23:07:03,457 - INFO - Task get_position[24de4a45-3efb-4f48-ae52-8d60b428550d] succeeded in 4.155706801999997s: None
+2023-12-14 23:07:59,300 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:07:59,304 - INFO - Task get_position[9812827f-0397-469d-aef5-9a3e2b4bb4c9] received
+2023-12-14 23:08:03,441 - INFO - Task get_position[9812827f-0397-469d-aef5-9a3e2b4bb4c9] succeeded in 4.134815978000006s: None
+2023-12-14 23:08:59,300 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:08:59,303 - INFO - Task get_position[06a3dbb4-5d2c-4946-a761-a3901a4e5089] received
+2023-12-14 23:09:03,544 - INFO - Task get_position[06a3dbb4-5d2c-4946-a761-a3901a4e5089] succeeded in 4.239014989000054s: None
+2023-12-14 23:09:59,300 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:09:59,304 - INFO - Task get_position[1c335699-837a-485c-b6e7-832a1dbd9616] received
+2023-12-14 23:10:03,514 - INFO - Task get_position[1c335699-837a-485c-b6e7-832a1dbd9616] succeeded in 4.207524540999998s: None
+2023-12-14 23:10:59,300 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:10:59,303 - INFO - Task get_position[4e565874-ed8e-4d6b-b88f-dad6e25d9f48] received
+2023-12-14 23:11:04,792 - INFO - Task get_position[4e565874-ed8e-4d6b-b88f-dad6e25d9f48] succeeded in 5.487199753000027s: None
+2023-12-14 23:11:59,300 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:11:59,303 - INFO - Task get_position[a13ac030-27a9-48ab-a552-772026c6f0f9] received
+2023-12-14 23:12:04,195 - INFO - Task get_position[a13ac030-27a9-48ab-a552-772026c6f0f9] succeeded in 4.890063621000024s: None
+2023-12-14 23:12:59,300 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:12:59,303 - INFO - Task get_position[441e0188-c745-484e-9f6f-6d3944013961] received
+2023-12-14 23:13:03,522 - INFO - Task get_position[441e0188-c745-484e-9f6f-6d3944013961] succeeded in 4.217080182000018s: None
+2023-12-14 23:13:59,300 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:13:59,303 - INFO - Task get_position[02f8d226-9681-4335-a61f-d0ba2e24fede] received
+2023-12-14 23:14:03,757 - INFO - Task get_position[02f8d226-9681-4335-a61f-d0ba2e24fede] succeeded in 4.451844187000006s: None
+2023-12-14 23:14:59,300 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:14:59,304 - INFO - Task get_position[7806f417-82fc-42f0-b068-40e4a6ea28a6] received
+2023-12-14 23:15:04,251 - INFO - Task get_position[7806f417-82fc-42f0-b068-40e4a6ea28a6] succeeded in 4.9446165059999885s: None
+2023-12-14 23:15:59,300 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:15:59,303 - INFO - Task get_position[b5d59d82-108c-4c75-bd58-db3aec8554a9] received
+2023-12-14 23:16:03,550 - INFO - Task get_position[b5d59d82-108c-4c75-bd58-db3aec8554a9] succeeded in 4.244547639999951s: None
+2023-12-14 23:16:59,301 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:16:59,303 - INFO - Task get_position[44948f73-6e7b-4e87-9ea3-ee05b27313cc] received
+2023-12-14 23:17:04,124 - INFO - Task get_position[44948f73-6e7b-4e87-9ea3-ee05b27313cc] succeeded in 4.818676684000025s: None
+2023-12-14 23:17:59,301 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:17:59,303 - INFO - Task get_position[79402c9e-2b47-4259-a158-950f1429ef4f] received
+2023-12-14 23:18:03,695 - INFO - Task get_position[79402c9e-2b47-4259-a158-950f1429ef4f] succeeded in 4.389479907999998s: None
+2023-12-14 23:18:59,301 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:18:59,303 - INFO - Task get_position[14d3da15-29d3-4d22-9467-7107fc1b2b80] received
+2023-12-14 23:19:03,749 - INFO - Task get_position[14d3da15-29d3-4d22-9467-7107fc1b2b80] succeeded in 4.442744513999969s: None
+2023-12-14 23:19:59,301 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:19:59,303 - INFO - Task get_position[b8bd4fbf-e640-4a29-9e3e-8487e99ef18f] received
+2023-12-14 23:20:03,677 - INFO - Task get_position[b8bd4fbf-e640-4a29-9e3e-8487e99ef18f] succeeded in 4.371359713000061s: None
+2023-12-14 23:20:59,301 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:20:59,312 - INFO - Task get_position[4fd046d9-b164-4c59-b1f9-f3a2972eb8e1] received
+2023-12-14 23:21:03,662 - INFO - beat: Starting...
+2023-12-14 23:21:03,757 - INFO - Task get_position[4fd046d9-b164-4c59-b1f9-f3a2972eb8e1] succeeded in 4.4429483639999034s: None
+2023-12-14 23:21:28,091 - INFO - beat: Starting...
+2023-12-14 23:21:40,040 - INFO - Connected to redis://127.0.0.1:6379/14
+2023-12-14 23:21:40,047 - INFO - mingle: searching for neighbors
+2023-12-14 23:21:41,057 - INFO - mingle: all alone
+2023-12-14 23:21:41,076 - INFO - celery@mac ready.
+2023-12-14 23:21:59,303 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:21:59,313 - INFO - Task get_position[5bb26b8d-a859-4ca9-98be-40fd7d0667df] received
+2023-12-14 23:22:03,552 - WARNING - [{'adl': '1', 'availPos': '4', 'avgPx': '2276.35', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '', 'bePx': '2278.627488744372', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702567227503', 'ccy': 'USDT', 'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.045527', 'fundingFee': '0', 'gammaBS': '', 'gammaPA': '', 'idxPx': '2275.3099', 'imr': '0.910256', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'interest': '', 'last': '2275.62', 'lever': '100', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '', 'margin': '', 'markPx': '2275.64', 'mgnMode': 'cross', 'mgnRatio': '321773.29686198395', 'mmr': '0.3641024', 'notionalUsd': '91.059279472', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0', 'pos': '4', 'posCcy': '', 'posId': '651930173952069635', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '', 'quoteInterest': '', 'realizedPnl': '-0.045527', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '', 'thetaPA': '', 'tradeId': '186227743', 'uTime': '1702567227503', 'upl': '-0.0284000000000015', 'uplLastPx': '-0.0292000000000007', 'uplRatio': '-0.0311902826893973', 'uplRatioLastPx': '-0.0320688822017745', 'usdPx': '', 'vegaBS': '', 'vegaPA': ''}]
+2023-12-14 23:22:03,561 - INFO - Task get_position[5bb26b8d-a859-4ca9-98be-40fd7d0667df] succeeded in 4.242497581999999s: None
+2023-12-14 23:22:59,313 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:22:59,316 - INFO - Task get_position[2ef91907-7394-4c45-9324-def0f3f8644f] received
+2023-12-14 23:22:59,322 - INFO - Task get_position[2ef91907-7394-4c45-9324-def0f3f8644f] succeeded in 0.002549046999988036s: None
+2023-12-14 23:23:59,313 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:23:59,315 - INFO - Task get_position[e9280679-7883-4d0a-8325-b4b2e57eeb1b] received
+2023-12-14 23:23:59,320 - INFO - Task get_position[e9280679-7883-4d0a-8325-b4b2e57eeb1b] succeeded in 0.002518307000002551s: None
+2023-12-14 23:24:59,313 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:24:59,315 - INFO - Task get_position[e308f29f-eabb-4c02-a44d-24e14f6abdfa] received
+2023-12-14 23:24:59,320 - INFO - Task get_position[e308f29f-eabb-4c02-a44d-24e14f6abdfa] succeeded in 0.002379116000014392s: None
+2023-12-14 23:25:59,313 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:25:59,315 - INFO - Task get_position[b8d0571f-52d2-40bd-9965-6400db28b8a9] received
+2023-12-14 23:25:59,320 - INFO - Task get_position[b8d0571f-52d2-40bd-9965-6400db28b8a9] succeeded in 0.0024548330000015994s: None
+2023-12-14 23:26:59,313 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:26:59,315 - INFO - Task get_position[1c4fc352-15a2-4dd4-8499-a44253f7db7b] received
+2023-12-14 23:26:59,320 - INFO - Task get_position[1c4fc352-15a2-4dd4-8499-a44253f7db7b] succeeded in 0.0023767349999843645s: None
+2023-12-14 23:27:59,313 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:27:59,314 - INFO - Task get_position[214e865b-4182-4576-86fe-b0c2d95e5235] received
+2023-12-14 23:27:59,318 - INFO - Task get_position[214e865b-4182-4576-86fe-b0c2d95e5235] succeeded in 0.002153554000017266s: None
+2023-12-14 23:28:59,313 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:28:59,315 - INFO - Task get_position[ae0ef810-371a-491f-885d-6af2234d76cd] received
+2023-12-14 23:28:59,320 - INFO - Task get_position[ae0ef810-371a-491f-885d-6af2234d76cd] succeeded in 0.00237739699997519s: None
+2023-12-14 23:29:59,313 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:29:59,315 - INFO - Task get_position[3e3f998f-46ed-49c6-ad98-4fcd1e33fb29] received
+2023-12-14 23:30:03,484 - WARNING - [{'adl': '1', 'availPos': '4', 'avgPx': '2273.41', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '', 'bePx': '2275.6845472736363', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702567789365', 'ccy': 'USDT', 'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.0454682', 'fundingFee': '0', 'gammaBS': '', 'gammaPA': '', 'idxPx': '2273.3016', 'imr': '0.909424', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'interest': '', 'last': '2273.52', 'lever': '100', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '', 'margin': '', 'markPx': '2273.56', 'mgnMode': 'cross', 'mgnRatio': '322067.65974600025', 'mmr': '0.3637696', 'notionalUsd': '90.976958112', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0', 'pos': '4', 'posCcy': '', 'posId': '651930173952069635', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '', 'quoteInterest': '', 'realizedPnl': '-0.0454682', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '', 'thetaPA': '', 'tradeId': '186229819', 'uTime': '1702567789365', 'upl': '0.0060000000000036', 'uplLastPx': '0.0044000000000051', 'uplRatio': '0.006598017955417', 'uplRatioLastPx': '0.0048385465006406', 'usdPx': '', 'vegaBS': '', 'vegaPA': ''}]
+2023-12-14 23:30:03,490 - INFO - Task get_position[3e3f998f-46ed-49c6-ad98-4fcd1e33fb29] succeeded in 4.171988339999984s: None
+2023-12-14 23:30:59,313 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:30:59,315 - INFO - Task get_position[a9de15c9-484c-4f0a-b856-a66122ae645f] received
+2023-12-14 23:30:59,320 - INFO - Task get_position[a9de15c9-484c-4f0a-b856-a66122ae645f] succeeded in 0.0023962239999946178s: None
+2023-12-14 23:31:59,313 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:31:59,316 - INFO - Task get_position[9e79dd28-6f9e-4e95-b8a6-622aa4854820] received
+2023-12-14 23:31:59,321 - INFO - Task get_position[9e79dd28-6f9e-4e95-b8a6-622aa4854820] succeeded in 0.0024666109999316177s: None
+2023-12-14 23:32:59,313 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:32:59,316 - INFO - Task get_position[91900d05-ffc9-4fdb-92d5-85576830c110] received
+2023-12-14 23:32:59,320 - INFO - Task get_position[91900d05-ffc9-4fdb-92d5-85576830c110] succeeded in 0.0018661269999711294s: None
+2023-12-14 23:33:59,313 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:33:59,316 - INFO - Task get_position[4684fcc4-234e-425d-a834-523b60b4734f] received
+2023-12-14 23:33:59,321 - INFO - Task get_position[4684fcc4-234e-425d-a834-523b60b4734f] succeeded in 0.0023828759999560134s: None
+2023-12-14 23:34:59,313 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:34:59,317 - INFO - Task get_position[e3e47d48-2076-43cf-9d4e-c4b53a618f0f] received
+2023-12-14 23:34:59,322 - INFO - Task get_position[e3e47d48-2076-43cf-9d4e-c4b53a618f0f] succeeded in 0.002732209999976476s: None
+2023-12-14 23:35:59,313 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:35:59,315 - INFO - Task get_position[c2db0c2e-d2fc-4069-9bb4-40ece968f167] received
+2023-12-14 23:35:59,319 - INFO - Task get_position[c2db0c2e-d2fc-4069-9bb4-40ece968f167] succeeded in 0.002062512999941646s: None
+2023-12-14 23:36:59,313 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:36:59,316 - INFO - Task get_position[8bd76992-480d-4afb-9834-9ed54561752f] received
+2023-12-14 23:36:59,324 - INFO - Task get_position[8bd76992-480d-4afb-9834-9ed54561752f] succeeded in 0.004187867999917216s: None
+2023-12-14 23:37:59,313 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:37:59,316 - INFO - Task get_position[b5ccd2a8-6575-40e4-9e2d-ca7e5b99d0f0] received
+2023-12-14 23:38:03,578 - WARNING - [{'adl': '1', 'availPos': '4', 'avgPx': '2275.15', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '', 'bePx': '2277.4262881440723', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702568263089', 'ccy': 'USDT', 'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.045503', 'fundingFee': '0', 'gammaBS': '', 'gammaPA': '', 'idxPx': '2274.8449', 'imr': '0.91006', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'interest': '', 'last': '2275.36', 'lever': '100', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '', 'margin': '', 'markPx': '2275.15', 'mgnMode': 'cross', 'mgnRatio': '321842.63625495', 'mmr': '0.3640240000000001', 'notionalUsd': '91.04604264', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0', 'pos': '4', 'posCcy': '', 'posId': '651930173952069635', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '', 'quoteInterest': '', 'realizedPnl': '-0.045503', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '', 'thetaPA': '', 'tradeId': '186231235', 'uTime': '1702568263089', 'upl': '0', 'uplLastPx': '0.0084000000000015', 'uplRatio': '0', 'uplRatioLastPx': '0.0092301606487544', 'usdPx': '', 'vegaBS': '', 'vegaPA': ''}]
+2023-12-14 23:38:03,584 - INFO - Task get_position[b5ccd2a8-6575-40e4-9e2d-ca7e5b99d0f0] succeeded in 4.265367781000009s: None
+2023-12-14 23:38:59,313 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:38:59,316 - INFO - Task get_position[30654571-8174-4f91-821e-998ba6d8bade] received
+2023-12-14 23:38:59,320 - INFO - Task get_position[30654571-8174-4f91-821e-998ba6d8bade] succeeded in 0.002197578000050271s: None
+2023-12-14 23:39:59,313 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:39:59,316 - INFO - Task get_position[7500a8a5-4e1e-447f-9862-379e10439a87] received
+2023-12-14 23:39:59,320 - INFO - Task get_position[7500a8a5-4e1e-447f-9862-379e10439a87] succeeded in 0.002079718999993929s: None
+2023-12-14 23:40:59,314 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:40:59,316 - INFO - Task get_position[5b2565c0-6e60-4d51-8c73-4b1f8f31c220] received
+2023-12-14 23:40:59,321 - INFO - Task get_position[5b2565c0-6e60-4d51-8c73-4b1f8f31c220] succeeded in 0.0026194350000423583s: None
+2023-12-14 23:41:59,314 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:41:59,316 - INFO - Task get_position[67a70f5c-cf0e-46c2-b21e-9dc9bdaefe3d] received
+2023-12-14 23:41:59,321 - INFO - Task get_position[67a70f5c-cf0e-46c2-b21e-9dc9bdaefe3d] succeeded in 0.002404261999799928s: None
+2023-12-14 23:42:59,314 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:42:59,316 - INFO - Task get_position[631a0851-c1ba-4b66-8cac-f7d129bdcd85] received
+2023-12-14 23:43:04,530 - WARNING - [{'adl': '1', 'availPos': '4', 'avgPx': '2275.15', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '', 'bePx': '2277.4262881440723', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702568263089', 'ccy': 'USDT', 'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.045503', 'fundingFee': '0', 'gammaBS': '', 'gammaPA': '', 'idxPx': '2270.1833', 'imr': '0.90814', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'interest': '', 'last': '2270.25', 'lever': '100', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '', 'margin': '', 'markPx': '2270.35', 'mgnMode': 'cross', 'mgnRatio': '322522.60982173803', 'mmr': '0.363256', 'notionalUsd': '90.8457849', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0', 'pos': '4', 'posCcy': '', 'posId': '651930173952069635', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '', 'quoteInterest': '', 'realizedPnl': '-0.045503', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '', 'thetaPA': '', 'tradeId': '186231235', 'uTime': '1702568263089', 'upl': '-0.1920000000000073', 'uplLastPx': '-0.1960000000000036', 'uplRatio': '-0.2109751005428318', 'uplRatioLastPx': '-0.2153704151374725', 'usdPx': '', 'vegaBS': '', 'vegaPA': ''}]
+2023-12-14 23:43:04,537 - INFO - Task get_position[631a0851-c1ba-4b66-8cac-f7d129bdcd85] succeeded in 5.218105287000071s: None
+2023-12-14 23:43:59,314 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:43:59,316 - INFO - Task get_position[8dea0b82-4986-40d5-98fd-b4b2f70dcd6e] received
+2023-12-14 23:44:03,607 - WARNING - [{'adl': '1', 'availPos': '4', 'avgPx': '2275.15', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '', 'bePx': '2277.4262881440723', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702568263089', 'ccy': 'USDT', 'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.045503', 'fundingFee': '0', 'gammaBS': '', 'gammaPA': '', 'idxPx': '2272.1749', 'imr': '0.90904', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'interest': '', 'last': '2272.54', 'lever': '100', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '', 'margin': '', 'markPx': '2272.6', 'mgnMode': 'cross', 'mgnRatio': '322203.5145686804', 'mmr': '0.363616', 'notionalUsd': '90.93854352', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0', 'pos': '4', 'posCcy': '', 'posId': '651930173952069635', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '', 'quoteInterest': '', 'realizedPnl': '-0.045503', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '', 'thetaPA': '', 'tradeId': '186231235', 'uTime': '1702568263089', 'upl': '-0.1020000000000073', 'uplLastPx': '-0.1044000000000051', 'uplRatio': '-0.1120805221633825', 'uplRatioLastPx': '-0.1147177109201647', 'usdPx': '', 'vegaBS': '', 'vegaPA': ''}]
+2023-12-14 23:44:03,613 - INFO - Task get_position[8dea0b82-4986-40d5-98fd-b4b2f70dcd6e] succeeded in 4.2953923140000825s: None
+2023-12-14 23:44:59,314 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:44:59,316 - INFO - Task get_position[88cc21b7-cd98-4fcc-ad52-6c4ef363f062] received
+2023-12-14 23:45:03,692 - WARNING - [{'adl': '1', 'availPos': '4', 'avgPx': '2275.15', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '', 'bePx': '2277.4262881440723', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702568263089', 'ccy': 'USDT', 'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.045503', 'fundingFee': '0', 'gammaBS': '', 'gammaPA': '', 'idxPx': '2275.7016', 'imr': '0.910492', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'interest': '', 'last': '2276.23', 'lever': '100', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '', 'margin': '', 'markPx': '2276.23', 'mgnMode': 'cross', 'mgnRatio': '321690.0374195268', 'mmr': '0.3641968', 'notionalUsd': '91.07924623599999', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0', 'pos': '4', 'posCcy': '', 'posId': '651930173952069635', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '', 'quoteInterest': '', 'realizedPnl': '-0.045503', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '', 'thetaPA': '', 'tradeId': '186231235', 'uTime': '1702568263089', 'upl': '0.0431999999999971', 'uplLastPx': '0.0431999999999971', 'uplRatio': '0.0474693976221241', 'uplRatioLastPx': '0.0474693976221241', 'usdPx': '', 'vegaBS': '', 'vegaPA': ''}]
+2023-12-14 23:45:03,697 - INFO - Task get_position[88cc21b7-cd98-4fcc-ad52-6c4ef363f062] succeeded in 4.379162954000094s: None
+2023-12-14 23:45:59,314 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:45:59,316 - INFO - Task get_position[eb53b72d-4188-4e1f-87e8-237728dcef9e] received
+2023-12-14 23:46:03,513 - WARNING - [{'adl': '1', 'availPos': '4', 'avgPx': '2275.15', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '', 'bePx': '2277.4262881440723', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702568263089', 'ccy': 'USDT', 'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.045503', 'fundingFee': '0', 'gammaBS': '', 'gammaPA': '', 'idxPx': '2277.9183', 'imr': '0.911336', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'interest': '', 'last': '2278.44', 'lever': '100', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '', 'margin': '', 'markPx': '2278.34', 'mgnMode': 'cross', 'mgnRatio': '321392.32193805074', 'mmr': '0.3645344', 'notionalUsd': '91.162762752', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0', 'pos': '4', 'posCcy': '', 'posId': '651930173952069635', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '', 'quoteInterest': '', 'realizedPnl': '-0.045503', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '', 'thetaPA': '', 'tradeId': '186231235', 'uTime': '1702568263089', 'upl': '0.1276000000000022', 'uplLastPx': '0.1315999999999986', 'uplRatio': '0.1402105355690964', 'uplRatioLastPx': '0.1446058501637149', 'usdPx': '', 'vegaBS': '', 'vegaPA': ''}]
+2023-12-14 23:46:03,527 - INFO - Task get_position[eb53b72d-4188-4e1f-87e8-237728dcef9e] succeeded in 4.2088907750001s: None
+2023-12-14 23:46:59,314 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:46:59,316 - INFO - Task get_position[165a2206-7482-4250-92e1-9b01a099e27c] received
+2023-12-14 23:47:03,409 - WARNING - [{'adl': '1', 'availPos': '4', 'avgPx': '2275.15', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '', 'bePx': '2277.4262881440723', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702568263089', 'ccy': 'USDT', 'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.045503', 'fundingFee': '0', 'gammaBS': '', 'gammaPA': '', 'idxPx': '2275.6133', 'imr': '0.910348', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'interest': '', 'last': '2275.89', 'lever': '100', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '', 'margin': '', 'markPx': '2275.87', 'mgnMode': 'cross', 'mgnRatio': '321740.88760581653', 'mmr': '0.3641392', 'notionalUsd': '91.07303461600002', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0', 'pos': '4', 'posCcy': '', 'posId': '651930173952069635', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '', 'quoteInterest': '', 'realizedPnl': '-0.045503', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '', 'thetaPA': '', 'tradeId': '186231235', 'uTime': '1702568263089', 'upl': '0.028799999999992', 'uplLastPx': '0.0295999999999913', 'uplRatio': '0.0316462650814087', 'uplRatioLastPx': '0.0325253280003324', 'usdPx': '', 'vegaBS': '', 'vegaPA': ''}]
+2023-12-14 23:47:03,416 - INFO - Task get_position[165a2206-7482-4250-92e1-9b01a099e27c] succeeded in 4.098284971000112s: None
+2023-12-14 23:47:59,314 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:47:59,317 - INFO - Task get_position[a0cff127-e3d9-439c-9409-4430d816bf69] received
+2023-12-14 23:48:03,554 - WARNING - [{'adl': '1', 'availPos': '4', 'avgPx': '2275.15', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '', 'bePx': '2277.4262881440723', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702568263089', 'ccy': 'USDT', 'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.045503', 'fundingFee': '0', 'gammaBS': '', 'gammaPA': '', 'idxPx': '2274.0599', 'imr': '0.9096600000000001', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'interest': '', 'last': '2274.19', 'lever': '100', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '', 'margin': '', 'markPx': '2274.15', 'mgnMode': 'cross', 'mgnRatio': '321984.06070541847', 'mmr': '0.363864', 'notionalUsd': '91.0023864', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0', 'pos': '4', 'posCcy': '', 'posId': '651930173952069635', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '', 'quoteInterest': '', 'realizedPnl': '-0.045503', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '', 'thetaPA': '', 'tradeId': '186231235', 'uTime': '1702568263089', 'upl': '-0.04', 'uplLastPx': '-0.0384000000000015', 'uplRatio': '-0.0439531459464182', 'uplRatioLastPx': '-0.0421950201085708', 'usdPx': '', 'vegaBS': '', 'vegaPA': ''}]
+2023-12-14 23:48:03,559 - INFO - Task get_position[a0cff127-e3d9-439c-9409-4430d816bf69] succeeded in 4.240242373000001s: None
+2023-12-14 23:48:59,314 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:48:59,316 - INFO - Task get_position[67c82898-ce3e-46f1-8875-b66f26f18df8] received
+2023-12-14 23:49:04,550 - WARNING - [{'adl': '1', 'availPos': '4', 'avgPx': '2275.15', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '', 'bePx': '2277.4262881440723', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702568263089', 'ccy': 'USDT', 'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.045503', 'fundingFee': '0', 'gammaBS': '', 'gammaPA': '', 'idxPx': '2273.9449', 'imr': '0.9097', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'interest': '', 'last': '2274.15', 'lever': '100', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '', 'margin': '', 'markPx': '2274.25', 'mgnMode': 'cross', 'mgnRatio': '321969.91266371316', 'mmr': '0.36388', 'notionalUsd': '91.0018395', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0', 'pos': '4', 'posCcy': '', 'posId': '651930173952069635', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '', 'quoteInterest': '', 'realizedPnl': '-0.045503', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '', 'thetaPA': '', 'tradeId': '186231235', 'uTime': '1702568263089', 'upl': '-0.0360000000000036', 'uplLastPx': '-0.04', 'uplRatio': '-0.0395578313517775', 'uplRatioLastPx': '-0.0439531459464182', 'usdPx': '', 'vegaBS': '', 'vegaPA': ''}]
+2023-12-14 23:49:04,556 - INFO - Task get_position[67c82898-ce3e-46f1-8875-b66f26f18df8] succeeded in 5.237226908000139s: None
+2023-12-14 23:49:59,314 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:49:59,316 - INFO - Task get_position[5bbabccc-bf84-4527-98b0-89731d337823] received
+2023-12-14 23:50:03,644 - WARNING - [{'adl': '1', 'availPos': '4', 'avgPx': '2275.15', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '', 'bePx': '2277.4262881440723', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702568263089', 'ccy': 'USDT', 'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.045503', 'fundingFee': '0', 'gammaBS': '', 'gammaPA': '', 'idxPx': '2275.2733', 'imr': '0.9103319999999999', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'interest': '', 'last': '2275.84', 'lever': '100', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '', 'margin': '', 'markPx': '2275.83', 'mgnMode': 'cross', 'mgnRatio': '321746.53861956333', 'mmr': '0.3641328', 'notionalUsd': '91.06415128799999', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0', 'pos': '4', 'posCcy': '', 'posId': '651930173952069635', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '', 'quoteInterest': '', 'realizedPnl': '-0.045503', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '', 'thetaPA': '', 'tradeId': '186231235', 'uTime': '1702568263089', 'upl': '0.0271999999999935', 'uplLastPx': '0.0276000000000022', 'uplRatio': '0.0298881392435613', 'uplRatioLastPx': '0.0303276707030342', 'usdPx': '', 'vegaBS': '', 'vegaPA': ''}]
+2023-12-14 23:50:03,649 - INFO - Task get_position[5bbabccc-bf84-4527-98b0-89731d337823] succeeded in 4.33072765299994s: None
+2023-12-14 23:50:59,314 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:50:59,316 - INFO - Task get_position[031060c7-02d6-4f73-987d-4bffe13b1094] received
+2023-12-14 23:51:03,554 - WARNING - [{'adl': '1', 'availPos': '4', 'avgPx': '2275.15', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '', 'bePx': '2277.4262881440723', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702568263089', 'ccy': 'USDT', 'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.045503', 'fundingFee': '0', 'gammaBS': '', 'gammaPA': '', 'idxPx': '2275.3233', 'imr': '0.9103', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'interest': '', 'last': '2275.77', 'lever': '100', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '', 'margin': '', 'markPx': '2275.75', 'mgnMode': 'cross', 'mgnRatio': '321757.8412430113', 'mmr': '0.3641200000000001', 'notionalUsd': '91.0636811', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0', 'pos': '4', 'posCcy': '', 'posId': '651930173952069635', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '', 'quoteInterest': '', 'realizedPnl': '-0.045503', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '', 'thetaPA': '', 'tradeId': '186231235', 'uTime': '1702568263089', 'upl': '0.0239999999999964', 'uplLastPx': '0.0247999999999956', 'uplRatio': '0.0263718875678443', 'uplRatioLastPx': '0.027250950486768', 'usdPx': '', 'vegaBS': '', 'vegaPA': ''}]
+2023-12-14 23:51:03,560 - INFO - Task get_position[031060c7-02d6-4f73-987d-4bffe13b1094] succeeded in 4.241092944999991s: None
+2023-12-14 23:51:59,314 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:51:59,317 - INFO - Task get_position[ca48b2e4-58b0-4f16-b5f0-4e331ebbd458] received
+2023-12-14 23:52:03,458 - WARNING - [{'adl': '1', 'availPos': '4', 'avgPx': '2275.15', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '', 'bePx': '2277.4262881440723', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702568263089', 'ccy': 'USDT', 'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.045503', 'fundingFee': '0', 'gammaBS': '', 'gammaPA': '', 'idxPx': '2274.6233', 'imr': '0.909976', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'interest': '', 'last': '2275.13', 'lever': '100', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '', 'margin': '', 'markPx': '2274.94', 'mgnMode': 'cross', 'mgnRatio': '321872.3250761703', 'mmr': '0.3639904', 'notionalUsd': '91.03399904', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0', 'pos': '4', 'posCcy': '', 'posId': '651930173952069635', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '', 'quoteInterest': '', 'realizedPnl': '-0.045503', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '', 'thetaPA': '', 'tradeId': '186231235', 'uTime': '1702568263089', 'upl': '-0.0084000000000015', 'uplLastPx': '-0.0007999999999993', 'uplRatio': '-0.0092301606487544', 'uplRatioLastPx': '-0.0008790629189237', 'usdPx': '', 'vegaBS': '', 'vegaPA': ''}]
+2023-12-14 23:52:03,464 - INFO - Task get_position[ca48b2e4-58b0-4f16-b5f0-4e331ebbd458] succeeded in 4.144452671999943s: None
+2023-12-14 23:52:59,332 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:52:59,335 - INFO - Task get_position[417a714c-c195-42ae-86eb-a21496f41033] received
+2023-12-14 23:53:03,962 - WARNING - [{'adl': '1', 'availPos': '4', 'avgPx': '2275.15', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '', 'bePx': '2277.4262881440723', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702568263089', 'ccy': 'USDT', 'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.045503', 'fundingFee': '0', 'gammaBS': '', 'gammaPA': '', 'idxPx': '2274.5633', 'imr': '0.9099440000000001', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'interest': '', 'last': '2274.86', 'lever': '100', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '', 'margin': '', 'markPx': '2274.86', 'mgnMode': 'cross', 'mgnRatio': '321883.63654510834', 'mmr': '0.3639776000000001', 'notionalUsd': '91.027157984', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0', 'pos': '4', 'posCcy': '', 'posId': '651930173952069635', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '', 'quoteInterest': '', 'realizedPnl': '-0.045503', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '', 'thetaPA': '', 'tradeId': '186231235', 'uTime': '1702568263089', 'upl': '-0.0115999999999985', 'uplLastPx': '-0.0115999999999985', 'uplRatio': '-0.0127464123244603', 'uplRatioLastPx': '-0.0127464123244603', 'usdPx': '', 'vegaBS': '', 'vegaPA': ''}]
+2023-12-14 23:53:03,968 - INFO - Task get_position[417a714c-c195-42ae-86eb-a21496f41033] succeeded in 4.630097688999967s: None
+2023-12-14 23:53:59,332 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:53:59,334 - INFO - Task get_position[9e4370f5-33f3-4325-a058-d0f909af30a8] received
+2023-12-14 23:54:03,807 - WARNING - [{'adl': '1', 'availPos': '4', 'avgPx': '2275.15', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '', 'bePx': '2277.4262881440723', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702568263089', 'ccy': 'USDT', 'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.045503', 'fundingFee': '0', 'gammaBS': '', 'gammaPA': '', 'idxPx': '2275.1983', 'imr': '0.9103040000000001', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'interest': '', 'last': '2275.7', 'lever': '100', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '', 'margin': '', 'markPx': '2275.76', 'mgnMode': 'cross', 'mgnRatio': '321756.42837162316', 'mmr': '0.3641216', 'notionalUsd': '91.06226064000002', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0', 'pos': '4', 'posCcy': '', 'posId': '651930173952069635', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '', 'quoteInterest': '', 'realizedPnl': '-0.045503', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '', 'thetaPA': '', 'tradeId': '186231235', 'uTime': '1702568263089', 'upl': '0.0244000000000051', 'uplLastPx': '0.0219999999999891', 'uplRatio': '0.0268114190273172', 'uplRatioLastPx': '0.0241742302705239', 'usdPx': '', 'vegaBS': '', 'vegaPA': ''}]
+2023-12-14 23:54:03,814 - INFO - Task get_position[9e4370f5-33f3-4325-a058-d0f909af30a8] succeeded in 4.477638451000075s: None
+2023-12-14 23:54:59,332 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:54:59,335 - INFO - Task get_position[08c10694-f657-43a3-958e-c3c1fc9d37e4] received
+2023-12-14 23:55:04,303 - WARNING - [{'adl': '1', 'availPos': '4', 'avgPx': '2275.15', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '', 'bePx': '2277.4262881440723', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702568263089', 'ccy': 'USDT', 'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.045503', 'fundingFee': '0', 'gammaBS': '', 'gammaPA': '', 'idxPx': '2275.2849', 'imr': '0.910316', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'interest': '', 'last': '2275.76', 'lever': '100', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '', 'margin': '', 'markPx': '2275.79', 'mgnMode': 'cross', 'mgnRatio': '321752.1898319581', 'mmr': '0.3641264', 'notionalUsd': '91.065281692', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0', 'pos': '4', 'posCcy': '', 'posId': '651930173952069635', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '', 'quoteInterest': '', 'realizedPnl': '-0.045503', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '', 'thetaPA': '', 'tradeId': '186231235', 'uTime': '1702568263089', 'upl': '0.0255999999999949', 'uplLastPx': '0.0244000000000051', 'uplRatio': '0.0281300134057139', 'uplRatioLastPx': '0.0268114190273172', 'usdPx': '', 'vegaBS': '', 'vegaPA': ''}]
+2023-12-14 23:55:04,309 - INFO - Task get_position[08c10694-f657-43a3-958e-c3c1fc9d37e4] succeeded in 4.971581848000142s: None
+2023-12-14 23:55:59,332 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:55:59,335 - INFO - Task get_position[1a6b1f22-e13e-45bc-8329-8c841387370e] received
+2023-12-14 23:56:04,064 - WARNING - [{'adl': '1', 'availPos': '4', 'avgPx': '2275.15', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '', 'bePx': '2277.4262881440723', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702568263089', 'ccy': 'USDT', 'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.045503', 'fundingFee': '0', 'gammaBS': '', 'gammaPA': '', 'idxPx': '2275.4699', 'imr': '0.9103399999999999', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'interest': '', 'last': '2275.85', 'lever': '100', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '', 'margin': '', 'markPx': '2275.85', 'mgnMode': 'cross', 'mgnRatio': '321743.7130878595', 'mmr': '0.364136', 'notionalUsd': '91.06768258', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0', 'pos': '4', 'posCcy': '', 'posId': '651930173952069635', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '', 'quoteInterest': '', 'realizedPnl': '-0.045503', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '', 'thetaPA': '', 'tradeId': '186231235', 'uTime': '1702568263089', 'upl': '0.0279999999999927', 'uplLastPx': '0.0279999999999927', 'uplRatio': '0.030767202162485', 'uplRatioLastPx': '0.030767202162485', 'usdPx': '', 'vegaBS': '', 'vegaPA': ''}]
+2023-12-14 23:56:04,071 - INFO - Task get_position[1a6b1f22-e13e-45bc-8329-8c841387370e] succeeded in 4.734128011999928s: None
+2023-12-14 23:56:59,332 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:56:59,334 - INFO - Task get_position[0492b723-a82b-49b3-8b56-0ede36c67181] received
+2023-12-14 23:57:03,566 - WARNING - [{'adl': '1', 'availPos': '4', 'avgPx': '2275.15', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '', 'bePx': '2277.4262881440723', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702568263089', 'ccy': 'USDT', 'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.045503', 'fundingFee': '0', 'gammaBS': '', 'gammaPA': '', 'idxPx': '2276.7799', 'imr': '0.910824', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'interest': '', 'last': '2277.02', 'lever': '100', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '', 'margin': '', 'markPx': '2277.06', 'mgnMode': 'cross', 'mgnRatio': '321572.8607590024', 'mmr': '0.3643296', 'notionalUsd': '91.11610048799999', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0', 'pos': '4', 'posCcy': '', 'posId': '651930173952069635', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '', 'quoteInterest': '', 'realizedPnl': '-0.045503', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '', 'thetaPA': '', 'tradeId': '186231235', 'uTime': '1702568263089', 'upl': '0.0763999999999942', 'uplLastPx': '0.0747999999999956', 'uplRatio': '0.0839505087576686', 'uplRatioLastPx': '0.082192382919799', 'usdPx': '', 'vegaBS': '', 'vegaPA': ''}]
+2023-12-14 23:57:03,572 - INFO - Task get_position[0492b723-a82b-49b3-8b56-0ede36c67181] succeeded in 4.235743718999856s: None
+2023-12-14 23:57:59,332 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:57:59,334 - INFO - Task get_position[753c219e-0fda-487d-ad6b-ab7bb6287e5b] received
+2023-12-14 23:58:03,735 - WARNING - [{'adl': '1', 'availPos': '4', 'avgPx': '2275.15', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '', 'bePx': '2277.4262881440723', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702568263089', 'ccy': 'USDT', 'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.045503', 'fundingFee': '0', 'gammaBS': '', 'gammaPA': '', 'idxPx': '2275.5199', 'imr': '0.910336', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'interest': '', 'last': '2275.84', 'lever': '100', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '', 'margin': '', 'markPx': '2275.84', 'mgnMode': 'cross', 'mgnRatio': '321745.1258475037', 'mmr': '0.3641344000000001', 'notionalUsd': '91.067282432', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0', 'pos': '4', 'posCcy': '', 'posId': '651930173952069635', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '', 'quoteInterest': '', 'realizedPnl': '-0.045503', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '', 'thetaPA': '', 'tradeId': '186231235', 'uTime': '1702568263089', 'upl': '0.0276000000000022', 'uplLastPx': '0.0276000000000022', 'uplRatio': '0.0303276707030342', 'uplRatioLastPx': '0.0303276707030342', 'usdPx': '', 'vegaBS': '', 'vegaPA': ''}]
+2023-12-14 23:58:03,740 - INFO - Task get_position[753c219e-0fda-487d-ad6b-ab7bb6287e5b] succeeded in 4.40403365300017s: None
+2023-12-14 23:58:59,332 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-14 23:58:59,335 - INFO - Task get_position[9586b72f-5e41-484a-b964-f9d344e5ceaa] received
+2023-12-14 23:59:03,614 - WARNING - [{'adl': '1', 'availPos': '4', 'avgPx': '2275.15', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '', 'bePx': '2277.4262881440723', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702568263089', 'ccy': 'USDT', 'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.045503', 'fundingFee': '0', 'gammaBS': '', 'gammaPA': '', 'idxPx': '2275.8749', 'imr': '0.9105959999999998', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'interest': '', 'last': '2276.5', 'lever': '100', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '', 'margin': '', 'markPx': '2276.49', 'mgnMode': 'cross', 'mgnRatio': '321653.3222870417', 'mmr': '0.3642384', 'notionalUsd': '91.09238145599998', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0', 'pos': '4', 'posCcy': '', 'posId': '651930173952069635', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '', 'quoteInterest': '', 'realizedPnl': '-0.045503', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '', 'thetaPA': '', 'tradeId': '186231235', 'uTime': '1702568263089', 'upl': '0.0535999999999876', 'uplLastPx': '0.0539999999999964', 'uplRatio': '0.0588972155681988', 'uplRatioLastPx': '0.0593367470276718', 'usdPx': '', 'vegaBS': '', 'vegaPA': ''}]
+2023-12-14 23:59:03,621 - INFO - Task get_position[9586b72f-5e41-484a-b964-f9d344e5ceaa] succeeded in 4.2843126570001s: None
+2023-12-15 00:07:10,850 - INFO - beat: Starting...
+2023-12-15 00:07:10,888 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:07:15,055 - INFO - Connected to redis://127.0.0.1:6379/14
+2023-12-15 00:07:15,060 - INFO - mingle: searching for neighbors
+2023-12-15 00:07:16,073 - INFO - mingle: all alone
+2023-12-15 00:07:16,091 - INFO - celery@mac ready.
+2023-12-15 00:07:16,103 - INFO - Task get_position[17706396-fd13-424b-a802-9e496fc95140] received
+2023-12-15 00:07:16,123 - INFO - Task get_position[17706396-fd13-424b-a802-9e496fc95140] succeeded in 0.010395548999998283s: None
+2023-12-15 00:08:10,913 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:08:10,916 - INFO - Task get_position[0878fd3e-5bc5-426b-a85c-984667cef8b6] received
+2023-12-15 00:08:10,921 - INFO - Task get_position[0878fd3e-5bc5-426b-a85c-984667cef8b6] succeeded in 0.002288014000001226s: None
+2023-12-15 00:09:10,921 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:09:10,923 - INFO - Task get_position[7629fbb4-e267-4067-928d-9b6b95f0eb75] received
+2023-12-15 00:09:16,194 - INFO - Task get_position[7629fbb4-e267-4067-928d-9b6b95f0eb75] succeeded in 5.268845712000001s: None
+2023-12-15 00:10:10,921 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:10:10,923 - INFO - Task get_position[3a7a6326-521d-49e0-bcfd-706b4f4fab42] received
+2023-12-15 00:10:15,957 - INFO - Task get_position[3a7a6326-521d-49e0-bcfd-706b4f4fab42] succeeded in 5.032581799000013s: None
+2023-12-15 00:11:10,921 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:11:10,923 - INFO - Task get_position[9c0873c2-bdd0-45c4-8e72-257b62353738] received
+2023-12-15 00:11:15,987 - INFO - Task get_position[9c0873c2-bdd0-45c4-8e72-257b62353738] succeeded in 5.061459122999992s: None
+2023-12-15 00:12:10,921 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:12:10,924 - INFO - Task get_position[832a6e5e-00b0-48b1-b42c-5f0c3985d26a] received
+2023-12-15 00:12:16,547 - INFO - Task get_position[832a6e5e-00b0-48b1-b42c-5f0c3985d26a] succeeded in 5.621087993000003s: None
+2023-12-15 00:13:10,921 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:13:10,924 - INFO - Task get_position[b685e34c-861c-412f-af80-b18de9b958bc] received
+2023-12-15 00:13:15,964 - INFO - Task get_position[b685e34c-861c-412f-af80-b18de9b958bc] succeeded in 5.038070273999949s: None
+2023-12-15 00:14:10,921 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:14:10,924 - INFO - Task get_position[3fc251ba-b85a-4cd8-9b86-da86fb8b09fa] received
+2023-12-15 00:14:16,279 - INFO - Task get_position[3fc251ba-b85a-4cd8-9b86-da86fb8b09fa] succeeded in 5.353084439999975s: None
+2023-12-15 00:15:10,921 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:15:10,924 - INFO - Task get_position[099dab95-73e5-4e56-9922-3ad87b795e5e] received
+2023-12-15 00:15:16,470 - INFO - Task get_position[099dab95-73e5-4e56-9922-3ad87b795e5e] succeeded in 5.544438297999989s: None
+2023-12-15 00:16:10,922 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:16:10,924 - INFO - Task get_position[6bbfb5cf-3c27-4cce-8c46-daf91615c0a0] received
+2023-12-15 00:16:20,537 - INFO - Task get_position[6bbfb5cf-3c27-4cce-8c46-daf91615c0a0] succeeded in 9.61105902199995s: None
+2023-12-15 00:17:10,922 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:17:10,924 - INFO - Task get_position[eb63151b-9431-4275-82c2-f0be9491f8e1] received
+2023-12-15 00:17:23,397 - INFO - Task get_position[eb63151b-9431-4275-82c2-f0be9491f8e1] succeeded in 12.471581520999962s: None
+2023-12-15 00:18:10,922 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:18:10,924 - INFO - Task get_position[4c5e5f94-28fd-487d-91d6-079fdbdea92f] received
+2023-12-15 00:18:20,399 - INFO - Task get_position[4c5e5f94-28fd-487d-91d6-079fdbdea92f] succeeded in 9.473148697000056s: None
+2023-12-15 00:19:10,922 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:19:10,924 - INFO - Task get_position[74cd1443-28e3-409e-b182-3d617b1dd4a3] received
+2023-12-15 00:19:22,374 - INFO - Task get_position[74cd1443-28e3-409e-b182-3d617b1dd4a3] succeeded in 11.44815746300003s: None
+2023-12-15 00:49:10,535 - INFO - beat: Starting...
+2023-12-15 00:49:10,573 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:49:10,585 - INFO - Task get_position[dd86c0fd-88ef-462b-97ba-c1fa7bf9c117] received
+2023-12-15 00:49:15,032 - INFO - Task get_position[dd86c0fd-88ef-462b-97ba-c1fa7bf9c117] succeeded in 4.444696257000032s: None
+2023-12-15 00:50:10,571 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:50:10,573 - INFO - Task get_position[c8454c1c-0781-40fa-822c-f67af0cd61d4] received
+2023-12-15 00:50:10,578 - INFO - Task get_position[c8454c1c-0781-40fa-822c-f67af0cd61d4] succeeded in 0.0023881979996076552s: None
+2023-12-15 00:51:10,571 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:51:10,574 - INFO - Task get_position[b4b88946-0705-48b0-bd6a-7ef4f92d8df5] received
+2023-12-15 00:51:10,578 - INFO - Task get_position[b4b88946-0705-48b0-bd6a-7ef4f92d8df5] succeeded in 0.00217078199966636s: None
+2023-12-15 00:52:10,571 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:52:10,574 - INFO - Task get_position[18caa83e-0610-4211-9c43-4ac219ed28ae] received
+2023-12-15 00:52:10,579 - INFO - Task get_position[18caa83e-0610-4211-9c43-4ac219ed28ae] succeeded in 0.0025085430002036446s: None
+2023-12-15 00:53:10,571 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:53:10,574 - INFO - Task get_position[79cb057b-5bd4-429a-afd7-af4d632b569c] received
+2023-12-15 00:53:10,578 - INFO - Task get_position[79cb057b-5bd4-429a-afd7-af4d632b569c] succeeded in 0.002269348000027094s: None
+2023-12-15 00:54:10,571 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:54:10,574 - INFO - Task get_position[475fd133-e463-4fff-9279-57e87e0446bd] received
+2023-12-15 00:54:10,579 - INFO - Task get_position[475fd133-e463-4fff-9279-57e87e0446bd] succeeded in 0.0024512750001122185s: None
+2023-12-15 00:55:10,571 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:55:10,574 - INFO - Task get_position[3e5ed89a-f6a4-4bd6-b5fd-0fb560cbc496] received
+2023-12-15 00:55:10,578 - INFO - Task get_position[3e5ed89a-f6a4-4bd6-b5fd-0fb560cbc496] succeeded in 0.00215277499955846s: None
+2023-12-15 00:56:10,572 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:56:10,574 - INFO - Task get_position[4fb66af6-d406-4c0b-a4d8-8da586e7ee91] received
+2023-12-15 00:56:19,445 - INFO - Task get_position[4fb66af6-d406-4c0b-a4d8-8da586e7ee91] succeeded in 8.868336242000169s: None
+2023-12-15 00:57:10,572 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:57:10,574 - INFO - Task get_position[583c34d8-239f-4416-b517-3971c3d3102b] received
+2023-12-15 00:57:14,712 - INFO - Task get_position[583c34d8-239f-4416-b517-3971c3d3102b] succeeded in 4.135212731000138s: None
+2023-12-15 00:58:10,572 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:58:10,575 - INFO - Task get_position[01b6facc-a620-4a9d-98af-e232b62427a5] received
+2023-12-15 00:58:19,628 - INFO - Task get_position[01b6facc-a620-4a9d-98af-e232b62427a5] succeeded in 9.050209276999794s: None
+2023-12-15 00:58:50,479 - INFO - beat: Starting...
+2023-12-15 00:59:10,575 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 00:59:10,584 - INFO - Task get_position[94b92cdf-2ccb-4d5e-bdc3-b2a5d12dc80d] received
+2023-12-15 00:59:19,306 - INFO - Task get_position[94b92cdf-2ccb-4d5e-bdc3-b2a5d12dc80d] succeeded in 8.7198743189997s: None
+2023-12-15 01:00:10,572 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:00:10,574 - INFO - Task get_position[2d1e6723-f80d-4086-8c8d-933db9f24e5d] received
+2023-12-15 01:00:10,577 - INFO - Task get_position[2d1e6723-f80d-4086-8c8d-933db9f24e5d] succeeded in 0.0019240809997427277s: None
+2023-12-15 01:01:10,572 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:01:10,576 - INFO - Task get_position[9282de9e-ffce-48e2-bf73-c5a8e7c62b12] received
+2023-12-15 01:01:10,581 - INFO - Task get_position[9282de9e-ffce-48e2-bf73-c5a8e7c62b12] succeeded in 0.0024250629999187368s: None
+2023-12-15 01:02:10,572 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:02:10,575 - INFO - Task get_position[71002892-861e-4cc3-b018-d88616580106] received
+2023-12-15 01:02:10,581 - INFO - Task get_position[71002892-861e-4cc3-b018-d88616580106] succeeded in 0.0025610769998820615s: None
+2023-12-15 01:03:10,572 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:03:10,575 - INFO - Task get_position[cf923c31-5a73-4dab-857a-2a2dbdffedc8] received
+2023-12-15 01:03:10,580 - INFO - Task get_position[cf923c31-5a73-4dab-857a-2a2dbdffedc8] succeeded in 0.002426251999622764s: None
+2023-12-15 01:04:10,572 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:04:10,575 - INFO - Task get_position[d08770ec-1333-4e2f-bc46-4d39e822b715] received
+2023-12-15 01:04:10,580 - INFO - Task get_position[d08770ec-1333-4e2f-bc46-4d39e822b715] succeeded in 0.0026210890000584186s: None
+2023-12-15 01:05:10,573 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:05:10,576 - INFO - Task get_position[5d3a56d5-c387-4d5a-9782-2f3eba61f40f] received
+2023-12-15 01:05:10,581 - INFO - Task get_position[5d3a56d5-c387-4d5a-9782-2f3eba61f40f] succeeded in 0.0024593410003035387s: None
+2023-12-15 01:06:10,573 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:06:10,575 - INFO - Task get_position[a1ac2978-c95b-4400-836c-66552b233272] received
+2023-12-15 01:06:10,580 - INFO - Task get_position[a1ac2978-c95b-4400-836c-66552b233272] succeeded in 0.0023893190000308095s: None
+2023-12-15 01:07:10,573 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:07:10,574 - INFO - Task get_position[b45167a8-1e2e-4478-a3f6-b8e6767a630c] received
+2023-12-15 01:07:10,578 - INFO - Task get_position[b45167a8-1e2e-4478-a3f6-b8e6767a630c] succeeded in 0.001981477999834169s: None
+2023-12-15 01:08:10,573 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:08:10,575 - INFO - Task get_position[d98f160a-607d-4e9c-a781-63fd46298c7f] received
+2023-12-15 01:08:10,579 - INFO - Task get_position[d98f160a-607d-4e9c-a781-63fd46298c7f] succeeded in 0.002680016999875079s: None
+2023-12-15 01:09:10,655 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:09:10,659 - INFO - Task get_position[cd755e5c-a718-41a4-822a-16e283adab1a] received
+2023-12-15 01:09:10,664 - INFO - Task get_position[cd755e5c-a718-41a4-822a-16e283adab1a] succeeded in 0.002549349000219081s: None
+2023-12-15 01:10:10,655 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:10:10,659 - INFO - Task get_position[9b367fa4-c19a-47c4-a30a-93ca1bd4095c] received
+2023-12-15 01:10:10,663 - INFO - Task get_position[9b367fa4-c19a-47c4-a30a-93ca1bd4095c] succeeded in 0.0024602050002613396s: None
+2023-12-15 01:11:10,657 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:11:10,660 - INFO - Task get_position[166a9b93-6d38-4684-929b-c9f11b68f142] received
+2023-12-15 01:11:10,665 - INFO - Task get_position[166a9b93-6d38-4684-929b-c9f11b68f142] succeeded in 0.0025661899999249727s: None
+2023-12-15 01:12:10,657 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:12:10,659 - INFO - Task get_position[ff748587-6203-4044-ab22-96d39f18f65c] received
+2023-12-15 01:12:10,663 - INFO - Task get_position[ff748587-6203-4044-ab22-96d39f18f65c] succeeded in 0.0021966240001347614s: None
+2023-12-15 01:13:10,657 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:13:10,659 - INFO - Task get_position[9441a4a0-6643-4966-a3fb-073cace92f78] received
+2023-12-15 01:13:10,664 - INFO - Task get_position[9441a4a0-6643-4966-a3fb-073cace92f78] succeeded in 0.002518639999834704s: None
+2023-12-15 01:14:10,657 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:14:10,659 - INFO - Task get_position[ac394348-4204-4ca2-ba7a-fe31a8fed549] received
+2023-12-15 01:14:10,664 - INFO - Task get_position[ac394348-4204-4ca2-ba7a-fe31a8fed549] succeeded in 0.002359533000344527s: None
+2023-12-15 01:15:10,659 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:15:10,662 - INFO - Task get_position[3a74a4ac-2808-426a-91e7-ab9d55fd8b00] received
+2023-12-15 01:15:10,667 - INFO - Task get_position[3a74a4ac-2808-426a-91e7-ab9d55fd8b00] succeeded in 0.002429817000120238s: None
+2023-12-15 01:16:10,659 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:16:10,662 - INFO - Task get_position[e0840530-de5f-4f2c-a223-b57f834dda64] received
+2023-12-15 01:16:10,666 - INFO - Task get_position[e0840530-de5f-4f2c-a223-b57f834dda64] succeeded in 0.0023353139995379024s: None
+2023-12-15 01:17:10,659 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:17:10,661 - INFO - Task get_position[a6647d74-b32b-4667-b55a-06b668c7e485] received
+2023-12-15 01:17:10,665 - INFO - Task get_position[a6647d74-b32b-4667-b55a-06b668c7e485] succeeded in 0.001890760000605951s: None
+2023-12-15 01:18:10,659 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:18:10,662 - INFO - Task get_position[a0d86844-01d5-426b-9e2a-aca11901f8ef] received
+2023-12-15 01:18:10,667 - INFO - Task get_position[a0d86844-01d5-426b-9e2a-aca11901f8ef] succeeded in 0.002470344000357727s: None
+2023-12-15 01:19:10,659 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:19:10,662 - INFO - Task get_position[12adf7f2-0db0-418a-b97b-723f1b2d40a6] received
+2023-12-15 01:19:10,666 - INFO - Task get_position[12adf7f2-0db0-418a-b97b-723f1b2d40a6] succeeded in 0.002284245000737428s: None
+2023-12-15 01:20:10,661 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:20:10,665 - INFO - Task get_position[df8101eb-0860-4225-b4c2-6f1625547ab2] received
+2023-12-15 01:20:16,392 - INFO - Task get_position[df8101eb-0860-4225-b4c2-6f1625547ab2] succeeded in 5.724387063999529s: None
+2023-12-15 01:21:10,661 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:21:10,665 - INFO - Task get_position[70e8ad59-e6af-404b-aec0-fc8ac8a9659a] received
+2023-12-15 01:21:19,304 - INFO - Task get_position[70e8ad59-e6af-404b-aec0-fc8ac8a9659a] succeeded in 8.637229207999553s: None
+2023-12-15 01:22:10,661 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:22:10,664 - INFO - Task get_position[e7322feb-a84b-4744-a909-d26679cac101] received
+2023-12-15 01:22:19,135 - INFO - Task get_position[e7322feb-a84b-4744-a909-d26679cac101] succeeded in 8.467630928999824s: None
+2023-12-15 01:23:10,662 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:23:10,666 - INFO - Task get_position[8f31044a-fca7-4ad2-8c02-5b2cd3927958] received
+2023-12-15 01:23:14,801 - INFO - Task get_position[8f31044a-fca7-4ad2-8c02-5b2cd3927958] succeeded in 4.13300309799979s: None
+2023-12-15 01:24:10,682 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:24:10,686 - INFO - Task get_position[c82760fa-229a-4ef5-873f-9bf8bf812d6f] received
+2023-12-15 01:24:10,691 - INFO - Task get_position[c82760fa-229a-4ef5-873f-9bf8bf812d6f] succeeded in 0.0024175790003937436s: None
+2023-12-15 01:25:10,686 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:25:10,688 - INFO - Task get_position[1e71a28f-a40d-463b-ae01-1230dcbd09c1] received
+2023-12-15 01:25:10,693 - INFO - Task get_position[1e71a28f-a40d-463b-ae01-1230dcbd09c1] succeeded in 0.002612863000649668s: None
+2023-12-15 01:26:10,687 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-15 01:26:10,690 - INFO - Task get_position[dd12cc78-095a-474f-8e1e-3a665d9cdd50] received
+2023-12-15 01:26:10,695 - INFO - Task get_position[dd12cc78-095a-474f-8e1e-3a665d9cdd50] succeeded in 0.0024992400003611692s: None

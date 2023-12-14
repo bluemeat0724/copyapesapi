@@ -1,14 +1,11 @@
 from crawler.myokx import app
-from crawler import settingsdev as settings
 import threading
-from crawler.utils.db import Connect
 from crawler.utils.get_api import api
-import json
-import redis
 import time
 from functools import wraps
 from loguru import logger
 import os
+from crawler.account.okx_orderinfo import OkxOrderInfo
 
 
 logger.remove()  # 移除所有默认的handler
@@ -183,6 +180,9 @@ class Trader(threading.Thread):
             # 市价平仓
             obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT='all', tdMode='cross')
             thread_logger.success(f'进行平仓操作，品种:{self.instId}，方向：{self.posSide}')
+            # 更新持仓数据
+            OkxOrderInfo(self.user_id, self.task_id).get_position()
+            OkxOrderInfo(self.user_id, self.task_id).get_position_history()
 
         elif self.order_type == 'change':
             new_number = int(self.new_availSubPos)
@@ -214,6 +214,25 @@ class Trader(threading.Thread):
 
     # 手动结束跟单，打印日志
     def stop(self):
-        self.thread_logger.warning(f'手动结束跟单，未结束的交易将自动平仓。')
+        # 结束全部正在进行中的交易
+        data = self.obj.account.get_positions().get('data')
+        if not data:
+            # 打印日志
+            self.thread_logger.warning(f'手动结束跟单，任务：{self.task_id}')
+            return
+        for item in data:
+            instId = item.get('instId')
+            posSide = item.get('posSide')
+            # 市价平仓
+            self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode='cross')
+            self.thread_logger.warning(f'手动结束跟单，{instId}已经按市价进行平仓。')
+
+            # 跟新数据库
+            OkxOrderInfo(self.user_id, self.task_id).get_position()
+            # 限速：1次/10s
+            OkxOrderInfo(self.user_id, self.task_id).get_position_history()
+
+        self.thread_logger.warning(f'手动结束跟单，任务：{self.task_id}')
+
 
 

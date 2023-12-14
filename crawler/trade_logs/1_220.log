@@ -1,0 +1,3 @@
+2023-12-15 00:56:16 | INFO | 跟单猿交易系统启动，跟随交易员：EEA569A04A98D4E9
+2023-12-15 00:56:42 | SUCCESS | 进行加仓操作，品种：BTC-USDT-SWAP，加仓量：22.0USDT，方向：short
+2023-12-15 00:57:20 | SUCCESS | 进行平仓操作，品种:BTC-USDT-SWAP，方向：short

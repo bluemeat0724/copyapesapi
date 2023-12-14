@@ -1,6 +1,7 @@
 from crawler.utils.db import Connect
 from crawler.utils.get_api import api
 from crawler.myokx import app
+import time
 
 
 class OkxOrderInfo(object):
@@ -43,6 +44,8 @@ class OkxOrderInfo(object):
     # 获取当前持仓，同时往数据库写入或更新数据
     def get_position(self):
         """
+        限速：10次/2s
+
         通过celery定期执行
         :return:
         """
@@ -52,7 +55,10 @@ class OkxOrderInfo(object):
             return
         obj.account.api.flag = self.flag
         data = obj.account.get_positions().get('data')
+        # print(data)
+        # 如果没有数据，说明已经全部平仓，跟新所有交易数据
         if not data:
+            self.get_position_history()
             return
         for item in data:
             instId = item.get('instId')
@@ -63,7 +69,7 @@ class OkxOrderInfo(object):
             lever = item.get('lever')
             mgnMode = item.get('mgnMode')
             posSide = item.get('posSide')
-            imr = item.get('imr')
+            imr = item.get('imr', 0)
             # print(instId, cTime, openAvgPx, pnl, pnlRatio, lever, mgnMode, posSide)
 
             # 查询数据库，看是否存在具有相同 instId 和 cTime 的记录
@@ -108,9 +114,10 @@ class OkxOrderInfo(object):
                 self.update_pnl()
 
     # 当发生平仓交易时，检查交易所账户历史数据，并更新数据库
-    # TODO 结束跟单任务，需要自动平仓所有正在进行中的交易
     def get_position_history(self):
         """
+        限速：1次/10s
+
         触发时机：跟单时发生平仓交易、以及结束跟单任务时
         业务逻辑：1.检索数据库，找到当前跟单任务下正在进行中的交易（status=1），提取instId和cTime
                 2.获取交易所的历史数据
@@ -124,8 +131,17 @@ class OkxOrderInfo(object):
         except:
             return
         obj.account.api.flag = self.flag
-        # 查看前5条交易记录
-        history_data = obj.account.get_positions_history(limit='15').get('data')
+
+        max_retries = 3  # 设置最大重试次数
+        retries = 0
+        while retries < max_retries:
+            try:
+                # 查看前5条交易记录
+                history_data = obj.account.get_positions_history(limit='5').get('data')
+            except:
+                retries += 1
+                time.sleep(10)
+
         if not history_data:
             return
 
@@ -171,7 +187,7 @@ class OkxOrderInfo(object):
 
 
 if __name__ == '__main__':
-    obj = OkxOrderInfo(1, 208)
-    obj.get_position_history()
+    obj = OkxOrderInfo(1, 219)
+    obj.get_position()
 
 
