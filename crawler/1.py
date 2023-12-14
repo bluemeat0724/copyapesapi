@@ -19,8 +19,8 @@ obj.trade.api.flag = '1'
 # 当前持仓
 # a = obj.account.get_positions()
 # 历史持仓
-# a = obj.account.get_positions_history()
-# print(a)
+a = obj.account.get_positions_history()
+print(a)
 
 """
 实盘信息
@@ -93,6 +93,8 @@ obj.trade.api.flag = '1'
 
 'posSide': 'long',   当前订单持仓方向
 'direction': 'long'，  历史订单持仓方向
+
+imr 持仓量（当前）  openMaxPos最大持仓量（历史）
 
 """
 

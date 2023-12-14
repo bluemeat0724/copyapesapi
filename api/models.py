@@ -124,6 +124,7 @@ class OrderInfo(models.Model):
     lever = models.CharField(verbose_name="杠杆", max_length=6, default="0")
     mgnMode = models.CharField(verbose_name="保证金模式", max_length=10, default="cross")
     posSide = models.CharField(verbose_name="持仓方向", max_length=10)
+    imr = models.FloatField(verbose_name="持仓量", default=0)
 
     class Meta:
         indexes = [

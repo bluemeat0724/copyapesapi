@@ -31,10 +31,11 @@ def get_redis_task():
         return None
 
 
-
 def get_task_info_by_id(tid):
     with Connect() as conn:
-        row_dict = conn.fetch_one("select * from api_taskinfo where id=%(id)s", id=tid)
+        row_dict = conn.fetch_one(
+            "select id, trader_platform, uniqueName, follow_type, sums, lever_set, first_order_set, api_id, user_id,status, create_datetime, deleted from api_taskinfo where id=%(id)s",
+            id=tid)
 
     if not row_dict:
         return
@@ -45,7 +46,7 @@ def get_task_info_by_id(tid):
 def run():
     while 1:
         try:
-        # 去redis里获取跟单任务id
+            # 去redis里获取跟单任务id
             tid = get_redis_task()
             if not tid:
                 continue

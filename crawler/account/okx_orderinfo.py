@@ -52,6 +52,8 @@ class OkxOrderInfo(object):
             return
         obj.account.api.flag = self.flag
         data = obj.account.get_positions().get('data')
+        if not data:
+            return
         for item in data:
             instId = item.get('instId')
             cTime = item.get('cTime')
@@ -61,6 +63,7 @@ class OkxOrderInfo(object):
             lever = item.get('lever')
             mgnMode = item.get('mgnMode')
             posSide = item.get('posSide')
+            imr = item.get('imr')
             # print(instId, cTime, openAvgPx, pnl, pnlRatio, lever, mgnMode, posSide)
 
             # 查询数据库，看是否存在具有相同 instId 和 cTime 的记录
@@ -77,7 +80,8 @@ class OkxOrderInfo(object):
                 'pnlRatio': pnlRatio,
                 'lever': lever,
                 'mgnMode': mgnMode,
-                'posSide': posSide
+                'posSide': posSide,
+                'imr': imr
             }
 
             if record_exists:
@@ -86,6 +90,7 @@ class OkxOrderInfo(object):
                                 UPDATE api_orderinfo
                                 SET
                                     pnl = %(pnl)s,
+                                    imr = %(imr)s,
                                     pnlRatio = %(pnlRatio)s
                                 WHERE instId = %(instId)s AND cTime = %(cTime)s;
                             """
@@ -95,8 +100,8 @@ class OkxOrderInfo(object):
             else:
                 # 如果不存在相同记录，执行插入操作
                 insert_sql = """
-                                INSERT INTO api_orderinfo (user_id, task_id, api_id, instId, cTime, openAvgPx, pnl, pnlRatio, lever, mgnMode, posSide, status)
-                                VALUES (%(user_id)s, %(task_id)s, %(api_id)s, %(instId)s, %(cTime)s, %(openAvgPx)s, %(pnl)s, %(pnlRatio)s, %(lever)s, %(mgnMode)s, %(posSide)s,1)
+                                INSERT INTO api_orderinfo (user_id, task_id, api_id, instId, cTime, openAvgPx, pnl, imr, pnlRatio, lever, mgnMode, posSide, status)
+                                VALUES (%(user_id)s, %(task_id)s, %(api_id)s, %(instId)s, %(cTime)s, %(openAvgPx)s, %(pnl)s, %(imr)s, %(pnlRatio)s, %(lever)s, %(mgnMode)s, %(posSide)s,1)
                             """
                 with Connect() as db:
                     db.exec(insert_sql, **params)
@@ -120,7 +125,9 @@ class OkxOrderInfo(object):
             return
         obj.account.api.flag = self.flag
         # 查看前5条交易记录
-        history_data = obj.account.get_positions_history(limit='5').get('data')
+        history_data = obj.account.get_positions_history(limit='15').get('data')
+        if not history_data:
+            return
 
         # 将 history_data 转换为字典，以便快速检查 instId 和 cTime 是否匹配
         history_data_dict = {(item['instId'], int(item['cTime'])): item for item in history_data}
@@ -142,6 +149,7 @@ class OkxOrderInfo(object):
                 'pnl': item.get('pnl'),
                 'pnlRatio': item.get('pnlRatio'),
                 'closeAvgPx': item.get('closeAvgPx'),
+                'imr': item.get('openMaxPos'),
                 'status': 2
             }
             update_sql = """
@@ -164,6 +172,6 @@ class OkxOrderInfo(object):
 
 if __name__ == '__main__':
     obj = OkxOrderInfo(1, 208)
-    obj.get_position()
+    obj.get_position_history()
 
 

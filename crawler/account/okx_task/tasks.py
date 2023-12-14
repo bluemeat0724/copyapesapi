@@ -1,3 +1,4 @@
+from concurrent.futures import ThreadPoolExecutor
 from celery import shared_task
 from crawler.account.okx_orderinfo import OkxOrderInfo
 from crawler.utils.db import Connect
@@ -16,17 +17,23 @@ def get_tasks():
         return result
 
 
+def process_task(task):
+    user_id = task.get('user_id')
+    task_id = task.get('id')
+
+    order_info = OkxOrderInfo(user_id, task_id)
+    order_info.get_position()
+
+
 @shared_task(name='get_position')
 def perform_get_position():
     result = get_tasks()
     if not result:
         return
-    for i in result:
-        user_id = i.get('user_id')
-        task_id = i.get('id')
 
-        order_info = OkxOrderInfo(user_id, task_id)
-        order_info.get_position()
+    with ThreadPoolExecutor() as executor:
+        executor.map(process_task, result)
+
 
 
 if __name__ == '__main__':
