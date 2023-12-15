@@ -182,7 +182,7 @@ class Trader(threading.Thread):
             thread_logger.success(f'进行平仓操作，品种:{self.instId}，方向：{self.posSide}')
             # 更新持仓数据
             OkxOrderInfo(self.user_id, self.task_id).get_position()
-            OkxOrderInfo(self.user_id, self.task_id).get_position_history()
+            # OkxOrderInfo(self.user_id, self.task_id).get_position_history()
 
         elif self.order_type == 'change':
             new_number = int(self.new_availSubPos)
@@ -210,7 +210,7 @@ class Trader(threading.Thread):
                     return
                 obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT=quantityCT, tdMode='cross')
                 percentage = "{:.2f}%".format((1 - ratio)*100)
-                thread_logger.success(f'进行减仓操作，品种：{self.instId}，减仓量：{quantityCT}USDT，减仓占比：{percentage}')
+                thread_logger.success(f'进行减仓操作，品种：{self.instId}，减仓占比：{percentage}')
 
     # 手动结束跟单，打印日志
     def stop(self):
@@ -227,10 +227,8 @@ class Trader(threading.Thread):
             self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode='cross')
             self.thread_logger.warning(f'手动结束跟单，{instId}已经按市价进行平仓。')
 
-            # 跟新数据库
-            OkxOrderInfo(self.user_id, self.task_id).get_position()
-            # 限速：1次/10s
-            OkxOrderInfo(self.user_id, self.task_id).get_position_history()
+        # 跟新数据库
+        OkxOrderInfo(self.user_id, self.task_id).get_position()
 
         self.thread_logger.warning(f'手动结束跟单，任务：{self.task_id}')
 

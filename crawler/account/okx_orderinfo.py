@@ -137,7 +137,7 @@ class OkxOrderInfo(object):
         while retries < max_retries:
             try:
                 # 查看前5条交易记录
-                history_data = obj.account.get_positions_history(limit='5').get('data')
+                history_data = obj.account.get_positions_history(limit='10').get('data')
             except:
                 retries += 1
                 time.sleep(10)
@@ -162,10 +162,10 @@ class OkxOrderInfo(object):
                 'instId': item.get('instId'),
                 'cTime': int(item.get('cTime')),
                 'uTime': int(item.get('uTime')),
-                'pnl': item.get('pnl'),
+                'pnl': item.get('realizedPnl'),
                 'pnlRatio': item.get('pnlRatio'),
                 'closeAvgPx': item.get('closeAvgPx'),
-                'imr': item.get('openMaxPos'),
+                'imr': float(item.get('realizedPnl'))/float(item.get('pnlRatio')),
                 'status': 2
             }
             update_sql = """
@@ -175,6 +175,7 @@ class OkxOrderInfo(object):
                                 pnl = %(pnl)s,
                                 pnlRatio = %(pnlRatio)s,
                                 closeAvgPx = %(closeAvgPx)s,
+                                imr = %(imr)s,
                                 status = %(status)s
                             WHERE instId = %(instId)s AND cTime = %(cTime)s;
                         """
@@ -187,7 +188,7 @@ class OkxOrderInfo(object):
 
 
 if __name__ == '__main__':
-    obj = OkxOrderInfo(1, 219)
+    obj = OkxOrderInfo(1, 224)
     obj.get_position()
 
 
