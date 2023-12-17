@@ -59,8 +59,8 @@ class RetryNetworkOperations:
 class Trader(threading.Thread):
     def __init__(self, task_id, order_type, trader_platform, uniqueName, follow_type, sums, lever_set, first_order_set,
                  api_id,
-                 user_id, instId, mgnMode, posSide, lever, openTime=None, openAvgPx=None, availSubPos=None,
-                 old_availSubPos=None, new_availSubPos=None):
+                 user_id, instId, mgnMode, posSide, lever, openTime=None, openAvgPx=None, margin=None,
+                 old_margin=None, new_margin=None):
         super(Trader, self).__init__()
         self.task_id = task_id
         self.order_type = order_type
@@ -72,9 +72,9 @@ class Trader(threading.Thread):
         self.first_order_set = first_order_set
         self.api_id = api_id
         self.user_id = user_id
-        self.availSubPos = availSubPos
-        self.old_availSubPos = old_availSubPos
-        self.new_availSubPos = new_availSubPos
+        self.margin = margin
+        self.old_margin = old_margin
+        self.new_margin = new_margin
         self.instId = instId
         self.mgnMode = mgnMode
         self.posSide = posSide
@@ -139,9 +139,9 @@ class Trader(threading.Thread):
         self.first_order_set = new_data.get('first_order_set')
         self.api_id = new_data.get('api_id')
         self.user_id = new_data.get('user_id')
-        self.availSubPos = new_data.get('availSubPos')
-        self.old_availSubPos = new_data.get('old_availSubPos')
-        self.new_availSubPos = new_data.get('new_availSubPos')
+        self.margin = new_data.get('margin')
+        self.old_margin = new_data.get('old_margin')
+        self.new_margin = new_data.get('new_margin')
         self.instId = new_data.get('instId')
         self.mgnMode = new_data.get('mgnMode')
         self.posSide = new_data.get('posSide')
@@ -159,7 +159,7 @@ class Trader(threading.Thread):
         if self.order_type == 'open':
             if self.posSide == 'net':
                 # 解析订单方向
-                number = int(self.availSubPos)
+                number = int(self.margin)
                 if number > 0:
                     self.posSide = 'long'
                 elif number < 0:
@@ -172,7 +172,7 @@ class Trader(threading.Thread):
         elif self.order_type == 'close':
             if self.posSide == 'net':
                 # 解析订单方向
-                number = int(self.availSubPos)
+                number = int(self.margin)
                 if number > 0:
                     self.posSide = 'long'
                 elif number < 0:
@@ -185,8 +185,8 @@ class Trader(threading.Thread):
             # OkxOrderInfo(self.user_id, self.task_id).get_position_history()
 
         elif self.order_type == 'change':
-            new_number = int(self.new_availSubPos)
-            old_number = int(self.old_availSubPos)
+            new_number = int(self.new_margin)
+            old_number = int(self.old_margin)
             ratio = new_number / old_number  # 大于1是加仓，小于1是减仓
             if self.posSide == 'net':
                 # 解析订单方向
@@ -231,6 +231,7 @@ class Trader(threading.Thread):
         OkxOrderInfo(self.user_id, self.task_id).get_position()
 
         self.thread_logger.warning(f'手动结束跟单，任务：{self.task_id}')
+
 
 
 

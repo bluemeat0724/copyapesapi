@@ -88,7 +88,7 @@ class Spider(threading.Thread):
             return summary_list_new
         for data in data_list:
             data_clear = {}
-            data_clear['availSubPos'] = data.get('availSubPos')
+            data_clear['margin'] = data.get('margin')
             # data_clear['notionalUsd'] = data.get('notionalUsd')
             data_clear['instId'] = data.get('instId')
             data_clear['mgnMode'] = data.get('mgnMode')
@@ -118,7 +118,7 @@ class Spider(threading.Thread):
 
             for data in data_list:
                 data_clear = {}
-                data_clear['availSubPos'] = data.get('availSubPos')
+                data_clear['margin'] = data.get('margin')
                 # data_clear['notionalUsd'] = data.get('notionalUsd')
                 data_clear['instId'] = data.get('instId')
                 data_clear['mgnMode'] = data.get('mgnMode')
@@ -188,11 +188,11 @@ class Spider(threading.Thread):
         # 查找值变化的数据
         changed_items = []
         for old_item, new_item in zip(old_list, new_list):
-            if old_item["instId"] == new_item["instId"] and old_item['availSubPos'] != new_item['availSubPos']:
+            if old_item["instId"] == new_item["instId"] and old_item['margin'] != new_item['margin']:
                 change = {'order_type': 'change',
                           'instId': old_item['instId'],
-                          'old_availSubPos': old_item['availSubPos'],
-                          'new_availSubPos': new_item['availSubPos'],
+                          'old_margin': old_item['margin'],
+                          'new_margin': new_item['margin'],
                           'mgnMode': old_item['mgnMode'],
                           'posSide': old_item['posSide'],
                           'lever': old_item['lever'],
@@ -208,7 +208,7 @@ class Spider(threading.Thread):
                           }
                 changed_items.append(change)
                 thread_logger.success(
-                    f"交易员{self.uniqueName}进行了调仓操作，品种：{old_item['instId']}，原仓位：{old_item['availSubPos']}，现仓位：{new_item['availSubPos']}")
+                    f"交易员{self.uniqueName}进行了调仓操作，品种：{old_item['instId']}，原仓位：{old_item['margin']}，现仓位：{new_item['margin']}")
                 # 写入Redis队列
                 conn = redis.Redis(**settings.REDIS_PARAMS)
                 conn.lpush(settings.TRADE_TASK_NAME, json.dumps(change))

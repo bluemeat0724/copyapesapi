@@ -64,16 +64,16 @@ class AccountSWAP():
         if not ccy:
             ccy = instId.split('-')[0]
         result = self.api.get_balance(ccy=ccy)
-        if result['code'] != '0':
-            return result
-        result['data'] = result['data'][0]
-        if len(result['data']['details']) == 0:
-            result['data']['details'] = {}
-        elif len(result['data']['details']) == 1:
-            result['data']['details'] = result['data']['details'][0]
-        else:
-            msg = 'details got multi data,use get_balances instead.'
-            raise exception.UnexpectedException(msg)
+        # if result['code'] != '0':
+        #     return result
+        # result['data'] = result['data'][0]
+        # if len(result['data']['details']) == 0:
+        #     result['data']['details'] = {}
+        # elif len(result['data']['details']) == 1:
+        #     result['data']['details'] = result['data']['details'][0]
+        # else:
+        #     msg = 'details got multi data,use get_balances instead.'
+        #     raise exception.UnexpectedException(msg)
         return result
 
     # 设置持仓模式

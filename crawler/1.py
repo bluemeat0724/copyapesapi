@@ -17,12 +17,14 @@ obj.trade.api.flag = '1'
 #                                   lever=20))
 # obj.trade.open_market(instId='ETH-USDT-SWAP', posSide='long', openMoney=1000,
 #                                       tdMode='cross', lever=100)
-obj.trade.close_market(instId='ETH-USDT-SWAP', posSide='long', quantityCT=220, tdMode='cross')
+# obj.trade.close_market(instId='ETH-USDT-SWAP', posSide='long', quantityCT=220, tdMode='cross')
 # 当前持仓
 # a = obj.account.get_positions()
 # 历史持仓
 # a = obj.account.get_positions_history(limit=2)
-# print(a)
+# 账户信息
+a = obj.account.get_balance(ccy='BTC,ETH,USDT') # 限速：10次/2s
+print(a)
 
 """
 实盘信息

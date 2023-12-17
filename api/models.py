@@ -130,3 +130,32 @@ class OrderInfo(models.Model):
         indexes = [
             models.Index(fields=['user', 'task'], name='idx_user_task'),
         ]
+
+class UserBalance(models.Model):
+    """用户API资产"""
+    user = models.ForeignKey(verbose_name="用户", to="UserInfo", on_delete=models.CASCADE, db_index=True)
+    api = models.ForeignKey(verbose_name="api", to="ApiInfo", on_delete=models.CASCADE, db_index=True)
+    flag = models.ForeignKey(verbose_name="API类型", to="ApiInfo", on_delete=models.CASCADE, related_name='api_flag')
+    usdt = models.FloatField(verbose_name="可用余额", default=0)
+    btc = models.FloatField(verbose_name="结余额", default=0)
+    eth = models.FloatField(verbose_name="结余额", default=0)
+    pnl = models.FloatField(verbose_name="累计收益", default=0)
+
+
+class QuotaInfo(models.Model):
+    """剩余可兑盈利额度"""
+    user = models.ForeignKey(verbose_name="用户", to="UserInfo", on_delete=models.CASCADE, db_index=True)
+    pnl = models.FloatField(verbose_name="累计收益", default=0)
+    quota = models.FloatField(verbose_name="可用额度", default=0)
+
+
+class RedeemCodes(models.Model):
+    """兑换码"""
+    user = models.ForeignKey(verbose_name="用户", to="UserInfo", on_delete=models.CASCADE, db_index=True)
+    code = models.CharField(verbose_name="兑换码", max_length=64)
+    status_choice = (
+        (1, "未使用"),
+        (2, "已使用"),
+    )
+    status = models.IntegerField(verbose_name="可用状态", choices=status_choice, default=1)
+    value = models.FloatField(verbose_name="兑换金额", default=0)

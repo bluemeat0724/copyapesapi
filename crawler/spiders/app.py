@@ -73,9 +73,6 @@ class Spider(threading.Thread):
                     print(f"任务{self.task_id}网络恢复")
                     count = 0  # 重置计数器
                     log_print = True  # 重置日志打印标记
-
-                self.analysis(old_list, new_list, thread_logger)
-                old_list = new_list
             except:
                 timeout = True
                 count += 1
@@ -87,6 +84,8 @@ class Spider(threading.Thread):
                 time.sleep(10)
                 continue
 
+            self.analysis(old_list, new_list, thread_logger)
+            old_list = new_list
             time.sleep(1)
 
     def stop(self):
@@ -157,11 +156,11 @@ class Spider(threading.Thread):
         # 查找值变化的数据
         changed_items = []
         for old_item, new_item in zip(old_list, new_list):
-            if old_item["instId"] == new_item["instId"] and old_item['availSubPos'] != new_item['availSubPos']:
+            if old_item["instId"] == new_item["instId"] and old_item['margin'] != new_item['margin']:
                 change = {'order_type': 'change',
                           'instId': old_item['instId'],
-                          'old_availSubPos': old_item['availSubPos'],
-                          'new_availSubPos': new_item['availSubPos'],
+                          'old_margin': old_item['margin'],
+                          'new_margin': new_item['margin'],
                           'mgnMode': old_item['mgnMode'],
                           'posSide': old_item['posSide'],
                           'lever': old_item['lever'],
@@ -177,7 +176,7 @@ class Spider(threading.Thread):
                           }
                 changed_items.append(change)
                 thread_logger.success(
-                    f"交易员{self.uniqueName}进行了调仓操作，品种：{old_item['instId']}，原仓位：{old_item['availSubPos']}USDT，现仓位：{new_item['availSubPos']}USDT")
+                    f"交易员{self.uniqueName}进行了调仓操作，品种：{old_item['instId']}，原仓位保证金：{round(old_item['margin'],2)}USDT，现仓位保证金：{round(new_item['margin'],2)}USDT")
                 # 写入Redis队列
                 conn = redis.Redis(**settings.REDIS_PARAMS)
                 conn.lpush(settings.TRADE_TASK_NAME, json.dumps(change))
