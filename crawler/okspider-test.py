@@ -143,7 +143,8 @@ class Spider(threading.Thread):
     def analysis(self, old_list, new_list, thread_logger):
         # 查找新增的交易数据
         name_set = set(i['instId'] for i in old_list)
-        added_items = list(filter(lambda x: x['instId'] not in name_set, new_list))
+        # added_items = list(filter(lambda x: x['instId'] not in name_set, new_list))
+        added_items = list(filter(lambda x: x['instId'] not in name_set if x is not None else False, new_list))
         # logger.debug('added_items:',added_items)
         if added_items:
             for item in added_items:
