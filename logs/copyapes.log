@@ -609,3 +609,21 @@ INFO 2023-12-19 23:06:14,953 basehttp 45143 123145457045504 "POST /api/taskadd/?
 INFO 2023-12-19 23:06:19,058 basehttp 45143 123145457045504 "POST /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 53
 INFO 2023-12-19 23:06:23,005 basehttp 45143 123145457045504 "POST /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 53
 INFO 2023-12-19 23:06:26,393 basehttp 45143 123145457045504 "POST /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 53
+INFO 2023-12-19 23:07:38,129 basehttp 45143 123145473835008 "GET /api/tradeorder/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 20
+INFO 2023-12-19 23:07:38,137 basehttp 45143 123145490624512 "GET /api/taskadd/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 227
+INFO 2023-12-19 23:07:38,137 basehttp 45143 123145457045504 "GET /api/traderdetial/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 3008
+INFO 2023-12-19 23:08:06,577 basehttp 45143 123145507414016 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3658
+INFO 2023-12-19 23:08:08,832 basehttp 45143 123145524203520 "GET /api/tradeorder/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 20
+INFO 2023-12-19 23:08:08,832 basehttp 45143 123145507414016 "GET /api/traderdetial/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 344
+INFO 2023-12-19 23:08:08,835 basehttp 45143 123145540993024 "GET /api/taskadd/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 227
+INFO 2023-12-19 23:31:03,065 autoreload 45143 4443981312 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-19 23:31:03,858 autoreload 45285 4709090816 Watching for file changes with StatReloader
+INFO 2023-12-19 23:31:20,375 autoreload 45285 4709090816 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-19 23:31:21,073 autoreload 45294 4722660864 Watching for file changes with StatReloader
+INFO 2023-12-19 23:33:40,622 autoreload 45294 4722660864 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2023-12-19 23:33:41,369 autoreload 45331 4506433024 Watching for file changes with StatReloader
+INFO 2023-12-19 23:34:24,581 autoreload 45331 4506433024 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2023-12-19 23:34:25,294 autoreload 45344 4415788544 Watching for file changes with StatReloader
+WARNING 2023-12-19 23:36:31,937 log 45344 123145347584000 Method Not Allowed: /api/register/
+WARNING 2023-12-19 23:36:31,938 basehttp 45344 123145347584000 "GET /api/register/ HTTP/1.1" 405 7798
+INFO 2023-12-19 23:36:45,495 basehttp 45344 123145347584000 "POST /api/register/ HTTP/1.1" 200 7818

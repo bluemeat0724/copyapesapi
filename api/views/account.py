@@ -1,5 +1,6 @@
 from api.extension.mixins import CopyCreateModelMixin
 from api.serializers.account import RegisterSerializer, AuthSerializer
+from api.models import QuotaInfo
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -20,7 +21,11 @@ class RegisterView(CopyCreateModelMixin):
 
     def perform_create(self, serializer):
         serializer.validated_data.pop('confirm_password')
-        serializer.save()
+        # 保存用户信息
+        user_instance = serializer.save()
+
+        # 创建关联的QuotaInfo实例
+        QuotaInfo.objects.create(user=user_instance)
 
 
 class Login(APIView):
