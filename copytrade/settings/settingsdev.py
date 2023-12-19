@@ -222,7 +222,7 @@ LOGGING = {
             'level': 'INFO',
             'class': 'logging.handlers.RotatingFileHandler',
             # 日志位置,日志文件名，日志保存目录logs必须手动创建
-            'filename': BASE_DIR.parent / "logs/luffycity.log",
+            'filename': BASE_DIR.parent / "logs/copyapes.log",
             # 单个日志文件的最大值，这里我们设置300M
             'maxBytes': 300 * 1024 * 1024,
             # 备份日志文件的数量，设置最大日志数量为10
@@ -268,7 +268,7 @@ worker_disable_rate_limits = True
 # celery的任务结果内容格式
 accept_content = ['json', 'pickle']
 # 注册任务
-imports = ('crawler.account.okx_task.tasks',)
+imports = ('crawler.account.okx_task.tasks','crawler.balance.balance_task.tasks')
 
 # 之前定时任务（定时一次调用），使用了apply_async({}, countdown=30);
 # 设置定时任务（定时多次调用）的调用列表，需要单独运行SCHEDULE命令才能让celery执行定时任务：celery -A mycelery.main beat，当然worker还是要启动的
@@ -279,5 +279,9 @@ beat_schedule = {
         "task": "get_position",   # 定时任务的任务名称
         "schedule": 60,  # 定时任务的调用时间，10表示每隔10秒调用一次task任务
         # "schedule": crontab(hour=7, minute=30, day_of_week=1),  # 定时任务的调用时间，每周一早上7点30分调用一次add任务
-    }
+    },
+    "get_balance": {
+        "task": "get_balance",
+        "schedule": 120,
+    },
 }

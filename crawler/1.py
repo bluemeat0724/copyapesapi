@@ -10,23 +10,32 @@ acc = {'key': '8af6ced4-5ea0-4dd9-9aef-f79529d72a68',
        #             }
        }
 
-# obj = app.OkxSWAP(**acc)
-# obj.account.api.flag = '1'
-# obj.trade.api.flag = '1'
+obj = app.OkxSWAP(**acc)
+obj.account.api.flag = '1'
+obj.trade.api.flag = '1'
 #
 # obj.trade.open_market(instId="IOST-USDT-SWAP", posSide="long", openMoney=10 * 10, tdMode='cross',
 #                                   lever=10)
 # obj.trade.open_market(instId="BTC-USDT-SWAP", posSide="long", openMoney=10 * 10, tdMode='cross',
 #                                   lever=10)
-# obj.trade.open_market(instId='ETH-USDT-SWAP', posSide='long', openMoney=1000,
-#                                       tdMode='cross', lever=100)
+a = obj.trade.open_market(instId='DYDX-USDT-SWAP', posSide='long', openMoney=100,
+                                      tdMode='cross', lever=100)
 # obj.trade.close_market(instId='ETH-USDT-SWAP', posSide='long', quantityCT=220, tdMode='cross')
 # 当前持仓
 # a = obj.account.get_positions()
 # 历史持仓
 # a = obj.account.get_positions_history(limit=2)
 # 账户信息
-# a = obj.account.get_balance(ccy='BTC,ETH,USDT') # 限速：10次/2s
+# a = obj.account.get_balance(ccy='BTC,ETH,USDT').get('data')[0].get('details') # 限速：10次/2s
+# result = {}
+
+# for item in a:
+#     ccy = item.get('ccy')
+#     cashBal = item.get('cashBal')
+#     result[ccy] = cashBal
+# # print(result)
+# bnb = result.get('BNB', 0)
+# print(bnb)
 
 
 # 基础信息
@@ -34,15 +43,15 @@ acc = {'key': '8af6ced4-5ea0-4dd9-9aef-f79529d72a68',
 
 
 
-
-import requests
-
-proxies = {
-       'http': 'socks5h://15755149931sct-5:8ivtkleb@38.147.173.111:5001',
-        'https': 'socks5h://15755149931sct-5:8ivtkleb@38.147.173.111:5001'
-       }
-
-a = requests.get(url = 'https://www.okx.com/api/v5/public/instruments?instType=SWAP&instId=BTC-USDT-SWAP',headers={'x-simulated-trading': '1'},proxies=proxies).json()
+#
+# import requests
+#
+# proxies = {
+#        'http': 'socks5h://15755149931sct-5:8ivtkleb@38.147.173.111:5001',
+#         'https': 'socks5h://15755149931sct-5:8ivtkleb@38.147.173.111:5001'
+#        }
+#
+# a = requests.get(url = 'https://www.okx.com/api/v5/public/instruments?instType=SWAP&instId=DYDX-USDT-SWAP',headers={'x-simulated-trading': '1'},proxies=proxies).json()
 
 print(a)
 

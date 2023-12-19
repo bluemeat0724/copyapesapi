@@ -35,6 +35,9 @@ def get_my_proxies(user_id, flag):
             ip_dict = conn.fetch_one(
                 "select username,password from api_ipinfo where countdown>0")
 
+        if ip_dict is None and flag == '0':
+            return None
+
         username = str(ip_dict.get('username'))
         password = str(ip_dict.get('password'))
         proxy = {
@@ -45,4 +48,5 @@ def get_my_proxies(user_id, flag):
 
 
 if __name__ == '__main__':
-    print(get_proxies())
+    # print(get_proxies())
+    print(get_my_proxies(2, '0'))
