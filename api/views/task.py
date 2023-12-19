@@ -28,7 +28,8 @@ class TaskAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixi
             return Response({"code": return_code.VALIDATE_ERROR, "error": "api已使用"})
 
         ip_object = models.IpInfo.objects.filter(Q(user=self.request.user) & Q(countdown__gt=0)).first()
-        flag = self.request.data.get('flag')
+        api_object = models.ApiInfo.objects.filter(Q(user=self.request.user) & Q(id=api.id)).first()
+        flag = api_object.flag
         if not ip_object and flag == 0:
             return Response({"code": return_code.VALIDATE_ERROR, "error": "实盘交易请配置固定IP"})
 

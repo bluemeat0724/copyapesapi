@@ -91,3 +91,521 @@ INFO 2023-12-19 21:17:49,867 basehttp 43273 123145559154688 "OPTIONS /api/taskad
 INFO 2023-12-19 21:17:49,879 basehttp 43273 123145559154688 "POST /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 245
 INFO 2023-12-19 21:17:49,892 basehttp 43273 123145559154688 "PATCH /api/apiadd/23/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 169
 INFO 2023-12-19 21:17:49,973 basehttp 43273 123145559154688 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3230
+INFO 2023-12-19 21:51:13,373 basehttp 43273 123145508786176 "GET /api/apiadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 358
+INFO 2023-12-19 21:51:18,777 basehttp 43273 123145508786176 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3230
+INFO 2023-12-19 21:51:21,300 basehttp 43273 123145542365184 "GET /api/taskadd/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 227
+INFO 2023-12-19 21:51:21,301 basehttp 43273 123145525575680 "GET /api/tradeorder/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 20
+INFO 2023-12-19 21:51:21,303 basehttp 43273 123145508786176 "GET /api/traderdetial/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 344
+INFO 2023-12-19 21:51:23,114 basehttp 43273 123145508786176 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3230
+INFO 2023-12-19 21:57:02,007 basehttp 43273 123145508786176 "GET /api/ip/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 20
+INFO 2023-12-19 21:57:03,867 basehttp 43273 123145508786176 "GET /api/apiadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 358
+INFO 2023-12-19 21:57:06,645 basehttp 43273 123145508786176 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3230
+INFO 2023-12-19 21:57:38,835 basehttp 43273 123145508786176 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3230
+INFO 2023-12-19 21:57:41,502 basehttp 43273 123145508786176 "GET /api/apiadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 520
+INFO 2023-12-19 21:58:13,793 autoreload 43273 4565874176 /Users/lichaoyuan/Desktop/copytrade/api/views/task.py changed, reloading.
+INFO 2023-12-19 21:58:14,573 autoreload 44716 4518082048 Watching for file changes with StatReloader
+INFO 2023-12-19 21:58:18,186 basehttp 44716 123145349951488 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2023-12-19 21:58:18,188 basehttp 44716 123145366740992 "GET /api/apiadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 520
+INFO 2023-12-19 21:58:19,087 basehttp 44716 123145349951488 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3230
+INFO 2023-12-19 21:58:25,024 basehttp 44716 123145349951488 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2023-12-19 21:58:25,024 basehttp 44716 123145366740992 "GET /api/apiadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 520
+INFO 2023-12-19 21:58:53,993 basehttp 44716 123145349951488 "OPTIONS /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 0
+INFO 2023-12-19 21:58:54,005 basehttp 44716 123145349951488 "POST /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 231
+INFO 2023-12-19 21:58:54,033 basehttp 44716 123145349951488 "OPTIONS /api/apiadd/22/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 0
+INFO 2023-12-19 21:58:54,044 basehttp 44716 123145366740992 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3444
+INFO 2023-12-19 21:58:54,045 basehttp 44716 123145349951488 "PATCH /api/apiadd/22/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 161
+INFO 2023-12-19 21:59:41,418 basehttp 44716 123145349951488 "OPTIONS /api/taskadd/254/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 0
+INFO 2023-12-19 21:59:41,426 basehttp 44716 123145349951488 "PATCH /api/taskadd/254/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 213
+INFO 2023-12-19 21:59:41,471 basehttp 44716 123145349951488 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3444
+INFO 2023-12-19 21:59:41,472 basehttp 44716 123145366740992 "PATCH /api/apiadd/22/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 161
+INFO 2023-12-19 22:02:53,007 autoreload 44716 4518082048 /Users/lichaoyuan/Desktop/copytrade/api/views/task.py changed, reloading.
+INFO 2023-12-19 22:02:53,791 autoreload 44757 4597237248 Watching for file changes with StatReloader
+INFO 2023-12-19 22:02:54,899 basehttp 44757 123145452748800 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2023-12-19 22:02:54,901 basehttp 44757 123145469538304 "GET /api/apiadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 520
+INFO 2023-12-19 22:03:03,080 basehttp 44757 123145452748800 "POST /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 231
+INFO 2023-12-19 22:03:03,124 basehttp 44757 123145469538304 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3658
+INFO 2023-12-19 22:03:03,124 basehttp 44757 123145452748800 "PATCH /api/apiadd/22/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 161
+INFO 2023-12-19 22:03:15,681 basehttp 44757 123145452748800 "OPTIONS /api/taskadd/255/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 0
+INFO 2023-12-19 22:03:15,688 basehttp 44757 123145452748800 "PATCH /api/taskadd/255/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 213
+INFO 2023-12-19 22:03:15,733 basehttp 44757 123145452748800 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3658
+INFO 2023-12-19 22:03:15,737 basehttp 44757 123145469538304 "PATCH /api/apiadd/22/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 161
+WARNING 2023-12-19 22:48:52,029 log 44757 123145452748800 Unauthorized: /api/taskadd/
+WARNING 2023-12-19 22:48:52,029 basehttp 44757 123145452748800 "GET /api/taskadd/?token=1b239ac2-481b-4779-82ff-2d570b6e8170 HTTP/1.1" 401 13366
+INFO 2023-12-19 22:51:04,330 autoreload 44757 4597237248 /Users/lichaoyuan/Desktop/copytrade/api/views/task.py changed, reloading.
+INFO 2023-12-19 22:51:05,052 autoreload 45007 4386190848 Watching for file changes with StatReloader
+INFO 2023-12-19 22:51:49,161 basehttp 45007 123145561567232 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2023-12-19 22:51:49,163 basehttp 45007 123145578356736 "GET /api/apiadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 520
+INFO 2023-12-19 22:51:57,238 basehttp 45007 123145561567232 "OPTIONS /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 0
+ERROR 2023-12-19 22:51:57,375 log 45007 123145561567232 Internal Server Error: /api/taskadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'ApiInfo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/extension/mixins.py", line 14, in create
+    res = self.perform_create(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/task.py", line 31, in perform_create
+    flag = models.ApiInfo.objects.filter(Q(user=self.request.user) & Q(id=api)).first()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1396, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1415, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1268, in build_filter
+    return self._add_q(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1415, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1350, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1196, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <ApiInfo: ApiInfo object (22)>.
+ERROR 2023-12-19 22:51:57,378 basehttp 45007 123145561567232 "POST /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 500 173957
+ERROR 2023-12-19 22:51:58,681 log 45007 123145561567232 Internal Server Error: /api/taskadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'ApiInfo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/extension/mixins.py", line 14, in create
+    res = self.perform_create(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/task.py", line 31, in perform_create
+    flag = models.ApiInfo.objects.filter(Q(user=self.request.user) & Q(id=api)).first()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1396, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1415, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1268, in build_filter
+    return self._add_q(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1415, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1350, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1196, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <ApiInfo: ApiInfo object (22)>.
+ERROR 2023-12-19 22:51:58,682 basehttp 45007 123145561567232 "POST /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 500 173957
+ERROR 2023-12-19 22:51:59,649 log 45007 123145561567232 Internal Server Error: /api/taskadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'ApiInfo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/extension/mixins.py", line 14, in create
+    res = self.perform_create(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/task.py", line 31, in perform_create
+    flag = models.ApiInfo.objects.filter(Q(user=self.request.user) & Q(id=api)).first()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1396, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1415, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1268, in build_filter
+    return self._add_q(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1415, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1350, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1196, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <ApiInfo: ApiInfo object (22)>.
+ERROR 2023-12-19 22:51:59,650 basehttp 45007 123145561567232 "POST /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 500 173957
+ERROR 2023-12-19 22:52:00,315 log 45007 123145561567232 Internal Server Error: /api/taskadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'ApiInfo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/extension/mixins.py", line 14, in create
+    res = self.perform_create(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/task.py", line 31, in perform_create
+    flag = models.ApiInfo.objects.filter(Q(user=self.request.user) & Q(id=api)).first()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1396, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1415, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1268, in build_filter
+    return self._add_q(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1415, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1350, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1196, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <ApiInfo: ApiInfo object (22)>.
+ERROR 2023-12-19 22:52:00,316 basehttp 45007 123145561567232 "POST /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 500 173957
+INFO 2023-12-19 22:54:19,878 autoreload 45007 4386190848 /Users/lichaoyuan/Desktop/copytrade/api/views/task.py changed, reloading.
+INFO 2023-12-19 22:54:20,646 autoreload 45035 4389832192 Watching for file changes with StatReloader
+INFO 2023-12-19 22:54:40,067 autoreload 45035 4389832192 /Users/lichaoyuan/Desktop/copytrade/api/views/task.py changed, reloading.
+INFO 2023-12-19 22:54:40,858 autoreload 45044 4395537920 Watching for file changes with StatReloader
+ERROR 2023-12-19 22:54:54,122 log 45044 123145361383424 Internal Server Error: /api/taskadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'ApiInfo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/extension/mixins.py", line 14, in create
+    res = self.perform_create(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/task.py", line 31, in perform_create
+    api_info = models.ApiInfo.objects.filter(Q(user=self.request.user) & Q(id=api)).first()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1396, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1415, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1268, in build_filter
+    return self._add_q(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1415, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1350, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1196, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <ApiInfo: ApiInfo object (22)>.
+ERROR 2023-12-19 22:54:54,131 basehttp 45044 123145361383424 "POST /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 500 173994
+ERROR 2023-12-19 22:54:54,883 log 45044 123145361383424 Internal Server Error: /api/taskadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'ApiInfo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/extension/mixins.py", line 14, in create
+    res = self.perform_create(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/task.py", line 31, in perform_create
+    api_info = models.ApiInfo.objects.filter(Q(user=self.request.user) & Q(id=api)).first()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1396, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1415, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1268, in build_filter
+    return self._add_q(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1415, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1350, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1196, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <ApiInfo: ApiInfo object (22)>.
+ERROR 2023-12-19 22:54:54,884 basehttp 45044 123145361383424 "POST /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 500 173994
+ERROR 2023-12-19 22:54:55,165 log 45044 123145361383424 Internal Server Error: /api/taskadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'ApiInfo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/extension/mixins.py", line 14, in create
+    res = self.perform_create(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/task.py", line 31, in perform_create
+    api_info = models.ApiInfo.objects.filter(Q(user=self.request.user) & Q(id=api)).first()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1396, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1415, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1268, in build_filter
+    return self._add_q(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1415, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1350, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1196, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <ApiInfo: ApiInfo object (22)>.
+ERROR 2023-12-19 22:54:55,166 basehttp 45044 123145361383424 "POST /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 500 173994
+INFO 2023-12-19 23:04:02,385 autoreload 45044 4395537920 /Users/lichaoyuan/Desktop/copytrade/api/views/task.py changed, reloading.
+INFO 2023-12-19 23:04:03,192 autoreload 45111 4453926400 Watching for file changes with StatReloader
+INFO 2023-12-19 23:04:14,256 basehttp 45111 123145540517888 "OPTIONS /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 0
+ERROR 2023-12-19 23:04:14,482 log 45111 123145540517888 Internal Server Error: /api/taskadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'ApiInfo'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/extension/mixins.py", line 14, in create
+    res = self.perform_create(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/task.py", line 32, in perform_create
+    api_object = models.ApiInfo.objects.filter(Q(user=self.request.user) & Q(id=api)).first()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1396, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1415, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1268, in build_filter
+    return self._add_q(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1415, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1350, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1196, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+TypeError: Field 'id' expected a number but got <ApiInfo: ApiInfo object (22)>.
+ERROR 2023-12-19 23:04:14,491 basehttp 45111 123145540517888 "POST /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 500 173936
+INFO 2023-12-19 23:05:39,418 autoreload 45111 4453926400 /Users/lichaoyuan/Desktop/copytrade/api/views/task.py changed, reloading.
+INFO 2023-12-19 23:05:40,204 autoreload 45135 4536194560 Watching for file changes with StatReloader
+INFO 2023-12-19 23:05:43,629 basehttp 45135 123145553010688 "POST /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 53
+INFO 2023-12-19 23:06:07,020 autoreload 45135 4536194560 /Users/lichaoyuan/Desktop/copytrade/api/views/task.py changed, reloading.
+INFO 2023-12-19 23:06:07,803 autoreload 45143 4443981312 Watching for file changes with StatReloader
+INFO 2023-12-19 23:06:10,999 basehttp 45143 123145457045504 "POST /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 53
+INFO 2023-12-19 23:06:14,953 basehttp 45143 123145457045504 "POST /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 53
+INFO 2023-12-19 23:06:19,058 basehttp 45143 123145457045504 "POST /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 53
+INFO 2023-12-19 23:06:23,005 basehttp 45143 123145457045504 "POST /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 53
+INFO 2023-12-19 23:06:26,393 basehttp 45143 123145457045504 "POST /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 53
