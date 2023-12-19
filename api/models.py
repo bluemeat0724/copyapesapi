@@ -63,7 +63,8 @@ class ApiInfo(DeletedModel):
     btc = models.FloatField(verbose_name="btc", default=0)
     eth = models.FloatField(verbose_name="eth", default=0)
     """api收益，通过api关联任务收益累加"""
-    pnl = models.FloatField(verbose_name="累计收益", default=0)
+    pnl = models.FloatField(verbose_name="已实现跟单收益", default=0)
+    upl = models.FloatField(verbose_name="未实现跟单收益", default=0)
 
 
 class TaskInfo(DeletedModel):
@@ -98,7 +99,8 @@ class TaskInfo(DeletedModel):
     status = models.IntegerField(verbose_name="状态", choices=status_choice, default=1)
     user = models.ForeignKey(verbose_name="用户", to="UserInfo", on_delete=models.CASCADE)
     create_datetime = models.DateTimeField(verbose_name="创建时间", auto_now_add=True)
-    pnl = models.FloatField(verbose_name="跟单收益", default=0)
+    pnl = models.FloatField(verbose_name="已实现跟单收益", default=0)
+
 
 
 
@@ -147,7 +149,8 @@ class QuotaInfo(models.Model):
     upl_0 = models.FloatField(verbose_name="实盘未实现收益", default=0)
     pnl_1 = models.FloatField(verbose_name="模拟盘累计收益", default=0)
     upl_1 = models.FloatField(verbose_name="模拟盘未实现收益", default=0)
-    quota = models.FloatField(verbose_name="剩余盈利额度", default=100)
+    quota_0 = models.FloatField(verbose_name="实盘剩余盈利额度", default=100)
+    quota_1 = models.FloatField(verbose_name="模拟盘剩余盈利额度", default=100)
 
 @receiver(post_save, sender=UserInfo)
 def create_quota_info(sender, instance, created, **kwargs):

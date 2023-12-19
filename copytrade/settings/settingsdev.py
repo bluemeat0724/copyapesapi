@@ -268,7 +268,7 @@ worker_disable_rate_limits = True
 # celery的任务结果内容格式
 accept_content = ['json', 'pickle']
 # 注册任务
-imports = ('crawler.account.okx_task.tasks','crawler.balance.balance_task.tasks')
+imports = ('crawler.account.okx_task.tasks','crawler.balance.balance_task.tasks','crawler.account.update_pnl.tasks')
 
 # 之前定时任务（定时一次调用），使用了apply_async({}, countdown=30);
 # 设置定时任务（定时多次调用）的调用列表，需要单独运行SCHEDULE命令才能让celery执行定时任务：celery -A mycelery.main beat，当然worker还是要启动的
@@ -282,6 +282,10 @@ beat_schedule = {
     },
     "get_balance": {
         "task": "get_balance",
-        "schedule": 120,
+        "schedule": 300,
+    },
+    "update_pnl": {
+        "task": "update_pnl",
+        "schedule": 60,
     },
 }

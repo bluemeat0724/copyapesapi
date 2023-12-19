@@ -27304,3 +27304,318 @@ TypeError: perform_get_position() takes 0 positional arguments but 1 was given
 2023-12-19 21:56:27,406 - INFO - Scheduler: Sending due task get_position (get_position)
 2023-12-19 21:56:27,409 - INFO - Task get_position[079d8bf8-1836-4d43-97f6-44af2d11ab03] received
 2023-12-19 21:56:41,839 - INFO - Task get_position[079d8bf8-1836-4d43-97f6-44af2d11ab03] succeeded in 14.427900911999984s: None
+2023-12-20 01:15:08,833 - INFO - beat: Starting...
+2023-12-20 01:15:08,866 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:15:08,875 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 01:15:08,876 - INFO - Task get_position[28915c74-4555-4d94-8389-e51f7e725740] received
+2023-12-20 01:15:08,878 - INFO - Task get_balance[ffdb7a3c-42ae-41cd-bac0-905caa217977] received
+2023-12-20 01:15:14,143 - WARNING - api_id:22 已删除
+2023-12-20 01:15:14,144 - INFO - Task get_balance[ffdb7a3c-42ae-41cd-bac0-905caa217977] succeeded in 5.265764217998367s: None
+2023-12-20 01:15:17,963 - INFO - Task get_position[28915c74-4555-4d94-8389-e51f7e725740] succeeded in 9.084398171999055s: None
+2023-12-20 01:16:08,865 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:16:08,867 - INFO - Task get_position[01f6358f-465d-424c-8471-e16eec0cbecb] received
+2023-12-20 01:16:17,445 - INFO - Task get_position[01f6358f-465d-424c-8471-e16eec0cbecb] succeeded in 8.573348240999621s: None
+2023-12-20 01:17:08,865 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:17:08,868 - INFO - Task get_position[607120b3-9dcd-4797-b19d-efeefbf97f00] received
+2023-12-20 01:17:08,875 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 01:17:08,877 - INFO - Task get_balance[36232f31-d0b8-4e8d-b5eb-46ea64923ea3] received
+2023-12-20 01:17:14,840 - INFO - Task get_balance[36232f31-d0b8-4e8d-b5eb-46ea64923ea3] succeeded in 5.960340785000881s: None
+2023-12-20 01:17:18,251 - INFO - Task get_position[607120b3-9dcd-4797-b19d-efeefbf97f00] succeeded in 9.380633352000586s: None
+2023-12-20 01:18:08,865 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:18:08,867 - INFO - Task get_position[de947250-135c-46f2-ab2a-fa0611621541] received
+2023-12-20 01:18:18,829 - INFO - Task get_position[de947250-135c-46f2-ab2a-fa0611621541] succeeded in 9.959633070000564s: None
+2023-12-20 01:19:08,865 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:19:08,868 - INFO - Task get_position[4f232295-85bb-4231-a6ec-301a5e6e96ba] received
+2023-12-20 01:19:08,875 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 01:19:08,877 - INFO - Task get_balance[a2c02ada-5f68-4710-aa10-eac429622c9c] received
+2023-12-20 01:19:13,432 - INFO - Task get_balance[a2c02ada-5f68-4710-aa10-eac429622c9c] succeeded in 4.553731613999844s: None
+2023-12-20 01:19:17,746 - INFO - Task get_position[4f232295-85bb-4231-a6ec-301a5e6e96ba] succeeded in 8.87640784299947s: None
+2023-12-20 01:20:08,865 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:20:08,867 - INFO - Task get_position[2fd18b14-e1aa-4d9d-bb31-487ef2770251] received
+2023-12-20 01:20:18,391 - INFO - Task get_position[2fd18b14-e1aa-4d9d-bb31-487ef2770251] succeeded in 9.521586984999885s: None
+2023-12-20 01:21:08,865 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:21:08,867 - INFO - Task get_position[8ff3e7cc-0aad-495e-86c2-97a1335e5e7c] received
+2023-12-20 01:21:08,875 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 01:21:08,877 - INFO - Task get_balance[43545979-8999-4663-8cd1-6a5cd28ad339] received
+2023-12-20 01:21:14,265 - INFO - Task get_balance[43545979-8999-4663-8cd1-6a5cd28ad339] succeeded in 5.385362318000261s: None
+2023-12-20 01:21:18,400 - INFO - Task get_position[8ff3e7cc-0aad-495e-86c2-97a1335e5e7c] succeeded in 9.528112350999436s: None
+2023-12-20 01:22:08,865 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:22:08,868 - INFO - Task get_position[0fc22931-61d4-4a42-b0ae-2f735eefa332] received
+2023-12-20 01:22:18,934 - INFO - Task get_position[0fc22931-61d4-4a42-b0ae-2f735eefa332] succeeded in 10.063597837000998s: None
+2023-12-20 01:23:08,865 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:23:08,867 - INFO - Task get_position[71e29a6f-c525-4573-9f40-e94c44910ad0] received
+2023-12-20 01:23:08,875 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 01:23:08,877 - INFO - Task get_balance[1d59383d-f1d0-4f3e-a102-a568ccfa1143] received
+2023-12-20 01:23:13,684 - INFO - Task get_balance[1d59383d-f1d0-4f3e-a102-a568ccfa1143] succeeded in 4.80529066499912s: None
+2023-12-20 01:23:18,479 - INFO - Task get_position[71e29a6f-c525-4573-9f40-e94c44910ad0] succeeded in 9.609962317999816s: None
+2023-12-20 01:24:08,865 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:24:08,868 - INFO - Task get_position[ea1a4aff-dedd-448d-87da-96edf545877e] received
+2023-12-20 01:24:19,255 - INFO - Task get_position[ea1a4aff-dedd-448d-87da-96edf545877e] succeeded in 10.383878416998414s: None
+2023-12-20 01:25:08,865 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:25:08,868 - INFO - Task get_position[f3edbce8-3026-43ab-a708-3e1344e54a38] received
+2023-12-20 01:25:08,875 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 01:25:08,877 - INFO - Task get_balance[74f4c741-a651-4389-998b-ae6022ccc427] received
+2023-12-20 01:25:13,511 - INFO - Task get_balance[74f4c741-a651-4389-998b-ae6022ccc427] succeeded in 4.631337384998915s: None
+2023-12-20 01:25:17,853 - INFO - Task get_position[f3edbce8-3026-43ab-a708-3e1344e54a38] succeeded in 8.982260835000488s: None
+2023-12-20 01:26:08,865 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:26:08,868 - INFO - Task get_position[3b1f7989-7d79-4586-b93c-93e1b10efafd] received
+2023-12-20 01:26:17,865 - INFO - Task get_position[3b1f7989-7d79-4586-b93c-93e1b10efafd] succeeded in 8.993196871000691s: None
+2023-12-20 01:27:08,865 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:27:08,868 - INFO - Task get_position[61f3a102-b16b-4760-b24b-2ddfcf29f4eb] received
+2023-12-20 01:27:08,875 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 01:27:08,877 - INFO - Task get_balance[11deed5a-b1b0-4959-9d89-dc5aadf41524] received
+2023-12-20 01:27:15,620 - INFO - Task get_balance[11deed5a-b1b0-4959-9d89-dc5aadf41524] succeeded in 6.740704092000669s: None
+2023-12-20 01:27:18,271 - INFO - Task get_position[61f3a102-b16b-4760-b24b-2ddfcf29f4eb] succeeded in 9.400840717000392s: None
+2023-12-20 01:28:08,865 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:28:08,867 - INFO - Task get_position[b1b590fe-b4b1-4f65-8cbe-79fd56031563] received
+2023-12-20 01:28:18,637 - INFO - Task get_position[b1b590fe-b4b1-4f65-8cbe-79fd56031563] succeeded in 9.768034847998933s: None
+2023-12-20 01:29:08,865 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:29:08,868 - INFO - Task get_position[13d71326-45e7-42d6-a21a-198b1bb3a2b3] received
+2023-12-20 01:29:08,875 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 01:29:08,877 - INFO - Task get_balance[ab800f21-e99a-45ab-80c7-7758d667e214] received
+2023-12-20 01:29:13,735 - INFO - Task get_balance[ab800f21-e99a-45ab-80c7-7758d667e214] succeeded in 4.856560131000151s: None
+2023-12-20 01:29:17,962 - INFO - Task get_position[13d71326-45e7-42d6-a21a-198b1bb3a2b3] succeeded in 9.09108083799947s: None
+2023-12-20 01:30:08,865 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:30:08,868 - INFO - Task get_position[124d2445-8181-4c5e-aa1d-1622645a788b] received
+2023-12-20 01:30:17,293 - INFO - Task get_position[124d2445-8181-4c5e-aa1d-1622645a788b] succeeded in 8.423567047999313s: None
+2023-12-20 01:31:08,865 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:31:08,868 - INFO - Task get_position[d0b6e2fa-79aa-49f8-a1f6-e8d82ec4922d] received
+2023-12-20 01:31:08,875 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 01:31:08,877 - INFO - Task get_balance[7693f98a-b5eb-4883-9fc0-fd0736a06bc8] received
+2023-12-20 01:31:14,126 - INFO - Task get_balance[7693f98a-b5eb-4883-9fc0-fd0736a06bc8] succeeded in 5.246112443999664s: None
+2023-12-20 01:31:18,097 - INFO - Task get_position[d0b6e2fa-79aa-49f8-a1f6-e8d82ec4922d] succeeded in 9.22585896399869s: None
+2023-12-20 01:32:08,865 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:32:08,868 - INFO - Task get_position[f8948faf-40d5-48d2-80f9-f16f7176bd48] received
+2023-12-20 01:32:18,519 - INFO - Task get_position[f8948faf-40d5-48d2-80f9-f16f7176bd48] succeeded in 9.64842567300002s: None
+2023-12-20 01:33:08,866 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:33:08,868 - INFO - Task get_position[82820a21-134d-424f-b962-54bee26674f4] received
+2023-12-20 01:33:08,875 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 01:33:08,877 - INFO - Task get_balance[5aa26e71-5aca-4949-85e8-fdefc23dab89] received
+2023-12-20 01:33:13,678 - INFO - Task get_balance[5aa26e71-5aca-4949-85e8-fdefc23dab89] succeeded in 4.798849011998755s: None
+2023-12-20 01:33:17,600 - INFO - Task get_position[82820a21-134d-424f-b962-54bee26674f4] succeeded in 8.729713736000122s: None
+2023-12-20 01:34:08,866 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:34:08,870 - INFO - Task get_position[e8e6efa1-94cc-4fc2-9020-381f1707a213] received
+2023-12-20 01:34:17,657 - INFO - Task get_position[e8e6efa1-94cc-4fc2-9020-381f1707a213] succeeded in 8.783817313998952s: None
+2023-12-20 01:35:08,866 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:35:08,868 - INFO - Task get_position[f836925f-f701-4105-94b0-ed09ccfd1341] received
+2023-12-20 01:35:08,875 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 01:35:08,877 - INFO - Task get_balance[7fd84064-bc00-436d-a2c4-f85bc599ad9d] received
+2023-12-20 01:35:14,989 - INFO - Task get_balance[7fd84064-bc00-436d-a2c4-f85bc599ad9d] succeeded in 6.109666147998723s: None
+2023-12-20 01:35:17,457 - INFO - Task get_position[f836925f-f701-4105-94b0-ed09ccfd1341] succeeded in 8.58624369500103s: None
+2023-12-20 01:36:08,866 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:36:08,869 - INFO - Task get_position[b725bab8-077c-44ce-9209-558ae46446c5] received
+2023-12-20 01:36:17,692 - INFO - Task get_position[b725bab8-077c-44ce-9209-558ae46446c5] succeeded in 8.820193323999774s: None
+2023-12-20 01:37:08,866 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:37:08,869 - INFO - Task get_position[7330ccb6-5b78-43cc-ba14-b38c158d7e33] received
+2023-12-20 01:37:08,875 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 01:37:08,877 - INFO - Task get_balance[f69f341a-2b7f-433a-9e03-50d036ee3977] received
+2023-12-20 01:37:14,156 - INFO - Task get_balance[f69f341a-2b7f-433a-9e03-50d036ee3977] succeeded in 5.277271037999526s: None
+2023-12-20 01:37:19,655 - INFO - Task get_position[7330ccb6-5b78-43cc-ba14-b38c158d7e33] succeeded in 10.784360862999165s: None
+2023-12-20 01:38:08,866 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:38:08,869 - INFO - Task get_position[e7099826-1c61-42e9-a4f9-1f127d25b2e0] received
+2023-12-20 01:38:17,957 - INFO - Task get_position[e7099826-1c61-42e9-a4f9-1f127d25b2e0] succeeded in 9.085690098001578s: None
+2023-12-20 01:39:08,866 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:39:08,879 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 01:39:08,880 - INFO - Task get_position[6194ac0f-9844-49cc-a67f-2948dc0cec0f] received
+2023-12-20 01:39:08,903 - INFO - Task get_balance[33653e92-910a-47bf-8236-8249f1e5b534] received
+2023-12-20 01:39:14,488 - INFO - Task get_balance[33653e92-910a-47bf-8236-8249f1e5b534] succeeded in 5.584442085000774s: None
+2023-12-20 01:39:18,700 - INFO - Task get_position[6194ac0f-9844-49cc-a67f-2948dc0cec0f] succeeded in 9.796923811998568s: None
+2023-12-20 01:40:08,866 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:40:08,869 - INFO - Task get_position[67b5aa58-271d-48ca-b776-dd1d507db778] received
+2023-12-20 01:40:17,726 - INFO - Task get_position[67b5aa58-271d-48ca-b776-dd1d507db778] succeeded in 8.854813211999499s: None
+2023-12-20 01:41:08,866 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:41:08,869 - INFO - Task get_position[f1c6be66-688a-4e4d-aa1e-9c0c10d5d8f1] received
+2023-12-20 01:41:08,879 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 01:41:08,881 - INFO - Task get_balance[00d6619e-1574-4512-ac3f-d28f4b93d623] received
+2023-12-20 01:41:14,605 - INFO - Task get_balance[00d6619e-1574-4512-ac3f-d28f4b93d623] succeeded in 5.722097524998389s: None
+2023-12-20 01:41:17,980 - INFO - Task get_position[f1c6be66-688a-4e4d-aa1e-9c0c10d5d8f1] succeeded in 9.109062055000322s: None
+2023-12-20 01:42:08,866 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:42:08,869 - INFO - Task get_position[120b0346-dadc-4413-8700-46e614a670ab] received
+2023-12-20 01:42:26,505 - INFO - Task get_position[120b0346-dadc-4413-8700-46e614a670ab] succeeded in 17.63416470300035s: None
+2023-12-20 01:43:08,866 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:43:08,869 - INFO - Task get_position[96c2819e-292d-4412-976f-4380b62203cf] received
+2023-12-20 01:43:08,879 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 01:43:08,881 - INFO - Task get_balance[e6890684-8d96-41be-90a1-d02226dca380] received
+2023-12-20 01:43:14,172 - INFO - Task get_balance[e6890684-8d96-41be-90a1-d02226dca380] succeeded in 5.288862692999828s: None
+2023-12-20 01:43:19,841 - INFO - Task get_position[96c2819e-292d-4412-976f-4380b62203cf] succeeded in 10.969979866998983s: None
+2023-12-20 01:44:08,866 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:44:08,869 - INFO - Task get_position[7393c39d-f39e-43b5-bc33-9819226b46c1] received
+2023-12-20 01:44:17,604 - INFO - Task get_position[7393c39d-f39e-43b5-bc33-9819226b46c1] succeeded in 8.732374786000946s: None
+2023-12-20 01:45:08,866 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:45:08,869 - INFO - Task get_position[f37e0a08-14dc-4ed2-943d-17ea3a98bf52] received
+2023-12-20 01:45:08,879 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 01:45:08,881 - INFO - Task get_balance[2fa6666c-e5c6-4edc-997b-30c19f81760d] received
+2023-12-20 01:45:13,615 - INFO - Task get_balance[2fa6666c-e5c6-4edc-997b-30c19f81760d] succeeded in 4.730814767999618s: None
+2023-12-20 01:45:17,405 - INFO - Task get_position[f37e0a08-14dc-4ed2-943d-17ea3a98bf52] succeeded in 8.53268833599941s: None
+2023-12-20 01:46:08,866 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:46:08,869 - INFO - Task get_position[bbdff994-b5fe-4167-b4e4-9d3d96e8427f] received
+2023-12-20 01:46:20,249 - INFO - Task get_position[bbdff994-b5fe-4167-b4e4-9d3d96e8427f] succeeded in 11.377549449000071s: None
+2023-12-20 01:47:08,867 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:47:08,869 - INFO - Task get_position[7d9978f6-9a72-48a2-b0d0-ac97889adbc0] received
+2023-12-20 01:47:08,879 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 01:47:08,881 - INFO - Task get_balance[7b8abf31-0df4-4742-b3cc-c9968d116d0e] received
+2023-12-20 01:47:13,829 - INFO - Task get_balance[7b8abf31-0df4-4742-b3cc-c9968d116d0e] succeeded in 4.945236408999335s: None
+2023-12-20 01:47:18,533 - INFO - Task get_position[7d9978f6-9a72-48a2-b0d0-ac97889adbc0] succeeded in 9.662284881000232s: None
+2023-12-20 01:48:08,867 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:48:08,869 - INFO - Task get_position[b98b09ef-cdec-4aa4-9eca-ad03baca6ab1] received
+2023-12-20 01:48:18,024 - INFO - Task get_position[b98b09ef-cdec-4aa4-9eca-ad03baca6ab1] succeeded in 9.154090865000398s: None
+2023-12-20 01:49:08,867 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:49:08,869 - INFO - Task get_position[8860a118-54cb-4ddb-9edd-ac60cb758d7b] received
+2023-12-20 01:49:08,879 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 01:49:08,881 - INFO - Task get_balance[8fb7be51-bc5f-4f35-b919-6b2777fa5b4d] received
+2023-12-20 01:49:14,073 - INFO - Task get_balance[8fb7be51-bc5f-4f35-b919-6b2777fa5b4d] succeeded in 5.18954446799944s: None
+2023-12-20 01:49:17,780 - INFO - Task get_position[8860a118-54cb-4ddb-9edd-ac60cb758d7b] succeeded in 8.907925276000242s: None
+2023-12-20 01:50:08,867 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:50:08,869 - INFO - Task get_position[d85b3f2a-af07-4ac2-b96d-5f8b64910d52] received
+2023-12-20 01:50:18,758 - INFO - Task get_position[d85b3f2a-af07-4ac2-b96d-5f8b64910d52] succeeded in 9.885869740999624s: None
+2023-12-20 01:51:08,867 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:51:08,869 - INFO - Task get_position[f46dc785-9528-4cf0-974d-00cda11f4adc] received
+2023-12-20 01:51:08,879 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 01:51:08,881 - INFO - Task get_balance[a8caad90-83ca-48f7-aceb-5801743daa89] received
+2023-12-20 01:51:14,101 - INFO - Task get_balance[a8caad90-83ca-48f7-aceb-5801743daa89] succeeded in 5.21815926599993s: None
+2023-12-20 01:51:17,956 - INFO - Task get_position[f46dc785-9528-4cf0-974d-00cda11f4adc] succeeded in 9.084328300999914s: None
+2023-12-20 01:52:08,889 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:52:08,894 - INFO - Task get_position[1aca3fdc-0ff5-4a46-b451-d65fff08ef2c] received
+2023-12-20 01:52:18,920 - INFO - Task get_position[1aca3fdc-0ff5-4a46-b451-d65fff08ef2c] succeeded in 10.022212799000044s: None
+2023-12-20 01:53:08,880 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 01:53:08,882 - INFO - Task get_balance[245bb009-713b-42f7-8606-3d5aeca51a07] received
+2023-12-20 01:53:08,889 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:53:08,891 - INFO - Task get_position[cb0b0237-42be-40bc-9bc2-b13c798f2659] received
+2023-12-20 01:53:14,025 - INFO - Task get_balance[245bb009-713b-42f7-8606-3d5aeca51a07] succeeded in 5.140650806999474s: None
+2023-12-20 01:53:18,118 - INFO - Task get_position[cb0b0237-42be-40bc-9bc2-b13c798f2659] succeeded in 9.224737857000946s: None
+2023-12-20 01:54:08,889 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:54:08,891 - INFO - Task get_position[89d83edb-82d1-49d8-a6b8-48cb70422f1b] received
+2023-12-20 01:54:19,714 - INFO - Task get_position[89d83edb-82d1-49d8-a6b8-48cb70422f1b] succeeded in 10.82012407000002s: None
+2023-12-20 01:55:08,880 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 01:55:08,882 - INFO - Task get_balance[0901520c-1580-4ef3-a79c-8341a88f4c08] received
+2023-12-20 01:55:08,889 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:55:08,891 - INFO - Task get_position[49ada892-f614-419a-a05d-94979a55969b] received
+2023-12-20 01:55:15,132 - INFO - Task get_balance[0901520c-1580-4ef3-a79c-8341a88f4c08] succeeded in 6.246919971999887s: None
+2023-12-20 01:55:17,622 - INFO - Task get_position[49ada892-f614-419a-a05d-94979a55969b] succeeded in 8.728712357000404s: None
+2023-12-20 01:56:08,889 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:56:08,892 - INFO - Task get_position[7d2860c9-50f0-4159-beea-f8b5933b65bc] received
+2023-12-20 01:56:18,049 - INFO - Task get_position[7d2860c9-50f0-4159-beea-f8b5933b65bc] succeeded in 9.154950723001093s: None
+2023-12-20 01:57:08,880 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 01:57:08,883 - INFO - Task get_balance[2212db5c-889e-4129-83b0-9e9feb0a43f0] received
+2023-12-20 01:57:08,889 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:57:08,893 - INFO - Task get_position[44210cf7-758b-4664-a316-3c155ca9926f] received
+2023-12-20 01:57:14,952 - INFO - Task get_balance[2212db5c-889e-4129-83b0-9e9feb0a43f0] succeeded in 6.065205304999836s: None
+2023-12-20 01:57:17,457 - INFO - Task get_position[44210cf7-758b-4664-a316-3c155ca9926f] succeeded in 8.562493061999703s: None
+2023-12-20 01:58:08,889 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:58:08,892 - INFO - Task get_position[04d02ac2-d496-4144-a071-72feb4ef98a6] received
+2023-12-20 01:58:19,904 - INFO - Task get_position[04d02ac2-d496-4144-a071-72feb4ef98a6] succeeded in 11.00984996599982s: None
+2023-12-20 01:59:08,880 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 01:59:08,882 - INFO - Task get_balance[e91fdcc6-a7a6-4035-9607-2d0652c259a7] received
+2023-12-20 01:59:08,889 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 01:59:08,891 - INFO - Task get_position[3498800b-11b7-4e71-9cc7-81f344197fde] received
+2023-12-20 01:59:14,457 - INFO - Task get_balance[e91fdcc6-a7a6-4035-9607-2d0652c259a7] succeeded in 5.571961564999583s: None
+2023-12-20 01:59:20,401 - INFO - Task get_position[3498800b-11b7-4e71-9cc7-81f344197fde] succeeded in 11.506525216000227s: None
+2023-12-20 02:00:08,889 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 02:00:08,892 - INFO - Task get_position[a1acbf56-81f7-48c9-9a6b-f0a786729163] received
+2023-12-20 02:00:17,728 - INFO - Task get_position[a1acbf56-81f7-48c9-9a6b-f0a786729163] succeeded in 8.834075456999926s: None
+2023-12-20 02:01:08,880 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 02:01:08,882 - INFO - Task get_balance[d6ecf95d-8be7-486a-85fb-12686e42467c] received
+2023-12-20 02:01:08,889 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 02:01:08,891 - INFO - Task get_position[7216633a-a7a7-48ea-a070-284fd5efbc47] received
+2023-12-20 02:01:13,554 - INFO - Task get_balance[d6ecf95d-8be7-486a-85fb-12686e42467c] succeeded in 4.669492453998828s: None
+2023-12-20 02:01:17,607 - INFO - Task get_position[7216633a-a7a7-48ea-a070-284fd5efbc47] succeeded in 8.714427781000268s: None
+2023-12-20 02:02:08,889 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 02:02:08,892 - INFO - Task get_position[88e28c3c-934d-4281-9a34-53446409fdda] received
+2023-12-20 02:02:18,385 - INFO - Task get_position[88e28c3c-934d-4281-9a34-53446409fdda] succeeded in 9.491695214999709s: None
+2023-12-20 02:03:08,880 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 02:03:08,882 - INFO - Task get_balance[0ef1e9fe-ac6b-4340-9038-ebe2483656f4] received
+2023-12-20 02:03:08,890 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 02:03:08,891 - INFO - Task get_position[05b214b5-21af-459f-ae7e-75e010238edd] received
+2023-12-20 02:03:14,137 - INFO - Task get_balance[0ef1e9fe-ac6b-4340-9038-ebe2483656f4] succeeded in 5.252787301998978s: None
+2023-12-20 02:03:18,436 - INFO - Task get_position[05b214b5-21af-459f-ae7e-75e010238edd] succeeded in 9.542538019000858s: None
+2023-12-20 02:04:08,890 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 02:04:08,892 - INFO - Task get_position[01447189-4f8e-40a7-bd47-581546527a16] received
+2023-12-20 02:04:18,986 - INFO - Task get_position[01447189-4f8e-40a7-bd47-581546527a16] succeeded in 10.091297520000808s: None
+2023-12-20 02:05:08,880 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 02:05:08,882 - INFO - Task get_balance[f0b7d8f2-61dd-4ff9-babc-d793e6b7ce4d] received
+2023-12-20 02:05:08,890 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 02:05:08,891 - INFO - Task get_position[d3dd9fb8-4474-4b67-8047-88fcb0cd8d61] received
+2023-12-20 02:05:17,572 - INFO - Task get_balance[f0b7d8f2-61dd-4ff9-babc-d793e6b7ce4d] succeeded in 8.688140545000351s: None
+2023-12-20 02:05:17,820 - INFO - Task get_position[d3dd9fb8-4474-4b67-8047-88fcb0cd8d61] succeeded in 8.926663813001142s: None
+2023-12-20 02:06:08,890 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 02:06:08,899 - INFO - Task get_position[11362ffa-e178-4a5d-8fad-df125c20b08a] received
+2023-12-20 02:06:13,372 - INFO - Task get_position[11362ffa-e178-4a5d-8fad-df125c20b08a] succeeded in 4.449920871998984s: None
+2023-12-20 02:07:08,880 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 02:07:08,882 - INFO - Task get_balance[5c06ae5c-158c-405e-9e18-e763fffe7ce8] received
+2023-12-20 02:07:08,890 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 02:07:08,891 - INFO - Task get_position[d3ebfc2e-6340-48f4-95cf-b647d8588735] received
+2023-12-20 02:07:13,349 - INFO - Task get_position[d3ebfc2e-6340-48f4-95cf-b647d8588735] succeeded in 4.456173378999665s: None
+2023-12-20 02:07:13,742 - INFO - Task get_balance[5c06ae5c-158c-405e-9e18-e763fffe7ce8] succeeded in 4.858108340000399s: None
+2023-12-20 02:08:08,890 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 02:08:08,893 - INFO - Task get_position[6b647eee-d71c-433b-9cbb-576ffc1b87a5] received
+2023-12-20 02:08:15,625 - INFO - Task get_position[6b647eee-d71c-433b-9cbb-576ffc1b87a5] succeeded in 6.727845455001443s: None
+2023-12-20 02:09:08,880 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 02:09:08,883 - INFO - Task get_balance[559ec623-60b8-4eac-addb-497eaf7306f4] received
+2023-12-20 02:09:08,890 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 02:09:08,892 - INFO - Task get_position[9a084a37-af48-4125-bb87-7eb0bf75d3a5] received
+2023-12-20 02:09:14,210 - INFO - Task get_position[9a084a37-af48-4125-bb87-7eb0bf75d3a5] succeeded in 5.315889023000636s: None
+2023-12-20 02:09:14,906 - INFO - Task get_balance[559ec623-60b8-4eac-addb-497eaf7306f4] succeeded in 6.021371160000854s: None
+2023-12-20 02:10:08,890 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 02:10:08,892 - INFO - Task get_position[5b18fa76-9007-4e97-a399-c933f7ac1f23] received
+2023-12-20 02:10:13,769 - INFO - Task get_position[5b18fa76-9007-4e97-a399-c933f7ac1f23] succeeded in 4.874968349000483s: None
+2023-12-20 02:11:08,880 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 02:11:08,883 - INFO - Task get_balance[1ba25c13-7201-4719-89e9-87383b89edf1] received
+2023-12-20 02:11:08,890 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 02:11:08,892 - INFO - Task get_position[dbd07f64-2e6e-4d72-84c4-116ff5e755c8] received
+2023-12-20 02:11:13,195 - INFO - Task get_position[dbd07f64-2e6e-4d72-84c4-116ff5e755c8] succeeded in 4.300870876999397s: None
+2023-12-20 02:11:13,916 - INFO - Task get_balance[1ba25c13-7201-4719-89e9-87383b89edf1] succeeded in 5.030483504999211s: None
+2023-12-20 02:12:23,341 - INFO - beat: Starting...
+2023-12-20 02:12:23,371 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 02:12:33,662 - INFO - Connected to redis://127.0.0.1:6379/14
+2023-12-20 02:12:33,669 - INFO - mingle: searching for neighbors
+2023-12-20 02:12:34,679 - INFO - mingle: all alone
+2023-12-20 02:12:34,695 - INFO - celery@mac ready.
+2023-12-20 02:12:34,709 - INFO - Task get_position[1c249772-ea95-4ff4-a56f-d1812a01d784] received
+2023-12-20 02:12:39,246 - INFO - Task get_position[1c249772-ea95-4ff4-a56f-d1812a01d784] succeeded in 4.532708500999998s: None
+2023-12-20 02:13:08,880 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 02:13:08,883 - INFO - Task get_balance[60203154-2907-4326-b6a3-d39c5a4ecbbb] received
+2023-12-20 02:13:14,438 - INFO - Task get_balance[60203154-2907-4326-b6a3-d39c5a4ecbbb] succeeded in 5.552530359000002s: None
+2023-12-20 02:13:23,369 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 02:13:23,372 - INFO - Task get_position[15034c4d-cf13-40d7-88fb-8f3da5350fa9] received
+2023-12-20 02:13:27,629 - INFO - Task get_position[15034c4d-cf13-40d7-88fb-8f3da5350fa9] succeeded in 4.254438617999995s: None
+2023-12-20 02:14:23,369 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 02:14:23,372 - INFO - Task get_position[20342a09-f267-4ac2-b96c-f3e727894bf6] received
+2023-12-20 02:14:28,495 - INFO - Task get_position[20342a09-f267-4ac2-b96c-f3e727894bf6] succeeded in 5.1210399120000005s: None
+2023-12-20 02:15:08,880 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 02:15:08,883 - INFO - Task get_balance[2516acee-5fe8-48cb-adde-06d60b10d59f] received
+2023-12-20 02:15:13,519 - INFO - Task get_balance[2516acee-5fe8-48cb-adde-06d60b10d59f] succeeded in 4.633579235999974s: None
+2023-12-20 02:15:23,356 - INFO - Scheduler: Sending due task update_pnl (update_pnl)
+2023-12-20 02:15:23,358 - INFO - Task update_pnl[21ea20a3-c30c-4e8e-a2f5-75dc0c2619bd] received
+2023-12-20 02:15:23,367 - INFO - Task update_pnl[21ea20a3-c30c-4e8e-a2f5-75dc0c2619bd] succeeded in 0.005845132000018793s: None
+2023-12-20 02:15:23,369 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 02:15:23,371 - INFO - Task get_position[8efa09db-7748-43a3-ad68-b9c756ba84e0] received
+2023-12-20 02:15:27,799 - INFO - Task get_position[8efa09db-7748-43a3-ad68-b9c756ba84e0] succeeded in 4.426167286999998s: None
+2023-12-20 02:16:23,369 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 02:16:23,372 - INFO - Task get_position[28f9a86e-f6ba-41c6-8463-b62ca44026da] received
+2023-12-20 02:16:28,269 - INFO - Task get_position[28f9a86e-f6ba-41c6-8463-b62ca44026da] succeeded in 4.894768356000014s: None
+2023-12-20 02:39:56,720 - INFO - beat: Starting...
+2023-12-20 02:39:56,750 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 02:39:56,758 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-20 02:39:56,759 - INFO - Scheduler: Sending due task update_pnl (update_pnl)
+2023-12-20 02:40:08,908 - INFO - Connected to redis://127.0.0.1:6379/14
+2023-12-20 02:40:08,915 - INFO - mingle: searching for neighbors
+2023-12-20 02:40:09,925 - INFO - mingle: all alone
+2023-12-20 02:40:09,944 - INFO - celery@mac ready.
+2023-12-20 02:40:09,962 - INFO - Task get_position[13ce47c7-2014-4e75-b126-b290d0ab2be4] received
+2023-12-20 02:40:09,965 - INFO - Task get_balance[c8ce909d-5395-4c09-ae9f-95589a37c2eb] received
+2023-12-20 02:40:09,972 - INFO - Task update_pnl[de7e7086-3ffb-481d-a993-f44402a05823] received
+2023-12-20 02:40:10,063 - INFO - Task update_pnl[de7e7086-3ffb-481d-a993-f44402a05823] succeeded in 0.08459041800000122s: None
+2023-12-20 02:40:15,009 - INFO - Task get_position[13ce47c7-2014-4e75-b126-b290d0ab2be4] succeeded in 5.0385989030000005s: None
+2023-12-20 02:40:15,666 - INFO - Task get_balance[c8ce909d-5395-4c09-ae9f-95589a37c2eb] succeeded in 5.698458501000001s: None
+2023-12-20 02:40:56,747 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 02:40:56,750 - INFO - Task get_position[00fa0fd6-4db4-4f6b-a8c6-9f62e25124b2] received
+2023-12-20 02:40:56,759 - INFO - Scheduler: Sending due task update_pnl (update_pnl)
+2023-12-20 02:40:56,761 - INFO - Task update_pnl[5db8c616-4449-4347-89be-2ce323114527] received
+2023-12-20 02:40:56,832 - INFO - Task update_pnl[5db8c616-4449-4347-89be-2ce323114527] succeeded in 0.0687883290000002s: None
+2023-12-20 02:41:02,972 - INFO - Task get_position[00fa0fd6-4db4-4f6b-a8c6-9f62e25124b2] succeeded in 6.219376916000002s: None
+2023-12-20 02:41:56,747 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-20 02:41:56,749 - INFO - Task get_position[affa3c44-64a0-475a-bbd6-7603ca97f992] received
+2023-12-20 02:41:56,759 - INFO - Scheduler: Sending due task update_pnl (update_pnl)
+2023-12-20 02:41:56,761 - INFO - Task update_pnl[3ec34aa4-244f-4bee-94d8-716b2a481b8a] received
+2023-12-20 02:41:56,837 - INFO - Task update_pnl[3ec34aa4-244f-4bee-94d8-716b2a481b8a] succeeded in 0.07441638699999942s: None
+2023-12-20 02:42:01,177 - INFO - Task get_position[affa3c44-64a0-475a-bbd6-7603ca97f992] succeeded in 4.425037498000009s: None

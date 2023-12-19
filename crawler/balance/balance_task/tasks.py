@@ -35,7 +35,7 @@ def process_task(task):
 
 
 @shared_task(name='get_balance')
-def perform_get_position():
+def perform_get_balance():
     result = get_tasks()
     if not result:
         return
