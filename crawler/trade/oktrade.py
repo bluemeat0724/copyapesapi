@@ -204,6 +204,9 @@ class Trader(threading.Thread):
 
             # 获取模拟盘/实盘交易倍数
             trade_times = get_trade_times(self.instId, self.flag, self.acc)
+            if trade_times is None:
+                thread_logger.warning(f'模拟盘土狗币交易失败，品种：{self.instId}不在交易所模拟盘中！')
+                return
             # 加仓操作
             if ratio > 1:
                 obj.trade.open_market(instId=self.instId, posSide=self.posSide, openMoney=self.sums * trade_times,
