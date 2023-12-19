@@ -13,7 +13,7 @@ logger = logging.getLogger("celery")
 def get_tasks():
     with Connect() as conn:
         api_dict = conn.fetch_all(
-            "select flag,passPhrase,api_key,secret_key,user_id,id,platform from api_apiinfo WHERE deleted='0'")
+            "select flag,passPhrase,api_key,secret_key,user_id,id,platform from api_apiinfo WHERE deleted = 0")
         return api_dict
 
 def process_task(task):

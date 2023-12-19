@@ -10,7 +10,10 @@ def get_okx_api_balance(acc, flag, api_id):
 
         balance = obj.account.get_balance(ccy='BTC,ETH,USDT').get('data')[0].get('details')
     except:
-        print(f'api_id:{api_id} error')
+        # api错误，进行逻辑删除
+        with Connect() as db:
+            db.exec("UPDATE api_apiinfo SET deleted = 1 WHERE id = %(api_id)s", api_id=api_id)
+        print(f'api_id:{api_id} 已删除')
         return
     result = {}
     for item in balance:
