@@ -56,6 +56,12 @@ class ApiInfo(DeletedModel):
     )
     status = models.IntegerField(verbose_name="状态", choices=status_choice, default=1)
     user = models.ForeignKey(verbose_name="用户", to="UserInfo", on_delete=models.CASCADE)
+    """用户API资产"""
+    usdt = models.FloatField(verbose_name="usdt", default=0)
+    btc = models.FloatField(verbose_name="btc", default=0)
+    eth = models.FloatField(verbose_name="eth", default=0)
+    """api收益，通过api关联任务收益累加"""
+    pnl = models.FloatField(verbose_name="累计收益", default=0)
 
 
 class TaskInfo(DeletedModel):
@@ -130,16 +136,6 @@ class OrderInfo(models.Model):
         indexes = [
             models.Index(fields=['user', 'task'], name='idx_user_task'),
         ]
-
-class UserBalance(models.Model):
-    """用户API资产"""
-    user = models.ForeignKey(verbose_name="用户", to="UserInfo", on_delete=models.CASCADE, db_index=True)
-    api = models.ForeignKey(verbose_name="api", to="ApiInfo", on_delete=models.CASCADE, db_index=True)
-    flag = models.ForeignKey(verbose_name="API类型", to="ApiInfo", on_delete=models.CASCADE, related_name='api_flag')
-    usdt = models.FloatField(verbose_name="usdt", default=0)
-    btc = models.FloatField(verbose_name="btc", default=0)
-    eth = models.FloatField(verbose_name="eth", default=0)
-    pnl = models.FloatField(verbose_name="累计收益", default=0)
 
 
 class QuotaInfo(models.Model):

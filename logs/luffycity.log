@@ -4675,3 +4675,6 @@ INFO 2023-12-19 11:59:21,245 basehttp 36724 123145592786944 "GET /api/tradeorder
 INFO 2023-12-19 11:59:21,246 basehttp 36724 123145609576448 "GET /api/taskadd/248/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 227
 INFO 2023-12-19 11:59:24,065 basehttp 36724 123145575997440 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 2541
 INFO 2023-12-19 12:51:31,620 basehttp 36724 123145525628928 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 44336
+INFO 2023-12-19 13:54:10,742 basehttp 36724 123145525628928 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 44336
+INFO 2023-12-19 14:36:40,740 autoreload 36724 4583781888 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-19 14:36:41,676 autoreload 40349 4597761536 Watching for file changes with StatReloader
