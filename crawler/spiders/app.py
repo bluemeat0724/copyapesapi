@@ -32,7 +32,6 @@ class Spider(threading.Thread):
         self.thread_logger = None
 
     def setup_logger(self):
-        # log_file = f"crawler/spider_logs/{self.user_id}_{self.task_id}.log"
         log_file = os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(__file__)), "spider_logs",
                                                 f"{self.user_id}_{self.task_id}.log"))
 
@@ -48,8 +47,17 @@ class Spider(threading.Thread):
         thread_logger = logger.bind(user_id=self.user_id, task_id=self.task_id)
         self.thread_logger = thread_logger
         thread_logger.info(f"跟单猿跟单系统启动，跟随交易员：{self.uniqueName}")
+
         # 第一次获取当前交易数据
-        old_list = self.summary()
+        while True:
+            try:
+                old_list = self.summary()
+                if old_list == None:
+                    continue
+                break
+            except:
+                thread_logger.error(f"跟单猿跟单系统启动失败，请检查API是否添加正确，代理IP是否还在有效期！")
+
         if old_list:
             thread_logger.info(f"交易员{self.uniqueName}有正在进行中的交易，等待新的交易发生后开始跟随！")
             # thread_logger.debug(old_list)
@@ -67,6 +75,8 @@ class Spider(threading.Thread):
         while not self.stop_flag.is_set():
             try:
                 new_list = self.summary()
+                if new_list == None:
+                    continue
                 # 网络恢复
                 if timeout:
                     timeout = False
@@ -110,8 +120,8 @@ class Spider(threading.Thread):
             return
         # 查找新增的交易数据
         name_set = set(i['instId'] for i in old_list)
-        # added_items = list(filter(lambda x: x['instId'] not in name_set, new_list))
-        added_items = list(filter(lambda x: x['instId'] not in name_set if x is not None else False, new_list))
+        added_items = list(filter(lambda x: x['instId'] not in name_set, new_list))
+
         if added_items:
             for item in added_items:
                 item['order_type'] = 'open'
@@ -159,8 +169,8 @@ class Spider(threading.Thread):
             if old_item["instId"] == new_item["instId"] and old_item['margin'] != new_item['margin']:
                 change = {'order_type': 'change',
                           'instId': old_item['instId'],
-                          'old_margin': old_item['margin'],
-                          'new_margin': new_item['margin'],
+                          'old_margin': float(old_item['margin']),
+                          'new_margin': float(new_item['margin']),
                           'mgnMode': old_item['mgnMode'],
                           'posSide': old_item['posSide'],
                           'lever': old_item['lever'],
@@ -176,7 +186,7 @@ class Spider(threading.Thread):
                           }
                 changed_items.append(change)
                 thread_logger.success(
-                    f"交易员{self.uniqueName}进行了调仓操作，品种：{old_item['instId']}，原仓位保证金：{round(old_item['margin'],2)}USDT，现仓位保证金：{round(new_item['margin'],2)}USDT")
+                    f"交易员{self.uniqueName}进行了调仓操作，品种：{old_item['instId']}，原仓位保证金：{round(float(old_item['margin']),2)}USDT，现仓位保证金：{round(float(new_item['margin']),2)}USDT")
                 # 写入Redis队列
                 conn = redis.Redis(**settings.REDIS_PARAMS)
                 conn.lpush(settings.TRADE_TASK_NAME, json.dumps(change))

@@ -132,14 +132,13 @@ class OkxOrderInfo(object):
             return
         obj.account.api.flag = self.flag
 
-        max_retries = 3  # 设置最大重试次数
-        retries = 0
-        while retries < max_retries:
+
+        while True:
             try:
                 # 查看前5条交易记录
                 history_data = obj.account.get_positions_history(limit='10').get('data')
+                break
             except:
-                retries += 1
                 time.sleep(10)
 
         if not history_data:
@@ -188,7 +187,7 @@ class OkxOrderInfo(object):
 
 
 if __name__ == '__main__':
-    obj = OkxOrderInfo(1, 226)
-    obj.get_position()
+    obj = OkxOrderInfo(2, 244)
+    obj.get_position_history()
 
 

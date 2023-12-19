@@ -1,6 +1,7 @@
 from crawler.myokx import app
 import threading
 from crawler.utils.get_api import api
+from crawler.utils.get_trade_times import get_trade_times
 import time
 from functools import wraps
 from loguru import logger
@@ -85,6 +86,7 @@ class Trader(threading.Thread):
         self.thread_logger = None
         self.obj = None
         self.flag = None
+        self.acc = None
 
     def setup_logger(self):
         # log_file = f"trade_logs/{self.user_id}_{self.task_id}.log"
@@ -104,10 +106,10 @@ class Trader(threading.Thread):
         thread_logger = logger.bind(user_id=self.user_id, task_id=self.task_id)
         self.thread_logger = thread_logger
         # 获取api信息
-        acc, self.flag = api(self.user_id, self.api_id)
+        self.acc, self.flag = api(self.user_id, self.api_id)
         try:
             # 创建okx交易对象
-            obj = RetryNetworkOperations(app.OkxSWAP(**acc))
+            obj = RetryNetworkOperations(app.OkxSWAP(**self.acc))
             self.obj = obj
 
             # 根据api选择实盘还是模拟盘
@@ -159,20 +161,22 @@ class Trader(threading.Thread):
         if self.order_type == 'open':
             if self.posSide == 'net':
                 # 解析订单方向
-                number = int(self.margin)
+                number = float(self.margin)
                 if number > 0:
                     self.posSide = 'long'
                 elif number < 0:
                     self.posSide = 'short'
+            # 获取模拟盘/实盘交易倍数
+            trade_times = get_trade_times(self.instId, self.flag, self.acc)
             # 市价开仓
-            obj.trade.open_market(instId=self.instId, posSide=self.posSide, openMoney=self.sums * 10, tdMode='cross',
+            obj.trade.open_market(instId=self.instId, posSide=self.posSide, openMoney=self.sums * trade_times, tdMode='cross',
                                   lever=self.lever)
             thread_logger.success(f'进行开仓操作，品种：{self.instId}，金额：{self.sums}USDT，方向：{self.posSide}')
 
         elif self.order_type == 'close':
             if self.posSide == 'net':
                 # 解析订单方向
-                number = int(self.margin)
+                number = float(self.margin)
                 if number > 0:
                     self.posSide = 'long'
                 elif number < 0:
@@ -185,8 +189,8 @@ class Trader(threading.Thread):
             # OkxOrderInfo(self.user_id, self.task_id).get_position_history()
 
         elif self.order_type == 'change':
-            new_number = int(self.new_margin)
-            old_number = int(self.old_margin)
+            new_number = self.new_margin
+            old_number = self.old_margin
             ratio = new_number / old_number  # 大于1是加仓，小于1是减仓
             if self.posSide == 'net':
                 # 解析订单方向
@@ -194,9 +198,12 @@ class Trader(threading.Thread):
                     self.posSide = 'long'
                 elif new_number < 0:
                     self.posSide = 'short'
+
+            # 获取模拟盘/实盘交易倍数
+            trade_times = get_trade_times(self.instId, self.flag, self.acc)
             # 加仓操作
             if ratio > 1:
-                obj.trade.open_market(instId=self.instId, posSide=self.posSide, openMoney=self.sums * 10,
+                obj.trade.open_market(instId=self.instId, posSide=self.posSide, openMoney=self.sums * trade_times,
                                       tdMode='cross', lever=self.lever)
                 thread_logger.success(f'进行加仓操作，品种：{self.instId}，加仓量：{self.sums}USDT，方向：{self.posSide}')
             # 减仓操作
@@ -228,7 +235,7 @@ class Trader(threading.Thread):
             self.thread_logger.warning(f'手动结束跟单，{instId}已经按市价进行平仓。')
 
         # 跟新数据库
-        OkxOrderInfo(self.user_id, self.task_id).get_position()
+        OkxOrderInfo(self.user_id, self.task_id).get_position_history()
 
         self.thread_logger.warning(f'手动结束跟单，任务：{self.task_id}')
 

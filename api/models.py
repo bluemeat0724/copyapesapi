@@ -136,17 +136,20 @@ class UserBalance(models.Model):
     user = models.ForeignKey(verbose_name="用户", to="UserInfo", on_delete=models.CASCADE, db_index=True)
     api = models.ForeignKey(verbose_name="api", to="ApiInfo", on_delete=models.CASCADE, db_index=True)
     flag = models.ForeignKey(verbose_name="API类型", to="ApiInfo", on_delete=models.CASCADE, related_name='api_flag')
-    usdt = models.FloatField(verbose_name="可用余额", default=0)
-    btc = models.FloatField(verbose_name="结余额", default=0)
-    eth = models.FloatField(verbose_name="结余额", default=0)
+    usdt = models.FloatField(verbose_name="usdt", default=0)
+    btc = models.FloatField(verbose_name="btc", default=0)
+    eth = models.FloatField(verbose_name="eth", default=0)
     pnl = models.FloatField(verbose_name="累计收益", default=0)
 
 
 class QuotaInfo(models.Model):
-    """剩余可兑盈利额度"""
+    """盈利和剩余可兑盈利额度"""
     user = models.ForeignKey(verbose_name="用户", to="UserInfo", on_delete=models.CASCADE, db_index=True)
-    pnl = models.FloatField(verbose_name="累计收益", default=0)
-    quota = models.FloatField(verbose_name="可用额度", default=0)
+    pnl_0 = models.FloatField(verbose_name="实盘累计收益", default=0)
+    upl_0 = models.FloatField(verbose_name="实盘未实现收益", default=0)
+    pnl_1 = models.FloatField(verbose_name="模拟盘累计收益", default=0)
+    upl_1 = models.FloatField(verbose_name="模拟盘未实现收益", default=0)
+    quota = models.FloatField(verbose_name="剩余盈利额度", default=100)
 
 
 class RedeemCodes(models.Model):
