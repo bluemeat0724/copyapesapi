@@ -165,8 +165,8 @@ def create_quota_info(sender, instance, created, **kwargs):
 
 class RedeemCodes(models.Model):
     """兑换码"""
-    user = models.ForeignKey(verbose_name="用户", to="UserInfo", on_delete=models.CASCADE, db_index=True)
-    code = models.CharField(verbose_name="兑换码", max_length=64)
+    user = models.ForeignKey(verbose_name="用户", to="UserInfo", on_delete=models.CASCADE, null=True, blank=True, db_index=True)
+    code = models.CharField(verbose_name="兑换码", max_length=64, db_index=True)
     status_choice = (
         (1, "未使用"),
         (2, "已使用"),
