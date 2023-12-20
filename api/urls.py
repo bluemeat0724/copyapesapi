@@ -1,6 +1,6 @@
 from django.urls import path
 from rest_framework import routers
-from api.views import account, accountApi, task, platform, ipinfo, tradedetial, tradeorder
+from api.views import account, accountApi, task, platform, ipinfo, tradedetial, tradeorder, quotainfo
 
 router = routers.SimpleRouter()
 router.register(r'register', account.RegisterView, 'register')
@@ -14,6 +14,7 @@ urlpatterns = [
     path('login/', account.Login.as_view()),
     path('traderdetial/<int:task_id>/', tradedetial.TradeDetailView.as_view()),
     path('tradeorder/<int:task_id>/', tradeorder.OrderView.as_view()),
+    path('quotainfo/', quotainfo.QuotaView.as_view()),
 ]
 
 urlpatterns += router.urls
