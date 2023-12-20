@@ -3,7 +3,15 @@ import string
 from crawler.utils.db import Connect
 
 def generate_redeem_code(length=12):
-    """生成指定长度的兑换码"""
+    """
+    生成指定长度的兑换码
+    $100     12位
+    $300     13位
+    $500     14位
+    $1000    15位
+    $5000    16位
+    $10000   17位
+    """
     characters = string.ascii_letters + string.digits
     redeem_code = ''.join(secrets.choice(characters) for _ in range(length))
     return redeem_code

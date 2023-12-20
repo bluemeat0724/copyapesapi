@@ -35,3 +35,6 @@
 2023-12-20 22:29:17 | SUCCESS | 进行加仓操作，品种：ETH-USDT-SWAP，加仓量：100.0USDT，方向：long
 2023-12-21 00:00:00 | SUCCESS | 进行平仓操作，品种:ETH-USDT-SWAP，方向：long
 2023-12-21 00:03:32 | SUCCESS | 进行开仓操作，品种：ETH-USDT-SWAP，金额：100.0USDT，方向：long
+2023-12-21 00:44:38 | SUCCESS | 进行平仓操作，品种:ETH-USDT-SWAP，方向：long
+2023-12-21 00:45:16 | SUCCESS | 进行开仓操作，品种：ETH-USDT-SWAP，金额：100.0USDT，方向：long
+2023-12-21 00:45:31 | SUCCESS | 进行平仓操作，品种:ETH-USDT-SWAP，方向：long

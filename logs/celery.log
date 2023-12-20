@@ -36362,3 +36362,30 @@ pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on '127.0.0.
 2023-12-21 00:40:57,561 - INFO - Task update_pnl[37973631-8aba-4e3e-9ee8-7aa520060df0] received
 2023-12-21 00:40:57,640 - INFO - Task update_pnl[37973631-8aba-4e3e-9ee8-7aa520060df0] succeeded in 0.07705639900814276s: None
 2023-12-21 00:41:01,941 - INFO - Task get_position[226d36c7-cda3-44e8-8cd2-1d41ef6684cb] succeeded in 4.395072464001714s: None
+2023-12-21 00:41:57,542 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-21 00:41:57,544 - INFO - Task get_position[b4fd8e58-a360-4293-b260-df4fbdc11a1d] received
+2023-12-21 00:41:57,559 - INFO - Scheduler: Sending due task update_pnl (update_pnl)
+2023-12-21 00:41:57,561 - INFO - Task update_pnl[3679a0d3-bb6f-481d-81f1-420c080158e0] received
+2023-12-21 00:41:57,630 - INFO - Task update_pnl[3679a0d3-bb6f-481d-81f1-420c080158e0] succeeded in 0.06739440200908575s: None
+2023-12-21 00:42:02,498 - INFO - Task get_position[b4fd8e58-a360-4293-b260-df4fbdc11a1d] succeeded in 4.95074991499132s: None
+2023-12-21 00:42:57,542 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-21 00:42:57,544 - INFO - Task get_position[abc5b7bc-8c27-4a81-9319-86261580fb19] received
+2023-12-21 00:42:57,559 - INFO - Scheduler: Sending due task update_pnl (update_pnl)
+2023-12-21 00:42:57,561 - INFO - Task update_pnl[42df5a57-e5d8-43ae-ac2e-b79ef3092523] received
+2023-12-21 00:42:57,628 - INFO - Task update_pnl[42df5a57-e5d8-43ae-ac2e-b79ef3092523] succeeded in 0.06583966300240718s: None
+2023-12-21 00:43:02,682 - INFO - Task get_position[abc5b7bc-8c27-4a81-9319-86261580fb19] succeeded in 5.1352969739964465s: None
+2023-12-21 00:43:57,542 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-21 00:43:57,544 - INFO - Task get_position[f77f7063-144a-4adc-834d-1f7b30e835a8] received
+2023-12-21 00:43:57,559 - INFO - Scheduler: Sending due task update_pnl (update_pnl)
+2023-12-21 00:43:57,561 - INFO - Task update_pnl[cef164fc-a99b-4a2a-b97d-29fa655d8577] received
+2023-12-21 00:43:57,627 - INFO - Task update_pnl[cef164fc-a99b-4a2a-b97d-29fa655d8577] succeeded in 0.0641469730035169s: None
+2023-12-21 00:44:02,840 - INFO - Task get_position[f77f7063-144a-4adc-834d-1f7b30e835a8] succeeded in 5.293017076997785s: None
+2023-12-21 00:44:57,193 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-21 00:44:57,197 - INFO - Task get_balance[a5af3458-1d1c-4d5b-800d-a593c097fa75] received
+2023-12-21 00:44:57,203 - INFO - Task get_balance[a5af3458-1d1c-4d5b-800d-a593c097fa75] succeeded in 0.0034407150087645277s: None
+2023-12-21 00:44:57,542 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-21 00:44:57,544 - INFO - Task get_position[1b9a6678-1a78-4101-9d14-a754dab993f6] received
+2023-12-21 00:44:57,559 - INFO - Scheduler: Sending due task update_pnl (update_pnl)
+2023-12-21 00:44:57,561 - INFO - Task update_pnl[a950ef4b-60a1-475a-8fe8-88bf0e661806] received
+2023-12-21 00:44:57,629 - INFO - Task update_pnl[a950ef4b-60a1-475a-8fe8-88bf0e661806] succeeded in 0.06607717799488455s: None
+2023-12-21 00:45:08,852 - INFO - Task get_position[1b9a6678-1a78-4101-9d14-a754dab993f6] succeeded in 11.30488445899391s: None
