@@ -7,6 +7,9 @@ VALIDATE_ERROR = 1001
 # 模拟盘api保存错误
 FLAG_1_ERROR = 1002
 
+# 兑换码核销失败
+REDEEM_CODE_ERROR = 1003
+
 # 认证失败
 AUTH_FAILED = 2000
 

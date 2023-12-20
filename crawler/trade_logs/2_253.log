@@ -37,3 +37,15 @@
 2023-12-21 00:03:07 | SUCCESS | 进行开仓操作，品种：MKR-USDT-SWAP，金额：100.0USDT，方向：long
 2023-12-21 00:25:38 | WARNING | 模拟盘土狗币交易失败，品种：DYDX-USDT-SWAP不在交易所模拟盘中！
 2023-12-21 00:25:51 | WARNING | 模拟盘土狗币交易失败，品种：DYDX-USDT-SWAP不在交易所模拟盘中！
+2023-12-21 00:45:47 | SUCCESS | 进行平仓操作，品种:DYDX-USDT-SWAP，方向：long
+2023-12-21 00:45:57 | SUCCESS | 进行平仓操作，品种:ALPHA-USDT-SWAP，方向：long
+2023-12-21 00:46:17 | SUCCESS | 进行平仓操作，品种:SHIB-USDT-SWAP，方向：long
+2023-12-21 00:46:38 | SUCCESS | 进行平仓操作，品种:IOST-USDT-SWAP，方向：long
+2023-12-21 00:46:57 | SUCCESS | 进行平仓操作，品种:LTC-USDT-SWAP，方向：long
+2023-12-21 00:47:16 | SUCCESS | 进行平仓操作，品种:MKR-USDT-SWAP，方向：long
+2023-12-21 00:47:48 | WARNING | 模拟盘土狗币交易失败，品种：DYDX-USDT-SWAP不在交易所模拟盘中！
+2023-12-21 00:47:52 | WARNING | 模拟盘土狗币交易失败，品种：ALPHA-USDT-SWAP不在交易所模拟盘中！
+2023-12-21 00:48:18 | SUCCESS | 进行开仓操作，品种：SHIB-USDT-SWAP，金额：100.0USDT，方向：long
+2023-12-21 00:48:42 | SUCCESS | 进行开仓操作，品种：IOST-USDT-SWAP，金额：100.0USDT，方向：long
+2023-12-21 00:49:06 | SUCCESS | 进行开仓操作，品种：LTC-USDT-SWAP，金额：100.0USDT，方向：long
+2023-12-21 00:49:30 | SUCCESS | 进行开仓操作，品种：MKR-USDT-SWAP，金额：100.0USDT，方向：long

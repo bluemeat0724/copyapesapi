@@ -909,3 +909,71 @@ INFO 2023-12-21 00:33:31,383 autoreload 56665 4768093696 /Users/lichaoyuan/Deskt
 INFO 2023-12-21 00:33:32,212 autoreload 56697 4480296448 Watching for file changes with StatReloader
 INFO 2023-12-21 00:36:36,434 autoreload 56697 4480296448 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
 INFO 2023-12-21 00:36:37,316 autoreload 56755 4647097856 Watching for file changes with StatReloader
+INFO 2023-12-21 01:43:47,491 autoreload 56755 4647097856 /Users/lichaoyuan/Desktop/copytrade/api/extension/return_code.py changed, reloading.
+INFO 2023-12-21 01:43:48,433 autoreload 57458 4632692224 Watching for file changes with StatReloader
+INFO 2023-12-21 01:47:08,180 autoreload 57458 4632692224 /Users/lichaoyuan/Desktop/copytrade/api/urls.py changed, reloading.
+INFO 2023-12-21 01:47:08,948 autoreload 57544 4630271488 Watching for file changes with StatReloader
+ERROR 2023-12-21 01:50:02,459 log 57544 123145343774720 Internal Server Error: /api/redeemcode/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/redeemcode.py", line 32, in patch
+    code = serializer.validated_data['code']
+KeyError: 'code'
+ERROR 2023-12-21 01:50:02,460 basehttp 57544 123145343774720 "PATCH /api/redeemcode/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 500 90128
+INFO 2023-12-21 01:51:42,757 autoreload 57627 4638692864 Watching for file changes with StatReloader
+ERROR 2023-12-21 01:51:48,501 log 57627 123145555677184 Internal Server Error: /api/redeemcode/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/redeemcode.py", line 31, in patch
+    print(serializer.data)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/serializers.py", line 548, in data
+    ret = super().data
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/serializers.py", line 242, in data
+    raise AssertionError(msg)
+AssertionError: When a serializer is passed a `data` keyword argument you must call `.is_valid()` before attempting to access the serialized `.data` representation.
+You should either call `.is_valid()` first, or access `.initial_data` instead.
+ERROR 2023-12-21 01:51:48,503 basehttp 57627 123145555677184 "PATCH /api/redeemcode/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 500 101030
+INFO 2023-12-21 01:53:31,299 autoreload 57667 4664989184 Watching for file changes with StatReloader
+INFO 2023-12-21 01:53:35,140 basehttp 57667 123145582936064 "PATCH /api/redeemcode/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 46
+INFO 2023-12-21 01:55:09,633 autoreload 57667 4664989184 /Users/lichaoyuan/Desktop/copytrade/api/views/redeemcode.py changed, reloading.
+INFO 2023-12-21 01:55:10,547 autoreload 57694 4494284288 Watching for file changes with StatReloader
+INFO 2023-12-21 01:55:18,521 autoreload 57694 4494284288 /Users/lichaoyuan/Desktop/copytrade/api/views/redeemcode.py changed, reloading.
+INFO 2023-12-21 01:55:19,364 autoreload 57700 4625827328 Watching for file changes with StatReloader
+INFO 2023-12-21 01:55:20,168 basehttp 57700 123145570054144 "PATCH /api/redeemcode/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 46
+INFO 2023-12-21 01:57:54,828 autoreload 57700 4625827328 /Users/lichaoyuan/Desktop/copytrade/api/views/redeemcode.py changed, reloading.
+INFO 2023-12-21 01:57:55,785 autoreload 57726 4569765376 Watching for file changes with StatReloader
+INFO 2023-12-21 01:57:59,115 basehttp 57726 123145523830784 "PATCH /api/redeemcode/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 46
+INFO 2023-12-21 01:59:28,048 autoreload 57726 4569765376 /Users/lichaoyuan/Desktop/copytrade/api/views/redeemcode.py changed, reloading.
+INFO 2023-12-21 01:59:28,934 autoreload 57750 4530742784 Watching for file changes with StatReloader
+INFO 2023-12-21 01:59:32,642 basehttp 57750 123145506639872 "PATCH /api/redeemcode/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 37
+INFO 2023-12-21 01:59:46,925 basehttp 57750 123145523429376 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 145
