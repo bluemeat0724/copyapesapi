@@ -18,12 +18,13 @@ def calculate_and_stop_tasks():
             remaining_quota = get_remaining_quota(user_id, flag)
 
             # 判断是否结束任务
-            if total_pnl > remaining_quota:
+            if total_pnl >= remaining_quota:
                 stop_task(task_id)
                 # 如果结束任务，则更新剩余额度
                 task_pnl = check_task_pnl(task_id)
                 remaining_quota -= task_pnl
                 update_remaining_quota(user_id, flag, remaining_quota)
+            
 
 def calculate_total_pnl(user_id, flag):
     # 根据用户和任务类型计算累计收益的逻辑

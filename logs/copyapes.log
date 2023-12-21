@@ -1137,3 +1137,73 @@ INFO 2023-12-21 23:06:59,131 basehttp 65732 123145421758464 "GET /api/taskadd/25
 INFO 2023-12-21 23:06:59,131 basehttp 65732 123145438547968 "GET /api/tradeorder/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 2310
 INFO 2023-12-21 23:06:59,136 basehttp 65732 123145455337472 "GET /api/traderdetial/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 26999
 INFO 2023-12-21 23:07:21,219 basehttp 65732 123145455337472 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 145
+INFO 2023-12-21 23:17:25,612 autoreload 65732 4393190912 /Users/lichaoyuan/Desktop/copytrade/crawler/account/update_quota.py changed, reloading.
+INFO 2023-12-21 23:17:26,678 autoreload 65908 4446385664 Watching for file changes with StatReloader
+INFO 2023-12-21 23:19:13,702 autoreload 65908 4446385664 /Users/lichaoyuan/Desktop/copytrade/crawler/account/update_quota.py changed, reloading.
+INFO 2023-12-21 23:19:14,842 autoreload 65933 4705965568 Watching for file changes with StatReloader
+INFO 2023-12-21 23:30:43,439 autoreload 65933 4705965568 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_orderinfo.py changed, reloading.
+INFO 2023-12-21 23:30:44,505 autoreload 66077 4613510656 Watching for file changes with StatReloader
+INFO 2023-12-21 23:31:53,282 basehttp 66077 123145534783488 "GET /api/quotainfo/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 147
+INFO 2023-12-21 23:31:58,093 basehttp 66077 123145534783488 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3673
+INFO 2023-12-21 23:32:03,002 basehttp 66077 123145534783488 "OPTIONS /api/taskadd/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 0
+INFO 2023-12-21 23:32:03,049 basehttp 66077 123145534783488 "PATCH /api/taskadd/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 242
+INFO 2023-12-21 23:32:03,054 basehttp 66077 123145551572992 "OPTIONS /api/apiadd/23/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 0
+INFO 2023-12-21 23:32:03,095 basehttp 66077 123145534783488 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3673
+WARNING 2023-12-21 23:32:03,100 log 66077 123145551572992 Not Found: /api/apiadd/23/
+WARNING 2023-12-21 23:32:03,122 basehttp 66077 123145551572992 "PATCH /api/apiadd/23/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 404 25
+INFO 2023-12-21 23:32:07,413 basehttp 66077 123145534783488 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3673
+INFO 2023-12-21 23:32:09,973 basehttp 66077 123145534783488 "GET /api/quotainfo/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 147
+INFO 2023-12-21 23:32:17,761 basehttp 66077 123145534783488 "GET /api/quotainfo/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 132
+INFO 2023-12-21 23:32:23,563 basehttp 66077 123145534783488 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3673
+INFO 2023-12-21 23:32:25,415 basehttp 66077 123145534783488 "GET /api/quotainfo/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 132
+INFO 2023-12-21 23:32:27,154 basehttp 66077 123145534783488 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3673
+INFO 2023-12-21 23:32:28,091 basehttp 66077 123145534783488 "GET /api/quotainfo/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 132
+INFO 2023-12-21 23:32:51,433 basehttp 66077 123145534783488 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3673
+INFO 2023-12-21 23:33:37,031 basehttp 66077 123145534783488 "GET /api/traderdetial/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 25427
+INFO 2023-12-21 23:33:37,031 basehttp 66077 123145551572992 "GET /api/tradeorder/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 5607
+INFO 2023-12-21 23:33:37,037 basehttp 66077 123145568362496 "GET /api/taskadd/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 242
+INFO 2023-12-21 23:33:42,785 basehttp 66077 123145551572992 "GET /api/tradeorder/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 5607
+INFO 2023-12-21 23:33:42,785 basehttp 66077 123145568362496 "GET /api/taskadd/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 242
+INFO 2023-12-21 23:33:42,787 basehttp 66077 123145534783488 "GET /api/traderdetial/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 25427
+INFO 2023-12-21 23:34:12,436 basehttp 66077 123145568362496 "GET /api/taskadd/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 242
+INFO 2023-12-21 23:34:12,436 basehttp 66077 123145551572992 "GET /api/tradeorder/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 5607
+INFO 2023-12-21 23:34:12,438 basehttp 66077 123145534783488 "GET /api/traderdetial/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 25427
+INFO 2023-12-21 23:34:14,241 basehttp 66077 123145551572992 "GET /api/tradeorder/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 5607
+INFO 2023-12-21 23:34:14,241 basehttp 66077 123145568362496 "GET /api/taskadd/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 242
+INFO 2023-12-21 23:34:14,244 basehttp 66077 123145534783488 "GET /api/traderdetial/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 25427
+INFO 2023-12-21 23:36:56,890 basehttp 66077 123145551572992 "GET /api/tradeorder/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 5607
+INFO 2023-12-21 23:36:56,894 basehttp 66077 123145568362496 "GET /api/taskadd/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 242
+INFO 2023-12-21 23:36:56,895 basehttp 66077 123145534783488 "GET /api/traderdetial/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 25427
+INFO 2023-12-21 23:37:01,109 basehttp 66077 123145568362496 "GET /api/taskadd/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 242
+INFO 2023-12-21 23:37:01,110 basehttp 66077 123145551572992 "GET /api/tradeorder/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 5607
+INFO 2023-12-21 23:37:01,111 basehttp 66077 123145534783488 "GET /api/traderdetial/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 25427
+INFO 2023-12-21 23:37:46,922 basehttp 66077 123145534783488 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3673
+INFO 2023-12-21 23:37:48,932 basehttp 66077 123145568362496 "GET /api/taskadd/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 242
+INFO 2023-12-21 23:37:48,937 basehttp 66077 123145551572992 "GET /api/tradeorder/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 5607
+INFO 2023-12-21 23:37:48,937 basehttp 66077 123145534783488 "GET /api/traderdetial/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 25427
+INFO 2023-12-21 23:40:07,483 autoreload 66077 4613510656 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_orderinfo.py changed, reloading.
+INFO 2023-12-21 23:40:08,416 autoreload 66356 4630885888 Watching for file changes with StatReloader
+INFO 2023-12-21 23:40:17,654 basehttp 66356 123145473638400 "GET /api/taskadd/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 242
+INFO 2023-12-21 23:40:17,660 basehttp 66356 123145456848896 "GET /api/tradeorder/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 5607
+INFO 2023-12-21 23:40:17,662 basehttp 66356 123145440059392 "GET /api/traderdetial/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 25427
+INFO 2023-12-21 23:40:19,624 basehttp 66356 123145456848896 "GET /api/tradeorder/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 5607
+INFO 2023-12-21 23:40:19,625 basehttp 66356 123145473638400 "GET /api/taskadd/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 242
+INFO 2023-12-21 23:40:19,627 basehttp 66356 123145440059392 "GET /api/traderdetial/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 25427
+INFO 2023-12-21 23:41:59,089 autoreload 66356 4630885888 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_orderinfo.py changed, reloading.
+INFO 2023-12-21 23:41:59,890 autoreload 66376 4444108288 Watching for file changes with StatReloader
+INFO 2023-12-21 23:42:11,436 basehttp 66376 123145587580928 "GET /api/taskadd/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 242
+INFO 2023-12-21 23:42:11,437 basehttp 66376 123145570791424 "GET /api/tradeorder/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 5607
+INFO 2023-12-21 23:42:11,439 basehttp 66376 123145554001920 "GET /api/traderdetial/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 25427
+INFO 2023-12-21 23:43:13,288 autoreload 66376 4444108288 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_orderinfo.py changed, reloading.
+INFO 2023-12-21 23:43:14,161 autoreload 66392 4710372864 Watching for file changes with StatReloader
+INFO 2023-12-21 23:44:21,169 autoreload 66392 4710372864 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_orderinfo.py changed, reloading.
+INFO 2023-12-21 23:44:21,990 autoreload 66414 4618647040 Watching for file changes with StatReloader
+INFO 2023-12-21 23:45:00,023 autoreload 66414 4618647040 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_orderinfo.py changed, reloading.
+INFO 2023-12-21 23:45:00,875 autoreload 66424 4712326656 Watching for file changes with StatReloader
+INFO 2023-12-21 23:45:57,615 autoreload 66424 4712326656 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_orderinfo.py changed, reloading.
+INFO 2023-12-21 23:45:58,492 autoreload 66431 4645635584 Watching for file changes with StatReloader
+INFO 2023-12-21 23:46:34,508 autoreload 66431 4645635584 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_orderinfo.py changed, reloading.
+INFO 2023-12-21 23:46:35,351 autoreload 66444 4590974464 Watching for file changes with StatReloader
+INFO 2023-12-21 23:53:20,186 basehttp 66444 123145381990400 "GET /api/tradeorder/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 5607
+INFO 2023-12-21 23:53:20,186 basehttp 66444 123145398779904 "GET /api/taskadd/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 242
+INFO 2023-12-21 23:53:20,188 basehttp 66444 123145365200896 "GET /api/traderdetial/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 25427
