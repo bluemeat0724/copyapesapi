@@ -28,8 +28,9 @@ def store_redeem_code(redeem_code, value):
 
 if __name__ == "__main__":
     num_codes_to_generate = 1
+    value = 100
 
     for _ in range(num_codes_to_generate):
         redeem_code = generate_redeem_code()
-        store_redeem_code(redeem_code, 100)
+        store_redeem_code(redeem_code, value)
         print(f"{redeem_code}")

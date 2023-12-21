@@ -977,3 +977,163 @@ INFO 2023-12-21 01:59:28,048 autoreload 57726 4569765376 /Users/lichaoyuan/Deskt
 INFO 2023-12-21 01:59:28,934 autoreload 57750 4530742784 Watching for file changes with StatReloader
 INFO 2023-12-21 01:59:32,642 basehttp 57750 123145506639872 "PATCH /api/redeemcode/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 37
 INFO 2023-12-21 01:59:46,925 basehttp 57750 123145523429376 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 145
+INFO 2023-12-21 02:01:20,312 basehttp 57750 123145540218880 "GET /api/quotainfo/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 147
+INFO 2023-12-21 02:02:36,269 basehttp 57750 123145523429376 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 44822
+INFO 2023-12-21 02:02:38,037 basehttp 57750 123145523429376 "GET /api/traderdetial/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 17726
+INFO 2023-12-21 02:02:38,052 basehttp 57750 123145557008384 "GET /api/taskadd/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 241
+INFO 2023-12-21 02:02:38,053 basehttp 57750 123145540218880 "GET /api/tradeorder/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 1435
+INFO 2023-12-21 12:11:17,452 basehttp 57750 123145557008384 "GET /api/taskadd/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 241
+INFO 2023-12-21 12:11:17,457 basehttp 57750 123145540218880 "GET /api/tradeorder/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 2014
+INFO 2023-12-21 12:11:17,457 basehttp 57750 123145523429376 "GET /api/traderdetial/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 19716
+INFO 2023-12-21 12:11:19,978 basehttp 57750 123145540218880 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 145
+INFO 2023-12-21 12:11:22,376 basehttp 57750 123145540218880 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 44822
+INFO 2023-12-21 12:11:35,009 basehttp 57750 123145573797888 "GET /api/quotainfo/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 146
+INFO 2023-12-21 12:11:37,842 basehttp 57750 123145573797888 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3672
+INFO 2023-12-21 12:11:40,882 basehttp 57750 123145590587392 "GET /api/tradeorder/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 5369
+INFO 2023-12-21 12:11:40,882 basehttp 57750 123145607376896 "GET /api/taskadd/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 241
+INFO 2023-12-21 12:11:40,882 basehttp 57750 123145573797888 "GET /api/traderdetial/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 20613
+INFO 2023-12-21 12:11:46,678 basehttp 57750 123145540218880 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 145
+INFO 2023-12-21 12:13:44,210 basehttp 57750 123145540218880 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 44821
+INFO 2023-12-21 12:13:45,746 basehttp 57750 123145523429376 "GET /api/tradeorder/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 2011
+INFO 2023-12-21 12:13:45,747 basehttp 57750 123145557008384 "GET /api/taskadd/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 240
+INFO 2023-12-21 12:13:45,748 basehttp 57750 123145540218880 "GET /api/traderdetial/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 19716
+INFO 2023-12-21 14:00:13,645 basehttp 57750 123145523429376 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 144
+INFO 2023-12-21 14:00:16,637 basehttp 57750 123145523429376 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 44821
+INFO 2023-12-21 14:00:18,665 basehttp 57750 123145523429376 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 144
+INFO 2023-12-21 15:11:09,662 basehttp 57750 123145523429376 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 145
+INFO 2023-12-21 15:24:09,683 autoreload 57750 4530742784 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_orderinfo.py changed, reloading.
+INFO 2023-12-21 15:24:10,829 autoreload 62129 4561413632 Watching for file changes with StatReloader
+INFO 2023-12-21 15:26:55,588 autoreload 62129 4561413632 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_orderinfo.py changed, reloading.
+INFO 2023-12-21 15:26:56,551 autoreload 62176 4543563264 Watching for file changes with StatReloader
+INFO 2023-12-21 15:29:13,206 autoreload 62176 4543563264 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_orderinfo.py changed, reloading.
+INFO 2023-12-21 15:29:14,092 autoreload 62195 4702717440 Watching for file changes with StatReloader
+INFO 2023-12-21 15:31:51,534 autoreload 62195 4702717440 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 15:31:52,332 autoreload 62251 4529325568 Watching for file changes with StatReloader
+INFO 2023-12-21 16:46:16,117 basehttp 62251 123145343844352 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 145
+INFO 2023-12-21 16:46:19,811 basehttp 62251 123145343844352 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 44821
+INFO 2023-12-21 16:46:22,212 basehttp 62251 123145343844352 "GET /api/traderdetial/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 20703
+INFO 2023-12-21 16:46:22,222 basehttp 62251 123145360633856 "GET /api/tradeorder/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 2287
+INFO 2023-12-21 16:46:22,222 basehttp 62251 123145377423360 "GET /api/taskadd/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 240
+INFO 2023-12-21 16:46:24,532 basehttp 62251 123145360633856 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 145
+INFO 2023-12-21 17:59:33,241 basehttp 62251 123145343844352 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 44821
+INFO 2023-12-21 17:59:34,525 basehttp 62251 123145343844352 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2023-12-21 17:59:34,528 basehttp 62251 123145360633856 "GET /api/apiadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 791
+INFO 2023-12-21 17:59:35,756 basehttp 62251 123145360633856 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 144
+INFO 2023-12-21 17:59:37,970 basehttp 62251 123145360633856 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 144
+INFO 2023-12-21 20:25:52,230 autoreload 62251 4529325568 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 20:25:53,399 autoreload 63875 4492740096 Watching for file changes with StatReloader
+INFO 2023-12-21 20:26:08,061 autoreload 63875 4492740096 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 20:26:08,899 autoreload 63881 4438910464 Watching for file changes with StatReloader
+INFO 2023-12-21 20:32:45,655 autoreload 63881 4438910464 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 20:32:46,489 autoreload 63950 4504126976 Watching for file changes with StatReloader
+INFO 2023-12-21 20:37:09,472 autoreload 63950 4504126976 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-21 20:37:10,335 autoreload 63997 4549092864 Watching for file changes with StatReloader
+INFO 2023-12-21 20:46:20,685 autoreload 63997 4549092864 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-21 20:46:21,488 autoreload 64077 4592072192 Watching for file changes with StatReloader
+INFO 2023-12-21 20:48:11,085 autoreload 64077 4592072192 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 20:48:12,044 autoreload 64102 4576929280 Watching for file changes with StatReloader
+INFO 2023-12-21 20:49:36,743 autoreload 64102 4576929280 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 20:49:37,565 autoreload 64151 4620092928 Watching for file changes with StatReloader
+INFO 2023-12-21 20:51:55,348 autoreload 64151 4620092928 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 20:51:56,259 autoreload 64184 4462310912 Watching for file changes with StatReloader
+INFO 2023-12-21 20:54:30,380 autoreload 64184 4462310912 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 20:54:31,325 autoreload 64231 4655773184 Watching for file changes with StatReloader
+INFO 2023-12-21 20:55:28,246 autoreload 64231 4655773184 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 20:55:29,116 autoreload 64243 4626077184 Watching for file changes with StatReloader
+INFO 2023-12-21 20:56:15,593 autoreload 64243 4626077184 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 20:56:16,501 autoreload 64253 4782675456 Watching for file changes with StatReloader
+INFO 2023-12-21 20:56:38,065 autoreload 64253 4782675456 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 20:56:38,889 autoreload 64263 4692915712 Watching for file changes with StatReloader
+INFO 2023-12-21 20:57:00,418 autoreload 64263 4692915712 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 20:57:01,241 autoreload 64268 4482819584 Watching for file changes with StatReloader
+INFO 2023-12-21 20:58:14,671 autoreload 64268 4482819584 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 20:58:15,506 autoreload 64285 4407797248 Watching for file changes with StatReloader
+INFO 2023-12-21 20:59:17,572 autoreload 64285 4407797248 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 20:59:18,545 autoreload 64318 4678661632 Watching for file changes with StatReloader
+INFO 2023-12-21 20:59:37,010 autoreload 64318 4678661632 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 20:59:37,893 autoreload 64332 4566889984 Watching for file changes with StatReloader
+INFO 2023-12-21 21:06:19,800 autoreload 64332 4566889984 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 21:06:20,694 autoreload 64390 4427531776 Watching for file changes with StatReloader
+INFO 2023-12-21 21:06:46,380 autoreload 64390 4427531776 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 21:06:47,235 autoreload 64402 4433798656 Watching for file changes with StatReloader
+INFO 2023-12-21 21:09:34,821 autoreload 64402 4433798656 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 21:09:35,692 autoreload 64431 4433675776 Watching for file changes with StatReloader
+INFO 2023-12-21 21:09:44,028 basehttp 64431 123145468223488 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 146
+INFO 2023-12-21 21:10:21,207 autoreload 64431 4433675776 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 21:10:22,102 autoreload 64452 4511249920 Watching for file changes with StatReloader
+INFO 2023-12-21 21:10:25,434 autoreload 64452 4511249920 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 21:10:26,260 autoreload 64456 4592387584 Watching for file changes with StatReloader
+INFO 2023-12-21 21:10:37,465 autoreload 64456 4592387584 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 21:10:38,350 autoreload 64462 4661392896 Watching for file changes with StatReloader
+INFO 2023-12-21 21:10:52,429 basehttp 64462 123145439465472 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 146
+INFO 2023-12-21 21:11:01,818 basehttp 64462 123145456254976 "GET /api/quotainfo/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 145
+INFO 2023-12-21 21:11:09,058 basehttp 64462 123145456254976 "GET /api/quotainfo/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 145
+INFO 2023-12-21 21:11:28,117 autoreload 64462 4661392896 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 21:11:28,953 autoreload 64496 4507764224 Watching for file changes with StatReloader
+INFO 2023-12-21 21:11:39,101 autoreload 64496 4507764224 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 21:11:39,943 autoreload 64504 4780426752 Watching for file changes with StatReloader
+INFO 2023-12-21 21:13:04,771 autoreload 64504 4780426752 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 21:13:05,637 autoreload 64520 4611102208 Watching for file changes with StatReloader
+INFO 2023-12-21 21:13:12,730 autoreload 64520 4611102208 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 21:13:13,609 autoreload 64528 4624713216 Watching for file changes with StatReloader
+INFO 2023-12-21 21:13:19,647 autoreload 64528 4624713216 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 21:13:20,512 autoreload 64533 4676535808 Watching for file changes with StatReloader
+INFO 2023-12-21 21:28:02,819 autoreload 64533 4676535808 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 21:28:03,765 autoreload 64678 4426061312 Watching for file changes with StatReloader
+INFO 2023-12-21 21:41:20,341 autoreload 64678 4426061312 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 21:41:21,386 autoreload 64806 4584863232 Watching for file changes with StatReloader
+INFO 2023-12-21 21:52:37,281 autoreload 64806 4584863232 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_task/tasks.py changed, reloading.
+INFO 2023-12-21 21:52:38,074 autoreload 64925 4462650880 Watching for file changes with StatReloader
+INFO 2023-12-21 21:52:47,928 autoreload 64925 4462650880 /Users/lichaoyuan/Desktop/copytrade/crawler/account/update_quota.py changed, reloading.
+INFO 2023-12-21 21:52:48,835 autoreload 64935 4815562240 Watching for file changes with StatReloader
+INFO 2023-12-21 22:41:42,284 autoreload 64935 4815562240 /Users/lichaoyuan/Desktop/copytrade/crawler/account/update_quota.py changed, reloading.
+INFO 2023-12-21 22:41:43,579 autoreload 65181 4640503296 Watching for file changes with StatReloader
+INFO 2023-12-21 22:44:01,311 autoreload 65181 4640503296 /Users/lichaoyuan/Desktop/copytrade/crawler/account/update_quota.py changed, reloading.
+INFO 2023-12-21 22:44:02,316 autoreload 65230 4577269248 Watching for file changes with StatReloader
+INFO 2023-12-21 22:44:14,229 basehttp 65230 123145414406144 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 44822
+INFO 2023-12-21 22:44:24,439 basehttp 65230 123145431195648 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3674
+INFO 2023-12-21 22:44:38,530 autoreload 65230 4577269248 /Users/lichaoyuan/Desktop/copytrade/crawler/account/update_quota.py changed, reloading.
+INFO 2023-12-21 22:44:39,504 autoreload 65252 4566980096 Watching for file changes with StatReloader
+INFO 2023-12-21 22:47:02,183 autoreload 65252 4566980096 /Users/lichaoyuan/Desktop/copytrade/crawler/account/update_quota.py changed, reloading.
+INFO 2023-12-21 22:47:02,960 autoreload 65274 4399384064 Watching for file changes with StatReloader
+INFO 2023-12-21 22:47:26,478 autoreload 65274 4399384064 /Users/lichaoyuan/Desktop/copytrade/crawler/account/update_quota.py changed, reloading.
+INFO 2023-12-21 22:47:27,261 autoreload 65281 4579210752 Watching for file changes with StatReloader
+INFO 2023-12-21 22:49:59,285 autoreload 65281 4579210752 /Users/lichaoyuan/Desktop/copytrade/crawler/account/update_quota.py changed, reloading.
+INFO 2023-12-21 22:50:00,093 autoreload 65343 4670060032 Watching for file changes with StatReloader
+INFO 2023-12-21 22:54:21,913 autoreload 65343 4670060032 /Users/lichaoyuan/Desktop/copytrade/crawler/account/update_quota.py changed, reloading.
+INFO 2023-12-21 22:54:22,931 autoreload 65395 4595811840 Watching for file changes with StatReloader
+INFO 2023-12-21 22:54:56,905 autoreload 65395 4595811840 /Users/lichaoyuan/Desktop/copytrade/crawler/account/update_quota.py changed, reloading.
+INFO 2023-12-21 22:54:57,702 autoreload 65412 4682790400 Watching for file changes with StatReloader
+INFO 2023-12-21 22:55:36,388 basehttp 65412 123145455595520 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 144
+INFO 2023-12-21 22:55:39,332 basehttp 65412 123145455595520 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 144
+INFO 2023-12-21 22:55:43,184 basehttp 65412 123145455595520 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 44821
+INFO 2023-12-21 22:55:44,951 basehttp 65412 123145455595520 "GET /api/traderdetial/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 26125
+INFO 2023-12-21 22:55:44,960 basehttp 65412 123145472385024 "GET /api/tradeorder/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 2278
+INFO 2023-12-21 22:55:44,963 basehttp 65412 123145489174528 "GET /api/taskadd/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 240
+INFO 2023-12-21 22:55:50,731 basehttp 65412 123145489174528 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 144
+INFO 2023-12-21 22:57:14,423 autoreload 65412 4682790400 /Users/lichaoyuan/Desktop/copytrade/crawler/account/update_quota.py changed, reloading.
+INFO 2023-12-21 22:57:15,607 autoreload 65448 4407035392 Watching for file changes with StatReloader
+INFO 2023-12-21 22:57:22,967 basehttp 65448 123145490112512 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 144
+INFO 2023-12-21 23:01:47,990 autoreload 65448 4407035392 /Users/lichaoyuan/Desktop/copytrade/crawler/account/update_quota.py changed, reloading.
+INFO 2023-12-21 23:01:49,022 autoreload 65732 4393190912 Watching for file changes with StatReloader
+INFO 2023-12-21 23:01:50,304 basehttp 65732 123145421758464 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 145
+INFO 2023-12-21 23:01:57,024 basehttp 65732 123145421758464 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 44822
+INFO 2023-12-21 23:02:01,312 basehttp 65732 123145421758464 "GET /api/traderdetial/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 26999
+INFO 2023-12-21 23:02:01,323 basehttp 65732 123145438547968 "GET /api/tradeorder/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 2310
+INFO 2023-12-21 23:02:01,326 basehttp 65732 123145455337472 "GET /api/taskadd/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 241
+INFO 2023-12-21 23:02:08,438 basehttp 65732 123145455337472 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 44822
+INFO 2023-12-21 23:02:09,348 basehttp 65732 123145455337472 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 145
+INFO 2023-12-21 23:02:17,993 basehttp 65732 123145472126976 "GET /api/quotainfo/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 148
+INFO 2023-12-21 23:02:55,692 basehttp 65732 123145472126976 "GET /api/quotainfo/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 148
+INFO 2023-12-21 23:02:59,540 basehttp 65732 123145472126976 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3671
+INFO 2023-12-21 23:03:01,070 basehttp 65732 123145488916480 "GET /api/apiadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 20
+INFO 2023-12-21 23:03:01,070 basehttp 65732 123145472126976 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2023-12-21 23:03:01,909 basehttp 65732 123145472126976 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3671
+INFO 2023-12-21 23:03:02,912 basehttp 65732 123145472126976 "GET /api/quotainfo/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 148
+INFO 2023-12-21 23:03:04,308 basehttp 65732 123145472126976 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3671
+INFO 2023-12-21 23:03:05,687 basehttp 65732 123145472126976 "GET /api/quotainfo/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 148
+INFO 2023-12-21 23:06:57,394 basehttp 65732 123145455337472 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 44822
+INFO 2023-12-21 23:06:59,131 basehttp 65732 123145421758464 "GET /api/taskadd/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 241
+INFO 2023-12-21 23:06:59,131 basehttp 65732 123145438547968 "GET /api/tradeorder/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 2310
+INFO 2023-12-21 23:06:59,136 basehttp 65732 123145455337472 "GET /api/traderdetial/252/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 26999
+INFO 2023-12-21 23:07:21,219 basehttp 65732 123145455337472 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 145
