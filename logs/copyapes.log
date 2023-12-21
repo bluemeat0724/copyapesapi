@@ -1207,3 +1207,5 @@ INFO 2023-12-21 23:46:35,351 autoreload 66444 4590974464 Watching for file chang
 INFO 2023-12-21 23:53:20,186 basehttp 66444 123145381990400 "GET /api/tradeorder/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 5607
 INFO 2023-12-21 23:53:20,186 basehttp 66444 123145398779904 "GET /api/taskadd/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 242
 INFO 2023-12-21 23:53:20,188 basehttp 66444 123145365200896 "GET /api/traderdetial/253/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 25427
+INFO 2023-12-21 23:57:44,772 autoreload 66444 4590974464 /Users/lichaoyuan/Desktop/copytrade/crawler/account/okx_orderinfo.py changed, reloading.
+INFO 2023-12-21 23:57:45,707 autoreload 66590 4527777280 Watching for file changes with StatReloader

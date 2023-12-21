@@ -153,7 +153,7 @@ class OkxOrderInfo(object):
 
         # 去除匹配数据中的 None
         matching_data = [item for item in matching_data if item is not None]
-        print(history_data_dict)
+
         if not matching_data:
             return
         # 跟新数据
@@ -190,7 +190,7 @@ class OkxOrderInfo(object):
             remaining_quota -= task_pnl
             # 更新剩余额度数据
             update_remaining_quota(self.user_id, int(self.flag), remaining_quota)
-            print(remaining_quota)
+
 
 
 
