@@ -12,10 +12,19 @@ def get_okx_api_balance(acc, flag, api_id):
 
         balance = obj.account.get_balance(ccy='BTC,ETH,USDT').get('data')[0].get('details')
     except ResponseStatusError as e:
-        # api错误，进行逻辑删除
-        with Connect() as db:
-            db.exec("UPDATE api_apiinfo SET deleted = 1 WHERE id = %(api_id)s", api_id=api_id)
-        print(f'api_id:{api_id} 已删除')
+        # 找到 "code" 的起始位置
+        # Error response_status_code 401
+        # response_content={"msg":"Request header OK-ACCESS-PASSPHRASE incorrect.","code":"50105"}
+        start_index = e.find('"code":"') + len('"code":"')
+        # 找到 "code" 的结束位置
+        end_index = e.find('"', start_index)
+        # 提取出 "code" 的值
+        code_value = e[start_index:end_index]
+        if code_value == "50105":
+            # api错误，进行逻辑删除
+            with Connect() as db:
+                db.exec("UPDATE api_apiinfo SET deleted = 1 WHERE id = %(api_id)s", api_id=api_id)
+            print(f'api_id:{api_id} 已删除')
         return
     result = {}
     for item in balance:
