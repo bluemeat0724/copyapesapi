@@ -24,7 +24,7 @@ def calculate_and_stop_tasks():
                 task_pnl = check_task_pnl(task_id)
                 remaining_quota -= task_pnl
                 update_remaining_quota(user_id, flag, remaining_quota)
-                print(f"用户{user_id}的任务{task_id}盈利{task_pnl}，剩余额度{remaining_quota}，额度上限，任务自动结束。")
+                print(f"用户{user_id}的任务{task_id}盈利{task_pnl}，剩余额度{remaining_quota}，达到额度上限，任务自动结束。")
 
 
 def calculate_total_pnl(user_id, flag):
@@ -55,6 +55,10 @@ def stop_task(task_id):
     conn = redis.Redis(**settings.REDIS_PARAMS)
     conn.lpush(settings.QUEUE_TASK_NAME, task_id)
 
+    # 将apiinfo的status改为1，释放api
+    with Connect() as db:
+        db.exec(f"UPDATE api_apiinfo SET status = 1 WHERE id = (SELECT api_id FROM api_taskinfo WHERE id = {task_id})")
+
 
 def update_remaining_quota(user_id, flag, remaining_quota):
     update_quota_sql = f"""
@@ -78,4 +82,5 @@ if __name__ == '__main__':
     # print(calculate_total_pnl(1, 1))
     # print(get_remaining_quota(1, 1))
     # check_task_pnl(244)
-    update_remaining_quota(3,1,10)
+    # update_remaining_quota(3,1,10)
+    stop_task(261)
