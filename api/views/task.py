@@ -1,5 +1,5 @@
 from api.extension.mixins import CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixin, CopyUpdateModelMixin
-from api.serializers.task import TaskcSerializer
+from api.serializers.task import TaskSerializer
 from api import models
 from django.db.models import Q
 from api.extension import return_code
@@ -15,7 +15,7 @@ class TaskAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixi
     # 当前登录用户筛选
     filter_backends = [SelfFilterBackend]
 
-    serializer_class = TaskcSerializer
+    serializer_class = TaskSerializer
     queryset = models.TaskInfo.objects.filter(deleted=False).order_by('-id')
 
     def perform_create(self, serializer):
@@ -44,6 +44,16 @@ class TaskAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixi
 
     def perform_update(self, serializer):
         serializer.save()
+
+        # 从请求体获取task_id，再获取api_id
+        task_id = self.request.data.get('task_id')
+        task_object = models.TaskInfo.objects.filter(Q(id=task_id)).first()
+        api_id = task_object.api_id
+        # 将api使用状态改为1，释放api
+        api_object = models.ApiInfo.objects.filter(Q(id=api_id)).first()
+        api_object.status = 1
+        api_object.save()
+
         # 写入Redis队列{'id': 1, 'status': 2}
         # 结束当前任务全部交易
         conn = get_redis_connection("default")

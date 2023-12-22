@@ -1463,3 +1463,406 @@ INFO 2023-12-22 13:51:33,282 basehttp 72538 123145514594304 "GET /api/apiadd/?to
 INFO 2023-12-22 13:51:41,483 basehttp 72538 123145514594304 "GET /api/apiadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 1138
 INFO 2023-12-22 13:51:50,637 basehttp 72538 123145514594304 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45506
 INFO 2023-12-22 14:04:57,292 basehttp 72538 123145497804800 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 145
+INFO 2023-12-22 14:26:23,318 basehttp 72538 123145497804800 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45506
+INFO 2023-12-22 19:23:16,548 basehttp 72538 123145497804800 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45521
+INFO 2023-12-22 19:23:20,219 basehttp 72538 123145497804800 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 160
+INFO 2023-12-22 19:23:22,386 basehttp 72538 123145497804800 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45521
+INFO 2023-12-22 19:23:27,868 basehttp 72538 123145514594304 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 4379
+INFO 2023-12-22 19:23:30,322 basehttp 72538 123145514594304 "GET /api/quotainfo/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 160
+INFO 2023-12-22 19:32:27,425 basehttp 72538 123145497804800 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 160
+INFO 2023-12-22 19:33:13,775 basehttp 72538 123145497804800 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 161
+INFO 2023-12-22 19:33:25,818 basehttp 72538 123145497804800 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 161
+INFO 2023-12-22 19:34:03,644 basehttp 72538 123145497804800 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 161
+INFO 2023-12-22 19:34:11,756 basehttp 72538 123145497804800 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 161
+INFO 2023-12-22 19:34:22,487 basehttp 72538 123145497804800 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 161
+INFO 2023-12-22 19:35:40,159 basehttp 72538 123145497804800 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 160
+INFO 2023-12-22 19:37:37,818 basehttp 72538 123145514594304 "GET /api/quotainfo/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 162
+INFO 2023-12-22 19:37:58,252 basehttp 72538 123145514594304 "GET /api/quotainfo/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 162
+INFO 2023-12-22 19:38:00,245 basehttp 72538 123145514594304 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 4365
+INFO 2023-12-22 19:38:02,005 basehttp 72538 123145514594304 "GET /api/quotainfo/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 162
+INFO 2023-12-22 19:38:04,253 basehttp 72538 123145514594304 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 4365
+INFO 2023-12-22 19:38:10,884 basehttp 72538 123145497804800 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45521
+INFO 2023-12-22 19:38:14,569 basehttp 72538 123145497804800 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 161
+INFO 2023-12-22 19:38:16,427 basehttp 72538 123145497804800 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45521
+INFO 2023-12-22 19:38:19,841 basehttp 72538 123145497804800 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45521
+INFO 2023-12-22 19:38:23,271 basehttp 72538 123145497804800 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 161
+INFO 2023-12-22 19:38:25,705 basehttp 72538 123145497804800 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45521
+INFO 2023-12-22 19:38:27,375 basehttp 72538 123145531383808 "GET /api/tradeorder/261/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 297
+INFO 2023-12-22 19:38:27,381 basehttp 72538 123145548173312 "GET /api/taskadd/261/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 242
+INFO 2023-12-22 19:38:27,382 basehttp 72538 123145497804800 "GET /api/traderdetial/261/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 1218
+INFO 2023-12-22 19:38:32,077 basehttp 72538 123145497804800 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 160
+INFO 2023-12-22 21:46:20,251 basehttp 72538 123145514594304 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 4380
+INFO 2023-12-22 21:46:22,739 basehttp 72538 123145514594304 "GET /api/quotainfo/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 161
+INFO 2023-12-22 21:46:28,450 basehttp 72538 123145514594304 "GET /api/quotainfo/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 161
+INFO 2023-12-22 21:46:32,005 basehttp 72538 123145514594304 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 4380
+INFO 2023-12-22 21:46:34,931 basehttp 72538 123145514594304 "GET /api/quotainfo/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 161
+INFO 2023-12-22 21:46:43,027 basehttp 72538 123145514594304 "GET /api/taskadd/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 4380
+INFO 2023-12-22 21:46:44,659 basehttp 72538 123145514594304 "GET /api/traderdetial/260/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 3017
+INFO 2023-12-22 21:46:44,664 basehttp 72538 123145581752320 "GET /api/taskadd/260/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 242
+INFO 2023-12-22 21:46:44,665 basehttp 72538 123145564962816 "GET /api/tradeorder/260/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 281
+INFO 2023-12-22 21:50:27,712 autoreload 72538 4418213376 /Users/lichaoyuan/Desktop/copytrade/api/views/task.py changed, reloading.
+INFO 2023-12-22 21:50:28,942 autoreload 75764 4598896128 Watching for file changes with StatReloader
+INFO 2023-12-22 21:52:32,998 autoreload 75764 4598896128 /Users/lichaoyuan/Desktop/copytrade/api/views/task.py changed, reloading.
+INFO 2023-12-22 21:52:33,930 autoreload 75790 4420523520 Watching for file changes with StatReloader
+INFO 2023-12-22 21:52:50,305 autoreload 75790 4420523520 /Users/lichaoyuan/Desktop/copytrade/api/views/task.py changed, reloading.
+INFO 2023-12-22 21:52:51,236 autoreload 75804 4566177280 Watching for file changes with StatReloader
+INFO 2023-12-22 21:53:19,831 basehttp 75804 123145522319360 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45520
+INFO 2023-12-22 21:53:21,755 basehttp 75804 123145522319360 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 160
+INFO 2023-12-22 21:53:22,593 basehttp 75804 123145522319360 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45520
+INFO 2023-12-22 21:53:26,723 basehttp 75804 123145522319360 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2023-12-22 21:53:26,728 basehttp 75804 123145539108864 "GET /api/apiadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 967
+INFO 2023-12-22 21:53:35,908 basehttp 75804 123145539108864 "OPTIONS /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 0
+INFO 2023-12-22 21:53:35,922 basehttp 75804 123145539108864 "POST /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 232
+INFO 2023-12-22 21:53:35,956 basehttp 75804 123145539108864 "OPTIONS /api/apiadd/2/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 0
+INFO 2023-12-22 21:53:35,989 basehttp 75804 123145522319360 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45736
+INFO 2023-12-22 21:53:35,990 basehttp 75804 123145539108864 "PATCH /api/apiadd/2/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 175
+INFO 2023-12-22 21:54:00,131 basehttp 75804 123145539108864 "OPTIONS /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 0
+ERROR 2023-12-22 21:54:00,238 log 75804 123145539108864 Internal Server Error: /api/taskadd/262/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 68, in update
+    self.perform_update(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/task.py", line 50, in perform_update
+    api_object = models.ApiInfo.objects.filter(Q(user=self.request.user) & Q(id=api.id)).first()
+AttributeError: 'NoneType' object has no attribute 'id'
+ERROR 2023-12-22 21:54:00,240 basehttp 75804 123145539108864 "PATCH /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 500 106170
+INFO 2023-12-22 21:54:46,102 autoreload 75804 4566177280 /Users/lichaoyuan/Desktop/copytrade/api/views/task.py changed, reloading.
+INFO 2023-12-22 21:54:46,943 autoreload 75858 4540548608 Watching for file changes with StatReloader
+INFO 2023-12-22 21:54:49,026 basehttp 75858 123145521401856 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45735
+INFO 2023-12-22 21:56:13,642 basehttp 75858 123145521401856 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45737
+INFO 2023-12-22 21:56:22,398 basehttp 75858 123145521401856 "OPTIONS /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 0
+ERROR 2023-12-22 21:56:22,493 log 75858 123145521401856 Internal Server Error: /api/taskadd/262/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 68, in update
+    self.perform_update(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/task.py", line 50, in perform_update
+    api_object = models.ApiInfo.objects.filter(Q(id=api.id)).first()
+AttributeError: 'NoneType' object has no attribute 'id'
+ERROR 2023-12-22 21:56:22,495 basehttp 75858 123145521401856 "PATCH /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 500 106106
+INFO 2023-12-22 21:59:03,696 basehttp 75858 123145521401856 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45735
+INFO 2023-12-22 21:59:35,971 basehttp 75858 123145521401856 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45736
+INFO 2023-12-22 21:59:42,628 basehttp 75858 123145521401856 "OPTIONS /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 0
+ERROR 2023-12-22 21:59:42,670 log 75858 123145521401856 Internal Server Error: /api/taskadd/262/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 68, in update
+    self.perform_update(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/task.py", line 50, in perform_update
+    api_object = models.ApiInfo.objects.filter(Q(id=api.id)).first()
+AttributeError: 'NoneType' object has no attribute 'id'
+ERROR 2023-12-22 21:59:42,670 basehttp 75858 123145521401856 "PATCH /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 500 106106
+INFO 2023-12-22 22:04:13,966 basehttp 75858 123145521401856 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45736
+INFO 2023-12-22 22:04:30,193 basehttp 75858 123145521401856 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45736
+INFO 2023-12-22 22:04:38,186 basehttp 75858 123145521401856 "OPTIONS /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 0
+INFO 2023-12-22 22:04:38,199 basehttp 75858 123145521401856 "PATCH /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 214
+INFO 2023-12-22 22:04:38,234 basehttp 75858 123145521401856 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45735
+INFO 2023-12-22 22:05:41,225 basehttp 75858 123145521401856 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2023-12-22 22:05:41,232 basehttp 75858 123145538191360 "GET /api/apiadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 967
+INFO 2023-12-22 22:05:49,632 basehttp 75858 123145538191360 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45736
+INFO 2023-12-22 22:14:02,106 autoreload 75858 4540548608 /Users/lichaoyuan/Desktop/copytrade/api/views/task.py changed, reloading.
+INFO 2023-12-22 22:14:03,225 autoreload 76053 4540278272 Watching for file changes with StatReloader
+INFO 2023-12-22 22:15:20,268 basehttp 76053 123145551699968 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45736
+INFO 2023-12-22 22:15:51,246 basehttp 76053 123145551699968 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45737
+INFO 2023-12-22 22:16:04,918 basehttp 76053 123145551699968 "OPTIONS /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 0
+ERROR 2023-12-22 22:16:05,004 log 76053 123145551699968 Internal Server Error: /api/taskadd/262/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 68, in update
+    self.perform_update(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/task.py", line 50, in perform_update
+    api_id = task_object.api_id
+AttributeError: 'NoneType' object has no attribute 'api_id'
+ERROR 2023-12-22 22:16:05,005 basehttp 76053 123145551699968 "PATCH /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 500 106159
+INFO 2023-12-22 22:16:55,978 autoreload 76053 4540278272 /Users/lichaoyuan/Desktop/copytrade/api/views/task.py changed, reloading.
+INFO 2023-12-22 22:16:56,788 autoreload 76096 4606944768 Watching for file changes with StatReloader
+INFO 2023-12-22 22:17:21,937 basehttp 76096 123145534345216 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45736
+INFO 2023-12-22 22:17:28,223 basehttp 76096 123145534345216 "OPTIONS /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 0
+ERROR 2023-12-22 22:17:28,296 log 76096 123145534345216 Internal Server Error: /api/taskadd/262/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 68, in update
+    self.perform_update(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/task.py", line 50, in perform_update
+    api_id = task_object.api
+AttributeError: 'NoneType' object has no attribute 'api'
+ERROR 2023-12-22 22:17:28,297 basehttp 76096 123145534345216 "PATCH /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 500 106135
+INFO 2023-12-22 22:19:29,702 autoreload 76096 4606944768 /Users/lichaoyuan/Desktop/copytrade/api/views/task.py changed, reloading.
+INFO 2023-12-22 22:19:30,547 autoreload 76134 4559164928 Watching for file changes with StatReloader
+INFO 2023-12-22 22:19:41,050 basehttp 76134 123145524629504 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45736
+INFO 2023-12-22 22:19:48,159 basehttp 76134 123145524629504 "OPTIONS /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 0
+ERROR 2023-12-22 22:19:48,243 log 76134 123145524629504 Internal Server Error: /api/taskadd/262/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 68, in update
+    self.perform_update(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/task.py", line 51, in perform_update
+    for i in task.all():
+AttributeError: 'NoneType' object has no attribute 'all'
+ERROR 2023-12-22 22:19:48,244 basehttp 76134 123145524629504 "PATCH /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 500 106071
+INFO 2023-12-22 22:20:33,741 basehttp 76134 123145524629504 "OPTIONS /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 0
+ERROR 2023-12-22 22:20:33,783 log 76134 123145524629504 Internal Server Error: /api/taskadd/262/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 68, in update
+    self.perform_update(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/task.py", line 51, in perform_update
+    for i in task.all():
+AttributeError: 'NoneType' object has no attribute 'all'
+ERROR 2023-12-22 22:20:33,784 basehttp 76134 123145524629504 "PATCH /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 500 106071
+INFO 2023-12-22 22:20:51,297 basehttp 76134 123145524629504 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45735
+INFO 2023-12-22 22:20:54,611 basehttp 76134 123145524629504 "OPTIONS /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 0
+ERROR 2023-12-22 22:20:54,654 log 76134 123145524629504 Internal Server Error: /api/taskadd/262/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 68, in update
+    self.perform_update(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/task.py", line 51, in perform_update
+    for i in task.all():
+AttributeError: 'NoneType' object has no attribute 'all'
+ERROR 2023-12-22 22:20:54,655 basehttp 76134 123145524629504 "PATCH /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 500 106077
+INFO 2023-12-22 22:21:54,142 autoreload 76174 4598924800 Watching for file changes with StatReloader
+INFO 2023-12-22 22:22:10,372 basehttp 76174 123145493557248 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45737
+INFO 2023-12-22 22:22:19,964 basehttp 76174 123145493557248 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45737
+INFO 2023-12-22 22:22:26,061 basehttp 76174 123145493557248 "OPTIONS /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 0
+ERROR 2023-12-22 22:22:26,142 log 76174 123145493557248 Internal Server Error: /api/taskadd/262/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 68, in update
+    self.perform_update(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/task.py", line 51, in perform_update
+    for i in task.all():
+AttributeError: 'NoneType' object has no attribute 'all'
+ERROR 2023-12-22 22:22:26,143 basehttp 76174 123145493557248 "PATCH /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 500 106077
+INFO 2023-12-22 22:25:53,043 basehttp 76174 123145493557248 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45737
+INFO 2023-12-22 22:28:56,830 autoreload 76174 4598924800 /Users/lichaoyuan/Desktop/copytrade/api/views/task.py changed, reloading.
+INFO 2023-12-22 22:28:57,770 autoreload 76257 4733384192 Watching for file changes with StatReloader
+INFO 2023-12-22 22:29:02,112 basehttp 76257 123145568329728 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45737
+INFO 2023-12-22 22:29:13,543 basehttp 76257 123145568329728 "OPTIONS /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 0
+ERROR 2023-12-22 22:29:13,617 log 76257 123145568329728 Internal Server Error: /api/taskadd/262/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 68, in update
+    self.perform_update(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/task.py", line 52, in perform_update
+    api_id = task_object.api_id
+AttributeError: 'NoneType' object has no attribute 'api_id'
+ERROR 2023-12-22 22:29:13,618 basehttp 76257 123145568329728 "PATCH /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 500 106401
+INFO 2023-12-22 22:33:02,507 autoreload 76257 4733384192 /Users/lichaoyuan/Desktop/copytrade/api/views/task.py changed, reloading.
+INFO 2023-12-22 22:33:03,259 autoreload 76328 4765066752 Watching for file changes with StatReloader
+INFO 2023-12-22 22:33:16,078 basehttp 76328 123145423138816 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45736
+INFO 2023-12-22 22:33:21,070 basehttp 76328 123145423138816 "OPTIONS /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 0
+ERROR 2023-12-22 22:33:21,173 log 76328 123145423138816 Internal Server Error: /api/taskadd/262/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 68, in update
+    self.perform_update(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/task.py", line 53, in perform_update
+    api_id = task_object.api_id
+AttributeError: 'NoneType' object has no attribute 'api_id'
+ERROR 2023-12-22 22:33:21,175 basehttp 76328 123145423138816 "PATCH /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 500 106571
+INFO 2023-12-22 22:37:04,941 autoreload 76328 4765066752 /Users/lichaoyuan/Desktop/copytrade/api/views/task.py changed, reloading.
+INFO 2023-12-22 22:37:05,848 autoreload 76364 4499932672 Watching for file changes with StatReloader
+INFO 2023-12-22 22:37:17,663 basehttp 76364 123145576140800 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45736
+INFO 2023-12-22 22:37:22,072 basehttp 76364 123145576140800 "OPTIONS /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 0
+INFO 2023-12-22 22:37:22,093 basehttp 76364 123145576140800 "PATCH /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 214
+INFO 2023-12-22 22:37:22,137 basehttp 76364 123145576140800 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45736
+INFO 2023-12-22 22:38:41,776 autoreload 76364 4499932672 /Users/lichaoyuan/Desktop/copytrade/api/views/task.py changed, reloading.
+INFO 2023-12-22 22:38:42,573 autoreload 76395 4606862848 Watching for file changes with StatReloader
+INFO 2023-12-22 22:41:44,272 basehttp 76395 123145522946048 "GET /api/taskadd/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 45737
+INFO 2023-12-22 22:41:46,311 basehttp 76395 123145522946048 "GET /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 214
+INFO 2023-12-22 22:41:46,320 basehttp 76395 123145539735552 "GET /api/traderdetial/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 422
+INFO 2023-12-22 22:41:46,321 basehttp 76395 123145556525056 "GET /api/tradeorder/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 20
+INFO 2023-12-22 22:41:57,958 basehttp 76395 123145556525056 "OPTIONS /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 0
+INFO 2023-12-22 22:41:57,971 basehttp 76395 123145556525056 "PATCH /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 214
+INFO 2023-12-22 22:41:59,182 basehttp 76395 123145539735552 "GET /api/tradeorder/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 20
+INFO 2023-12-22 22:41:59,186 basehttp 76395 123145556525056 "GET /api/traderdetial/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 422
+INFO 2023-12-22 22:41:59,186 basehttp 76395 123145522946048 "GET /api/taskadd/262/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 214
+INFO 2023-12-22 22:42:22,225 basehttp 76395 123145556525056 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 161

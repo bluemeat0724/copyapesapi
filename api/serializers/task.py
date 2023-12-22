@@ -3,7 +3,7 @@ from rest_framework.exceptions import ValidationError
 from api import models
 
 
-class TaskcSerializer(serializers.ModelSerializer):
+class TaskSerializer(serializers.ModelSerializer):
     # status = serializers.CharField(source="get_status_display")
     # api = serializers.CharField(source="api.api_name")
 
