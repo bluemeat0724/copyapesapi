@@ -27,11 +27,22 @@ class TaskAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixi
         if user_object:
             return Response({"code": return_code.VALIDATE_ERROR, "error": "api已使用"})
 
+        # 检查是否有绑定固定ip
         ip_object = models.IpInfo.objects.filter(Q(user=self.request.user) & Q(countdown__gt=0)).first()
         api_object = models.ApiInfo.objects.filter(Q(user=self.request.user) & Q(id=api.id)).first()
         flag = api_object.flag
         if not ip_object and flag == 0:
             return Response({"code": return_code.VALIDATE_ERROR, "error": "实盘交易请配置固定IP"})
+
+        # 检查剩余可用额度
+        quota_object = models.QuotaInfo.objects.filter(Q(user=self.request.user)).first()
+        if flag == 0:
+            quota = quota_object.quota_0
+        elif flag == 1:
+            quota = quota_object.quota_1
+        sums = serializer.validated_data.get('sums')
+        if quota < sums:
+            return Response({"code": return_code.VALIDATE_ERROR, "error": "可用额度不足！请充值额度，或减少跟单金额！"})
 
         # 写入mysql
         serializer.save(user=self.request.user)
