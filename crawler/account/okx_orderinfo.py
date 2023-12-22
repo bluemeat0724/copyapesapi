@@ -150,7 +150,7 @@ class OkxOrderInfo(object):
 
         # 去除匹配数据中的 None
         matching_data = [item for item in matching_data if item is not None]
-        print(history_data_dict)
+
         if not matching_data:
             return
         # 跟新数据
