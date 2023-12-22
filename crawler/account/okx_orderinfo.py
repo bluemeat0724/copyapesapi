@@ -52,10 +52,11 @@ class OkxOrderInfo(object):
         """
         try:
             obj = app.OkxSWAP(**self.acc)
+            obj.account.api.flag = self.flag
+            data = obj.account.get_positions().get('data')
         except:
             return
-        obj.account.api.flag = self.flag
-        data = obj.account.get_positions().get('data')
+
         # print(data)
         # 如果没有数据，说明已经全部平仓，跟新所有交易数据
         if not data:
@@ -127,17 +128,13 @@ class OkxOrderInfo(object):
         # 检索数据库
         ongoing_data = self.get_order()
         # 获取账户历史订单
-        try:
-            obj = app.OkxSWAP(**self.acc)
-        except:
-            return
-        obj.account.api.flag = self.flag
-
 
         while True:
             try:
-                # 查看前15条交易记录
-                history_data = obj.account.get_positions_history(limit='15').get('data')
+                obj = app.OkxSWAP(**self.acc)
+                obj.account.api.flag = self.flag
+                # 查看前10条交易记录
+                history_data = obj.account.get_positions_history(limit='10').get('data')
                 break
             except:
                 time.sleep(10)
@@ -153,7 +150,7 @@ class OkxOrderInfo(object):
 
         # 去除匹配数据中的 None
         matching_data = [item for item in matching_data if item is not None]
-
+        print(history_data_dict)
         if not matching_data:
             return
         # 跟新数据
@@ -197,7 +194,7 @@ class OkxOrderInfo(object):
 
 
 if __name__ == '__main__':
-    obj = OkxOrderInfo(2, 253)
-    obj.get_position_history()
+    obj = OkxOrderInfo(2, 258)
+    obj.get_position()
 
 

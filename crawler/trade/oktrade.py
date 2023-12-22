@@ -189,6 +189,7 @@ class Trader(threading.Thread):
             thread_logger.success(f'进行平仓操作，品种:{self.instId}，方向：{self.posSide}')
             # 更新持仓数据
             OkxOrderInfo(self.user_id, self.task_id).get_position()
+            print(f'{self.task_id}更新持仓数据')
             # OkxOrderInfo(self.user_id, self.task_id).get_position_history()
 
         elif self.order_type == 'change':

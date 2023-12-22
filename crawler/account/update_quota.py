@@ -24,7 +24,8 @@ def calculate_and_stop_tasks():
                 task_pnl = check_task_pnl(task_id)
                 remaining_quota -= task_pnl
                 update_remaining_quota(user_id, flag, remaining_quota)
-            
+                print(f"用户{user_id}的任务{task_id}盈利{task_pnl}，剩余额度{remaining_quota}，额度上限，任务自动结束。")
+
 
 def calculate_total_pnl(user_id, flag):
     # 根据用户和任务类型计算累计收益的逻辑
