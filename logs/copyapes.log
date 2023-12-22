@@ -1379,3 +1379,17 @@ INFO 2023-12-22 13:01:25,320 basehttp 71771 123145478676480 "PATCH /api/redeemco
 INFO 2023-12-22 13:01:25,341 basehttp 71771 123145478676480 "GET /api/quotainfo/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 145
 INFO 2023-12-22 13:01:36,889 basehttp 71771 123145478676480 "PATCH /api/redeemcode/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 37
 INFO 2023-12-22 13:01:36,931 basehttp 71771 123145478676480 "GET /api/quotainfo/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 146
+INFO 2023-12-22 13:05:52,467 autoreload 71771 4547319296 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-22 13:05:53,361 autoreload 71883 4477220352 Watching for file changes with StatReloader
+INFO 2023-12-22 13:06:35,647 basehttp 71883 123145578545152 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 145
+INFO 2023-12-22 13:06:53,377 basehttp 71883 123145595334656 "PATCH /api/redeemcode/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 37
+INFO 2023-12-22 13:06:53,392 basehttp 71883 123145595334656 "GET /api/quotainfo/?token=7566dd29-6ed7-4517-b6ca-e915459d5e06 HTTP/1.1" 200 146
+INFO 2023-12-22 13:09:31,507 autoreload 71883 4477220352 /Users/lichaoyuan/Desktop/copytrade/api/views/redeemcode.py changed, reloading.
+INFO 2023-12-22 13:09:32,676 autoreload 71953 4671489536 Watching for file changes with StatReloader
+INFO 2023-12-22 13:09:36,930 basehttp 71953 123145457344512 "OPTIONS /api/redeemcode/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 0
+INFO 2023-12-22 13:09:36,946 basehttp 71953 123145457344512 "PATCH /api/redeemcode/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 37
+INFO 2023-12-22 13:09:36,962 basehttp 71953 123145457344512 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 145
+INFO 2023-12-22 13:13:35,989 autoreload 71953 4671489536 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-22 13:13:36,952 autoreload 71990 4610639360 Watching for file changes with StatReloader
+INFO 2023-12-22 13:13:52,131 basehttp 71990 123145382883328 "PATCH /api/redeemcode/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 37
+INFO 2023-12-22 13:13:52,146 basehttp 71990 123145382883328 "GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e HTTP/1.1" 200 145

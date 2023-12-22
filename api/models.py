@@ -173,3 +173,4 @@ class RedeemCodes(models.Model):
     )
     status = models.IntegerField(verbose_name="可用状态", choices=status_choice, default=1)
     value = models.FloatField(verbose_name="兑换金额", default=0)
+    verification_datetime = models.DateTimeField(verbose_name="兑换码验证时间", null=True, blank=True, auto_now=True)

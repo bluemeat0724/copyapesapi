@@ -13,6 +13,7 @@ from rest_framework import serializers
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from api.extension import return_code
+import datetime
 
 
 
@@ -55,6 +56,7 @@ class RedeemCodesView(APIView):
         # 更新配额信息
         quota_info.quota_0 += redeem_code.value
         quota_info.quota_1 += redeem_code.value
+        quota_info.verification_datetime = datetime.datetime.now()
         quota_info.save()
 
         return Response({"code": return_code.SUCCESS, 'detail': "充值成功！"})
