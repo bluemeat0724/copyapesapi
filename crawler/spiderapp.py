@@ -1,5 +1,6 @@
 from crawler.spiders import app
 from crawler.utils import get_task
+from crawler.utils.reactivate_tasks import reactivate_tasks
 from crawler import settingsdev as settings
 import redis
 import json
@@ -7,11 +8,16 @@ import json
 # 用字典映射任务ID和爬虫实例
 spiders = {}
 
+
 def run():
     """
     {'id': 1, 'status': 2}：开启任务1
     {'id': 1, 'status': 2}：终止任务1
     """
+    # 查看taskinfo表，看是否有需要恢复的任务
+    reactivate_tasks()
+
+    # 进入主程序
     while True:
         try:
             # 去redis里获取跟单任务id
@@ -37,8 +43,9 @@ def run():
             if status == 1:
                 # 开启新爬虫
                 if task_id not in spiders:
-                    spider = app.Spider(task_id, trader_platform, uniqueName, follow_type, sums, lever_set, first_order_set,
-                                    api_id, user_id)
+                    spider = app.Spider(task_id, trader_platform, uniqueName, follow_type, sums, lever_set,
+                                        first_order_set,
+                                        api_id, user_id)
                     spider.start()
                     spiders[task_id] = spider
                     print(f"用户：{user_id}的最新跟单任务{task_id}已经开始。")
