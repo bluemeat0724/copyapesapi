@@ -57,7 +57,7 @@ def update_balance(api_id, balance):
 if __name__ == '__main__':
     acc = {'key': '8af6ced4-5ea0-4dd9-9aef-f79529d72a68',
            'secret': '6A840C3EC6D18D4E4127B13ADA7A1091',
-           'passphrase': '112233Ww..1',
+           'passphrase': '112233Ww..',
            'proxies': {
                         'http': 'socks5h://15755149931sct-5:8ivtkleb@38.147.173.111:5001',
                         'https': 'socks5h://15755149931sct-5:8ivtkleb@38.147.173.111:5001'

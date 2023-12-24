@@ -194,7 +194,7 @@ class OkxOrderInfo(object):
 
 
 if __name__ == '__main__':
-    obj = OkxOrderInfo(2, 258)
+    obj = OkxOrderInfo(2, 264)
     obj.get_position()
 
 
