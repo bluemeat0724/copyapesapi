@@ -36967,3 +36967,7 @@
 2023-12-26 15:33:54,596 - INFO - Scheduler: Sending due task update_pnl (update_pnl)
 2023-12-26 15:33:54,598 - INFO - Task update_pnl[366d32f9-7d08-427a-8a42-244670626946] received
 2023-12-26 15:33:54,684 - INFO - Task update_pnl[366d32f9-7d08-427a-8a42-244670626946] succeeded in 0.08452730499993777s: None
+2023-12-26 17:47:24,496 - INFO - beat: Starting...
+2023-12-26 17:47:24,542 - INFO - Scheduler: Sending due task get_position (get_position)
+2023-12-26 17:47:24,552 - INFO - Scheduler: Sending due task get_balance (get_balance)
+2023-12-26 17:47:24,554 - INFO - Scheduler: Sending due task update_pnl (update_pnl)

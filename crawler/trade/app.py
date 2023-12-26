@@ -11,16 +11,17 @@ traders = {}
 def run():
     # 恢复交易爬虫
     reactivate = reactivate_trade_tasks()
-    for task in reactivate:
-        task_id = task.get('task_id')
-        trader_platform = task.get('trader_platform')
-        if trader_platform == 1:
-            trader = oktrade.Trader(**task)
-            trader.start()
-            traders[task_id] = trader
-            print(f"任务{task_id}交易实例已恢复。")
-        else:
-            print(f"跟单任务{task_id}的交易平台不支持。")
+    if reactivate:
+        for task in reactivate:
+            task_id = task.get('task_id')
+            trader_platform = task.get('trader_platform')
+            if trader_platform == 1:
+                trader = oktrade.Trader(**task)
+                trader.start()
+                traders[task_id] = trader
+                print(f"任务{task_id}交易实例已恢复。")
+            else:
+                print(f"跟单任务{task_id}的交易平台不支持。")
 
     while True:
         try:
