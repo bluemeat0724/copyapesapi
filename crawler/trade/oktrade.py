@@ -58,9 +58,8 @@ class RetryNetworkOperations:
 
 
 class Trader(threading.Thread):
-    def __init__(self, task_id, order_type, trader_platform, uniqueName, follow_type, sums, lever_set, first_order_set,
-                 api_id,
-                 user_id, instId, mgnMode, posSide, lever, openTime=None, openAvgPx=None, margin=None,
+    def __init__(self, task_id, api_id,user_id, order_type, trader_platform, uniqueName, follow_type, sums, lever_set, first_order_set,
+                 instId=None, mgnMode=None, posSide=None, lever=None, openTime=None, openAvgPx=None, margin=None,
                  old_margin=None, new_margin=None):
         super(Trader, self).__init__()
         self.task_id = task_id

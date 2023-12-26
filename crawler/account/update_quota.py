@@ -20,7 +20,8 @@ def calculate_and_stop_tasks():
             # 判断是否结束任务
             if total_pnl >= remaining_quota:
                 stop_task(task_id)
-                # 如果结束任务，则更新剩余额度
+                # 如果结束任务，则更新剩余额度，更新的动作在okx_orderinfo.py的get_position_history方法中
+                # 避免重复调用此处只做标记
                 task_pnl = check_task_pnl(task_id)
                 remaining_quota -= task_pnl
                 # update_remaining_quota(user_id, flag, remaining_quota)

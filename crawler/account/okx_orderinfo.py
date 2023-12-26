@@ -180,13 +180,13 @@ class OkxOrderInfo(object):
                 db.exec(update_sql, **params)
             self.update_pnl()
 
-            # 账户获取剩余额度
-            remaining_quota = get_remaining_quota(self.user_id, int(self.flag))
-            # 获取任务收益
-            task_pnl = check_task_pnl(self.task_id)
-            remaining_quota -= task_pnl
-            # 更新剩余额度数据
-            update_remaining_quota(self.user_id, int(self.flag), remaining_quota)
+        # 账户获取剩余额度
+        remaining_quota = get_remaining_quota(self.user_id, int(self.flag))
+        # 获取任务收益
+        task_pnl = check_task_pnl(self.task_id)
+        remaining_quota -= task_pnl
+        # 更新剩余额度数据
+        update_remaining_quota(self.user_id, int(self.flag), remaining_quota)
 
 
 
@@ -194,7 +194,7 @@ class OkxOrderInfo(object):
 
 
 if __name__ == '__main__':
-    obj = OkxOrderInfo(2, 264)
+    obj = OkxOrderInfo(2, 265)
     obj.get_position()
 
 

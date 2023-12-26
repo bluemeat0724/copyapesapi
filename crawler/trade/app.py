@@ -8,6 +8,7 @@ traders = {}
 
 
 def run():
+    # TODO:恢复交易爬虫
     while True:
         try:
             # 去redis里获取跟单任务id
