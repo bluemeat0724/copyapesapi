@@ -240,9 +240,9 @@ class Trader(threading.Thread):
             self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode='cross')
             self.thread_logger.warning(f'手动结束跟单，{instId}已经按市价进行平仓。')
 
-        # 跟新数据库
+        # 更新收益数据，以及对应可用额度数据
         OkxOrderInfo(self.user_id, self.task_id).get_position_history()
-
+        print(f'用户{self.user_id}任务{self.task_id}更新持仓数据')
         self.thread_logger.warning(f'手动结束跟单，任务：{self.task_id}')
 
 

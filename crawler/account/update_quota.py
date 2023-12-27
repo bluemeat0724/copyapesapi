@@ -71,10 +71,14 @@ def update_remaining_quota(user_id, flag, remaining_quota):
         db.exec(update_quota_sql)
 
 def check_task_pnl(task_id):
-    with Connect() as db:
-        result = db.fetch_one(
-            f"SELECT pnl FROM api_taskinfo WHERE status = 2 AND id = {task_id}")['pnl']
-        return result
+    # 如果任务未结束时有平仓动作，返回0，不参与剩余额度更新计算
+    try:
+        with Connect() as db:
+            result = db.fetch_one(
+                f"SELECT pnl FROM api_taskinfo WHERE status = 2 AND id = {task_id}")['pnl']
+            return result
+    except:
+        return 0
 
 
 

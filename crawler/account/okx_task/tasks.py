@@ -4,7 +4,6 @@ from crawler.account.okx_orderinfo import OkxOrderInfo
 from crawler.account.update_quota import calculate_and_stop_tasks
 from crawler.utils.db import Connect
 
-
 # 记录日志：
 import logging
 
@@ -38,13 +37,6 @@ def perform_get_position():
 
         # 如果所有进行中的任务累计pnl大于剩余盈利额度，则终止自动任务，平仓所有交易
         calculate_and_stop_tasks()
-
-
-
-
-
-
-
 
 
 if __name__ == '__main__':

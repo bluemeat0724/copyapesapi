@@ -16,7 +16,7 @@ class OkxOrderInfo(object):
     # 获取api_id
     def get_api_id(self):
         with Connect() as conn:
-            result = conn.fetch_one("select api_id from api_taskinfo where id = %(id)s",id={self.task_id})
+            result = conn.fetch_one("select api_id from api_taskinfo where id = %(id)s", id={self.task_id})
             return result.get('api_id') if result else None
 
     # 查询数据库，看是否存在具有相同 instId 和 cTime 的记录
@@ -29,7 +29,9 @@ class OkxOrderInfo(object):
     # 查询当前任务下所有正在进行中的交易
     def get_order(self):
         with Connect() as db:
-            result = db.fetch_all("select * from api_orderinfo where user_id = %(user_id)s and task_id = %(task_id)s and status = 1", user_id=self.user_id, task_id=self.task_id)
+            result = db.fetch_all(
+                "select * from api_orderinfo where user_id = %(user_id)s and task_id = %(task_id)s and status = 1",
+                user_id=self.user_id, task_id=self.task_id)
             return result
 
     # 手动跟新taskinfo表中关联orderinfo中的pnl数据
@@ -128,7 +130,6 @@ class OkxOrderInfo(object):
         # 检索数据库
         ongoing_data = self.get_order()
         # 获取账户历史订单
-
         while True:
             try:
                 obj = app.OkxSWAP(**self.acc)
@@ -162,7 +163,7 @@ class OkxOrderInfo(object):
                 'pnl': item.get('realizedPnl'),
                 'pnlRatio': item.get('pnlRatio'),
                 'closeAvgPx': item.get('closeAvgPx'),
-                'imr': float(item.get('realizedPnl'))/float(item.get('pnlRatio')),
+                'imr': float(item.get('realizedPnl')) / float(item.get('pnlRatio')),
                 'status': 2
             }
             update_sql = """
@@ -189,12 +190,5 @@ class OkxOrderInfo(object):
         update_remaining_quota(self.user_id, int(self.flag), remaining_quota)
 
 
-
-
-
-
 if __name__ == '__main__':
-    obj = OkxOrderInfo(2, 265)
-    obj.get_position()
-
-
+    OkxOrderInfo(1, 268).get_position()
