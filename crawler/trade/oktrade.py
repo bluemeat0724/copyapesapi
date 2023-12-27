@@ -123,7 +123,7 @@ class Trader(threading.Thread):
                 print('[SUCCESS] 设置持仓方式为双向持仓成功，posMode="long_short_mode"')
             else:
                 print('[FAILURE] 设置持仓方式为双向持仓失败，请手动设置：posMode="long_short_mode"')
-            self.perform_trade(obj, thread_logger)
+            self.perform_trade()
         except:
             thread_logger.warning("停止交易，获取api信息失败，请重新提交api，并确认开启交易权限")
             return
@@ -150,11 +150,11 @@ class Trader(threading.Thread):
         self.openTime = new_data.get('openTime')
         self.openAvgPx = new_data.get('openAvgPx')
         # 执行需要的操作
-        self.perform_trade(self.obj, self.thread_logger)
+        self.perform_trade()
 
     # 执行okx交易
-    def perform_trade(self, obj, thread_logger):
-        if not obj:
+    def perform_trade(self):
+        if not self.obj:
             print(f'{self.task_id} 错误')
             return
         if self.order_type == 'open':
@@ -168,12 +168,12 @@ class Trader(threading.Thread):
             # 获取模拟盘/实盘交易倍数
             trade_times = get_trade_times(self.instId, self.flag, self.acc)
             if trade_times is None:
-                thread_logger.warning(f'模拟盘土狗币交易失败，品种：{self.instId}不在交易所模拟盘中！')
+                self.thread_logger.warning(f'模拟盘土狗币交易失败，品种：{self.instId}不在交易所模拟盘中！')
                 return
             # 市价开仓
-            obj.trade.open_market(instId=self.instId, posSide=self.posSide, openMoney=self.sums * trade_times, tdMode='cross',
+            self.obj.trade.open_market(instId=self.instId, posSide=self.posSide, openMoney=self.sums * trade_times, tdMode='cross',
                                   lever=self.lever)
-            thread_logger.success(f'进行开仓操作，品种：{self.instId}，金额：{self.sums}USDT，方向：{self.posSide}')
+            self.thread_logger.success(f'进行开仓操作，品种：{self.instId}，金额：{self.sums}USDT，方向：{self.posSide}')
 
         elif self.order_type == 'close':
             if self.posSide == 'net':
@@ -184,8 +184,8 @@ class Trader(threading.Thread):
                 elif number < 0:
                     self.posSide = 'short'
             # 市价平仓
-            obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT='all', tdMode='cross')
-            thread_logger.success(f'进行平仓操作，品种:{self.instId}，方向：{self.posSide}')
+            self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT='all', tdMode='cross')
+            self.thread_logger.success(f'进行平仓操作，品种:{self.instId}，方向：{self.posSide}')
             # 更新持仓数据
             OkxOrderInfo(self.user_id, self.task_id).get_position()
             print(f'{self.task_id}更新持仓数据')
@@ -205,25 +205,25 @@ class Trader(threading.Thread):
             # 获取模拟盘/实盘交易倍数
             trade_times = get_trade_times(self.instId, self.flag, self.acc)
             if trade_times is None:
-                thread_logger.warning(f'模拟盘土狗币交易失败，品种：{self.instId}不在交易所模拟盘中！')
+                self.thread_logger.warning(f'模拟盘土狗币交易失败，品种：{self.instId}不在交易所模拟盘中！')
                 return
             # 加仓操作
             if ratio > 1:
-                obj.trade.open_market(instId=self.instId, posSide=self.posSide, openMoney=self.sums * trade_times,
+                self.obj.trade.open_market(instId=self.instId, posSide=self.posSide, openMoney=self.sums * trade_times,
                                       tdMode='cross', lever=self.lever)
-                thread_logger.success(f'进行加仓操作，品种：{self.instId}，加仓量：{self.sums}USDT，方向：{self.posSide}')
+                self.thread_logger.success(f'进行加仓操作，品种：{self.instId}，加仓量：{self.sums}USDT，方向：{self.posSide}')
             # 减仓操作
             if ratio < 1:
                 # 获取当前持仓，计算减仓量=当前*(1-ratio)
                 try:
-                    quantityCT = int(obj.account.get_positions(instId=self.instId, posSide=self.posSide).get('data')[0].get(
+                    quantityCT = int(self.obj.account.get_positions(instId=self.instId, posSide=self.posSide).get('data')[0].get(
                         'availPos')) * (1 - ratio)
                 except:
-                    thread_logger.success(f'进行减仓操作，品种：{self.instId}，暂时没有仓位，继续跟单中...')
+                    self.thread_logger.success(f'进行减仓操作，品种：{self.instId}，暂时没有仓位，继续跟单中...')
                     return
-                obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT=quantityCT, tdMode='cross')
+                self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT=quantityCT, tdMode='cross')
                 percentage = "{:.2f}%".format((1 - ratio)*100)
-                thread_logger.success(f'进行减仓操作，品种：{self.instId}，减仓占比：{percentage}')
+                self.thread_logger.success(f'进行减仓操作，品种：{self.instId}，减仓占比：{percentage}')
 
     # 手动结束跟单，打印日志
     def stop(self):
