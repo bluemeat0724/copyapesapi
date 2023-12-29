@@ -1,0 +1,74 @@
+[I 231229 15:08:25 command:168] Visit me at http://0.0.0.0:5555
+[I 231229 15:08:25 command:176] Broker: redis://127.0.0.1:6379/14
+[I 231229 15:08:25 command:177] Registered tasks: 
+    ['celery.accumulate',
+     'celery.backend_cleanup',
+     'celery.chain',
+     'celery.chord',
+     'celery.chord_unlock',
+     'celery.chunks',
+     'celery.group',
+     'celery.map',
+     'celery.starmap',
+     'get_balance',
+     'get_position',
+     'update_pnl']
+[I 231229 15:08:25 mixins:228] Connected to redis://127.0.0.1:6379/14
+[W 231229 15:08:26 inspector:44] Inspect method reserved failed
+[W 231229 15:08:26 inspector:44] Inspect method conf failed
+[W 231229 15:08:26 inspector:44] Inspect method scheduled failed
+[W 231229 15:08:26 inspector:44] Inspect method active_queues failed
+[W 231229 15:08:26 inspector:44] Inspect method revoked failed
+[W 231229 15:08:26 inspector:44] Inspect method registered failed
+[W 231229 15:08:26 inspector:44] Inspect method active failed
+[W 231229 15:08:26 inspector:44] Inspect method stats failed
+[I 231229 15:09:41 command:28] 15 detected, shutting down
+[I 231229 15:09:47 command:168] Visit me at http://0.0.0.0:5555
+[I 231229 15:09:47 command:176] Broker: redis://127.0.0.1:6379/14
+[I 231229 15:09:47 command:177] Registered tasks: 
+    ['celery.accumulate',
+     'celery.backend_cleanup',
+     'celery.chain',
+     'celery.chord',
+     'celery.chord_unlock',
+     'celery.chunks',
+     'celery.group',
+     'celery.map',
+     'celery.starmap',
+     'get_balance',
+     'get_position',
+     'update_pnl']
+[I 231229 15:09:47 mixins:228] Connected to redis://127.0.0.1:6379/14
+[W 231229 15:09:48 inspector:44] Inspect method registered failed
+[W 231229 15:09:48 inspector:44] Inspect method reserved failed
+[W 231229 15:09:48 inspector:44] Inspect method stats failed
+[W 231229 15:09:48 inspector:44] Inspect method active_queues failed
+[W 231229 15:09:48 inspector:44] Inspect method scheduled failed
+[W 231229 15:09:48 inspector:44] Inspect method revoked failed
+[W 231229 15:09:48 inspector:44] Inspect method conf failed
+[W 231229 15:09:48 inspector:44] Inspect method active failed
+[I 231229 15:13:23 command:28] 15 detected, shutting down
+[I 231229 15:13:59 command:168] Visit me at http://0.0.0.0:5555
+[I 231229 15:13:59 command:176] Broker: redis://127.0.0.1:6379/14
+[I 231229 15:13:59 command:177] Registered tasks: 
+    ['celery.accumulate',
+     'celery.backend_cleanup',
+     'celery.chain',
+     'celery.chord',
+     'celery.chord_unlock',
+     'celery.chunks',
+     'celery.group',
+     'celery.map',
+     'celery.starmap',
+     'get_balance',
+     'get_position',
+     'update_pnl']
+[I 231229 15:13:59 mixins:228] Connected to redis://127.0.0.1:6379/14
+[W 231229 15:14:00 inspector:44] Inspect method registered failed
+[W 231229 15:14:00 inspector:44] Inspect method active_queues failed
+[W 231229 15:14:00 inspector:44] Inspect method revoked failed
+[W 231229 15:14:00 inspector:44] Inspect method active failed
+[W 231229 15:14:00 inspector:44] Inspect method scheduled failed
+[W 231229 15:14:00 inspector:44] Inspect method reserved failed
+[W 231229 15:14:00 inspector:44] Inspect method stats failed
+[W 231229 15:14:00 inspector:44] Inspect method conf failed
