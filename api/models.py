@@ -1,6 +1,4 @@
 from django.db import models
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 
 class DeletedModel(models.Model):
     deleted = models.BooleanField(verbose_name="已删除", default=False)
@@ -151,16 +149,6 @@ class QuotaInfo(models.Model):
     upl_1 = models.FloatField(verbose_name="模拟盘未实现收益", default=0)
     quota_0 = models.FloatField(verbose_name="实盘剩余盈利额度", default=100)
     quota_1 = models.FloatField(verbose_name="模拟盘剩余盈利额度", default=100)
-
-@receiver(post_save, sender=UserInfo)
-def create_quota_info(sender, instance, created, **kwargs):
-    """在创建或保存UserInfo实例后，创建关联的QuotaInfo实例"""
-    if created:
-        QuotaInfo.objects.create(user=instance)
-    else:
-        # 如果UserInfo实例已存在，更新关联的QuotaInfo实例
-        quota_info = QuotaInfo.objects.get(user=instance)
-        quota_info.save()
 
 
 class RedeemCodes(models.Model):

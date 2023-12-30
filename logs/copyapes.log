@@ -3278,3 +3278,465 @@ INFO 2023-12-29 15:26:04,817 basehttp 26917 123145436037120 "GET /api/taskadd/?t
 INFO 2023-12-29 15:26:07,473 basehttp 26917 123145469616128 "GET /api/taskadd/272/?token=6ae3b5d3-c5d5-4239-90bd-95a56d105c65 HTTP/1.1" 200 242
 INFO 2023-12-29 15:26:07,473 basehttp 26917 123145452826624 "GET /api/tradeorder/272/?token=6ae3b5d3-c5d5-4239-90bd-95a56d105c65 HTTP/1.1" 200 849
 INFO 2023-12-29 15:26:07,475 basehttp 26917 123145436037120 "GET /api/traderdetial/272/?token=6ae3b5d3-c5d5-4239-90bd-95a56d105c65 HTTP/1.1" 200 12317
+INFO 2023-12-29 15:32:28,873 basehttp 26917 123145436037120 "GET /api/taskadd/?token=6ae3b5d3-c5d5-4239-90bd-95a56d105c65 HTTP/1.1" 200 5347
+INFO 2023-12-29 15:32:36,802 basehttp 26917 123145452826624 "GET /api/quotainfo/?token=52d60e47-0b3a-407a-b9c3-42743bc5d416 HTTP/1.1" 200 131
+INFO 2023-12-29 15:32:38,684 basehttp 26917 123145452826624 "GET /api/taskadd/?token=52d60e47-0b3a-407a-b9c3-42743bc5d416 HTTP/1.1" 200 47637
+INFO 2023-12-29 15:32:40,495 basehttp 26917 123145469616128 "GET /api/tradeorder/274/?token=52d60e47-0b3a-407a-b9c3-42743bc5d416 HTTP/1.1" 200 20
+INFO 2023-12-29 15:32:40,495 basehttp 26917 123145452826624 "GET /api/traderdetial/274/?token=52d60e47-0b3a-407a-b9c3-42743bc5d416 HTTP/1.1" 200 1222
+INFO 2023-12-29 15:32:40,501 basehttp 26917 123145486405632 "GET /api/taskadd/274/?token=52d60e47-0b3a-407a-b9c3-42743bc5d416 HTTP/1.1" 200 227
+INFO 2023-12-29 15:32:43,937 basehttp 26917 123145486405632 "GET /api/taskadd/?token=52d60e47-0b3a-407a-b9c3-42743bc5d416 HTTP/1.1" 200 47637
+INFO 2023-12-29 15:34:43,258 basehttp 26917 123145486405632 "GET /api/quotainfo/?token=52d60e47-0b3a-407a-b9c3-42743bc5d416 HTTP/1.1" 200 131
+INFO 2023-12-29 16:59:53,402 basehttp 26917 123145436037120 "GET /api/quotainfo/?token=52d60e47-0b3a-407a-b9c3-42743bc5d416 HTTP/1.1" 200 131
+INFO 2023-12-29 16:59:55,005 basehttp 26917 123145436037120 "GET /api/taskadd/?token=52d60e47-0b3a-407a-b9c3-42743bc5d416 HTTP/1.1" 200 47637
+INFO 2023-12-29 16:59:57,952 basehttp 26917 123145436037120 "OPTIONS /api/taskadd/274/?token=52d60e47-0b3a-407a-b9c3-42743bc5d416 HTTP/1.1" 200 0
+INFO 2023-12-29 16:59:57,966 basehttp 26917 123145436037120 "PATCH /api/taskadd/274/?token=52d60e47-0b3a-407a-b9c3-42743bc5d416 HTTP/1.1" 200 227
+INFO 2023-12-29 16:59:57,998 basehttp 26917 123145436037120 "GET /api/taskadd/?token=52d60e47-0b3a-407a-b9c3-42743bc5d416 HTTP/1.1" 200 47637
+INFO 2023-12-29 17:21:48,507 autoreload 26917 4738561536 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/get_proxies.py changed, reloading.
+INFO 2023-12-29 17:21:49,869 autoreload 27932 4501665280 Watching for file changes with StatReloader
+INFO 2023-12-29 17:24:39,187 autoreload 27932 4501665280 /Users/lichaoyuan/Desktop/copytrade/copytrade/celery.py changed, reloading.
+INFO 2023-12-29 17:24:39,997 autoreload 27991 4758631936 Watching for file changes with StatReloader
+INFO 2023-12-29 17:25:48,712 autoreload 28017 4526634496 Watching for file changes with StatReloader
+WARNING 2023-12-29 17:41:58,103 log 28159 4322223616 Unauthorized: /api/quotainfo/
+WARNING 2023-12-29 17:41:58,126 log 28159 123145457442816 Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2023-12-29 17:41:58,127 log 28159 123145456906240 Not Found: /static/rest_framework/js/jquery-3.5.1.min.js
+WARNING 2023-12-29 17:41:58,140 log 28159 123145457979392 Not Found: /static/rest_framework/css/prettify.css
+WARNING 2023-12-29 17:41:58,141 log 28159 123145457442816 Not Found: /static/rest_framework/js/csrf.js
+WARNING 2023-12-29 17:41:58,144 log 28159 123145456906240 Not Found: /static/rest_framework/js/default.js
+WARNING 2023-12-29 17:41:58,145 log 28159 123145457979392 Not Found: /static/rest_framework/js/ajax-form.js
+WARNING 2023-12-29 17:41:58,191 log 28159 123145457442816 Not Found: /static/rest_framework/css/bootstrap.min.css
+WARNING 2023-12-29 17:41:58,685 log 28157 4322223616 Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2023-12-29 17:41:58,692 log 28158 4322223616 Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2023-12-29 17:41:58,692 log 28158 123145457979392 Not Found: /static/rest_framework/css/default.css
+WARNING 2023-12-29 17:41:59,585 log 28157 123145456906240 Not Found: /favicon.ico
+WARNING 2023-12-29 19:45:32,651 log 29170 4753675776 Unauthorized: /api/quotainfo/
+WARNING 2023-12-29 19:45:32,681 log 29170 123145530748928 Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2023-12-29 19:45:32,683 log 29170 123145531822080 Not Found: /static/rest_framework/css/prettify.css
+WARNING 2023-12-29 19:45:32,683 log 29170 123145531285504 Not Found: /static/rest_framework/css/default.css
+WARNING 2023-12-29 19:45:32,694 log 29170 123145530748928 Not Found: /static/rest_framework/js/default.js
+WARNING 2023-12-29 19:45:32,696 log 29170 123145531285504 Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2023-12-29 19:45:32,709 log 29170 123145531822080 Not Found: /static/rest_framework/css/bootstrap.min.css
+WARNING 2023-12-29 19:45:33,194 log 29171 123145531822080 Not Found: /static/rest_framework/js/csrf.js
+WARNING 2023-12-29 19:45:33,229 log 29171 123145531285504 Not Found: /static/rest_framework/js/ajax-form.js
+WARNING 2023-12-29 19:45:33,230 log 29171 4753675776 Not Found: /static/rest_framework/js/jquery-3.5.1.min.js
+WARNING 2023-12-29 19:45:33,232 log 29171 123145530748928 Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2023-12-29 19:45:39,420 log 29170 123145530748928 Method Not Allowed: /api/login/
+WARNING 2023-12-29 19:45:39,456 log 29171 123145531822080 Not Found: /static/rest_framework/css/prettify.css
+WARNING 2023-12-29 19:45:39,459 log 29171 123145531285504 Not Found: /static/rest_framework/css/default.css
+WARNING 2023-12-29 19:45:39,460 log 29171 4753675776 Not Found: /static/rest_framework/js/ajax-form.js
+WARNING 2023-12-29 19:45:39,461 log 29171 123145530748928 Not Found: /static/rest_framework/js/jquery-3.5.1.min.js
+WARNING 2023-12-29 19:45:39,469 log 29171 123145531822080 Not Found: /static/rest_framework/js/csrf.js
+WARNING 2023-12-29 19:45:39,470 log 29171 123145531285504 Not Found: /static/rest_framework/js/bootstrap.min.js
+WARNING 2023-12-29 19:45:39,471 log 29171 4753675776 Not Found: /static/rest_framework/js/prettify-min.js
+WARNING 2023-12-29 19:45:39,473 log 29171 123145530748928 Not Found: /static/rest_framework/js/default.js
+WARNING 2023-12-29 19:45:39,967 log 29169 123145531822080 Not Found: /static/rest_framework/css/bootstrap-tweaks.css
+WARNING 2023-12-29 19:45:39,967 log 29169 4753675776 Not Found: /static/rest_framework/css/bootstrap.min.css
+INFO 2023-12-30 18:14:37,305 autoreload 35514 4658787840 Watching for file changes with StatReloader
+WARNING 2023-12-30 18:14:57,682 log 35514 123145472573440 Not Found: /
+WARNING 2023-12-30 18:14:57,683 basehttp 35514 123145472573440 "GET / HTTP/1.1" 404 1945
+INFO 2023-12-30 18:15:07,817 basehttp 35514 123145506152448 "GET /api/taskadd/?token=52d60e47-0b3a-407a-b9c3-42743bc5d416 HTTP/1.1" 200 47637
+INFO 2023-12-30 18:15:09,434 basehttp 35514 123145506152448 "GET /api/quotainfo/?token=52d60e47-0b3a-407a-b9c3-42743bc5d416 HTTP/1.1" 200 131
+INFO 2023-12-30 18:15:10,583 basehttp 35514 123145506152448 "GET /api/taskadd/?token=52d60e47-0b3a-407a-b9c3-42743bc5d416 HTTP/1.1" 200 47637
+INFO 2023-12-30 18:15:18,433 basehttp 35514 123145506152448 "GET /api/taskadd/?token=52d60e47-0b3a-407a-b9c3-42743bc5d416 HTTP/1.1" 200 47637
+INFO 2023-12-30 18:15:33,361 basehttp 35514 123145506152448 "OPTIONS /api/login/ HTTP/1.1" 200 0
+INFO 2023-12-30 18:15:33,367 basehttp 35514 123145506152448 "POST /api/login/ HTTP/1.1" 200 48
+INFO 2023-12-30 18:15:43,878 basehttp 35514 123145506152448 "OPTIONS /api/login/ HTTP/1.1" 200 0
+INFO 2023-12-30 18:15:43,882 basehttp 35514 123145506152448 "POST /api/login/ HTTP/1.1" 200 48
+INFO 2023-12-30 18:16:34,762 basehttp 35514 123145506152448 "OPTIONS /api/login/ HTTP/1.1" 200 0
+INFO 2023-12-30 18:16:34,771 basehttp 35514 123145506152448 "POST /api/login/ HTTP/1.1" 200 80
+INFO 2023-12-30 18:16:35,143 basehttp 35514 123145506152448 "GET /api/quotainfo/?token=700fdff1-3d34-4d02-93fb-04a66f9a107b HTTP/1.1" 200 131
+INFO 2023-12-30 18:16:44,886 basehttp 35514 123145506152448 "GET /api/taskadd/?token=700fdff1-3d34-4d02-93fb-04a66f9a107b HTTP/1.1" 200 47637
+INFO 2023-12-30 18:17:27,333 autoreload 35552 4535391744 Watching for file changes with StatReloader
+INFO 2023-12-30 18:17:39,683 basehttp 35552 123145405001728 "OPTIONS /api/login/ HTTP/1.1" 200 0
+INFO 2023-12-30 18:17:41,348 basehttp 35552 123145405001728 "POST /api/login/ HTTP/1.1" 200 80
+INFO 2023-12-30 18:17:41,917 basehttp 35552 123145405001728 "GET /api/quotainfo/?token=4024bfc3-f83d-448e-b64d-595667481004 HTTP/1.1" 200 145
+INFO 2023-12-30 18:17:44,284 basehttp 35552 123145405001728 "GET /api/taskadd/?token=4024bfc3-f83d-448e-b64d-595667481004 HTTP/1.1" 200 48106
+INFO 2023-12-30 18:18:00,961 basehttp 35552 123145405001728 "OPTIONS /api/login/ HTTP/1.1" 200 0
+ERROR 2023-12-30 18:18:01,592 log 35552 123145405001728 Internal Server Error: /api/login/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/account.py", line 57, in post
+    user_object.save()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/base.py", line 774, in save_base
+    post_save.send(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/dispatch/dispatcher.py", line 180, in send
+    return [
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/dispatch/dispatcher.py", line 181, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "/Users/lichaoyuan/Desktop/copytrade/api/models.py", line 162, in create_quota_info
+    quota_info = QuotaInfo.objects.get(user=instance)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 439, in get
+    raise self.model.MultipleObjectsReturned(
+api.models.QuotaInfo.MultipleObjectsReturned: get() returned more than one QuotaInfo -- it returned 2!
+ERROR 2023-12-30 18:18:01,602 basehttp 35552 123145405001728 "POST /api/login/ HTTP/1.1" 500 145
+INFO 2023-12-30 18:18:34,007 basehttp 35552 123145405001728 "OPTIONS /api/login/ HTTP/1.1" 200 0
+ERROR 2023-12-30 18:18:34,664 log 35552 123145405001728 Internal Server Error: /api/login/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/generic/base.py", line 70, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/account.py", line 57, in post
+    user_object.save()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/base.py", line 774, in save_base
+    post_save.send(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/dispatch/dispatcher.py", line 180, in send
+    return [
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/dispatch/dispatcher.py", line 181, in <listcomp>
+    (receiver, receiver(signal=self, sender=sender, **named))
+  File "/Users/lichaoyuan/Desktop/copytrade/api/models.py", line 162, in create_quota_info
+    quota_info = QuotaInfo.objects.get(user=instance)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/db/models/query.py", line 439, in get
+    raise self.model.MultipleObjectsReturned(
+api.models.QuotaInfo.MultipleObjectsReturned: get() returned more than one QuotaInfo -- it returned 2!
+ERROR 2023-12-30 18:18:34,665 basehttp 35552 123145405001728 "POST /api/login/ HTTP/1.1" 500 145
+INFO 2023-12-30 18:39:32,817 basehttp 35552 123145405001728 "OPTIONS /api/login/ HTTP/1.1" 200 0
+INFO 2023-12-30 18:39:34,482 basehttp 35552 123145405001728 "POST /api/login/ HTTP/1.1" 200 86
+INFO 2023-12-30 18:39:35,113 basehttp 35552 123145405001728 "GET /api/quotainfo/?token=635c8c97-5a91-4e7c-aa79-26780d440c0b HTTP/1.1" 200 117
+INFO 2023-12-30 18:43:45,774 autoreload 35552 4535391744 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-30 18:43:46,678 autoreload 35774 4481881600 Watching for file changes with StatReloader
+INFO 2023-12-30 18:43:56,453 autoreload 35774 4481881600 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-30 18:43:57,271 autoreload 35780 4575544832 Watching for file changes with StatReloader
+INFO 2023-12-30 19:14:43,452 autoreload 35995 4395836928 Watching for file changes with StatReloader
+INFO 2023-12-30 19:15:22,188 basehttp 35995 123145520508928 "POST /api/login/ HTTP/1.1" 200 80
+INFO 2023-12-30 19:15:22,351 basehttp 35995 123145520508928 "GET /api/quotainfo/?token=5760d80d-2c66-4907-bc14-12c9ac5c86bb HTTP/1.1" 200 131
+INFO 2023-12-30 19:15:25,909 basehttp 35995 123145520508928 "GET /api/taskadd/?token=5760d80d-2c66-4907-bc14-12c9ac5c86bb HTTP/1.1" 200 47637
+INFO 2023-12-30 19:16:41,846 basehttp 35995 123145537298432 "POST /api/register/ HTTP/1.1" 200 38
+INFO 2023-12-30 19:19:44,163 autoreload 35995 4395836928 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-30 19:19:44,909 autoreload 36032 4735768064 Watching for file changes with StatReloader
+INFO 2023-12-30 19:20:51,116 autoreload 36032 4735768064 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-30 19:20:51,986 autoreload 36061 4456838656 Watching for file changes with StatReloader
+INFO 2023-12-30 19:21:48,876 autoreload 36061 4456838656 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-30 19:21:49,654 autoreload 36074 4470916608 Watching for file changes with StatReloader
+INFO 2023-12-30 19:21:53,436 basehttp 36074 123145475960832 "POST /api/register/ HTTP/1.1" 200 38
+INFO 2023-12-30 19:22:47,749 autoreload 36074 4470916608 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-30 19:22:48,563 autoreload 36088 4510930432 Watching for file changes with StatReloader
+INFO 2023-12-30 19:23:36,220 autoreload 36088 4510930432 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-30 19:23:37,008 autoreload 36103 4746708480 Watching for file changes with StatReloader
+INFO 2023-12-30 19:23:40,042 basehttp 36103 123145596747776 "POST /api/register/ HTTP/1.1" 200 38
+INFO 2023-12-30 19:25:06,967 autoreload 36103 4746708480 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-30 19:25:07,715 autoreload 36119 4513777152 Watching for file changes with StatReloader
+INFO 2023-12-30 19:30:32,740 autoreload 36119 4513777152 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2023-12-30 19:30:33,494 autoreload 36199 4658255360 Watching for file changes with StatReloader
+INFO 2023-12-30 19:30:36,590 basehttp 36199 123145467863040 "POST /api/register/ HTTP/1.1" 200 37
+INFO 2023-12-30 19:32:14,780 autoreload 36199 4658255360 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2023-12-30 19:32:15,607 autoreload 36211 4662498816 Watching for file changes with StatReloader
+INFO 2023-12-30 19:35:32,411 autoreload 36211 4662498816 /Users/lichaoyuan/Desktop/copytrade/copytrade/wsgi.py changed, reloading.
+INFO 2023-12-30 19:35:33,234 autoreload 36246 4646536704 Watching for file changes with StatReloader
+INFO 2023-12-30 19:35:37,950 autoreload 36255 4363781632 Watching for file changes with StatReloader
+INFO 2023-12-30 19:35:52,876 basehttp 36255 123145589587968 "POST /api/register/ HTTP/1.1" 200 38
+INFO 2023-12-30 19:49:07,811 autoreload 36255 4363781632 /Users/lichaoyuan/Desktop/copytrade/copytrade/settings/settingsdev.py changed, reloading.
+INFO 2023-12-30 19:49:08,559 autoreload 36342 4421338624 Watching for file changes with StatReloader
+INFO 2023-12-30 19:49:24,425 autoreload 36342 4421338624 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2023-12-30 19:49:25,223 autoreload 36355 4540937728 Watching for file changes with StatReloader
+INFO 2023-12-30 19:49:56,404 autoreload 36355 4540937728 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2023-12-30 19:49:57,211 autoreload 36365 4650817024 Watching for file changes with StatReloader
+INFO 2023-12-30 19:50:12,227 basehttp 36365 123145481854976 "POST /api/register/ HTTP/1.1" 200 38
+INFO 2023-12-30 19:51:10,786 autoreload 36365 4650817024 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2023-12-30 19:51:11,592 autoreload 36377 4557448704 Watching for file changes with StatReloader
+INFO 2023-12-30 19:51:25,428 autoreload 36377 4557448704 /Users/lichaoyuan/Desktop/copytrade/copytrade/settings/settingsdev.py changed, reloading.
+INFO 2023-12-30 19:51:26,219 autoreload 36390 4603708928 Watching for file changes with StatReloader
+INFO 2023-12-30 19:52:21,258 autoreload 36390 4603708928 /Users/lichaoyuan/Desktop/copytrade/copytrade/settings/settingsdev.py changed, reloading.
+INFO 2023-12-30 19:52:21,987 autoreload 36409 4657067520 Watching for file changes with StatReloader
+INFO 2023-12-30 19:52:44,051 basehttp 36409 123145480765440 "POST /api/register/ HTTP/1.1" 200 38
+INFO 2023-12-30 19:53:19,027 autoreload 36409 4657067520 /Users/lichaoyuan/Desktop/copytrade/copytrade/settings/settingsdev.py changed, reloading.
+INFO 2023-12-30 19:53:19,813 autoreload 36417 4489463296 Watching for file changes with StatReloader
+INFO 2023-12-30 20:01:23,276 autoreload 36417 4489463296 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2023-12-30 20:01:24,019 autoreload 36484 4436370944 Watching for file changes with StatReloader
+INFO 2023-12-30 20:02:04,609 autoreload 36484 4436370944 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2023-12-30 20:02:05,421 autoreload 36499 4785677824 Watching for file changes with StatReloader
+INFO 2023-12-30 20:02:40,831 autoreload 36499 4785677824 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2023-12-30 20:02:41,608 autoreload 36515 4642620928 Watching for file changes with StatReloader
+INFO 2023-12-30 20:02:58,032 basehttp 36515 123145451749376 "POST /api/register/ HTTP/1.1" 200 38
+INFO 2023-12-30 20:03:34,548 basehttp 36515 123145451749376 "POST /api/register/ HTTP/1.1" 200 38
+INFO 2023-12-30 20:04:08,713 basehttp 36515 123145468538880 "POST /api/login/ HTTP/1.1" 200 81
+INFO 2023-12-30 20:04:08,768 basehttp 36515 123145468538880 "GET /api/quotainfo/?token=af9edfb7-6fac-42af-98a3-2a395a58ad6e HTTP/1.1" 200 119
+INFO 2023-12-30 20:48:01,005 autoreload 36515 4642620928 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2023-12-30 20:48:02,018 autoreload 36914 4429989376 Watching for file changes with StatReloader
+INFO 2023-12-30 20:51:02,297 autoreload 36914 4429989376 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2023-12-30 20:51:03,218 autoreload 36950 4428666368 Watching for file changes with StatReloader
+INFO 2023-12-30 20:53:52,264 autoreload 36950 4428666368 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2023-12-30 20:53:53,209 autoreload 36990 4467025408 Watching for file changes with StatReloader
+INFO 2023-12-30 20:55:27,210 autoreload 36990 4467025408 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2023-12-30 20:55:27,980 autoreload 37004 4657296896 Watching for file changes with StatReloader
+ERROR 2023-12-30 20:56:30,670 log 37004 123145390342144 Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/extension/mixins.py", line 14, in create
+    res = self.perform_create(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/account.py", line 39, in perform_create
+    create_quota_info(user_instance.id)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/account.py", line 23, in create_quota_info
+    db.exec(insert_sql, {'user_id':id})
+TypeError: exec() takes 2 positional arguments but 3 were given
+ERROR 2023-12-30 20:56:30,671 basehttp 37004 123145390342144 "POST /api/register/ HTTP/1.1" 500 99565
+INFO 2023-12-30 20:57:42,135 autoreload 37004 4657296896 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2023-12-30 20:57:43,184 autoreload 37029 4666570240 Watching for file changes with StatReloader
+ERROR 2023-12-30 20:59:19,191 log 37029 123145433104384 Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/extension/mixins.py", line 14, in create
+    res = self.perform_create(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/account.py", line 39, in perform_create
+    create_quota_info(user_instance.id)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/account.py", line 23, in create_quota_info
+    db.exec(insert_sql, (id,))
+TypeError: exec() takes 2 positional arguments but 3 were given
+ERROR 2023-12-30 20:59:19,196 basehttp 37029 123145433104384 "POST /api/register/ HTTP/1.1" 500 99511
+INFO 2023-12-30 20:59:59,525 autoreload 37029 4666570240 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py changed, reloading.
+INFO 2023-12-30 21:00:00,473 autoreload 37048 4480693760 Watching for file changes with StatReloader
+INFO 2023-12-30 21:00:54,346 autoreload 37048 4480693760 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2023-12-30 21:00:55,284 autoreload 37064 4469597696 Watching for file changes with StatReloader
+ERROR 2023-12-30 21:01:41,397 log 37064 123145352802304 Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/extension/mixins.py", line 14, in create
+    res = self.perform_create(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/account.py", line 39, in perform_create
+    create_quota_info(user_instance.id)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/account.py", line 23, in create_quota_info
+    db.exec(insert_sql, user_id=id)
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py", line 20, in exec
+    self.cursor.execute(sql, kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/connections.py", line 822, in _read_query_result
+    result.read()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''user_id': '15'})' at line 2")
+ERROR 2023-12-30 21:01:41,399 basehttp 37064 123145352802304 "POST /api/register/ HTTP/1.1" 500 138378
+INFO 2023-12-30 21:04:05,939 autoreload 37064 4469597696 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2023-12-30 21:04:06,916 autoreload 37101 4452845056 Watching for file changes with StatReloader
+ERROR 2023-12-30 21:04:34,339 log 37101 123145377419264 Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/extension/mixins.py", line 14, in create
+    res = self.perform_create(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/account.py", line 42, in perform_create
+    create_quota_info(user_instance.id)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/account.py", line 26, in create_quota_info
+    db.exec(insert_sql, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py", line 20, in exec
+    self.cursor.execute(sql, kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/connections.py", line 822, in _read_query_result
+    result.read()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1364, "Field 'pnl_0' doesn't have a default value")
+ERROR 2023-12-30 21:04:34,340 basehttp 37101 123145377419264 "POST /api/register/ HTTP/1.1" 500 136921
+INFO 2023-12-30 21:06:11,830 autoreload 37101 4452845056 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2023-12-30 21:06:12,740 autoreload 37119 4675057152 Watching for file changes with StatReloader
+ERROR 2023-12-30 21:07:01,561 log 37119 123145417875456 Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/extension/mixins.py", line 14, in create
+    res = self.perform_create(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/account.py", line 46, in perform_create
+    create_quota_info(user_instance.id)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/account.py", line 30, in create_quota_info
+    db.exec(insert_sql, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py", line 20, in exec
+    self.cursor.execute(sql, kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/connections.py", line 822, in _read_query_result
+    result.read()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1364, "Field 'pnl_0' doesn't have a default value")
+ERROR 2023-12-30 21:07:01,563 basehttp 37119 123145417875456 "POST /api/register/ HTTP/1.1" 500 137178
+INFO 2023-12-30 21:08:02,211 autoreload 37119 4675057152 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2023-12-30 21:08:03,176 autoreload 37153 4465837568 Watching for file changes with StatReloader
+INFO 2023-12-30 21:09:37,260 autoreload 37153 4465837568 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2023-12-30 21:09:38,150 autoreload 37186 4670096896 Watching for file changes with StatReloader
+ERROR 2023-12-30 21:10:16,401 log 37186 123145468940288 Internal Server Error: /api/register/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/extension/mixins.py", line 14, in create
+    res = self.perform_create(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/account.py", line 48, in perform_create
+    create_quota_info(user_instance.id)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/account.py", line 32, in create_quota_info
+    db.exec(insert_sql, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py", line 20, in exec
+    self.cursor.execute(sql, kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/connections.py", line 558, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/connections.py", line 822, in _read_query_result
+    result.read()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/connections.py", line 1200, in read
+    first_packet = self.connection._read_packet()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/connections.py", line 772, in _read_packet
+    packet.raise_for_error()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1364, "Field 'quota_0' doesn't have a default value")
+ERROR 2023-12-30 21:10:16,403 basehttp 37186 123145468940288 "POST /api/register/ HTTP/1.1" 500 137576
+INFO 2023-12-30 21:10:50,595 autoreload 37186 4670096896 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2023-12-30 21:10:51,425 autoreload 37204 4437521920 Watching for file changes with StatReloader
+INFO 2023-12-30 21:11:17,599 basehttp 37204 123145576685568 "POST /api/register/ HTTP/1.1" 200 39
+INFO 2023-12-30 21:15:38,767 autoreload 37204 4437521920 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2023-12-30 21:15:39,493 autoreload 37249 4381513216 Watching for file changes with StatReloader

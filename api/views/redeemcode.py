@@ -28,7 +28,6 @@ class RedeemCodesView(APIView):
     def patch(self, request):
         # 获取请求体中的code值
         serializer = RedeemCodesSerializer(data=request.data)
-        print(serializer)
         serializer.is_valid(raise_exception=True)
         code = serializer.validated_data.get('code')
 

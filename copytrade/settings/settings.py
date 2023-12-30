@@ -259,3 +259,53 @@ LOGGING = {
         },
     }
 }
+
+# Celery异步任务队列框架的配置项[注意：django的配置项必须大写，所以这里的所有配置项必须全部大写]
+# 任务队列
+broker_url = 'redis://:112233Ww..@38.147.173.111:6379/14'
+# 结果队列
+result_backend = 'redis://:112233Ww..@38.147.173.111:6379/15'
+# 时区，与django的时区同步
+timezone = TIME_ZONE
+# 防止死锁
+worker_hijack_root_logger = False
+# 指定每个 worker 处理的并发任务数
+worker_concurrency = 200
+# 每个 worker 一次最多预取的任务数
+worker_prefetch_multiplier = 1
+# 在启动时重试连接
+broker_connection_retry_on_startup = True
+# 任务失败后重试次数
+task_max_retries = 3
+# 设置失败允许重试[这个慎用，如果失败任务无法再次执行成功，会产生指数级别的失败记录]
+task_acks_late = True
+# 每个worker工作进程最多执行500个任务被销毁，可以防止内存泄漏，500是举例，根据自己的服务器的性能可以调整数值
+worker_max_tasks_per_child = 500
+# 单个任务的最大运行时间，超时会被杀死[慎用，有大文件操作、长时间上传、下载任务时，需要关闭这个选项，或者设置更长时间]
+# task_time_limit = 10 * 60
+# 任务发出后，经过一段时间还未收到acknowledge, 就将任务重新交给其他worker执行
+worker_disable_rate_limits = True
+# celery的任务结果内容格式
+accept_content = ['json', 'pickle']
+# 注册任务
+imports = ('crawler.account.okx_task.tasks','crawler.balance.balance_task.tasks','crawler.account.update_pnl.tasks')
+
+# 之前定时任务（定时一次调用），使用了apply_async({}, countdown=30);
+# 设置定时任务（定时多次调用）的调用列表，需要单独运行SCHEDULE命令才能让celery执行定时任务：celery -A mycelery.main beat，当然worker还是要启动的
+# https://docs.celeryproject.org/en/stable/userguide/periodic-tasks.html
+from celery.schedules import crontab
+beat_schedule = {
+    "get_position": {  # 定时任务的注册标记符[必须唯一的]
+        "task": "get_position",   # 定时任务的任务名称
+        "schedule": 60,  # 定时任务的调用时间，10表示每隔10秒调用一次task任务
+        # "schedule": crontab(hour=7, minute=30, day_of_week=1),  # 定时任务的调用时间，每周一早上7点30分调用一次add任务
+    },
+    "get_balance": {
+        "task": "get_balance",
+        "schedule": 300,
+    },
+    "update_pnl": {
+        "task": "update_pnl",
+        "schedule": 60,
+    },
+}

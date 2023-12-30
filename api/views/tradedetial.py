@@ -2,7 +2,6 @@ import os
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from api.extension import return_code
-from crawler.account.okx_task.tasks import perform_get_position
 
 # 读取日志文件转换成字典
 def log_to_dict(log_file_path):
@@ -31,8 +30,6 @@ class TradeDetailView(APIView):
     def get(self, request, task_id):
         user_id = request.user.id
 
-        # 异步发起查询账户相关交易(改为每分钟定时查询)
-        # perform_get_position.delay(user_id, task_id)
 
         # 本地环境路径
         abs = os.path.abspath(__file__)

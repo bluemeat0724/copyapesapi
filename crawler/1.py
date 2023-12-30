@@ -1,13 +1,14 @@
 from crawler.myokx import app
+from okx import app
 from okx.api.public import Public
 
 acc = {'key': '8af6ced4-5ea0-4dd9-9aef-f79529d72a68',
        'secret': '6A840C3EC6D18D4E4127B13ADA7A1091',
        'passphrase': '112233Ww..',
-       # 'proxies': {
-       #              'http': 'socks5h://15755149931sct-5:8ivtkleb@38.147.173.111:5001',
-       #              'https': 'socks5h://15755149931sct-5:8ivtkleb@38.147.173.111:5001'
-       #             }
+       'proxies': {
+                    'http': 'socks5h://15755149931sct-5:8ivtkleb@38.147.173.111:5001',
+                    'https': 'socks5h://15755149931sct-5:8ivtkleb@38.147.173.111:5001'
+                   }
        }
 
 obj = app.OkxSWAP(**acc)
@@ -16,10 +17,10 @@ obj.trade.api.flag = '1'
 #
 # obj.trade.open_market(instId="IOST-USDT-SWAP", posSide="long", openMoney=10 * 10, tdMode='cross',
 #                                   lever=10)
-# obj.trade.open_market(instId="BTC-USDT-SWAP", posSide="long", openMoney=10 * 10, tdMode='cross',
-#                                   lever=10)
-a = obj.trade.open_market(instId='DYDX-USDT-SWAP', posSide='long', openMoney=100,
-                                      tdMode='cross', lever=100)
+obj.trade.open_market(instId="BTC-USDT-SWAP", posSide="long", openMoney=10 * 10, tdMode='cross',
+                                  lever=10)
+# a = obj.trade.open_market(instId='DYDX-USDT-SWAP', posSide='long', openMoney=100,
+#                                       tdMode='cross', lever=100)
 # obj.trade.close_market(instId='ETH-USDT-SWAP', posSide='long', quantityCT=220, tdMode='cross')
 # 当前持仓
 # a = obj.account.get_positions()
@@ -53,7 +54,7 @@ a = obj.trade.open_market(instId='DYDX-USDT-SWAP', posSide='long', openMoney=100
 #
 # a = requests.get(url = 'https://www.okx.com/api/v5/public/instruments?instType=SWAP&instId=DYDX-USDT-SWAP',headers={'x-simulated-trading': '1'},proxies=proxies).json()
 
-print(a)
+# print(a)
 
 
 

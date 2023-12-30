@@ -72,3 +72,4 @@
 [W 231229 15:14:00 inspector:44] Inspect method reserved failed
 [W 231229 15:14:00 inspector:44] Inspect method stats failed
 [W 231229 15:14:00 inspector:44] Inspect method conf failed
+[I 231229 17:00:14 command:28] 15 detected, shutting down

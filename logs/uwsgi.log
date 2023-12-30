@@ -1,0 +1,121 @@
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Dec 29 17:41:34 2023] ***
+compiled with version: Apple LLVM 13.1.6 (clang-1316.0.21.2.5) on 30 November 2023 15:36:14
+os: Darwin-21.6.0 Darwin Kernel Version 21.6.0: Wed Oct  4 23:55:28 PDT 2023; root:xnu-8020.240.18.704.15~1/RELEASE_X86_64
+nodename: mac
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /Users/lichaoyuan/Desktop/copytrade
+writing pidfile to uwsgi.pid
+detected binary path: /Users/lichaoyuan/Desktop/copytrade/venv/bin/uwsgi
+chdir() to /Users/lichaoyuan/Desktop/copytrade
+your processes number limit is 11136
+your memory page size is 4096 bytes
+detected max file descriptor number: 10240
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:62509 (port auto-assigned) fd 3
+Python version: 3.9.12 (v3.9.12:b28265d7e6, Mar 23 2022, 18:17:11)  [Clang 6.0 (clang-600.0.57)]
+PEP 405 virtualenv detected: /Users/lichaoyuan/Desktop/copytrade/venv
+Set PythonHome to /Users/lichaoyuan/Desktop/copytrade/venv
+Python main interpreter initialized at 0x7fb4d5806130
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 521280 bytes (509 KB) for 16 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7fb4d5806130 pid: 28153 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 28153)
+spawned uWSGI worker 1 (pid: 28156, cores: 4)
+spawned uWSGI worker 2 (pid: 28157, cores: 4)
+spawned uWSGI worker 3 (pid: 28158, cores: 4)
+spawned uWSGI worker 4 (pid: 28159, cores: 4)
+spawned uWSGI http 1 (pid: 28160)
+[pid: 28159|app: 0|req: 3/2] 127.0.0.1 () {50 vars in 1026 bytes} [Fri Dec 29 17:41:58 2023] GET /static/rest_framework/js/bootstrap.min.js => generated 179 bytes in 16 msecs (HTTP/1.1 404) 6 headers in 172 bytes (2 switches on core 2)
+[pid: 28159|app: 0|req: 3/2] 127.0.0.1 () {50 vars in 1032 bytes} [Fri Dec 29 17:41:58 2023] GET /static/rest_framework/js/jquery-3.5.1.min.js => generated 179 bytes in 17 msecs (HTTP/1.1 404) 6 headers in 172 bytes (1 switches on core 1)
+[pid: 28159|app: 0|req: 5/3] 127.0.0.1 () {52 vars in 1089 bytes} [Fri Dec 29 17:41:58 2023] GET /static/rest_framework/css/prettify.css => generated 179 bytes in 3 msecs (HTTP/1.1 404) 6 headers in 172 bytes (2 switches on core 3)
+[pid: 28159|app: 0|req: 5/4] 127.0.0.1 () {52 vars in 1063 bytes} [Fri Dec 29 17:41:58 2023] GET /static/rest_framework/js/csrf.js => generated 179 bytes in 4 msecs (HTTP/1.1 404) 6 headers in 172 bytes (1 switches on core 2)
+[pid: 28159|app: 0|req: 7/5] 127.0.0.1 () {52 vars in 1069 bytes} [Fri Dec 29 17:41:58 2023] GET /static/rest_framework/js/default.js => generated 179 bytes in 2 msecs (HTTP/1.1 404) 6 headers in 172 bytes (1 switches on core 1)
+[pid: 28159|app: 0|req: 7/6] 127.0.0.1 () {52 vars in 1073 bytes} [Fri Dec 29 17:41:58 2023] GET /static/rest_framework/js/ajax-form.js => generated 179 bytes in 2 msecs (HTTP/1.1 404) 6 headers in 172 bytes (2 switches on core 3)
+[pid: 28159|app: 0|req: 7/7] 127.0.0.1 () {52 vars in 1150 bytes} [Fri Dec 29 17:41:56 2023] GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e => generated 5548 bytes in 1466 msecs (HTTP/1.1 401) 9 headers in 440 bytes (1 switches on core 0)
+[pid: 28159|app: 0|req: 8/8] 127.0.0.1 () {50 vars in 1044 bytes} [Fri Dec 29 17:41:58 2023] GET /static/rest_framework/css/bootstrap.min.css => generated 179 bytes in 2 msecs (HTTP/1.1 404) 6 headers in 172 bytes (1 switches on core 2)
+[pid: 28157|app: 0|req: 1/9] 127.0.0.1 () {52 vars in 1105 bytes} [Fri Dec 29 17:41:58 2023] GET /static/rest_framework/css/bootstrap-tweaks.css => generated 179 bytes in 605 msecs (HTTP/1.1 404) 6 headers in 172 bytes (2 switches on core 0)
+[pid: 28158|app: 0|req: 2/11] 127.0.0.1 () {50 vars in 1024 bytes} [Fri Dec 29 17:41:58 2023] GET /static/rest_framework/js/prettify-min.js => generated 179 bytes in 614 msecs (HTTP/1.1 404) 6 headers in 172 bytes (1 switches on core 0)
+[pid: 28158|app: 0|req: 2/11] 127.0.0.1 () {52 vars in 1087 bytes} [Fri Dec 29 17:41:58 2023] GET /static/rest_framework/css/default.css => generated 179 bytes in 613 msecs (HTTP/1.1 404) 6 headers in 172 bytes (2 switches on core 3)
+[pid: 28157|app: 0|req: 2/12] 127.0.0.1 () {50 vars in 1026 bytes} [Fri Dec 29 17:41:59 2023] GET /favicon.ico => generated 179 bytes in 2 msecs (HTTP/1.1 404) 6 headers in 172 bytes (2 switches on core 1)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 28160)
+worker 4 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 1 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.23 (64bit) on [Fri Dec 29 19:45:19 2023] ***
+compiled with version: Apple LLVM 13.1.6 (clang-1316.0.21.2.5) on 30 November 2023 15:36:14
+os: Darwin-21.6.0 Darwin Kernel Version 21.6.0: Wed Oct  4 23:55:28 PDT 2023; root:xnu-8020.240.18.704.15~1/RELEASE_X86_64
+nodename: mac
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 16
+current working directory: /Users/lichaoyuan/Desktop/copytrade
+writing pidfile to uwsgi.pid
+detected binary path: /Users/lichaoyuan/Desktop/copytrade/venv/bin/uwsgi
+chdir() to /Users/lichaoyuan/Desktop/copytrade
+your processes number limit is 11136
+your memory page size is 4096 bytes
+detected max file descriptor number: 10240
+lock engine: OSX spinlocks
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 0.0.0.0:8000 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:57824 (port auto-assigned) fd 3
+Python version: 3.9.12 (v3.9.12:b28265d7e6, Mar 23 2022, 18:17:11)  [Clang 6.0 (clang-600.0.57)]
+PEP 405 virtualenv detected: /Users/lichaoyuan/Desktop/copytrade/venv
+Set PythonHome to /Users/lichaoyuan/Desktop/copytrade/venv
+Python main interpreter initialized at 0x7f9694707ab0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 521280 bytes (509 KB) for 16 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7f9694707ab0 pid: 29165 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 29165)
+spawned uWSGI worker 1 (pid: 29168, cores: 4)
+spawned uWSGI worker 2 (pid: 29169, cores: 4)
+spawned uWSGI worker 3 (pid: 29170, cores: 4)
+spawned uWSGI worker 4 (pid: 29171, cores: 4)
+spawned uWSGI http 1 (pid: 29172)
+[pid: 29170|app: 0|req: 4/2] 127.0.0.1 () {50 vars in 1050 bytes} [Fri Dec 29 19:45:32 2023] GET /static/rest_framework/css/bootstrap-tweaks.css => generated 179 bytes in 18 msecs (HTTP/1.1 404) 6 headers in 172 bytes (2 switches on core 1)
+[pid: 29170|app: 0|req: 4/2] 127.0.0.1 () {50 vars in 1032 bytes} [Fri Dec 29 19:45:32 2023] GET /static/rest_framework/css/default.css => generated 179 bytes in 17 msecs (HTTP/1.1 404) 6 headers in 172 bytes (2 switches on core 2)
+[pid: 29170|app: 0|req: 4/3] 127.0.0.1 () {50 vars in 1034 bytes} [Fri Dec 29 19:45:32 2023] GET /static/rest_framework/css/prettify.css => generated 179 bytes in 17 msecs (HTTP/1.1 404) 6 headers in 172 bytes (2 switches on core 3)
+[pid: 29170|app: 0|req: 5/4] 127.0.0.1 () {50 vars in 1014 bytes} [Fri Dec 29 19:45:32 2023] GET /static/rest_framework/js/default.js => generated 179 bytes in 1 msecs (HTTP/1.1 404) 6 headers in 172 bytes (2 switches on core 1)
+[pid: 29170|app: 0|req: 6/5] 127.0.0.1 () {50 vars in 1026 bytes} [Fri Dec 29 19:45:32 2023] GET /static/rest_framework/js/bootstrap.min.js => generated 179 bytes in 1 msecs (HTTP/1.1 404) 6 headers in 172 bytes (2 switches on core 2)
+[pid: 29170|app: 0|req: 6/6] 127.0.0.1 () {54 vars in 1180 bytes} [Fri Dec 29 19:45:31 2023] GET /api/quotainfo/?token=0f0d23de-c37e-4710-8a19-7ac136a98e6e => generated 5548 bytes in 1291 msecs (HTTP/1.1 401) 9 headers in 440 bytes (2 switches on core 0)
+[pid: 29170|app: 0|req: 7/7] 127.0.0.1 () {50 vars in 1044 bytes} [Fri Dec 29 19:45:32 2023] GET /static/rest_framework/css/bootstrap.min.css => generated 179 bytes in 1 msecs (HTTP/1.1 404) 6 headers in 172 bytes (1 switches on core 3)
+[pid: 29171|app: 0|req: 4/9] 127.0.0.1 () {50 vars in 1008 bytes} [Fri Dec 29 19:45:32 2023] GET /static/rest_framework/js/csrf.js => generated 179 bytes in 544 msecs (HTTP/1.1 404) 6 headers in 172 bytes (2 switches on core 3)
+[pid: 29171|app: 0|req: 4/10] 127.0.0.1 () {50 vars in 1032 bytes} [Fri Dec 29 19:45:32 2023] GET /static/rest_framework/js/jquery-3.5.1.min.js => generated 179 bytes in 562 msecs (HTTP/1.1 404) 6 headers in 172 bytes (2 switches on core 0)
+[pid: 29171|app: 0|req: 4/11] 127.0.0.1 () {50 vars in 1018 bytes} [Fri Dec 29 19:45:32 2023] GET /static/rest_framework/js/ajax-form.js => generated 179 bytes in 562 msecs (HTTP/1.1 404) 6 headers in 172 bytes (2 switches on core 2)
+[pid: 29171|app: 0|req: 4/11] 127.0.0.1 () {50 vars in 1024 bytes} [Fri Dec 29 19:45:32 2023] GET /static/rest_framework/js/prettify-min.js => generated 179 bytes in 545 msecs (HTTP/1.1 404) 6 headers in 172 bytes (2 switches on core 1)
+[pid: 29171|app: 0|req: 5/12] 127.0.0.1 () {52 vars in 1055 bytes} [Fri Dec 29 19:45:39 2023] GET /api/login => generated 0 bytes in 1 msecs (HTTP/1.1 301) 6 headers in 193 bytes (1 switches on core 3)
+[pid: 29170|app: 0|req: 8/13] 127.0.0.1 () {52 vars in 1057 bytes} [Fri Dec 29 19:45:39 2023] GET /api/login/ => generated 5580 bytes in 10 msecs (HTTP/1.1 405) 8 headers in 403 bytes (1 switches on core 1)
+[pid: 29171|app: 0|req: 9/14] 127.0.0.1 () {50 vars in 987 bytes} [Fri Dec 29 19:45:39 2023] GET /static/rest_framework/css/prettify.css => generated 179 bytes in 10 msecs (HTTP/1.1 404) 6 headers in 172 bytes (2 switches on core 3)
+[pid: 29171|app: 0|req: 9/15] 127.0.0.1 () {50 vars in 985 bytes} [Fri Dec 29 19:45:39 2023] GET /static/rest_framework/css/default.css => generated 179 bytes in 11 msecs (HTTP/1.1 404) 6 headers in 172 bytes (2 switches on core 2)
+[pid: 29171|app: 0|req: 9/16] 127.0.0.1 () {50 vars in 971 bytes} [Fri Dec 29 19:45:39 2023] GET /static/rest_framework/js/ajax-form.js => generated 179 bytes in 12 msecs (HTTP/1.1 404) 6 headers in 172 bytes (2 switches on core 0)
+[pid: 29171|app: 0|req: 9/17] 127.0.0.1 () {50 vars in 985 bytes} [Fri Dec 29 19:45:39 2023] GET /static/rest_framework/js/jquery-3.5.1.min.js => generated 179 bytes in 13 msecs (HTTP/1.1 404) 6 headers in 172 bytes (2 switches on core 1)
+[pid: 29171|app: 0|req: 13/18] 127.0.0.1 () {50 vars in 961 bytes} [Fri Dec 29 19:45:39 2023] GET /static/rest_framework/js/csrf.js => generated 179 bytes in 6 msecs (HTTP/1.1 404) 6 headers in 172 bytes (2 switches on core 3)
+[pid: 29171|app: 0|req: 13/19] 127.0.0.1 () {50 vars in 979 bytes} [Fri Dec 29 19:45:39 2023] GET /static/rest_framework/js/bootstrap.min.js => generated 179 bytes in 7 msecs (HTTP/1.1 404) 6 headers in 172 bytes (2 switches on core 2)
+[pid: 29171|app: 0|req: 13/20] 127.0.0.1 () {50 vars in 977 bytes} [Fri Dec 29 19:45:39 2023] GET /static/rest_framework/js/prettify-min.js => generated 179 bytes in 7 msecs (HTTP/1.1 404) 6 headers in 172 bytes (1 switches on core 0)
+[pid: 29171|app: 0|req: 13/21] 127.0.0.1 () {50 vars in 967 bytes} [Fri Dec 29 19:45:39 2023] GET /static/rest_framework/js/default.js => generated 179 bytes in 7 msecs (HTTP/1.1 404) 6 headers in 172 bytes (2 switches on core 1)
+[pid: 29169|app: 0|req: 2/23] 127.0.0.1 () {50 vars in 1003 bytes} [Fri Dec 29 19:45:39 2023] GET /static/rest_framework/css/bootstrap-tweaks.css => generated 179 bytes in 556 msecs (HTTP/1.1 404) 6 headers in 172 bytes (2 switches on core 3)
+[pid: 29169|app: 0|req: 2/23] 127.0.0.1 () {50 vars in 997 bytes} [Fri Dec 29 19:45:39 2023] GET /static/rest_framework/css/bootstrap.min.css => generated 179 bytes in 560 msecs (HTTP/1.1 404) 6 headers in 172 bytes (1 switches on core 0)
+SIGINT/SIGTERM received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 29172)
+worker 4 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 1 buried after 1 seconds
+goodbye to uWSGI.

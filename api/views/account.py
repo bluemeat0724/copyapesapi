@@ -1,6 +1,5 @@
 from api.extension.mixins import CopyCreateModelMixin
 from api.serializers.account import RegisterSerializer, AuthSerializer
-from api.models import QuotaInfo
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -11,6 +10,30 @@ from django.db.models import Q
 
 from api import models
 from api.extension import return_code
+from crawler.utils.db import Connect
+
+
+def create_quota_info(user_id):
+    """
+    创建用户的QuotaInfo实例
+    没有使用ORM，在此处进行手动余额初始化操作
+    """
+    params = {
+        "user_id": user_id,
+        "pnl_0": 0,
+        "pnl_1": 0,
+        "upl_0": 0,
+        "upl_1": 0,
+        "quota_0": 100,
+        "quota_1": 100,
+    }
+    insert_sql = """
+                    INSERT INTO api_quotainfo (user_id,pnl_0,pnl_1,upl_0,upl_1,quota_0,quota_1)
+                    VALUES (%(user_id)s,%(pnl_0)s,%(pnl_1)s,%(upl_0)s,%(upl_1)s,%(quota_0)s,%(quota_1)s)
+                """
+    with Connect() as db:
+        db.exec(insert_sql, **params)
+
 
 
 class RegisterView(CopyCreateModelMixin):
@@ -25,7 +48,7 @@ class RegisterView(CopyCreateModelMixin):
         user_instance = serializer.save()
 
         # 创建关联的QuotaInfo实例
-        QuotaInfo.objects.create(user=user_instance)
+        create_quota_info(user_instance.id)
 
 
 class Login(APIView):
