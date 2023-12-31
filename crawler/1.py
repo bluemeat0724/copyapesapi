@@ -20,27 +20,45 @@ acc = {'key': '8af6ced4-5ea0-4dd9-9aef-f79529d72a68',
 #        }
 
 
-obj = app.OkxSWAP(**acc)
-obj.account.api.flag = '1'
-obj.trade.api.flag = '1'
-
-set_position_mode_result = obj.account.set_position_mode(
-                posMode='long_short_mode')
-if set_position_mode_result['code'] == '0':
-    print('[SUCCESS] 设置持仓方式为双向持仓成功，posMode="long_short_mode"')
-else:
-    print('[FAILURE] 设置持仓方式为双向持仓失败，请手动设置：posMode="long_short_mode"')
+# obj = app.OkxSWAP(**acc)
+# obj.account.api.flag = '1'
+# obj.trade.api.flag = '1'
+#
+# set_position_mode_result = obj.account.set_position_mode(
+#                 posMode='long_short_mode')
+# if set_position_mode_result['code'] == '0':
+#     print('[SUCCESS] 设置持仓方式为双向持仓成功，posMode="long_short_mode"')
+# else:
+#     print('[FAILURE] 设置持仓方式为双向持仓失败，请手动设置：posMode="long_short_mode"')
 
 #
 # obj.trade.open_market(instId="IOST-USDT-SWAP", posSide="long", openMoney=10 * 10, tdMode='cross',
 #                                   lever=10)
 
-result = obj.trade.open_market(instId="ETH-USDT-SWAP", posSide="long", openMoney=100 * 10, tdMode='cross',
-                                  lever=10)
+# result = obj.trade.open_market(instId="ETH-USDT-SWAP", posSide="long", openMoney=100 * 10, tdMode='cross',
+#                                   lever=10)
+result = {'instType': 'SWAP', 'instId': 'ETH-USDT-SWAP', 'state': 'filled', 'ordId': '661695476885966848', 'meta': {}, 'request_param': {'instId': 'ETH-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'long', 'side': 'buy', 'ordType': 'market', 'sz': '43', 'clOrdId': '', 'tag': ''}, 'func_param': {'instId': 'ETH-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'long', 'lever': 10, 'openMoney': 1000, 'quantityCT': None, 'meta': {}, 'timeout': 60, 'delay': 0.2, 'cancel': True, 'clOrdId': '', 'tag': '', 'newThread': False, 'callback': None, 'errorback': None}, 'get_order_result': {'code': '0', 'data': {'accFillSz': '43', 'algoClOrdId': '', 'algoId': '', 'attachAlgoClOrdId': '', 'attachAlgoOrds': [], 'avgPx': '2301.58', 'cTime': '1704032495397', 'cancelSource': '', 'cancelSourceReason': '', 'category': 'normal', 'ccy': '', 'clOrdId': '', 'fee': '-0.4948397', 'feeCcy': 'USDT', 'fillPx': '2301.58', 'fillSz': '43', 'fillTime': '1704032495397', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'lever': '10', 'ordId': '661695476885966848', 'ordType': 'market', 'pnl': '0', 'posSide': 'long', 'px': '', 'pxType': '', 'pxUsd': '', 'pxVol': '', 'quickMgnType': '', 'rebate': '0', 'rebateCcy': 'USDT', 'reduceOnly': 'false', 'side': 'buy', 'slOrdPx': '', 'slTriggerPx': '', 'slTriggerPxType': '', 'source': '', 'state': 'filled', 'stpId': '', 'stpMode': '', 'sz': '43', 'tag': '', 'tdMode': 'cross', 'tgtCcy': '', 'tpOrdPx': '', 'tpTriggerPx': '', 'tpTriggerPxType': '', 'tradeId': '190117436', 'uTime': '1704032495398'}, 'msg': ''}, 'set_order_result': {'code': '0', 'data': {'clOrdId': '', 'ordId': '661695476885966848', 'sCode': '0', 'sMsg': 'Order placed', 'tag': ''}, 'inTime': '1704032495397180', 'msg': '', 'outTime': '1704032495398476'}, 'error_result': None, 'cancel_result': None}
+# result ={'instType': 'SWAP', 'instId': 'BTC-USDT-SWAP', 'state': None, 'ordId': None, 'meta': {}, 'request_param': {'instId': 'BTC-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'long', 'side': 'buy', 'ordType': 'market', 'sz': '23', 'clOrdId': '', 'tag': ''}, 'func_param': {'instId': 'BTC-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'long', 'lever': 10, 'openMoney': 1000, 'quantityCT': None, 'meta': {}, 'timeout': 60, 'delay': 0.2, 'cancel': True, 'clOrdId': '', 'tag': '', 'newThread': False, 'callback': None, 'errorback': None}, 'get_order_result': None, 'set_order_result': {'code': '1', 'data': [{'clOrdId': '', 'ordId': '', 'sCode': '51010', 'sMsg': 'Request unsupported under current account mode ', 'tag': ''}], 'inTime': '1704032341348224', 'msg': 'All operations failed', 'outTime': '1704032341349427'}, 'error_result': {'code': 'FUNC_EXCEPTION', 'data': {}, 'msg': 'Traceback (most recent call last):\n  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/open.py", line 556, in inner_func\n    error_result = main_func(**main_data)\n  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/open.py", line 506, in main_func\n    ordId = set_order_result[\'data\'][\'ordId\']\nTypeError: list indices must be integers or slices, not str\n'}, 'cancel_result': None}
 
-s_code_value = result.get('set_order_result', {}).get('data', [{}])[0].get('sCode')
 
-print(s_code_value)
+try:
+    s_code_value = result.get('set_order_result', {}).get('data', {}).get('sCode')
+    if s_code_value == '0':
+        print(s_code_value)
+except:
+    try:
+        s_code_value = result.get('set_order_result', {}).get('data', [{}])[0].get('sCode')
+        if s_code_value == '51010':
+            print('账户模式不支持')
+        elif s_code_value == '51011':
+            print('账户余额不足')
+        elif s_code_value == '51012':
+            print('订单价格不合法')
+        elif s_code_value == '51013':
+            print('订单数量不合法')
+    except:
+        pass
+
 # a = obj.trade.open_market(instId='DYDX-USDT-SWAP', posSide='long', openMoney=100,
 #                                       tdMode='cross', lever=100)
 # obj.trade.close_market(instId='ETH-USDT-SWAP', posSide='long', quantityCT=220, tdMode='cross')
