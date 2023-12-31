@@ -228,7 +228,10 @@ class Trader(threading.Thread):
     # 手动结束跟单，打印日志
     def stop(self):
         # 结束全部正在进行中的交易
-        data = self.obj.account.get_positions().get('data')
+        try:
+            data = self.obj.account.get_positions().get('data')
+        except:
+            return
         if not data:
             # 打印日志
             self.thread_logger.warning(f'手动结束跟单，任务：{self.task_id}')
