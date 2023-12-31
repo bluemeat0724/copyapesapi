@@ -171,9 +171,13 @@ class Trader(threading.Thread):
                 self.thread_logger.warning(f'模拟盘土狗币交易失败，品种：{self.instId}不在交易所模拟盘中！')
                 return
             # 市价开仓
-            self.obj.trade.open_market(instId=self.instId, posSide=self.posSide, openMoney=self.sums * trade_times, tdMode='cross',
+            result = self.obj.trade.open_market(instId=self.instId, posSide=self.posSide, openMoney=self.sums * trade_times, tdMode='cross',
                                   lever=self.lever)
-            self.thread_logger.success(f'进行开仓操作，品种：{self.instId}，金额：{self.sums}USDT，方向：{self.posSide}')
+            s_code_value = result.get('set_order_result', {}).get('data', [{}])[0].get('sCode')
+            if s_code_value == '51010':
+                self.thread_logger.warning(f'交易失败，当前账户为简单交易模式，请在交易所合约交易页面进行手动调整。无需终止本次跟单任务，交易模式调整完成后，如有新的交易订单，将正常交易。')
+            else:
+                self.thread_logger.success(f'进行开仓操作，品种：{self.instId}，金额：{self.sums}USDT，方向：{self.posSide}')
 
         elif self.order_type == 'close':
             if self.posSide == 'net':
@@ -209,9 +213,14 @@ class Trader(threading.Thread):
                 return
             # 加仓操作
             if ratio > 1:
-                self.obj.trade.open_market(instId=self.instId, posSide=self.posSide, openMoney=self.sums * trade_times,
+                result = self.obj.trade.open_market(instId=self.instId, posSide=self.posSide, openMoney=self.sums * trade_times,
                                       tdMode='cross', lever=self.lever)
-                self.thread_logger.success(f'进行加仓操作，品种：{self.instId}，加仓量：{self.sums}USDT，方向：{self.posSide}')
+                s_code_value = result.get('set_order_result', {}).get('data', [{}])[0].get('sCode')
+                if s_code_value == '51010':
+                    self.thread_logger.warning(
+                        f'交易失败，当前账户为简单交易模式，请在交易所合约交易页面进行手动调整。无需终止本次跟单任务，交易模式调整完成后，如有新的交易订单，将正常交易。')
+                else:
+                    self.thread_logger.success(f'进行加仓操作，品种：{self.instId}，加仓量：{self.sums}USDT，方向：{self.posSide}')
             # 减仓操作
             if ratio < 1:
                 # 获取当前持仓，计算减仓量=当前*(1-ratio)

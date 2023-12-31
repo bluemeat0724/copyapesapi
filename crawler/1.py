@@ -1,24 +1,46 @@
 from crawler.myokx import app
-from okx import app
+# from okx import app
 from okx.api.public import Public
 
 acc = {'key': '8af6ced4-5ea0-4dd9-9aef-f79529d72a68',
        'secret': '6A840C3EC6D18D4E4127B13ADA7A1091',
        'passphrase': '112233Ww..',
        'proxies': {
-                    'http': 'socks5h://15755149931sct-5:8ivtkleb@38.147.173.111:5001',
-                    'https': 'socks5h://15755149931sct-5:8ivtkleb@38.147.173.111:5001'
+                    'http': 'socks5h://15755149931sct-5:8ivtkleb@38.45.108.138:5002',
+                    'https': 'socks5h://15755149931sct-5:8ivtkleb@38.45.108.138:5002'
                    }
        }
+# acc = {'key': '0efd0d0d-868d-4f03-8e65-1501bc285d83',
+#        'secret': '928071E95217C05F9F5E464A83A95490',
+#        'passphrase': 'guobaoying94DG@',
+#        'proxies': {
+#                     'http': 'socks5h://16616640507srt-1:veg19mrb@38.45.108.138:5002',
+#                     'https': 'socks5h://16616640507srt-1:veg19mrb@38.45.108.138:5002'
+#                    }
+#        }
+
 
 obj = app.OkxSWAP(**acc)
 obj.account.api.flag = '1'
 obj.trade.api.flag = '1'
+
+set_position_mode_result = obj.account.set_position_mode(
+                posMode='long_short_mode')
+if set_position_mode_result['code'] == '0':
+    print('[SUCCESS] 设置持仓方式为双向持仓成功，posMode="long_short_mode"')
+else:
+    print('[FAILURE] 设置持仓方式为双向持仓失败，请手动设置：posMode="long_short_mode"')
+
 #
 # obj.trade.open_market(instId="IOST-USDT-SWAP", posSide="long", openMoney=10 * 10, tdMode='cross',
 #                                   lever=10)
-obj.trade.open_market(instId="BTC-USDT-SWAP", posSide="long", openMoney=10 * 10, tdMode='cross',
+
+result = obj.trade.open_market(instId="ETH-USDT-SWAP", posSide="long", openMoney=100 * 10, tdMode='cross',
                                   lever=10)
+
+s_code_value = result.get('set_order_result', {}).get('data', [{}])[0].get('sCode')
+
+print(s_code_value)
 # a = obj.trade.open_market(instId='DYDX-USDT-SWAP', posSide='long', openMoney=100,
 #                                       tdMode='cross', lever=100)
 # obj.trade.close_market(instId='ETH-USDT-SWAP', posSide='long', quantityCT=220, tdMode='cross')
