@@ -20,7 +20,7 @@ def get_okx_api_balance(acc, flag, api_id):
         end_index = e.find('"', start_index)
         # 提取出 "code" 的值
         code_value = e[start_index:end_index]
-        if code_value == "50105":
+        if code_value in ["50105", "50101", "50100"]:
             # api错误，进行逻辑删除
             with Connect() as db:
                 db.exec("UPDATE api_apiinfo SET deleted = 1 WHERE id = %(api_id)s", api_id=api_id)
