@@ -17,7 +17,7 @@ class ApiAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixin
     def perform_create(self, serializer):
         flag = serializer.validated_data.get('flag')
         if flag == 1:
-            api_object = models.ApiInfo.objects.filter(flag=1, user=self.request.user).first()
+            api_object = models.ApiInfo.objects.filter(flag=1, user=self.request.user, deleted=0).first()
             if not api_object:
                 serializer.save(user=self.request.user)
             else:
