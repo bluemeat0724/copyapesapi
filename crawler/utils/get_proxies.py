@@ -17,7 +17,6 @@ def get_proxies():
         'https': 'socks5h://{}:{}@{}:{}'.format(proxies_account['username'], proxies_account['password'],
                                                 settings.PROXY_IP,
                                                 settings.PROXY_PORT),
-        # 'https': 'socks5h://15755149931sct-5:8ivtkleb@38.147.173.111:5003'
         # 'all': 'socks5h://15755149931sct-5:8ivtkleb@38.147.173.111:5003'
     }
     return proxies
