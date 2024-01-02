@@ -31,8 +31,10 @@ def get_my_proxies(user_id, flag):
 
         # 如果用户用模拟盘测试，但没有提供固定ip，则随机选择一个ip给用户使用
         if ip_dict is None and flag == '1':
-            ip_dict = conn.fetch_one(
-                "select username,password from api_ipinfo where countdown>0")
+            # ip_dict = conn.fetch_one(
+            #     "select username,password from api_ipinfo where countdown>0")
+            proxies = get_proxies()
+            return proxies
 
         if ip_dict is None and flag == '0':
             return None
