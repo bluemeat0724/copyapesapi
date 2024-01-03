@@ -187,6 +187,8 @@ class Trader(threading.Thread):
                         self.thread_logger.warning('交易失败，账户余额不足！请前往交易所充值！')
                     if s_code_value == '51024':
                         self.thread_logger.warning('交易失败，交易账户冻结！请联系交易所客服处理！')
+                    if s_code_value in ['50103','50104','50105','50106','50107']:
+                        self.thread_logger.warning('交易失败，API信息填写错误，请结束任务后重新提交新的API！')
                 except:
                     pass
 
@@ -240,6 +242,8 @@ class Trader(threading.Thread):
                             self.thread_logger.warning('交易失败，账户余额不足！请前往交易所充值！')
                         if s_code_value == '51024':
                             self.thread_logger.warning('交易失败，交易账户冻结！请联系交易所客服处理！')
+                        if s_code_value in ['50103', '50104', '50105', '50106', '50107']:
+                            self.thread_logger.warning('交易失败，API信息填写错误，请结束任务后重新提交新的API！')
                     except:
                         pass
 
