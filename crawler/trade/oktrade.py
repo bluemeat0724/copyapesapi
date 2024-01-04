@@ -189,8 +189,8 @@ class Trader(threading.Thread):
                         self.thread_logger.warning('交易失败，交易账户冻结！请联系交易所客服处理！')
                     if s_code_value in ['50103','50104','50105','50106','50107']:
                         self.thread_logger.warning('交易失败，API信息填写错误，请结束任务后重新提交新的API！')
-                except:
-                    pass
+                except Exception as e:
+                    self.thread_logger.warning(f'交易失败，错误信息：{e}')
 
         elif self.order_type == 'close':
             if self.posSide == 'net':
@@ -244,8 +244,8 @@ class Trader(threading.Thread):
                             self.thread_logger.warning('交易失败，交易账户冻结！请联系交易所客服处理！')
                         if s_code_value in ['50103', '50104', '50105', '50106', '50107']:
                             self.thread_logger.warning('交易失败，API信息填写错误，请结束任务后重新提交新的API！')
-                    except:
-                        pass
+                    except Exception as e:
+                        self.thread_logger.warning(f'交易失败，错误信息：{e}')
 
             # 减仓操作
             if ratio < 1:

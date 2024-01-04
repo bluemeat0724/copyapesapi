@@ -3837,3 +3837,13 @@ INFO 2024-01-03 12:17:29,346 autoreload 55154 4416841216 /Users/lichaoyuan/Deskt
 INFO 2024-01-03 12:17:30,744 autoreload 59396 4318553600 Watching for file changes with StatReloader
 INFO 2024-01-03 12:18:20,845 autoreload 59396 4318553600 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py changed, reloading.
 INFO 2024-01-03 12:18:21,904 autoreload 59416 4443842048 Watching for file changes with StatReloader
+INFO 2024-01-03 23:53:27,263 basehttp 59416 123145410490368 "GET /api/taskadd/?token=411130da-1c00-43b9-bd28-6ff1d4d36691 HTTP/1.1" 200 47637
+INFO 2024-01-04 13:44:15,439 autoreload 59416 4443842048 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py changed, reloading.
+INFO 2024-01-04 13:44:16,551 autoreload 66547 4521752064 Watching for file changes with StatReloader
+INFO 2024-01-04 13:44:29,370 autoreload 66547 4521752064 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py changed, reloading.
+INFO 2024-01-04 13:44:30,134 autoreload 66563 4648064512 Watching for file changes with StatReloader
+INFO 2024-01-04 13:47:47,590 autoreload 66563 4648064512 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py changed, reloading.
+INFO 2024-01-04 13:47:48,433 autoreload 66592 4564420096 Watching for file changes with StatReloader
+INFO 2024-01-04 17:44:43,203 basehttp 66592 123145357758464 "GET /api/quotainfo/?token=411130da-1c00-43b9-bd28-6ff1d4d36691 HTTP/1.1" 200 131
+INFO 2024-01-04 17:49:21,848 autoreload 66592 4564420096 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py changed, reloading.
+INFO 2024-01-04 17:49:23,009 autoreload 67965 4740064768 Watching for file changes with StatReloader
