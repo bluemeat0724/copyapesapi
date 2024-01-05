@@ -2,22 +2,22 @@ from crawler.myokx import app
 # from okx import app
 from okx.api.public import Public
 
-# acc = {'key': '8af6ced4-5ea0-4dd9-9aef-f79529d72a68',
-#        'secret': '6A840C3EC6D18D4E4127B13ADA7A1091',
-#        'passphrase': '112233Ww..',
-#        'proxies': {
-#                     'http': 'socks5h://15755149931sct-5:8ivtkleb@38.45.108.138:5002',
-#                     'https': 'socks5h://15755149931sct-5:8ivtkleb@38.45.108.138:5002'
-#                    }
-#        }
-acc = {'key': 'fa6ff921-ae3d-42c7-b9f0-d10b3fcc26ec',
-       'secret': 'DB5B7D108BFCB05A352FFA78053A099D',
-       'passphrase': 'Newpasswd2024%',
+acc = {'key': '8af6ced4-5ea0-4dd9-9aef-f79529d72a68',
+       'secret': '6A840C3EC6D18D4E4127B13ADA7A1091',
+       'passphrase': '112233Ww..',
        'proxies': {
-                    'http': 'socks5h://xiaowen001:9zrn85g6@38.45.108.138:5002',
-                    'https': 'socks5h://xiaowen001:9zrn85g6@38.45.108.138:5002'
+                    'http': 'socks5h://15755149931sct-5:8ivtkleb@38.45.108.138:5002',
+                    'https': 'socks5h://15755149931sct-5:8ivtkleb@38.45.108.138:5002'
                    }
        }
+# acc = {'key': 'fa6ff921-ae3d-42c7-b9f0-d10b3fcc26ec',
+#        'secret': 'DB5B7D108BFCB05A352FFA78053A099D',
+#        'passphrase': 'Newpasswd2024%',
+#        'proxies': {
+#                     'http': 'socks5h://xiaowen001:9zrn85g6@38.45.108.138:5002',
+#                     'https': 'socks5h://xiaowen001:9zrn85g6@38.45.108.138:5002'
+#                    }
+#        }
 
 
 obj = app.OkxSWAP(**acc)
@@ -35,7 +35,7 @@ obj.trade.api.flag = '1'
 # obj.trade.open_market(instId="IOST-USDT-SWAP", posSide="long", openMoney=10 * 10, tdMode='cross',
 #                                   lever=10)
 
-result = obj.trade.open_market(instId="BSV-USDT-SWAP", posSide="long", openMoney=100 * 10, tdMode='cross',
+result = obj.trade.open_market(instId="BTC-USDT-SWAP", posSide="long", openMoney=90000 * 10, tdMode='cross',
                                   lever=10)
 # result = {'instType': 'SWAP', 'instId': 'ETH-USDT-SWAP', 'state': 'filled', 'ordId': '661695476885966848', 'meta': {}, 'request_param': {'instId': 'ETH-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'long', 'side': 'buy', 'ordType': 'market', 'sz': '43', 'clOrdId': '', 'tag': ''}, 'func_param': {'instId': 'ETH-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'long', 'lever': 10, 'openMoney': 1000, 'quantityCT': None, 'meta': {}, 'timeout': 60, 'delay': 0.2, 'cancel': True, 'clOrdId': '', 'tag': '', 'newThread': False, 'callback': None, 'errorback': None}, 'get_order_result': {'code': '0', 'data': {'accFillSz': '43', 'algoClOrdId': '', 'algoId': '', 'attachAlgoClOrdId': '', 'attachAlgoOrds': [], 'avgPx': '2301.58', 'cTime': '1704032495397', 'cancelSource': '', 'cancelSourceReason': '', 'category': 'normal', 'ccy': '', 'clOrdId': '', 'fee': '-0.4948397', 'feeCcy': 'USDT', 'fillPx': '2301.58', 'fillSz': '43', 'fillTime': '1704032495397', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'lever': '10', 'ordId': '661695476885966848', 'ordType': 'market', 'pnl': '0', 'posSide': 'long', 'px': '', 'pxType': '', 'pxUsd': '', 'pxVol': '', 'quickMgnType': '', 'rebate': '0', 'rebateCcy': 'USDT', 'reduceOnly': 'false', 'side': 'buy', 'slOrdPx': '', 'slTriggerPx': '', 'slTriggerPxType': '', 'source': '', 'state': 'filled', 'stpId': '', 'stpMode': '', 'sz': '43', 'tag': '', 'tdMode': 'cross', 'tgtCcy': '', 'tpOrdPx': '', 'tpTriggerPx': '', 'tpTriggerPxType': '', 'tradeId': '190117436', 'uTime': '1704032495398'}, 'msg': ''}, 'set_order_result': {'code': '0', 'data': {'clOrdId': '', 'ordId': '661695476885966848', 'sCode': '0', 'sMsg': 'Order placed', 'tag': ''}, 'inTime': '1704032495397180', 'msg': '', 'outTime': '1704032495398476'}, 'error_result': None, 'cancel_result': None}
 # result ={'instType': 'SWAP', 'instId': 'BTC-USDT-SWAP', 'state': None, 'ordId': None, 'meta': {}, 'request_param': {'instId': 'BTC-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'long', 'side': 'buy', 'ordType': 'market', 'sz': '23', 'clOrdId': '', 'tag': ''}, 'func_param': {'instId': 'BTC-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'long', 'lever': 10, 'openMoney': 1000, 'quantityCT': None, 'meta': {}, 'timeout': 60, 'delay': 0.2, 'cancel': True, 'clOrdId': '', 'tag': '', 'newThread': False, 'callback': None, 'errorback': None}, 'get_order_result': None, 'set_order_result': {'code': '1', 'data': [{'clOrdId': '', 'ordId': '', 'sCode': '51010', 'sMsg': 'Request unsupported under current account mode ', 'tag': ''}], 'inTime': '1704032341348224', 'msg': 'All operations failed', 'outTime': '1704032341349427'}, 'error_result': {'code': 'FUNC_EXCEPTION', 'data': {}, 'msg': 'Traceback (most recent call last):\n  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/open.py", line 556, in inner_func\n    error_result = main_func(**main_data)\n  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/open.py", line 506, in main_func\n    ordId = set_order_result[\'data\'][\'ordId\']\nTypeError: list indices must be integers or slices, not str\n'}, 'cancel_result': None}

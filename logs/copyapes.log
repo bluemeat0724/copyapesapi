@@ -3855,3 +3855,13 @@ INFO 2024-01-04 21:20:44,883 basehttp 67965 123145386622976 "GET /api/traderdeti
 INFO 2024-01-04 21:20:44,889 basehttp 67965 123145403412480 "GET /api/tradeorder/273/?token=ae9592cf-3a83-4ca7-80fe-2b47ad553b04 HTTP/1.1" 200 297
 INFO 2024-01-04 21:20:44,889 basehttp 67965 123145420201984 "GET /api/taskadd/273/?token=ae9592cf-3a83-4ca7-80fe-2b47ad553b04 HTTP/1.1" 200 241
 INFO 2024-01-04 21:32:29,003 basehttp 67965 123145386622976 "GET /api/quotainfo/?token=ae9592cf-3a83-4ca7-80fe-2b47ad553b04 HTTP/1.1" 200 131
+INFO 2024-01-05 23:26:52,227 autoreload 67965 4740064768 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py changed, reloading.
+INFO 2024-01-05 23:26:53,477 autoreload 76466 4664022528 Watching for file changes with StatReloader
+INFO 2024-01-05 23:31:35,685 autoreload 76466 4664022528 /Users/lichaoyuan/Desktop/copytrade/crawler/settings.py changed, reloading.
+INFO 2024-01-05 23:31:36,399 autoreload 76552 4438406656 Watching for file changes with StatReloader
+INFO 2024-01-05 23:50:16,770 autoreload 76552 4438406656 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2024-01-05 23:50:17,552 autoreload 76713 4583560704 Watching for file changes with StatReloader
+INFO 2024-01-06 00:01:41,407 autoreload 76713 4583560704 /Users/lichaoyuan/Desktop/copytrade/crawler/settings.py changed, reloading.
+INFO 2024-01-06 00:01:42,239 autoreload 76837 4499080704 Watching for file changes with StatReloader
+INFO 2024-01-06 00:01:48,854 autoreload 76837 4499080704 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py changed, reloading.
+INFO 2024-01-06 00:01:49,596 autoreload 76858 4450735616 Watching for file changes with StatReloader

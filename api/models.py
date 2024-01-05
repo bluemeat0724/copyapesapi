@@ -122,7 +122,7 @@ class OrderInfo(models.Model):
         (2, "结束"),
     )
     status = models.IntegerField(verbose_name="交易状态", choices=status_choice, default=1)
-    instId = models.CharField(verbose_name="交易品种", max_length=16)
+    instId = models.CharField(verbose_name="交易品种", max_length=32)
     cTime = models.BigIntegerField(verbose_name="开仓时间", default=int)
     uTime = models.BigIntegerField(verbose_name="平仓时间", default=int, null=True, blank=True)
     openAvgPx = models.FloatField(verbose_name="开仓均价", default=0)
