@@ -59,8 +59,8 @@ class RetryNetworkOperations:
 
 class Trader(threading.Thread):
     def __init__(self, task_id, api_id,user_id, trader_platform, uniqueName, follow_type, sums, lever_set, first_order_set,
-                 instId=None, mgnMode=None, posSide=None, lever=1, openTime=None, openAvgPx=None, margin=None,order_type=None,
-                 old_margin=None, new_margin=None):
+                 instId=None, mgnMode=None, posSide=None, lever=1, openTime=None, openAvgPx=None, margin=None,availSubPos=None,order_type=None,
+                 old_margin=None, new_margin=None, old_availSubPos=None, new_availSubPos=None):
         super(Trader, self).__init__()
         self.task_id = task_id
         self.order_type = order_type
@@ -73,8 +73,11 @@ class Trader(threading.Thread):
         self.api_id = api_id
         self.user_id = user_id
         self.margin = margin
+        self.availSubPos = availSubPos
         self.old_margin = old_margin
+        self.old_availSubPos = old_availSubPos
         self.new_margin = new_margin
+        self.new_availSubPos = new_availSubPos
         self.instId = instId
         self.mgnMode = mgnMode
         self.posSide = posSide
@@ -124,7 +127,8 @@ class Trader(threading.Thread):
             else:
                 print('[FAILURE] 设置持仓方式为双向持仓失败，请手动设置：posMode="long_short_mode"')
             self.perform_trade()
-        except:
+        except Exception as e:
+            print(f"交易失败，原因: {e}")
             thread_logger.warning("停止交易，获取api信息失败，请重新提交api，并确认开启交易权限")
             return
 
@@ -141,8 +145,11 @@ class Trader(threading.Thread):
         self.api_id = new_data.get('api_id')
         self.user_id = new_data.get('user_id')
         self.margin = new_data.get('margin')
+        self.availSubPos = new_data.get('availSubPos')
         self.old_margin = new_data.get('old_margin')
+        self.old_availSubPos= new_data.get('old_availSubPos')
         self.new_margin = new_data.get('new_margin')
+        self.new_availSubPos = new_data.get('new_availSubPos')
         self.instId = new_data.get('instId')
         self.mgnMode = new_data.get('mgnMode')
         self.posSide = new_data.get('posSide')
@@ -160,10 +167,9 @@ class Trader(threading.Thread):
         if self.order_type == 'open':
             if self.posSide == 'net':
                 # 解析订单方向
-                number = float(self.margin)
-                if number > 0:
+                if self.availSubPos > 0:
                     self.posSide = 'long'
-                elif number < 0:
+                elif self.availSubPos < 0:
                     self.posSide = 'short'
             # 获取模拟盘/实盘交易倍数
             trade_times = get_trade_times(self.instId, self.flag, self.acc)
@@ -200,10 +206,9 @@ class Trader(threading.Thread):
         elif self.order_type == 'close':
             if self.posSide == 'net':
                 # 解析订单方向
-                number = float(self.margin)
-                if number > 0:
+                if self.availSubPos > 0:
                     self.posSide = 'long'
-                elif number < 0:
+                elif self.availSubPos < 0:
                     self.posSide = 'short'
             # 市价平仓
             self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT='all', tdMode='cross')
@@ -214,14 +219,12 @@ class Trader(threading.Thread):
             # OkxOrderInfo(self.user_id, self.task_id).get_position_history()
 
         elif self.order_type == 'change':
-            new_number = self.new_margin
-            old_number = self.old_margin
-            ratio = new_number / old_number  # 大于1是加仓，小于1是减仓
+            ratio = self.new_margin / self.old_margin  # 大于1是加仓，小于1是减仓
             if self.posSide == 'net':
                 # 解析订单方向
-                if new_number > 0:
+                if self.new_availSubPos > 0:
                     self.posSide = 'long'
-                elif new_number < 0:
+                elif self.new_availSubPos < 0:
                     self.posSide = 'short'
 
             # 获取模拟盘/实盘交易倍数
@@ -236,7 +239,7 @@ class Trader(threading.Thread):
                 try:
                     s_code_value = result.get('set_order_result', {}).get('data', {}).get('sCode')
                     if s_code_value == '0':
-                        self.thread_logger.success(f'进行开仓操作，品种：{self.instId}，金额：{self.sums}USDT，方向：{self.posSide}')
+                        self.thread_logger.success(f'进行加仓操作，品种：{self.instId}，金额：{self.sums}USDT，方向：{self.posSide}')
                 except:
                     try:
                         s_code_value = result.get('set_order_result', {}).get('data', [{}])[0].get('sCode')

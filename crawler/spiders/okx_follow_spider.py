@@ -16,7 +16,8 @@ def spider(uniqueName, follow_type, task_id, trader_platform, sums, lever_set, f
         for data in data_list:
             data_clear = {}
             # 处理爬虫返回的数据
-            data_clear['margin'] = data.get('margin')
+            data_clear['availSubPos'] = float(data.get('availSubPos'))
+            data_clear['margin'] = float(data.get('margin'))
             data_clear['instId'] = data.get('instId')
             data_clear['mgnMode'] = data.get('mgnMode')
             data_clear['posSide'] = data.get('posSide')
@@ -41,4 +42,4 @@ def spider(uniqueName, follow_type, task_id, trader_platform, sums, lever_set, f
 
 
 if __name__ == '__main__':
-    print(spider('31F08109D363843E', 1,1,1,1,1,1,1,1))
+    print(spider('67A85F8BC1B67E17', 1,1,1,1,1,1,1,1))

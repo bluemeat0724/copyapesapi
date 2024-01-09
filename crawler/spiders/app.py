@@ -169,6 +169,8 @@ class Spider(threading.Thread):
             if old_item["instId"] == new_item["instId"] and old_item['margin'] != new_item['margin']:
                 change = {'order_type': 'change',
                           'instId': old_item['instId'],
+                          'old_availSubPos': old_item['availSubPos'],
+                          'new_availSubPos': new_item['availSubPos'],
                           'old_margin': float(old_item['margin']),
                           'new_margin': float(new_item['margin']),
                           'mgnMode': old_item['mgnMode'],

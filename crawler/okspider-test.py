@@ -89,7 +89,7 @@ class Spider(threading.Thread):
         for data in data_list:
             data_clear = {}
             data_clear['margin'] = data.get('margin')
-            # data_clear['notionalUsd'] = data.get('notionalUsd')
+            data_clear['availSubPos'] = float(data.get('availSubPos'))
             data_clear['instId'] = data.get('instId')
             data_clear['mgnMode'] = data.get('mgnMode')
             data_clear['posSide'] = data.get('posSide')
@@ -191,8 +191,10 @@ class Spider(threading.Thread):
             if old_item["instId"] == new_item["instId"] and old_item['margin'] != new_item['margin']:
                 change = {'order_type': 'change',
                           'instId': old_item['instId'],
-                          'old_margin': old_item['margin'],
-                          'new_margin': new_item['margin'],
+                          'old_availSubPos': old_item['availSubPos'],
+                          'new_availSubPos': new_item['availSubPos'],
+                          'old_margin': float(old_item['margin']),
+                          'new_margin': float(new_item['margin']),
                           'mgnMode': old_item['mgnMode'],
                           'posSide': old_item['posSide'],
                           'lever': old_item['lever'],
