@@ -3,12 +3,12 @@ from crawler.myokx import app
 from okx.api.public import Public
 
 # 模拟
-# acc = {'key': '8af6ced4-5ea0-4dd9-9aef-f79529d72a68',
-#        'secret': '6A840C3EC6D18D4E4127B13ADA7A1091',
+# acc = {'key': '2f071928-25bf-4ea9-b171-efe4b6e4eefd',
+#        'secret': '0BE4E80811E950DBA93FA013D1F36516',
 #        'passphrase': '112233Ww..',
 #        'proxies': {
-#                     'http': 'socks5h://15755149931sct-5:8ivtkleb@38.45.108.138:5002',
-#                     'https': 'socks5h://15755149931sct-5:8ivtkleb@38.45.108.138:5002'
+#                     'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10099',
+#                     'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10099'
 #                    }
 #        }
 # 实盘

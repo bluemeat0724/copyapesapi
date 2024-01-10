@@ -219,7 +219,6 @@ class Trader(threading.Thread):
             self.thread_logger.success(f'进行平仓操作，品种:{self.instId}，方向：{self.posSide}')
             # 更新持仓数据
             OkxOrderInfo(self.user_id, self.task_id).get_position()
-            print(f'{self.task_id}更新持仓数据')
             # OkxOrderInfo(self.user_id, self.task_id).get_position_history()
 
         elif self.order_type == 'change':
@@ -277,6 +276,8 @@ class Trader(threading.Thread):
                     return
                 print(f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
                 self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT=quantityCT, tdMode='cross')
+                # 更新持仓数据
+                OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=1)
                 percentage = "{:.2f}%".format((1 - ratio)*100)
                 self.thread_logger.success(f'进行减仓操作，品种：{self.instId}，减仓占比：{percentage}')
 
@@ -299,7 +300,7 @@ class Trader(threading.Thread):
             self.thread_logger.warning(f'手动结束跟单，{instId}已经按市价进行平仓。')
 
         # 更新收益数据，以及对应可用额度数据
-        OkxOrderInfo(self.user_id, self.task_id).get_position_history()
+        OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=2)
         print(f'用户{self.user_id}任务{self.task_id}更新持仓数据')
         self.thread_logger.warning(f'手动结束跟单，任务：{self.task_id}')
 

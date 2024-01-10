@@ -37,10 +37,14 @@ class OkxOrderInfo(object):
     # 手动跟新taskinfo表中关联orderinfo中的pnl数据
     def update_pnl(self):
         update_pnl_sql = """
-            UPDATE api_taskinfo
-            SET pnl = (SELECT SUM(pnl) FROM api_orderinfo WHERE task_id = %(task_id)s AND user_id = %(user_id)s)
-            WHERE id = %(task_id)s AND user_id = %(user_id)s;
-        """
+                            UPDATE api_taskinfo
+                            SET pnl = (
+                                SELECT COALESCE(SUM(pnl), 0) + COALESCE(SUM(upl), 0)
+                                FROM api_orderinfo
+                                WHERE task_id = %(task_id)s AND user_id = %(user_id)s
+                            )
+                            WHERE id = %(task_id)s AND user_id = %(user_id)s;
+                        """
         with Connect() as db:
             db.exec(update_pnl_sql, task_id=self.task_id, user_id=self.user_id)
 
@@ -62,14 +66,14 @@ class OkxOrderInfo(object):
         # print(data)
         # 如果没有数据，说明已经全部平仓，跟新所有交易数据
         if not data:
-            self.get_position_history()
+            self.get_position_history(order_type=2)
             return
         for item in data:
             instId = item.get('instId')
             cTime = item.get('cTime')
             openAvgPx = item.get('avgPx')
-            pnl = item.get('upl')
-            pnlRatio = item.get('uplRatio')
+            upl = item.get('upl')
+            uplRatio = item.get('uplRatio')
             lever = item.get('lever')
             mgnMode = item.get('mgnMode')
             posSide = item.get('posSide')
@@ -86,8 +90,8 @@ class OkxOrderInfo(object):
                 'instId': instId,
                 'cTime': cTime,
                 'openAvgPx': openAvgPx,
-                'pnl': pnl,
-                'pnlRatio': pnlRatio,
+                'upl': upl,
+                'uplRatio': uplRatio,
                 'lever': lever,
                 'mgnMode': mgnMode,
                 'posSide': posSide,
@@ -99,9 +103,9 @@ class OkxOrderInfo(object):
                 update_sql = """
                                 UPDATE api_orderinfo
                                 SET
-                                    pnl = %(pnl)s,
+                                    upl = %(upl)s,
                                     imr = %(imr)s,
-                                    pnlRatio = %(pnlRatio)s
+                                    uplRatio = %(uplRatio)s
                                 WHERE instId = %(instId)s AND cTime = %(cTime)s;
                             """
                 with Connect() as db:
@@ -110,15 +114,15 @@ class OkxOrderInfo(object):
             else:
                 # 如果不存在相同记录，执行插入操作
                 insert_sql = """
-                                INSERT INTO api_orderinfo (user_id, task_id, api_id, instId, cTime, openAvgPx, pnl, imr, pnlRatio, lever, mgnMode, posSide, status)
-                                VALUES (%(user_id)s, %(task_id)s, %(api_id)s, %(instId)s, %(cTime)s, %(openAvgPx)s, %(pnl)s, %(imr)s, %(pnlRatio)s, %(lever)s, %(mgnMode)s, %(posSide)s,1)
+                                INSERT INTO api_orderinfo (user_id, task_id, api_id, instId, cTime, openAvgPx, upl, imr, uplRatio, lever, mgnMode, posSide, status)
+                                VALUES (%(user_id)s, %(task_id)s, %(api_id)s, %(instId)s, %(cTime)s, %(openAvgPx)s, %(upl)s, %(imr)s, %(uplRatio)s, %(lever)s, %(mgnMode)s, %(posSide)s,1)
                             """
                 with Connect() as db:
                     db.exec(insert_sql, **params)
                 self.update_pnl()
 
-    # 当发生平仓交易时，检查交易所账户历史数据，并更新数据库
-    def get_position_history(self):
+    # 当发生平仓或减仓交易时，检查交易所账户历史数据，并更新数据库。减仓order_type=1，平仓order_type=2
+    def get_position_history(self, order_type):
         """
         限速：1次/10s
 
@@ -154,32 +158,58 @@ class OkxOrderInfo(object):
 
         if not matching_data:
             return
-        # 跟新数据
-        for item in matching_data:
-            params = {
-                'instId': item.get('instId'),
-                'cTime': int(item.get('cTime')),
-                'uTime': int(item.get('uTime')),
-                'pnl': item.get('realizedPnl'),
-                'pnlRatio': item.get('pnlRatio'),
-                'closeAvgPx': item.get('closeAvgPx'),
-                'imr': float(item.get('realizedPnl')) / float(item.get('pnlRatio')),
-                'status': 2
-            }
-            update_sql = """
-                            UPDATE api_orderinfo
-                            SET
-                                uTime = %(uTime)s,
-                                pnl = %(pnl)s,
-                                pnlRatio = %(pnlRatio)s,
-                                closeAvgPx = %(closeAvgPx)s,
-                                imr = %(imr)s,
-                                status = %(status)s
-                            WHERE instId = %(instId)s AND cTime = %(cTime)s;
-                        """
-            with Connect() as db:
-                db.exec(update_sql, **params)
-            self.update_pnl()
+        # todo:判断减仓时，将减仓部分已实现的pnl数据更新到数据库pnl字段
+        if order_type == 1:
+            # 减仓更新数据
+            for item in matching_data:
+                params = {
+                    'instId': item.get('instId'),
+                    'cTime': int(item.get('cTime')),
+                    'pnl': item.get('realizedPnl'),
+                    'pnlRatio': item.get('pnlRatio')
+                }
+                update_sql = """
+                                UPDATE api_orderinfo
+                                SET
+                                    pnl = %(pnl)s,
+                                    pnlRatio = %(pnlRatio)s
+                                WHERE instId = %(instId)s AND cTime = %(cTime)s;
+                            """
+                # 更新数据库
+                with Connect() as db:
+                    db.exec(update_sql, **params)
+                self.update_pnl()
+
+        elif order_type == 2:
+            # 平仓跟新数据
+            for item in matching_data:
+                params = {
+                    'instId': item.get('instId'),
+                    'cTime': int(item.get('cTime')),
+                    'uTime': int(item.get('uTime')),
+                    'pnl': item.get('realizedPnl'),
+                    'pnlRatio': item.get('pnlRatio'),
+                    'closeAvgPx': item.get('closeAvgPx'),
+                    'imr': float(item.get('realizedPnl')) / float(item.get('pnlRatio')),
+                    'status': order_type,
+                    'upl': 0,
+                    'uplRatio': 0,
+                }
+                update_sql = """
+                                UPDATE api_orderinfo
+                                SET
+                                    uTime = %(uTime)s,
+                                    pnl = %(pnl)s,
+                                    pnlRatio = %(pnlRatio)s,
+                                    closeAvgPx = %(closeAvgPx)s,
+                                    imr = %(imr)s,
+                                    status = %(status)s
+                                WHERE instId = %(instId)s AND cTime = %(cTime)s;
+                            """
+                # 更新数据库
+                with Connect() as db:
+                    db.exec(update_sql, **params)
+                self.update_pnl()
 
         # 账户获取剩余额度
         remaining_quota = get_remaining_quota(self.user_id, int(self.flag))
