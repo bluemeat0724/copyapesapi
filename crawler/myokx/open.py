@@ -3,6 +3,7 @@ from typing import Union
 from threading import Thread
 from paux.digit import origin_float, origin_int
 from okx.app import code
+from okx.app import exception
 from crawler.myokx.order import TradeOrder
 from crawler.myokx.quantity_and_price import TradeQuantityAndPrice
 
