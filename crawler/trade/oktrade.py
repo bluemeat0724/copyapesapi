@@ -185,7 +185,8 @@ class Trader(threading.Thread):
                 s_code_value = result.get('set_order_result', {}).get('data', {}).get('sCode')
                 if s_code_value == '0':
                     self.thread_logger.success(f'进行开仓操作，品种：{self.instId}，金额：{self.sums}USDT，方向：{self.posSide}')
-            except:
+            except Exception as e:
+                print(e)
                 try:
                     s_code_value = result.get('set_order_result', {}).get('data', [{}])[0].get('sCode')
                     if s_code_value == '51010':
@@ -202,7 +203,7 @@ class Trader(threading.Thread):
                         s_code_value = result.get('error_result', {}).get('code')
                         if s_code_value == '51001':
                             self.thread_logger.warning(f'模拟盘土狗币交易失败，品种：{self.instId}不在交易所模拟盘中！')
-                    except Exception as e:
+                    except:
                         self.thread_logger.warning(f'交易失败，错误信息：{e}')
 
         elif self.order_type == 'close':
@@ -244,7 +245,8 @@ class Trader(threading.Thread):
                     s_code_value = result.get('set_order_result', {}).get('data', {}).get('sCode')
                     if s_code_value == '0':
                         self.thread_logger.success(f'进行加仓操作，品种：{self.instId}，金额：{self.sums}USDT，方向：{self.posSide}')
-                except:
+                except Exception as e:
+                    print(e)
                     try:
                         s_code_value = result.get('set_order_result', {}).get('data', [{}])[0].get('sCode')
                         if s_code_value == '51010':
@@ -261,7 +263,7 @@ class Trader(threading.Thread):
                             s_code_value = result.get('error_result', {}).get('code')
                             if s_code_value == '51001':
                                 self.thread_logger.warning(f'模拟盘土狗币交易失败，品种：{self.instId}不在交易所模拟盘中！')
-                        except Exception as e:
+                        except:
                             self.thread_logger.warning(f'交易失败，错误信息：{e}')
 
             # 减仓操作
