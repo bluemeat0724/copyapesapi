@@ -4227,3 +4227,8 @@ INFO 2024-01-11 00:45:03,507 basehttp 19535 123145449881600 "GET /api/platform/ 
 INFO 2024-01-11 00:45:03,507 basehttp 19535 123145466671104 "GET /api/apiadd/?token=ae9592cf-3a83-4ca7-80fe-2b47ad553b04 HTTP/1.1" 200 1138
 INFO 2024-01-11 00:45:04,496 basehttp 19535 123145466671104 "GET /api/taskadd/?token=ae9592cf-3a83-4ca7-80fe-2b47ad553b04 HTTP/1.1" 200 48772
 INFO 2024-01-11 01:14:50,677 basehttp 19535 123145449881600 "GET /api/taskadd/?token=ae9592cf-3a83-4ca7-80fe-2b47ad553b04 HTTP/1.1" 200 48772
+INFO 2024-01-11 02:12:51,828 basehttp 19535 123145449881600 "GET /api/taskadd/?token=ae9592cf-3a83-4ca7-80fe-2b47ad553b04 HTTP/1.1" 200 48772
+INFO 2024-01-11 02:36:53,013 autoreload 19535 4509066752 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py changed, reloading.
+INFO 2024-01-11 02:36:54,380 autoreload 41341 4606891520 Watching for file changes with StatReloader
+INFO 2024-01-11 02:50:17,771 autoreload 41341 4606891520 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py changed, reloading.
+INFO 2024-01-11 02:50:18,580 autoreload 43137 4554622464 Watching for file changes with StatReloader

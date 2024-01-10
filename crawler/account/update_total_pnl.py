@@ -26,7 +26,7 @@ def update_user_pnl(user_id):
     # 实盘pnl
     update_pnl_sql = """
                 UPDATE api_quotainfo
-                SET pnl_0 = (SELECT SUM(pnl) FROM api_apiinfo WHERE user_id = %(user_id)s AND flag = 0)
+                SET pnl_0 = COALESCE((SELECT SUM(pnl) FROM api_apiinfo WHERE user_id = %(user_id)s AND flag = 0), 0)
                 WHERE user_id = %(user_id)s;
             """
     with Connect() as db:
@@ -35,7 +35,7 @@ def update_user_pnl(user_id):
     # 模拟盘pnl
     update_pnl_sql = """
                 UPDATE api_quotainfo
-                SET pnl_1 = (SELECT SUM(pnl) FROM api_apiinfo WHERE user_id = %(user_id)s AND flag = 1)
+                SET pnl_1 = COALESCE((SELECT SUM(pnl) FROM api_apiinfo WHERE user_id = %(user_id)s AND flag = 1), 0)
                 WHERE user_id = %(user_id)s;
             """
     with Connect() as db:
@@ -44,7 +44,7 @@ def update_user_pnl(user_id):
     # 实盘upl
     update_upl_sql = """
                 UPDATE api_quotainfo
-                SET upl_0 = (SELECT SUM(upl) FROM api_apiinfo WHERE user_id = %(user_id)s AND flag = 0)
+                SET upl_0 = COALESCE((SELECT SUM(upl) FROM api_apiinfo WHERE user_id = %(user_id)s AND flag = 0), 0)
                 WHERE user_id = %(user_id)s;
             """
     with Connect() as db:
@@ -53,7 +53,7 @@ def update_user_pnl(user_id):
     # 模拟盘upl
     update_upl_sql = """
                 UPDATE api_quotainfo
-                SET upl_1 = (SELECT SUM(upl) FROM api_apiinfo WHERE user_id = %(user_id)s AND flag = 1)
+                SET upl_1 = COALESCE((SELECT SUM(upl) FROM api_apiinfo WHERE user_id = %(user_id)s AND flag = 1), 0)
                 WHERE user_id = %(user_id)s;
             """
     with Connect() as db:
