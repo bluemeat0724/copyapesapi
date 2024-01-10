@@ -4232,3 +4232,7 @@ INFO 2024-01-11 02:36:53,013 autoreload 19535 4509066752 /Users/lichaoyuan/Deskt
 INFO 2024-01-11 02:36:54,380 autoreload 41341 4606891520 Watching for file changes with StatReloader
 INFO 2024-01-11 02:50:17,771 autoreload 41341 4606891520 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py changed, reloading.
 INFO 2024-01-11 02:50:18,580 autoreload 43137 4554622464 Watching for file changes with StatReloader
+INFO 2024-01-11 03:01:55,085 autoreload 43137 4554622464 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py changed, reloading.
+INFO 2024-01-11 03:01:55,828 autoreload 44657 4401759744 Watching for file changes with StatReloader
+INFO 2024-01-11 03:14:18,701 autoreload 44657 4401759744 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py changed, reloading.
+INFO 2024-01-11 03:14:19,668 autoreload 46238 4539627008 Watching for file changes with StatReloader

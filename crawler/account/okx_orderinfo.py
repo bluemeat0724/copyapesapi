@@ -90,6 +90,8 @@ class OkxOrderInfo(object):
                 'instId': instId,
                 'cTime': cTime,
                 'openAvgPx': openAvgPx,
+                'pnl': 0,
+                'pnlRatio': 0,
                 'upl': upl,
                 'uplRatio': uplRatio,
                 'lever': lever,
@@ -115,8 +117,8 @@ class OkxOrderInfo(object):
             else:
                 # 如果不存在相同记录，执行插入操作
                 insert_sql = """
-                                INSERT INTO api_orderinfo (user_id, task_id, api_id, instId, cTime, openAvgPx, upl, imr, uplRatio, lever, mgnMode, posSide, status)
-                                VALUES (%(user_id)s, %(task_id)s, %(api_id)s, %(instId)s, %(cTime)s, %(openAvgPx)s, %(upl)s, %(imr)s, %(uplRatio)s, %(lever)s, %(mgnMode)s, %(posSide)s,1)
+                                INSERT INTO api_orderinfo (user_id, task_id, api_id, instId, cTime, openAvgPx,pnl, upl, imr, pnlRatio, uplRatio, lever, mgnMode, posSide, status)
+                                VALUES (%(user_id)s, %(task_id)s, %(api_id)s, %(instId)s, %(cTime)s, %(openAvgPx)s, %(pnl)s, %(upl)s, %(imr)s, %(pnlRatio)s, %(uplRatio)s, %(lever)s, %(mgnMode)s, %(posSide)s,1)
                             """
                 with Connect() as db:
                     db.exec(insert_sql, **params)
@@ -222,4 +224,4 @@ class OkxOrderInfo(object):
 
 
 if __name__ == '__main__':
-    OkxOrderInfo(2, 272).get_position()
+    OkxOrderInfo(1, 304).get_position()
