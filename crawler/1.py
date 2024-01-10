@@ -78,11 +78,11 @@ obj.trade.api.flag = '0'
 #                                       tdMode='cross', lever=100)
 # obj.trade.close_market(instId='ETH-USDT-SWAP', posSide='long', quantityCT=220, tdMode='cross')
 # 当前持仓
-# a = obj.account.get_positions()
-# print(a)
-# 历史持仓
-a = obj.account.get_positions_history(limit=2)
+a = obj.account.get_positions()
 print(a)
+# 历史持仓
+# a = obj.account.get_positions_history(limit=2)
+# print(a)
 # 账户信息
 # a = obj.account.get_balance(ccy='BTC,ETH,USDT').get('data')[0].get('details') # 限速：10次/2s
 # result = {}

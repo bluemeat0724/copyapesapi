@@ -105,6 +105,7 @@ class OkxOrderInfo(object):
                                 SET
                                     upl = %(upl)s,
                                     imr = %(imr)s,
+                                    openAvgPx = %(openAvgPx)s,
                                     uplRatio = %(uplRatio)s
                                 WHERE instId = %(instId)s AND cTime = %(cTime)s;
                             """
