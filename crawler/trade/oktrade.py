@@ -7,6 +7,7 @@ from functools import wraps
 from loguru import logger
 import os
 from crawler.account.okx_orderinfo import OkxOrderInfo
+import datetime
 
 
 logger.remove()  # 移除所有默认的handler
@@ -177,6 +178,7 @@ class Trader(threading.Thread):
                 self.thread_logger.warning(f'模拟盘土狗币交易失败，品种：{self.instId}不在交易所模拟盘中！')
                 return
             # 市价开仓
+            print(f'时间：{datetime.datatime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
             result = self.obj.trade.open_market(instId=self.instId, posSide=self.posSide, openMoney=self.sums * trade_times, tdMode='cross',
                                   lever=self.lever)
             try:
@@ -211,6 +213,7 @@ class Trader(threading.Thread):
                 elif self.availSubPos < 0:
                     self.posSide = 'short'
             # 市价平仓
+            print(f'时间：{datetime.datatime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
             self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT='all', tdMode='cross')
             self.thread_logger.success(f'进行平仓操作，品种:{self.instId}，方向：{self.posSide}')
             # 更新持仓数据
@@ -234,6 +237,7 @@ class Trader(threading.Thread):
                 return
             # 加仓操作
             if ratio > 1:
+                print(f'时间：{datetime.datatime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
                 result = self.obj.trade.open_market(instId=self.instId, posSide=self.posSide, openMoney=self.sums * trade_times,
                                       tdMode='cross', lever=self.lever)
                 try:
@@ -269,6 +273,7 @@ class Trader(threading.Thread):
                 except:
                     self.thread_logger.success(f'进行减仓操作，品种：{self.instId}，暂时没有仓位，继续跟单中...')
                     return
+                print(f'时间：{datetime.datatime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
                 self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT=quantityCT, tdMode='cross')
                 percentage = "{:.2f}%".format((1 - ratio)*100)
                 self.thread_logger.success(f'进行减仓操作，品种：{self.instId}，减仓占比：{percentage}')
