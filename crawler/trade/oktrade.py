@@ -185,10 +185,13 @@ class Trader(threading.Thread):
                 s_code_value = result.get('set_order_result', {}).get('data', {}).get('sCode')
                 if s_code_value == '0':
                     self.thread_logger.success(f'进行开仓操作，品种：{self.instId}，金额：{self.sums}USDT，方向：{self.posSide}')
-            except Exception as e:
-                print(e)
+            except:
+                print(f'任务{self.task_id}错误信息：{result}')
                 try:
                     s_code_value = result.get('set_order_result', {}).get('data', [{}])[0].get('sCode')
+                    if s_code_value == '51000':
+                        self.thread_logger.warning(
+                            f'交易失败，交易金额过低，请重新设置任务单笔跟单金额。')
                     if s_code_value == '51010':
                         self.thread_logger.warning(
                             f'交易失败，当前账户为简单交易模式，请在交易所合约交易页面进行手动调整。无需终止本次跟单任务，交易模式调整完成后，如有新的交易订单，将正常交易。')
@@ -204,7 +207,7 @@ class Trader(threading.Thread):
                         if s_code_value == '51001':
                             self.thread_logger.warning(f'模拟盘土狗币交易失败，品种：{self.instId}不在交易所模拟盘中！')
                     except:
-                        self.thread_logger.warning(f'交易失败，错误信息：{e}')
+                        self.thread_logger.warning(f'交易失败，错误信息：{result}')
 
         elif self.order_type == 'close':
             if self.posSide == 'net':
@@ -244,10 +247,13 @@ class Trader(threading.Thread):
                     s_code_value = result.get('set_order_result', {}).get('data', {}).get('sCode')
                     if s_code_value == '0':
                         self.thread_logger.success(f'进行加仓操作，品种：{self.instId}，金额：{self.sums}USDT，方向：{self.posSide}')
-                except Exception as e:
-                    print(e)
+                except:
+                    print(f'任务{self.task_id}错误信息：{result}')
                     try:
                         s_code_value = result.get('set_order_result', {}).get('data', [{}])[0].get('sCode')
+                        if s_code_value == '51000':
+                            self.thread_logger.warning(
+                                f'交易失败，交易金额过低，请重新设置任务单笔跟单金额。')
                         if s_code_value == '51010':
                             self.thread_logger.warning(
                                 '交易失败，当前账户为简单交易模式，请在交易所合约交易页面进行手动调整。无需终止本次跟单任务，交易模式调整完成后，如有新的交易订单，将正常交易。')
@@ -263,7 +269,7 @@ class Trader(threading.Thread):
                             if s_code_value == '51001':
                                 self.thread_logger.warning(f'模拟盘土狗币交易失败，品种：{self.instId}不在交易所模拟盘中！')
                         except:
-                            self.thread_logger.warning(f'交易失败，错误信息：{e}')
+                            self.thread_logger.warning(f'交易失败，错误信息：{result}')
 
             # 减仓操作
             if ratio < 1:
