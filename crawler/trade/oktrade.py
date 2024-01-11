@@ -8,6 +8,7 @@ from loguru import logger
 import os
 from crawler.account.okx_orderinfo import OkxOrderInfo
 import datetime
+from crawler.account.update_quota import get_remaining_quota, check_task_pnl, update_remaining_quota
 
 
 logger.remove()  # 移除所有默认的handler
@@ -307,6 +308,15 @@ class Trader(threading.Thread):
 
         # 更新收益数据，以及对应可用额度数据
         OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=2)
+
+        # 账户获取剩余额度
+        remaining_quota = get_remaining_quota(self.user_id, int(self.flag))
+        # 获取任务收益
+        task_pnl = check_task_pnl(self.task_id)
+        remaining_quota -= task_pnl
+        # 更新剩余额度数据
+        update_remaining_quota(self.user_id, int(self.flag), remaining_quota)
+
         print(f'更新用户{self.user_id}可用盈利额度数据成功！')
         self.thread_logger.warning(f'手动结束跟单，任务：{self.task_id}')
 

@@ -2,7 +2,6 @@ from crawler.utils.db import Connect
 from crawler.utils.get_api import api
 from crawler.myokx import app
 import time
-from crawler.account.update_quota import get_remaining_quota, check_task_pnl, update_remaining_quota
 
 
 class OkxOrderInfo(object):
@@ -214,13 +213,6 @@ class OkxOrderInfo(object):
                     db.exec(update_sql, **params)
                 self.update_pnl()
 
-            # 账户获取剩余额度
-            remaining_quota = get_remaining_quota(self.user_id, int(self.flag))
-            # 获取任务收益
-            task_pnl = check_task_pnl(self.task_id)
-            remaining_quota -= task_pnl
-            # 更新剩余额度数据
-            update_remaining_quota(self.user_id, int(self.flag), remaining_quota)
 
 
 if __name__ == '__main__':
