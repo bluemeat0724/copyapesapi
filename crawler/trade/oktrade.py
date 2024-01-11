@@ -307,7 +307,7 @@ class Trader(threading.Thread):
 
         # 更新收益数据，以及对应可用额度数据
         OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=2)
-        print(f'用户{self.user_id}任务{self.task_id}更新持仓数据')
+        print(f'更新用户{self.user_id}可用盈利额度数据成功！')
         self.thread_logger.warning(f'手动结束跟单，任务：{self.task_id}')
 
 

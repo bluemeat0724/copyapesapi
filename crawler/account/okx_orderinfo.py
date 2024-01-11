@@ -161,7 +161,7 @@ class OkxOrderInfo(object):
 
         if not matching_data:
             return
-        # todo:判断减仓时，将减仓部分已实现的pnl数据更新到数据库pnl字段
+        # 判断减仓时，将减仓部分已实现的pnl数据更新到数据库pnl字段
         if order_type == 1:
             # 减仓更新数据
             for item in matching_data:
@@ -214,13 +214,13 @@ class OkxOrderInfo(object):
                     db.exec(update_sql, **params)
                 self.update_pnl()
 
-        # 账户获取剩余额度
-        remaining_quota = get_remaining_quota(self.user_id, int(self.flag))
-        # 获取任务收益
-        task_pnl = check_task_pnl(self.task_id)
-        remaining_quota -= task_pnl
-        # 更新剩余额度数据
-        update_remaining_quota(self.user_id, int(self.flag), remaining_quota)
+            # 账户获取剩余额度
+            remaining_quota = get_remaining_quota(self.user_id, int(self.flag))
+            # 获取任务收益
+            task_pnl = check_task_pnl(self.task_id)
+            remaining_quota -= task_pnl
+            # 更新剩余额度数据
+            update_remaining_quota(self.user_id, int(self.flag), remaining_quota)
 
 
 if __name__ == '__main__':

@@ -83,9 +83,10 @@ def check_task_pnl(task_id):
 
 
 if __name__ == '__main__':
-    # calculate_and_stop_tasks()
-    # print(calculate_total_pnl(1, 1))
-    # print(get_remaining_quota(1, 1))
-    # check_task_pnl(244)
-    # update_remaining_quota(3,1,10)
-    stop_task(261)
+    # 账户获取剩余额度
+    remaining_quota = get_remaining_quota(1, 1)
+    # 获取任务收益
+    task_pnl = check_task_pnl(304)
+    remaining_quota -= task_pnl
+    print(remaining_quota)
+    update_remaining_quota(1, 1, remaining_quota)
