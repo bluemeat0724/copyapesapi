@@ -202,7 +202,9 @@ class OkxOrderInfo(object):
                                 SET
                                     uTime = %(uTime)s,
                                     pnl = %(pnl)s,
+                                    upl = %(upl)s,
                                     pnlRatio = %(pnlRatio)s,
+                                    uplRatio = %(uplRatio)s,
                                     closeAvgPx = %(closeAvgPx)s,
                                     imr = %(imr)s,
                                     status = %(status)s
