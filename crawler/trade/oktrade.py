@@ -202,13 +202,21 @@ class Trader(threading.Thread):
                         self.thread_logger.warning('交易失败，交易账户冻结！请联系交易所客服处理！')
                     if s_code_value in ['50103','50104','50105','50106','50107']:
                         self.thread_logger.warning('交易失败，API信息填写错误，请结束任务后重新提交新的API！')
+                    else:
+                        self.thread_logger.warning(
+                            f'交易失败，请根据错误码，自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')
                 except:
                     try:
                         s_code_value = result.get('error_result', {}).get('code')
                         if s_code_value == '51001':
                             self.thread_logger.warning(f'模拟盘土狗币交易失败，品种：{self.instId}不在交易所模拟盘中！')
+                        if s_code_value == '59000':
+                            self.thread_logger.warning('交易失败，开仓金额过大，超过账户余额，请重新设置新的跟单金额！')
+                        else:
+                            self.thread_logger.warning(
+                                f'交易失败，请根据错误码，自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')
                     except:
-                        self.thread_logger.warning(f'交易失败，错误信息：{result}')
+                        pass
 
         elif self.order_type == 'close':
             if self.posSide == 'net':
@@ -264,13 +272,21 @@ class Trader(threading.Thread):
                             self.thread_logger.warning('交易失败，交易账户冻结！请联系交易所客服处理！')
                         if s_code_value in ['50103', '50104', '50105', '50106', '50107']:
                             self.thread_logger.warning('交易失败，API信息填写错误，请结束任务后重新提交新的API！')
+                        else:
+                            self.thread_logger.warning(
+                                f'交易失败，请根据错误码，自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')
                     except:
                         try:
                             s_code_value = result.get('error_result', {}).get('code')
                             if s_code_value == '51001':
                                 self.thread_logger.warning(f'模拟盘土狗币交易失败，品种：{self.instId}不在交易所模拟盘中！')
+                            if s_code_value == '59000':
+                                self.thread_logger.warning('交易失败，开仓金额过大，超过账户余额，请重新设置新的跟单金额！')
+                            else:
+                                self.thread_logger.warning(
+                                    f'交易失败，请根据错误码，自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')
                         except:
-                            self.thread_logger.warning(f'交易失败，错误信息：{result}')
+                            pass
 
             # 减仓操作
             if ratio < 1:
