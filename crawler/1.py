@@ -34,6 +34,8 @@ acc = {'key': '3aa701e1-a4f4-4d97-bd6d-f9891b57da16',
 obj = app.OkxSWAP(**acc)
 obj.account.api.flag = '0'
 obj.trade.api.flag = '0'
+# 查看账户配置信息
+print(obj.account.get_config())
 #
 # set_position_mode_result = obj.account.set_position_mode(
 #                 posMode='long_short_mode')
@@ -48,30 +50,30 @@ obj.trade.api.flag = '0'
 
 # result = obj.trade.open_market(instId="LTC-USDT-SWAP", posSide="long", openMoney=5, tdMode='cross',
 #                                   lever=3)
-result = {'instType': 'SWAP', 'instId': 'LTC-USDT-SWAP', 'state': None, 'ordId': None, 'meta': {}, 'request_param': {'instId': 'LTC-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'long', 'side': 'buy', 'ordType': 'market', 'sz': '0', 'clOrdId': '', 'tag': ''}, 'func_param': {'instId': 'LTC-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'long', 'lever': 3, 'openMoney': 5, 'quantityCT': None, 'meta': {}, 'timeout': 60, 'delay': 0.2, 'cancel': True, 'clOrdId': '', 'tag': '', 'newThread': False, 'callback': None, 'errorback': None}, 'get_order_result': None, 'set_order_result': {'code': '1', 'data': [{'clOrdId': '', 'ordId': '', 'sCode': '51000', 'sMsg': 'Parameter sz error', 'tag': ''}], 'inTime': '1704986885902318', 'msg': 'All operations failed', 'outTime': '1704986885902391'}, 'error_result': {'code': 'FUNC_EXCEPTION', 'data': {}, 'msg': 'Traceback (most recent call last):\n  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/open.py", line 557, in inner_func\n    error_result = main_func(**main_data)\n  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/open.py", line 507, in main_func\n    ordId = set_order_result[\'data\'][\'ordId\']\nTypeError: list indices must be integers or slices, not str\n'}, 'cancel_result': None}
+# result = {'instType': 'SWAP', 'instId': 'LTC-USDT-SWAP', 'state': None, 'ordId': None, 'meta': {}, 'request_param': {'instId': 'LTC-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'long', 'side': 'buy', 'ordType': 'market', 'sz': '0', 'clOrdId': '', 'tag': ''}, 'func_param': {'instId': 'LTC-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'long', 'lever': 3, 'openMoney': 5, 'quantityCT': None, 'meta': {}, 'timeout': 60, 'delay': 0.2, 'cancel': True, 'clOrdId': '', 'tag': '', 'newThread': False, 'callback': None, 'errorback': None}, 'get_order_result': None, 'set_order_result': {'code': '1', 'data': [{'clOrdId': '', 'ordId': '', 'sCode': '51000', 'sMsg': 'Parameter sz error', 'tag': ''}], 'inTime': '1704986885902318', 'msg': 'All operations failed', 'outTime': '1704986885902391'}, 'error_result': {'code': 'FUNC_EXCEPTION', 'data': {}, 'msg': 'Traceback (most recent call last):\n  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/open.py", line 557, in inner_func\n    error_result = main_func(**main_data)\n  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/open.py", line 507, in main_func\n    ordId = set_order_result[\'data\'][\'ordId\']\nTypeError: list indices must be integers or slices, not str\n'}, 'cancel_result': None}
 # print(result)
-try:
-    s_code_value = result.get('set_order_result', {}).get('data', {}).get('sCode')
-    if s_code_value == '0':
-        print(s_code_value)
-except:
-    try:
-        s_code_value = result.get('set_order_result', {}).get('data', [{}])[0].get('sCode')
-        if s_code_value == '51000':
-            print('账户模式不支持')
-        elif s_code_value == '51011':
-            print('账户余额不足')
-        elif s_code_value == '51001':
-            print('产品不存在')
-        elif s_code_value == '51013':
-            print('订单数量不合法')
-    except:
-        try:
-            s_code_value = result.get('error_result', {}).get('code')
-            if s_code_value == '51001':
-                print('产品不存在')
-        except:
-            pass
+# try:
+#     s_code_value = result.get('set_order_result', {}).get('data', {}).get('sCode')
+#     if s_code_value == '0':
+#         print(s_code_value)
+# except:
+#     try:
+#         s_code_value = result.get('set_order_result', {}).get('data', [{}])[0].get('sCode')
+#         if s_code_value == '51000':
+#             print('账户模式不支持')
+#         elif s_code_value == '51011':
+#             print('账户余额不足')
+#         elif s_code_value == '51001':
+#             print('产品不存在')
+#         elif s_code_value == '51013':
+#             print('订单数量不合法')
+#     except:
+#         try:
+#             s_code_value = result.get('error_result', {}).get('code')
+#             if s_code_value == '51001':
+#                 print('产品不存在')
+#         except:
+#             pass
 
 # a = obj.trade.open_market(instId='DYDX-USDT-SWAP', posSide='long', openMoney=100,
 #                                       tdMode='cross', lever=100)

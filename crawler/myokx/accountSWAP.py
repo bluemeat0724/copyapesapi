@@ -236,3 +236,12 @@ class AccountSWAP():
             datas_filtered.append(data)
         result['data'] = datas_filtered
         return result
+
+    # 查看账户配置
+    def get_config(
+            self,
+            proxies={},
+            proxy_host: str = None
+    ):
+        result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+        return result
