@@ -3,14 +3,14 @@ from crawler.myokx import app
 from okx.api.public import Public
 
 # 模拟
-# acc = {'key': '2f071928-25bf-4ea9-b171-efe4b6e4eefd',
-#        'secret': '0BE4E80811E950DBA93FA013D1F36516',
-#        'passphrase': '112233Ww..',
-#        'proxies': {
-#                     'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10099',
-#                     'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10099'
-#                    }
-#        }
+acc = {'key': 'ba8dccb8-943d-468c-bcbf-8dced96fc7cf',
+       'secret': 'BBA3FF14AC698CDBAA33219F858E7BF6',
+       'passphrase': '112233Ww..',
+       'proxies': {
+                    'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10099',
+                    'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10099'
+                   }
+       }
 # 实盘
 # acc = {'key': '63b35cdd-261f-4fd5-ba2a-a607cd7460c9',
 #        'secret': '52A5665FC31BFF7552D2980CE5C7F0F1',
@@ -21,19 +21,19 @@ from okx.api.public import Public
 #                    }
 #        }
 # 大宝实盘
-acc = {'key': '3aa701e1-a4f4-4d97-bd6d-f9891b57da16',
-       'secret': '6B83B04A90AE2DEB423D5624BB4C4F85',
-       'passphrase': 'guobaoying94DG@',
-       'proxies': {
-                    'http': 'socks5h://16616640507srt-1:veg19mrb@14.29.122.96:10950',
-                    'https': 'socks5h://16616640507srt-1:veg19mrb@14.29.122.96:10950'
-                   }
-       }
+# acc = {'key': '3aa701e1-a4f4-4d97-bd6d-f9891b57da16',
+#        'secret': '6B83B04A90AE2DEB423D5624BB4C4F85',
+#        'passphrase': 'guobaoying94DG@',
+#        'proxies': {
+#                     'http': 'socks5h://16616640507srt-1:veg19mrb@14.29.122.96:10950',
+#                     'https': 'socks5h://16616640507srt-1:veg19mrb@14.29.122.96:10950'
+#                    }
+#        }
 
 
 obj = app.OkxSWAP(**acc)
-obj.account.api.flag = '0'
-obj.trade.api.flag = '0'
+obj.account.api.flag = '1'
+obj.trade.api.flag = '1'
 # 查看账户配置信息
 print(obj.account.get_config())
 #
