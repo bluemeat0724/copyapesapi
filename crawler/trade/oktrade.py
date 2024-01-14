@@ -193,14 +193,14 @@ class Trader(threading.Thread):
                     if s_code_value == '51000':
                         self.thread_logger.warning(
                             f'交易失败，交易金额过低，请重新设置任务单笔跟单金额。')
-                    if s_code_value == '51010':
+                    elif s_code_value == '51010':
                         self.thread_logger.warning(
                             f'交易失败，当前账户为简单交易模式，请在交易所合约交易页面进行手动调整。无需终止本次跟单任务，交易模式调整完成后，如有新的交易订单，将正常交易。')
-                    if s_code_value == '51008':
+                    elif s_code_value == '51008':
                         self.thread_logger.warning('交易失败，账户余额不足！请前往交易所充值！')
-                    if s_code_value == '51024':
+                    elif s_code_value == '51024':
                         self.thread_logger.warning('交易失败，交易账户冻结！请联系交易所客服处理！')
-                    if s_code_value in ['50103','50104','50105','50106','50107']:
+                    elif s_code_value in ['50103','50104','50105','50106','50107']:
                         self.thread_logger.warning('交易失败，API信息填写错误，请结束任务后重新提交新的API！')
                     else:
                         self.thread_logger.warning(
@@ -210,7 +210,7 @@ class Trader(threading.Thread):
                         s_code_value = result.get('error_result', {}).get('code')
                         if s_code_value == '51001':
                             self.thread_logger.warning(f'模拟盘土狗币交易失败，品种：{self.instId}不在交易所模拟盘中！')
-                        if s_code_value == '59000':
+                        elif s_code_value == '59000':
                             self.thread_logger.warning('设置失败，请在设置前关闭任何挂单或持仓！')
                         else:
                             self.thread_logger.warning(
@@ -263,14 +263,14 @@ class Trader(threading.Thread):
                         if s_code_value == '51000':
                             self.thread_logger.warning(
                                 f'交易失败，交易金额过低，请重新设置任务单笔跟单金额。')
-                        if s_code_value == '51010':
+                        elif s_code_value == '51010':
                             self.thread_logger.warning(
                                 '交易失败，当前账户为简单交易模式，请在交易所合约交易页面进行手动调整。无需终止本次跟单任务，交易模式调整完成后，如有新的交易订单，将正常交易。')
-                        if s_code_value == '51008':
+                        elif s_code_value == '51008':
                             self.thread_logger.warning('交易失败，账户余额不足！请前往交易所充值！')
-                        if s_code_value == '51024':
+                        elif s_code_value == '51024':
                             self.thread_logger.warning('交易失败，交易账户冻结！请联系交易所客服处理！')
-                        if s_code_value in ['50103', '50104', '50105', '50106', '50107']:
+                        elif s_code_value in ['50103', '50104', '50105', '50106', '50107']:
                             self.thread_logger.warning('交易失败，API信息填写错误，请结束任务后重新提交新的API！')
                         else:
                             self.thread_logger.warning(
@@ -280,7 +280,7 @@ class Trader(threading.Thread):
                             s_code_value = result.get('error_result', {}).get('code')
                             if s_code_value == '51001':
                                 self.thread_logger.warning(f'模拟盘土狗币交易失败，品种：{self.instId}不在交易所模拟盘中！')
-                            if s_code_value == '59000':
+                            elif s_code_value == '59000':
                                 self.thread_logger.warning('设置失败，请在设置前关闭任何挂单或持仓！')
                             else:
                                 self.thread_logger.warning(
