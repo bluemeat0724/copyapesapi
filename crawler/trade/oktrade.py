@@ -312,6 +312,15 @@ class Trader(threading.Thread):
         except:
             return
         if not data:
+            # 账户获取剩余额度
+            remaining_quota = get_remaining_quota(self.user_id, int(self.flag))
+            # 获取任务收益
+            task_pnl = check_task_pnl(self.task_id)
+            remaining_quota -= task_pnl
+            # 更新剩余额度数据
+            update_remaining_quota(self.user_id, int(self.flag), remaining_quota)
+
+            print(f'更新用户{self.user_id}可用盈利额度数据成功！')
             # 打印日志
             self.thread_logger.warning(f'手动结束跟单，任务：{self.task_id}')
             return
