@@ -166,7 +166,7 @@ class Spider(threading.Thread):
         # 查找值变化的数据
         changed_items = []
         for old_item, new_item in zip(old_list, new_list):
-            if old_item["instId"] == new_item["instId"] and old_item['margin'] != new_item['margin']:
+            if old_item["instId"] == new_item["instId"] and old_item['availSubPos'] != new_item['availSubPos']:
                 change = {'order_type': 'change',
                           'instId': old_item['instId'],
                           'old_availSubPos': old_item['availSubPos'],

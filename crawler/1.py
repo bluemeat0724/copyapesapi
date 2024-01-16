@@ -35,18 +35,18 @@ obj = app.OkxSWAP(**acc)
 obj.account.api.flag = '1'
 obj.trade.api.flag = '1'
 # 查看账户配置信息
-print(obj.account.get_config())
-#
-# set_position_mode_result = obj.account.set_position_mode(
-#                 posMode='long_short_mode')
-# if set_position_mode_result['code'] == '0':
-#     print('[SUCCESS] 设置持仓方式为双向持仓成功，posMode="long_short_mode"')
-# else:
-#     print('[FAILURE] 设置持仓方式为双向持仓失败，请手动设置：posMode="long_short_mode"')
+# print(obj.account.get_config())
 
-#
-# obj.trade.open_market(instId="IOST-USDT-SWAP", posSide="long", openMoney=10 * 10, tdMode='cross',
-#                                   lever=10)
+set_position_mode_result = obj.account.set_position_mode(
+                posMode='long_short_mode')
+if set_position_mode_result['code'] == '0':
+    print('[SUCCESS] 设置持仓方式为双向持仓成功，posMode="long_short_mode"')
+else:
+    print('[FAILURE] 设置持仓方式为双向持仓失败，请手动设置：posMode="long_short_mode"')
+
+
+obj.trade.open_market(instId="SATS-USDT-SWAP", posSide="long", openMoney=10 * 10, tdMode='cross',
+                                  lever=10)
 
 # result = obj.trade.open_market(instId="LTC-USDT-SWAP", posSide="long", openMoney=5, tdMode='cross',
 #                                   lever=3)
