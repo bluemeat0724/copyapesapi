@@ -230,8 +230,8 @@ class Trader(threading.Thread):
             self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT='all', tdMode='cross')
             self.thread_logger.success(f'进行平仓操作，品种:{self.instId}，方向：{self.posSide}')
             # 更新持仓数据
-            OkxOrderInfo(self.user_id, self.task_id).get_position()
-            # OkxOrderInfo(self.user_id, self.task_id).get_position_history()
+            # OkxOrderInfo(self.user_id, self.task_id).get_position()
+            OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=2)
 
         elif self.order_type == 'change':
             ratio = self.new_margin / self.old_margin  # 大于1是加仓，小于1是减仓
