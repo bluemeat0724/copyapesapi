@@ -122,6 +122,7 @@ class OkxOrderInfo(object):
                 with Connect() as db:
                     db.exec(insert_sql, **params)
                 self.update_pnl()
+            # todo：此处有个影响不大的bug。当用户手动平仓时，定时脚本的get_position()无法对手动平仓的交易进行状态更新。只有当带单员平仓/减仓时，通过trade脚本才会更新状态
 
     # 当发生平仓或减仓交易时，检查交易所账户历史数据，并更新数据库。减仓order_type=1，平仓order_type=2
     def get_position_history(self, order_type):
