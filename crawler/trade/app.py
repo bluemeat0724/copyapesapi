@@ -68,8 +68,9 @@ def run():
                     print(f"跟单任务{task_id}不存在。")
 
 
-        except (SyntaxError, NameError):
-            print("数据错误！")
+        except Exception as e:
+            print("trade脚本错误!")
+            print(e)
 
 
 if __name__ == '__main__':
