@@ -3,14 +3,14 @@ from crawler.myokx import app
 from okx.api.public import Public
 
 # 模拟
-acc = {'key': 'ba8dccb8-943d-468c-bcbf-8dced96fc7cf',
-       'secret': 'BBA3FF14AC698CDBAA33219F858E7BF6',
-       'passphrase': '112233Ww..',
-       'proxies': {
-                    'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10099',
-                    'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10099'
-                   }
-       }
+# acc = {'key': 'ba8dccb8-943d-468c-bcbf-8dced96fc7cf',
+#        'secret': 'BBA3FF14AC698CDBAA33219F858E7BF6',
+#        'passphrase': '112233Ww..',
+#        'proxies': {
+#                     'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10099',
+#                     'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10099'
+#                    }
+#        }
 # 实盘
 # acc = {'key': '63b35cdd-261f-4fd5-ba2a-a607cd7460c9',
 #        'secret': '52A5665FC31BFF7552D2980CE5C7F0F1',
@@ -29,24 +29,35 @@ acc = {'key': 'ba8dccb8-943d-468c-bcbf-8dced96fc7cf',
 #                     'https': 'socks5h://16616640507srt-1:veg19mrb@14.29.122.96:10950'
 #                    }
 #        }
+acc = {'key': 'da5fea7c-99e8-4892-9fdf-369a0d35fe6e',
+       'secret': '6A47EAA50207A62E332F9A1D1B3EF97C',
+       'passphrase': 'Yaoyao103123..',
+       'proxies': {
+                    'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.99:5001',
+                    'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.99:5001'
+                   }
+       }
 
 
 obj = app.OkxSWAP(**acc)
-obj.account.api.flag = '1'
-obj.trade.api.flag = '1'
+obj.account.api.flag = '0'
+obj.trade.api.flag = '0'
 # 查看账户配置信息
-# print(obj.account.get_config())
+print(obj.account.get_config())
 
-set_position_mode_result = obj.account.set_position_mode(
-                posMode='long_short_mode')
-if set_position_mode_result['code'] == '0':
-    print('[SUCCESS] 设置持仓方式为双向持仓成功，posMode="long_short_mode"')
-else:
-    print('[FAILURE] 设置持仓方式为双向持仓失败，请手动设置：posMode="long_short_mode"')
+# a = obj.account.get_positions_history(limit=1)
+# print(a)
 
-
-obj.trade.open_market(instId="SATS-USDT-SWAP", posSide="long", openMoney=10 * 10, tdMode='cross',
-                                  lever=10)
+# set_position_mode_result = obj.account.set_position_mode(
+#                 posMode='long_short_mode')
+# if set_position_mode_result['code'] == '0':
+#     print('[SUCCESS] 设置持仓方式为双向持仓成功，posMode="long_short_mode"')
+# else:
+#     print('[FAILURE] 设置持仓方式为双向持仓失败，请手动设置：posMode="long_short_mode"')
+#
+#
+# obj.trade.open_market(instId="SATS-USDT-SWAP", posSide="long", openMoney=10 * 10, tdMode='cross',
+#                                   lever=10)
 
 # result = obj.trade.open_market(instId="LTC-USDT-SWAP", posSide="long", openMoney=5, tdMode='cross',
 #                                   lever=3)
@@ -79,8 +90,8 @@ obj.trade.open_market(instId="SATS-USDT-SWAP", posSide="long", openMoney=10 * 10
 #                                       tdMode='cross', lever=100)
 # obj.trade.close_market(instId='ETH-USDT-SWAP', posSide='long', quantityCT=220, tdMode='cross')
 # 当前持仓
-# a = obj.account.get_positions()
-# print(a)
+a = obj.account.get_positions()
+print(a)
 # 历史持仓
 # a = obj.account.get_positions_history(limit=2)
 # print(a)
