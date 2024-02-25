@@ -1,7 +1,7 @@
 REDIS_PARAMS = {
-    'host': '127.0.0.1',
+    'host': '121.43.178.20',
     'port': 6379,
-    # 'password':'',
+    'password': 'trade@2024',
     'encoding': 'utf-8',
 }
 
@@ -11,8 +11,8 @@ TRADE_TASK_NAME = 'TASK_ADD_TRADE'
 MYSQL_CONN_PARAMS = {
     'db': 'copytrade',  # 数据库名字
     'user': 'root',
-    'password': '112233ww',
-    'host': '127.0.0.1',  # ip
+    'password': 'Zenx_2023',
+    'host': '121.43.178.20',  # ip
     'port': 3306,
     'charset': 'utf8'
 }

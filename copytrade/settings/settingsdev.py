@@ -95,8 +95,8 @@ DATABASES = {
         'ENGINE': 'dj_db_conn_pool.backends.mysql',
         'NAME': 'copytrade',  # 数据库名字
         'USER': 'root',
-        'PASSWORD': '112233ww',
-        'HOST': '127.0.0.1',  # ip
+        'PASSWORD': 'Zenx_2023',
+        'HOST': '121.43.178.2',  # ip
         'PORT': 3306,
         'OPTIONS': {
             'charset': 'utf8mb4',
@@ -111,10 +111,10 @@ DATABASES = {
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379",
+        "LOCATION": "redis://121.43.178.20:6379",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
-            # "PASSWORD": "qwe123",
+            "PASSWORD": "trade@2024",
         }
     }
 }
