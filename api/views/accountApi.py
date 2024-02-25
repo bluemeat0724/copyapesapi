@@ -15,13 +15,13 @@ class ApiAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixin
     queryset = models.ApiInfo.objects.filter(deleted=False).order_by('-id')
 
     def perform_create(self, serializer):
-        flag = serializer.validated_data.get('flag')
-        if flag == 1:
-            api_object = models.ApiInfo.objects.filter(flag=1, user=self.request.user, deleted=0).first()
-            if not api_object:
-                serializer.save(user=self.request.user)
-            else:
-                return Response({"code": return_code.FLAG_1_ERROR, "error": "每个用户只能保存一个模拟盘API"})
+        # flag = serializer.validated_data.get('flag')
+        # if flag == 1:
+        #     api_object = models.ApiInfo.objects.filter(flag=1, user=self.request.user, deleted=0).first()
+        #     if not api_object:
+        #         serializer.save(user=self.request.user)
+        #     else:
+        #         return Response({"code": return_code.FLAG_1_ERROR, "error": "每个用户只能保存一个模拟盘API"})
         serializer.save(user=self.request.user)
 
 

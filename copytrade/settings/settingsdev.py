@@ -95,8 +95,8 @@ DATABASES = {
         'ENGINE': 'dj_db_conn_pool.backends.mysql',
         'NAME': 'copytrade',  # 数据库名字
         'USER': 'root',
-        'PASSWORD': 'Zenx_2023',
-        'HOST': '121.43.178.2',  # ip
+        'PASSWORD': '7f3aa55baa212d9505c0610842937a',
+        'HOST': '101.133.161.125',  # ip
         'PORT': 3306,
         'OPTIONS': {
             'charset': 'utf8mb4',

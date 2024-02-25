@@ -11,18 +11,18 @@ TRADE_TASK_NAME = 'TASK_ADD_TRADE'
 MYSQL_CONN_PARAMS = {
     'db': 'copytrade',  # 数据库名字
     'user': 'root',
-    'password': 'Zenx_2023',
-    'host': '121.43.178.20',  # ip
+    'password': '7f3aa55baa212d9505c0610842937a',
+    'host': '101.133.161.125',  # ip
     'port': 3306,
     'charset': 'utf8'
 }
 
 # SOCKS5代理服务器配置
 # PROXY_IP = '14.29.122.97'
-PROXY_IP = '14.29.122.96'
+PROXY_IP = '14.29.122.97'
 # PROXY_IP = '183.56.143.53'
 # PROXY_PORT = 10099
-PROXY_PORT = 10950
+PROXY_PORT = 10322
 PROXY_DICT = [
     {'PROXY_USERNAME':'15755149931sct-5','PROXY_PASSWORD':'8ivtkleb'},
     {'PROXY_USERNAME':'18575531956srt-1','PROXY_PASSWORD':'n9j2gmed'},
