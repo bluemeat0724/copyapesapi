@@ -32,6 +32,7 @@ def run_trade_task(task):
                     trader.update_data(task)
                 # 开启新线程来异步更新数据
                 threading.Thread(target=update_trader_task).start()
+
     elif status == 2:  # 假设status为2时表示终止任务
         with traders_lock:
             if task_id in traders:
