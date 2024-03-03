@@ -24,6 +24,7 @@ now = int(time.time()) * 1000
 
 logger.remove()  # 移除所有默认的handler
 
+
 def thread_log_filter(record, user_id, task_id):
     """过滤器，只接收包含特定线程标记的日志记录"""
     return record["extra"].get("user_id") == user_id and record["extra"].get("task_id") == task_id
@@ -44,7 +45,6 @@ class Spider(threading.Thread):
         self.user_id = user_id
         self.stop_flag = threading.Event()  # 用于控制爬虫线程的停止
         self.thread_logger = None
-
 
     def setup_logger(self):
         log_file = f"spider_logs/{self.user_id}_{self.task_id}.log"
@@ -74,16 +74,19 @@ class Spider(threading.Thread):
             old_list = new_list
             time.sleep(1)
 
-
     def stop(self):
         # 设置停止标志，用于停止爬虫线程
         self.stop_flag.set()
         self.thread_logger.warning(f"手动结束跟单，任务ID：{self.task_id}")
 
+    # 创建一个线程锁
+    file_lock = threading.Lock()
+
     def test(self):
         summary_list_new = []
-        with open('text.txt','r') as f:
-            data_list = json.loads(f.read())
+        with self.file_lock:
+            with open('text.txt', 'r') as f:
+                data_list = json.loads(f.read())
         if not data_list:
             return summary_list_new
         for data in data_list:
@@ -144,7 +147,7 @@ class Spider(threading.Thread):
         # 查找新增的交易数据
         name_set = set(i['instId'] for i in old_list)
         added_items = list(filter(lambda x: x['instId'] not in name_set, new_list))
-       # logger.debug('added_items:',added_items)
+        # logger.debug('added_items:',added_items)
         if added_items:
             for item in added_items:
                 item['order_type'] = 'open'
@@ -262,7 +265,7 @@ if __name__ == '__main__':
                     spider_to_stop.join()
                     # 往redis里的TRADE_TASK_NAME写入{'task_id':task_id,'status': 2}
                     conn = redis.Redis(**settings.REDIS_PARAMS)
-                    conn.lpush(settings.TRADE_TASK_NAME, json.dumps({'task_id': task_id,'status': 2}))
+                    conn.lpush(settings.TRADE_TASK_NAME, json.dumps({'task_id': task_id, 'status': 2}))
                     del spiders[task_id]
                     print(f"用户：{user_id}的跟单任务{task_id}已停止。")
                 else:
