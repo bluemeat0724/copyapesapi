@@ -62,10 +62,8 @@ class OkxOrderInfo(object):
         except:
             return
 
-        # print(data)
-        # 如果没有数据，说明已经全部平仓，跟新所有交易数据
+        self.get_position_history(order_type=2)        # 如果没有数据，说明已经全部平仓，跟新所有交易数据
         if not data:
-            self.get_position_history(order_type=2)
             return
         for item in data:
             instId = item.get('instId')
@@ -215,7 +213,6 @@ class OkxOrderInfo(object):
                 with Connect() as db:
                     db.exec(update_sql, **params)
                 self.update_pnl()
-
 
 
 if __name__ == '__main__':
