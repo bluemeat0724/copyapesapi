@@ -27,9 +27,11 @@ def run_trade_task(task):
                 else:
                     print(f"跟单任务{task_id}的交易平台不支持。")
             else:
-                # 在原有进程中直接进行交易
-                trader = traders[task_id]
-                trader.update_data(task)
+                def update_trader_task():
+                    trader = traders[task_id]
+                    trader.update_data(task)
+                # 开启新线程来异步更新数据
+                threading.Thread(target=update_trader_task).start()
 
     elif status == 2:  # 假设status为2时表示终止任务
         with traders_lock:
