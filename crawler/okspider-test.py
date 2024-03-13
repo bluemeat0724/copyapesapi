@@ -1,11 +1,18 @@
+import os
 import threading
 import time
+
+import django
 import redis
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'copytrade.settings.settingsdev')
+django.setup()
+from django.utils import timezone
 from crawler import settingsdev as settings
 import requests
 import json
 from loguru import logger
 from crawler.utils import get_task
+from api.models import SpiderLog
 
 # proxies = {
 #     'http': 'socks5h://{}:{}@{}:{}'.format(settings.PROXY_USERNAME, settings.PROXY_PASSWORD, settings.PROXY_IP,
@@ -44,40 +51,57 @@ class Spider(threading.Thread):
         self.api_id = api_id
         self.user_id = user_id
         self.stop_flag = threading.Event()  # 用于控制爬虫线程的停止
-        self.thread_logger = None
+        # self.thread_logger = None
 
-    def setup_logger(self):
-        log_file = f"spider_logs/{self.user_id}_{self.task_id}.log"
+    # def setup_logger(self):
+    #     log_file = f"spider_logs/{self.user_id}_{self.task_id}.log"
+    #
+    #     # 为当前线程创建一个标记过滤器
+    #     filter_func = lambda record: thread_log_filter(record, self.user_id, self.task_id)
+    #
+    #     # 添加一个新的文件handler，仅接收当前线程的日志消息
+    #     logger.add(log_file, filter=filter_func, rotation="20 MB",
+    #                format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}")
+    def log_to_database(self, level, title, description=""):
+        """
+        将日志信息保存到数据库。
+        """
+        SpiderLog.objects.create(
+            user_id=self.user_id,
+            task_id=self.task_id,
+            date=timezone.now(),
+            color=level,
+            title=title,
+            description=description,
+        )
 
-        # 为当前线程创建一个标记过滤器
-        filter_func = lambda record: thread_log_filter(record, self.user_id, self.task_id)
-
-        # 添加一个新的文件handler，仅接收当前线程的日志消息
-        logger.add(log_file, filter=filter_func, rotation="20 MB",
-                   format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}")
 
     def run(self):
-        self.setup_logger()
-        thread_logger = logger.bind(user_id=self.user_id, task_id=self.task_id)
-        thread_logger.info(f"跟单猿跟单系统启动，跟随交易员：{self.uniqueName}")
-        self.thread_logger = thread_logger
+        # self.setup_logger()
+        # thread_logger = logger.bind(user_id=self.user_id, task_id=self.task_id)
+        # thread_logger.info(f"跟单猿跟单系统启动，跟随交易员：{self.uniqueName}")
+        # self.thread_logger = thread_logger
+        self.log_to_database("info", f"跟单猿跟单系统启动，跟随交易员：{self.uniqueName}")
         # 第一次获取当前交易数据
         old_list = self.test()
         if old_list:
-            thread_logger.info(f"交易员{self.uniqueName}有正在进行中的交易，等待新的交易发生后开始跟随！")
+            # thread_logger.info(f"交易员{self.uniqueName}有正在进行中的交易，等待新的交易发生后开始跟随！")
             # thread_logger.debug(old_list)
+            self.log_to_database("info", f"交易员{self.uniqueName}有正在进行中的交易，等待新的交易发生后开始跟随！")
         else:
-            thread_logger.info(f"交易员{self.uniqueName}尚未开始交易，等待新的交易发生后开始跟随！")
+            # thread_logger.info(f"交易员{self.uniqueName}尚未开始交易，等待新的交易发生后开始跟随！")
+            self.log_to_database("info", f"交易员{self.uniqueName}尚未开始交易，等待新的交易发生后开始跟随！")
         while not self.stop_flag.is_set():
             new_list = self.test()
-            self.analysis(old_list, new_list, thread_logger)
+            self.analysis(old_list, new_list)
             old_list = new_list
             time.sleep(1)
 
     def stop(self):
         # 设置停止标志，用于停止爬虫线程
         self.stop_flag.set()
-        self.thread_logger.warning(f"手动结束跟单，任务ID：{self.task_id}")
+        # self.thread_logger.warning(f"手动结束跟单，任务ID：{self.task_id}")
+        self.log_to_database("warning", "手动结束跟单", f"任务ID：{self.task_id}")
 
     # 创建一个线程锁
     file_lock = threading.Lock()
@@ -143,7 +167,7 @@ class Spider(threading.Thread):
         except:
             pass
 
-    def analysis(self, old_list, new_list, thread_logger):
+    def analysis(self, old_list, new_list):
         # 查找新增的交易数据
         name_set = set(i['instId'] for i in old_list)
         added_items = list(filter(lambda x: x['instId'] not in name_set, new_list))
@@ -160,7 +184,8 @@ class Spider(threading.Thread):
                 item['first_order_set'] = self.first_order_set
                 item['api_id'] = self.api_id
                 item['user_id'] = self.user_id
-                thread_logger.success(f"交易员{self.uniqueName}进行了开仓操作，品种：{item['instId']}，杠杆：{item['lever']}")
+                # thread_logger.success(f"交易员{self.uniqueName}进行了开仓操作，品种：{item['instId']}，杠杆：{item['lever']}")
+                self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作", f"品种：{item['instId']}，杠杆：{item['lever']}")
                 # 写入Redis队列
                 conn = redis.Redis(**settings.REDIS_PARAMS)
                 conn.lpush(settings.TRADE_TASK_NAME, json.dumps(item))
@@ -181,8 +206,10 @@ class Spider(threading.Thread):
                 item['first_order_set'] = self.first_order_set
                 item['api_id'] = self.api_id
                 item['user_id'] = self.user_id
-                self.thread_logger.success(
-                    f"交易员{self.uniqueName}进行了平仓操作，品种：{item['instId']}，杠杆：{item['lever']}")
+                # self.thread_logger.success(
+                #     f"交易员{self.uniqueName}进行了平仓操作，品种：{item['instId']}，杠杆：{item['lever']}")
+                self.log_to_database("success", f"交易员{self.uniqueName}进行了平仓操作",
+                                     f"品种：{item['instId']}，杠杆：{item['lever']}")
                 # 写入Redis队列
                 conn = redis.Redis(**settings.REDIS_PARAMS)
                 conn.lpush(settings.TRADE_TASK_NAME, json.dumps(item))
@@ -212,8 +239,10 @@ class Spider(threading.Thread):
                           'user_id': self.user_id,
                           }
                 changed_items.append(change)
-                thread_logger.success(
-                    f"交易员{self.uniqueName}进行了调仓操作，品种：{old_item['instId']}，原仓位：{old_item['margin']}，现仓位：{new_item['margin']}")
+                self.log_to_database("success", f"交易员{self.uniqueName}进行了调仓操作",
+                                     f"品种：{old_item['instId']}，原仓位：{old_item['margin']}，现仓位：{new_item['margin']}")
+                # thread_logger.success(
+                #     f"交易员{self.uniqueName}进行了调仓操作，品种：{old_item['instId']}，原仓位：{old_item['margin']}，现仓位：{new_item['margin']}")
                 # 写入Redis队列
                 conn = redis.Redis(**settings.REDIS_PARAMS)
                 conn.lpush(settings.TRADE_TASK_NAME, json.dumps(change))
