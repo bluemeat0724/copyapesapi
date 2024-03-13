@@ -164,3 +164,35 @@ class RedeemCodes(models.Model):
     status = models.IntegerField(verbose_name="可用状态", choices=status_choice, default=1)
     value = models.FloatField(verbose_name="兑换金额", default=0)
     verification_datetime = models.DateTimeField(verbose_name="兑换码验证时间", null=True, blank=True, auto_now=True)
+
+
+class SpiderLog(models.Model):
+    """爬虫日志"""
+    user_id = models.IntegerField(verbose_name="用户ID", db_index=True)
+    task_id = models.IntegerField(verbose_name="任务ID", db_index=True)
+    date = models.DateTimeField(verbose_name="日志时间戳")
+    color = models.CharField(verbose_name="日志级别", max_length=255)
+    title = models.CharField(verbose_name="标题", max_length=255)
+    description = models.TextField(verbose_name="日志信息")
+    created_at = models.DateTimeField(verbose_name="创建时间", auto_now_add=True)
+    updated_at = models.DateTimeField(verbose_name="更新时间", auto_now=True)
+
+    class Meta:
+        verbose_name = "爬虫日志"
+        verbose_name_plural = "爬虫日志"
+
+
+class TradeLog(models.Model):
+    """交易日志"""
+    user_id = models.IntegerField(verbose_name="用户ID", db_index=True)
+    task_id = models.IntegerField(verbose_name="任务ID", db_index=True)
+    date = models.DateTimeField(verbose_name="日志时间戳")
+    color = models.CharField(verbose_name="日志级别", max_length=255)
+    title = models.CharField(verbose_name="标题", max_length=255)
+    description = models.TextField(verbose_name="日志信息")
+    created_at = models.DateTimeField(verbose_name="创建时间", auto_now_add=True)
+    updated_at = models.DateTimeField(verbose_name="更新时间", auto_now=True)
+
+    class Meta:
+        verbose_name = "交易日志"
+        verbose_name_plural = "交易日志"
