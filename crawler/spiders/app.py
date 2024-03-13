@@ -2,7 +2,6 @@ import datetime
 import threading
 import time
 import redis
-from api.models import TradeLog
 from crawler import settingsdev as settings
 import json
 from loguru import logger
@@ -11,10 +10,6 @@ from crawler.utils.db import Connect
 
 logger.remove()  # 移除所有默认的handler
 
-
-# def thread_log_filter(record, user_id, task_id):
-#     """过滤器，只接收包含特定线程标记的日志记录"""
-#     return record["extra"].get("user_id") == user_id and record["extra"].get("task_id") == task_id
 
 
 class Spider(threading.Thread):
@@ -33,16 +28,6 @@ class Spider(threading.Thread):
         self.stop_flag = threading.Event()  # 用于控制爬虫线程的停止
         # self.thread_logger = None
 
-    # def setup_logger(self):
-    #     log_file = os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(__file__)), "spider_logs",
-    #                                             f"{self.user_id}_{self.task_id}.log"))
-    #
-    #     # 为当前线程创建一个标记过滤器
-    #     filter_func = lambda record: thread_log_filter(record, self.user_id, self.task_id)
-    #
-    #     # 添加一个新的文件handler，仅接收当前线程的日志消息
-    #     logger.add(log_file, filter=filter_func, rotation="20 MB",
-    #                format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}")
     def log_to_database(self, level, title, description=""):
         """
         手动保存日志信息到数据库

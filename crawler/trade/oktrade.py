@@ -187,7 +187,6 @@ class Trader(threading.Thread):
         if not self.obj:
             print(f'{self.task_id} 错误')
             return
-        # posSide_set
         if self.order_type == 'open':
             if self.posSide == 'net':
                 # 解析订单方向
