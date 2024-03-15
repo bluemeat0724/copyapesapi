@@ -20,11 +20,6 @@ from api.models import TradeLog
 logger.remove()  # 移除所有默认的handler
 
 
-def thread_log_filter(record, user_id, task_id):
-    """过滤器，只接收包含特定线程标记的日志记录"""
-    return record["extra"].get("user_id") == user_id and record["extra"].get("task_id") == task_id
-
-
 def retry(max_attempts=5, delay=1):
     def decorator(func):
         @wraps(func)
@@ -43,6 +38,7 @@ def retry(max_attempts=5, delay=1):
 
     return decorator
 
+
 class RetryDecoratorProxy:
     def __init__(self, obj):
         self._obj = obj
@@ -52,6 +48,7 @@ class RetryDecoratorProxy:
         if callable(attr):
             return retry()(attr)
         return attr
+
 
 class RetryNetworkOperations:
     def __init__(self, network_operations):
@@ -66,8 +63,10 @@ class RetryNetworkOperations:
 
 
 class Trader(threading.Thread):
-    def __init__(self, task_id, api_id,user_id, trader_platform, uniqueName, follow_type, sums, lever_set, first_order_set,
-                 instId=None, mgnMode=None, posSide=None, lever=1, openTime=None, openAvgPx=None, margin=None,availSubPos=None,order_type=None,
+    def __init__(self, task_id, api_id, user_id, trader_platform, uniqueName, follow_type, sums, lever_set,
+                 first_order_set,
+                 instId=None, mgnMode=None, posSide=None, lever=1, openTime=None, openAvgPx=None, margin=None,
+                 availSubPos=None, order_type=None,
                  old_margin=None, new_margin=None, old_availSubPos=None, new_availSubPos=None):
         super(Trader, self).__init__()
         self.task_id = task_id
@@ -121,13 +120,7 @@ class Trader(threading.Thread):
             description=description,
         )
 
-
     def run(self):
-        # 初始化日志
-        # if self.logger_id is None:
-        #     self.setup_logger()
-        # thread_logger = logger.bind(user_id=self.user_id, task_id=self.task_id)
-        # self.thread_logger = thread_logger
         # 获取api信息
         self.acc, self.flag = api(self.user_id, self.api_id)
         try:
@@ -139,7 +132,7 @@ class Trader(threading.Thread):
             obj.account.api.flag = self.flag
             obj.trade.api.flag = self.flag
             # thread_logger.info(f"跟单猿交易系统启动，跟随交易员：{self.uniqueName}")
-            self.log_to_database("info", f"跟单猿交易系统启动，跟随交易员：{self.uniqueName}")
+            self.log_to_database("INFO", f"跟单猿交易系统启动", f"跟随交易员：{self.uniqueName}")
             # okx源码被注释部分，先初始化账户开平仓模式
             set_position_mode_result = obj.account.set_position_mode(
                 posMode='long_short_mode')
@@ -169,7 +162,7 @@ class Trader(threading.Thread):
         self.margin = new_data.get('margin')
         self.availSubPos = new_data.get('availSubPos')
         self.old_margin = new_data.get('old_margin')
-        self.old_availSubPos= new_data.get('old_availSubPos')
+        self.old_availSubPos = new_data.get('old_availSubPos')
         self.new_margin = new_data.get('new_margin')
         self.new_availSubPos = new_data.get('new_availSubPos')
         self.instId = new_data.get('instId')
@@ -201,8 +194,9 @@ class Trader(threading.Thread):
                 return
             # 市价开仓
             print(f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
-            result = self.obj.trade.open_market(instId=self.instId, posSide=self.posSide, openMoney=self.sums * trade_times, tdMode='cross',
-                                  lever=self.lever)
+            result = self.obj.trade.open_market(instId=self.instId, posSide=self.posSide,
+                                                openMoney=self.sums * trade_times, tdMode='cross',
+                                                lever=self.lever)
             try:
                 s_code_value = result.get('set_order_result', {}).get('data', {}).get('sCode')
                 if s_code_value == '0':
@@ -399,7 +393,3 @@ class Trader(threading.Thread):
 
         print(f'更新用户{self.user_id}可用盈利额度数据成功！')
         self.log_to_database("warning", f'手动结束跟单，任务：{self.task_id}')
-
-
-
-

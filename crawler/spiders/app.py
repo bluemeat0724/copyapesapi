@@ -62,7 +62,7 @@ class Spider(threading.Thread):
         # thread_logger = logger.bind(user_id=self.user_id, task_id=self.task_id)
         # self.thread_logger = thread_logger
         # thread_logger.info(f"跟单猿跟单系统启动，跟随交易员：{self.uniqueName}")
-        self.log_to_database("info", f"跟单猿跟单系统启动，跟随交易员：{self.uniqueName}")
+        self.log_to_database("INFO", "跟单猿跟单系统启动", f"跟随交易员：{self.uniqueName}")
         # 第一次获取当前交易数据
         while True:
             try:
@@ -71,13 +71,13 @@ class Spider(threading.Thread):
                     continue
                 break
             except:
-                self.log_to_database("error", f"跟单猿跟单系统启动失败，请检查API是否添加正确，代理IP是否还在有效期！")
+                self.log_to_database("error", "跟单猿跟单系统启动失败", "请检查API是否添加正确，代理IP是否还在有效期！")
 
         if old_list:
-            self.log_to_database("info", f"交易员{self.uniqueName}有正在进行中的交易，等待新的交易发生后开始跟随！")
+            self.log_to_database("INFO", f"交易员{self.uniqueName}有正在进行中的交易", "等待新的交易发生后开始跟随！")
             # self.log_to_database("debug", str(old_list))
         else:
-            self.log_to_database("info", f"交易员{self.uniqueName}尚未开始交易，等待新的交易发生后开始跟随！")
+            self.log_to_database("INFO", f"交易员{self.uniqueName}尚未开始交易", "等待新的交易发生后开始跟随！")
 
         # 断线次数
         count = 0
@@ -117,7 +117,7 @@ class Spider(threading.Thread):
         # 设置停止标志，用于停止爬虫线程
         self.stop_flag.set()
         # self.thread_logger.warning(f"手动结束跟单，任务ID：{self.task_id}")
-        self.log_to_database("warning", f"手动结束跟单，任务ID：{self.task_id}")
+        self.log_to_database("warning", "手动结束跟单", f"任务ID：{self.task_id}")
 
     # 解耦爬虫脚本，获取交易数据
     def summary(self):
