@@ -52,7 +52,7 @@ class Spider(threading.Thread):
         # thread_logger = logger.bind(user_id=self.user_id, task_id=self.task_id)
         # self.thread_logger = thread_logger
         # thread_logger.info(f"跟单猿跟单系统启动，跟随交易员：{self.uniqueName}")
-        self.log_to_database("INFO", "跟单猿跟单系统启动", f"跟随交易员：{self.uniqueName}")
+        self.log_to_database("info", f"跟单猿跟单系统启动，跟随交易员：{self.uniqueName}")
         # 第一次获取当前交易数据
         while True:
             try:
