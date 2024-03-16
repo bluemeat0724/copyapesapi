@@ -3,14 +3,14 @@ from crawler.myokx import app
 from okx.api.public import Public
 
 # 模拟
-# acc = {'key': 'ba8dccb8-943d-468c-bcbf-8dced96fc7cf',
-#        'secret': 'BBA3FF14AC698CDBAA33219F858E7BF6',
-#        'passphrase': '112233Ww..',
-#        'proxies': {
-#                     'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10099',
-#                     'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10099'
-#                    }
-#        }
+acc = {'key': 'ba8dccb8-943d-468c-bcbf-8dced96fc7cf',
+       'secret': 'BBA3FF14AC698CDBAA33219F858E7BF6',
+       'passphrase': '112233Ww..',
+       'proxies': {
+                    'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322',
+                    'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322'
+                   }
+       }
 # 实盘
 # acc = {'key': '63b35cdd-261f-4fd5-ba2a-a607cd7460c9',
 #        'secret': '52A5665FC31BFF7552D2980CE5C7F0F1',
@@ -29,19 +29,19 @@ from okx.api.public import Public
 #                     'https': 'socks5h://16616640507srt-1:veg19mrb@14.29.122.96:10950'
 #                    }
 #        }
-acc = {'key': 'da5fea7c-99e8-4892-9fdf-369a0d35fe6e',
-       'secret': '6A47EAA50207A62E332F9A1D1B3EF97C',
-       'passphrase': 'Yaoyao103123..',
-       'proxies': {
-                    'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.99:5001',
-                    'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.99:5001'
-                   }
-       }
+# acc = {'key': 'da5fea7c-99e8-4892-9fdf-369a0d35fe6e',
+#        'secret': '6A47EAA50207A62E332F9A1D1B3EF97C',
+#        'passphrase': 'Yaoyao103123..',
+#        'proxies': {
+#                     'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.99:5001',
+#                     'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.99:5001'
+#                    }
+#        }
 
 
 obj = app.OkxSWAP(**acc)
-obj.account.api.flag = '0'
-obj.trade.api.flag = '0'
+obj.account.api.flag = '1'
+obj.trade.api.flag = '1'
 # 查看账户配置信息
 print(obj.account.get_config())
 

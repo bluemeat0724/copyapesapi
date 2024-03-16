@@ -22,3 +22,5 @@ class TaskSerializer(serializers.ModelSerializer):
         # 检查请求方法，如果是POST请求，将status字段设置为只读
         if self.context['request'].method == 'POST':
             self.fields['status'].read_only = True
+            self.fields['flag'].read_only = True
+            self.fields['api_name'].read_only = True
