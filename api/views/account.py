@@ -1,5 +1,5 @@
 from api.extension.mixins import CopyCreateModelMixin
-from api.serializers.account import RegisterSerializer, AuthSerializer
+from api.serializers.account import RegisterSerializer, AuthSerializer, ChangeSerializer
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -80,3 +80,27 @@ class Login(APIView):
         user_object.save()
 
         return Response({"code": return_code.SUCCESS, "data": {"token": token, "name": user_object.username}})
+
+class ChangePassword(APIView):
+    """ 修改密码 """
+
+    def post(self, request):
+        # 1. 获取用户请求 & 校验
+        serializer = ChangeSerializer(data=request.data)
+        if not serializer.is_valid():
+            # { 'username':[错误信息,], 'phone':[xxxx,]}
+            return Response({"code": return_code.VALIDATE_ERROR, 'detail': serializer.errors})
+
+        # 获取当前登录用户
+        user = request.user
+        old_password = user.password
+
+        password = serializer.validated_data.get('password')
+        new_password = serializer.validated_data.get('new_password')
+
+        if old_password != password:
+            return Response({"code": return_code.VALIDATE_ERROR, "error": "原始密码错误"})
+
+        user.password = new_password
+        user.save()
+        return Response({"code": return_code.SUCCESS, "message": "密码修改成功"})

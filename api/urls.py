@@ -12,6 +12,7 @@ router.register(r'ip', ipinfo.IpView, 'ip')
 urlpatterns = [
     # path('register/', account.RegisterView.as_view({"post": "create"})),
     path('login/', account.Login.as_view()),
+    path('changepassword/', account.ChangePassword.as_view()),
     path('traderdetial/<int:task_id>/', tradedetial.TradeDetailView.as_view()),
     path('tradeorder/<int:task_id>/', tradeorder.OrderView.as_view()),
     path('quotainfo/', quotainfo.QuotaView.as_view()),
