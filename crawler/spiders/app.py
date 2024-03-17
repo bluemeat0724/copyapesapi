@@ -14,7 +14,7 @@ logger.remove()  # 移除所有默认的handler
 
 class Spider(threading.Thread):
     def __init__(self, task_id, trader_platform, uniqueName, follow_type, sums, lever_set, first_order_set, api_id,
-                 user_id, ):
+                 user_id, leverage, posSide_set):
         super(Spider, self).__init__()
         self.task_id = task_id
         self.trader_platform = trader_platform
@@ -25,8 +25,9 @@ class Spider(threading.Thread):
         self.first_order_set = first_order_set
         self.api_id = api_id
         self.user_id = user_id
+        self.leverage = leverage
+        self.posSide_set = posSide_set
         self.stop_flag = threading.Event()  # 用于控制爬虫线程的停止
-        # self.thread_logger = None
 
     def log_to_database(self, level, title, description=""):
         """
@@ -48,10 +49,6 @@ class Spider(threading.Thread):
             db.exec(insert_sql, **params)
 
     def run(self):
-        # self.setup_logger()
-        # thread_logger = logger.bind(user_id=self.user_id, task_id=self.task_id)
-        # self.thread_logger = thread_logger
-        # thread_logger.info(f"跟单猿跟单系统启动，跟随交易员：{self.uniqueName}")
         self.log_to_database("info", f"跟单猿跟单系统启动，跟随交易员：{self.uniqueName}")
         # 第一次获取当前交易数据
         while True:
@@ -106,7 +103,6 @@ class Spider(threading.Thread):
     def stop(self):
         # 设置停止标志，用于停止爬虫线程
         self.stop_flag.set()
-        # self.thread_logger.WARNING(f"手动结束跟单，任务ID：{self.task_id}")
         self.log_to_database("WARNING", "手动结束跟单", f"任务ID：{self.task_id}")
 
     # 解耦爬虫脚本，获取交易数据
@@ -118,6 +114,13 @@ class Spider(threading.Thread):
             return summary_list_new
         else:
             return None
+
+    def transform(self, item):
+        item['posSide_set'] = self.posSide_set
+        if item.get("lever_set", None):
+            if item["lever_set"] == 2:
+                item["lever"] = self.leverage
+        return item
 
     # 数据分析脚本，连接交易脚本
     def analysis(self, old_list, new_list):
@@ -140,6 +143,7 @@ class Spider(threading.Thread):
                 item['first_order_set'] = self.first_order_set
                 item['api_id'] = self.api_id
                 item['user_id'] = self.user_id
+                item = self.transform(item)
                 # thread_logger.success(
                 #     f"交易员{self.uniqueName}进行了开仓操作，品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}")
                 self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
@@ -164,6 +168,7 @@ class Spider(threading.Thread):
                 item['first_order_set'] = self.first_order_set
                 item['api_id'] = self.api_id
                 item['user_id'] = self.user_id
+                item = self.transform(item)
                 # thread_logger.success(
                 #     f"交易员{self.uniqueName}进行了平仓操作，品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}")
                 self.log_to_database("success", f"交易员{self.uniqueName}进行了平仓操作",
@@ -196,6 +201,7 @@ class Spider(threading.Thread):
                           'api_id': self.api_id,
                           'user_id': self.user_id,
                           }
+                change = self.transform(change)
                 changed_items.append(change)
                 # thread_logger.success(
                 #     f"交易员{self.uniqueName}进行了调仓操作，品种：{old_item['instId']}，原仓位保证金：{round(float(old_item['margin']),2)}USDT，现仓位保证金：{round(float(new_item['margin']),2)}USDT")
@@ -204,6 +210,4 @@ class Spider(threading.Thread):
                 # 写入Redis队列
                 conn = redis.Redis(**settings.REDIS_PARAMS)
                 conn.lpush(settings.TRADE_TASK_NAME, json.dumps(change))
-
-
 
