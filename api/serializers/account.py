@@ -38,8 +38,3 @@ class ChangeSerializer(serializers.Serializer):
         model = models.UserInfo
         fields = ["password", "new_password", "confirm_password"]
 
-    def validate(self, data):
-        # 验证两次新密码输入是否一致
-        if data['new_password'] != data['confirm_password']:
-            raise serializers.ValidationError("两次密码不一致")
-        return data

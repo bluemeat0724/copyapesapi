@@ -6636,3 +6636,110 @@ INFO 2024-03-17 17:53:44,432 autoreload 39750 4346820096 Watching for file chang
 INFO 2024-03-17 17:53:52,655 basehttp 39750 123145431339008 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 41
 INFO 2024-03-17 18:21:10,496 autoreload 39750 4346820096 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
 INFO 2024-03-17 18:21:11,250 autoreload 39837 4633118208 Watching for file changes with StatReloader
+INFO 2024-03-17 18:30:53,898 basehttp 39837 123145498701824 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 42
+INFO 2024-03-17 18:31:57,536 basehttp 39837 123145515491328 "GET /api/quotainfo/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 135
+INFO 2024-03-17 18:33:23,122 basehttp 39837 123145515491328 "GET /api/quotainfo/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 135
+INFO 2024-03-17 18:33:35,956 basehttp 39837 123145515491328 "OPTIONS /api/changepassword//?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+WARNING 2024-03-17 18:33:35,967 log 39837 123145515491328 Not Found: /api/changepassword//
+WARNING 2024-03-17 18:33:35,967 basehttp 39837 123145515491328 "POST /api/changepassword//?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 404 4687
+INFO 2024-03-17 18:34:06,224 basehttp 39837 123145515491328 "OPTIONS /api/changepassword//?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+WARNING 2024-03-17 18:34:06,230 log 39837 123145515491328 Not Found: /api/changepassword//
+WARNING 2024-03-17 18:34:06,230 basehttp 39837 123145515491328 "POST /api/changepassword//?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 404 4687
+INFO 2024-03-17 18:36:14,118 basehttp 39837 123145515491328 "GET /api/quotainfo/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 135
+INFO 2024-03-17 18:36:26,459 basehttp 39837 123145515491328 "OPTIONS /api/changepassword//?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+WARNING 2024-03-17 18:36:26,466 log 39837 123145515491328 Not Found: /api/changepassword//
+WARNING 2024-03-17 18:36:26,466 basehttp 39837 123145515491328 "POST /api/changepassword//?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 404 4687
+INFO 2024-03-17 18:37:54,137 basehttp 39837 123145515491328 "OPTIONS /api/changepassword//?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+WARNING 2024-03-17 18:37:54,142 log 39837 123145515491328 Not Found: /api/changepassword//
+WARNING 2024-03-17 18:37:54,143 basehttp 39837 123145515491328 "POST /api/changepassword//?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 404 4687
+INFO 2024-03-17 18:38:30,013 basehttp 39837 123145515491328 "GET /api/quotainfo/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 135
+INFO 2024-03-17 18:38:39,954 basehttp 39837 123145515491328 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:38:39,958 basehttp 39837 123145515491328 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 69
+INFO 2024-03-17 18:41:40,125 autoreload 39837 4633118208 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2024-03-17 18:41:40,933 autoreload 40014 4498068992 Watching for file changes with StatReloader
+INFO 2024-03-17 18:41:50,630 basehttp 40014 123145472081920 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:41:50,642 basehttp 40014 123145472081920 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 51
+INFO 2024-03-17 18:41:52,612 basehttp 40014 123145472081920 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:41:52,617 basehttp 40014 123145472081920 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 51
+INFO 2024-03-17 18:42:02,769 basehttp 40014 123145472081920 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 51
+INFO 2024-03-17 18:42:03,351 basehttp 40014 123145472081920 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 51
+INFO 2024-03-17 18:42:03,651 basehttp 40014 123145472081920 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 51
+INFO 2024-03-17 18:42:03,933 basehttp 40014 123145472081920 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 51
+INFO 2024-03-17 18:42:05,969 basehttp 40014 123145472081920 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 51
+INFO 2024-03-17 18:42:06,217 basehttp 40014 123145472081920 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 51
+INFO 2024-03-17 18:42:06,469 basehttp 40014 123145472081920 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 51
+INFO 2024-03-17 18:42:12,085 basehttp 40014 123145472081920 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 41
+INFO 2024-03-17 18:42:12,934 basehttp 40014 123145472081920 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 42
+INFO 2024-03-17 18:42:13,234 basehttp 40014 123145472081920 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 42
+INFO 2024-03-17 18:42:18,898 basehttp 40014 123145472081920 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:42:18,904 basehttp 40014 123145472081920 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 42
+INFO 2024-03-17 18:42:46,669 basehttp 40014 123145472081920 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 41
+INFO 2024-03-17 18:42:48,019 basehttp 40014 123145472081920 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 41
+INFO 2024-03-17 18:42:48,236 basehttp 40014 123145472081920 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 41
+INFO 2024-03-17 18:42:55,365 basehttp 40014 123145472081920 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:42:55,371 basehttp 40014 123145472081920 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 41
+INFO 2024-03-17 18:44:15,116 autoreload 40014 4498068992 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2024-03-17 18:44:15,947 autoreload 40047 4697785856 Watching for file changes with StatReloader
+INFO 2024-03-17 18:44:22,487 basehttp 40047 123145469353984 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:44:22,497 basehttp 40047 123145469353984 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 60
+INFO 2024-03-17 18:47:17,910 basehttp 40047 123145469353984 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:47:17,915 basehttp 40047 123145469353984 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 60
+INFO 2024-03-17 18:48:22,864 basehttp 40047 123145469353984 "GET /api/quotainfo/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 135
+INFO 2024-03-17 18:48:32,460 basehttp 40047 123145469353984 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:48:32,466 basehttp 40047 123145469353984 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 41
+INFO 2024-03-17 18:48:34,576 basehttp 40047 123145469353984 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:48:34,581 basehttp 40047 123145469353984 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 60
+INFO 2024-03-17 18:49:15,230 basehttp 40047 123145469353984 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:49:15,235 basehttp 40047 123145469353984 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 60
+INFO 2024-03-17 18:49:21,963 basehttp 40047 123145469353984 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:49:21,968 basehttp 40047 123145469353984 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 60
+INFO 2024-03-17 18:49:22,963 basehttp 40047 123145469353984 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:49:22,968 basehttp 40047 123145469353984 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 60
+INFO 2024-03-17 18:49:23,629 basehttp 40047 123145469353984 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:49:23,634 basehttp 40047 123145469353984 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 60
+INFO 2024-03-17 18:52:07,859 basehttp 40047 123145469353984 "GET /api/quotainfo/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 135
+INFO 2024-03-17 18:52:16,125 basehttp 40047 123145469353984 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:52:16,130 basehttp 40047 123145469353984 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 60
+INFO 2024-03-17 18:52:18,857 basehttp 40047 123145469353984 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:52:18,862 basehttp 40047 123145469353984 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 60
+INFO 2024-03-17 18:52:28,090 basehttp 40047 123145469353984 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:52:28,097 basehttp 40047 123145469353984 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 41
+INFO 2024-03-17 18:52:55,415 basehttp 40047 123145469353984 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:52:55,420 basehttp 40047 123145469353984 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 60
+INFO 2024-03-17 18:52:57,132 basehttp 40047 123145469353984 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:52:57,136 basehttp 40047 123145469353984 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 60
+INFO 2024-03-17 18:52:58,748 basehttp 40047 123145469353984 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:52:58,752 basehttp 40047 123145469353984 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 60
+INFO 2024-03-17 18:53:02,783 basehttp 40047 123145469353984 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:53:02,787 basehttp 40047 123145469353984 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 60
+INFO 2024-03-17 18:55:42,766 basehttp 40047 123145469353984 "GET /api/quotainfo/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 135
+INFO 2024-03-17 18:55:53,380 basehttp 40047 123145469353984 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:55:53,386 basehttp 40047 123145469353984 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 42
+INFO 2024-03-17 18:56:06,014 basehttp 40047 123145469353984 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:56:06,019 basehttp 40047 123145469353984 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 51
+INFO 2024-03-17 18:56:18,598 basehttp 40047 123145469353984 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:56:18,602 basehttp 40047 123145469353984 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 96
+INFO 2024-03-17 18:56:24,447 basehttp 40047 123145469353984 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:56:24,452 basehttp 40047 123145469353984 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 96
+INFO 2024-03-17 18:57:29,090 autoreload 40047 4697785856 /Users/lichaoyuan/Desktop/copytrade/api/views/account.py changed, reloading.
+INFO 2024-03-17 18:57:29,986 autoreload 40134 4579743232 Watching for file changes with StatReloader
+INFO 2024-03-17 18:57:35,184 basehttp 40134 123145484931072 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:57:35,193 basehttp 40134 123145484931072 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 96
+INFO 2024-03-17 18:58:22,501 basehttp 40134 123145484931072 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 18:58:22,506 basehttp 40134 123145484931072 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 51
+INFO 2024-03-17 18:59:50,427 basehttp 40134 123145484931072 "GET /api/quotainfo/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 135
+INFO 2024-03-17 19:00:01,550 basehttp 40134 123145484931072 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 19:00:01,556 basehttp 40134 123145484931072 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 164
+INFO 2024-03-17 19:00:06,215 basehttp 40134 123145484931072 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 19:00:06,220 basehttp 40134 123145484931072 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 164
+INFO 2024-03-17 19:00:36,278 basehttp 40134 123145484931072 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 19:00:36,283 basehttp 40134 123145484931072 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 164
+INFO 2024-03-17 19:00:40,160 basehttp 40134 123145484931072 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 19:00:40,165 basehttp 40134 123145484931072 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 164
+INFO 2024-03-17 19:02:48,029 basehttp 40134 123145484931072 "GET /api/quotainfo/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 135
+INFO 2024-03-17 19:02:57,936 basehttp 40134 123145484931072 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 19:02:57,941 basehttp 40134 123145484931072 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 164
+INFO 2024-03-17 19:03:03,936 basehttp 40134 123145484931072 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 19:03:03,941 basehttp 40134 123145484931072 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 42
+INFO 2024-03-17 19:03:12,369 basehttp 40134 123145484931072 "OPTIONS /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 0
+INFO 2024-03-17 19:03:12,375 basehttp 40134 123145484931072 "POST /api/changepassword/?token=6cdbcfd0-ebb3-4e16-8323-9c2ccb934487 HTTP/1.1" 200 41

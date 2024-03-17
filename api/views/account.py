@@ -97,9 +97,17 @@ class ChangePassword(APIView):
 
         password = serializer.validated_data.get('password')
         new_password = serializer.validated_data.get('new_password')
+        confirm_password = serializer.validated_data.get('confirm_password')
+
+        if len(new_password) < 6 and len(confirm_password) < 6:
+            return Response({"code": return_code.VALIDATE_ERROR, "error": "密码长度不能小于6位"})
+        if new_password != confirm_password:
+            return Response({"code": return_code.VALIDATE_ERROR, "error": "两次密码输入不一致"})
+        if new_password == old_password:
+            return Response({"code": return_code.VALIDATE_ERROR, "error": "新密码不能与当前密码相同"})
 
         if old_password != password:
-            return Response({"code": return_code.VALIDATE_ERROR, "error": "原始密码错误"})
+            return Response({"code": return_code.VALIDATE_ERROR, "error": "当前密码错误"})
 
         user.password = new_password
         user.save()
