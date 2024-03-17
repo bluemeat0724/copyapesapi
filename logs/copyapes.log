@@ -1,1 +1,918 @@
 INFO 2024-03-17 19:54:28,452 autoreload 18937 8644981440 Watching for file changes with StatReloader
+INFO 2024-03-17 20:55:51,763 autoreload 22468 8665543360 Watching for file changes with StatReloader
+INFO 2024-03-17 21:24:27,434 basehttp 22468 13131075584 "OPTIONS /api/login/ HTTP/1.1" 200 0
+INFO 2024-03-17 21:24:27,900 basehttp 22468 13131075584 "POST /api/login/ HTTP/1.1" 200 81
+INFO 2024-03-17 21:24:28,248 basehttp 22468 13131075584 "GET /api/quotainfo/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 133
+INFO 2024-03-17 21:24:32,667 basehttp 22468 13131075584 "GET /api/taskadd/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 13300
+INFO 2024-03-17 21:24:33,602 basehttp 22468 13131075584 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-17 21:24:34,034 basehttp 22468 13147865088 "GET /api/apiadd/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 532
+INFO 2024-03-17 21:24:34,428 basehttp 22468 13147865088 "GET /api/taskadd/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 13300
+INFO 2024-03-17 21:24:38,439 basehttp 22468 13131075584 "GET /api/tradeorder/311/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 20
+INFO 2024-03-17 21:24:38,449 basehttp 22468 13147865088 "GET /api/traderdetial/311/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 1464
+INFO 2024-03-17 21:24:38,779 basehttp 22468 13164654592 "GET /api/taskadd/311/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 212
+INFO 2024-03-17 21:25:30,679 basehttp 22468 13131075584 "GET /api/taskadd/311/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 212
+INFO 2024-03-17 21:25:30,685 basehttp 22468 13147865088 "GET /api/tradeorder/311/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 20
+INFO 2024-03-17 21:25:30,713 basehttp 22468 13164654592 "GET /api/traderdetial/311/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 1464
+INFO 2024-03-17 21:25:35,660 basehttp 22468 13164654592 "OPTIONS /api/taskadd/311/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 0
+INFO 2024-03-17 21:25:36,174 basehttp 22468 13164654592 "PATCH /api/taskadd/311/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 212
+INFO 2024-03-17 21:25:36,464 basehttp 22468 13147865088 "GET /api/tradeorder/311/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 20
+INFO 2024-03-17 21:25:36,492 basehttp 22468 13131075584 "GET /api/taskadd/311/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 212
+INFO 2024-03-17 21:25:36,493 basehttp 22468 13164654592 "GET /api/traderdetial/311/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 1464
+INFO 2024-03-17 21:25:44,459 basehttp 22468 13131075584 "GET /api/tradeorder/311/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 20
+INFO 2024-03-17 21:25:44,479 basehttp 22468 13147865088 "GET /api/taskadd/311/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 212
+INFO 2024-03-17 21:25:44,522 basehttp 22468 13164654592 "GET /api/traderdetial/311/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 1464
+INFO 2024-03-17 21:29:10,559 autoreload 2119 8640008896 Watching for file changes with StatReloader
+INFO 2024-03-17 21:29:47,999 basehttp 2119 13080449024 "GET /api/quotainfo/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 133
+INFO 2024-03-17 21:29:51,159 basehttp 2119 13080449024 "GET /api/taskadd/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 13300
+INFO 2024-03-17 21:29:51,757 basehttp 2119 13080449024 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-17 21:29:51,856 basehttp 2119 13097238528 "GET /api/apiadd/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 532
+INFO 2024-03-17 21:30:04,459 basehttp 2119 13097238528 "OPTIONS /api/taskadd/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 0
+ERROR 2024-03-17 21:30:04,624 log 2119 13097238528 Internal Server Error: /api/taskadd/
+Traceback (most recent call last):
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yb/my_project/ape/api/extension/mixins.py", line 9, in create
+    serializer = self.get_serializer(data=request.data)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/generics.py", line 110, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "/Users/yb/my_project/ape/api/serializers/task.py", line 25, in __init__
+    self.fields['flag'].read_only = True
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/utils/serializer_helpers.py", line 155, in __getitem__
+    return self.fields[key]
+KeyError: 'flag'
+ERROR 2024-03-17 21:30:04,626 basehttp 2119 13097238528 "POST /api/taskadd/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 500 115425
+ERROR 2024-03-17 21:30:10,108 log 2119 13097238528 Internal Server Error: /api/taskadd/
+Traceback (most recent call last):
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yb/my_project/ape/api/extension/mixins.py", line 9, in create
+    serializer = self.get_serializer(data=request.data)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/generics.py", line 110, in get_serializer
+    return serializer_class(*args, **kwargs)
+  File "/Users/yb/my_project/ape/api/serializers/task.py", line 25, in __init__
+    self.fields['flag'].read_only = True
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/utils/serializer_helpers.py", line 155, in __getitem__
+    return self.fields[key]
+KeyError: 'flag'
+ERROR 2024-03-17 21:30:10,108 basehttp 2119 13097238528 "POST /api/taskadd/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 500 115425
+INFO 2024-03-17 21:31:57,762 autoreload 2184 8641336000 Watching for file changes with StatReloader
+INFO 2024-03-17 21:32:47,557 autoreload 2234 8670454464 Watching for file changes with StatReloader
+INFO 2024-03-17 21:32:50,947 autoreload 2237 8648692416 Watching for file changes with StatReloader
+INFO 2024-03-17 21:33:03,626 basehttp 2237 13094596608 "POST /api/taskadd/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 231
+INFO 2024-03-17 21:33:03,681 basehttp 2237 13094596608 "OPTIONS /api/apiadd/24/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 0
+INFO 2024-03-17 21:33:03,792 basehttp 2237 13111386112 "GET /api/taskadd/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 13514
+INFO 2024-03-17 21:33:03,842 basehttp 2237 13094596608 "PATCH /api/apiadd/24/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 173
+INFO 2024-03-17 21:33:16,864 basehttp 2237 13111386112 "GET /api/tradeorder/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 20
+INFO 2024-03-17 21:33:16,878 basehttp 2237 13094596608 "GET /api/traderdetial/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 318
+INFO 2024-03-17 21:33:16,947 basehttp 2237 13128175616 "GET /api/taskadd/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 213
+INFO 2024-03-17 21:33:53,919 basehttp 2237 13111386112 "GET /api/taskadd/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 213
+INFO 2024-03-17 21:33:53,920 basehttp 2237 13128175616 "GET /api/traderdetial/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 607
+INFO 2024-03-17 21:33:53,927 basehttp 2237 13094596608 "GET /api/tradeorder/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 20
+INFO 2024-03-17 21:34:18,885 basehttp 2237 13111386112 "GET /api/taskadd/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 213
+INFO 2024-03-17 21:34:18,887 basehttp 2237 13094596608 "GET /api/traderdetial/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 607
+INFO 2024-03-17 21:34:18,891 basehttp 2237 13128175616 "GET /api/tradeorder/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 20
+INFO 2024-03-17 21:34:21,124 basehttp 2237 13111386112 "GET /api/taskadd/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 213
+INFO 2024-03-17 21:34:21,125 basehttp 2237 13094596608 "GET /api/tradeorder/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 20
+INFO 2024-03-17 21:34:21,125 basehttp 2237 13128175616 "GET /api/traderdetial/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 607
+INFO 2024-03-17 21:35:00,906 basehttp 2237 13094596608 "GET /api/tradeorder/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 20
+INFO 2024-03-17 21:35:00,916 basehttp 2237 13111386112 "GET /api/taskadd/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 213
+INFO 2024-03-17 21:35:00,917 basehttp 2237 13128175616 "GET /api/traderdetial/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 939
+INFO 2024-03-17 21:47:36,072 basehttp 2237 13094596608 "OPTIONS /api/taskadd/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 0
+ERROR 2024-03-17 21:48:12,617 log 2237 13094596608 Internal Server Error: /api/taskadd/312/
+Traceback (most recent call last):
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/connection.py", line 500, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/_parsers/resp2.py", line 15, in read_response
+    result = self._read_response(disable_decoding=disable_decoding)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/_parsers/resp2.py", line 25, in _read_response
+    raw = self._buffer.readline()
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/_parsers/socket.py", line 115, in readline
+    self._read_from_socket()
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/_parsers/socket.py", line 65, in _read_from_socket
+    data = self._sock.recv(socket_read_size)
+TimeoutError: [Errno 60] Operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/mixins.py", line 68, in update
+    self.perform_update(serializer)
+  File "/Users/yb/my_project/ape/api/views/task.py", line 72, in perform_update
+    conn.lpush(settings.QUEUE_TASK_NAME, tid)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/commands/core.py", line 2734, in lpush
+    return self.execute_command("LPUSH", name, *values)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 536, in execute_command
+    return conn.retry.call_with_retry(
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 540, in <lambda>
+    lambda error: self._disconnect_raise(conn, error),
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 526, in _disconnect_raise
+    raise error
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 537, in <lambda>
+    lambda: self._send_command_parse_response(
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 513, in _send_command_parse_response
+    return self.parse_response(conn, command_name, **options)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 553, in parse_response
+    response = connection.read_response()
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/connection.py", line 508, in read_response
+    raise ConnectionError(
+redis.exceptions.ConnectionError: Error while reading from 121.43.178.20:6379 : (60, 'Operation timed out')
+ERROR 2024-03-17 21:48:12,620 basehttp 2237 13094596608 "PATCH /api/taskadd/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 500 179824
+INFO 2024-03-17 21:48:16,617 basehttp 2237 13111386112 "GET /api/tradeorder/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 20
+INFO 2024-03-17 21:48:16,667 basehttp 2237 13094596608 "GET /api/traderdetial/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 939
+INFO 2024-03-17 21:48:16,675 basehttp 2237 13128175616 "GET /api/taskadd/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 213
+INFO 2024-03-17 21:50:38,888 basehttp 2237 13094596608 "GET /api/tradeorder/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 20
+INFO 2024-03-17 21:50:38,892 basehttp 2237 13111386112 "GET /api/taskadd/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 213
+INFO 2024-03-17 21:50:38,896 basehttp 2237 13128175616 "GET /api/traderdetial/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 939
+INFO 2024-03-17 21:50:57,704 basehttp 2237 13128175616 "GET /api/traderdetial/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 939
+INFO 2024-03-17 21:50:57,704 basehttp 2237 13094596608 "GET /api/taskadd/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 213
+INFO 2024-03-17 21:50:57,706 basehttp 2237 13111386112 "GET /api/tradeorder/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 20
+INFO 2024-03-17 21:51:01,474 basehttp 2237 13111386112 "PATCH /api/taskadd/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 213
+INFO 2024-03-17 21:51:01,693 basehttp 2237 13094596608 "GET /api/taskadd/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 213
+INFO 2024-03-17 21:51:01,694 basehttp 2237 13128175616 "GET /api/tradeorder/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 20
+INFO 2024-03-17 21:51:01,706 basehttp 2237 13111386112 "GET /api/traderdetial/312/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 1048
+INFO 2024-03-17 21:51:55,839 basehttp 2237 13111386112 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-17 21:51:55,860 basehttp 2237 13128175616 "GET /api/apiadd/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 532
+INFO 2024-03-17 21:52:19,229 basehttp 2237 13128175616 "POST /api/taskadd/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 231
+INFO 2024-03-17 21:52:19,252 basehttp 2237 13128175616 "OPTIONS /api/apiadd/23/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 0
+INFO 2024-03-17 21:52:19,354 basehttp 2237 13128175616 "PATCH /api/apiadd/23/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 169
+INFO 2024-03-17 21:52:19,355 basehttp 2237 13111386112 "GET /api/taskadd/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 13728
+INFO 2024-03-17 21:52:20,925 basehttp 2237 13094596608 "GET /api/taskadd/313/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 213
+INFO 2024-03-17 21:52:20,926 basehttp 2237 13111386112 "GET /api/traderdetial/313/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 318
+INFO 2024-03-17 21:52:20,927 basehttp 2237 13128175616 "GET /api/tradeorder/313/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 20
+INFO 2024-03-17 21:53:01,232 basehttp 2237 13128175616 "GET /api/traderdetial/313/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 486
+INFO 2024-03-17 21:53:01,233 basehttp 2237 13111386112 "GET /api/tradeorder/313/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 20
+INFO 2024-03-17 21:53:01,233 basehttp 2237 13094596608 "GET /api/taskadd/313/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 213
+INFO 2024-03-17 21:53:19,406 basehttp 2237 13111386112 "GET /api/tradeorder/313/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 20
+INFO 2024-03-17 21:53:19,406 basehttp 2237 13128175616 "GET /api/taskadd/313/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 213
+INFO 2024-03-17 21:53:19,414 basehttp 2237 13094596608 "GET /api/traderdetial/313/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 654
+INFO 2024-03-17 21:53:58,524 basehttp 2237 13094596608 "OPTIONS /api/taskadd/313/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 0
+INFO 2024-03-17 21:53:58,663 basehttp 2237 13094596608 "PATCH /api/taskadd/313/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 213
+INFO 2024-03-17 21:53:58,890 basehttp 2237 13111386112 "GET /api/tradeorder/313/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 20
+INFO 2024-03-17 21:53:58,894 basehttp 2237 13128175616 "GET /api/taskadd/313/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 213
+INFO 2024-03-17 21:53:58,915 basehttp 2237 13094596608 "GET /api/traderdetial/313/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 763
+INFO 2024-03-17 21:56:25,359 basehttp 2237 13128175616 "GET /api/tradeorder/313/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 20
+INFO 2024-03-17 21:56:25,359 basehttp 2237 13111386112 "GET /api/taskadd/313/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 213
+INFO 2024-03-17 21:56:25,371 basehttp 2237 13094596608 "GET /api/traderdetial/313/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 763
+INFO 2024-03-17 22:02:40,649 basehttp 2237 13111386112 "OPTIONS /api/login/ HTTP/1.1" 200 0
+INFO 2024-03-17 22:02:43,576 basehttp 2237 13094596608 "GET /api/quotainfo/?token=4f34ac43-4a1b-4a98-9d56-cf5eefc909f7 HTTP/1.1" 200 133
+INFO 2024-03-17 22:02:43,589 basehttp 2237 13128175616 "POST /api/login/ HTTP/1.1" 200 81
+INFO 2024-03-17 22:02:43,703 basehttp 2237 13128175616 "GET /api/quotainfo/?token=8d015122-b2ed-4bce-b91b-0a8491591024 HTTP/1.1" 200 133
+INFO 2024-03-17 22:02:51,507 basehttp 2237 13128175616 "GET /api/taskadd/?token=8d015122-b2ed-4bce-b91b-0a8491591024 HTTP/1.1" 200 13728
+INFO 2024-03-17 22:02:52,630 basehttp 2237 13128175616 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-17 22:02:52,649 basehttp 2237 13094596608 "GET /api/apiadd/?token=8d015122-b2ed-4bce-b91b-0a8491591024 HTTP/1.1" 200 532
+INFO 2024-03-17 22:02:53,700 basehttp 2237 13094596608 "GET /api/taskadd/?token=8d015122-b2ed-4bce-b91b-0a8491591024 HTTP/1.1" 200 13728
+INFO 2024-03-17 22:02:55,523 basehttp 2237 13094596608 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-17 22:02:55,556 basehttp 2237 13128175616 "GET /api/apiadd/?token=8d015122-b2ed-4bce-b91b-0a8491591024 HTTP/1.1" 200 532
+INFO 2024-03-17 22:02:56,707 basehttp 2237 13128175616 "GET /api/apiadd/?token=8d015122-b2ed-4bce-b91b-0a8491591024 HTTP/1.1" 200 532
+INFO 2024-03-17 22:02:57,258 basehttp 2237 13128175616 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-17 22:02:57,283 basehttp 2237 13094596608 "GET /api/apiadd/?token=8d015122-b2ed-4bce-b91b-0a8491591024 HTTP/1.1" 200 532
+INFO 2024-03-17 22:02:57,886 basehttp 2237 13094596608 "GET /api/taskadd/?token=8d015122-b2ed-4bce-b91b-0a8491591024 HTTP/1.1" 200 13728
+INFO 2024-03-17 22:02:58,412 basehttp 2237 13094596608 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-17 22:02:58,441 basehttp 2237 13128175616 "GET /api/apiadd/?token=8d015122-b2ed-4bce-b91b-0a8491591024 HTTP/1.1" 200 532
+INFO 2024-03-17 22:02:58,854 basehttp 2237 13111386112 "POST /api/login/ HTTP/1.1" 200 81
+INFO 2024-03-17 22:02:58,987 basehttp 2237 13111386112 "GET /api/quotainfo/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 133
+INFO 2024-03-17 22:03:00,694 basehttp 2237 13111386112 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-17 22:03:00,721 basehttp 2237 13128175616 "GET /api/apiadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 532
+INFO 2024-03-17 22:03:01,750 basehttp 2237 13128175616 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 13728
+INFO 2024-03-17 22:03:02,948 basehttp 2237 13128175616 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-17 22:03:02,967 basehttp 2237 13111386112 "GET /api/apiadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 532
+INFO 2024-03-17 22:03:03,765 basehttp 2237 13111386112 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 13728
+INFO 2024-03-17 22:03:04,993 basehttp 2237 13111386112 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-17 22:03:05,012 basehttp 2237 13128175616 "GET /api/apiadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 532
+INFO 2024-03-17 22:06:46,069 autoreload 2237 8648692416 /Users/yb/my_project/ape/api/models.py changed, reloading.
+INFO 2024-03-17 22:06:47,055 autoreload 3095 8644920000 Watching for file changes with StatReloader
+INFO 2024-03-17 22:07:04,501 autoreload 3095 8644920000 /Users/yb/my_project/ape/api/models.py changed, reloading.
+INFO 2024-03-17 22:07:05,305 autoreload 3104 8640094912 Watching for file changes with StatReloader
+INFO 2024-03-17 22:07:45,027 autoreload 3104 8640094912 /Users/yb/my_project/ape/api/models.py changed, reloading.
+INFO 2024-03-17 22:07:45,830 autoreload 3112 8610538176 Watching for file changes with StatReloader
+INFO 2024-03-17 22:09:11,445 autoreload 3112 8610538176 /Users/yb/my_project/ape/api/models.py changed, reloading.
+INFO 2024-03-17 22:09:12,445 autoreload 3137 8606372544 Watching for file changes with StatReloader
+INFO 2024-03-17 22:09:32,060 autoreload 3137 8606372544 /Users/yb/my_project/ape/api/models.py changed, reloading.
+INFO 2024-03-17 22:09:32,911 autoreload 3146 8674009792 Watching for file changes with StatReloader
+INFO 2024-03-17 22:10:07,201 autoreload 3146 8674009792 /Users/yb/my_project/ape/api/models.py changed, reloading.
+INFO 2024-03-17 22:10:08,059 autoreload 3174 8640893632 Watching for file changes with StatReloader
+INFO 2024-03-17 22:10:16,974 autoreload 3174 8640893632 /Users/yb/my_project/ape/api/models.py changed, reloading.
+INFO 2024-03-17 22:10:17,805 autoreload 3180 8637338304 Watching for file changes with StatReloader
+INFO 2024-03-17 22:10:44,760 autoreload 3180 8637338304 /Users/yb/my_project/ape/api/models.py changed, reloading.
+INFO 2024-03-17 22:10:45,567 autoreload 3185 8645792448 Watching for file changes with StatReloader
+INFO 2024-03-17 22:11:02,948 autoreload 3185 8645792448 /Users/yb/my_project/ape/api/models.py changed, reloading.
+INFO 2024-03-17 22:11:03,813 autoreload 3195 8673534656 Watching for file changes with StatReloader
+INFO 2024-03-17 22:12:36,975 autoreload 3195 8673534656 /Users/yb/my_project/ape/api/models.py changed, reloading.
+INFO 2024-03-17 22:12:37,779 autoreload 3216 8599577280 Watching for file changes with StatReloader
+INFO 2024-03-17 22:15:49,799 basehttp 3216 12999512064 "OPTIONS /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 0
+ERROR 2024-03-17 22:15:49,991 exceptions 3216 12999512064 [<api.views.task.TaskAddView object at 0x7fd8b0dffdf0>] (1054, "Unknown column 'api_taskinfo.lever_age' in 'field list'")
+ERROR 2024-03-17 22:15:49,995 log 3216 12999512064 Insufficient Storage: /api/taskadd/
+ERROR 2024-03-17 22:15:49,996 basehttp 3216 12999512064 "POST /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 507 35
+INFO 2024-03-17 22:19:54,305 autoreload 3216 8599577280 /Users/yb/my_project/ape/api/models.py changed, reloading.
+INFO 2024-03-17 22:19:55,234 autoreload 3285 8614154944 Watching for file changes with StatReloader
+INFO 2024-03-17 22:27:32,032 autoreload 3285 8614154944 /Users/yb/my_project/ape/api/models.py changed, reloading.
+INFO 2024-03-17 22:27:32,882 autoreload 3380 8676729536 Watching for file changes with StatReloader
+INFO 2024-03-17 22:27:44,048 autoreload 3380 8676729536 /Users/yb/my_project/ape/api/models.py changed, reloading.
+INFO 2024-03-17 22:27:44,950 autoreload 3387 8672711360 Watching for file changes with StatReloader
+INFO 2024-03-17 22:29:20,967 basehttp 3387 13145911296 "POST /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 230
+INFO 2024-03-17 22:29:21,003 basehttp 3387 13145911296 "OPTIONS /api/apiadd/24/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 0
+INFO 2024-03-17 22:29:21,089 basehttp 3387 13162700800 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 13941
+INFO 2024-03-17 22:29:21,127 basehttp 3387 13145911296 "PATCH /api/apiadd/24/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 173
+INFO 2024-03-17 22:33:27,506 autoreload 3478 8672039616 Watching for file changes with StatReloader
+INFO 2024-03-17 22:33:42,018 basehttp 3478 13142880256 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-17 22:33:42,027 basehttp 3478 13159669760 "GET /api/apiadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 532
+INFO 2024-03-17 22:36:09,331 autoreload 3478 8672039616 /Users/yb/my_project/ape/api/serializers/task.py changed, reloading.
+INFO 2024-03-17 22:36:10,298 autoreload 3524 8639984320 Watching for file changes with StatReloader
+INFO 2024-03-17 22:36:41,847 autoreload 3524 8639984320 /Users/yb/my_project/ape/api/serializers/task.py changed, reloading.
+INFO 2024-03-17 22:36:42,684 autoreload 3529 8680006336 Watching for file changes with StatReloader
+INFO 2024-03-17 22:36:53,901 autoreload 3529 8680006336 /Users/yb/my_project/ape/api/serializers/task.py changed, reloading.
+INFO 2024-03-17 22:36:54,702 autoreload 3534 8667198144 Watching for file changes with StatReloader
+INFO 2024-03-17 22:37:03,703 autoreload 3534 8667198144 /Users/yb/my_project/ape/api/serializers/task.py changed, reloading.
+INFO 2024-03-17 22:37:04,538 autoreload 3539 8600351424 Watching for file changes with StatReloader
+INFO 2024-03-17 22:37:11,024 autoreload 3546 8606155456 Watching for file changes with StatReloader
+ERROR 2024-03-17 22:38:10,637 log 3546 13012455424 Internal Server Error: /api/taskadd/
+Traceback (most recent call last):
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yb/my_project/ape/api/extension/mixins.py", line 14, in create
+    res = self.perform_create(serializer)
+  File "/Users/yb/my_project/ape/api/views/task.py", line 48, in perform_create
+    serializer.save(user=self.request.user)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/serializers.py", line 191, in save
+    assert not hasattr(self, '_data'), (
+AssertionError: You cannot call `.save()` after accessing `serializer.data`.If you need to access data before committing to the database then inspect 'serializer.validated_data' instead. 
+ERROR 2024-03-17 22:38:10,639 basehttp 3546 13012455424 "POST /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 500 117833
+INFO 2024-03-17 22:38:53,889 autoreload 3574 8598614720 Watching for file changes with StatReloader
+INFO 2024-03-17 22:39:02,833 basehttp 3574 12994744320 "POST /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 278
+INFO 2024-03-17 22:39:02,871 basehttp 3574 12994744320 "OPTIONS /api/apiadd/23/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 0
+INFO 2024-03-17 22:39:02,967 basehttp 3574 13011533824 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 17411
+INFO 2024-03-17 22:39:03,023 basehttp 3574 12994744320 "PATCH /api/apiadd/23/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 169
+INFO 2024-03-17 22:41:20,477 basehttp 3574 12994744320 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-17 22:41:20,497 basehttp 3574 13011533824 "GET /api/apiadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 532
+INFO 2024-03-17 22:41:54,660 basehttp 3574 13011533824 "POST /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 277
+INFO 2024-03-17 22:41:54,697 basehttp 3574 13011533824 "OPTIONS /api/apiadd/18/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 0
+INFO 2024-03-17 22:41:54,763 basehttp 3574 12994744320 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 17671
+INFO 2024-03-17 22:41:54,764 basehttp 3574 13011533824 "PATCH /api/apiadd/18/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 168
+INFO 2024-03-17 22:54:35,782 autoreload 1964 8638669504 Watching for file changes with StatReloader
+INFO 2024-03-17 22:54:42,654 basehttp 1964 13023600640 "GET /api/quotainfo/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 133
+INFO 2024-03-17 22:54:44,130 basehttp 1964 13023600640 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 17671
+INFO 2024-03-17 23:08:26,464 basehttp 1964 13023600640 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 17671
+INFO 2024-03-17 23:08:29,854 basehttp 1964 13023600640 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 17671
+INFO 2024-03-17 23:08:32,179 basehttp 1964 13023600640 "GET /api/traderdetial/316/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 767
+INFO 2024-03-17 23:08:32,229 basehttp 1964 13057179648 "GET /api/taskadd/316/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 259
+INFO 2024-03-17 23:08:32,230 basehttp 1964 13040390144 "GET /api/tradeorder/316/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-17 23:08:42,218 basehttp 1964 13040390144 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 17671
+INFO 2024-03-17 23:08:44,071 basehttp 1964 13023600640 "GET /api/taskadd/315/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 260
+INFO 2024-03-17 23:08:44,076 basehttp 1964 13057179648 "GET /api/tradeorder/315/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-17 23:08:44,085 basehttp 1964 13040390144 "GET /api/traderdetial/315/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 767
+INFO 2024-03-17 23:08:46,203 basehttp 1964 13040390144 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 17671
+INFO 2024-03-17 23:08:47,762 basehttp 1964 13057179648 "GET /api/tradeorder/314/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-17 23:08:47,766 basehttp 1964 13023600640 "GET /api/taskadd/314/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 259
+INFO 2024-03-17 23:08:47,773 basehttp 1964 13040390144 "GET /api/traderdetial/314/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 603
+INFO 2024-03-17 23:08:50,612 basehttp 1964 13040390144 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 17671
+INFO 2024-03-17 23:08:52,151 basehttp 1964 13023600640 "GET /api/tradeorder/315/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-17 23:08:52,152 basehttp 1964 13057179648 "GET /api/taskadd/315/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 260
+INFO 2024-03-17 23:08:52,158 basehttp 1964 13040390144 "GET /api/traderdetial/315/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 767
+INFO 2024-03-17 23:08:54,910 basehttp 1964 13040390144 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 17671
+INFO 2024-03-17 23:08:56,132 basehttp 1964 13023600640 "GET /api/taskadd/316/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 259
+INFO 2024-03-17 23:08:56,134 basehttp 1964 13057179648 "GET /api/tradeorder/316/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-17 23:08:56,146 basehttp 1964 13040390144 "GET /api/traderdetial/316/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 767
+INFO 2024-03-17 23:11:09,911 autoreload 1898 8600249024 Watching for file changes with StatReloader
+INFO 2024-03-17 23:11:17,127 basehttp 1898 12950249472 "GET /api/quotainfo/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 133
+INFO 2024-03-17 23:13:43,525 basehttp 1898 12950249472 "GET /api/quotainfo/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 133
+INFO 2024-03-17 23:14:21,572 basehttp 1898 12950249472 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 17671
+INFO 2024-03-17 23:14:22,669 basehttp 1898 12950249472 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-17 23:14:22,741 basehttp 1898 12967038976 "GET /api/apiadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 532
+INFO 2024-03-17 23:14:23,418 basehttp 1898 12967038976 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 17671
+INFO 2024-03-17 23:14:25,293 basehttp 1898 12950249472 "GET /api/tradeorder/314/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-17 23:14:25,311 basehttp 1898 12967038976 "GET /api/traderdetial/314/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 724
+INFO 2024-03-17 23:14:25,369 basehttp 1898 12983828480 "GET /api/taskadd/314/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 259
+INFO 2024-03-17 23:14:28,058 basehttp 1898 12983828480 "OPTIONS /api/taskadd/314/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 0
+INFO 2024-03-17 23:14:28,277 basehttp 1898 12983828480 "PATCH /api/taskadd/314/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 259
+INFO 2024-03-17 23:14:28,665 basehttp 1898 12950249472 "GET /api/taskadd/314/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 259
+INFO 2024-03-17 23:14:28,666 basehttp 1898 12967038976 "GET /api/tradeorder/314/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-17 23:14:28,675 basehttp 1898 12983828480 "GET /api/traderdetial/314/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 724
+INFO 2024-03-17 23:14:31,351 basehttp 1898 12983828480 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 17671
+INFO 2024-03-17 23:14:33,934 basehttp 1898 12967038976 "GET /api/tradeorder/315/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-17 23:14:33,934 basehttp 1898 12950249472 "GET /api/taskadd/315/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 260
+INFO 2024-03-17 23:14:33,941 basehttp 1898 12983828480 "GET /api/traderdetial/315/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 888
+INFO 2024-03-17 23:14:35,995 basehttp 1898 12983828480 "OPTIONS /api/taskadd/315/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 0
+INFO 2024-03-17 23:14:36,137 basehttp 1898 12983828480 "PATCH /api/taskadd/315/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 260
+INFO 2024-03-17 23:14:36,360 basehttp 1898 12967038976 "GET /api/taskadd/315/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 260
+INFO 2024-03-17 23:14:36,362 basehttp 1898 12950249472 "GET /api/tradeorder/315/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-17 23:14:36,368 basehttp 1898 12983828480 "GET /api/traderdetial/315/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 888
+INFO 2024-03-17 23:14:37,562 basehttp 1898 12983828480 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 17671
+INFO 2024-03-17 23:14:38,967 basehttp 1898 12967038976 "GET /api/taskadd/316/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 259
+INFO 2024-03-17 23:14:38,969 basehttp 1898 12950249472 "GET /api/tradeorder/316/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-17 23:14:38,979 basehttp 1898 12983828480 "GET /api/traderdetial/316/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 888
+INFO 2024-03-17 23:14:40,731 basehttp 1898 12983828480 "OPTIONS /api/taskadd/316/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 0
+INFO 2024-03-17 23:14:40,852 basehttp 1898 12983828480 "PATCH /api/taskadd/316/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 259
+INFO 2024-03-17 23:14:41,063 basehttp 1898 12967038976 "GET /api/taskadd/316/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 259
+INFO 2024-03-17 23:14:41,067 basehttp 1898 12950249472 "GET /api/tradeorder/316/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-17 23:14:41,078 basehttp 1898 12983828480 "GET /api/traderdetial/316/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 888
+INFO 2024-03-17 23:14:43,507 basehttp 1898 12983828480 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 17671
+INFO 2024-03-17 23:15:02,747 basehttp 1898 12983828480 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-17 23:15:02,759 basehttp 1898 12950249472 "GET /api/apiadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 532
+INFO 2024-03-17 23:15:13,124 basehttp 1898 12950249472 "OPTIONS /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 0
+INFO 2024-03-17 23:15:13,268 basehttp 1898 12950249472 "POST /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 278
+INFO 2024-03-17 23:15:13,302 basehttp 1898 12950249472 "OPTIONS /api/apiadd/24/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 0
+INFO 2024-03-17 23:15:13,368 basehttp 1898 12983828480 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 17932
+INFO 2024-03-17 23:15:13,369 basehttp 1898 12950249472 "PATCH /api/apiadd/24/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 173
+INFO 2024-03-17 23:39:49,686 basehttp 1898 12950249472 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-17 23:39:49,699 basehttp 1898 12967038976 "GET /api/apiadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 532
+INFO 2024-03-17 23:40:12,710 basehttp 1898 12950249472 "POST /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 36
+INFO 2024-03-17 23:40:26,280 basehttp 1898 12950249472 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-17 23:40:26,304 basehttp 1898 12983828480 "GET /api/apiadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 532
+ERROR 2024-03-17 23:40:27,978 log 1898 12967038976 Internal Server Error: /api/taskadd/
+Traceback (most recent call last):
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/connection.py", line 500, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/_parsers/resp2.py", line 15, in read_response
+    result = self._read_response(disable_decoding=disable_decoding)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/_parsers/resp2.py", line 25, in _read_response
+    raw = self._buffer.readline()
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/_parsers/socket.py", line 115, in readline
+    self._read_from_socket()
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/_parsers/socket.py", line 65, in _read_from_socket
+    data = self._sock.recv(socket_read_size)
+TimeoutError: [Errno 60] Operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yb/my_project/ape/api/extension/mixins.py", line 14, in create
+    res = self.perform_create(serializer)
+  File "/Users/yb/my_project/ape/api/views/task.py", line 53, in perform_create
+    conn.lpush(settings.QUEUE_TASK_NAME, tid)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/commands/core.py", line 2734, in lpush
+    return self.execute_command("LPUSH", name, *values)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 536, in execute_command
+    return conn.retry.call_with_retry(
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 540, in <lambda>
+    lambda error: self._disconnect_raise(conn, error),
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 526, in _disconnect_raise
+    raise error
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 537, in <lambda>
+    lambda: self._send_command_parse_response(
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 513, in _send_command_parse_response
+    return self.parse_response(conn, command_name, **options)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 553, in parse_response
+    response = connection.read_response()
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/connection.py", line 508, in read_response
+    raise ConnectionError(
+redis.exceptions.ConnectionError: Error while reading from 121.43.178.20:6379 : (60, 'Operation timed out')
+ERROR 2024-03-17 23:40:27,979 basehttp 1898 12967038976 "POST /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 500 171905
+INFO 2024-03-17 23:40:27,989 basehttp 1898 12967038976 - Broken pipe from ('127.0.0.1', 52907)
+
+INFO 2024-03-17 23:40:43,789 basehttp 1898 12983828480 "POST /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 278
+INFO 2024-03-17 23:40:43,809 basehttp 1898 12983828480 "OPTIONS /api/apiadd/18/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 0
+INFO 2024-03-17 23:40:43,893 basehttp 1898 12983828480 "PATCH /api/apiadd/18/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 168
+INFO 2024-03-17 23:40:43,893 basehttp 1898 12950249472 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 18455
+INFO 2024-03-18 00:25:32,238 basehttp 1898 12983828480 "GET /api/taskadd/319/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 260
+INFO 2024-03-18 00:25:32,251 basehttp 1898 12967038976 "GET /api/tradeorder/319/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-18 00:25:32,251 basehttp 1898 12950249472 "GET /api/traderdetial/319/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 316
+INFO 2024-03-18 00:37:53,846 autoreload 2271 8614208192 Watching for file changes with StatReloader
+INFO 2024-03-18 00:38:08,002 basehttp 2271 12975726592 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 18455
+INFO 2024-03-18 00:38:11,774 basehttp 2271 12975726592 "OPTIONS /api/taskadd/317/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 0
+INFO 2024-03-18 00:38:11,961 basehttp 2271 12975726592 "PATCH /api/taskadd/317/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 260
+INFO 2024-03-18 00:38:12,021 basehttp 2271 12975726592 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 18455
+INFO 2024-03-18 00:38:13,849 basehttp 2271 12975726592 "OPTIONS /api/taskadd/318/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 0
+INFO 2024-03-18 00:38:13,963 basehttp 2271 12975726592 "PATCH /api/taskadd/318/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 261
+INFO 2024-03-18 00:38:14,023 basehttp 2271 12975726592 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 18455
+INFO 2024-03-18 00:38:15,951 basehttp 2271 12975726592 "OPTIONS /api/taskadd/319/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 0
+INFO 2024-03-18 00:38:16,069 basehttp 2271 12975726592 "PATCH /api/taskadd/319/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 260
+INFO 2024-03-18 00:38:16,126 basehttp 2271 12975726592 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 18455
+INFO 2024-03-18 00:38:17,531 basehttp 2271 12975726592 "GET /api/traderdetial/319/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 603
+INFO 2024-03-18 00:38:17,580 basehttp 2271 12992516096 "GET /api/tradeorder/319/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-18 00:38:17,587 basehttp 2271 13009305600 "GET /api/taskadd/319/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 260
+INFO 2024-03-18 00:38:22,900 basehttp 2271 13009305600 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 18455
+INFO 2024-03-18 00:38:57,214 basehttp 2271 13009305600 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-18 00:38:57,229 basehttp 2271 12992516096 "GET /api/apiadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 532
+INFO 2024-03-18 00:39:23,612 basehttp 2271 12992516096 "OPTIONS /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 0
+INFO 2024-03-18 00:39:23,873 basehttp 2271 12992516096 "POST /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 279
+INFO 2024-03-18 00:39:23,917 basehttp 2271 12992516096 "OPTIONS /api/apiadd/24/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 0
+INFO 2024-03-18 00:39:24,015 basehttp 2271 13009305600 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 18717
+INFO 2024-03-18 00:39:24,045 basehttp 2271 12992516096 "PATCH /api/apiadd/24/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 173
+INFO 2024-03-18 00:39:27,231 basehttp 2271 13009305600 "GET /api/tradeorder/320/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-18 00:39:27,231 basehttp 2271 12975726592 "GET /api/taskadd/320/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 261
+INFO 2024-03-18 00:39:27,257 basehttp 2271 12992516096 "GET /api/traderdetial/320/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 318
+INFO 2024-03-18 00:39:29,637 basehttp 2271 12992516096 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 18717
+INFO 2024-03-18 00:39:30,859 basehttp 2271 12992516096 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-18 00:39:30,896 basehttp 2271 12975726592 "GET /api/apiadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 532
+INFO 2024-03-18 00:40:05,133 basehttp 2271 12975726592 "POST /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 280
+INFO 2024-03-18 00:40:05,161 basehttp 2271 12975726592 "OPTIONS /api/apiadd/23/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 0
+INFO 2024-03-18 00:40:05,213 basehttp 2271 12992516096 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 18980
+INFO 2024-03-18 00:40:05,219 basehttp 2271 12975726592 "PATCH /api/apiadd/23/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 169
+INFO 2024-03-18 00:40:07,180 basehttp 2271 12992516096 "GET /api/tradeorder/320/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-18 00:40:07,181 basehttp 2271 13009305600 "GET /api/taskadd/320/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 261
+INFO 2024-03-18 00:40:07,191 basehttp 2271 12975726592 "GET /api/traderdetial/320/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 318
+INFO 2024-03-18 00:40:08,926 basehttp 2271 12975726592 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 18980
+INFO 2024-03-18 00:40:10,756 basehttp 2271 12992516096 "GET /api/tradeorder/321/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-18 00:40:10,764 basehttp 2271 13009305600 "GET /api/taskadd/321/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 262
+INFO 2024-03-18 00:40:10,764 basehttp 2271 12975726592 "GET /api/traderdetial/321/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 318
+INFO 2024-03-18 00:55:44,367 basehttp 2271 12975726592 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 18980
+INFO 2024-03-18 00:55:46,349 basehttp 2271 12975726592 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-18 00:55:46,372 basehttp 2271 12992516096 "GET /api/apiadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 532
+INFO 2024-03-18 00:55:54,422 basehttp 2271 12992516096 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 18980
+INFO 2024-03-18 00:55:56,937 basehttp 2271 12992516096 "OPTIONS /api/taskadd/321/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 0
+ERROR 2024-03-18 00:56:15,193 log 2271 12992516096 Internal Server Error: /api/taskadd/321/
+Traceback (most recent call last):
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/connection.py", line 500, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/_parsers/resp2.py", line 15, in read_response
+    result = self._read_response(disable_decoding=disable_decoding)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/_parsers/resp2.py", line 25, in _read_response
+    raw = self._buffer.readline()
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/_parsers/socket.py", line 115, in readline
+    self._read_from_socket()
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/_parsers/socket.py", line 65, in _read_from_socket
+    data = self._sock.recv(socket_read_size)
+TimeoutError: [Errno 60] Operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/mixins.py", line 68, in update
+    self.perform_update(serializer)
+  File "/Users/yb/my_project/ape/api/views/task.py", line 72, in perform_update
+    conn.lpush(settings.QUEUE_TASK_NAME, tid)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/commands/core.py", line 2734, in lpush
+    return self.execute_command("LPUSH", name, *values)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 536, in execute_command
+    return conn.retry.call_with_retry(
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 540, in <lambda>
+    lambda error: self._disconnect_raise(conn, error),
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 526, in _disconnect_raise
+    raise error
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 537, in <lambda>
+    lambda: self._send_command_parse_response(
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 513, in _send_command_parse_response
+    return self.parse_response(conn, command_name, **options)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 553, in parse_response
+    response = connection.read_response()
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/connection.py", line 508, in read_response
+    raise ConnectionError(
+redis.exceptions.ConnectionError: Error while reading from 121.43.178.20:6379 : (60, 'Operation timed out')
+ERROR 2024-03-18 00:56:15,194 basehttp 2271 12992516096 "PATCH /api/taskadd/321/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 500 175847
+INFO 2024-03-18 00:56:33,955 basehttp 2271 12992516096 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 18980
+INFO 2024-03-18 00:56:37,117 basehttp 2271 12992516096 "OPTIONS /api/taskadd/320/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 0
+INFO 2024-03-18 00:56:37,311 basehttp 2271 12992516096 "PATCH /api/taskadd/320/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 261
+INFO 2024-03-18 00:56:37,376 basehttp 2271 12992516096 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 18980
+INFO 2024-03-18 00:56:40,078 basehttp 2271 12975726592 "GET /api/tradeorder/320/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-18 00:56:40,086 basehttp 2271 13009305600 "GET /api/taskadd/320/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 261
+INFO 2024-03-18 00:56:40,088 basehttp 2271 12992516096 "GET /api/traderdetial/320/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 1918
+INFO 2024-03-18 00:56:46,261 basehttp 2271 12992516096 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 18980
+INFO 2024-03-18 00:56:48,718 basehttp 2271 12992516096 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-18 00:56:48,733 basehttp 2271 13009305600 "GET /api/apiadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 532
+INFO 2024-03-18 00:57:02,493 basehttp 2271 13009305600 "POST /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 278
+INFO 2024-03-18 00:57:02,596 basehttp 2271 12992516096 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 19241
+INFO 2024-03-18 00:57:02,596 basehttp 2271 13009305600 "PATCH /api/apiadd/24/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 173
+INFO 2024-03-18 00:57:04,623 basehttp 2271 12975726592 "GET /api/taskadd/322/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 260
+INFO 2024-03-18 00:57:04,624 basehttp 2271 13009305600 "GET /api/tradeorder/322/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-18 00:57:04,627 basehttp 2271 12992516096 "GET /api/traderdetial/322/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 316
+INFO 2024-03-18 01:02:49,950 basehttp 2271 13042884608 "GET /api/tradeorder/322/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-18 01:02:49,950 basehttp 2271 13059674112 "GET /api/taskadd/322/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 260
+INFO 2024-03-18 01:02:49,961 basehttp 2271 13026095104 "GET /api/traderdetial/322/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 483
+INFO 2024-03-18 01:03:03,824 basehttp 2271 12992516096 "GET /api/tradeorder/322/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-18 01:03:03,834 basehttp 2271 12992516096 - Broken pipe from ('127.0.0.1', 51894)
+
+INFO 2024-03-18 01:03:03,837 basehttp 2271 13009305600 - Broken pipe from ('127.0.0.1', 51895)
+
+INFO 2024-03-18 01:03:03,838 basehttp 2271 12975726592 "GET /api/traderdetial/322/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 483
+INFO 2024-03-18 01:03:03,847 basehttp 2271 12975726592 - Broken pipe from ('127.0.0.1', 51893)
+
+INFO 2024-03-18 01:08:05,895 basehttp 2271 12975726592 "GET /api/traderdetial/322/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 770
+INFO 2024-03-18 01:08:05,900 basehttp 2271 12992516096 "GET /api/tradeorder/322/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-18 01:08:05,906 basehttp 2271 13009305600 "GET /api/taskadd/322/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 260
+INFO 2024-03-18 01:08:43,763 basehttp 2271 13059674112 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 19241
+INFO 2024-03-18 01:08:44,175 basehttp 2271 13009305600 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-18 01:08:44,203 basehttp 2271 12992516096 "GET /api/apiadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 532
+INFO 2024-03-18 01:08:46,316 basehttp 2271 13026095104 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-18 01:08:46,625 basehttp 2271 13042884608 "GET /api/apiadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 532
+INFO 2024-03-18 01:08:48,679 basehttp 2271 12975726592 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 19241
+INFO 2024-03-18 01:12:14,079 autoreload 2018 8611705536 Watching for file changes with StatReloader
+INFO 2024-03-18 01:14:25,719 basehttp 2018 12972998656 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 19241
+INFO 2024-03-18 01:14:41,165 basehttp 2018 12972998656 "OPTIONS /api/taskadd/322/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 0
+INFO 2024-03-18 01:14:41,360 basehttp 2018 12972998656 "PATCH /api/taskadd/322/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 260
+INFO 2024-03-18 01:14:41,439 basehttp 2018 12972998656 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 19241
+INFO 2024-03-18 01:14:45,759 basehttp 2018 12972998656 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 19241
+INFO 2024-03-18 01:14:48,972 basehttp 2018 12972998656 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-18 01:14:49,669 basehttp 2018 12972998656 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 19241
+INFO 2024-03-18 01:14:50,053 basehttp 2018 12989788160 "GET /api/apiadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 532
+INFO 2024-03-18 01:14:50,191 basehttp 2018 12989788160 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-18 01:14:50,206 basehttp 2018 12972998656 "GET /api/apiadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 532
+INFO 2024-03-18 01:15:29,846 basehttp 2018 12972998656 "OPTIONS /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 0
+INFO 2024-03-18 01:15:29,999 basehttp 2018 12972998656 "POST /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 279
+INFO 2024-03-18 01:15:30,033 basehttp 2018 12972998656 "OPTIONS /api/apiadd/24/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 0
+INFO 2024-03-18 01:15:30,100 basehttp 2018 12989788160 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 19503
+INFO 2024-03-18 01:15:30,100 basehttp 2018 12972998656 "PATCH /api/apiadd/24/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 173
+INFO 2024-03-18 01:15:32,617 basehttp 2018 12972998656 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-18 01:15:32,630 basehttp 2018 12989788160 "GET /api/apiadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 532
+INFO 2024-03-18 01:15:33,983 basehttp 2018 12989788160 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 19503
+INFO 2024-03-18 01:15:39,622 basehttp 2018 12972998656 "GET /api/tradeorder/323/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-18 01:15:39,629 basehttp 2018 12989788160 "GET /api/traderdetial/323/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 318
+INFO 2024-03-18 01:15:39,687 basehttp 2018 13006577664 "GET /api/taskadd/323/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 261
+INFO 2024-03-18 01:16:34,155 basehttp 2018 12972998656 "GET /api/taskadd/323/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 261
+INFO 2024-03-18 01:16:34,155 basehttp 2018 12989788160 "GET /api/tradeorder/323/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-18 01:16:34,159 basehttp 2018 13006577664 "GET /api/traderdetial/323/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 771
+INFO 2024-03-18 01:33:16,836 basehttp 2018 12989788160 "GET /api/tradeorder/323/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-18 01:33:16,848 basehttp 2018 13006577664 "GET /api/taskadd/323/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 261
+INFO 2024-03-18 01:33:16,862 basehttp 2018 12972998656 "GET /api/traderdetial/323/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 2373
+INFO 2024-03-18 01:34:19,402 basehttp 2018 12989788160 "GET /api/taskadd/323/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 261
+INFO 2024-03-18 01:34:19,402 basehttp 2018 13006577664 "GET /api/tradeorder/323/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-18 01:34:19,405 basehttp 2018 12972998656 "GET /api/traderdetial/323/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 2697
+INFO 2024-03-18 01:34:30,576 basehttp 2018 12972998656 "GET /api/taskadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 19503
+INFO 2024-03-18 01:34:35,391 basehttp 2018 12989788160 "GET /api/tradeorder/323/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 20
+INFO 2024-03-18 01:34:35,399 basehttp 2018 13006577664 "GET /api/taskadd/323/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 261
+INFO 2024-03-18 01:34:35,409 basehttp 2018 12972998656 "GET /api/traderdetial/323/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 2697
+INFO 2024-03-18 01:34:45,956 basehttp 2018 12972998656 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-18 01:34:45,970 basehttp 2018 13006577664 "GET /api/apiadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 532
+INFO 2024-03-18 01:38:28,325 basehttp 2018 13006577664 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-18 01:38:28,337 basehttp 2018 12972998656 "GET /api/apiadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 532
+INFO 2024-03-18 01:38:57,674 basehttp 2018 12972998656 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-18 01:39:15,807 basehttp 2018 13006577664 "GET /api/apiadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 532
+INFO 2024-03-18 01:39:27,113 basehttp 2018 12972998656 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-18 01:39:27,131 basehttp 2018 13006577664 "GET /api/apiadd/?token=c50b2650-c06b-425e-8ffc-3ea204dd576e HTTP/1.1" 200 532
+INFO 2024-03-18 01:41:53,865 basehttp 2018 12989788160 "OPTIONS /api/login/ HTTP/1.1" 200 0
+INFO 2024-03-18 01:41:53,929 basehttp 2018 12989788160 "POST /api/login/ HTTP/1.1" 200 81
+INFO 2024-03-18 01:41:54,101 basehttp 2018 12989788160 "GET /api/quotainfo/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 133
+INFO 2024-03-18 01:41:59,833 basehttp 2018 12989788160 "GET /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 19503
+INFO 2024-03-18 01:42:01,347 basehttp 2018 13023367168 "GET /api/tradeorder/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20
+INFO 2024-03-18 01:42:01,349 basehttp 2018 12989788160 "GET /api/traderdetial/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 2697
+INFO 2024-03-18 01:42:01,360 basehttp 2018 13040156672 "GET /api/taskadd/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 261
+INFO 2024-03-18 01:42:11,054 basehttp 2018 13040156672 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-18 01:42:11,070 basehttp 2018 12989788160 "GET /api/apiadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 532
+INFO 2024-03-18 01:42:30,304 basehttp 2018 12989788160 "GET /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 19503
+INFO 2024-03-18 01:42:32,457 basehttp 2018 13023367168 "GET /api/taskadd/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 261
+INFO 2024-03-18 01:42:32,458 basehttp 2018 13040156672 "GET /api/tradeorder/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20
+INFO 2024-03-18 01:42:32,461 basehttp 2018 12989788160 "GET /api/traderdetial/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 2697
+INFO 2024-03-18 01:42:43,818 basehttp 2018 12989788160 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-18 01:42:43,835 basehttp 2018 13040156672 "GET /api/apiadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 532
+INFO 2024-03-18 01:44:55,111 basehttp 2018 13040156672 "OPTIONS /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 0
+INFO 2024-03-18 01:44:57,552 basehttp 2018 12989788160 "POST /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 36
+INFO 2024-03-18 01:45:07,142 basehttp 2018 12989788160 "GET /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 19765
+INFO 2024-03-18 01:45:13,240 basehttp 2018 13023367168 "GET /api/tradeorder/324/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20
+INFO 2024-03-18 01:45:13,248 basehttp 2018 12989788160 "GET /api/traderdetial/324/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 43
+INFO 2024-03-18 01:45:13,314 basehttp 2018 12972998656 "GET /api/taskadd/324/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 261
+INFO 2024-03-18 01:45:13,329 basehttp 2018 12989788160 "GET /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 19765
+ERROR 2024-03-18 01:45:13,431 log 2018 13040156672 Internal Server Error: /api/taskadd/
+Traceback (most recent call last):
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/connection.py", line 500, in read_response
+    response = self._parser.read_response(disable_decoding=disable_decoding)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/_parsers/resp2.py", line 15, in read_response
+    result = self._read_response(disable_decoding=disable_decoding)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/_parsers/resp2.py", line 25, in _read_response
+    raw = self._buffer.readline()
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/_parsers/socket.py", line 115, in readline
+    self._read_from_socket()
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/_parsers/socket.py", line 65, in _read_from_socket
+    data = self._sock.recv(socket_read_size)
+TimeoutError: [Errno 60] Operation timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yb/my_project/ape/api/extension/mixins.py", line 14, in create
+    res = self.perform_create(serializer)
+  File "/Users/yb/my_project/ape/api/views/task.py", line 53, in perform_create
+    conn.lpush(settings.QUEUE_TASK_NAME, tid)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/commands/core.py", line 2734, in lpush
+    return self.execute_command("LPUSH", name, *values)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 536, in execute_command
+    return conn.retry.call_with_retry(
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/retry.py", line 49, in call_with_retry
+    fail(error)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 540, in <lambda>
+    lambda error: self._disconnect_raise(conn, error),
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 526, in _disconnect_raise
+    raise error
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/retry.py", line 46, in call_with_retry
+    return do()
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 537, in <lambda>
+    lambda: self._send_command_parse_response(
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 513, in _send_command_parse_response
+    return self.parse_response(conn, command_name, **options)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/client.py", line 553, in parse_response
+    response = connection.read_response()
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/redis/connection.py", line 508, in read_response
+    raise ConnectionError(
+redis.exceptions.ConnectionError: Error while reading from 121.43.178.20:6379 : (60, 'Operation timed out')
+ERROR 2024-03-18 01:45:13,433 basehttp 2018 13040156672 "POST /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 500 171901
+INFO 2024-03-18 01:45:15,999 basehttp 2018 12989788160 "GET /api/tradeorder/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20
+INFO 2024-03-18 01:45:16,006 basehttp 2018 12972998656 "GET /api/taskadd/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 261
+INFO 2024-03-18 01:45:16,009 basehttp 2018 13040156672 "GET /api/traderdetial/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 2697
+INFO 2024-03-18 01:45:18,016 basehttp 2018 13040156672 "GET /api/quotainfo/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 133
+INFO 2024-03-18 01:45:18,732 basehttp 2018 13040156672 "GET /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 19765
+INFO 2024-03-18 01:45:20,000 basehttp 2018 13040156672 "GET /api/traderdetial/324/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 43
+INFO 2024-03-18 01:45:20,002 basehttp 2018 12989788160 "GET /api/taskadd/324/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 261
+INFO 2024-03-18 01:45:20,002 basehttp 2018 12972998656 "GET /api/tradeorder/324/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20
+INFO 2024-03-18 01:45:20,082 basehttp 2018 12972998656 "GET /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 19765
+INFO 2024-03-18 01:45:22,149 basehttp 2018 12989788160 "GET /api/taskadd/324/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 261
+INFO 2024-03-18 01:45:22,154 basehttp 2018 13040156672 "GET /api/tradeorder/324/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20
+INFO 2024-03-18 01:45:22,156 basehttp 2018 12972998656 "GET /api/traderdetial/324/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 43
+INFO 2024-03-18 01:45:22,243 basehttp 2018 12972998656 "GET /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 19765
+INFO 2024-03-18 01:46:21,006 basehttp 2018 12972998656 "OPTIONS /api/taskadd/324/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 0
+INFO 2024-03-18 01:46:21,222 basehttp 2018 12972998656 "PATCH /api/taskadd/324/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 261
+INFO 2024-03-18 01:46:21,281 basehttp 2018 12972998656 "GET /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 19765
+INFO 2024-03-18 01:46:36,750 basehttp 2018 12972998656 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-18 01:46:36,769 basehttp 2018 13040156672 "GET /api/apiadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 532
+INFO 2024-03-18 01:47:07,801 basehttp 2018 13040156672 "POST /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 278
+INFO 2024-03-18 01:47:07,832 basehttp 2018 13040156672 "OPTIONS /api/apiadd/23/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 0
+INFO 2024-03-18 01:47:07,901 basehttp 2018 12972998656 "GET /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20026
+INFO 2024-03-18 01:47:07,903 basehttp 2018 13040156672 "PATCH /api/apiadd/23/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 169
+INFO 2024-03-18 01:47:09,527 basehttp 2018 12972998656 "GET /api/tradeorder/325/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20
+INFO 2024-03-18 01:47:09,535 basehttp 2018 12989788160 "GET /api/taskadd/325/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 260
+INFO 2024-03-18 01:47:09,542 basehttp 2018 13040156672 "GET /api/traderdetial/325/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 316
+INFO 2024-03-18 01:49:56,883 basehttp 2018 12989788160 "GET /api/tradeorder/325/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20
+INFO 2024-03-18 01:49:56,889 basehttp 2018 12972998656 "GET /api/taskadd/325/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 260
+INFO 2024-03-18 01:49:56,898 basehttp 2018 13040156672 "GET /api/traderdetial/325/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 760
+INFO 2024-03-18 01:49:58,820 basehttp 2018 13040156672 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-18 01:49:58,836 basehttp 2018 12972998656 "GET /api/apiadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 532
+INFO 2024-03-18 01:50:00,666 basehttp 2018 12972998656 "GET /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20026
+INFO 2024-03-18 01:50:06,713 basehttp 2018 13040156672 "GET /api/tradeorder/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20
+INFO 2024-03-18 01:50:06,718 basehttp 2018 12989788160 "GET /api/taskadd/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 261
+INFO 2024-03-18 01:50:06,723 basehttp 2018 12972998656 "GET /api/traderdetial/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 3021
+INFO 2024-03-18 01:50:12,055 basehttp 2018 12972998656 "GET /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20026
+INFO 2024-03-18 01:50:27,338 basehttp 2018 12972998656 "GET /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20026
+INFO 2024-03-18 01:52:59,022 autoreload 2018 8611705536 /Users/yb/my_project/ape/api/serializers/task.py changed, reloading.
+INFO 2024-03-18 01:52:59,643 autoreload 3047 8638898880 Watching for file changes with StatReloader
+INFO 2024-03-18 01:53:08,344 autoreload 3058 8636412608 Watching for file changes with StatReloader
+ERROR 2024-03-18 01:53:16,646 log 3058 13022609408 Internal Server Error: /api/taskadd/
+Traceback (most recent call last):
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yb/my_project/ape/api/extension/mixins.py", line 28, in list
+    return Response({"code": return_code.SUCCESS, 'data': serializer.data})
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/serializers.py", line 745, in data
+    ret = super().data
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/serializers.py", line 663, in to_representation
+    return [
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/serializers.py", line 664, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/serializers.py", line 500, in to_representation
+    for field in fields:
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/serializers.py", line 361, in _readable_fields
+    for field in self.fields.values():
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/serializers.py", line 349, in fields
+    for key, value in self.get_fields().items():
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/serializers.py", line 1029, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/serializers.py", line 1125, in get_field_names
+    assert field_name in fields, (
+AssertionError: The field 'api_name' was declared on serializer TaskSerializer, but has not been included in the 'fields' option.
+ERROR 2024-03-18 01:53:16,647 basehttp 3058 13022609408 "GET /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 500 149011
+INFO 2024-03-18 01:55:22,943 autoreload 3058 8636412608 /Users/yb/my_project/ape/api/serializers/task.py changed, reloading.
+INFO 2024-03-18 01:55:23,467 autoreload 3103 8664629952 Watching for file changes with StatReloader
+INFO 2024-03-18 01:55:36,380 autoreload 3107 8677573312 Watching for file changes with StatReloader
+ERROR 2024-03-18 01:55:45,163 log 3107 13104308224 Internal Server Error: /api/taskadd/
+Traceback (most recent call last):
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/yb/my_project/ape/api/extension/mixins.py", line 28, in list
+    return Response({"code": return_code.SUCCESS, 'data': serializer.data})
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/serializers.py", line 745, in data
+    ret = super().data
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/serializers.py", line 246, in data
+    self._data = self.to_representation(self.instance)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/serializers.py", line 663, in to_representation
+    return [
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/serializers.py", line 664, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/serializers.py", line 500, in to_representation
+    for field in fields:
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/serializers.py", line 361, in _readable_fields
+    for field in self.fields.values():
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/serializers.py", line 349, in fields
+    for key, value in self.get_fields().items():
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/serializers.py", line 1029, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+  File "/Users/yb/opt/anaconda3/envs/copyapesapi/lib/python3.9/site-packages/rest_framework/serializers.py", line 1125, in get_field_names
+    assert field_name in fields, (
+AssertionError: The field 'flag' was declared on serializer TaskSerializer, but has not been included in the 'fields' option.
+ERROR 2024-03-18 01:55:45,164 basehttp 3107 13104308224 "GET /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 500 148966
+INFO 2024-03-18 01:57:05,768 autoreload 3107 8677573312 /Users/yb/my_project/ape/api/serializers/task.py changed, reloading.
+INFO 2024-03-18 01:57:06,197 autoreload 3118 8678200000 Watching for file changes with StatReloader
+INFO 2024-03-18 01:57:13,551 autoreload 3137 8676393664 Watching for file changes with StatReloader
+INFO 2024-03-18 01:57:21,920 basehttp 3137 13099065344 "GET /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 19058
+INFO 2024-03-18 01:58:41,969 autoreload 3137 8676393664 /Users/yb/my_project/ape/api/serializers/task.py changed, reloading.
+INFO 2024-03-18 01:58:42,416 autoreload 3153 8606274240 Watching for file changes with StatReloader
+INFO 2024-03-18 01:58:48,034 autoreload 3157 8609059520 Watching for file changes with StatReloader
+INFO 2024-03-18 01:58:56,396 basehttp 3157 12967677952 "GET /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 19058
+INFO 2024-03-18 01:59:37,205 basehttp 3157 12967677952 "OPTIONS /api/taskadd/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 0
+INFO 2024-03-18 01:59:37,388 basehttp 3157 12967677952 "PATCH /api/taskadd/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 250
+INFO 2024-03-18 01:59:38,362 basehttp 3157 12967677952 "GET /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 19058
+INFO 2024-03-18 01:59:42,051 basehttp 3157 12967677952 "GET /api/traderdetial/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 3130
+INFO 2024-03-18 01:59:42,100 basehttp 3157 12984467456 "GET /api/tradeorder/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20
+INFO 2024-03-18 01:59:42,126 basehttp 3157 13001256960 "GET /api/taskadd/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 250
+INFO 2024-03-18 01:59:51,576 basehttp 3157 12984467456 "GET /api/tradeorder/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20
+INFO 2024-03-18 01:59:51,587 basehttp 3157 13001256960 "GET /api/traderdetial/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 3271
+INFO 2024-03-18 01:59:51,597 basehttp 3157 12967677952 "GET /api/taskadd/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 250
+INFO 2024-03-18 02:00:00,254 basehttp 3157 13001256960 "GET /api/tradeorder/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20
+INFO 2024-03-18 02:00:00,260 basehttp 3157 12967677952 "GET /api/traderdetial/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 3524
+INFO 2024-03-18 02:00:00,265 basehttp 3157 12984467456 "GET /api/taskadd/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 250
+INFO 2024-03-18 02:00:18,677 basehttp 3157 12967677952 "GET /api/tradeorder/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20
+INFO 2024-03-18 02:00:18,683 basehttp 3157 13001256960 "GET /api/taskadd/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 250
+INFO 2024-03-18 02:00:18,690 basehttp 3157 12984467456 "GET /api/traderdetial/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 3524
+INFO 2024-03-18 02:01:17,528 basehttp 3157 12984467456 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-18 02:01:17,548 basehttp 3157 13001256960 "GET /api/apiadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 532
+INFO 2024-03-18 02:01:20,100 basehttp 3157 13001256960 "GET /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 19058
+INFO 2024-03-18 02:01:58,232 basehttp 3157 12984467456 "GET /api/tradeorder/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20
+INFO 2024-03-18 02:01:58,235 basehttp 3157 13001256960 "GET /api/traderdetial/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 3524
+INFO 2024-03-18 02:01:58,253 basehttp 3157 12967677952 "GET /api/taskadd/323/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 250
+INFO 2024-03-18 02:04:53,032 autoreload 3227 8605119168 Watching for file changes with StatReloader
+INFO 2024-03-18 02:05:32,609 basehttp 3227 12957229056 "GET /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 19058
+INFO 2024-03-18 02:05:39,366 basehttp 3227 12957229056 "OPTIONS /api/taskadd/325/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 0
+INFO 2024-03-18 02:05:39,572 basehttp 3227 12957229056 "PATCH /api/taskadd/325/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 252
+INFO 2024-03-18 02:05:40,609 basehttp 3227 12957229056 "GET /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 19058
+INFO 2024-03-18 02:05:42,266 basehttp 3227 12957229056 "GET /api/traderdetial/325/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 881
+INFO 2024-03-18 02:05:42,327 basehttp 3227 12974018560 "GET /api/tradeorder/325/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20
+INFO 2024-03-18 02:05:42,336 basehttp 3227 12990808064 "GET /api/taskadd/325/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 252
+INFO 2024-03-18 02:05:46,562 basehttp 3227 12974018560 "GET /api/tradeorder/325/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20
+INFO 2024-03-18 02:05:46,568 basehttp 3227 12990808064 "GET /api/traderdetial/325/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 881
+INFO 2024-03-18 02:05:46,571 basehttp 3227 12957229056 "GET /api/taskadd/325/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 252
+INFO 2024-03-18 02:06:00,756 basehttp 3227 12957229056 "GET /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 19058
+INFO 2024-03-18 02:06:02,326 basehttp 3227 12957229056 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-18 02:06:02,345 basehttp 3227 12990808064 "GET /api/apiadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 532
+INFO 2024-03-18 02:06:17,917 basehttp 3227 12990808064 "POST /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 269
+INFO 2024-03-18 02:06:17,946 basehttp 3227 12990808064 "OPTIONS /api/apiadd/24/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 0
+INFO 2024-03-18 02:06:18,022 basehttp 3227 12990808064 "PATCH /api/apiadd/24/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 173
+INFO 2024-03-18 02:06:18,988 basehttp 3227 12957229056 "GET /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 19310
+INFO 2024-03-18 02:06:20,631 basehttp 3227 12990808064 "GET /api/tradeorder/326/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20
+INFO 2024-03-18 02:06:20,637 basehttp 3227 12957229056 "GET /api/traderdetial/326/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 320
+INFO 2024-03-18 02:06:20,640 basehttp 3227 12974018560 "GET /api/taskadd/326/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 251
+INFO 2024-03-18 02:07:03,844 basehttp 3227 12957229056 "GET /api/tradeorder/326/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20
+INFO 2024-03-18 02:07:03,851 basehttp 3227 12990808064 "GET /api/taskadd/326/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 251
+INFO 2024-03-18 02:07:03,856 basehttp 3227 12974018560 "GET /api/traderdetial/326/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 611
+INFO 2024-03-18 02:07:13,917 basehttp 3227 12990808064 "GET /api/tradeorder/326/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20
+INFO 2024-03-18 02:07:13,929 basehttp 3227 12974018560 "GET /api/traderdetial/326/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 766
+INFO 2024-03-18 02:07:13,940 basehttp 3227 12957229056 "GET /api/taskadd/326/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 251
+INFO 2024-03-18 02:09:18,933 basehttp 3227 12957229056 "OPTIONS /api/taskadd/326/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 0
+INFO 2024-03-18 02:09:19,070 basehttp 3227 12957229056 "PATCH /api/taskadd/326/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 251
+INFO 2024-03-18 02:09:19,924 basehttp 3227 12974018560 "GET /api/tradeorder/326/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20
+INFO 2024-03-18 02:09:19,934 basehttp 3227 12957229056 "GET /api/traderdetial/326/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 766
+INFO 2024-03-18 02:09:19,941 basehttp 3227 12990808064 "GET /api/taskadd/326/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 251
+INFO 2024-03-18 02:09:24,142 basehttp 3227 12957229056 "GET /api/tradeorder/326/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 20
+INFO 2024-03-18 02:09:24,146 basehttp 3227 12990808064 "GET /api/traderdetial/326/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 985
+INFO 2024-03-18 02:09:24,152 basehttp 3227 12974018560 "GET /api/taskadd/326/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 251
+INFO 2024-03-18 02:10:08,693 basehttp 3227 12974018560 "GET /api/taskadd/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 19310
+INFO 2024-03-18 02:10:40,682 basehttp 3227 12974018560 "OPTIONS /api/changepassword/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 0
+INFO 2024-03-18 02:10:40,720 basehttp 3227 12974018560 "POST /api/changepassword/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 51
+INFO 2024-03-18 02:11:08,790 basehttp 3227 12974018560 "POST /api/changepassword/?token=c18ea4c3-4766-482f-aaee-54b971ba563e HTTP/1.1" 200 41
+INFO 2024-03-18 02:11:22,872 basehttp 3227 12974018560 "POST /api/login/ HTTP/1.1" 200 48
+INFO 2024-03-18 02:11:30,426 basehttp 3227 12974018560 "POST /api/login/ HTTP/1.1" 200 81
+INFO 2024-03-18 02:11:30,707 basehttp 3227 12974018560 "GET /api/quotainfo/?token=7d85ae23-ba83-41cd-9968-363d531c6ad2 HTTP/1.1" 200 133
+INFO 2024-03-18 02:11:36,118 basehttp 3227 12974018560 "GET /api/taskadd/?token=7d85ae23-ba83-41cd-9968-363d531c6ad2 HTTP/1.1" 200 19310
+INFO 2024-03-18 02:11:36,440 basehttp 3227 12974018560 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-18 02:11:36,453 basehttp 3227 12990808064 "GET /api/apiadd/?token=7d85ae23-ba83-41cd-9968-363d531c6ad2 HTTP/1.1" 200 532
+INFO 2024-03-18 02:11:38,438 basehttp 3227 12990808064 "GET /api/taskadd/?token=7d85ae23-ba83-41cd-9968-363d531c6ad2 HTTP/1.1" 200 19310

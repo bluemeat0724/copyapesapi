@@ -1,6 +1,6 @@
 [{
   "availSubPos": "-0.20",
-  "margin": "327",
+  "margin": "351",
   "instId": "BTC-USDT-SWAP",
   "mgnMode": "isolated",
   "posSide": "net",

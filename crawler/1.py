@@ -6,10 +6,10 @@ from okx.api.public import Public
 acc = {'key': 'ba8dccb8-943d-468c-bcbf-8dced96fc7cf',
        'secret': 'BBA3FF14AC698CDBAA33219F858E7BF6',
        'passphrase': '112233Ww..',
-       'proxies': {
-                    'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322',
-                    'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322'
-                   }
+       # 'proxies': {
+       #              'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322',
+       #              'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322'
+       #             }
        }
 # 实盘
 # acc = {'key': '63b35cdd-261f-4fd5-ba2a-a607cd7460c9',

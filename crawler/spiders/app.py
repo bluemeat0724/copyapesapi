@@ -1,21 +1,20 @@
+import datetime
 import threading
 import time
 import redis
-from django.utils import timezone
-
 from api.models import TradeLog
 from crawler import settingsdev as settings
 import json
 from loguru import logger
-import os
 from crawler.spiders import okx_follow_spider
+from crawler.utils.db import Connect
 
 logger.remove()  # 移除所有默认的handler
 
 
-def thread_log_filter(record, user_id, task_id):
-    """过滤器，只接收包含特定线程标记的日志记录"""
-    return record["extra"].get("user_id") == user_id and record["extra"].get("task_id") == task_id
+# def thread_log_filter(record, user_id, task_id):
+#     """过滤器，只接收包含特定线程标记的日志记录"""
+#     return record["extra"].get("user_id") == user_id and record["extra"].get("task_id") == task_id
 
 
 class Spider(threading.Thread):
@@ -46,16 +45,22 @@ class Spider(threading.Thread):
     #                format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}")
     def log_to_database(self, level, title, description=""):
         """
-        将日志信息保存到数据库。
+        手动保存日志信息到数据库
         """
-        TradeLog.objects.create(
-            user_id=self.user_id,
-            task_id=self.task_id,
-            date=timezone.now(),
-            color=level,
-            title=title,
-            description=description,
-        )
+        params = {
+            "user_id": self.user_id,
+            "task_id": self.task_id,
+            "date": datetime.datetime.now(),
+            "color": level,
+            "title": title,
+            "description": description,
+        }
+        insert_sql = """
+                        INSERT INTO api_spiderlog (user_id, task_id, date, color, title, description, created_at, updated_at)
+                        VALUES (%(user_id)s, %(task_id)s, %(date)s, %(color)s, %(title)s, %(description)s, NOW(), NOW())
+                    """
+        with Connect() as db:
+            db.exec(insert_sql, **params)
 
     def run(self):
         # self.setup_logger()
@@ -116,8 +121,8 @@ class Spider(threading.Thread):
     def stop(self):
         # 设置停止标志，用于停止爬虫线程
         self.stop_flag.set()
-        # self.thread_logger.warning(f"手动结束跟单，任务ID：{self.task_id}")
-        self.log_to_database("warning", "手动结束跟单", f"任务ID：{self.task_id}")
+        # self.thread_logger.WARNING(f"手动结束跟单，任务ID：{self.task_id}")
+        self.log_to_database("WARNING", "手动结束跟单", f"任务ID：{self.task_id}")
 
     # 解耦爬虫脚本，获取交易数据
     def summary(self):

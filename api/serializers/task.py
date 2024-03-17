@@ -5,13 +5,13 @@ from api import models
 
 class TaskSerializer(serializers.ModelSerializer):
     # status = serializers.CharField(source="get_status_display")
-    # flag = serializers.CharField(source="api.flag")
-    # api_name = serializers.CharField(source="api.api_name")
+    flag = serializers.CharField(source="api.flag")
+    api_name = serializers.CharField(source="api.api_name")
 
     class Meta:
         model = models.TaskInfo
-        fields = ['id', "trader_platform", "uniqueName", "api", "follow_type", "sums", "lever_set", "first_order_set",
-                  'status', 'user', 'create_datetime', 'deleted', 'pnl']
+        fields = ['id', "trader_platform", "uniqueName", "api", 'flag', 'api_name',"follow_type", "sums", "lever_set", "first_order_set",
+                  'status', 'user', 'create_datetime', 'deleted','pnl']
         # read_only_fields = ['status']
         # extra_kwargs = {
         #     'status': {'read_only': True}

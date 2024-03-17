@@ -82,8 +82,32 @@ class TaskInfo(DeletedModel):
 
     lever_choice = (
         (1, "跟随交易员"),
+        (2, "自定义杠杆"),
     )
     lever_set = models.IntegerField(verbose_name="杠杆设置", choices=lever_choice, default=1)
+
+    # leverage
+    leverage = models.IntegerField(
+        verbose_name="杠杆倍数",
+        default=1  # 默认值
+    )
+
+    posSide_set = models.IntegerField(
+        verbose_name="反向跟单",
+        default=1  # 默认值 1：否 2：是
+    )
+
+    MGN_MODE_CHOICES = (
+        ('full', '全仓'),
+        ('isolated', '逐仓'),
+    )
+
+    mgn_mode = models.CharField(
+        max_length=10,
+        verbose_name='保证金模式',
+        choices=MGN_MODE_CHOICES,
+        default='full'  # 或者 'isolated' 根据您希望的默认值
+    )
 
     first_order_choice = (
         (1, "交易员新开订单后跟随"),
