@@ -46,7 +46,7 @@ class Spider(threading.Thread):
 
     def log_to_database(self, level, title, description=""):
         """
-        手动保存日志信息到数据库
+        将日志信息保存到数据库。
         """
         params = {
             "user_id": self.user_id,

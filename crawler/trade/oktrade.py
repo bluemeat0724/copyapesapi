@@ -93,7 +93,7 @@ class Trader(threading.Thread):
 
     def log_to_database(self, level, title, description=""):
         """
-        将交易日志信息保存到数据库（不使用ORM）。
+        将日志信息保存到数据库。
         """
         params = {
             "user_id": self.user_id,
