@@ -1,9 +1,4 @@
-import os
-
-import django
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'copytrade.settings.settingsdev')
-django.setup()
+from crawler.utils.db import Connect
 from django.utils import timezone
 from crawler.myokx import app
 import threading
@@ -15,7 +10,6 @@ from loguru import logger
 from crawler.account.okx_orderinfo import OkxOrderInfo
 import datetime
 from crawler.account.update_quota import get_remaining_quota, check_task_pnl, update_remaining_quota
-from api.models import TradeLog
 
 logger.remove()  # 移除所有默认的handler
 
@@ -97,28 +91,24 @@ class Trader(threading.Thread):
         self.flag = None
         self.acc = None
 
-    # def setup_logger(self):
-    #     # log_file = f"trade_logs/{self.user_id}_{self.task_id}.log"
-    #     log_file = os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(__file__)), "trade_logs",
-    #                                             f"{self.user_id}_{self.task_id}.log"))
-    #     # 为当前线程创建一个标记过滤器
-    #     filter_func = lambda record: thread_log_filter(record, self.user_id, self.task_id)
-    #
-    #     # 添加一个新的文件handler，仅接收当前线程的日志消息
-    #     self.logger_id = logger.add(log_file, filter=filter_func, rotation="20 MB",
-    #                                 format="{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}")
-    def log_to_database(self, level, title, description=""):
+    def log_to_database(self, user_id, task_id, level, title, description=""):
         """
-        将日志信息保存到数据库。
+        将交易日志信息保存到数据库（不使用ORM）。
         """
-        TradeLog.objects.create(
-            user_id=self.user_id,
-            task_id=self.task_id,
-            date=timezone.now(),
-            color=level,
-            title=title,
-            description=description,
-        )
+        params = {
+            "user_id": user_id,
+            "task_id": task_id,
+            "date": timezone.now(),
+            "color": level,
+            "title": title,
+            "description": description,
+        }
+        insert_sql = """
+                        INSERT INTO trade_log (user_id, task_id, date, color, title, description, created_at, updated_at)
+                        VALUES (%(user_id)s, %(task_id)s, %(date)s, %(color)s, %(title)s, %(description)s, NOW(), NOW())
+                    """
+        with Connect() as db:
+            db.exec(insert_sql, **params)
 
     def run(self):
         # 获取api信息

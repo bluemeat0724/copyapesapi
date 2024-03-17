@@ -1,11 +1,6 @@
-import os
 import threading
 import time
-import django
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'copytrade.settings.settingsdev')
-django.setup()
-
+from crawler.utils.db import Connect
 import redis
 from django.utils import timezone
 from crawler import settingsdev as settings
@@ -13,7 +8,7 @@ import requests
 import json
 from loguru import logger
 from crawler.utils import get_task
-from api.models import SpiderLog
+# from api.models import SpiderLog
 
 # proxies = {
 #     'http': 'socks5h://{}:{}@{}:{}'.format(settings.PROXY_USERNAME, settings.PROXY_PASSWORD, settings.PROXY_IP,
@@ -48,18 +43,24 @@ class Spider(threading.Thread):
         self.user_id = user_id
         self.stop_flag = threading.Event()  # 用于控制爬虫线程的停止
 
-    def log_to_database(self, level, title, description=""):
+    def log_to_database(self, user_id, task_id, level, title, description=""):
         """
-        将日志信息保存到数据库。
+        手动保存日志信息到数据库
         """
-        SpiderLog.objects.create(
-            user_id=self.user_id,
-            task_id=self.task_id,
-            date=timezone.now(),
-            color=level,
-            title=title,
-            description=description,
-        )
+        params = {
+            "user_id": user_id,
+            "task_id": task_id,
+            "date": timezone.now(),
+            "color": level,
+            "title": title,
+            "description": description,
+        }
+        insert_sql = """
+                        INSERT INTO spider_log (user_id, task_id, date, color, title, description, created_at, updated_at)
+                        VALUES (%(user_id)s, %(task_id)s, %(date)s, %(color)s, %(title)s, %(description)s, NOW(), NOW())
+                    """
+        with Connect() as db:
+            db.exec(insert_sql, **params)
 
     def run(self):
         self.log_to_database("INFO", f"跟单猿跟单系统启动", f"跟随交易员：{self.uniqueName}")
