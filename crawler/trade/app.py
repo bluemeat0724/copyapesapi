@@ -30,7 +30,6 @@ def run_trade_task(task):
                 def update_trader_task():
                     trader = traders[task_id]
                     trader.update_data(task)
-
                 # 开启新线程来异步更新数据
                 threading.Thread(target=update_trader_task).start()
 
@@ -51,19 +50,15 @@ def run():
     if reactivate:
         for task in reactivate:
             # 使用线程运行任务
-            print("task1", task)
             thread = threading.Thread(target=run_trade_task, args=(task,))
             thread.start()
     while True:
         try:
             conn = redis.Redis(**settings.REDIS_PARAMS)
-            print("redis1", settings.REDIS_PARAMS)
             retrieved_json = conn.brpop(settings.TRADE_TASK_NAME, timeout=3)
-            print("retrieved_json", retrieved_json)
             if not retrieved_json:
                 continue
             task = json.loads(retrieved_json[1].decode('utf-8'))
-            print("task2", task)
             thread = threading.Thread(target=run_trade_task, args=(task,))
             thread.start()
 
