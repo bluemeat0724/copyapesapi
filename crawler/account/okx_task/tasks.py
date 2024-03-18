@@ -36,7 +36,7 @@ def perform_get_position():
         executor.map(process_task, result)
 
         # 如果所有进行中的任务累计pnl大于剩余盈利额度，则终止自动任务，平仓所有交易
-        calculate_and_stop_tasks()
+        # calculate_and_stop_tasks()
 
 
 if __name__ == '__main__':

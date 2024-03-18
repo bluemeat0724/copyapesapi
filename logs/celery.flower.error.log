@@ -1,0 +1,368 @@
+[I 240318 14:49:00 command:168] Visit me at http://0.0.0.0:5555
+[I 240318 14:49:00 command:176] Broker: redis://127.0.0.1:6379/14
+[I 240318 14:49:00 command:177] Registered tasks: 
+    ['celery.accumulate',
+     'celery.backend_cleanup',
+     'celery.chain',
+     'celery.chord',
+     'celery.chord_unlock',
+     'celery.chunks',
+     'celery.group',
+     'celery.map',
+     'celery.starmap',
+     'get_balance',
+     'get_position',
+     'update_pnl']
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/bin/celery", line 8, in <module>
+    sys.exit(main())
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/celery/__main__.py", line 15, in main
+    sys.exit(_main())
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/celery/bin/celery.py", line 236, in main
+[I 240318 14:49:00 mixins:228] Connected to redis://127.0.0.1:6379/14
+    return celery(auto_envvar_prefix="CELERY")
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/decorators.py", line 33, in new_func
+    return f(get_current_context(), *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/flower/command.py", line 57, in flower
+    flower_app.start()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/flower/app.py", line 72, in start
+    self.listen(self.options.port, address=self.options.address,
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/web.py", line 2211, in listen
+    server.listen(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/tcpserver.py", line 183, in listen
+    sockets = bind_sockets(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/netutil.py", line 162, in bind_sockets
+    sock.bind(sockaddr)
+OSError: [Errno 48] Address already in use
+[I 240318 14:49:03 command:168] Visit me at http://0.0.0.0:5555
+[I 240318 14:49:03 command:176] Broker: redis://127.0.0.1:6379/14
+[I 240318 14:49:03 command:177] Registered tasks: 
+    ['celery.accumulate',
+     'celery.backend_cleanup',
+     'celery.chain',
+     'celery.chord',
+     'celery.chord_unlock',
+     'celery.chunks',
+     'celery.group',
+     'celery.map',
+     'celery.starmap',
+     'get_balance',
+     'get_position',
+     'update_pnl']
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/bin/celery", line 8, in <module>
+    sys.exit(main())
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/celery/__main__.py", line 15, in main
+[I 240318 14:49:03 mixins:228] Connected to redis://127.0.0.1:6379/14
+    sys.exit(_main())
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/celery/bin/celery.py", line 236, in main
+    return celery(auto_envvar_prefix="CELERY")
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/decorators.py", line 33, in new_func
+    return f(get_current_context(), *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/flower/command.py", line 57, in flower
+    flower_app.start()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/flower/app.py", line 72, in start
+    self.listen(self.options.port, address=self.options.address,
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/web.py", line 2211, in listen
+    server.listen(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/tcpserver.py", line 183, in listen
+    sockets = bind_sockets(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/netutil.py", line 162, in bind_sockets
+    sock.bind(sockaddr)
+OSError: [Errno 48] Address already in use
+[I 240318 14:49:06 command:168] Visit me at http://0.0.0.0:5555
+[I 240318 14:49:06 command:176] Broker: redis://127.0.0.1:6379/14
+[I 240318 14:49:06 command:177] Registered tasks: 
+    ['celery.accumulate',
+     'celery.backend_cleanup',
+     'celery.chain',
+     'celery.chord',
+     'celery.chord_unlock',
+     'celery.chunks',
+     'celery.group',
+     'celery.map',
+     'celery.starmap',
+     'get_balance',
+     'get_position',
+     'update_pnl']
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/bin/celery", line 8, in <module>
+    sys.exit(main())
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/celery/__main__.py", line 15, in main
+    sys.exit(_main())
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/celery/bin/celery.py", line 236, in main
+    return celery(auto_envvar_prefix="CELERY")
+[I 240318 14:49:06 mixins:228] Connected to redis://127.0.0.1:6379/14
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/decorators.py", line 33, in new_func
+    return f(get_current_context(), *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/flower/command.py", line 57, in flower
+    flower_app.start()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/flower/app.py", line 72, in start
+    self.listen(self.options.port, address=self.options.address,
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/web.py", line 2211, in listen
+    server.listen(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/tcpserver.py", line 183, in listen
+    sockets = bind_sockets(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/netutil.py", line 162, in bind_sockets
+    sock.bind(sockaddr)
+OSError: [Errno 48] Address already in use
+[I 240318 14:49:11 command:168] Visit me at http://0.0.0.0:5555
+[I 240318 14:49:11 command:176] Broker: redis://127.0.0.1:6379/14
+[I 240318 14:49:11 command:177] Registered tasks: 
+    ['celery.accumulate',
+     'celery.backend_cleanup',
+     'celery.chain',
+     'celery.chord',
+     'celery.chord_unlock',
+     'celery.chunks',
+     'celery.group',
+     'celery.map',
+     'celery.starmap',
+     'get_balance',
+     'get_position',
+     'update_pnl']
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/bin/celery", line 8, in <module>
+    sys.exit(main())
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/celery/__main__.py", line 15, in main
+    sys.exit(_main())
+[I 240318 14:49:11 mixins:228] Connected to redis://127.0.0.1:6379/14
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/celery/bin/celery.py", line 236, in main
+    return celery(auto_envvar_prefix="CELERY")
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/decorators.py", line 33, in new_func
+    return f(get_current_context(), *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/flower/command.py", line 57, in flower
+    flower_app.start()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/flower/app.py", line 72, in start
+    self.listen(self.options.port, address=self.options.address,
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/web.py", line 2211, in listen
+    server.listen(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/tcpserver.py", line 183, in listen
+    sockets = bind_sockets(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/netutil.py", line 162, in bind_sockets
+    sock.bind(sockaddr)
+OSError: [Errno 48] Address already in use
+[I 240318 14:50:23 command:168] Visit me at http://0.0.0.0:5555
+[I 240318 14:50:23 command:176] Broker: redis://127.0.0.1:6379/14
+[I 240318 14:50:23 command:177] Registered tasks: 
+    ['celery.accumulate',
+     'celery.backend_cleanup',
+     'celery.chain',
+     'celery.chord',
+     'celery.chord_unlock',
+     'celery.chunks',
+     'celery.group',
+     'celery.map',
+     'celery.starmap',
+     'get_balance',
+     'get_position',
+     'update_pnl']
+[I 240318 14:50:23 mixins:228] Connected to redis://127.0.0.1:6379/14
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/bin/celery", line 8, in <module>
+    sys.exit(main())
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/celery/__main__.py", line 15, in main
+    sys.exit(_main())
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/celery/bin/celery.py", line 236, in main
+    return celery(auto_envvar_prefix="CELERY")
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/decorators.py", line 33, in new_func
+    return f(get_current_context(), *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/flower/command.py", line 57, in flower
+    flower_app.start()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/flower/app.py", line 72, in start
+    self.listen(self.options.port, address=self.options.address,
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/web.py", line 2211, in listen
+    server.listen(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/tcpserver.py", line 183, in listen
+    sockets = bind_sockets(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/netutil.py", line 162, in bind_sockets
+    sock.bind(sockaddr)
+OSError: [Errno 48] Address already in use
+[I 240318 14:50:26 command:168] Visit me at http://0.0.0.0:5555
+[I 240318 14:50:26 command:176] Broker: redis://127.0.0.1:6379/14
+[I 240318 14:50:26 command:177] Registered tasks: 
+    ['celery.accumulate',
+     'celery.backend_cleanup',
+     'celery.chain',
+     'celery.chord',
+     'celery.chord_unlock',
+     'celery.chunks',
+     'celery.group',
+     'celery.map',
+     'celery.starmap',
+     'get_balance',
+     'get_position',
+     'update_pnl']
+Traceback (most recent call last):
+[I 240318 14:50:26 mixins:228] Connected to redis://127.0.0.1:6379/14
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/bin/celery", line 8, in <module>
+    sys.exit(main())
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/celery/__main__.py", line 15, in main
+    sys.exit(_main())
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/celery/bin/celery.py", line 236, in main
+    return celery(auto_envvar_prefix="CELERY")
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/decorators.py", line 33, in new_func
+    return f(get_current_context(), *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/flower/command.py", line 57, in flower
+    flower_app.start()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/flower/app.py", line 72, in start
+    self.listen(self.options.port, address=self.options.address,
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/web.py", line 2211, in listen
+    server.listen(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/tcpserver.py", line 183, in listen
+    sockets = bind_sockets(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/netutil.py", line 162, in bind_sockets
+    sock.bind(sockaddr)
+OSError: [Errno 48] Address already in use
+[I 240318 14:50:29 command:168] Visit me at http://0.0.0.0:5555
+[I 240318 14:50:29 command:176] Broker: redis://127.0.0.1:6379/14
+[I 240318 14:50:29 command:177] Registered tasks: 
+    ['celery.accumulate',
+     'celery.backend_cleanup',
+     'celery.chain',
+     'celery.chord',
+     'celery.chord_unlock',
+     'celery.chunks',
+     'celery.group',
+     'celery.map',
+     'celery.starmap',
+     'get_balance',
+     'get_position',
+     'update_pnl']
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/bin/celery", line 8, in <module>
+[I 240318 14:50:29 mixins:228] Connected to redis://127.0.0.1:6379/14
+    sys.exit(main())
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/celery/__main__.py", line 15, in main
+    sys.exit(_main())
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/celery/bin/celery.py", line 236, in main
+    return celery(auto_envvar_prefix="CELERY")
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/decorators.py", line 33, in new_func
+    return f(get_current_context(), *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/flower/command.py", line 57, in flower
+    flower_app.start()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/flower/app.py", line 72, in start
+    self.listen(self.options.port, address=self.options.address,
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/web.py", line 2211, in listen
+    server.listen(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/tcpserver.py", line 183, in listen
+    sockets = bind_sockets(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/netutil.py", line 162, in bind_sockets
+    sock.bind(sockaddr)
+OSError: [Errno 48] Address already in use
+[I 240318 14:50:33 command:168] Visit me at http://0.0.0.0:5555
+[I 240318 14:50:33 command:176] Broker: redis://127.0.0.1:6379/14
+[I 240318 14:50:33 command:177] Registered tasks: 
+    ['celery.accumulate',
+     'celery.backend_cleanup',
+     'celery.chain',
+     'celery.chord',
+     'celery.chord_unlock',
+     'celery.chunks',
+     'celery.group',
+     'celery.map',
+     'celery.starmap',
+     'get_balance',
+     'get_position',
+     'update_pnl']
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/bin/celery", line 8, in <module>
+[I 240318 14:50:33 mixins:228] Connected to redis://127.0.0.1:6379/14
+    sys.exit(main())
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/celery/__main__.py", line 15, in main
+    sys.exit(_main())
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/celery/bin/celery.py", line 236, in main
+    return celery(auto_envvar_prefix="CELERY")
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1157, in __call__
+    return self.main(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1078, in main
+    rv = self.invoke(ctx)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1688, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 1434, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/core.py", line 783, in invoke
+    return __callback(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/click/decorators.py", line 33, in new_func
+    return f(get_current_context(), *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/flower/command.py", line 57, in flower
+    flower_app.start()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/flower/app.py", line 72, in start
+    self.listen(self.options.port, address=self.options.address,
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/web.py", line 2211, in listen
+    server.listen(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/tcpserver.py", line 183, in listen
+    sockets = bind_sockets(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/tornado/netutil.py", line 162, in bind_sockets
+    sock.bind(sockaddr)
+OSError: [Errno 48] Address already in use

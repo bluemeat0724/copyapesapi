@@ -1,0 +1,21 @@
+ 
+ -------------- celery@mac v5.3.6 (emerald-rush)
+--- ***** ----- 
+-- ******* ---- macOS-10.16-x86_64-64bit 2024-03-18 14:49:00
+- *** --- * --- 
+- ** ---------- [config]
+- ** ---------- .> app:         copytrade:0x7fa8c0810fd0
+- ** ---------- .> transport:   redis://127.0.0.1:6379/14
+- ** ---------- .> results:     redis://127.0.0.1:6379/15
+- *** --- * --- .> concurrency: 200 (prefork)
+-- ******* ---- .> task events: OFF (enable -E to monitor tasks in this worker)
+--- ***** ----- 
+ -------------- [queues]
+                .> Celery           exchange=Celery(direct) key=Celery
+                
+
+[tasks]
+  . get_balance
+  . get_position
+  . update_pnl
+

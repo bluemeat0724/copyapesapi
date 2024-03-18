@@ -179,7 +179,6 @@ class Trader(threading.Thread):
                 self.posSide = 'short'
             else:
                 self.posSide = 'long'
-        print("属性", self.posSide)
         return True
 
     # 执行okx交易
@@ -335,15 +334,15 @@ class Trader(threading.Thread):
         except:
             return
         if not data:
-            # 账户获取剩余额度
-            remaining_quota = get_remaining_quota(self.user_id, int(self.flag))
-            # 获取任务收益
-            task_pnl = check_task_pnl(self.task_id)
-            remaining_quota -= task_pnl
-            # 更新剩余额度数据
-            update_remaining_quota(self.user_id, int(self.flag), remaining_quota)
-
-            print(f'更新用户{self.user_id}可用盈利额度数据成功！')
+            # # 账户获取剩余额度
+            # remaining_quota = get_remaining_quota(self.user_id, int(self.flag))
+            # # 获取任务收益
+            # task_pnl = check_task_pnl(self.task_id)
+            # remaining_quota -= task_pnl
+            # # 更新剩余额度数据
+            # update_remaining_quota(self.user_id, int(self.flag), remaining_quota)
+            #
+            # print(f'更新用户{self.user_id}可用盈利额度数据成功！')
             # 打印日志
             self.log_to_database("WARNING", f'手动结束跟单，任务：{self.task_id}')
             return
@@ -357,13 +356,13 @@ class Trader(threading.Thread):
         # 更新收益数据，以及对应可用额度数据
         OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=2)
 
-        # 账户获取剩余额度
-        remaining_quota = get_remaining_quota(self.user_id, int(self.flag))
-        # 获取任务收益
-        task_pnl = check_task_pnl(self.task_id)
-        remaining_quota -= task_pnl
-        # 更新剩余额度数据
-        update_remaining_quota(self.user_id, int(self.flag), remaining_quota)
-
-        print(f'更新用户{self.user_id}可用盈利额度数据成功！')
+        # # 账户获取剩余额度
+        # remaining_quota = get_remaining_quota(self.user_id, int(self.flag))
+        # # 获取任务收益
+        # task_pnl = check_task_pnl(self.task_id)
+        # remaining_quota -= task_pnl
+        # # 更新剩余额度数据
+        # update_remaining_quota(self.user_id, int(self.flag), remaining_quota)
+        #
+        # print(f'更新用户{self.user_id}可用盈利额度数据成功！')
         self.log_to_database("WARNING", f'手动结束跟单，任务：{self.task_id}')

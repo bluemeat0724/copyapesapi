@@ -49,7 +49,7 @@ class Spider(threading.Thread):
             db.exec(insert_sql, **params)
 
     def run(self):
-        self.log_to_database("info", f"跟单猿跟单系统启动，跟随交易员：{self.uniqueName}")
+        self.log_to_database("INFO", f"跟单猿跟单系统启动，跟随交易员：{self.uniqueName}")
         # 第一次获取当前交易数据
         while True:
             try:
