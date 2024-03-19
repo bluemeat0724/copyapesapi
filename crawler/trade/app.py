@@ -55,7 +55,10 @@ def run():
     while True:
         try:
             conn = redis.Redis(**settings.REDIS_PARAMS)
-            retrieved_json = conn.brpop(settings.TRADE_TASK_NAME, timeout=3)
+            try:
+                retrieved_json = conn.brpop(settings.TRADE_TASK_NAME, timeout=3)
+            except:
+                continue
             if not retrieved_json:
                 continue
             task = json.loads(retrieved_json[1].decode('utf-8'))
