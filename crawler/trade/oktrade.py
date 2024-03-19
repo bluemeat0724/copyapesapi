@@ -194,7 +194,7 @@ class Trader(threading.Thread):
             trade_times = get_trade_times(self.instId, self.flag, self.acc)
             if trade_times is None:
                 # self.thread_logger.WARNING(f'模拟盘土狗币交易失败，品种：{self.instId}不在交易所模拟盘中！')
-                self.log_to_database("WARNING", f"模拟盘土狗币交易失败，品种：{self.instId}不在交易所模拟盘中！")
+                self.log_to_database("WARNING", "模拟盘土狗币交易失败", f"品种：{self.instId}不在交易所模拟盘中！")
                 return
             # 市价开仓
             print(f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
@@ -204,23 +204,23 @@ class Trader(threading.Thread):
             try:
                 s_code_value = result.get('set_order_result', {}).get('data', {}).get('sCode')
                 if s_code_value == '0':
-                    self.log_to_database("success", f"进行开仓操作", f"品种：{self.instId}，金额：{self.sums}USDT，方向：{self.posSide}")
+                    self.log_to_database("success", "进行开仓操作", f"品种：{self.instId}，金额：{self.sums}USDT，方向：{self.posSide}")
                     # self.thread_logger.success(f'进行开仓操作，品种：{self.instId}，金额：{self.sums}USDT，方向：{self.posSide}')
             except:
                 print(f'任务{self.task_id}错误信息：{result}')
                 try:
                     s_code_value = result.get('set_order_result', {}).get('data', [{}])[0].get('sCode')
                     if s_code_value == '51000':
-                        self.log_to_database("WARNING", '交易失败，交易金额过低，请重新设置任务单笔跟单金额。')
+                        self.log_to_database("WARNING", '交易失败', '交易金额过低，请重新设置任务单笔跟单金额。')
                     elif s_code_value == '51010':
                         self.log_to_database("WARNING",
-                                             '交易失败，当前账户为简单交易模式，请在交易所合约交易页面进行手动调整。无需终止本次跟单任务，交易模式调整完成后，如有新的交易订单，将正常交易。')
+                                             '交易失败', '当前账户为简单交易模式，请在交易所合约交易页面进行手动调整。无需终止本次跟单任务，交易模式调整完成后，如有新的交易订单，将正常交易。')
                     elif s_code_value == '51008':
-                        self.log_to_database("WARNING", '交易失败，账户余额不足！请前往交易所充值！')
+                        self.log_to_database("WARNING", '交易失败', '账户余额不足！请前往交易所充值！')
                     elif s_code_value == '51024':
-                        self.log_to_database("WARNING", '交易失败，交易账户冻结！请联系交易所客服处理！')
+                        self.log_to_database("WARNING", '交易失败', '交易账户冻结！请联系交易所客服处理！')
                     elif s_code_value in ['50103', '50104', '50105', '50106', '50107']:
-                        self.log_to_database("WARNING", '交易失败，API信息填写错误，请结束任务后重新提交新的API！')
+                        self.log_to_database("WARNING", '交易失败', 'API信息填写错误，请结束任务后重新提交新的API！')
                     else:
                         self.log_to_database("WARNING",
                                              f'交易失败，请根据错误码，自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')
@@ -228,12 +228,12 @@ class Trader(threading.Thread):
                     try:
                         s_code_value = result.get('error_result', {}).get('code')
                         if s_code_value == '51001':
-                            self.log_to_database("WARNING", f'模拟盘土狗币交易失败，品种：{self.instId}不在交易所模拟盘中！')
+                            self.log_to_database("WARNING", '模拟盘土狗币交易失败', f'品种：{self.instId}不在交易所模拟盘中！')
                         elif s_code_value == '59000':
-                            self.log_to_database("WARNING", '设置失败，请在设置前关闭任何挂单或持仓！')
+                            self.log_to_database("WARNING", '设置失败', '请在设置前关闭任何挂单或持仓！')
                         else:
                             self.log_to_database("WARNING",
-                                                 f'交易失败，请根据错误码，自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')
+                                                 '交易失败', f'请根据错误码，自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')
                     except:
                         pass
         elif self.order_type == 'close':
@@ -262,7 +262,7 @@ class Trader(threading.Thread):
             # 获取模拟盘/实盘交易倍数
             trade_times = get_trade_times(self.instId, self.flag, self.acc)
             if trade_times is None:
-                self.log_to_database("WARNING", f'模拟盘土狗币交易失败，品种：{self.instId}不在交易所模拟盘中！')
+                self.log_to_database("WARNING", '模拟盘土狗币交易失败', f'品种：{self.instId}不在交易所模拟盘中！')
                 return
             # 加仓操作
             if ratio > 1:
@@ -273,7 +273,7 @@ class Trader(threading.Thread):
                 try:
                     s_code_value = result.get('set_order_result', {}).get('data', {}).get('sCode')
                     if s_code_value == '0':
-                        self.log_to_database("success", f'进行加仓操作，品种：{self.instId}，金额：{self.sums}USDT，方向：{self.posSide}')
+                        self.log_to_database("success", '进行加仓操作', f'品种：{self.instId}，金额：{self.sums}USDT，方向：{self.posSide}')
                 except:
                     print(f'任务{self.task_id}错误信息：{result}')
                     self.handle_trade_failure(result)
@@ -286,7 +286,7 @@ class Trader(threading.Thread):
                         self.obj.account.get_positions(instId=self.instId, posSide=self.posSide).get('data')[0].get(
                             'availPos')) * (1 - ratio)
                 except:
-                    self.log_to_database("success", f'进行减仓操作，品种：{self.instId}，暂时没有仓位，继续跟单中...')
+                    self.log_to_database("success", '进行减仓操作', f'品种：{self.instId}，暂时没有仓位，继续跟单中...')
                     return
                 print(f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
                 self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT=quantityCT,
@@ -294,35 +294,35 @@ class Trader(threading.Thread):
                 # 更新持仓数据
                 OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=1)
                 percentage = "{:.2f}%".format((1 - ratio) * 100)
-                self.log_to_database("success", f'进行减仓操作，品种：{self.instId}，减仓占比：{percentage}')
+                self.log_to_database("success", '进行减仓操作', f'品种：{self.instId}，减仓占比：{percentage}')
 
     def handle_trade_failure(self, result):
         try:
             s_code_value = result.get('set_order_result', {}).get('data', [{}])[0].get('sCode')
             if s_code_value == '51000':
-                self.log_to_database("WARNING", '交易失败，交易金额过低，请重新设置任务单笔跟单金额。')
+                self.log_to_database("WARNING", '交易失败', '交易金额过低，请重新设置任务单笔跟单金额。')
             elif s_code_value == '51010':
                 self.log_to_database("WARNING",
-                                     '交易失败，当前账户为简单交易模式，请在交易所合约交易页面进行手动调整。无需终止本次跟单任务，交易模式调整完成后，如有新的交易订单，将正常交易。')
+                                     '交易失败', '当前账户为简单交易模式，请在交易所合约交易页面进行手动调整。无需终止本次跟单任务，交易模式调整完成后，如有新的交易订单，将正常交易。')
             elif s_code_value == '51008':
-                self.log_to_database("WARNING", '交易失败，账户余额不足！请前往交易所充值！')
+                self.log_to_database("WARNING", '交易失败', '账户余额不足！请前往交易所充值！')
             elif s_code_value == '51024':
-                self.log_to_database("WARNING", '交易失败，交易账户冻结！请联系交易所客服处理！')
+                self.log_to_database("WARNING", '交易失败', '交易账户冻结！请联系交易所客服处理！')
             elif s_code_value in ['50103', '50104', '50105', '50106', '50107']:
-                self.log_to_database("WARNING", '交易失败，API信息填写错误，请结束任务后重新提交新的API！')
+                self.log_to_database("WARNING", '交易失败', 'API信息填写错误，请结束任务后重新提交新的API！')
             else:
                 self.log_to_database("WARNING",
-                                     f'交易失败，请根据错误码，自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')
+                                     '交易失败', f'请根据错误码，自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')
         except:
             try:
                 s_code_value = result.get('error_result', {}).get('code')
                 if s_code_value == '51001':
-                    self.log_to_database("WARNING", f'模拟盘土狗币交易失败，品种：{self.instId}不在交易所模拟盘中！')
+                    self.log_to_database("WARNING", '模拟盘土狗币交易失败', f'品种：{self.instId}不在交易所模拟盘中！')
                 elif s_code_value == '59000':
-                    self.log_to_database("WARNING", '设置失败，请在设置前关闭任何挂单或持仓！')
+                    self.log_to_database("WARNING", '设置失败', '请在设置前关闭任何挂单或持仓！')
                 else:
                     self.log_to_database("WARNING",
-                                         f'交易失败，请根据错误码，自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')
+                                         '交易失败', f'请根据错误码，自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')
             except:
                 pass
 
@@ -344,14 +344,14 @@ class Trader(threading.Thread):
             #
             # print(f'更新用户{self.user_id}可用盈利额度数据成功！')
             # 打印日志
-            self.log_to_database("WARNING", f'手动结束跟单，任务：{self.task_id}')
+            self.log_to_database("WARNING", '手动结束跟单', f'任务：{self.task_id}')
             return
         for item in data:
             instId = item.get('instId')
             posSide = item.get('posSide')
             # 市价平仓
             self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode='cross')
-            self.log_to_database("WARNING", f'手动结束跟单，{instId}已经按市价进行平仓。')
+            self.log_to_database("WARNING", '手动结束跟单', f'{instId}已经按市价进行平仓。')
 
         # 更新收益数据，以及对应可用额度数据
         OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=2)

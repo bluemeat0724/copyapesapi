@@ -868,3 +868,1133 @@
 [2024-03-18 21:50:00,913: INFO/MainProcess] Task update_pnl[e653a1a1-5220-4087-8040-cfd7bf720c82] received
 [2024-03-18 21:50:00,913: INFO/ForkPoolWorker-27] Task get_position[0b849542-ff52-4089-b7a8-546e1804268e] succeeded in 0.0020202509986120276s: None
 [2024-03-18 21:50:01,004: INFO/ForkPoolWorker-27] Task update_pnl[e653a1a1-5220-4087-8040-cfd7bf720c82] succeeded in 0.08833290600159671s: None
+[2024-03-18 21:51:00,909: INFO/MainProcess] Task get_position[4c300d2b-0fb1-4aed-8ecf-13bde29235e9] received
+[2024-03-18 21:51:00,914: INFO/ForkPoolWorker-27] Task get_position[4c300d2b-0fb1-4aed-8ecf-13bde29235e9] succeeded in 0.0020297860028222203s: None
+[2024-03-18 21:51:00,914: INFO/MainProcess] Task update_pnl[133d8519-d3ca-4009-a49a-25eafc57b73e] received
+[2024-03-18 21:51:01,002: INFO/ForkPoolWorker-27] Task update_pnl[133d8519-d3ca-4009-a49a-25eafc57b73e] succeeded in 0.08603055799903814s: None
+[2024-03-18 21:51:22,331: INFO/ForkPoolWorker-154] Task get_balance[d34db7ef-ba18-4e3a-9bb7-54df95819227] succeeded in 141.68083673900037s: None
+[2024-03-18 21:52:00,909: INFO/MainProcess] Task get_position[0283ee28-9cfc-4790-9c47-72eddd25145d] received
+[2024-03-18 21:52:00,912: INFO/MainProcess] Task update_pnl[17997bee-c436-4884-9b39-70fbe1239c23] received
+[2024-03-18 21:52:00,915: INFO/ForkPoolWorker-154] Task get_position[0283ee28-9cfc-4790-9c47-72eddd25145d] succeeded in 0.0029547049998654984s: None
+[2024-03-18 21:52:01,022: INFO/ForkPoolWorker-27] Task update_pnl[17997bee-c436-4884-9b39-70fbe1239c23] succeeded in 0.10904089899850078s: None
+[2024-03-18 21:53:00,909: INFO/MainProcess] Task get_position[f124e500-1bd0-4169-9c37-e3bd8686bc08] received
+[2024-03-18 21:53:00,914: INFO/ForkPoolWorker-154] Task get_position[f124e500-1bd0-4169-9c37-e3bd8686bc08] succeeded in 0.0019968800006608944s: None
+[2024-03-18 21:53:00,914: INFO/MainProcess] Task update_pnl[f3032acf-1560-47a7-8e52-30567147e38e] received
+[2024-03-18 21:53:01,013: INFO/ForkPoolWorker-154] Task update_pnl[f3032acf-1560-47a7-8e52-30567147e38e] succeeded in 0.09607341400260339s: None
+[2024-03-18 21:54:00,645: INFO/MainProcess] Task get_balance[082f4394-eda7-4623-95d3-109431e8fc3f] received
+[2024-03-18 21:54:00,909: INFO/MainProcess] Task get_position[04d1885f-238e-4d85-a6c5-5dd7399dd306] received
+[2024-03-18 21:54:00,914: INFO/MainProcess] Task update_pnl[5e565c76-1440-404a-932a-efde006bc0c2] received
+[2024-03-18 21:54:00,914: INFO/ForkPoolWorker-27] Task get_position[04d1885f-238e-4d85-a6c5-5dd7399dd306] succeeded in 0.002000291002332233s: None
+[2024-03-18 21:54:01,004: INFO/ForkPoolWorker-27] Task update_pnl[5e565c76-1440-404a-932a-efde006bc0c2] succeeded in 0.08822635600154172s: None
+[2024-03-18 21:54:19,722: INFO/MainProcess] Task get_balance[6244969d-ac5d-43bf-979c-6a9435689a20] received
+[2024-03-18 21:54:19,724: INFO/MainProcess] Task get_position[8c6fa920-e968-4e5d-ac67-3ef031020c16] received
+[2024-03-18 21:54:19,736: INFO/ForkPoolWorker-155] Task get_position[8c6fa920-e968-4e5d-ac67-3ef031020c16] succeeded in 0.008373130000109086s: None
+[2024-03-18 21:55:00,909: INFO/MainProcess] Task get_position[fe33eac0-39df-42be-b657-4e7a8297ba19] received
+[2024-03-18 21:55:00,914: INFO/MainProcess] Task update_pnl[4a87abef-feeb-4920-a25c-9df9fdc208d4] received
+[2024-03-18 21:55:00,914: INFO/ForkPoolWorker-155] Task get_position[fe33eac0-39df-42be-b657-4e7a8297ba19] succeeded in 0.00202789600007236s: None
+[2024-03-18 21:55:01,024: INFO/ForkPoolWorker-155] Task update_pnl[4a87abef-feeb-4920-a25c-9df9fdc208d4] succeeded in 0.10694418900311575s: None
+[2024-03-18 21:56:00,910: INFO/MainProcess] Task get_position[8c3cefcc-0486-4692-9daf-522cf5c51c8f] received
+[2024-03-18 21:56:00,913: INFO/MainProcess] Task update_pnl[2918744d-30b8-4726-a4e6-6c5dbfd83258] received
+[2024-03-18 21:56:00,915: INFO/ForkPoolWorker-155] Task get_position[8c3cefcc-0486-4692-9daf-522cf5c51c8f] succeeded in 0.002101688998664031s: None
+[2024-03-18 21:56:01,011: INFO/ForkPoolWorker-28] Task update_pnl[2918744d-30b8-4726-a4e6-6c5dbfd83258] succeeded in 0.09493388199916808s: None
+[2024-03-18 21:56:39,655: INFO/ForkPoolWorker-27] Task get_balance[6244969d-ac5d-43bf-979c-6a9435689a20] succeeded in 139.9303875839978s: None
+[2024-03-18 21:57:00,910: INFO/MainProcess] Task get_position[a3b6dafb-fa27-4588-a575-22ca74056f0e] received
+[2024-03-18 21:57:00,914: INFO/ForkPoolWorker-27] Task get_position[a3b6dafb-fa27-4588-a575-22ca74056f0e] succeeded in 0.0019362940001883544s: None
+[2024-03-18 21:57:00,914: INFO/MainProcess] Task update_pnl[6ba2fe3f-e9ee-4f85-94bf-1abc9012c6ad] received
+[2024-03-18 21:57:01,023: INFO/ForkPoolWorker-27] Task update_pnl[6ba2fe3f-e9ee-4f85-94bf-1abc9012c6ad] succeeded in 0.1060879240030772s: None
+[2024-03-18 21:57:39,786: INFO/MainProcess] Task get_position[61f145ae-f66b-42fe-8a5f-b16f63fd7b1c] received
+[2024-03-18 21:57:39,793: INFO/ForkPoolWorker-27] Task get_position[61f145ae-f66b-42fe-8a5f-b16f63fd7b1c] succeeded in 0.003604107001592638s: None
+[2024-03-18 21:58:00,910: INFO/MainProcess] Task get_position[a46a9ec2-6e1a-45fa-b731-dc35b74dd73c] received
+[2024-03-18 21:58:00,914: INFO/MainProcess] Task update_pnl[ba9b9171-2fed-4633-bfd1-1a5515572866] received
+[2024-03-18 21:58:00,916: INFO/ForkPoolWorker-27] Task get_position[a46a9ec2-6e1a-45fa-b731-dc35b74dd73c] succeeded in 0.002314633999048965s: None
+[2024-03-18 21:58:01,012: INFO/ForkPoolWorker-155] Task update_pnl[ba9b9171-2fed-4633-bfd1-1a5515572866] succeeded in 0.098119995000161s: None
+[2024-03-18 21:59:00,645: INFO/MainProcess] Task get_balance[9af0d878-ec9d-4e1c-9188-e32bcda29e34] received
+[2024-03-18 21:59:00,914: INFO/MainProcess] Task get_position[fb1031f7-36a6-447b-9683-0f9b428aa22b] received
+[2024-03-18 21:59:00,917: INFO/MainProcess] Task update_pnl[e7776a4f-5aa6-470f-be66-7a9fcc7278bf] received
+[2024-03-18 21:59:00,920: INFO/ForkPoolWorker-155] Task get_position[fb1031f7-36a6-447b-9683-0f9b428aa22b] succeeded in 0.00218552499791258s: None
+[2024-03-18 21:59:01,023: INFO/ForkPoolWorker-28] Task update_pnl[e7776a4f-5aa6-470f-be66-7a9fcc7278bf] succeeded in 0.1056261000012455s: None
+[2024-03-18 22:00:00,917: INFO/MainProcess] Task get_position[8ed3492b-4fb1-4f28-a5ea-fb760436bad8] received
+[2024-03-18 22:00:00,921: INFO/MainProcess] Task update_pnl[f16f7675-225a-4dbd-a211-c860c6fe220d] received
+[2024-03-18 22:00:00,925: INFO/ForkPoolWorker-155] Task get_position[8ed3492b-4fb1-4f28-a5ea-fb760436bad8] succeeded in 0.003332051997858798s: None
+[2024-03-18 22:00:01,074: INFO/ForkPoolWorker-28] Task update_pnl[f16f7675-225a-4dbd-a211-c860c6fe220d] succeeded in 0.15244788599738968s: None
+[2024-03-18 22:01:00,917: INFO/MainProcess] Task get_position[75997d79-c225-4168-956d-fc88f9d072ac] received
+[2024-03-18 22:01:00,922: INFO/MainProcess] Task update_pnl[e1504fec-1c05-41eb-ad49-75e4381d58ec] received
+[2024-03-18 22:01:00,927: INFO/ForkPoolWorker-155] Task get_position[75997d79-c225-4168-956d-fc88f9d072ac] succeeded in 0.004474361998290988s: None
+[2024-03-18 22:01:01,070: INFO/ForkPoolWorker-28] Task update_pnl[e1504fec-1c05-41eb-ad49-75e4381d58ec] succeeded in 0.14711267900202074s: None
+[2024-03-18 22:01:22,771: INFO/ForkPoolWorker-27] Task get_balance[9af0d878-ec9d-4e1c-9188-e32bcda29e34] succeeded in 142.12114088900125s: None
+[2024-03-18 22:02:00,916: INFO/MainProcess] Task get_position[18606b3e-c70b-4b13-a128-87498774613d] received
+[2024-03-18 22:02:00,919: INFO/MainProcess] Task update_pnl[89153ba2-474f-443b-9249-d6e546088ee1] received
+[2024-03-18 22:02:00,922: INFO/ForkPoolWorker-27] Task get_position[18606b3e-c70b-4b13-a128-87498774613d] succeeded in 0.0023338360006164294s: None
+[2024-03-18 22:02:01,029: INFO/ForkPoolWorker-155] Task update_pnl[89153ba2-474f-443b-9249-d6e546088ee1] succeeded in 0.10936384299930069s: None
+[2024-03-18 22:03:00,918: INFO/MainProcess] Task get_position[4cf88399-1257-4d1d-aa2f-133a1d04842e] received
+[2024-03-18 22:03:00,923: INFO/MainProcess] Task update_pnl[efe81c22-fffb-43c8-a908-4adf207c8099] received
+[2024-03-18 22:03:00,926: INFO/ForkPoolWorker-27] Task get_position[4cf88399-1257-4d1d-aa2f-133a1d04842e] succeeded in 0.002549409997300245s: None
+[2024-03-18 22:03:01,081: INFO/ForkPoolWorker-155] Task update_pnl[efe81c22-fffb-43c8-a908-4adf207c8099] succeeded in 0.15751572500084876s: None
+[2024-03-18 22:04:00,674: INFO/MainProcess] Task get_balance[0ad65bbf-fdfe-4f7d-bd91-910d6a77f2f7] received
+[2024-03-18 22:04:00,916: INFO/MainProcess] Task get_position[9daf724c-093f-4c22-a3b8-a8be05664191] received
+[2024-03-18 22:04:00,919: INFO/MainProcess] Task update_pnl[c7710d61-fb79-4123-8c5a-986a03a4a6e4] received
+[2024-03-18 22:04:00,925: INFO/ForkPoolWorker-155] Task get_position[9daf724c-093f-4c22-a3b8-a8be05664191] succeeded in 0.0038492999992740806s: None
+[2024-03-18 22:04:01,048: INFO/ForkPoolWorker-28] Task update_pnl[c7710d61-fb79-4123-8c5a-986a03a4a6e4] succeeded in 0.12759678799920948s: None
+[2024-03-18 22:04:19,919: INFO/MainProcess] Task get_position[0d5d04d2-c941-4dea-8294-5c92a77f8350] received
+[2024-03-18 22:04:19,922: INFO/MainProcess] Task get_balance[f91595e6-81b8-4d2c-963d-c8db939ccbda] received
+[2024-03-18 22:04:19,925: INFO/ForkPoolWorker-155] Task get_position[0d5d04d2-c941-4dea-8294-5c92a77f8350] succeeded in 0.0022334770001180004s: None
+[2024-03-18 22:04:49,492: INFO/ForkPoolWorker-27] Task get_balance[0ad65bbf-fdfe-4f7d-bd91-910d6a77f2f7] succeeded in 48.80454739799825s: None
+[2024-03-18 22:05:00,917: INFO/MainProcess] Task get_position[fd394f38-70de-4e36-96fe-c75f175a4f4a] received
+[2024-03-18 22:05:00,921: INFO/MainProcess] Task update_pnl[d37921be-5982-4370-bcfd-e7db08a75da8] received
+[2024-03-18 22:05:00,925: INFO/ForkPoolWorker-27] Task get_position[fd394f38-70de-4e36-96fe-c75f175a4f4a] succeeded in 0.0030738080022274517s: None
+[2024-03-18 22:05:01,116: INFO/ForkPoolWorker-155] Task update_pnl[d37921be-5982-4370-bcfd-e7db08a75da8] succeeded in 0.1934779039984278s: None
+[2024-03-18 22:06:00,920: INFO/MainProcess] Task get_position[462bc2d0-e4e1-4a4e-81ed-ef4511a05def] received
+[2024-03-18 22:06:00,926: INFO/MainProcess] Task update_pnl[f193ea94-66ca-443f-b747-b01e9fd91fc0] received
+[2024-03-18 22:06:00,932: INFO/ForkPoolWorker-27] Task get_position[462bc2d0-e4e1-4a4e-81ed-ef4511a05def] succeeded in 0.004730017000838416s: None
+[2024-03-18 22:06:01,089: INFO/ForkPoolWorker-155] Task update_pnl[f193ea94-66ca-443f-b747-b01e9fd91fc0] succeeded in 0.16082653700141236s: None
+[2024-03-18 22:06:41,566: INFO/ForkPoolWorker-28] Task get_balance[f91595e6-81b8-4d2c-963d-c8db939ccbda] succeeded in 141.64341470200088s: None
+[2024-03-18 22:07:00,916: INFO/MainProcess] Task get_position[aba41ddc-58af-4433-8601-51dd693bc67c] received
+[2024-03-18 22:07:00,921: INFO/MainProcess] Task update_pnl[16ed01b5-7d2b-497d-9486-6e8314b2a4a8] received
+[2024-03-18 22:07:00,921: INFO/ForkPoolWorker-27] Task get_position[aba41ddc-58af-4433-8601-51dd693bc67c] succeeded in 0.0022361189985531382s: None
+[2024-03-18 22:07:01,094: INFO/ForkPoolWorker-27] Task update_pnl[16ed01b5-7d2b-497d-9486-6e8314b2a4a8] succeeded in 0.17062705799980904s: None
+[2024-03-18 22:08:00,919: INFO/MainProcess] Task get_position[c182ceb6-b128-41c9-9000-5e363daf3c95] received
+[2024-03-18 22:08:00,922: INFO/MainProcess] Task update_pnl[aa502738-f9cf-44ad-8f97-6fdb63c70750] received
+[2024-03-18 22:08:00,926: INFO/ForkPoolWorker-27] Task get_position[c182ceb6-b128-41c9-9000-5e363daf3c95] succeeded in 0.002494150998245459s: None
+[2024-03-18 22:08:01,028: INFO/ForkPoolWorker-155] Task update_pnl[aa502738-f9cf-44ad-8f97-6fdb63c70750] succeeded in 0.10446349899939378s: None
+[2024-03-18 22:09:00,645: INFO/MainProcess] Task get_balance[c6f46912-22af-4c62-a152-bad569146538] received
+[2024-03-18 22:09:00,910: INFO/MainProcess] Task get_position[2440a303-3dcc-411c-be10-8f5a0fabffed] received
+[2024-03-18 22:09:00,930: INFO/ForkPoolWorker-155] Task get_position[2440a303-3dcc-411c-be10-8f5a0fabffed] succeeded in 0.017824975999246817s: None
+[2024-03-18 22:09:00,932: INFO/MainProcess] Task update_pnl[ee198f6c-4d38-4c45-b8d6-ef89027c4619] received
+[2024-03-18 22:09:01,049: INFO/ForkPoolWorker-155] Task update_pnl[ee198f6c-4d38-4c45-b8d6-ef89027c4619] succeeded in 0.114202259999729s: None
+[2024-03-18 22:09:19,983: INFO/MainProcess] Task get_balance[272cb064-20a1-4910-9e69-2e1211db2267] received
+[2024-03-18 22:09:19,986: INFO/MainProcess] Task get_position[d78c3ba0-46c2-443b-966a-3f139561b97a] received
+[2024-03-18 22:09:19,988: INFO/ForkPoolWorker-28] Task get_position[d78c3ba0-46c2-443b-966a-3f139561b97a] succeeded in 0.002361415998166194s: None
+[2024-03-18 22:10:00,911: INFO/MainProcess] Task get_position[ee3ce045-f183-4db2-b8b6-a3e928491cbf] received
+[2024-03-18 22:10:00,931: INFO/MainProcess] Task update_pnl[82ac8c35-87be-4fd7-88f5-52d2dcf2c52d] received
+[2024-03-18 22:10:00,935: INFO/ForkPoolWorker-28] Task get_position[ee3ce045-f183-4db2-b8b6-a3e928491cbf] succeeded in 0.0033335739972244482s: None
+[2024-03-18 22:10:01,105: INFO/ForkPoolWorker-156] Task update_pnl[82ac8c35-87be-4fd7-88f5-52d2dcf2c52d] succeeded in 0.16921783100042376s: None
+[2024-03-18 22:11:00,910: INFO/MainProcess] Task get_position[f60070af-d4ff-4bcb-a310-4cc2b2561175] received
+[2024-03-18 22:11:00,931: INFO/MainProcess] Task update_pnl[cc2b7886-ba51-46b4-a003-273c7149acdb] received
+[2024-03-18 22:11:00,935: INFO/ForkPoolWorker-28] Task get_position[f60070af-d4ff-4bcb-a310-4cc2b2561175] succeeded in 0.00297839100312558s: None
+[2024-03-18 22:11:01,042: INFO/ForkPoolWorker-156] Task update_pnl[cc2b7886-ba51-46b4-a003-273c7149acdb] succeeded in 0.1096299300006649s: None
+[2024-03-18 22:11:20,928: INFO/ForkPoolWorker-27] Task get_balance[c6f46912-22af-4c62-a152-bad569146538] succeeded in 140.2826052349992s: None
+[2024-03-18 22:12:00,927: INFO/MainProcess] Task get_position[9b5da584-ed6f-4af5-95e4-883ef342d7f6] received
+[2024-03-18 22:12:00,931: INFO/MainProcess] Task update_pnl[fd9ed73c-40c7-420a-b625-e9dd5a671e57] received
+[2024-03-18 22:12:00,934: INFO/ForkPoolWorker-27] Task get_position[9b5da584-ed6f-4af5-95e4-883ef342d7f6] succeeded in 0.00266886199824512s: None
+[2024-03-18 22:12:01,077: INFO/ForkPoolWorker-28] Task update_pnl[fd9ed73c-40c7-420a-b625-e9dd5a671e57] succeeded in 0.14608248500007903s: None
+[2024-03-18 22:13:00,927: INFO/MainProcess] Task get_position[8005d768-5274-4e65-a0b0-bc428ddb187c] received
+[2024-03-18 22:13:00,930: INFO/MainProcess] Task update_pnl[4af15359-e628-4b01-823f-cde0a6b27372] received
+[2024-03-18 22:13:00,932: INFO/ForkPoolWorker-27] Task get_position[8005d768-5274-4e65-a0b0-bc428ddb187c] succeeded in 0.002299722000316251s: None
+[2024-03-18 22:13:01,027: INFO/ForkPoolWorker-28] Task update_pnl[4af15359-e628-4b01-823f-cde0a6b27372] succeeded in 0.09640579400002025s: None
+[2024-03-18 22:14:00,646: INFO/MainProcess] Task get_balance[6cc62fc7-e1db-4155-9150-d3086eae4e2b] received
+[2024-03-18 22:14:00,929: INFO/MainProcess] Task get_position[556211a9-f903-4628-bbe0-fbb1054f5a37] received
+[2024-03-18 22:14:00,931: INFO/MainProcess] Task update_pnl[f426bdc4-7f3f-4d9c-b547-8b03dee92fba] received
+[2024-03-18 22:14:00,934: INFO/ForkPoolWorker-28] Task get_position[556211a9-f903-4628-bbe0-fbb1054f5a37] succeeded in 0.002343419000681024s: None
+[2024-03-18 22:14:01,032: INFO/ForkPoolWorker-156] Task update_pnl[f426bdc4-7f3f-4d9c-b547-8b03dee92fba] succeeded in 0.10050912700171466s: None
+[2024-03-18 22:14:20,081: INFO/MainProcess] Task get_balance[4de7d60e-3746-447b-9765-f2dba0f2c219] received
+[2024-03-18 22:15:00,928: INFO/MainProcess] Task get_position[98bd9ade-ed70-405c-b2f2-4922e9fbc363] received
+[2024-03-18 22:15:00,930: INFO/MainProcess] Task update_pnl[e8f9b61f-6532-4b48-a8f8-28d28aa94c34] received
+[2024-03-18 22:15:00,934: INFO/ForkPoolWorker-156] Task get_position[98bd9ade-ed70-405c-b2f2-4922e9fbc363] succeeded in 0.0029941569991933648s: None
+[2024-03-18 22:15:01,079: INFO/ForkPoolWorker-29] Task update_pnl[e8f9b61f-6532-4b48-a8f8-28d28aa94c34] succeeded in 0.14420248600072227s: None
+[2024-03-18 22:16:00,927: INFO/MainProcess] Task get_position[17a75fb2-5a1e-4737-8551-187a0d1242d6] received
+[2024-03-18 22:16:00,933: INFO/MainProcess] Task update_pnl[d636c045-3a7a-4d6f-aed0-ee5ba68ba774] received
+[2024-03-18 22:16:00,932: INFO/ForkPoolWorker-156] Task get_position[17a75fb2-5a1e-4737-8551-187a0d1242d6] succeeded in 0.0024443270012852736s: None
+[2024-03-18 22:16:01,028: INFO/ForkPoolWorker-156] Task update_pnl[d636c045-3a7a-4d6f-aed0-ee5ba68ba774] succeeded in 0.09050360100081889s: None
+[2024-03-18 22:17:00,928: INFO/MainProcess] Task get_position[bb0e9d5d-fdf6-4383-a57f-068288cbd2a5] received
+[2024-03-18 22:17:00,934: INFO/MainProcess] Task update_pnl[00730295-0b1a-4fd3-8d6e-f760aecf75d1] received
+[2024-03-18 22:17:00,939: INFO/ForkPoolWorker-156] Task get_position[bb0e9d5d-fdf6-4383-a57f-068288cbd2a5] succeeded in 0.0041554070012352895s: None
+[2024-03-18 22:17:01,077: INFO/ForkPoolWorker-29] Task update_pnl[00730295-0b1a-4fd3-8d6e-f760aecf75d1] succeeded in 0.14173626100091496s: None
+[2024-03-18 22:18:00,927: INFO/MainProcess] Task get_position[77e2e875-2bbb-443a-a5fe-60eb003982d4] received
+[2024-03-18 22:18:00,933: INFO/ForkPoolWorker-156] Task get_position[77e2e875-2bbb-443a-a5fe-60eb003982d4] succeeded in 0.0025257009983761236s: None
+[2024-03-18 22:18:00,933: INFO/MainProcess] Task update_pnl[137cd0a5-448c-464d-8e99-5131646369da] received
+[2024-03-18 22:18:01,076: INFO/ForkPoolWorker-156] Task update_pnl[137cd0a5-448c-464d-8e99-5131646369da] succeeded in 0.1401521750012762s: None
+[2024-03-18 22:19:00,645: INFO/MainProcess] Task get_balance[119150b2-6e52-4078-b9c4-cb2c51981e1d] received
+[2024-03-18 22:19:00,928: INFO/MainProcess] Task get_position[ac4efeb3-e5d3-46bd-ab03-085c75778f40] received
+[2024-03-18 22:19:00,932: INFO/MainProcess] Task update_pnl[3d3bc996-afd4-418e-85fe-80116220d01e] received
+[2024-03-18 22:19:00,935: INFO/ForkPoolWorker-29] Task get_position[ac4efeb3-e5d3-46bd-ab03-085c75778f40] succeeded in 0.002549704997363733s: None
+[2024-03-18 22:19:01,046: INFO/ForkPoolWorker-157] Task update_pnl[3d3bc996-afd4-418e-85fe-80116220d01e] succeeded in 0.1106980160002422s: None
+[2024-03-18 22:20:00,927: INFO/MainProcess] Task get_position[eddb00f4-6a09-4279-80de-c203dc2437c2] received
+[2024-03-18 22:20:00,933: INFO/ForkPoolWorker-29] Task get_position[eddb00f4-6a09-4279-80de-c203dc2437c2] succeeded in 0.002419830001599621s: None
+[2024-03-18 22:20:00,933: INFO/MainProcess] Task update_pnl[5977f6be-6ee5-4531-966f-345581c2572e] received
+[2024-03-18 22:20:01,047: INFO/ForkPoolWorker-29] Task update_pnl[5977f6be-6ee5-4531-966f-345581c2572e] succeeded in 0.11119875000076718s: None
+[2024-03-18 22:21:00,927: INFO/MainProcess] Task get_position[13d58050-2a9f-41b1-a35c-5d2e0072aea8] received
+[2024-03-18 22:21:00,932: INFO/MainProcess] Task update_pnl[f5f131ac-a7e7-4b9b-a596-68cdccc02b9b] received
+[2024-03-18 22:21:00,935: INFO/ForkPoolWorker-29] Task get_position[13d58050-2a9f-41b1-a35c-5d2e0072aea8] succeeded in 0.0025919690015143715s: None
+[2024-03-18 22:21:01,040: INFO/ForkPoolWorker-157] Task update_pnl[f5f131ac-a7e7-4b9b-a596-68cdccc02b9b] succeeded in 0.10743362499852083s: None
+[2024-03-18 22:22:00,926: INFO/MainProcess] Task get_position[245c7cdf-70ba-4da1-9a23-74efff7f4a84] received
+[2024-03-18 22:22:00,931: INFO/ForkPoolWorker-29] Task get_position[245c7cdf-70ba-4da1-9a23-74efff7f4a84] succeeded in 0.0026646879996405914s: None
+[2024-03-18 22:22:00,932: INFO/MainProcess] Task update_pnl[698372b1-4852-4d76-bbd5-d73e258e9328] received
+[2024-03-18 22:22:01,154: INFO/ForkPoolWorker-29] Task update_pnl[698372b1-4852-4d76-bbd5-d73e258e9328] succeeded in 0.2199088909983402s: None
+[2024-03-18 22:23:00,926: INFO/MainProcess] Task get_position[f16adb04-7c66-48f3-b17d-93c948963cfc] received
+[2024-03-18 22:23:00,932: INFO/ForkPoolWorker-29] Task get_position[f16adb04-7c66-48f3-b17d-93c948963cfc] succeeded in 0.002655895001225872s: None
+[2024-03-18 22:23:00,933: INFO/MainProcess] Task update_pnl[619156be-d96d-48ec-b669-b170ab7f35b4] received
+[2024-03-18 22:23:01,056: INFO/ForkPoolWorker-29] Task update_pnl[619156be-d96d-48ec-b669-b170ab7f35b4] succeeded in 0.12008368100214284s: None
+[2024-03-18 22:24:00,648: INFO/MainProcess] Task get_balance[a5527162-707f-4baa-a5e2-8e57ef08940f] received
+[2024-03-18 22:24:00,925: INFO/MainProcess] Task get_position[f0fda423-0126-43b6-9044-46621dac34e2] received
+[2024-03-18 22:24:00,930: INFO/ForkPoolWorker-157] Task get_position[f0fda423-0126-43b6-9044-46621dac34e2] succeeded in 0.002319240000360878s: None
+[2024-03-18 22:24:00,931: INFO/MainProcess] Task update_pnl[224fe1fb-7124-47ce-b8d6-02044cef7adc] received
+[2024-03-18 22:24:01,036: INFO/ForkPoolWorker-157] Task update_pnl[224fe1fb-7124-47ce-b8d6-02044cef7adc] succeeded in 0.1016180449987587s: None
+[2024-03-18 22:24:20,294: INFO/MainProcess] Task get_balance[c6ff8ef6-6359-48c1-b95c-e25f84ba2a09] received
+[2024-03-18 22:24:20,299: INFO/MainProcess] Task get_balance[39d5498b-f3f5-4352-bfee-2cacc56afbb0] received
+[2024-03-18 22:25:00,924: INFO/MainProcess] Task get_position[cc6a3dda-2076-473b-b017-a39e73b3c296] received
+[2024-03-18 22:25:00,931: INFO/MainProcess] Task update_pnl[51eac3ca-d0ee-4300-83c2-16099c9de37c] received
+[2024-03-18 22:25:00,939: INFO/ForkPoolWorker-158] Task get_position[cc6a3dda-2076-473b-b017-a39e73b3c296] succeeded in 0.008705229000042891s: None
+[2024-03-18 22:25:01,055: INFO/ForkPoolWorker-31] Task update_pnl[51eac3ca-d0ee-4300-83c2-16099c9de37c] succeeded in 0.11807227300232626s: None
+[2024-03-18 22:26:00,924: INFO/MainProcess] Task get_position[31e59664-7254-4b5e-99d8-4e2f7ab6f098] received
+[2024-03-18 22:26:00,930: INFO/ForkPoolWorker-158] Task get_position[31e59664-7254-4b5e-99d8-4e2f7ab6f098] succeeded in 0.002752248998149298s: None
+[2024-03-18 22:26:00,933: INFO/MainProcess] Task update_pnl[5b5d7422-e1f4-45a9-ad56-fd9e46095851] received
+[2024-03-18 22:26:01,037: INFO/ForkPoolWorker-158] Task update_pnl[5b5d7422-e1f4-45a9-ad56-fd9e46095851] succeeded in 0.09807871500015608s: None
+[2024-03-18 22:26:23,644: INFO/ForkPoolWorker-29] Task get_balance[a5527162-707f-4baa-a5e2-8e57ef08940f] succeeded in 142.9918497510007s: None
+[2024-03-18 22:27:00,926: INFO/MainProcess] Task get_position[5ea65e55-82e4-4115-a568-f8b66ad7a2d8] received
+[2024-03-18 22:27:00,931: INFO/ForkPoolWorker-29] Task get_position[5ea65e55-82e4-4115-a568-f8b66ad7a2d8] succeeded in 0.0023561679990962148s: None
+[2024-03-18 22:27:00,931: INFO/MainProcess] Task update_pnl[1640f3dd-285a-4807-9efa-72d54ce1c0fd] received
+[2024-03-18 22:27:01,075: INFO/ForkPoolWorker-29] Task update_pnl[1640f3dd-285a-4807-9efa-72d54ce1c0fd] succeeded in 0.1408209369983524s: None
+[2024-03-18 22:28:00,926: INFO/MainProcess] Task get_position[233cba99-1ed9-427f-882d-78c45391b5bb] received
+[2024-03-18 22:28:00,931: INFO/ForkPoolWorker-29] Task get_position[233cba99-1ed9-427f-882d-78c45391b5bb] succeeded in 0.002488009999069618s: None
+[2024-03-18 22:28:00,932: INFO/MainProcess] Task update_pnl[b9c9a31d-b3f9-43b1-a6a4-dbb80644def6] received
+[2024-03-18 22:28:01,090: INFO/ForkPoolWorker-29] Task update_pnl[b9c9a31d-b3f9-43b1-a6a4-dbb80644def6] succeeded in 0.15480725999805145s: None
+[2024-03-18 22:29:00,646: INFO/MainProcess] Task get_balance[15c58cd0-15b2-4c16-8486-d4d3ef17eab1] received
+[2024-03-18 22:29:00,925: INFO/MainProcess] Task get_position[53e0b499-ce12-4f57-b6d3-7dcaf37efbdb] received
+[2024-03-18 22:29:00,931: INFO/ForkPoolWorker-158] Task get_position[53e0b499-ce12-4f57-b6d3-7dcaf37efbdb] succeeded in 0.0027161520010849927s: None
+[2024-03-18 22:29:00,932: INFO/MainProcess] Task update_pnl[f2cb1d83-0e90-4c83-9713-f71623a7da48] received
+[2024-03-18 22:29:01,042: INFO/ForkPoolWorker-158] Task update_pnl[f2cb1d83-0e90-4c83-9713-f71623a7da48] succeeded in 0.10770550500092213s: None
+[2024-03-18 22:30:00,925: INFO/MainProcess] Task get_position[75479f28-38a9-4059-a97a-5458c4f10a98] received
+[2024-03-18 22:30:00,930: INFO/ForkPoolWorker-158] Task get_position[75479f28-38a9-4059-a97a-5458c4f10a98] succeeded in 0.002297203001944581s: None
+[2024-03-18 22:30:00,933: INFO/MainProcess] Task update_pnl[221c0964-d1b0-44b9-85b7-f015abdcd8d8] received
+[2024-03-18 22:30:01,046: INFO/ForkPoolWorker-158] Task update_pnl[221c0964-d1b0-44b9-85b7-f015abdcd8d8] succeeded in 0.11064083699966432s: None
+[2024-03-18 22:31:00,927: INFO/MainProcess] Task get_position[7bbad6e5-b26c-4b85-b57f-98192cd4f430] received
+[2024-03-18 22:31:00,935: INFO/MainProcess] Task update_pnl[5eec2666-7e89-4180-a753-8a268608a399] received
+[2024-03-18 22:31:00,935: INFO/ForkPoolWorker-158] Task get_position[7bbad6e5-b26c-4b85-b57f-98192cd4f430] succeeded in 0.0034048630004690494s: None
+[2024-03-18 22:31:01,082: INFO/ForkPoolWorker-158] Task update_pnl[5eec2666-7e89-4180-a753-8a268608a399] succeeded in 0.14392584999950486s: None
+[2024-03-18 22:32:00,925: INFO/MainProcess] Task get_position[dec7e379-fc54-4b12-99d0-9b863325ee58] received
+[2024-03-18 22:32:00,931: INFO/ForkPoolWorker-158] Task get_position[dec7e379-fc54-4b12-99d0-9b863325ee58] succeeded in 0.0025612749996071216s: None
+[2024-03-18 22:32:00,931: INFO/MainProcess] Task update_pnl[c1ab4bb1-3a71-43d4-a3e7-bc8e00b4d3c1] received
+[2024-03-18 22:32:01,050: INFO/ForkPoolWorker-158] Task update_pnl[c1ab4bb1-3a71-43d4-a3e7-bc8e00b4d3c1] succeeded in 0.11525082499792916s: None
+[2024-03-18 22:33:00,927: INFO/MainProcess] Task get_position[18c4c3d6-6667-48c0-aca4-43bee8deee66] received
+[2024-03-18 22:33:00,932: INFO/MainProcess] Task update_pnl[01204d57-93cc-455a-856d-881b22afcf19] received
+[2024-03-18 22:33:00,937: INFO/ForkPoolWorker-158] Task get_position[18c4c3d6-6667-48c0-aca4-43bee8deee66] succeeded in 0.004332151998823974s: None
+[2024-03-18 22:33:01,074: INFO/ForkPoolWorker-31] Task update_pnl[01204d57-93cc-455a-856d-881b22afcf19] succeeded in 0.14040151500012144s: None
+[2024-03-18 22:34:00,646: INFO/MainProcess] Task get_balance[265ef345-08c8-45a5-94d3-b93db19e65a5] received
+[2024-03-18 22:34:00,924: INFO/MainProcess] Task get_position[585c4dd0-b3a8-4b4e-870e-57bdc53fd53d] received
+[2024-03-18 22:34:00,930: INFO/ForkPoolWorker-31] Task get_position[585c4dd0-b3a8-4b4e-870e-57bdc53fd53d] succeeded in 0.0026827060028153937s: None
+[2024-03-18 22:34:00,932: INFO/MainProcess] Task update_pnl[1f6750f7-f4a1-4da9-ab42-90f0ba5ad628] received
+[2024-03-18 22:34:01,033: INFO/ForkPoolWorker-31] Task update_pnl[1f6750f7-f4a1-4da9-ab42-90f0ba5ad628] succeeded in 0.09694107200266444s: None
+[2024-03-18 22:35:00,924: INFO/MainProcess] Task get_position[5b8a0da5-7e05-4d00-a9bb-192abcd6ac14] received
+[2024-03-18 22:35:00,929: INFO/ForkPoolWorker-31] Task get_position[5b8a0da5-7e05-4d00-a9bb-192abcd6ac14] succeeded in 0.0023502719996031374s: None
+[2024-03-18 22:35:00,933: INFO/MainProcess] Task update_pnl[f0431e40-154a-4d60-bd1e-b837f4979c3f] received
+[2024-03-18 22:35:01,040: INFO/ForkPoolWorker-31] Task update_pnl[f0431e40-154a-4d60-bd1e-b837f4979c3f] succeeded in 0.10455870299847447s: None
+[2024-03-18 22:36:00,923: INFO/MainProcess] Task get_position[123a9f3b-4812-4bb1-8452-ce1b29f99046] received
+[2024-03-18 22:36:00,928: INFO/ForkPoolWorker-31] Task get_position[123a9f3b-4812-4bb1-8452-ce1b29f99046] succeeded in 0.0023676489981880877s: None
+[2024-03-18 22:36:00,932: INFO/MainProcess] Task update_pnl[c415dd46-14ae-43d8-b340-91560cc2ac69] received
+[2024-03-18 22:36:01,042: INFO/ForkPoolWorker-31] Task update_pnl[c415dd46-14ae-43d8-b340-91560cc2ac69] succeeded in 0.10684951000075671s: None
+[2024-03-18 22:37:00,922: INFO/MainProcess] Task get_position[4b5c1189-31fb-4316-94fe-92897c3e082b] received
+[2024-03-18 22:37:00,928: INFO/ForkPoolWorker-31] Task get_position[4b5c1189-31fb-4316-94fe-92897c3e082b] succeeded in 0.002424898000754183s: None
+[2024-03-18 22:37:00,933: INFO/MainProcess] Task update_pnl[5543b517-7e8c-4a91-a9c5-d187112528ee] received
+[2024-03-18 22:37:01,026: INFO/ForkPoolWorker-31] Task update_pnl[5543b517-7e8c-4a91-a9c5-d187112528ee] succeeded in 0.0897512440024002s: None
+[2024-03-18 22:38:00,921: INFO/MainProcess] Task get_position[62318663-f4b1-4b77-b08f-0fb48e551e4a] received
+[2024-03-18 22:38:00,926: INFO/ForkPoolWorker-31] Task get_position[62318663-f4b1-4b77-b08f-0fb48e551e4a] succeeded in 0.002102978000039002s: None
+[2024-03-18 22:38:00,931: INFO/MainProcess] Task update_pnl[e50fdf3d-e229-442c-aa71-bd3a95cd2db1] received
+[2024-03-18 22:38:01,030: INFO/ForkPoolWorker-31] Task update_pnl[e50fdf3d-e229-442c-aa71-bd3a95cd2db1] succeeded in 0.09673704599845223s: None
+[2024-03-18 22:39:00,646: INFO/MainProcess] Task get_balance[fbe3f080-bdfb-444e-be09-b1a09ee5c59e] received
+[2024-03-18 22:39:00,952: INFO/MainProcess] Task get_position[9878f0a2-0ff8-4bff-abe7-0e10c000d8f9] received
+[2024-03-18 22:39:00,957: INFO/MainProcess] Task update_pnl[40143881-ef2e-4321-acb2-ab922fe6ca1b] received
+[2024-03-18 22:39:00,972: INFO/ForkPoolWorker-159] Task get_position[9878f0a2-0ff8-4bff-abe7-0e10c000d8f9] succeeded in 0.010337237999920035s: None
+[2024-03-18 22:39:01,089: INFO/ForkPoolWorker-32] Task update_pnl[40143881-ef2e-4321-acb2-ab922fe6ca1b] succeeded in 0.12628660300106276s: None
+[2024-03-18 22:39:20,743: INFO/MainProcess] Task get_balance[2748cf23-b926-40c3-a13a-280df85e55d8] received
+[2024-03-18 22:40:00,927: INFO/MainProcess] Task get_position[0e96c801-ea2d-4367-adaa-257cf094245b] received
+[2024-03-18 22:40:00,932: INFO/ForkPoolWorker-32] Task get_position[0e96c801-ea2d-4367-adaa-257cf094245b] succeeded in 0.0023898149993328843s: None
+[2024-03-18 22:40:00,946: INFO/MainProcess] Task update_pnl[08f9674d-a9f3-4e43-8707-151bd91f8b31] received
+[2024-03-18 22:40:01,046: INFO/ForkPoolWorker-32] Task update_pnl[08f9674d-a9f3-4e43-8707-151bd91f8b31] succeeded in 0.09757211200121674s: None
+[2024-03-18 22:41:00,927: INFO/MainProcess] Task get_position[1657c3ae-c57c-4538-9b96-19fd8d828730] received
+[2024-03-18 22:41:00,932: INFO/ForkPoolWorker-32] Task get_position[1657c3ae-c57c-4538-9b96-19fd8d828730] succeeded in 0.002249388002383057s: None
+[2024-03-18 22:41:00,946: INFO/MainProcess] Task update_pnl[b2d1bcd3-816b-42f0-b387-887f9214f334] received
+[2024-03-18 22:41:01,048: INFO/ForkPoolWorker-32] Task update_pnl[b2d1bcd3-816b-42f0-b387-887f9214f334] succeeded in 0.09904298900073627s: None
+[2024-03-18 22:41:40,352: INFO/ForkPoolWorker-159] Task get_balance[2748cf23-b926-40c3-a13a-280df85e55d8] succeeded in 139.60661279000124s: None
+[2024-03-18 22:42:00,927: INFO/MainProcess] Task get_position[b5d45aa2-13d4-48c2-b666-412113741ec8] received
+[2024-03-18 22:42:00,931: INFO/ForkPoolWorker-159] Task get_position[b5d45aa2-13d4-48c2-b666-412113741ec8] succeeded in 0.0018154700010200031s: None
+[2024-03-18 22:42:00,946: INFO/MainProcess] Task update_pnl[02465efc-b36c-4ec8-bb0d-822b2fcd96b1] received
+[2024-03-18 22:42:01,052: INFO/ForkPoolWorker-159] Task update_pnl[02465efc-b36c-4ec8-bb0d-822b2fcd96b1] succeeded in 0.1034442999989551s: None
+[2024-03-18 22:43:00,927: INFO/MainProcess] Task get_position[f3fda7bb-2b74-4b2c-95da-008fa462492c] received
+[2024-03-18 22:43:00,931: INFO/ForkPoolWorker-159] Task get_position[f3fda7bb-2b74-4b2c-95da-008fa462492c] succeeded in 0.001977751999220345s: None
+[2024-03-18 22:43:00,946: INFO/MainProcess] Task update_pnl[85c8e49c-0e55-4129-9632-684c15540bcf] received
+[2024-03-18 22:43:01,046: INFO/ForkPoolWorker-159] Task update_pnl[85c8e49c-0e55-4129-9632-684c15540bcf] succeeded in 0.09747485199841321s: None
+[2024-03-18 22:44:00,646: INFO/MainProcess] Task get_balance[24403135-8f11-41a3-af4e-ab00ec3f12f1] received
+[2024-03-18 22:44:00,926: INFO/MainProcess] Task get_position[5290baf4-77aa-44aa-90bf-151d8bb0eabd] received
+[2024-03-18 22:44:00,931: INFO/ForkPoolWorker-32] Task get_position[5290baf4-77aa-44aa-90bf-151d8bb0eabd] succeeded in 0.002047842001047684s: None
+[2024-03-18 22:44:00,946: INFO/MainProcess] Task update_pnl[52125e83-c2e4-4cd6-9ca6-65c5dfeec4d4] received
+[2024-03-18 22:44:01,057: INFO/ForkPoolWorker-32] Task update_pnl[52125e83-c2e4-4cd6-9ca6-65c5dfeec4d4] succeeded in 0.1082484620019386s: None
+[2024-03-18 22:44:20,846: INFO/MainProcess] Task get_balance[bc8654dc-1e8d-45c6-9faa-a2aadf8cabe1] received
+[2024-03-18 22:45:00,927: INFO/MainProcess] Task get_position[1e373cc5-cd50-402a-a710-97b1f0012324] received
+[2024-03-18 22:45:00,947: INFO/MainProcess] Task update_pnl[05d5652c-acca-41a7-b4f8-3502f4324af6] received
+[2024-03-18 22:45:00,946: INFO/ForkPoolWorker-160] Task get_position[1e373cc5-cd50-402a-a710-97b1f0012324] succeeded in 0.011439459998655366s: None
+[2024-03-18 22:45:01,057: INFO/ForkPoolWorker-160] Task update_pnl[05d5652c-acca-41a7-b4f8-3502f4324af6] succeeded in 0.10659886999928858s: None
+[2024-03-18 22:46:00,926: INFO/MainProcess] Task get_position[33cee1d6-a247-4318-a70e-ffd8fd97d37a] received
+[2024-03-18 22:46:00,931: INFO/ForkPoolWorker-160] Task get_position[33cee1d6-a247-4318-a70e-ffd8fd97d37a] succeeded in 0.0022219709971977863s: None
+[2024-03-18 22:46:00,946: INFO/MainProcess] Task update_pnl[bb89551e-5617-46f0-9896-3ec3b3028669] received
+[2024-03-18 22:46:01,034: INFO/ForkPoolWorker-160] Task update_pnl[bb89551e-5617-46f0-9896-3ec3b3028669] succeeded in 0.08595847199831042s: None
+[2024-03-18 22:47:00,927: INFO/MainProcess] Task get_position[5346fa76-ba22-436a-baf3-09311d6cb4a2] received
+[2024-03-18 22:47:00,932: INFO/ForkPoolWorker-160] Task get_position[5346fa76-ba22-436a-baf3-09311d6cb4a2] succeeded in 0.0021644129992637318s: None
+[2024-03-18 22:47:00,946: INFO/MainProcess] Task update_pnl[5300d32e-d8b3-4e24-9599-ffcc5dc748db] received
+[2024-03-18 22:47:01,045: INFO/ForkPoolWorker-160] Task update_pnl[5300d32e-d8b3-4e24-9599-ffcc5dc748db] succeeded in 0.0967736180027714s: None
+[2024-03-18 22:48:00,927: INFO/MainProcess] Task get_position[7d1e569f-50dd-4bba-88c4-e208a246d09a] received
+[2024-03-18 22:48:00,932: INFO/ForkPoolWorker-160] Task get_position[7d1e569f-50dd-4bba-88c4-e208a246d09a] succeeded in 0.002264915998239303s: None
+[2024-03-18 22:48:00,946: INFO/MainProcess] Task update_pnl[27c18857-96e1-4024-87ce-a65e545d4337] received
+[2024-03-18 22:48:01,076: INFO/ForkPoolWorker-160] Task update_pnl[27c18857-96e1-4024-87ce-a65e545d4337] succeeded in 0.1270540580007946s: None
+[2024-03-18 22:49:00,646: INFO/MainProcess] Task get_balance[36cf4b70-7921-49c6-9e0d-b60f6a331cab] received
+[2024-03-18 22:49:00,927: INFO/MainProcess] Task get_position[daf7d938-4eae-45c4-b5d8-26d77e09755a] received
+[2024-03-18 22:49:00,945: INFO/ForkPoolWorker-33] Task get_position[daf7d938-4eae-45c4-b5d8-26d77e09755a] succeeded in 0.01115063199904398s: None
+[2024-03-18 22:49:00,946: INFO/MainProcess] Task update_pnl[ac85b93b-7424-4e1f-85e6-1d6bd0a186db] received
+[2024-03-18 22:49:01,035: INFO/ForkPoolWorker-33] Task update_pnl[ac85b93b-7424-4e1f-85e6-1d6bd0a186db] succeeded in 0.08605688399984501s: None
+[2024-03-18 22:49:20,980: INFO/MainProcess] Task get_balance[59fe6671-4859-42ef-9d91-9180f59e1914] received
+[2024-03-18 22:50:00,928: INFO/MainProcess] Task get_position[89666bfb-9348-4801-abae-3be6699d581f] received
+[2024-03-18 22:50:00,950: INFO/MainProcess] Task update_pnl[aee6fa0c-19c8-48f1-9880-27b7af68160c] received
+[2024-03-18 22:50:00,959: INFO/ForkPoolWorker-161] Task get_position[89666bfb-9348-4801-abae-3be6699d581f] succeeded in 0.0236790140006633s: None
+[2024-03-18 22:50:01,207: INFO/ForkPoolWorker-34] Task update_pnl[aee6fa0c-19c8-48f1-9880-27b7af68160c] succeeded in 0.24464667400025064s: None
+[2024-03-18 22:51:00,927: INFO/MainProcess] Task get_position[29b0fc0f-0c7a-4801-8065-ad1de71b153a] received
+[2024-03-18 22:51:00,946: INFO/MainProcess] Task update_pnl[82ecd210-7a38-47e4-aa91-8b85729bf4a5] received
+[2024-03-18 22:51:01,032: INFO/ForkPoolWorker-34] Task update_pnl[82ecd210-7a38-47e4-aa91-8b85729bf4a5] succeeded in 0.08338556200033054s: None
+[2024-03-18 22:52:00,927: INFO/MainProcess] Task get_position[ecf62301-c6b6-478d-bec1-08f615290872] received
+[2024-03-18 22:52:00,947: INFO/MainProcess] Task update_pnl[5e7d7a2b-02e8-4090-a2a8-5a98c0c25929] received
+[2024-03-18 22:52:01,060: INFO/ForkPoolWorker-162] Task update_pnl[5e7d7a2b-02e8-4090-a2a8-5a98c0c25929] succeeded in 0.10806767499889247s: None
+[2024-03-18 22:53:00,927: INFO/MainProcess] Task get_position[d468a546-c58a-4621-843b-626869391475] received
+[2024-03-18 22:53:00,947: INFO/MainProcess] Task update_pnl[8ba3bdc5-c761-411b-9070-6a9dc56b6f5b] received
+[2024-03-18 22:53:01,046: INFO/ForkPoolWorker-35] Task update_pnl[8ba3bdc5-c761-411b-9070-6a9dc56b6f5b] succeeded in 0.09473773699937738s: None
+[2024-03-18 22:53:09,323: INFO/ForkPoolWorker-34] Task get_position[ecf62301-c6b6-478d-bec1-08f615290872] succeeded in 68.39410850299828s: None
+[2024-03-18 22:54:00,646: INFO/MainProcess] Task get_balance[9c0c54fb-19ba-43d9-a6be-6b664aae87b2] received
+[2024-03-18 22:54:00,927: INFO/MainProcess] Task get_position[37f8eb0f-d554-461d-8377-3359399ac369] received
+[2024-03-18 22:54:00,946: INFO/MainProcess] Task update_pnl[df45b868-9ced-4bde-8b37-82f3923e7d85] received
+[2024-03-18 22:54:01,047: INFO/ForkPoolWorker-163] Task update_pnl[df45b868-9ced-4bde-8b37-82f3923e7d85] succeeded in 0.09495892800259753s: None
+[2024-03-18 22:54:21,075: INFO/MainProcess] Task get_balance[082f4394-eda7-4623-95d3-109431e8fc3f] received
+[2024-03-18 22:55:00,927: INFO/MainProcess] Task get_position[3433b31c-8c92-4216-a9c5-a2cc7fcc788c] received
+[2024-03-18 22:55:00,947: INFO/MainProcess] Task update_pnl[417add06-0325-4637-9486-2302af58b022] received
+[2024-03-18 22:55:01,054: INFO/ForkPoolWorker-164] Task update_pnl[417add06-0325-4637-9486-2302af58b022] succeeded in 0.10255199799939874s: None
+[2024-03-18 22:56:00,927: INFO/MainProcess] Task get_position[ba4b735f-12e7-46bf-ba99-375652c8b5b4] received
+[2024-03-18 22:56:00,947: INFO/MainProcess] Task update_pnl[9fd1ec6a-1e48-41d4-a421-0b3132e447c0] received
+[2024-03-18 22:56:01,060: INFO/ForkPoolWorker-37] Task update_pnl[9fd1ec6a-1e48-41d4-a421-0b3132e447c0] succeeded in 0.10851912199723301s: None
+[2024-03-18 22:56:46,357: INFO/ForkPoolWorker-164] Task get_position[ba4b735f-12e7-46bf-ba99-375652c8b5b4] succeeded in 45.42796646300121s: None
+[2024-03-18 22:57:00,927: INFO/MainProcess] Task get_position[36250a6a-91ba-41e8-ba12-00e5544e40f0] received
+[2024-03-18 22:57:00,948: INFO/MainProcess] Task update_pnl[50a606ae-8445-4b4a-9886-f5f1ae6e1fb4] received
+[2024-03-18 22:57:01,047: INFO/ForkPoolWorker-37] Task update_pnl[50a606ae-8445-4b4a-9886-f5f1ae6e1fb4] succeeded in 0.09672602399950847s: None
+[2024-03-18 22:58:00,927: INFO/MainProcess] Task get_position[2054de1d-26cd-45a9-afa0-df86910103fd] received
+[2024-03-18 22:58:00,947: INFO/MainProcess] Task update_pnl[0382336d-1977-45c8-a99f-33887ca69f06] received
+[2024-03-18 22:58:01,062: INFO/ForkPoolWorker-165] Task update_pnl[0382336d-1977-45c8-a99f-33887ca69f06] succeeded in 0.10886615400158917s: None
+[2024-03-18 22:59:00,646: INFO/MainProcess] Task get_balance[23ae21ee-05b9-488d-b63a-eaa7021ff60b] received
+[2024-03-18 22:59:00,927: INFO/MainProcess] Task get_position[a30ca9d1-0242-49a6-b19f-c59851c72744] received
+[2024-03-18 22:59:00,947: INFO/MainProcess] Task update_pnl[21e8d632-28ca-47e0-a3f7-b149f635e8a8] received
+[2024-03-18 22:59:01,048: INFO/ForkPoolWorker-166] Task update_pnl[21e8d632-28ca-47e0-a3f7-b149f635e8a8] succeeded in 0.09648539800036815s: None
+[2024-03-18 22:59:06,710: INFO/ForkPoolWorker-35] Task get_position[37f8eb0f-d554-461d-8377-3359399ac369] succeeded in 305.78348633600035s: None
+[2024-03-18 22:59:18,732: INFO/ForkPoolWorker-36] Task get_position[3433b31c-8c92-4216-a9c5-a2cc7fcc788c] succeeded in 257.803317291s: None
+[2024-03-18 23:00:00,928: INFO/MainProcess] Task get_position[0595a436-fb4f-4c76-8d87-dd0cec1c8e0a] received
+[2024-03-18 23:00:00,947: INFO/MainProcess] Task update_pnl[4a3df643-fb6c-4fcc-96c2-2e080c438cf5] received
+[2024-03-18 23:00:01,063: INFO/ForkPoolWorker-36] Task update_pnl[4a3df643-fb6c-4fcc-96c2-2e080c438cf5] succeeded in 0.11382964299991727s: None
+[2024-03-18 23:01:00,927: INFO/MainProcess] Task get_position[0d936c86-7761-40c7-b507-b72fcbd17f3b] received
+[2024-03-18 23:01:00,947: INFO/MainProcess] Task update_pnl[216234b9-22d8-4405-808e-226af36c7240] received
+[2024-03-18 23:01:01,055: INFO/ForkPoolWorker-166] Task update_pnl[216234b9-22d8-4405-808e-226af36c7240] succeeded in 0.1056999430002179s: None
+[2024-03-18 23:02:00,928: INFO/MainProcess] Task get_position[9db3a330-80f5-4da7-b15b-655900d171a2] received
+[2024-03-18 23:02:00,948: INFO/MainProcess] Task update_pnl[c2b8de91-221b-45d6-8705-e9d76e2122a3] received
+[2024-03-18 23:02:01,059: INFO/ForkPoolWorker-39] Task update_pnl[c2b8de91-221b-45d6-8705-e9d76e2122a3] succeeded in 0.10426943200218375s: None
+[2024-03-18 23:02:44,064: INFO/ForkPoolWorker-36] Task get_position[0d936c86-7761-40c7-b507-b72fcbd17f3b] succeeded in 103.13356657499753s: None
+[2024-03-18 23:03:00,927: INFO/MainProcess] Task get_position[2200cdf4-6b3a-45ea-93fb-637c48f97b4c] received
+[2024-03-18 23:03:00,947: INFO/MainProcess] Task update_pnl[0b620525-a024-4b9c-b13e-889369a37125] received
+[2024-03-18 23:03:01,047: INFO/ForkPoolWorker-39] Task update_pnl[0b620525-a024-4b9c-b13e-889369a37125] succeeded in 0.0976889220000885s: None
+[2024-03-18 23:04:00,646: INFO/MainProcess] Task get_balance[fdf68254-c137-4b85-8b2a-948e8097d8f6] received
+[2024-03-18 23:04:00,928: INFO/MainProcess] Task get_position[698bf36f-7b4e-428e-b2c5-d6588027e879] received
+[2024-03-18 23:04:00,947: INFO/MainProcess] Task update_pnl[5bc8fc1b-ac95-4263-8e98-5d6e0c2a3caa] received
+[2024-03-18 23:04:01,048: INFO/ForkPoolWorker-40] Task update_pnl[5bc8fc1b-ac95-4263-8e98-5d6e0c2a3caa] succeeded in 0.0961971699980495s: None
+[2024-03-18 23:05:00,928: INFO/MainProcess] Task get_position[e129e360-6ee1-4e4d-85d4-aee6282d1274] received
+[2024-03-18 23:05:00,947: INFO/MainProcess] Task update_pnl[7a5f294e-ba38-4b20-be2f-afd003ce8cab] received
+[2024-03-18 23:05:01,045: INFO/ForkPoolWorker-168] Task update_pnl[7a5f294e-ba38-4b20-be2f-afd003ce8cab] succeeded in 0.0924941539997235s: None
+[2024-03-18 23:06:00,928: INFO/MainProcess] Task get_position[283b79a4-9cab-43bc-8cdb-16aa355f434a] received
+[2024-03-18 23:06:00,947: INFO/MainProcess] Task update_pnl[46905f39-1e99-4cb8-be78-259ca87d203a] received
+[2024-03-18 23:06:01,040: INFO/ForkPoolWorker-41] Task update_pnl[46905f39-1e99-4cb8-be78-259ca87d203a] succeeded in 0.0880522729967197s: None
+[2024-03-18 23:07:00,928: INFO/MainProcess] Task get_position[9d720ada-aba1-441e-97d1-ca452bd05033] received
+[2024-03-18 23:07:00,947: INFO/MainProcess] Task update_pnl[8e443976-fb39-4175-bef5-4a2acc5845e8] received
+[2024-03-18 23:07:01,058: INFO/ForkPoolWorker-169] Task update_pnl[8e443976-fb39-4175-bef5-4a2acc5845e8] succeeded in 0.1055483810014266s: None
+[2024-03-18 23:08:00,928: INFO/MainProcess] Task get_position[c2498779-89fd-4568-a781-63a8877177e4] received
+[2024-03-18 23:08:00,947: INFO/MainProcess] Task update_pnl[f529c3ab-32f7-42ed-8b62-95248d6d268a] received
+[2024-03-18 23:08:01,069: INFO/ForkPoolWorker-42] Task update_pnl[f529c3ab-32f7-42ed-8b62-95248d6d268a] succeeded in 0.11688074199992116s: None
+[2024-03-18 23:08:20,086: INFO/ForkPoolWorker-168] Task get_position[283b79a4-9cab-43bc-8cdb-16aa355f434a] succeeded in 139.15553858099884s: None
+[2024-03-18 23:09:00,646: INFO/MainProcess] Task get_balance[ab352231-db62-4d39-b6a2-c182cb01617f] received
+[2024-03-18 23:09:00,935: INFO/MainProcess] Task get_position[8c24a9e0-6ab8-4efd-9c2a-f9612ee9bbf5] received
+[2024-03-18 23:09:00,947: INFO/MainProcess] Task update_pnl[40d5debf-4c90-4d37-b3a5-caa7658eb6a4] received
+[2024-03-18 23:09:01,068: INFO/ForkPoolWorker-170] Task update_pnl[40d5debf-4c90-4d37-b3a5-caa7658eb6a4] succeeded in 0.11533208399850992s: None
+[2024-03-18 23:09:04,404: INFO/ForkPoolWorker-41] Task get_position[9d720ada-aba1-441e-97d1-ca452bd05033] succeeded in 123.47457272500105s: None
+[2024-03-18 23:09:21,366: INFO/MainProcess] Task get_balance[272cb064-20a1-4910-9e69-2e1211db2267] received
+[2024-03-18 23:09:59,732: INFO/ForkPoolWorker-42] Task get_position[8c24a9e0-6ab8-4efd-9c2a-f9612ee9bbf5] succeeded in 58.79421163900042s: None
+[2024-03-18 23:10:00,928: INFO/MainProcess] Task get_position[0542e98a-53d4-470d-9eda-548923ce8912] received
+[2024-03-18 23:10:00,949: INFO/MainProcess] Task update_pnl[ad839056-9eea-456e-8a25-00aa80d6052a] received
+[2024-03-18 23:10:01,119: INFO/ForkPoolWorker-170] Task update_pnl[ad839056-9eea-456e-8a25-00aa80d6052a] succeeded in 0.14639687399903778s: None
+[2024-03-18 23:11:00,928: INFO/MainProcess] Task get_position[c9eeec06-7b54-415b-9ea2-574ddb98dc9b] received
+[2024-03-18 23:11:00,947: INFO/MainProcess] Task update_pnl[f5f8ab09-b4d0-4feb-8192-62d299d08587] received
+[2024-03-18 23:11:01,052: INFO/ForkPoolWorker-43] Task update_pnl[f5f8ab09-b4d0-4feb-8192-62d299d08587] succeeded in 0.09898283900110982s: None
+[2024-03-18 23:11:31,261: INFO/ForkPoolWorker-42] Task get_position[0542e98a-53d4-470d-9eda-548923ce8912] succeeded in 90.32905965700047s: None
+[2024-03-18 23:11:46,235: INFO/ForkPoolWorker-170] Task get_position[c9eeec06-7b54-415b-9ea2-574ddb98dc9b] succeeded in 45.30397384800017s: None
+[2024-03-18 23:12:00,928: INFO/MainProcess] Task get_position[71eae383-66e4-4fc0-98e5-5a57cebddfa4] received
+[2024-03-18 23:12:00,947: INFO/MainProcess] Task update_pnl[95fcd9af-cb8b-4728-ac3c-9964d985ed67] received
+[2024-03-18 23:12:01,042: INFO/ForkPoolWorker-170] Task update_pnl[95fcd9af-cb8b-4728-ac3c-9964d985ed67] succeeded in 0.09298435000164318s: None
+[2024-03-18 23:13:00,928: INFO/MainProcess] Task get_position[e42bd41b-2ae1-420b-899f-81ad6864d397] received
+[2024-03-18 23:13:00,947: INFO/MainProcess] Task update_pnl[b9f8f736-810e-407d-83d4-731870914baf] received
+[2024-03-18 23:13:01,033: INFO/ForkPoolWorker-43] Task update_pnl[b9f8f736-810e-407d-83d4-731870914baf] succeeded in 0.08298057099818834s: None
+[2024-03-18 23:14:00,646: INFO/MainProcess] Task get_balance[6bd3d433-9f22-433c-bc9c-3a5b7e9a802c] received
+[2024-03-18 23:14:00,928: INFO/MainProcess] Task get_position[c4cf099e-e32a-420f-8fa4-78ca6686b363] received
+[2024-03-18 23:14:00,948: INFO/MainProcess] Task update_pnl[cff5f692-c225-4a75-96fc-9bf7dac2ac96] received
+[2024-03-18 23:14:01,058: INFO/ForkPoolWorker-44] Task update_pnl[cff5f692-c225-4a75-96fc-9bf7dac2ac96] succeeded in 0.1045149899982789s: None
+[2024-03-18 23:14:21,465: INFO/MainProcess] Task get_balance[4de7d60e-3746-447b-9765-f2dba0f2c219] received
+[2024-03-18 23:14:21,468: INFO/MainProcess] Task get_balance[6cc62fc7-e1db-4155-9150-d3086eae4e2b] received
+[2024-03-18 23:15:00,947: INFO/MainProcess] Task get_position[8df2b1ac-a644-4085-8722-6e354519443b] received
+[2024-03-18 23:15:00,969: INFO/MainProcess] Task update_pnl[d5762d9a-1dea-4f80-87ae-b8965039ce3d] received
+[2024-03-18 23:15:01,101: INFO/ForkPoolWorker-173] Task update_pnl[d5762d9a-1dea-4f80-87ae-b8965039ce3d] succeeded in 0.10791755600075703s: None
+[2024-03-18 23:16:00,928: INFO/MainProcess] Task get_position[254a64b8-345b-43b1-9931-ddf96e2076de] received
+[2024-03-18 23:16:00,948: INFO/MainProcess] Task update_pnl[f4cd3684-f74c-4dee-bd94-83965db2111d] received
+[2024-03-18 23:16:01,050: INFO/ForkPoolWorker-46] Task update_pnl[f4cd3684-f74c-4dee-bd94-83965db2111d] succeeded in 0.09671307600001455s: None
+[2024-03-18 23:17:00,928: INFO/MainProcess] Task get_position[e448cf8f-584d-4a21-8880-ffcd0ab8038d] received
+[2024-03-18 23:17:00,949: INFO/MainProcess] Task update_pnl[36ef1ad5-14dd-478d-a8da-6601364b34d5] received
+[2024-03-18 23:17:01,053: INFO/ForkPoolWorker-174] Task update_pnl[36ef1ad5-14dd-478d-a8da-6601364b34d5] succeeded in 0.09918581600140897s: None
+[2024-03-18 23:17:19,251: INFO/ForkPoolWorker-45] Task get_position[8df2b1ac-a644-4085-8722-6e354519443b] succeeded in 138.26024951200088s: None
+[2024-03-18 23:18:00,929: INFO/MainProcess] Task get_position[6e63d023-9e5e-46d5-931d-68bb1f85fcb2] received
+[2024-03-18 23:18:00,949: INFO/MainProcess] Task update_pnl[19bae6db-5761-4c02-b51c-32e5e17ddeda] received
+[2024-03-18 23:18:01,037: INFO/ForkPoolWorker-174] Task update_pnl[19bae6db-5761-4c02-b51c-32e5e17ddeda] succeeded in 0.08602660200267565s: None
+[2024-03-18 23:18:27,337: INFO/ForkPoolWorker-173] Task get_position[254a64b8-345b-43b1-9931-ddf96e2076de] succeeded in 146.40791718200126s: None
+[2024-03-18 23:18:40,990: INFO/ForkPoolWorker-170] Task get_position[e42bd41b-2ae1-420b-899f-81ad6864d397] succeeded in 340.0632046960018s: None
+[2024-03-18 23:19:00,628: INFO/ForkPoolWorker-46] Task get_position[e448cf8f-584d-4a21-8880-ffcd0ab8038d] succeeded in 119.6986022050005s: None
+[2024-03-18 23:19:00,646: INFO/MainProcess] Task get_balance[dc96976b-38cd-47ba-b522-786a133d55c4] received
+[2024-03-18 23:19:00,928: INFO/MainProcess] Task get_position[80192e20-6722-4083-a032-60f48d08a8fc] received
+[2024-03-18 23:19:00,949: INFO/MainProcess] Task update_pnl[669b685c-eab9-4837-8c64-ff27cdd81e06] received
+[2024-03-18 23:19:01,046: INFO/ForkPoolWorker-46] Task update_pnl[669b685c-eab9-4837-8c64-ff27cdd81e06] succeeded in 0.09541833999901428s: None
+[2024-03-18 23:19:21,562: INFO/MainProcess] Task get_balance[119150b2-6e52-4078-b9c4-cb2c51981e1d] received
+[2024-03-18 23:20:00,929: INFO/MainProcess] Task get_position[1510d25f-76fe-4336-86c5-a4ae6b3ab8fa] received
+[2024-03-18 23:20:00,949: INFO/MainProcess] Task update_pnl[d4adb9e0-2618-4ad8-9060-7daf51efd930] received
+[2024-03-18 23:20:01,054: INFO/ForkPoolWorker-47] Task update_pnl[d4adb9e0-2618-4ad8-9060-7daf51efd930] succeeded in 0.09924601300008362s: None
+[2024-03-18 23:20:17,727: INFO/ForkPoolWorker-45] Task get_position[6e63d023-9e5e-46d5-931d-68bb1f85fcb2] succeeded in 136.79516752700147s: None
+[2024-03-18 23:21:00,929: INFO/MainProcess] Task get_position[4d0b28fd-baa5-47fc-a28c-71bf88ca5c5b] received
+[2024-03-18 23:21:00,949: INFO/MainProcess] Task update_pnl[0e1afbb3-bb09-4fd7-9eec-697bee7f6cd2] received
+[2024-03-18 23:21:01,058: INFO/ForkPoolWorker-47] Task update_pnl[0e1afbb3-bb09-4fd7-9eec-697bee7f6cd2] succeeded in 0.10682447100043646s: None
+[2024-03-18 23:22:00,929: INFO/MainProcess] Task get_position[6030e4bc-23b8-466a-9537-4f02c58dbd2b] received
+[2024-03-18 23:22:00,949: INFO/MainProcess] Task update_pnl[a6e38b74-de0b-4910-a3dd-c143237fdce4] received
+[2024-03-18 23:22:01,053: INFO/ForkPoolWorker-175] Task update_pnl[a6e38b74-de0b-4910-a3dd-c143237fdce4] succeeded in 0.09863799599770573s: None
+[2024-03-18 23:23:00,929: INFO/MainProcess] Task get_position[ca068cbd-76bd-4766-8714-4d36056cfc2e] received
+[2024-03-18 23:23:00,949: INFO/MainProcess] Task update_pnl[cb434b65-5d25-44e8-af86-6c64f6595dc4] received
+[2024-03-18 23:23:01,065: INFO/ForkPoolWorker-48] Task update_pnl[cb434b65-5d25-44e8-af86-6c64f6595dc4] succeeded in 0.109943770999962s: None
+[2024-03-18 23:23:19,552: INFO/ForkPoolWorker-45] Task get_position[4d0b28fd-baa5-47fc-a28c-71bf88ca5c5b] succeeded in 138.62193409800238s: None
+[2024-03-18 23:23:36,636: INFO/ForkPoolWorker-173] Task get_position[80192e20-6722-4083-a032-60f48d08a8fc] succeeded in 275.7060304810002s: None
+[2024-03-18 23:24:00,646: INFO/MainProcess] Task get_balance[e8848349-b480-4504-8d25-5d9266cc2452] received
+[2024-03-18 23:24:00,929: INFO/MainProcess] Task get_position[a14345aa-dc7a-413f-a9d6-e3569e5e6256] received
+[2024-03-18 23:24:00,949: INFO/MainProcess] Task update_pnl[ec6e25d5-a05b-4983-9fc9-2eb773d30b5d] received
+[2024-03-18 23:24:01,079: INFO/ForkPoolWorker-48] Task update_pnl[ec6e25d5-a05b-4983-9fc9-2eb773d30b5d] succeeded in 0.1269662930026243s: None
+[2024-03-18 23:24:21,695: INFO/MainProcess] Task get_balance[39d5498b-f3f5-4352-bfee-2cacc56afbb0] received
+[2024-03-18 23:24:21,698: INFO/MainProcess] Task get_balance[c6ff8ef6-6359-48c1-b95c-e25f84ba2a09] received
+[2024-03-18 23:25:01,021: INFO/MainProcess] Task get_position[f58fbcc8-418a-4aca-8b52-0b07c6ad8c67] received
+[2024-03-18 23:25:01,024: INFO/MainProcess] Task update_pnl[3bd996f9-669a-4045-8070-57d35ffdd30c] received
+[2024-03-18 23:25:01,134: INFO/ForkPoolWorker-177] Task update_pnl[3bd996f9-669a-4045-8070-57d35ffdd30c] succeeded in 0.10455708999870694s: None
+[2024-03-18 23:26:01,022: INFO/MainProcess] Task get_position[8ae8f75a-6218-4de7-b22d-6f1606a836b8] received
+[2024-03-18 23:26:01,025: INFO/MainProcess] Task update_pnl[6e76f3ee-a9a2-4402-bcda-8fa9fed88479] received
+[2024-03-18 23:26:01,143: INFO/ForkPoolWorker-50] Task update_pnl[6e76f3ee-a9a2-4402-bcda-8fa9fed88479] succeeded in 0.11413548500058823s: None
+[2024-03-18 23:26:19,096: INFO/ForkPoolWorker-45] Task get_balance[e8848349-b480-4504-8d25-5d9266cc2452] succeeded in 138.34970384500048s: None
+[2024-03-18 23:26:19,446: INFO/ForkPoolWorker-173] Task get_position[a14345aa-dc7a-413f-a9d6-e3569e5e6256] succeeded in 138.41741485400053s: None
+[2024-03-18 23:26:54,348: INFO/ForkPoolWorker-49] Task get_position[f58fbcc8-418a-4aca-8b52-0b07c6ad8c67] succeeded in 113.31813507900006s: None
+[2024-03-18 23:27:01,020: INFO/MainProcess] Task get_position[1b4f62f6-0612-4c29-9e30-fe7bc85acbff] received
+[2024-03-18 23:27:01,023: INFO/MainProcess] Task update_pnl[d873e393-751c-4914-baec-c610fc8bedbf] received
+[2024-03-18 23:27:01,117: INFO/ForkPoolWorker-173] Task update_pnl[d873e393-751c-4914-baec-c610fc8bedbf] succeeded in 0.09313483799996902s: None
+[2024-03-18 23:28:01,020: INFO/MainProcess] Task get_position[f4568864-d968-4ad8-abbb-4b30d7045e0d] received
+[2024-03-18 23:28:01,023: INFO/MainProcess] Task update_pnl[080ff3e2-2e2b-4a76-bad3-af2181383761] received
+[2024-03-18 23:28:01,126: INFO/ForkPoolWorker-49] Task update_pnl[080ff3e2-2e2b-4a76-bad3-af2181383761] succeeded in 0.10211420300038299s: None
+[2024-03-18 23:28:18,045: INFO/ForkPoolWorker-177] Task get_position[8ae8f75a-6218-4de7-b22d-6f1606a836b8] succeeded in 137.01960823899935s: None
+[2024-03-18 23:28:23,596: INFO/ForkPoolWorker-45] Task get_position[1b4f62f6-0612-4c29-9e30-fe7bc85acbff] succeeded in 82.57147162099864s: None
+[2024-03-18 23:29:00,646: INFO/MainProcess] Task get_balance[138fce9f-6b0c-476a-9932-61f6942bbad1] received
+[2024-03-18 23:29:01,020: INFO/MainProcess] Task get_position[fd4ef94d-ebe3-412f-95c4-540b1fcb617e] received
+[2024-03-18 23:29:01,023: INFO/MainProcess] Task update_pnl[1127e49d-f357-48c9-bb5d-072011f3e2ad] received
+[2024-03-18 23:29:01,122: INFO/ForkPoolWorker-177] Task update_pnl[1127e49d-f357-48c9-bb5d-072011f3e2ad] succeeded in 0.09778503499910585s: None
+[2024-03-18 23:29:21,899: INFO/MainProcess] Task get_balance[15c58cd0-15b2-4c16-8486-d4d3ef17eab1] received
+[2024-03-18 23:30:01,021: INFO/MainProcess] Task get_position[16b7a7c0-0956-44cd-aa2b-0d6af2b27f14] received
+[2024-03-18 23:30:01,024: INFO/MainProcess] Task update_pnl[535f943f-01a4-472a-aeee-b9332bff62e0] received
+[2024-03-18 23:30:01,122: INFO/ForkPoolWorker-178] Task update_pnl[535f943f-01a4-472a-aeee-b9332bff62e0] succeeded in 0.09486187099901144s: None
+[2024-03-18 23:30:20,214: INFO/ForkPoolWorker-173] Task get_position[f4568864-d968-4ad8-abbb-4b30d7045e0d] succeeded in 139.18983621000007s: None
+[2024-03-18 23:31:01,020: INFO/MainProcess] Task get_position[5bbed32c-1147-4314-8852-7734338aca66] received
+[2024-03-18 23:31:01,023: INFO/MainProcess] Task update_pnl[624af2b5-b84e-4154-a0b8-7338c505f046] received
+[2024-03-18 23:31:01,121: INFO/ForkPoolWorker-178] Task update_pnl[624af2b5-b84e-4154-a0b8-7338c505f046] succeeded in 0.09738796999954502s: None
+[2024-03-18 23:31:20,108: INFO/ForkPoolWorker-45] Task get_balance[138fce9f-6b0c-476a-9932-61f6942bbad1] succeeded in 139.45898779799973s: None
+[2024-03-18 23:32:01,021: INFO/MainProcess] Task get_position[39e6ae5c-64ff-436e-ae66-db7905351bee] received
+[2024-03-18 23:32:01,023: INFO/MainProcess] Task update_pnl[0fc9e857-8a1c-4495-9190-5aee517dbcf3] received
+[2024-03-18 23:32:01,115: INFO/ForkPoolWorker-178] Task update_pnl[0fc9e857-8a1c-4495-9190-5aee517dbcf3] succeeded in 0.09126914399894304s: None
+[2024-03-18 23:33:01,020: INFO/MainProcess] Task get_position[61172782-3617-40fe-b5f0-bfe9b4d94b90] received
+[2024-03-18 23:33:01,023: INFO/MainProcess] Task update_pnl[2ddc3f13-8894-40ac-91bc-36bebb8322f9] received
+[2024-03-18 23:33:01,122: INFO/ForkPoolWorker-51] Task update_pnl[2ddc3f13-8894-40ac-91bc-36bebb8322f9] succeeded in 0.09540848799952073s: None
+[2024-03-18 23:34:00,647: INFO/MainProcess] Task get_balance[a0328f47-2f6b-4d08-8efb-66c35831457f] received
+[2024-03-18 23:34:01,021: INFO/MainProcess] Task get_position[0848f751-6224-436a-b32c-2ff6c3565503] received
+[2024-03-18 23:34:01,024: INFO/MainProcess] Task update_pnl[ec9ee988-073c-440a-9046-017a92bd07a5] received
+[2024-03-18 23:34:01,129: INFO/ForkPoolWorker-52] Task update_pnl[ec9ee988-073c-440a-9046-017a92bd07a5] succeeded in 0.10042821100068977s: None
+[2024-03-18 23:34:22,000: INFO/MainProcess] Task get_balance[265ef345-08c8-45a5-94d3-b93db19e65a5] received
+[2024-03-18 23:34:44,070: INFO/ForkPoolWorker-173] Task get_position[5bbed32c-1147-4314-8852-7734338aca66] succeeded in 223.04576725300285s: None
+[2024-03-18 23:35:01,020: INFO/MainProcess] Task get_position[c671193a-2ad6-48a7-bb9d-8c7ff432455f] received
+[2024-03-18 23:35:01,023: INFO/MainProcess] Task update_pnl[dfc66132-2045-4602-8a69-7671f3e843f6] received
+[2024-03-18 23:35:01,128: INFO/ForkPoolWorker-180] Task update_pnl[dfc66132-2045-4602-8a69-7671f3e843f6] succeeded in 0.1014029229991138s: None
+[2024-03-18 23:35:28,847: INFO/ForkPoolWorker-178] Task get_position[61172782-3617-40fe-b5f0-bfe9b4d94b90] succeeded in 147.8230119990003s: None
+[2024-03-18 23:35:46,756: INFO/ForkPoolWorker-52] Task get_balance[265ef345-08c8-45a5-94d3-b93db19e65a5] succeeded in 84.75327978099813s: None
+[2024-03-18 23:36:01,021: INFO/MainProcess] Task get_position[ede7244a-d196-4489-a300-a1beb879709d] received
+[2024-03-18 23:36:01,024: INFO/MainProcess] Task update_pnl[ad120f9d-a0c9-4b31-a444-2e64f6b6593d] received
+[2024-03-18 23:36:01,128: INFO/ForkPoolWorker-52] Task update_pnl[ad120f9d-a0c9-4b31-a444-2e64f6b6593d] succeeded in 0.10380375000022468s: None
+[2024-03-18 23:36:04,696: INFO/ForkPoolWorker-49] Task get_position[fd4ef94d-ebe3-412f-95c4-540b1fcb617e] succeeded in 423.6717550969988s: None
+[2024-03-18 23:36:19,747: INFO/ForkPoolWorker-51] Task get_balance[a0328f47-2f6b-4d08-8efb-66c35831457f] succeeded in 139.09700002300087s: None
+[2024-03-18 23:37:01,021: INFO/MainProcess] Task get_position[1b1c205d-111e-4cca-bf49-63caf31662da] received
+[2024-03-18 23:37:01,024: INFO/MainProcess] Task update_pnl[cfa1343c-b472-4cc6-8655-1b105e5cab65] received
+[2024-03-18 23:37:01,147: INFO/ForkPoolWorker-51] Task update_pnl[cfa1343c-b472-4cc6-8655-1b105e5cab65] succeeded in 0.12232424999820068s: None
+[2024-03-18 23:38:01,021: INFO/MainProcess] Task get_position[6627f9aa-b0a3-4307-9e07-fb9f8621c8ef] received
+[2024-03-18 23:38:01,023: INFO/MainProcess] Task update_pnl[5f39b796-e8c9-4134-b81a-73f95fac2699] received
+[2024-03-18 23:38:01,110: INFO/ForkPoolWorker-52] Task update_pnl[5f39b796-e8c9-4134-b81a-73f95fac2699] succeeded in 0.08630129499942996s: None
+[2024-03-18 23:38:29,576: INFO/ForkPoolWorker-173] Task get_position[c671193a-2ad6-48a7-bb9d-8c7ff432455f] succeeded in 208.55167077000078s: None
+[2024-03-18 23:39:00,648: INFO/MainProcess] Task get_balance[aced66a3-4db9-407e-a1a7-96124f4df3fa] received
+[2024-03-18 23:39:01,021: INFO/MainProcess] Task get_position[4da90309-97ff-434d-bdb3-26e6cd73ae71] received
+[2024-03-18 23:39:01,024: INFO/MainProcess] Task update_pnl[305b35bb-a679-4171-8dde-babb060ea365] received
+[2024-03-18 23:39:01,115: INFO/ForkPoolWorker-180] Task update_pnl[305b35bb-a679-4171-8dde-babb060ea365] succeeded in 0.09054195600037929s: None
+[2024-03-18 23:39:20,024: INFO/ForkPoolWorker-49] Task get_position[1b1c205d-111e-4cca-bf49-63caf31662da] succeeded in 138.99923406499875s: None
+[2024-03-18 23:39:22,102: INFO/MainProcess] Task get_balance[fbe3f080-bdfb-444e-be09-b1a09ee5c59e] received
+[2024-03-18 23:40:01,021: INFO/MainProcess] Task get_position[91568bb5-593f-4e5d-8e37-368d1029eefb] received
+[2024-03-18 23:40:01,024: INFO/MainProcess] Task update_pnl[45dfec66-90c7-4b88-aee4-92d82befa26c] received
+[2024-03-18 23:40:01,128: INFO/ForkPoolWorker-53] Task update_pnl[45dfec66-90c7-4b88-aee4-92d82befa26c] succeeded in 0.09901533999800449s: None
+[2024-03-18 23:40:22,098: INFO/ForkPoolWorker-51] Task get_position[6627f9aa-b0a3-4307-9e07-fb9f8621c8ef] succeeded in 141.08700740100176s: None
+[2024-03-18 23:41:01,021: INFO/MainProcess] Task get_position[1ef887e5-2c64-49cd-801a-2468d55575fe] received
+[2024-03-18 23:41:01,024: INFO/MainProcess] Task update_pnl[5fb0295a-d1b8-40f7-af5b-5123cfd143d2] received
+[2024-03-18 23:41:01,119: INFO/ForkPoolWorker-53] Task update_pnl[5fb0295a-d1b8-40f7-af5b-5123cfd143d2] succeeded in 0.09466505199816311s: None
+[2024-03-18 23:41:19,255: INFO/ForkPoolWorker-52] Task get_position[4da90309-97ff-434d-bdb3-26e6cd73ae71] succeeded in 138.27257271200142s: None
+[2024-03-18 23:42:01,021: INFO/MainProcess] Task get_position[1fb31e3c-d5d3-48fc-ba22-cdccaf151d06] received
+[2024-03-18 23:42:01,024: INFO/MainProcess] Task update_pnl[9e054f64-aa0f-4038-bbc1-ad6ba17adeab] received
+[2024-03-18 23:42:01,115: INFO/ForkPoolWorker-53] Task update_pnl[9e054f64-aa0f-4038-bbc1-ad6ba17adeab] succeeded in 0.09066794099999242s: None
+[2024-03-18 23:43:01,021: INFO/MainProcess] Task get_position[053d7bc1-aa2f-4b51-beea-b5e3f09e20d2] received
+[2024-03-18 23:43:01,024: INFO/MainProcess] Task update_pnl[2e55650d-e258-48b5-a2bf-c509fa957fa3] received
+[2024-03-18 23:43:01,126: INFO/ForkPoolWorker-181] Task update_pnl[2e55650d-e258-48b5-a2bf-c509fa957fa3] succeeded in 0.09906444599982933s: None
+[2024-03-18 23:44:00,654: INFO/MainProcess] Task get_balance[da192f62-614a-4043-b5f3-76610454ab6e] received
+[2024-03-18 23:44:01,021: INFO/MainProcess] Task get_position[a416efc1-3412-4b7d-994f-e4f1de09269f] received
+[2024-03-18 23:44:01,024: INFO/MainProcess] Task update_pnl[375e9abe-f57e-4652-8412-ba6991688ce7] received
+[2024-03-18 23:44:01,124: INFO/ForkPoolWorker-182] Task update_pnl[375e9abe-f57e-4652-8412-ba6991688ce7] succeeded in 0.09587345800173352s: None
+[2024-03-18 23:44:22,157: INFO/MainProcess] Task get_balance[bc8654dc-1e8d-45c6-9faa-a2aadf8cabe1] received
+[2024-03-18 23:44:22,160: INFO/MainProcess] Task get_balance[24403135-8f11-41a3-af4e-ab00ec3f12f1] received
+[2024-03-18 23:44:44,004: INFO/ForkPoolWorker-54] Task get_position[a416efc1-3412-4b7d-994f-e4f1de09269f] succeeded in 42.975765089999186s: None
+[2024-03-18 23:45:01,021: INFO/MainProcess] Task get_position[7682f2c2-5715-45a4-8abb-1dcd8d031af6] received
+[2024-03-18 23:45:01,024: INFO/MainProcess] Task update_pnl[e04ee179-491c-401a-b22c-236a5c869b81] received
+[2024-03-18 23:45:01,130: INFO/ForkPoolWorker-183] Task update_pnl[e04ee179-491c-401a-b22c-236a5c869b81] succeeded in 0.10226355699705891s: None
+[2024-03-18 23:46:01,021: INFO/MainProcess] Task get_position[f7f984d3-b1da-4847-b1fd-5d779549b266] received
+[2024-03-18 23:46:01,024: INFO/MainProcess] Task update_pnl[732fcf67-7525-490a-86d4-07410ffd82ec] received
+[2024-03-18 23:46:01,128: INFO/ForkPoolWorker-56] Task update_pnl[732fcf67-7525-490a-86d4-07410ffd82ec] succeeded in 0.09969745600028546s: None
+[2024-03-18 23:46:41,327: INFO/ForkPoolWorker-182] Task get_balance[bc8654dc-1e8d-45c6-9faa-a2aadf8cabe1] succeeded in 139.165923923003s: None
+[2024-03-18 23:47:01,021: INFO/MainProcess] Task get_position[338db3a3-844a-4117-a705-684d201f29ce] received
+[2024-03-18 23:47:01,024: INFO/MainProcess] Task update_pnl[d19dc660-3b11-495a-b89d-9634817b9338] received
+[2024-03-18 23:47:01,116: INFO/ForkPoolWorker-56] Task update_pnl[d19dc660-3b11-495a-b89d-9634817b9338] succeeded in 0.09166913800072507s: None
+[2024-03-18 23:47:20,434: INFO/ForkPoolWorker-54] Task get_position[7682f2c2-5715-45a4-8abb-1dcd8d031af6] succeeded in 139.41075355000066s: None
+[2024-03-18 23:48:01,021: INFO/MainProcess] Task get_position[eb4fd577-b10c-468c-ada8-80eb2ae65b5d] received
+[2024-03-18 23:48:01,024: INFO/MainProcess] Task update_pnl[e8c0efed-4216-4e1c-9dac-c124c9f83039] received
+[2024-03-18 23:48:01,111: INFO/ForkPoolWorker-56] Task update_pnl[e8c0efed-4216-4e1c-9dac-c124c9f83039] succeeded in 0.08610098300050595s: None
+[2024-03-18 23:49:00,654: INFO/MainProcess] Task get_balance[055c55ab-3c5d-4281-ac66-caa0369cb06f] received
+[2024-03-18 23:49:01,021: INFO/MainProcess] Task get_position[5ecd581b-eeff-498a-b025-aa49d2b51242] received
+[2024-03-18 23:49:01,024: INFO/MainProcess] Task update_pnl[cb88f5a5-d22d-4246-aa86-944a463c456c] received
+[2024-03-18 23:49:01,129: INFO/ForkPoolWorker-57] Task update_pnl[cb88f5a5-d22d-4246-aa86-944a463c456c] succeeded in 0.10007173000121838s: None
+[2024-03-18 23:49:08,004: INFO/ForkPoolWorker-184] Task get_position[5ecd581b-eeff-498a-b025-aa49d2b51242] succeeded in 6.9742817349979305s: None
+[2024-03-18 23:49:22,364: INFO/MainProcess] Task get_balance[59fe6671-4859-42ef-9d91-9180f59e1914] received
+[2024-03-18 23:49:22,367: INFO/MainProcess] Task get_balance[36cf4b70-7921-49c6-9e0d-b60f6a331cab] received
+[2024-03-18 23:50:01,021: INFO/MainProcess] Task get_position[2652a6da-7c86-462a-8f4b-467b80f657a7] received
+[2024-03-18 23:50:01,024: INFO/MainProcess] Task update_pnl[f1a4260a-0ade-41e5-97da-da150e2e9a6e] received
+[2024-03-18 23:50:01,128: INFO/ForkPoolWorker-58] Task update_pnl[f1a4260a-0ade-41e5-97da-da150e2e9a6e] succeeded in 0.09971390699865879s: None
+[2024-03-18 23:50:16,703: INFO/ForkPoolWorker-54] Task get_position[eb4fd577-b10c-468c-ada8-80eb2ae65b5d] succeeded in 135.6781014799999s: None
+[2024-03-18 23:51:01,021: INFO/MainProcess] Task get_position[f3e8defb-3a30-4897-a633-e17dc12737e8] received
+[2024-03-18 23:51:01,024: INFO/MainProcess] Task update_pnl[727e59c1-4141-47ba-9890-48882700dbc4] received
+[2024-03-18 23:51:01,116: INFO/ForkPoolWorker-58] Task update_pnl[727e59c1-4141-47ba-9890-48882700dbc4] succeeded in 0.09140442900024937s: None
+[2024-03-18 23:51:02,405: INFO/MainProcess] Task get_position[29b0fc0f-0c7a-4801-8065-ad1de71b153a] received
+[2024-03-18 23:52:01,022: INFO/MainProcess] Task get_position[c3a63c84-cf90-4d94-9135-96da284bdc25] received
+[2024-03-18 23:52:01,026: INFO/MainProcess] Task update_pnl[d8364825-ea5c-4fa1-98a9-bb8a15e35d99] received
+[2024-03-18 23:52:01,131: INFO/ForkPoolWorker-59] Task update_pnl[d8364825-ea5c-4fa1-98a9-bb8a15e35d99] succeeded in 0.09995729599904735s: None
+[2024-03-18 23:52:17,104: INFO/ForkPoolWorker-185] Task get_position[2652a6da-7c86-462a-8f4b-467b80f657a7] succeeded in 136.07678217099965s: None
+[2024-03-18 23:53:01,022: INFO/MainProcess] Task get_position[873de8ef-e9c4-45a7-ab99-f0618b8e4a04] received
+[2024-03-18 23:53:01,025: INFO/MainProcess] Task update_pnl[57868db2-ae30-4fb0-bee7-961abcdf345b] received
+[2024-03-18 23:53:01,119: INFO/ForkPoolWorker-59] Task update_pnl[57868db2-ae30-4fb0-bee7-961abcdf345b] succeeded in 0.09353570000166656s: None
+[2024-03-18 23:54:00,654: INFO/MainProcess] Task get_balance[5d63c42d-1b04-49ce-ba9d-d636a3cf9e1a] received
+[2024-03-18 23:54:01,022: INFO/MainProcess] Task get_position[8c95e46f-f215-48c1-a0c3-28838a76076f] received
+[2024-03-18 23:54:01,025: INFO/MainProcess] Task update_pnl[8a5ca63d-a3c2-490c-9089-71a391dda3fe] received
+[2024-03-18 23:54:01,127: INFO/ForkPoolWorker-60] Task update_pnl[8a5ca63d-a3c2-490c-9089-71a391dda3fe] succeeded in 0.09785002900025574s: None
+[2024-03-18 23:54:19,353: INFO/ForkPoolWorker-186] Task get_position[c3a63c84-cf90-4d94-9135-96da284bdc25] succeeded in 138.32275483899866s: None
+[2024-03-18 23:54:22,507: INFO/MainProcess] Task get_balance[082f4394-eda7-4623-95d3-109431e8fc3f] received
+[2024-03-18 23:54:22,510: INFO/MainProcess] Task get_position[d468a546-c58a-4621-843b-626869391475] received
+[2024-03-18 23:54:22,514: INFO/MainProcess] Task get_balance[9c0c54fb-19ba-43d9-a6be-6b664aae87b2] received
+[2024-03-18 23:55:01,022: INFO/MainProcess] Task get_position[707a12b3-a121-4543-9b2b-1a099bbac580] received
+[2024-03-18 23:55:01,025: INFO/MainProcess] Task update_pnl[09d493d7-4b44-416a-a292-4b5927094dac] received
+[2024-03-18 23:55:01,134: INFO/ForkPoolWorker-189] Task update_pnl[09d493d7-4b44-416a-a292-4b5927094dac] succeeded in 0.10435292900001514s: None
+[2024-03-18 23:56:01,025: INFO/MainProcess] Task get_position[2473df7f-7a86-4a67-8332-75541b18b9b9] received
+[2024-03-18 23:56:01,029: INFO/MainProcess] Task update_pnl[e4191297-ccee-4955-b6ca-90ede063e323] received
+[2024-03-18 23:56:01,134: INFO/ForkPoolWorker-62] Task update_pnl[e4191297-ccee-4955-b6ca-90ede063e323] succeeded in 0.10132045399950584s: None
+[2024-03-18 23:56:11,126: INFO/ForkPoolWorker-61] Task get_position[707a12b3-a121-4543-9b2b-1a099bbac580] succeeded in 70.12673203500162s: None
+[2024-03-18 23:56:40,521: INFO/ForkPoolWorker-60] Task get_position[d468a546-c58a-4621-843b-626869391475] succeeded in 138.04125086199565s: None
+[2024-03-18 23:57:01,022: INFO/MainProcess] Task get_position[2033887d-f665-4ab3-a226-db44bed93534] received
+[2024-03-18 23:57:01,026: INFO/MainProcess] Task update_pnl[fc9c2d78-7293-4070-891f-0c882cc6a6a4] received
+[2024-03-18 23:57:01,128: INFO/ForkPoolWorker-61] Task update_pnl[fc9c2d78-7293-4070-891f-0c882cc6a6a4] succeeded in 0.09940381400519982s: None
+[2024-03-18 23:57:42,537: INFO/MainProcess] Task get_position[36250a6a-91ba-41e8-ba12-00e5544e40f0] received
+[2024-03-18 23:58:01,022: INFO/MainProcess] Task get_position[1172f9c3-f051-4f77-b2f2-dc262701feea] received
+[2024-03-18 23:58:01,028: INFO/MainProcess] Task update_pnl[80381843-a36d-47f4-acbc-90e5467661c3] received
+[2024-03-18 23:58:01,142: INFO/ForkPoolWorker-190] Task update_pnl[80381843-a36d-47f4-acbc-90e5467661c3] succeeded in 0.10919221299991477s: None
+[2024-03-18 23:58:20,821: INFO/ForkPoolWorker-189] Task get_position[2473df7f-7a86-4a67-8332-75541b18b9b9] succeeded in 139.79453181199642s: None
+[2024-03-18 23:59:00,672: INFO/MainProcess] Task get_balance[cfbcc2fa-ee26-4d3a-a942-afb960ab99fa] received
+[2024-03-18 23:59:01,022: INFO/MainProcess] Task get_position[f1bb54b7-91c7-4a6f-b2df-5c2108ca5b23] received
+[2024-03-18 23:59:01,027: INFO/MainProcess] Task update_pnl[701cb7e3-9f3e-455e-b12a-f1e7c2464fe4] received
+[2024-03-18 23:59:01,138: INFO/ForkPoolWorker-63] Task update_pnl[701cb7e3-9f3e-455e-b12a-f1e7c2464fe4] succeeded in 0.10567660400556633s: None
+[2024-03-18 23:59:19,074: INFO/ForkPoolWorker-60] Task get_position[2033887d-f665-4ab3-a226-db44bed93534] succeeded in 138.0511189509998s: None
+[2024-03-18 23:59:22,574: INFO/MainProcess] Task get_position[a30ca9d1-0242-49a6-b19f-c59851c72744] received
+[2024-03-18 23:59:22,577: INFO/MainProcess] Task get_position[2054de1d-26cd-45a9-afa0-df86910103fd] received
+[2024-03-18 23:59:22,580: INFO/MainProcess] Task get_balance[23ae21ee-05b9-488d-b63a-eaa7021ff60b] received
+[2024-03-19 00:00:01,023: INFO/MainProcess] Task get_position[8b27be6c-573c-4261-a8ba-9bb1d37f8317] received
+[2024-03-19 00:00:01,026: INFO/MainProcess] Task update_pnl[7f3939d5-b0d0-4209-9f35-57d0ca95905d] received
+[2024-03-19 00:00:01,148: INFO/ForkPoolWorker-192] Task update_pnl[7f3939d5-b0d0-4209-9f35-57d0ca95905d] succeeded in 0.11795130599784898s: None
+[2024-03-19 00:00:19,471: INFO/ForkPoolWorker-62] Task get_position[1172f9c3-f051-4f77-b2f2-dc262701feea] succeeded in 138.4476625879979s: None
+[2024-03-19 00:01:01,022: INFO/MainProcess] Task get_position[1faf0e31-3566-463d-acf8-a79557ff463b] received
+[2024-03-19 00:01:01,027: INFO/MainProcess] Task update_pnl[91783fd7-6975-48f5-b3f0-849502f5aac0] received
+[2024-03-19 00:01:01,123: INFO/ForkPoolWorker-192] Task update_pnl[91783fd7-6975-48f5-b3f0-849502f5aac0] succeeded in 0.09342803999606986s: None
+[2024-03-19 00:01:02,621: INFO/MainProcess] Task get_position[0595a436-fb4f-4c76-8d87-dd0cec1c8e0a] received
+[2024-03-19 00:01:39,769: INFO/ForkPoolWorker-63] Task get_position[2054de1d-26cd-45a9-afa0-df86910103fd] succeeded in 137.19283935899875s: None
+[2024-03-19 00:02:01,022: INFO/MainProcess] Task get_position[8fd9638b-94fe-48dd-a41b-5af475521f91] received
+[2024-03-19 00:02:01,027: INFO/MainProcess] Task update_pnl[0c60d175-e87d-446e-bda8-95d150877363] received
+[2024-03-19 00:02:01,129: INFO/ForkPoolWorker-65] Task update_pnl[0c60d175-e87d-446e-bda8-95d150877363] succeeded in 0.09628863800026011s: None
+[2024-03-19 00:02:20,989: INFO/ForkPoolWorker-64] Task get_position[8b27be6c-573c-4261-a8ba-9bb1d37f8317] succeeded in 139.9596037339943s: None
+[2024-03-19 00:02:42,675: INFO/MainProcess] Task get_position[9db3a330-80f5-4da7-b15b-655900d171a2] received
+[2024-03-19 00:03:01,022: INFO/MainProcess] Task get_position[2c2e1fa4-3c0a-4d55-ab62-8263d3df890b] received
+[2024-03-19 00:03:01,027: INFO/MainProcess] Task update_pnl[f0b9f533-5cf8-4470-9430-014303b8d562] received
+[2024-03-19 00:03:01,129: INFO/ForkPoolWorker-193] Task update_pnl[f0b9f533-5cf8-4470-9430-014303b8d562] succeeded in 0.0971133569983067s: None
+[2024-03-19 00:04:00,648: INFO/MainProcess] Task get_balance[b420dd26-6e90-4f00-8178-24f661583ef6] received
+[2024-03-19 00:04:01,022: INFO/MainProcess] Task get_position[fb10ff70-031b-42eb-8b27-b41eb43c7846] received
+[2024-03-19 00:04:01,027: INFO/MainProcess] Task update_pnl[a5779153-4623-4713-b3bf-46264cdd53b5] received
+[2024-03-19 00:04:01,130: INFO/ForkPoolWorker-194] Task update_pnl[a5779153-4623-4713-b3bf-46264cdd53b5] succeeded in 0.09676685399608687s: None
+[2024-03-19 00:04:22,719: INFO/MainProcess] Task get_position[698bf36f-7b4e-428e-b2c5-d6588027e879] received
+[2024-03-19 00:04:22,723: INFO/MainProcess] Task get_position[2200cdf4-6b3a-45ea-93fb-637c48f97b4c] received
+[2024-03-19 00:04:22,727: INFO/MainProcess] Task get_balance[fdf68254-c137-4b85-8b2a-948e8097d8f6] received
+[2024-03-19 00:05:01,037: INFO/MainProcess] Task get_position[159d5340-e645-40a9-9703-19381981e9ed] received
+[2024-03-19 00:05:01,041: INFO/MainProcess] Task update_pnl[1e4c3f2f-9395-43d2-8a27-c00293381b25] received
+[2024-03-19 00:05:01,147: INFO/ForkPoolWorker-196] Task update_pnl[1e4c3f2f-9395-43d2-8a27-c00293381b25] succeeded in 0.10201573000085773s: None
+[2024-03-19 00:05:15,868: INFO/ForkPoolWorker-65] Task get_position[2c2e1fa4-3c0a-4d55-ab62-8263d3df890b] succeeded in 134.8441574009994s: None
+[2024-03-19 00:06:01,022: INFO/MainProcess] Task get_position[22ac8b92-3f30-4e36-869a-168ab91c8907] received
+[2024-03-19 00:06:01,038: INFO/MainProcess] Task update_pnl[eacae924-8f41-41a4-b526-fad9ae067187] received
+[2024-03-19 00:06:01,123: INFO/ForkPoolWorker-196] Task update_pnl[eacae924-8f41-41a4-b526-fad9ae067187] succeeded in 0.08337533700250788s: None
+[2024-03-19 00:06:02,767: INFO/MainProcess] Task get_position[e129e360-6ee1-4e4d-85d4-aee6282d1274] received
+[2024-03-19 00:06:16,344: INFO/ForkPoolWorker-66] Task get_position[fb10ff70-031b-42eb-8b27-b41eb43c7846] succeeded in 135.31700368500606s: None
+[2024-03-19 00:07:01,023: INFO/MainProcess] Task get_position[53058b97-e292-4a63-b696-981f3c5206dd] received
+[2024-03-19 00:07:01,038: INFO/MainProcess] Task update_pnl[523fd0fc-ee37-43a9-a291-9db4059c4f2a] received
+[2024-03-19 00:07:01,147: INFO/ForkPoolWorker-69] Task update_pnl[523fd0fc-ee37-43a9-a291-9db4059c4f2a] succeeded in 0.10441161999915494s: None
+[2024-03-19 00:07:27,696: INFO/ForkPoolWorker-194] Task get_position[698bf36f-7b4e-428e-b2c5-d6588027e879] succeeded in 184.9727307630019s: None
+[2024-03-19 00:08:01,023: INFO/MainProcess] Task get_position[d32d2995-bffa-46d1-8305-6980ab8ebf53] received
+[2024-03-19 00:08:01,038: INFO/MainProcess] Task update_pnl[1082da2f-a059-4794-ae08-f40ad369cc62] received
+[2024-03-19 00:08:01,128: INFO/ForkPoolWorker-69] Task update_pnl[1082da2f-a059-4794-ae08-f40ad369cc62] succeeded in 0.08748605100117857s: None
+[2024-03-19 00:08:19,218: INFO/ForkPoolWorker-65] Task get_position[22ac8b92-3f30-4e36-869a-168ab91c8907] succeeded in 138.1932025579954s: None
+[2024-03-19 00:09:00,646: INFO/MainProcess] Task get_balance[b6ce28e6-a646-4c1e-a4d1-12b168cd2cf9] received
+[2024-03-19 00:09:01,024: INFO/MainProcess] Task get_position[05522fd2-f367-4cce-807e-c05024f247d8] received
+[2024-03-19 00:09:01,038: INFO/MainProcess] Task update_pnl[34af26e6-b6af-4624-ae3c-6a44636245f4] received
+[2024-03-19 00:09:01,150: INFO/ForkPoolWorker-197] Task update_pnl[34af26e6-b6af-4624-ae3c-6a44636245f4] succeeded in 0.10652484200545587s: None
+[2024-03-19 00:09:22,821: INFO/MainProcess] Task get_balance[272cb064-20a1-4910-9e69-2e1211db2267] received
+[2024-03-19 00:09:22,824: INFO/MainProcess] Task get_position[c2498779-89fd-4568-a781-63a8877177e4] received
+[2024-03-19 00:09:22,828: INFO/MainProcess] Task get_balance[ab352231-db62-4d39-b6a2-c182cb01617f] received
+[2024-03-19 00:09:51,767: INFO/ForkPoolWorker-62] Task get_position[1faf0e31-3566-463d-acf8-a79557ff463b] succeeded in 530.7446023340017s: None
+[2024-03-19 00:10:01,022: INFO/MainProcess] Task get_position[04bc5a06-345d-4f77-ae8e-7b3359b9c734] received
+[2024-03-19 00:10:01,038: INFO/MainProcess] Task update_pnl[304da711-57cd-4530-9fad-6e78f5dd5a10] received
+[2024-03-19 00:10:01,173: INFO/ForkPoolWorker-71] Task update_pnl[304da711-57cd-4530-9fad-6e78f5dd5a10] succeeded in 0.1298718479956733s: None
+[2024-03-19 00:10:18,042: INFO/ForkPoolWorker-194] Task get_position[d32d2995-bffa-46d1-8305-6980ab8ebf53] succeeded in 136.94285775699973s: None
+[2024-03-19 00:10:24,442: INFO/ForkPoolWorker-66] Task get_position[53058b97-e292-4a63-b696-981f3c5206dd] succeeded in 203.34224696899764s: None
+[2024-03-19 00:11:01,094: INFO/MainProcess] Task get_position[18cbebbf-a56a-44b7-aaff-ed3d07433cc8] received
+[2024-03-19 00:11:01,098: INFO/MainProcess] Task update_pnl[182f2838-ef4b-4139-baa1-3c676546498e] received
+[2024-03-19 00:11:01,243: INFO/ForkPoolWorker-194] Task update_pnl[182f2838-ef4b-4139-baa1-3c676546498e] succeeded in 0.14426243599882582s: None
+[2024-03-19 00:12:01,094: INFO/MainProcess] Task get_position[6667e0ea-33f3-4513-b7de-39a8a4ea3692] received
+[2024-03-19 00:12:01,098: INFO/MainProcess] Task update_pnl[01d0e15b-fe0f-4288-849b-1d31c6c10896] received
+[2024-03-19 00:12:01,207: INFO/ForkPoolWorker-71] Task update_pnl[01d0e15b-fe0f-4288-849b-1d31c6c10896] succeeded in 0.10831432900158688s: None
+[2024-03-19 00:12:36,243: INFO/ForkPoolWorker-62] Task get_position[04bc5a06-345d-4f77-ae8e-7b3359b9c734] succeeded in 155.14213741399726s: None
+[2024-03-19 00:12:42,951: INFO/MainProcess] Task get_position[71eae383-66e4-4fc0-98e5-5a57cebddfa4] received
+[2024-03-19 00:13:01,094: INFO/MainProcess] Task get_position[0aa98d2c-1c88-4860-8bd7-a6c608240023] received
+[2024-03-19 00:13:01,097: INFO/MainProcess] Task update_pnl[6d33b2b8-34da-4d03-afc0-a14aab11c704] received
+[2024-03-19 00:13:01,244: INFO/ForkPoolWorker-199] Task update_pnl[6d33b2b8-34da-4d03-afc0-a14aab11c704] succeeded in 0.1416376080014743s: None
+[2024-03-19 00:13:15,543: INFO/ForkPoolWorker-66] Task get_position[18cbebbf-a56a-44b7-aaff-ed3d07433cc8] succeeded in 134.44417702200008s: None
+[2024-03-19 00:13:33,544: INFO/ForkPoolWorker-67] Task get_position[2200cdf4-6b3a-45ea-93fb-637c48f97b4c] succeeded in 550.7428679110017s: None
+[2024-03-19 00:13:50,160: INFO/ForkPoolWorker-194] Task get_position[6667e0ea-33f3-4513-b7de-39a8a4ea3692] succeeded in 109.06135314099811s: None
+[2024-03-19 00:14:00,647: INFO/MainProcess] Task get_balance[0ef87726-cc15-42f9-b9c5-ae526a65bf52] received
+[2024-03-19 00:14:01,094: INFO/MainProcess] Task get_position[a1f5017a-eb27-4f76-8494-8c7e85f92a50] received
+[2024-03-19 00:14:01,097: INFO/MainProcess] Task update_pnl[8950ffd7-0b29-461f-918b-1a3169af8429] received
+[2024-03-19 00:14:01,197: INFO/ForkPoolWorker-67] Task update_pnl[8950ffd7-0b29-461f-918b-1a3169af8429] succeeded in 0.09902354099904187s: None
+[2024-03-19 00:14:23,005: INFO/MainProcess] Task get_balance[6cc62fc7-e1db-4155-9150-d3086eae4e2b] received
+[2024-03-19 00:14:23,008: INFO/MainProcess] Task get_balance[6bd3d433-9f22-433c-bc9c-3a5b7e9a802c] received
+[2024-03-19 00:14:23,012: INFO/MainProcess] Task get_position[c4cf099e-e32a-420f-8fa4-78ca6686b363] received
+[2024-03-19 00:14:23,015: INFO/MainProcess] Task get_balance[4de7d60e-3746-447b-9765-f2dba0f2c219] received
+[2024-03-19 00:14:58,149: INFO/ForkPoolWorker-62] Task get_position[71eae383-66e4-4fc0-98e5-5a57cebddfa4] succeeded in 135.19462449699495s: None
+[2024-03-19 00:15:01,094: INFO/MainProcess] Task get_position[144a7b16-39c9-481f-a259-2eff4304af40] received
+[2024-03-19 00:15:01,098: INFO/MainProcess] Task update_pnl[70b4bb1e-1081-47cf-b59c-d4c5ad2fdcb7] received
+[2024-03-19 00:15:01,207: INFO/ForkPoolWorker-73] Task update_pnl[70b4bb1e-1081-47cf-b59c-d4c5ad2fdcb7] succeeded in 0.10549050800182158s: None
+[2024-03-19 00:16:01,094: INFO/MainProcess] Task get_position[d4f9a4eb-aa9f-42a4-ac95-a7090e11096e] received
+[2024-03-19 00:16:01,097: INFO/MainProcess] Task update_pnl[9d85fe93-61ad-4dd3-a364-8a078491f503] received
+[2024-03-19 00:16:01,213: INFO/ForkPoolWorker-74] Task update_pnl[9d85fe93-61ad-4dd3-a364-8a078491f503] succeeded in 0.11077193699748022s: None
+[2024-03-19 00:16:40,776: INFO/ForkPoolWorker-200] Task get_balance[4de7d60e-3746-447b-9765-f2dba0f2c219] succeeded in 137.75899249699432s: None
+[2024-03-19 00:17:01,095: INFO/MainProcess] Task get_position[a76eb7a5-0d86-43f3-b5f1-4b7cbb8eed7a] received
+[2024-03-19 00:17:01,098: INFO/MainProcess] Task update_pnl[6925a48d-ffc1-41c7-bc61-2c6def593e26] received
+[2024-03-19 00:17:01,194: INFO/ForkPoolWorker-74] Task update_pnl[6925a48d-ffc1-41c7-bc61-2c6def593e26] succeeded in 0.0950829830035218s: None
+[2024-03-19 00:18:01,095: INFO/MainProcess] Task get_position[d96b49ec-6789-4ce2-a586-25c89064fc02] received
+[2024-03-19 00:18:01,098: INFO/MainProcess] Task update_pnl[d8978cf3-5679-473d-a937-5dc7c23a3c47] received
+[2024-03-19 00:18:01,209: INFO/ForkPoolWorker-75] Task update_pnl[d8978cf3-5679-473d-a937-5dc7c23a3c47] succeeded in 0.10665975099982461s: None
+[2024-03-19 00:18:19,355: INFO/ForkPoolWorker-73] Task get_position[d4f9a4eb-aa9f-42a4-ac95-a7090e11096e] succeeded in 138.25635704799788s: None
+[2024-03-19 00:18:45,445: INFO/ForkPoolWorker-200] Task get_position[a76eb7a5-0d86-43f3-b5f1-4b7cbb8eed7a] succeeded in 104.34572815599677s: None
+[2024-03-19 00:19:00,647: INFO/MainProcess] Task get_balance[1a1bc827-c3a8-4c00-ae86-3b768986b297] received
+[2024-03-19 00:19:01,095: INFO/MainProcess] Task get_position[c26946f9-aa40-44da-a88c-3fa1f95f123d] received
+[2024-03-19 00:19:01,098: INFO/MainProcess] Task update_pnl[376e24bf-24a5-4888-91ed-0db6fa7bfb62] received
+[2024-03-19 00:19:01,195: INFO/ForkPoolWorker-75] Task update_pnl[376e24bf-24a5-4888-91ed-0db6fa7bfb62] succeeded in 0.0964803659953759s: None
+[2024-03-19 00:19:23,111: INFO/MainProcess] Task get_balance[119150b2-6e52-4078-b9c4-cb2c51981e1d] received
+[2024-03-19 00:19:23,115: INFO/MainProcess] Task get_balance[dc96976b-38cd-47ba-b522-786a133d55c4] received
+[2024-03-19 00:20:01,096: INFO/MainProcess] Task get_position[2b196d1f-769f-481d-b6c2-7d23ee9977cf] received
+[2024-03-19 00:20:01,101: INFO/MainProcess] Task update_pnl[280ff5f1-b6cc-4ef6-b593-a7d6bf042d34] received
+[2024-03-19 00:20:01,224: INFO/ForkPoolWorker-78] Task update_pnl[280ff5f1-b6cc-4ef6-b593-a7d6bf042d34] succeeded in 0.11639750199537957s: None
+[2024-03-19 00:21:01,095: INFO/MainProcess] Task get_position[54e372be-8504-49de-aeab-de56db83b079] received
+[2024-03-19 00:21:01,101: INFO/MainProcess] Task update_pnl[e0552dc8-96e6-43ab-a1ab-8c6a6b27a1ac] received
+[2024-03-19 00:21:01,216: INFO/ForkPoolWorker-79] Task update_pnl[e0552dc8-96e6-43ab-a1ab-8c6a6b27a1ac] succeeded in 0.10873711699969135s: None
+[2024-03-19 00:21:03,146: INFO/MainProcess] Task get_position[1510d25f-76fe-4336-86c5-a4ae6b3ab8fa] received
+[2024-03-19 00:22:01,094: INFO/MainProcess] Task get_position[6d68ca3b-05c3-413b-b25b-d04e5c2efd7a] received
+[2024-03-19 00:22:01,099: INFO/MainProcess] Task update_pnl[6df31301-de51-441a-ab82-030087dcdb29] received
+[2024-03-19 00:22:01,212: INFO/ForkPoolWorker-81] Task update_pnl[6df31301-de51-441a-ab82-030087dcdb29] succeeded in 0.10807153999485308s: None
+[2024-03-19 00:22:17,094: INFO/ForkPoolWorker-77] Task get_position[2b196d1f-769f-481d-b6c2-7d23ee9977cf] succeeded in 135.98800456299796s: None
+[2024-03-19 00:22:43,173: INFO/MainProcess] Task get_position[6030e4bc-23b8-466a-9537-4f02c58dbd2b] received
+[2024-03-19 00:22:54,068: INFO/ForkPoolWorker-77] Task get_position[6030e4bc-23b8-466a-9537-4f02c58dbd2b] succeeded in 10.892879340004583s: None
+[2024-03-19 00:23:01,094: INFO/MainProcess] Task get_position[845fa49c-7158-4d39-aa5e-033e5a98e916] received
+[2024-03-19 00:23:01,098: INFO/MainProcess] Task update_pnl[539cb1fb-ade6-47a6-8fb6-d8a12a3d4a05] received
+[2024-03-19 00:23:01,209: INFO/ForkPoolWorker-81] Task update_pnl[539cb1fb-ade6-47a6-8fb6-d8a12a3d4a05] succeeded in 0.1097178679992794s: None
+[2024-03-19 00:24:00,647: INFO/MainProcess] Task get_balance[67be080d-d992-409c-bb1b-0d7f4e6216d2] received
+[2024-03-19 00:24:01,094: INFO/MainProcess] Task get_position[82863a57-bec7-44b9-9683-134fad2631fd] received
+[2024-03-19 00:24:01,099: INFO/MainProcess] Task update_pnl[66b1d0c7-7eaa-40ff-9b97-f6ce4a1beda9] received
+[2024-03-19 00:24:01,217: INFO/ForkPoolWorker-83] Task update_pnl[66b1d0c7-7eaa-40ff-9b97-f6ce4a1beda9] succeeded in 0.11088009699597023s: None
+[2024-03-19 00:24:17,651: INFO/ForkPoolWorker-80] Task get_position[6d68ca3b-05c3-413b-b25b-d04e5c2efd7a] succeeded in 136.55088992999663s: None
+[2024-03-19 00:24:23,203: INFO/MainProcess] Task get_balance[c6ff8ef6-6359-48c1-b95c-e25f84ba2a09] received
+[2024-03-19 00:24:23,206: INFO/MainProcess] Task get_position[ca068cbd-76bd-4766-8714-4d36056cfc2e] received
+[2024-03-19 00:24:23,210: INFO/MainProcess] Task get_balance[39d5498b-f3f5-4352-bfee-2cacc56afbb0] received
+[2024-03-19 00:25:01,094: INFO/MainProcess] Task get_position[0be872de-6d98-40ca-9f5b-edb821796450] received
+[2024-03-19 00:25:01,098: INFO/MainProcess] Task update_pnl[8111951a-f64f-43f5-92be-fbf9c2cb12f9] received
+[2024-03-19 00:25:01,216: INFO/ForkPoolWorker-86] Task update_pnl[8111951a-f64f-43f5-92be-fbf9c2cb12f9] succeeded in 0.11311640000349144s: None
+[2024-03-19 00:25:06,023: INFO/ForkPoolWorker-72] Task get_position[c4cf099e-e32a-420f-8fa4-78ca6686b363] succeeded in 643.0046165399981s: None
+[2024-03-19 00:25:18,793: INFO/ForkPoolWorker-77] Task get_position[845fa49c-7158-4d39-aa5e-033e5a98e916] succeeded in 137.69386441000097s: None
+[2024-03-19 00:25:30,342: INFO/ForkPoolWorker-83] Task get_position[ca068cbd-76bd-4766-8714-4d36056cfc2e] succeeded in 67.13676708199637s: None
+[2024-03-19 00:26:01,092: INFO/MainProcess] Task get_position[272fbbdf-dfc5-4182-a357-188e00e8c197] received
+[2024-03-19 00:26:01,097: INFO/MainProcess] Task update_pnl[d6748a5e-574f-4f83-9bff-dd2919a20550] received
+[2024-03-19 00:26:01,212: INFO/ForkPoolWorker-77] Task update_pnl[d6748a5e-574f-4f83-9bff-dd2919a20550] succeeded in 0.11236422500223853s: None
+[2024-03-19 00:27:01,092: INFO/MainProcess] Task get_position[412f363c-a047-4066-b162-ac58f0809d74] received
+[2024-03-19 00:27:01,098: INFO/MainProcess] Task update_pnl[aae2dee0-fa33-42af-8391-f4dbf6871986] received
+[2024-03-19 00:27:01,195: INFO/ForkPoolWorker-83] Task update_pnl[aae2dee0-fa33-42af-8391-f4dbf6871986] succeeded in 0.09484128600161057s: None
+[2024-03-19 00:28:01,093: INFO/MainProcess] Task get_position[b6332589-d55b-44f3-973d-33bc2fa0edf8] received
+[2024-03-19 00:28:01,098: INFO/MainProcess] Task update_pnl[73d9c879-04b6-4dae-b406-b3c4445a0af6] received
+[2024-03-19 00:28:01,202: INFO/ForkPoolWorker-86] Task update_pnl[73d9c879-04b6-4dae-b406-b3c4445a0af6] succeeded in 0.10047321100137196s: None
+[2024-03-19 00:28:16,492: INFO/ForkPoolWorker-72] Task get_position[272fbbdf-dfc5-4182-a357-188e00e8c197] succeeded in 135.396504397002s: None
+[2024-03-19 00:29:00,647: INFO/MainProcess] Task get_balance[0050e1bc-4648-4dae-9e12-bc9c84317d85] received
+[2024-03-19 00:29:01,093: INFO/MainProcess] Task get_position[1768d61d-3d7e-425b-8be0-fd362f9c50c0] received
+[2024-03-19 00:29:01,099: INFO/MainProcess] Task update_pnl[de5aa2ca-17e5-4fc0-82d0-b366ef3c60d0] received
+[2024-03-19 00:29:01,209: INFO/ForkPoolWorker-87] Task update_pnl[de5aa2ca-17e5-4fc0-82d0-b366ef3c60d0] succeeded in 0.10480450099566951s: None
+[2024-03-19 00:29:17,375: INFO/ForkPoolWorker-77] Task get_position[412f363c-a047-4066-b162-ac58f0809d74] succeeded in 136.27931686800002s: None
+[2024-03-19 00:29:23,300: INFO/MainProcess] Task get_balance[15c58cd0-15b2-4c16-8486-d4d3ef17eab1] received
+[2024-03-19 00:30:01,093: INFO/MainProcess] Task get_position[7cbe1dc4-e626-48f5-9768-dd7f67b5675e] received
+[2024-03-19 00:30:01,100: INFO/MainProcess] Task update_pnl[866b6b14-2e9d-4a91-9c21-ee56fa0e6946] received
+[2024-03-19 00:30:01,224: INFO/ForkPoolWorker-88] Task update_pnl[866b6b14-2e9d-4a91-9c21-ee56fa0e6946] succeeded in 0.11618505699880188s: None
+[2024-03-19 00:30:58,593: INFO/ForkPoolWorker-83] Task get_position[b6332589-d55b-44f3-973d-33bc2fa0edf8] succeeded in 177.49688732600043s: None
+[2024-03-19 00:31:01,093: INFO/MainProcess] Task get_position[7d863c74-ec37-4aee-833f-724f4a0d6b86] received
+[2024-03-19 00:31:01,098: INFO/MainProcess] Task update_pnl[10c93aef-f91f-444e-876c-45281111459e] received
+[2024-03-19 00:31:01,205: INFO/ForkPoolWorker-88] Task update_pnl[10c93aef-f91f-444e-876c-45281111459e] succeeded in 0.10472296900115907s: None
+[2024-03-19 00:31:03,344: INFO/MainProcess] Task get_position[16b7a7c0-0956-44cd-aa2b-0d6af2b27f14] received
+[2024-03-19 00:32:01,093: INFO/MainProcess] Task get_position[6c5fd448-a335-422b-91b4-f52fa259a0e7] received
+[2024-03-19 00:32:01,098: INFO/MainProcess] Task update_pnl[38f60359-af4b-45da-9c70-f286a2f69a59] received
+[2024-03-19 00:32:01,207: INFO/ForkPoolWorker-90] Task update_pnl[38f60359-af4b-45da-9c70-f286a2f69a59] succeeded in 0.10179761600011261s: None
+[2024-03-19 00:32:17,742: INFO/ForkPoolWorker-87] Task get_position[7cbe1dc4-e626-48f5-9768-dd7f67b5675e] succeeded in 136.64585197599808s: None
+[2024-03-19 00:32:43,392: INFO/MainProcess] Task get_position[39e6ae5c-64ff-436e-ae66-db7905351bee] received
+[2024-03-19 00:33:01,093: INFO/MainProcess] Task get_position[4751b581-38d6-49cc-a2bf-0d081d2157bc] received
+[2024-03-19 00:33:01,098: INFO/MainProcess] Task update_pnl[bf5bc9df-6b6f-4b00-ba8d-c0f6dbb9993e] received
+[2024-03-19 00:33:01,206: INFO/ForkPoolWorker-91] Task update_pnl[bf5bc9df-6b6f-4b00-ba8d-c0f6dbb9993e] succeeded in 0.10195789499994135s: None
+[2024-03-19 00:33:18,205: INFO/ForkPoolWorker-83] Task get_position[7d863c74-ec37-4aee-833f-724f4a0d6b86] succeeded in 137.1094041499964s: None
+[2024-03-19 00:34:00,647: INFO/MainProcess] Task get_balance[448a1ed0-4d1f-4092-b116-0ea1506ec47b] received
+[2024-03-19 00:34:01,093: INFO/MainProcess] Task get_position[3d021e88-90b5-47a9-8e31-b8c715d47eea] received
+[2024-03-19 00:34:01,098: INFO/MainProcess] Task update_pnl[5336d849-e181-4a13-90a5-e1e8b7746bd8] received
+[2024-03-19 00:34:01,204: INFO/ForkPoolWorker-92] Task update_pnl[5336d849-e181-4a13-90a5-e1e8b7746bd8] succeeded in 0.09964496500469977s: None
+[2024-03-19 00:34:23,406: INFO/MainProcess] Task get_position[0848f751-6224-436a-b32c-2ff6c3565503] received
+[2024-03-19 00:34:27,602: INFO/ForkPoolWorker-86] Task get_position[1768d61d-3d7e-425b-8be0-fd362f9c50c0] succeeded in 326.5054289330001s: None
+[2024-03-19 00:35:01,093: INFO/MainProcess] Task get_position[35a94e4e-6b9b-4f7f-a7e7-29b0c943f5fd] received
+[2024-03-19 00:35:01,098: INFO/MainProcess] Task update_pnl[012f6220-1fda-4f11-9045-6a7d7788e421] received
+[2024-03-19 00:35:01,207: INFO/ForkPoolWorker-93] Task update_pnl[012f6220-1fda-4f11-9045-6a7d7788e421] succeeded in 0.1033587929996429s: None
+[2024-03-19 00:36:01,094: INFO/MainProcess] Task get_position[f4df1e25-7e48-49a6-bdea-586291aa2fe8] received
+[2024-03-19 00:36:01,099: INFO/MainProcess] Task update_pnl[bc683cac-0477-467c-a6d4-2402a8895dfb] received
+[2024-03-19 00:36:01,211: INFO/ForkPoolWorker-94] Task update_pnl[bc683cac-0477-467c-a6d4-2402a8895dfb] succeeded in 0.1072475300024962s: None
+[2024-03-19 00:36:03,445: INFO/MainProcess] Task get_position[ede7244a-d196-4489-a300-a1beb879709d] received
+[2024-03-19 00:36:14,614: INFO/ForkPoolWorker-83] Task get_balance[448a1ed0-4d1f-4092-b116-0ea1506ec47b] succeeded in 133.96416567599954s: None
+[2024-03-19 00:37:01,094: INFO/MainProcess] Task get_position[52a23854-62bc-4d39-b29e-ba890052c36a] received
+[2024-03-19 00:37:01,099: INFO/MainProcess] Task update_pnl[be841081-94f2-4cd9-9885-301c4d0066fa] received
+[2024-03-19 00:37:01,220: INFO/ForkPoolWorker-95] Task update_pnl[be841081-94f2-4cd9-9885-301c4d0066fa] succeeded in 0.11591384799976368s: None
+[2024-03-19 00:37:14,993: INFO/ForkPoolWorker-86] Task get_position[35a94e4e-6b9b-4f7f-a7e7-29b0c943f5fd] succeeded in 133.89694338599656s: None
+[2024-03-19 00:38:01,094: INFO/MainProcess] Task get_position[0a01953b-6299-4303-8477-f79aba67b3be] received
+[2024-03-19 00:38:01,099: INFO/MainProcess] Task update_pnl[eb0d3f3e-4c26-43aa-a678-e65e978718b2] received
+[2024-03-19 00:38:01,197: INFO/ForkPoolWorker-95] Task update_pnl[eb0d3f3e-4c26-43aa-a678-e65e978718b2] succeeded in 0.09514328299701447s: None
+[2024-03-19 00:38:19,994: INFO/ForkPoolWorker-94] Task get_position[ede7244a-d196-4489-a300-a1beb879709d] succeeded in 136.54546273500455s: None
+[2024-03-19 00:39:00,647: INFO/MainProcess] Task get_balance[4ed4566d-0bbb-4b7e-a2b3-240dc3d7ed8e] received
+[2024-03-19 00:39:01,094: INFO/MainProcess] Task get_position[62bad4d4-da5e-43b6-82ef-5841c5bf6f46] received
+[2024-03-19 00:39:01,099: INFO/MainProcess] Task update_pnl[ab813a46-a10d-4870-9d98-f5a2cd2d2bae] received
+[2024-03-19 00:39:01,211: INFO/ForkPoolWorker-96] Task update_pnl[ab813a46-a10d-4870-9d98-f5a2cd2d2bae] succeeded in 0.10711194699979387s: None
+[2024-03-19 00:39:16,363: INFO/ForkPoolWorker-83] Task get_position[52a23854-62bc-4d39-b29e-ba890052c36a] succeeded in 135.26642874800018s: None
+[2024-03-19 00:39:23,508: INFO/MainProcess] Task get_balance[fbe3f080-bdfb-444e-be09-b1a09ee5c59e] received
+[2024-03-19 00:39:23,512: INFO/MainProcess] Task get_balance[aced66a3-4db9-407e-a1a7-96124f4df3fa] received
+[2024-03-19 00:39:46,344: INFO/ForkPoolWorker-95] Task get_position[62bad4d4-da5e-43b6-82ef-5841c5bf6f46] succeeded in 45.246979041003215s: None
+[2024-03-19 00:40:01,094: INFO/MainProcess] Task get_position[09cd96a1-ca7c-4eee-abeb-719153c390df] received
+[2024-03-19 00:40:01,099: INFO/MainProcess] Task update_pnl[6e1fa874-b7c2-43b6-9f9f-236f4effd7aa] received
+[2024-03-19 00:40:01,215: INFO/ForkPoolWorker-97] Task update_pnl[6e1fa874-b7c2-43b6-9f9f-236f4effd7aa] succeeded in 0.11058860499906586s: None
+[2024-03-19 00:40:15,599: INFO/ForkPoolWorker-86] Task get_position[0a01953b-6299-4303-8477-f79aba67b3be] succeeded in 134.50208106500213s: None
+[2024-03-19 00:41:01,091: INFO/MainProcess] Task get_position[36c94916-9e6a-4ff7-a5c6-be8b60e315f2] received
+[2024-03-19 00:41:01,098: INFO/MainProcess] Task update_pnl[3a926fda-2268-48cf-83c3-a8d82641109a] received
+[2024-03-19 00:41:01,197: INFO/ForkPoolWorker-97] Task update_pnl[3a926fda-2268-48cf-83c3-a8d82641109a] succeeded in 0.09557232500083046s: None
+[2024-03-19 00:41:03,537: INFO/MainProcess] Task get_position[1ef887e5-2c64-49cd-801a-2468d55575fe] received
+[2024-03-19 00:41:03,540: INFO/MainProcess] Task get_position[91568bb5-593f-4e5d-8e37-368d1029eefb] received
+[2024-03-19 00:41:15,863: INFO/ForkPoolWorker-94] Task get_balance[4ed4566d-0bbb-4b7e-a2b3-240dc3d7ed8e] succeeded in 135.22577064999496s: None
+[2024-03-19 00:41:47,942: INFO/ForkPoolWorker-98] Task get_position[91568bb5-593f-4e5d-8e37-368d1029eefb] succeeded in 44.40065870900435s: None
+[2024-03-19 00:42:01,092: INFO/MainProcess] Task get_position[49d78a8e-2b8b-4e90-85cb-79099dbdef6f] received
+[2024-03-19 00:42:01,099: INFO/MainProcess] Task update_pnl[2921ca76-8549-4222-bd89-f37f5149533b] received
+[2024-03-19 00:42:01,206: INFO/ForkPoolWorker-98] Task update_pnl[2921ca76-8549-4222-bd89-f37f5149533b] succeeded in 0.10490436699910788s: None
+[2024-03-19 00:42:43,562: INFO/MainProcess] Task get_position[1fb31e3c-d5d3-48fc-ba22-cdccaf151d06] received
+[2024-03-19 00:43:01,092: INFO/MainProcess] Task get_position[c91aadd6-17c8-41ad-a9be-cd5bfced6a04] received
+[2024-03-19 00:43:01,099: INFO/MainProcess] Task update_pnl[c6f85799-27e0-4a7c-9d05-e66f129ea187] received
+[2024-03-19 00:43:01,210: INFO/ForkPoolWorker-100] Task update_pnl[c6f85799-27e0-4a7c-9d05-e66f129ea187] succeeded in 0.10416582099423977s: None
+[2024-03-19 00:43:01,687: INFO/ForkPoolWorker-94] Task get_position[49d78a8e-2b8b-4e90-85cb-79099dbdef6f] succeeded in 60.59270625200588s: None
+[2024-03-19 00:44:00,647: INFO/MainProcess] Task get_balance[3d3ea243-93e0-4685-bceb-f54a184e22c5] received
+[2024-03-19 00:44:01,091: INFO/MainProcess] Task get_position[86b78136-6769-4ee2-b21e-4d7c7af170c0] received
+[2024-03-19 00:44:01,099: INFO/MainProcess] Task update_pnl[6cebdab4-4384-4672-9106-8ee6fde9a286] received
+[2024-03-19 00:44:01,207: INFO/ForkPoolWorker-101] Task update_pnl[6cebdab4-4384-4672-9106-8ee6fde9a286] succeeded in 0.10244847799913259s: None
+[2024-03-19 00:44:23,592: INFO/MainProcess] Task get_balance[24403135-8f11-41a3-af4e-ab00ec3f12f1] received
+[2024-03-19 00:44:23,595: INFO/MainProcess] Task get_position[053d7bc1-aa2f-4b51-beea-b5e3f09e20d2] received
+[2024-03-19 00:44:23,599: INFO/MainProcess] Task get_balance[da192f62-614a-4043-b5f3-76610454ab6e] received
+[2024-03-19 00:45:01,092: INFO/MainProcess] Task get_position[6de03241-0ccb-44e4-9574-cb13d6dc0ad3] received
+[2024-03-19 00:45:01,099: INFO/MainProcess] Task update_pnl[557d35b3-922d-4bbf-9091-e4731880ef96] received
+[2024-03-19 00:45:01,207: INFO/ForkPoolWorker-105] Task update_pnl[557d35b3-922d-4bbf-9091-e4731880ef96] succeeded in 0.10355802299454808s: None
+[2024-03-19 00:46:01,092: INFO/MainProcess] Task get_position[7c9c07aa-ca2a-4ec1-8a5c-ea9b266741c3] received
+[2024-03-19 00:46:01,099: INFO/MainProcess] Task update_pnl[b8095d32-689a-4751-8ce8-610288d572a7] received
+[2024-03-19 00:46:01,212: INFO/ForkPoolWorker-106] Task update_pnl[b8095d32-689a-4751-8ce8-610288d572a7] succeeded in 0.1066502230023616s: None
+[2024-03-19 00:46:03,633: INFO/MainProcess] Task get_position[f7f984d3-b1da-4847-b1fd-5d779549b266] received
+[2024-03-19 00:47:01,092: INFO/MainProcess] Task get_position[1756ef48-1ca2-4091-ae12-9048fb45f7fb] received
+[2024-03-19 00:47:01,099: INFO/MainProcess] Task update_pnl[a99d25b7-86f3-4626-9b79-95fdc03e241f] received
+[2024-03-19 00:47:01,212: INFO/ForkPoolWorker-108] Task update_pnl[a99d25b7-86f3-4626-9b79-95fdc03e241f] succeeded in 0.10858253400510876s: None
+[2024-03-19 00:47:19,047: INFO/ForkPoolWorker-104] Task get_position[6de03241-0ccb-44e4-9574-cb13d6dc0ad3] succeeded in 137.94936606600095s: None
+[2024-03-19 00:47:43,661: INFO/MainProcess] Task get_position[338db3a3-844a-4117-a705-684d201f29ce] received
+[2024-03-19 00:48:01,092: INFO/MainProcess] Task get_position[f9c30049-970e-4107-98a7-b76223893132] received
+[2024-03-19 00:48:01,099: INFO/MainProcess] Task update_pnl[0ac5c8dc-6d04-4766-97ac-0ee88b1cf628] received
+[2024-03-19 00:48:01,211: INFO/ForkPoolWorker-109] Task update_pnl[0ac5c8dc-6d04-4766-97ac-0ee88b1cf628] succeeded in 0.10688875099731376s: None
+[2024-03-19 00:48:56,881: INFO/ForkPoolWorker-98] Task get_position[1fb31e3c-d5d3-48fc-ba22-cdccaf151d06] succeeded in 373.31604168099875s: None
+[2024-03-19 00:49:00,647: INFO/MainProcess] Task get_balance[6a3efda3-1913-411e-8ea4-45f304a0f0fa] received
+[2024-03-19 00:49:01,092: INFO/MainProcess] Task get_position[b83a6bfb-0aad-4c01-b810-01942639948d] received
+[2024-03-19 00:49:01,099: INFO/MainProcess] Task update_pnl[7fc16414-a4c8-4100-98e7-c56605f6392f] received
+[2024-03-19 00:49:01,231: INFO/ForkPoolWorker-110] Task update_pnl[7fc16414-a4c8-4100-98e7-c56605f6392f] succeeded in 0.12656898600107525s: None
+[2024-03-19 00:49:23,694: INFO/MainProcess] Task get_balance[36cf4b70-7921-49c6-9e0d-b60f6a331cab] received
+[2024-03-19 00:49:23,697: INFO/MainProcess] Task get_balance[055c55ab-3c5d-4281-ac66-caa0369cb06f] received
+[2024-03-19 00:49:23,702: INFO/MainProcess] Task get_balance[59fe6671-4859-42ef-9d91-9180f59e1914] received
+[2024-03-19 00:49:57,950: INFO/ForkPoolWorker-104] Task get_position[338db3a3-844a-4117-a705-684d201f29ce] succeeded in 134.28611854000337s: None
+[2024-03-19 00:50:01,092: INFO/MainProcess] Task get_position[934bed67-32b1-40a1-95cb-d184a68f2ebb] received
+[2024-03-19 00:50:01,099: INFO/MainProcess] Task update_pnl[c3651a44-e2dc-4e47-ac60-d19a3b7a01db] received
+[2024-03-19 00:50:01,214: INFO/ForkPoolWorker-113] Task update_pnl[c3651a44-e2dc-4e47-ac60-d19a3b7a01db] succeeded in 0.10981132199958665s: None
+[2024-03-19 00:50:15,680: INFO/ForkPoolWorker-108] Task get_position[f9c30049-970e-4107-98a7-b76223893132] succeeded in 134.58621698199568s: None
+[2024-03-19 00:51:01,092: INFO/MainProcess] Task get_position[c54e364d-8253-45f4-a629-69aa5aefef2e] received
+[2024-03-19 00:51:01,099: INFO/MainProcess] Task update_pnl[2a33174f-7082-455c-889f-c8f78392012c] received
+[2024-03-19 00:51:01,201: INFO/ForkPoolWorker-113] Task update_pnl[2a33174f-7082-455c-889f-c8f78392012c] succeeded in 0.09906521299853921s: None
+[2024-03-19 00:51:03,734: INFO/MainProcess] Task get_position[29b0fc0f-0c7a-4801-8065-ad1de71b153a] received
+[2024-03-19 00:51:03,736: INFO/MainProcess] Task get_position[f3e8defb-3a30-4897-a633-e17dc12737e8] received
+[2024-03-19 00:51:15,692: INFO/ForkPoolWorker-109] Task get_position[b83a6bfb-0aad-4c01-b810-01942639948d] succeeded in 134.59709948700038s: None
+[2024-03-19 00:51:43,881: INFO/ForkPoolWorker-111] Task get_balance[055c55ab-3c5d-4281-ac66-caa0369cb06f] succeeded in 140.18021894100093s: None
+[2024-03-19 00:52:01,093: INFO/MainProcess] Task get_position[d67acd27-c0fd-410a-8ef6-e1d4aa20d05f] received
+[2024-03-19 00:52:01,099: INFO/MainProcess] Task update_pnl[21ba762f-4520-41be-8f8e-756c6e981004] received
+[2024-03-19 00:52:01,206: INFO/ForkPoolWorker-111] Task update_pnl[21ba762f-4520-41be-8f8e-756c6e981004] succeeded in 0.10359612400498008s: None
+[2024-03-19 00:52:18,400: INFO/ForkPoolWorker-104] Task get_position[934bed67-32b1-40a1-95cb-d184a68f2ebb] succeeded in 137.30564170800062s: None
+[2024-03-19 00:52:29,260: INFO/ForkPoolWorker-107] Task get_position[1756ef48-1ca2-4091-ae12-9048fb45f7fb] succeeded in 328.16156397200393s: None
+[2024-03-19 00:53:01,092: INFO/MainProcess] Task get_position[74628780-8fd2-497e-9bdd-7203665a95e9] received
+[2024-03-19 00:53:01,099: INFO/MainProcess] Task update_pnl[420865d3-29ba-4750-b30e-fbd97967490f] received
+[2024-03-19 00:53:01,201: INFO/ForkPoolWorker-107] Task update_pnl[420865d3-29ba-4750-b30e-fbd97967490f] succeeded in 0.09927283100114437s: None
+[2024-03-19 00:53:15,342: INFO/ForkPoolWorker-108] Task get_position[c54e364d-8253-45f4-a629-69aa5aefef2e] succeeded in 134.2468590060016s: None
+[2024-03-19 00:54:00,647: INFO/MainProcess] Task get_balance[91847317-464f-4d7e-a6fa-23fb77240a79] received
+[2024-03-19 00:54:01,092: INFO/MainProcess] Task get_position[1379cdb9-9fc6-44fa-a93d-a592c3e0ff10] received
+[2024-03-19 00:54:01,098: INFO/MainProcess] Task update_pnl[3ae1f26b-ec7d-4d4f-bbef-361474bc5f32] received
+[2024-03-19 00:54:01,197: INFO/ForkPoolWorker-111] Task update_pnl[3ae1f26b-ec7d-4d4f-bbef-361474bc5f32] succeeded in 0.09587823499896331s: None
+[2024-03-19 00:54:14,542: INFO/ForkPoolWorker-109] Task get_position[d67acd27-c0fd-410a-8ef6-e1d4aa20d05f] succeeded in 133.44607866199658s: None
+[2024-03-19 00:54:23,794: INFO/MainProcess] Task get_balance[9c0c54fb-19ba-43d9-a6be-6b664aae87b2] received
+[2024-03-19 00:54:23,797: INFO/MainProcess] Task get_position[873de8ef-e9c4-45a7-ab99-f0618b8e4a04] received
+[2024-03-19 00:54:23,801: INFO/MainProcess] Task get_balance[5d63c42d-1b04-49ce-ba9d-d636a3cf9e1a] received
+[2024-03-19 00:54:23,804: INFO/MainProcess] Task get_position[8c95e46f-f215-48c1-a0c3-28838a76076f] received
+[2024-03-19 00:54:23,808: INFO/MainProcess] Task get_balance[082f4394-eda7-4623-95d3-109431e8fc3f] received
+[2024-03-19 00:55:01,092: INFO/MainProcess] Task get_position[d386e083-d55e-401c-ba67-fe5d1344554a] received
+[2024-03-19 00:55:01,100: INFO/MainProcess] Task update_pnl[324821c0-3ccf-4234-928b-df91f1495541] received
+[2024-03-19 00:55:01,212: INFO/ForkPoolWorker-119] Task update_pnl[324821c0-3ccf-4234-928b-df91f1495541] succeeded in 0.10656635200575693s: None
+[2024-03-19 00:55:15,341: INFO/ForkPoolWorker-104] Task get_position[74628780-8fd2-497e-9bdd-7203665a95e9] succeeded in 134.24718771899643s: None
+[2024-03-19 00:56:01,104: INFO/MainProcess] Task get_position[970dd577-a074-42b2-9b1d-5af6fd5f4054] received
+[2024-03-19 00:56:01,107: INFO/MainProcess] Task update_pnl[0e0cde16-34a6-462f-8bc6-fc04fc44810e] received
+[2024-03-19 00:56:01,201: INFO/ForkPoolWorker-119] Task update_pnl[0e0cde16-34a6-462f-8bc6-fc04fc44810e] succeeded in 0.09363762299472s: None
+[2024-03-19 00:56:39,310: INFO/ForkPoolWorker-117] Task get_balance[082f4394-eda7-4623-95d3-109431e8fc3f] succeeded in 135.4676543109963s: None
+[2024-03-19 00:57:01,110: INFO/MainProcess] Task get_position[513b985a-25af-4339-89d0-139c3c861a36] received
+[2024-03-19 00:57:01,113: INFO/MainProcess] Task update_pnl[10e5d440-1a2f-4576-9ecb-fad68d34a6f1] received
+[2024-03-19 00:57:01,213: INFO/ForkPoolWorker-119] Task update_pnl[10e5d440-1a2f-4576-9ecb-fad68d34a6f1] succeeded in 0.09922894399642246s: None
+[2024-03-19 00:57:14,291: INFO/ForkPoolWorker-118] Task get_position[d386e083-d55e-401c-ba67-fe5d1344554a] succeeded in 133.16280423800345s: None
+[2024-03-19 00:57:43,898: INFO/MainProcess] Task get_position[36250a6a-91ba-41e8-ba12-00e5544e40f0] received
+[2024-03-19 00:57:57,061: INFO/ForkPoolWorker-113] Task get_position[29b0fc0f-0c7a-4801-8065-ad1de71b153a] succeeded in 413.2947510160011s: None
+[2024-03-19 00:58:01,105: INFO/MainProcess] Task get_position[ecc65941-52dd-48f4-891f-0baf27c254f4] received
+[2024-03-19 00:58:01,112: INFO/MainProcess] Task update_pnl[b9069598-3196-489c-994b-f86df4a65b14] received
+[2024-03-19 00:58:01,198: INFO/ForkPoolWorker-119] Task update_pnl[b9069598-3196-489c-994b-f86df4a65b14] succeeded in 0.08416022099845577s: None
+[2024-03-19 00:59:00,647: INFO/MainProcess] Task get_balance[70943d43-ebbb-4cba-9c68-ceb354b2595a] received
+[2024-03-19 00:59:01,105: INFO/MainProcess] Task get_position[a5c6f241-777f-48f6-b622-2f8269611f8c] received
+[2024-03-19 00:59:01,111: INFO/MainProcess] Task update_pnl[a95e5e53-658d-448d-8ede-f974088b0522] received
+[2024-03-19 00:59:01,207: INFO/ForkPoolWorker-121] Task update_pnl[a95e5e53-658d-448d-8ede-f974088b0522] succeeded in 0.0902592030033702s: None
+[2024-03-19 00:59:15,653: INFO/ForkPoolWorker-117] Task get_position[513b985a-25af-4339-89d0-139c3c861a36] succeeded in 134.5384546080022s: None
+[2024-03-19 00:59:23,938: INFO/MainProcess] Task get_balance[23ae21ee-05b9-488d-b63a-eaa7021ff60b] received
+[2024-03-19 00:59:23,941: INFO/MainProcess] Task get_balance[cfbcc2fa-ee26-4d3a-a942-afb960ab99fa] received
+[2024-03-19 00:59:23,946: INFO/MainProcess] Task get_position[f1bb54b7-91c7-4a6f-b2df-5c2108ca5b23] received
+[2024-03-19 00:59:23,950: INFO/MainProcess] Task get_position[a30ca9d1-0242-49a6-b19f-c59851c72744] received
+[2024-03-19 01:00:01,105: INFO/MainProcess] Task get_position[4286788a-25ef-428b-9410-53d9ef3345bc] received
+[2024-03-19 01:00:01,112: INFO/MainProcess] Task update_pnl[dfaea0d0-143d-4066-b944-dfdf29a6c416] received
+[2024-03-19 01:00:01,222: INFO/ForkPoolWorker-125] Task update_pnl[dfaea0d0-143d-4066-b944-dfdf29a6c416] succeeded in 0.10372380600165343s: None
+[2024-03-19 01:00:13,894: INFO/ForkPoolWorker-113] Task get_position[ecc65941-52dd-48f4-891f-0baf27c254f4] succeeded in 132.78551022099418s: None
+[2024-03-19 01:01:01,105: INFO/MainProcess] Task get_position[4209a3da-8493-4093-a03d-1d79a9bf80f6] received
+[2024-03-19 01:01:01,112: INFO/MainProcess] Task update_pnl[2c3ad852-6f35-4aa0-b41c-ad2d025a2d31] received
+[2024-03-19 01:01:01,206: INFO/ForkPoolWorker-125] Task update_pnl[2c3ad852-6f35-4aa0-b41c-ad2d025a2d31] succeeded in 0.09219791700161295s: None
+[2024-03-19 01:01:03,973: INFO/MainProcess] Task get_position[0595a436-fb4f-4c76-8d87-dd0cec1c8e0a] received
+[2024-03-19 01:01:15,421: INFO/ForkPoolWorker-120] Task get_position[a5c6f241-777f-48f6-b622-2f8269611f8c] succeeded in 134.31059658099548s: None
+[2024-03-19 01:01:37,614: INFO/ForkPoolWorker-122] Task get_position[f1bb54b7-91c7-4a6f-b2df-5c2108ca5b23] succeeded in 133.6574124539984s: None
+[2024-03-19 01:01:38,913: INFO/ForkPoolWorker-123] Task get_position[a30ca9d1-0242-49a6-b19f-c59851c72744] succeeded in 134.95580814399727s: None
+[2024-03-19 01:01:40,024: INFO/ForkPoolWorker-117] Task get_balance[23ae21ee-05b9-488d-b63a-eaa7021ff60b] succeeded in 136.08136755500163s: None
+[2024-03-19 01:02:01,113: INFO/MainProcess] Task get_position[e144a126-736d-4916-be62-1d9ec3a62475] received
+[2024-03-19 01:02:01,117: INFO/MainProcess] Task update_pnl[b5dd7a10-c5c2-4642-8b38-9b8f74cb50d3] received
+[2024-03-19 01:02:01,216: INFO/ForkPoolWorker-120] Task update_pnl[b5dd7a10-c5c2-4642-8b38-9b8f74cb50d3] succeeded in 0.09849130399379646s: None
+[2024-03-19 01:02:16,262: INFO/ForkPoolWorker-124] Task get_position[4286788a-25ef-428b-9410-53d9ef3345bc] succeeded in 135.1495751379989s: None
+[2024-03-19 01:02:44,017: INFO/MainProcess] Task get_position[9db3a330-80f5-4da7-b15b-655900d171a2] received
+[2024-03-19 01:02:44,020: INFO/MainProcess] Task get_position[8fd9638b-94fe-48dd-a41b-5af475521f91] received
+[2024-03-19 01:03:01,113: INFO/MainProcess] Task get_position[ea56eec0-c8e6-47c8-b560-0ce757175359] received
+[2024-03-19 01:03:01,117: INFO/MainProcess] Task update_pnl[088c9411-c137-4ceb-bd3b-efb11cface5b] received
+[2024-03-19 01:03:01,222: INFO/ForkPoolWorker-124] Task update_pnl[088c9411-c137-4ceb-bd3b-efb11cface5b] succeeded in 0.10421714599942788s: None
+[2024-03-19 01:03:15,340: INFO/ForkPoolWorker-113] Task get_position[4209a3da-8493-4093-a03d-1d79a9bf80f6] succeeded in 134.23138316399854s: None
+[2024-03-19 01:03:20,471: INFO/ForkPoolWorker-125] Task get_position[0595a436-fb4f-4c76-8d87-dd0cec1c8e0a] succeeded in 136.49447695900017s: None
+[2024-03-19 01:04:00,663: INFO/MainProcess] Task get_balance[b1856c5c-9a22-44af-af73-e70d94ab4863] received
+[2024-03-19 01:04:01,114: INFO/MainProcess] Task get_position[2da1e7b9-7f65-49f2-81e7-8abb5ea94770] received
+[2024-03-19 01:04:01,117: INFO/MainProcess] Task update_pnl[6b882124-780c-47be-bb53-ebc8fa0842f8] received
+[2024-03-19 01:04:01,212: INFO/ForkPoolWorker-125] Task update_pnl[6b882124-780c-47be-bb53-ebc8fa0842f8] succeeded in 0.09418951700354228s: None
+[2024-03-19 01:04:24,068: INFO/MainProcess] Task get_balance[fdf68254-c137-4b85-8b2a-948e8097d8f6] received
+[2024-03-19 01:04:24,071: INFO/MainProcess] Task get_balance[b420dd26-6e90-4f00-8178-24f661583ef6] received
+[2024-03-19 01:04:58,627: INFO/ForkPoolWorker-122] Task get_position[8fd9638b-94fe-48dd-a41b-5af475521f91] succeeded in 134.6046276460038s: None
+[2024-03-19 01:05:01,115: INFO/MainProcess] Task get_position[94d81b56-4973-42a8-96c6-332cea642aa5] received
+[2024-03-19 01:05:01,119: INFO/MainProcess] Task update_pnl[92b57304-46f3-4fe7-b86c-c2818efd069f] received
+[2024-03-19 01:05:01,219: INFO/ForkPoolWorker-127] Task update_pnl[92b57304-46f3-4fe7-b86c-c2818efd069f] succeeded in 0.09643123600108083s: None
+[2024-03-19 01:05:01,265: INFO/ForkPoolWorker-120] Task get_position[9db3a330-80f5-4da7-b15b-655900d171a2] succeeded in 137.2421926169991s: None
+[2024-03-19 01:05:17,661: INFO/ForkPoolWorker-123] Task get_position[ea56eec0-c8e6-47c8-b560-0ce757175359] succeeded in 136.5409568670002s: None
+[2024-03-19 01:06:01,113: INFO/MainProcess] Task get_position[337f3ebf-98d1-4519-85d7-cc6352656038] received
+[2024-03-19 01:06:01,117: INFO/MainProcess] Task update_pnl[cc66fbb1-8a10-425c-9b5e-8118d007fa66] received
+[2024-03-19 01:06:01,212: INFO/ForkPoolWorker-123] Task update_pnl[cc66fbb1-8a10-425c-9b5e-8118d007fa66] succeeded in 0.09398064800188877s: None
+[2024-03-19 01:06:04,116: INFO/MainProcess] Task get_position[e129e360-6ee1-4e4d-85d4-aee6282d1274] received
+[2024-03-19 01:06:04,119: INFO/MainProcess] Task get_position[159d5340-e645-40a9-9703-19381981e9ed] received
+[2024-03-19 01:07:01,110: INFO/MainProcess] Task get_position[5c6c31bc-9aa8-4a9e-ade8-221de9548905] received
+[2024-03-19 01:07:01,116: INFO/MainProcess] Task update_pnl[04815357-b0e3-48e0-a5a4-00a01b145b1e] received
+[2024-03-19 01:07:16,735: INFO/ForkPoolWorker-122] Task get_position[94d81b56-4973-42a8-96c6-332cea642aa5] succeeded in 135.6139309900027s: None
+[2024-03-19 01:08:01,105: INFO/MainProcess] Task get_position[ed9f1419-30a3-4738-8ec8-5dc1cc1b0b44] received
+[2024-03-19 01:08:01,116: INFO/MainProcess] Task update_pnl[12939386-208a-41b4-a575-1b0fb48a1293] received
+[2024-03-19 01:08:17,026: INFO/ForkPoolWorker-120] Task get_position[337f3ebf-98d1-4519-85d7-cc6352656038] succeeded in 135.9078107039968s: None
+[2024-03-19 01:08:17,117: INFO/ForkPoolWorker-120] Task update_pnl[04815357-b0e3-48e0-a5a4-00a01b145b1e] succeeded in 0.08583872799499659s: None
+[2024-03-19 01:09:00,648: INFO/MainProcess] Task get_balance[85a38870-604e-44b6-a738-240568325531] received
+[2024-03-19 01:09:01,105: INFO/MainProcess] Task get_position[5b761293-429c-4618-b87f-bd603ae5fb88] received
+[2024-03-19 01:09:01,116: INFO/MainProcess] Task update_pnl[e4b80e74-f49c-4c01-ab2c-d04d39e6bcdd] received
+[2024-03-19 01:09:24,197: INFO/MainProcess] Task get_balance[ab352231-db62-4d39-b6a2-c182cb01617f] received
+[2024-03-19 01:09:24,200: INFO/MainProcess] Task get_balance[b6ce28e6-a646-4c1e-a4d1-12b168cd2cf9] received
+[2024-03-19 01:09:24,203: INFO/MainProcess] Task get_position[05522fd2-f367-4cce-807e-c05024f247d8] received
+[2024-03-19 01:09:24,205: INFO/MainProcess] Task get_balance[272cb064-20a1-4910-9e69-2e1211db2267] received
+[2024-03-19 01:09:24,207: INFO/MainProcess] Task get_position[c2498779-89fd-4568-a781-63a8877177e4] received
+[2024-03-19 01:10:01,106: INFO/MainProcess] Task get_position[5672cf36-7319-4397-9907-36e7f7765d16] received
+[2024-03-19 01:10:01,117: INFO/MainProcess] Task update_pnl[677bed19-5a8e-41ba-84e4-88b72398e485] received
+[2024-03-19 01:10:11,224: INFO/ForkPoolWorker-123] Task get_position[e129e360-6ee1-4e4d-85d4-aee6282d1274] succeeded in 247.10125236900058s: None
+[2024-03-19 01:10:11,335: INFO/ForkPoolWorker-123] Task update_pnl[12939386-208a-41b4-a575-1b0fb48a1293] succeeded in 0.08562438000080874s: None
+[2024-03-19 01:10:35,167: INFO/ForkPoolWorker-120] Task get_position[ed9f1419-30a3-4738-8ec8-5dc1cc1b0b44] succeeded in 138.04507506400114s: None
+[2024-03-19 01:11:01,131: INFO/MainProcess] Task get_position[451d7407-5e95-4ebe-986d-66b8e1cff0cd] received
+[2024-03-19 01:11:01,134: INFO/MainProcess] Task update_pnl[4bfffa1c-e203-4c7e-87a0-6b01beac9be5] received
+[2024-03-19 01:12:01,143: INFO/MainProcess] Task get_position[b48c2e2b-9fbc-4682-8d91-a6bb6159e7be] received
+[2024-03-19 01:12:01,146: INFO/MainProcess] Task update_pnl[f7ae0211-02bb-4673-a1ab-9f7a0b6004e0] received
+[2024-03-19 01:13:01,142: INFO/MainProcess] Task get_position[2a642310-80d5-488f-8d6f-058c02b408b2] received
+[2024-03-19 01:13:01,145: INFO/MainProcess] Task update_pnl[b5f9dfb3-94cb-4b69-a07a-f2460af9920a] received
+[2024-03-19 01:14:00,648: INFO/MainProcess] Task get_balance[4ac068e8-fc98-405e-88fc-751f51e2cd4b] received
+[2024-03-19 01:14:01,142: INFO/MainProcess] Task get_position[1f9bbebd-a234-488a-9050-865f52a59b4a] received
+[2024-03-19 01:14:01,144: INFO/MainProcess] Task update_pnl[935e2e45-bf2d-4696-8bd0-8c33d7beee32] received
+[2024-03-19 01:14:24,369: INFO/MainProcess] Task get_balance[6bd3d433-9f22-433c-bc9c-3a5b7e9a802c] received
+[2024-03-19 01:14:24,372: INFO/MainProcess] Task get_position[0aa98d2c-1c88-4860-8bd7-a6c608240023] received
+[2024-03-19 01:14:24,375: INFO/MainProcess] Task get_balance[0ef87726-cc15-42f9-b9c5-ae526a65bf52] received
+[2024-03-19 01:14:24,379: INFO/MainProcess] Task get_position[a1f5017a-eb27-4f76-8494-8c7e85f92a50] received
+[2024-03-19 01:14:24,382: INFO/MainProcess] Task get_balance[6cc62fc7-e1db-4155-9150-d3086eae4e2b] received
+[2024-03-19 01:15:01,142: INFO/MainProcess] Task get_position[07f327c4-c31a-4686-892f-c8b151e6cfe7] received
+[2024-03-19 01:15:01,145: INFO/MainProcess] Task update_pnl[6b39102e-9c55-4c43-b821-368ed796d311] received
+[2024-03-19 01:16:01,142: INFO/MainProcess] Task get_position[72e51919-2d84-45d2-8fb0-6c019f8f6185] received
+[2024-03-19 01:16:01,145: INFO/MainProcess] Task update_pnl[42e5a8be-d977-40af-a94e-7c53349e9e33] received
+[2024-03-19 01:16:04,415: INFO/MainProcess] Task get_position[144a7b16-39c9-481f-a259-2eff4304af40] received
+[2024-03-19 01:17:01,142: INFO/MainProcess] Task get_position[001b2c3c-e990-4373-ac63-4382af154d21] received
+[2024-03-19 01:17:01,145: INFO/MainProcess] Task update_pnl[afeada99-f578-41ec-b6d0-ffc9d193aa19] received
+[2024-03-19 01:18:01,142: INFO/MainProcess] Task get_position[bfa3d972-6d32-435f-a1d9-78185b225649] received
+[2024-03-19 01:18:01,145: INFO/MainProcess] Task update_pnl[536497eb-23f0-4ed0-88a4-4606dd6ef5a3] received
+[2024-03-19 01:19:00,648: INFO/MainProcess] Task get_balance[d582f0a9-3f7a-4d67-a758-0d2a4747f7b4] received
+[2024-03-19 01:19:01,144: INFO/MainProcess] Task get_position[acd84820-4de5-4dce-8544-64960b4dbd32] received
+[2024-03-19 01:19:01,146: INFO/MainProcess] Task update_pnl[ebf71c80-3aa1-460b-8857-7aa5d815e4c9] received
+[2024-03-19 01:19:24,496: INFO/MainProcess] Task get_balance[dc96976b-38cd-47ba-b522-786a133d55c4] received
+[2024-03-19 01:19:24,499: INFO/MainProcess] Task get_position[d96b49ec-6789-4ce2-a586-25c89064fc02] received
+[2024-03-19 01:19:24,501: INFO/MainProcess] Task get_balance[1a1bc827-c3a8-4c00-ae86-3b768986b297] received
+[2024-03-19 01:19:24,504: INFO/MainProcess] Task get_position[c26946f9-aa40-44da-a88c-3fa1f95f123d] received
+[2024-03-19 01:19:24,506: INFO/MainProcess] Task get_balance[119150b2-6e52-4078-b9c4-cb2c51981e1d] received
+[2024-03-19 01:20:01,142: INFO/MainProcess] Task get_position[f336d0e6-8725-4f44-8dfe-e4742c37f09c] received
+[2024-03-19 01:20:01,145: INFO/MainProcess] Task update_pnl[1c8ef2ce-d39a-4d55-b85c-5598b6cd1aef] received
+[2024-03-19 01:21:01,142: INFO/MainProcess] Task get_position[573b43f2-324f-48e1-bcec-1fcf3c3cd0dc] received
+[2024-03-19 01:21:01,145: INFO/MainProcess] Task update_pnl[d6b901e2-2c1a-4113-aab4-eb531933ff5f] received
+[2024-03-19 01:21:04,534: INFO/MainProcess] Task get_position[1510d25f-76fe-4336-86c5-a4ae6b3ab8fa] received
+[2024-03-19 01:21:04,537: INFO/MainProcess] Task get_position[54e372be-8504-49de-aeab-de56db83b079] received
+[2024-03-19 01:22:01,142: INFO/MainProcess] Task get_position[cd2427a1-5cbb-41a4-a9f1-ad97f43e53a8] received
+[2024-03-19 01:22:01,145: INFO/MainProcess] Task update_pnl[b0e3bd99-b6d7-41e4-b2cf-0930ab5fb01a] received
+[2024-03-19 01:23:01,142: INFO/MainProcess] Task get_position[3a6c669c-d8a9-4c73-a882-28bcf3cb477f] received
+[2024-03-19 01:23:01,145: INFO/MainProcess] Task update_pnl[5acc0831-0514-4ac0-851c-7e0b9e743ee1] received
+[2024-03-19 13:32:27,832: INFO/MainProcess] Task get_balance[53864c81-4f78-4808-995b-51f76588e1c2] received
+[2024-03-19 13:32:27,834: INFO/MainProcess] Task get_position[897aaa86-4756-4169-8f42-16545709e991] received
+[2024-03-19 13:32:27,836: INFO/MainProcess] Task update_pnl[2364b752-8ed3-4268-ba93-b054b28fd9c5] received
+[2024-03-19 13:32:51,830: INFO/MainProcess] Task update_pnl[5acc0831-0514-4ac0-851c-7e0b9e743ee1] received
+[2024-03-19 13:32:51,833: INFO/MainProcess] Task get_balance[67be080d-d992-409c-bb1b-0d7f4e6216d2] received
+[2024-03-19 13:32:51,835: INFO/MainProcess] Task get_position[82863a57-bec7-44b9-9683-134fad2631fd] received
+[2024-03-19 13:32:51,837: INFO/MainProcess] Task get_balance[c6ff8ef6-6359-48c1-b95c-e25f84ba2a09] received
+[2024-03-19 13:32:51,840: INFO/MainProcess] Task get_balance[39d5498b-f3f5-4352-bfee-2cacc56afbb0] received
+[2024-03-19 13:32:51,842: INFO/MainProcess] Task get_position[0be872de-6d98-40ca-9f5b-edb821796450] received
+[2024-03-19 13:32:51,844: INFO/MainProcess] Task get_balance[0050e1bc-4648-4dae-9e12-bc9c84317d85] received
+[2024-03-19 13:32:51,847: INFO/MainProcess] Task get_balance[15c58cd0-15b2-4c16-8486-d4d3ef17eab1] received
+[2024-03-19 13:32:51,850: INFO/MainProcess] Task get_position[16b7a7c0-0956-44cd-aa2b-0d6af2b27f14] received
+[2024-03-19 13:32:51,853: INFO/MainProcess] Task get_position[6c5fd448-a335-422b-91b4-f52fa259a0e7] received
+[2024-03-19 13:32:51,855: INFO/MainProcess] Task get_position[39e6ae5c-64ff-436e-ae66-db7905351bee] received
+[2024-03-19 13:32:51,858: INFO/MainProcess] Task get_position[4751b581-38d6-49cc-a2bf-0d081d2157bc] received
+[2024-03-19 13:32:51,860: INFO/MainProcess] Task get_position[3d021e88-90b5-47a9-8e31-b8c715d47eea] received
+[2024-03-19 13:32:51,862: INFO/MainProcess] Task get_position[0848f751-6224-436a-b32c-2ff6c3565503] received
+[2024-03-19 13:32:51,865: INFO/MainProcess] Task get_position[f4df1e25-7e48-49a6-bdea-586291aa2fe8] received
+[2024-03-19 13:32:51,867: INFO/MainProcess] Task get_balance[fbe3f080-bdfb-444e-be09-b1a09ee5c59e] received
+[2024-03-19 13:32:51,869: INFO/MainProcess] Task get_balance[aced66a3-4db9-407e-a1a7-96124f4df3fa] received
+[2024-03-19 13:32:51,872: INFO/MainProcess] Task get_position[09cd96a1-ca7c-4eee-abeb-719153c390df] received
+[2024-03-19 13:32:51,874: INFO/MainProcess] Task get_position[36c94916-9e6a-4ff7-a5c6-be8b60e315f2] received
+[2024-03-19 13:32:51,876: INFO/MainProcess] Task get_position[1ef887e5-2c64-49cd-801a-2468d55575fe] received
+[2024-03-19 13:32:51,879: INFO/MainProcess] Task get_position[c91aadd6-17c8-41ad-a9be-cd5bfced6a04] received
+[2024-03-19 13:32:51,881: INFO/MainProcess] Task get_balance[3d3ea243-93e0-4685-bceb-f54a184e22c5] received
+[2024-03-19 13:32:51,884: INFO/MainProcess] Task get_position[86b78136-6769-4ee2-b21e-4d7c7af170c0] received
+[2024-03-19 13:32:51,886: INFO/MainProcess] Task get_balance[24403135-8f11-41a3-af4e-ab00ec3f12f1] received
+[2024-03-19 13:32:51,888: INFO/MainProcess] Task get_position[053d7bc1-aa2f-4b51-beea-b5e3f09e20d2] received
+[2024-03-19 13:32:51,890: INFO/MainProcess] Task get_balance[da192f62-614a-4043-b5f3-76610454ab6e] received
+[2024-03-19 13:32:51,893: INFO/MainProcess] Task get_position[7c9c07aa-ca2a-4ec1-8a5c-ea9b266741c3] received
+[2024-03-19 13:32:51,895: INFO/MainProcess] Task get_position[f7f984d3-b1da-4847-b1fd-5d779549b266] received
+[2024-03-19 13:32:51,897: INFO/MainProcess] Task get_balance[6a3efda3-1913-411e-8ea4-45f304a0f0fa] received
+[2024-03-19 13:32:51,899: INFO/MainProcess] Task get_balance[36cf4b70-7921-49c6-9e0d-b60f6a331cab] received
+[2024-03-19 13:32:51,901: INFO/MainProcess] Task get_balance[59fe6671-4859-42ef-9d91-9180f59e1914] received
+[2024-03-19 13:32:51,903: INFO/MainProcess] Task get_position[f3e8defb-3a30-4897-a633-e17dc12737e8] received
+[2024-03-19 13:32:51,905: INFO/MainProcess] Task get_balance[91847317-464f-4d7e-a6fa-23fb77240a79] received
+[2024-03-19 13:32:51,907: INFO/MainProcess] Task get_position[1379cdb9-9fc6-44fa-a93d-a592c3e0ff10] received
+[2024-03-19 13:32:51,909: INFO/MainProcess] Task get_balance[9c0c54fb-19ba-43d9-a6be-6b664aae87b2] received
+[2024-03-19 13:32:51,911: INFO/MainProcess] Task get_position[873de8ef-e9c4-45a7-ab99-f0618b8e4a04] received
+[2024-03-19 13:32:51,913: INFO/MainProcess] Task get_balance[5d63c42d-1b04-49ce-ba9d-d636a3cf9e1a] received
+[2024-03-19 13:32:51,915: INFO/MainProcess] Task get_position[8c95e46f-f215-48c1-a0c3-28838a76076f] received
+[2024-03-19 13:32:51,917: INFO/MainProcess] Task get_position[970dd577-a074-42b2-9b1d-5af6fd5f4054] received
+[2024-03-19 13:32:51,919: INFO/MainProcess] Task get_position[36250a6a-91ba-41e8-ba12-00e5544e40f0] received
+[2024-03-19 13:32:51,922: INFO/MainProcess] Task get_balance[70943d43-ebbb-4cba-9c68-ceb354b2595a] received
+[2024-03-19 13:32:51,924: INFO/MainProcess] Task get_balance[cfbcc2fa-ee26-4d3a-a942-afb960ab99fa] received
+[2024-03-19 13:32:51,926: INFO/MainProcess] Task get_position[e144a126-736d-4916-be62-1d9ec3a62475] received
+[2024-03-19 13:32:51,928: INFO/MainProcess] Task get_balance[b1856c5c-9a22-44af-af73-e70d94ab4863] received
+[2024-03-19 13:32:51,930: INFO/MainProcess] Task get_position[2da1e7b9-7f65-49f2-81e7-8abb5ea94770] received
+[2024-03-19 13:32:51,933: INFO/MainProcess] Task get_balance[fdf68254-c137-4b85-8b2a-948e8097d8f6] received
+[2024-03-19 13:32:51,935: INFO/MainProcess] Task get_balance[b420dd26-6e90-4f00-8178-24f661583ef6] received
+[2024-03-19 13:32:51,937: INFO/MainProcess] Task get_position[159d5340-e645-40a9-9703-19381981e9ed] received
+[2024-03-19 13:32:51,939: INFO/MainProcess] Task get_position[5c6c31bc-9aa8-4a9e-ade8-221de9548905] received
+[2024-03-19 13:32:51,941: INFO/MainProcess] Task get_balance[85a38870-604e-44b6-a738-240568325531] received
+[2024-03-19 13:32:51,943: INFO/MainProcess] Task get_position[5b761293-429c-4618-b87f-bd603ae5fb88] received
+[2024-03-19 13:32:51,945: INFO/MainProcess] Task update_pnl[e4b80e74-f49c-4c01-ab2c-d04d39e6bcdd] received
+[2024-03-19 13:32:51,949: INFO/MainProcess] Task get_balance[ab352231-db62-4d39-b6a2-c182cb01617f] received
+[2024-03-19 13:32:51,951: INFO/MainProcess] Task get_balance[b6ce28e6-a646-4c1e-a4d1-12b168cd2cf9] received
+[2024-03-19 13:32:51,953: INFO/MainProcess] Task get_position[05522fd2-f367-4cce-807e-c05024f247d8] received
+[2024-03-19 13:32:51,955: INFO/MainProcess] Task get_balance[272cb064-20a1-4910-9e69-2e1211db2267] received
+[2024-03-19 13:32:51,957: INFO/MainProcess] Task get_position[c2498779-89fd-4568-a781-63a8877177e4] received
+[2024-03-19 13:32:51,959: INFO/MainProcess] Task get_position[5672cf36-7319-4397-9907-36e7f7765d16] received
+[2024-03-19 13:32:51,961: INFO/MainProcess] Task update_pnl[677bed19-5a8e-41ba-84e4-88b72398e485] received
+[2024-03-19 13:32:51,963: INFO/MainProcess] Task get_position[451d7407-5e95-4ebe-986d-66b8e1cff0cd] received
+[2024-03-19 13:32:51,965: INFO/MainProcess] Task update_pnl[4bfffa1c-e203-4c7e-87a0-6b01beac9be5] received
+[2024-03-19 13:32:51,968: INFO/MainProcess] Task get_position[b48c2e2b-9fbc-4682-8d91-a6bb6159e7be] received
+[2024-03-19 13:32:51,970: INFO/MainProcess] Task update_pnl[f7ae0211-02bb-4673-a1ab-9f7a0b6004e0] received
+[2024-03-19 13:32:51,972: INFO/MainProcess] Task get_position[2a642310-80d5-488f-8d6f-058c02b408b2] received
+[2024-03-19 13:32:51,974: INFO/MainProcess] Task update_pnl[b5f9dfb3-94cb-4b69-a07a-f2460af9920a] received
+[2024-03-19 13:32:51,976: INFO/MainProcess] Task get_balance[4ac068e8-fc98-405e-88fc-751f51e2cd4b] received
+[2024-03-19 13:32:51,978: INFO/MainProcess] Task get_position[1f9bbebd-a234-488a-9050-865f52a59b4a] received
+[2024-03-19 13:32:51,980: INFO/MainProcess] Task update_pnl[935e2e45-bf2d-4696-8bd0-8c33d7beee32] received
+[2024-03-19 13:32:51,983: INFO/MainProcess] Task get_balance[6bd3d433-9f22-433c-bc9c-3a5b7e9a802c] received
+[2024-03-19 13:32:51,985: INFO/MainProcess] Task get_position[0aa98d2c-1c88-4860-8bd7-a6c608240023] received
+[2024-03-19 13:32:51,987: INFO/MainProcess] Task get_balance[0ef87726-cc15-42f9-b9c5-ae526a65bf52] received
+[2024-03-19 13:32:51,991: INFO/MainProcess] Task get_position[a1f5017a-eb27-4f76-8494-8c7e85f92a50] received
+[2024-03-19 13:32:51,994: INFO/MainProcess] Task get_balance[6cc62fc7-e1db-4155-9150-d3086eae4e2b] received
+[2024-03-19 13:32:51,999: INFO/MainProcess] Task get_position[07f327c4-c31a-4686-892f-c8b151e6cfe7] received
+[2024-03-19 13:32:52,002: INFO/MainProcess] Task update_pnl[6b39102e-9c55-4c43-b821-368ed796d311] received
+[2024-03-19 13:32:52,005: INFO/MainProcess] Task get_position[72e51919-2d84-45d2-8fb0-6c019f8f6185] received
+[2024-03-19 13:32:52,008: INFO/MainProcess] Task update_pnl[42e5a8be-d977-40af-a94e-7c53349e9e33] received
+[2024-03-19 13:32:52,010: INFO/MainProcess] Task get_position[144a7b16-39c9-481f-a259-2eff4304af40] received
+[2024-03-19 13:32:52,012: INFO/MainProcess] Task get_position[001b2c3c-e990-4373-ac63-4382af154d21] received
+[2024-03-19 13:32:52,014: INFO/MainProcess] Task update_pnl[afeada99-f578-41ec-b6d0-ffc9d193aa19] received
+[2024-03-19 13:32:52,016: INFO/MainProcess] Task get_position[bfa3d972-6d32-435f-a1d9-78185b225649] received
+[2024-03-19 13:32:52,018: INFO/MainProcess] Task update_pnl[536497eb-23f0-4ed0-88a4-4606dd6ef5a3] received
+[2024-03-19 13:32:52,020: INFO/MainProcess] Task get_balance[d582f0a9-3f7a-4d67-a758-0d2a4747f7b4] received
+[2024-03-19 13:32:52,023: INFO/MainProcess] Task get_position[acd84820-4de5-4dce-8544-64960b4dbd32] received
+[2024-03-19 13:32:52,025: INFO/MainProcess] Task update_pnl[ebf71c80-3aa1-460b-8857-7aa5d815e4c9] received
+[2024-03-19 13:32:52,027: INFO/MainProcess] Task get_balance[dc96976b-38cd-47ba-b522-786a133d55c4] received
+[2024-03-19 13:32:52,030: INFO/MainProcess] Task get_position[d96b49ec-6789-4ce2-a586-25c89064fc02] received
+[2024-03-19 13:32:52,033: INFO/MainProcess] Task get_balance[1a1bc827-c3a8-4c00-ae86-3b768986b297] received
+[2024-03-19 13:32:52,035: INFO/MainProcess] Task get_position[c26946f9-aa40-44da-a88c-3fa1f95f123d] received
+[2024-03-19 13:32:52,037: INFO/MainProcess] Task get_balance[119150b2-6e52-4078-b9c4-cb2c51981e1d] received
+[2024-03-19 13:32:52,039: INFO/MainProcess] Task get_position[f336d0e6-8725-4f44-8dfe-e4742c37f09c] received
+[2024-03-19 13:32:52,041: INFO/MainProcess] Task update_pnl[1c8ef2ce-d39a-4d55-b85c-5598b6cd1aef] received
+[2024-03-19 13:32:52,043: INFO/MainProcess] Task get_position[573b43f2-324f-48e1-bcec-1fcf3c3cd0dc] received
+[2024-03-19 13:32:52,045: INFO/MainProcess] Task update_pnl[d6b901e2-2c1a-4113-aab4-eb531933ff5f] received
+[2024-03-19 13:32:52,047: INFO/MainProcess] Task get_position[1510d25f-76fe-4336-86c5-a4ae6b3ab8fa] received
+[2024-03-19 13:32:52,049: INFO/MainProcess] Task get_position[54e372be-8504-49de-aeab-de56db83b079] received
+[2024-03-19 13:32:52,052: INFO/MainProcess] Task get_position[cd2427a1-5cbb-41a4-a9f1-ad97f43e53a8] received
+[2024-03-19 13:32:52,054: INFO/MainProcess] Task update_pnl[b0e3bd99-b6d7-41e4-b2cf-0930ab5fb01a] received
+[2024-03-19 13:32:52,056: INFO/MainProcess] Task get_position[3a6c669c-d8a9-4c73-a882-28bcf3cb477f] received
+[2024-03-19 13:33:27,834: INFO/MainProcess] Task get_position[fd856839-e272-41e9-88d4-fa87f95b30a7] received
+[2024-03-19 13:33:27,837: INFO/MainProcess] Task update_pnl[2b9833fb-737a-4cb8-b690-ec930ccc21c4] received
+[2024-03-19 13:34:27,833: INFO/MainProcess] Task get_position[fa9eb78f-3caa-45a7-be77-0135c19223a7] received
+[2024-03-19 13:34:27,836: INFO/MainProcess] Task update_pnl[22ffdadb-6f59-4b20-946d-8fd84b66e577] received
+[2024-03-19 13:35:27,834: INFO/MainProcess] Task get_position[1c60a6e3-e69e-4e0e-8a17-85a4a0e6b1ed] received
+[2024-03-19 13:35:27,836: INFO/MainProcess] Task update_pnl[d39ef9da-7101-4fc1-a6f1-58c530d40f0e] received
+[2024-03-19 13:36:27,834: INFO/MainProcess] Task get_position[fb3fdf16-5ee9-4f62-bbc6-9c220dc9d3e7] received
+[2024-03-19 13:36:27,836: INFO/MainProcess] Task update_pnl[6c42df74-5d19-4bcc-b403-526aa4d24870] received
+[2024-03-19 13:37:27,830: INFO/MainProcess] Task get_balance[3fc4fc8d-929f-4615-a9e6-c8e9ba602cb2] received
+[2024-03-19 13:37:27,833: INFO/MainProcess] Task get_position[61c31b73-6573-4281-a5f6-bd2cb90133fb] received
+[2024-03-19 13:37:27,835: INFO/MainProcess] Task update_pnl[d8ba1b1a-9b6e-4979-b411-e7a5893aba2e] received
+[2024-03-19 13:38:27,834: INFO/MainProcess] Task get_position[28524bb6-6ce1-4665-87bc-cf3440a9a24b] received
+[2024-03-19 13:38:27,837: INFO/MainProcess] Task update_pnl[3fb8bb88-ad3e-4e67-8801-8720d3b77237] received
+[2024-03-19 13:39:27,834: INFO/MainProcess] Task get_position[b5a7bc69-a0b3-4508-ace6-5febe586f27b] received
+[2024-03-19 13:39:27,836: INFO/MainProcess] Task update_pnl[1e0a4f32-ddd9-458e-9c34-9721147c075c] received
+[2024-03-19 13:40:27,834: INFO/MainProcess] Task get_position[bfb3f3ca-b5ff-4029-bb45-8cc4b901da0b] received
+[2024-03-19 13:40:27,836: INFO/MainProcess] Task update_pnl[b07e32d4-0642-4b7d-acc9-81747b40046e] received
+[2024-03-19 13:41:27,834: INFO/MainProcess] Task get_position[62c77379-f4f0-4788-86a7-cd8928380860] received
+[2024-03-19 13:41:27,836: INFO/MainProcess] Task update_pnl[21bc9c11-7202-48db-aeb0-bcf7dae59efa] received
+[2024-03-19 13:42:27,830: INFO/MainProcess] Task get_balance[bad1ed9f-3bb3-4f0f-aba4-6f6831895e3e] received
+[2024-03-19 13:42:27,833: INFO/MainProcess] Task get_position[a3850db4-dea4-4e73-be4d-3c128bb227d1] received
+[2024-03-19 13:42:27,835: INFO/MainProcess] Task update_pnl[ebf88d38-e2dd-420a-92a4-019f6366fae8] received
+[2024-03-19 13:43:27,834: INFO/MainProcess] Task get_position[1cb35432-cef4-4f96-a99a-678c0cf62ddb] received
+[2024-03-19 13:43:27,837: INFO/MainProcess] Task update_pnl[438d1e4f-cc01-45ca-87a1-bb881eea18ca] received
+[2024-03-19 13:44:27,834: INFO/MainProcess] Task get_position[072340fe-7323-4b5f-b3f4-3f7edb043def] received
+[2024-03-19 13:44:27,836: INFO/MainProcess] Task update_pnl[f538605d-2d48-40d0-88a1-c8812b465907] received
+[2024-03-19 13:45:27,834: INFO/MainProcess] Task get_position[5835b76b-6a4a-42c5-bb49-377939d17697] received
+[2024-03-19 13:45:27,837: INFO/MainProcess] Task update_pnl[1d277292-31e6-49f1-ae22-a6b22233312d] received
+[2024-03-19 13:46:27,834: INFO/MainProcess] Task get_position[65f04485-fea3-4565-b13d-71f1e565eef9] received
+[2024-03-19 13:46:27,837: INFO/MainProcess] Task update_pnl[cdbe34b0-7aef-42cc-96a1-d4e8f788a38e] received
+[2024-03-19 13:47:27,831: INFO/MainProcess] Task get_balance[3a8ee89b-3151-4fbe-bdc5-9927a8564b3d] received
+[2024-03-19 13:47:27,836: INFO/MainProcess] Task get_position[07809be8-2843-4665-be2b-b9f7dfbe7936] received
+[2024-03-19 13:47:27,844: INFO/MainProcess] Task update_pnl[f9d8c416-beb0-4a35-8995-c158c613861c] received
+[2024-03-19 13:48:27,834: INFO/MainProcess] Task get_position[1e4945c0-4265-4fab-aecf-5d215eb281f2] received
+[2024-03-19 13:48:27,837: INFO/MainProcess] Task update_pnl[89d876ae-4acb-4deb-ab2f-3b7861c9a542] received
+[2024-03-19 13:49:27,834: INFO/MainProcess] Task get_position[247a6bf0-ce0e-41db-8d50-88db14b8253c] received
+[2024-03-19 13:49:27,836: INFO/MainProcess] Task update_pnl[90a47244-1cd8-45ce-b972-97fc4e67ff78] received
+[2024-03-19 13:50:27,834: INFO/MainProcess] Task get_position[c137f693-0d4f-4647-ad80-675bb601856b] received
+[2024-03-19 13:50:27,837: INFO/MainProcess] Task update_pnl[6c58ed7c-cdcf-4f6d-a2d1-331c7d413455] received
+[2024-03-19 13:51:27,834: INFO/MainProcess] Task get_position[37286742-91b2-4946-8072-ea798187223d] received
+[2024-03-19 13:51:27,837: INFO/MainProcess] Task update_pnl[4d65c68c-4196-4de3-a4f4-973fd68bd6d1] received
+[2024-03-19 13:52:27,830: INFO/MainProcess] Task get_balance[157f1e39-9190-461d-b3ee-daa4a06b4a24] received
+[2024-03-19 13:52:27,833: INFO/MainProcess] Task get_position[216ad7b1-f81a-4a24-8ec9-be6244ffe093] received
+[2024-03-19 13:52:27,836: INFO/MainProcess] Task update_pnl[7334a268-66fd-43d7-aba6-a93be7ee6241] received
+[2024-03-19 13:53:27,835: INFO/MainProcess] Task get_position[0b590903-7e5f-4ab5-a4e3-80b9313d09fc] received
+[2024-03-19 13:53:27,837: INFO/MainProcess] Task update_pnl[6ebe42e8-e091-4b39-98e1-0745e97b5325] received
+[2024-03-19 13:54:27,834: INFO/MainProcess] Task get_position[da4be21a-21f8-4fd4-ac15-398c6586af6b] received
+[2024-03-19 13:54:27,837: INFO/MainProcess] Task update_pnl[5da10994-b9d4-47dc-9b2b-1c7c2321b15e] received
+[2024-03-19 13:55:27,835: INFO/MainProcess] Task get_position[1d65e0e8-a8e1-4d44-bbdf-300d48debe9b] received
+[2024-03-19 13:55:27,838: INFO/MainProcess] Task update_pnl[53d82d5f-ccc3-46db-87f6-6b857171c0f5] received
+[2024-03-19 13:56:27,835: INFO/MainProcess] Task get_position[2e8bb36f-3d76-4ee5-a0a3-426487f93f38] received
+[2024-03-19 13:56:27,837: INFO/MainProcess] Task update_pnl[5f73df7d-4716-4d02-bae8-632d13214492] received
+[2024-03-19 13:57:27,830: INFO/MainProcess] Task get_balance[77f223fe-9527-43e2-8647-cb3d8eb9c6fb] received
+[2024-03-19 13:57:27,834: INFO/MainProcess] Task get_position[1bf3fd6c-cd1c-4ae0-9936-cb1654094a92] received
+[2024-03-19 13:57:27,836: INFO/MainProcess] Task update_pnl[7770ece1-5652-4c6c-aed5-a0ba15a3fbb9] received
+[2024-03-19 13:58:27,835: INFO/MainProcess] Task get_position[edee47ad-d760-49f7-a66b-cfd6184e2265] received
+[2024-03-19 13:58:27,838: INFO/MainProcess] Task update_pnl[72430471-b7c4-49a3-b5de-cfd8f9ac7e58] received
+[2024-03-19 13:59:27,835: INFO/MainProcess] Task get_position[f5fa75d3-1b5a-4d51-99b6-2d5dfacbb4c8] received
+[2024-03-19 13:59:27,837: INFO/MainProcess] Task update_pnl[1665564a-6910-4b72-aa54-096b0dec3201] received
+[2024-03-19 14:00:27,836: INFO/MainProcess] Task get_position[7ab3c6de-d341-49ab-982a-17fe9fc16925] received
+[2024-03-19 14:00:27,839: INFO/MainProcess] Task update_pnl[4f642903-48f5-4ff1-b710-455e5da08e63] received
+[2024-03-19 14:01:27,834: INFO/MainProcess] Task get_position[6918a477-66f2-4beb-955c-61f68275174c] received
+[2024-03-19 14:01:27,837: INFO/MainProcess] Task update_pnl[73eee32d-89c2-41c3-b510-d5ea28704f1e] received
+[2024-03-19 14:02:27,859: INFO/MainProcess] Task get_balance[4b297172-2fcd-45e7-ab8a-e2e8f5b29f42] received
+[2024-03-19 14:02:27,863: INFO/MainProcess] Task get_position[263f8a2d-3697-4a34-a858-77508e85e925] received
+[2024-03-19 14:02:27,865: INFO/MainProcess] Task update_pnl[85616a1d-69dc-438e-8f7a-88f705f0ce78] received
