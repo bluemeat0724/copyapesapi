@@ -62,8 +62,9 @@ class OkxOrderInfo(object):
         except:
             return
 
-        self.get_position_history(order_type=2)        # 如果没有数据，说明已经全部平仓，跟新所有交易数据
+        # 如果没有数据，说明已经全部平仓，跟新所有交易数据
         if not data:
+            self.get_position_history(order_type=2)
             return
 
         for item in data:
