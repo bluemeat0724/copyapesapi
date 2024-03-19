@@ -76,7 +76,7 @@ class OkxOrderInfo(object):
             mgnMode = item.get('mgnMode')
             posSide = item.get('posSide')
             imr = item.get('imr', 0)
-            # print(instId, cTime, openAvgPx, pnl, pnlRatio, lever, mgnMode, posSide)
+            # print(instId, cTime, openAvgPx, upl, uplRatio, lever, mgnMode, posSide)
 
             # 查询数据库，看是否存在具有相同 instId 和 cTime 的记录
             record_exists = self.check_order(instId, cTime)
@@ -217,4 +217,4 @@ class OkxOrderInfo(object):
 
 
 if __name__ == '__main__':
-    OkxOrderInfo(4, 303).get_position_history(order_type=2)
+    OkxOrderInfo(1, 292).get_position()
