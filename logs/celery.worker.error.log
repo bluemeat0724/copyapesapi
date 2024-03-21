@@ -1998,3 +1998,5 @@
 [2024-03-19 14:02:27,859: INFO/MainProcess] Task get_balance[4b297172-2fcd-45e7-ab8a-e2e8f5b29f42] received
 [2024-03-19 14:02:27,863: INFO/MainProcess] Task get_position[263f8a2d-3697-4a34-a858-77508e85e925] received
 [2024-03-19 14:02:27,865: INFO/MainProcess] Task update_pnl[85616a1d-69dc-438e-8f7a-88f705f0ce78] received
+
+worker: Warm shutdown (MainProcess)

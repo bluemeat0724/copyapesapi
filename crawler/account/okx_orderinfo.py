@@ -143,12 +143,12 @@ class OkxOrderInfo(object):
                 obj.account.api.flag = self.flag
                 # 查看前10条交易记录
                 history_data = obj.account.get_positions_history(limit='10').get('data')
+                if not history_data:
+                    continue
                 break
             except:
                 time.sleep(10)
 
-        if not history_data:
-            return
 
         # 将 history_data 转换为字典，以便快速检查 instId 和 cTime 是否匹配
         history_data_dict = {(item['instId'], int(item['cTime'])): item for item in history_data}
