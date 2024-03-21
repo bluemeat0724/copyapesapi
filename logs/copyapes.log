@@ -813,3 +813,7 @@ INFO 2024-03-20 23:49:28,077 basehttp 54060 123145388486656 "GET /api/taskadd/?t
 INFO 2024-03-20 23:49:31,589 basehttp 54060 123145422065664 "GET /api/taskadd/287/?token=53ccfdfa-9506-473c-a761-914844114003 HTTP/1.1" 200 310
 INFO 2024-03-20 23:49:31,596 basehttp 54060 123145388486656 "GET /api/traderdetial/287/?token=53ccfdfa-9506-473c-a761-914844114003 HTTP/1.1" 200 447
 INFO 2024-03-20 23:49:31,596 basehttp 54060 123145405276160 "GET /api/tradeorder/287/?token=53ccfdfa-9506-473c-a761-914844114003 HTTP/1.1" 200 1575
+INFO 2024-03-21 13:58:45,464 autoreload 54060 4698174976 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py changed, reloading.
+INFO 2024-03-21 13:58:46,410 autoreload 68094 4375217664 Watching for file changes with StatReloader
+INFO 2024-03-21 14:18:35,947 autoreload 68094 4375217664 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py changed, reloading.
+INFO 2024-03-21 14:18:36,884 autoreload 68305 4620723712 Watching for file changes with StatReloader

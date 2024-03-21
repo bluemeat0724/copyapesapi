@@ -199,7 +199,7 @@ class Trader(threading.Thread):
             # 市价开仓
             print(f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
             result = self.obj.trade.open_market(instId=self.instId, posSide=self.posSide,
-                                                openMoney=self.sums * trade_times, tdMode='cross',
+                                                openMoney=self.sums * trade_times, tdMode=self.mgnMode,
                                                 lever=self.lever)
             try:
                 s_code_value = result.get('set_order_result', {}).get('data', {}).get('sCode')
@@ -242,7 +242,7 @@ class Trader(threading.Thread):
                 self.change_pos_side_set(self.availSubPos)
             # 市价平仓
             print(f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
-            self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT='all', tdMode='cross')
+            self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT='all', tdMode=self.mgnMode)
             # self.thread_logger.success(f'进行平仓操作，品种:{self.instId}，方向：{self.posSide}')
             self.log_to_database("success", f"进行平仓操作", f"品种:{self.instId}，方向：{self.posSide}")
             # 更新持仓数据
@@ -269,7 +269,7 @@ class Trader(threading.Thread):
                 print(f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
                 result = self.obj.trade.open_market(instId=self.instId, posSide=self.posSide,
                                                     openMoney=self.sums * trade_times,
-                                                    tdMode='cross', lever=self.lever)
+                                                    tdMode=self.mgnMode, lever=self.lever)
                 try:
                     s_code_value = result.get('set_order_result', {}).get('data', {}).get('sCode')
                     if s_code_value == '0':
@@ -290,7 +290,7 @@ class Trader(threading.Thread):
                     return
                 print(f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
                 self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT=quantityCT,
-                                            tdMode='cross')
+                                            tdMode=self.mgnMode)
                 # 更新持仓数据
                 OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=1)
                 percentage = "{:.2f}%".format((1 - ratio) * 100)
