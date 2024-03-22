@@ -81,7 +81,7 @@ class Trader(threading.Thread):
         self.instId = instId
         self.mgnMode = mgnMode
         self.posSide = posSide
-        self.lever = int(lever)
+        self.lever = float(lever)
         self.openTime = openTime
         self.openAvgPx = openAvgPx
         self.posSide_set = posSide_set
@@ -158,7 +158,7 @@ class Trader(threading.Thread):
         self.instId = new_data.get('instId')
         self.mgnMode = new_data.get('mgnMode')
         self.posSide = new_data.get('posSide')
-        self.lever = int(new_data.get('lever'))
+        self.lever = float(new_data.get('lever'))
         self.openTime = new_data.get('openTime')
         self.openAvgPx = new_data.get('openAvgPx')
         # 执行需要的操作

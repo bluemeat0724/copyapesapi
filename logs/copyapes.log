@@ -817,3 +817,6 @@ INFO 2024-03-21 13:58:45,464 autoreload 54060 4698174976 /Users/lichaoyuan/Deskt
 INFO 2024-03-21 13:58:46,410 autoreload 68094 4375217664 Watching for file changes with StatReloader
 INFO 2024-03-21 14:18:35,947 autoreload 68094 4375217664 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py changed, reloading.
 INFO 2024-03-21 14:18:36,884 autoreload 68305 4620723712 Watching for file changes with StatReloader
+INFO 2024-03-21 23:17:26,433 basehttp 68305 123145598140416 "GET /api/taskadd/287/?token=53ccfdfa-9506-473c-a761-914844114003 HTTP/1.1" 200 310
+INFO 2024-03-21 23:17:26,434 basehttp 68305 123145581350912 "GET /api/tradeorder/287/?token=53ccfdfa-9506-473c-a761-914844114003 HTTP/1.1" 200 1575
+INFO 2024-03-21 23:17:26,437 basehttp 68305 123145564561408 "GET /api/traderdetial/287/?token=53ccfdfa-9506-473c-a761-914844114003 HTTP/1.1" 200 447
