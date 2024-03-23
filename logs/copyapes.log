@@ -820,3 +820,7 @@ INFO 2024-03-21 14:18:36,884 autoreload 68305 4620723712 Watching for file chang
 INFO 2024-03-21 23:17:26,433 basehttp 68305 123145598140416 "GET /api/taskadd/287/?token=53ccfdfa-9506-473c-a761-914844114003 HTTP/1.1" 200 310
 INFO 2024-03-21 23:17:26,434 basehttp 68305 123145581350912 "GET /api/tradeorder/287/?token=53ccfdfa-9506-473c-a761-914844114003 HTTP/1.1" 200 1575
 INFO 2024-03-21 23:17:26,437 basehttp 68305 123145564561408 "GET /api/traderdetial/287/?token=53ccfdfa-9506-473c-a761-914844114003 HTTP/1.1" 200 447
+INFO 2024-03-24 00:59:11,742 autoreload 68305 4620723712 /Users/lichaoyuan/Desktop/copytrade/copytrade/settings/settingsdev.py changed, reloading.
+INFO 2024-03-24 00:59:12,547 autoreload 90640 4635837952 Watching for file changes with StatReloader
+INFO 2024-03-24 01:36:17,364 autoreload 90640 4635837952 /Users/lichaoyuan/Desktop/copytrade/copytrade/settings/settingsdev.py changed, reloading.
+INFO 2024-03-24 01:36:18,381 autoreload 5794 4351620608 Watching for file changes with StatReloader

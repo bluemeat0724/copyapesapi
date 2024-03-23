@@ -2000,3 +2000,18 @@
 [2024-03-19 14:02:27,865: INFO/MainProcess] Task update_pnl[85616a1d-69dc-438e-8f7a-88f705f0ce78] received
 
 worker: Warm shutdown (MainProcess)
+[2024-03-24 01:31:33,916: INFO/MainProcess] Connected to redis://127.0.0.1:6379/14
+[2024-03-24 01:31:33,924: INFO/MainProcess] mingle: searching for neighbors
+[2024-03-24 01:31:34,935: INFO/MainProcess] mingle: all alone
+[2024-03-24 01:31:34,969: INFO/MainProcess] celery@mac ready.
+[2024-03-24 01:31:36,859: INFO/MainProcess] Events of group {task} enabled by remote.
+[2024-03-24 01:32:13,879: INFO/MainProcess] Task get_ip_countdown[586a1a29-7070-4185-a967-74b4cdbcb19a] received
+[2024-03-24 01:32:13,914: INFO/MainProcess] Task update_pnl[b32ab61e-6462-4aa4-9b3a-f58a16a33932] received
+[2024-03-24 01:32:14,016: INFO/ForkPoolWorker-1] Task update_pnl[b32ab61e-6462-4aa4-9b3a-f58a16a33932] succeeded in 0.0972994259999993s: None
+[2024-03-24 01:32:16,422: INFO/ForkPoolWorker-128] Task get_ip_countdown[586a1a29-7070-4185-a967-74b4cdbcb19a] succeeded in 2.5391263980000005s: None
+[2024-03-24 01:33:13,884: INFO/MainProcess] Task get_ip_countdown[4e8adce7-30bc-4e93-b277-64229b6746c0] received
+[2024-03-24 01:33:13,916: INFO/MainProcess] Task update_pnl[330f11e0-4de2-41dd-b346-ed89b24f8b2e] received
+[2024-03-24 01:33:14,059: INFO/ForkPoolWorker-1] Task update_pnl[330f11e0-4de2-41dd-b346-ed89b24f8b2e] succeeded in 0.13764250000001255s: None
+[2024-03-24 01:33:15,309: INFO/ForkPoolWorker-128] Task get_ip_countdown[4e8adce7-30bc-4e93-b277-64229b6746c0] succeeded in 1.3984189479999998s: None
+
+worker: Warm shutdown (MainProcess)

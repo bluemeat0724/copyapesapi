@@ -2913,3 +2913,13 @@
 [2024-03-20 02:19:59,843: INFO/MainProcess] Scheduler: Sending due task update_pnl (update_pnl)
 [2024-03-20 02:20:59,840: INFO/MainProcess] Scheduler: Sending due task get_position (get_position)
 [2024-03-20 02:20:59,843: INFO/MainProcess] Scheduler: Sending due task update_pnl (update_pnl)
+[2024-03-24 01:31:13,842: INFO/MainProcess] beat: Starting...
+[2024-03-24 01:31:13,887: INFO/MainProcess] Scheduler: Sending due task get_position (get_position)
+[2024-03-24 01:31:13,910: INFO/MainProcess] Scheduler: Sending due task get_balance (get_balance)
+[2024-03-24 01:31:13,912: INFO/MainProcess] Scheduler: Sending due task update_pnl (update_pnl)
+[2024-03-24 01:32:13,870: INFO/MainProcess] Scheduler: Sending due task update_ip_countdown (get_ip_countdown)
+[2024-03-24 01:32:13,884: INFO/MainProcess] Scheduler: Sending due task get_position (get_position)
+[2024-03-24 01:32:13,912: INFO/MainProcess] Scheduler: Sending due task update_pnl (update_pnl)
+[2024-03-24 01:33:13,869: INFO/MainProcess] Scheduler: Sending due task update_ip_countdown (get_ip_countdown)
+[2024-03-24 01:33:13,884: INFO/MainProcess] Scheduler: Sending due task get_position (get_position)
+[2024-03-24 01:33:13,912: INFO/MainProcess] Scheduler: Sending due task update_pnl (update_pnl)
