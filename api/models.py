@@ -134,6 +134,10 @@ class IpInfo(models.Model):
     countryName = models.CharField(verbose_name="地区", max_length=32, null=True, blank=True, default='')
     countdown = models.FloatField(verbose_name="有效期", default=30)
     user = models.ForeignKey(verbose_name="用户", to="UserInfo", on_delete=models.CASCADE)
+    stop_day = models.FloatField(verbose_name="停止交易时间", default=0.5)
+    tips_day = models.FloatField(verbose_name="提示ip过期时间", default=3)
+    created_at = models.DateTimeField(verbose_name="创建时间", auto_now_add=True)
+    experience_day = models.FloatField(verbose_name="有效天数")
 
 
 class OrderInfo(models.Model):
