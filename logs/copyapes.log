@@ -934,3 +934,8 @@ INFO 2024-03-25 00:41:12,097 autoreload 5794 4351620608 /Users/lichaoyuan/Deskto
 INFO 2024-03-25 00:41:12,976 autoreload 43747 4688283136 Watching for file changes with StatReloader
 INFO 2024-03-25 01:22:32,345 autoreload 43747 4688283136 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py changed, reloading.
 INFO 2024-03-25 01:22:33,136 autoreload 59249 4574385664 Watching for file changes with StatReloader
+INFO 2024-03-25 01:34:58,551 basehttp 59249 123145398632448 "GET /api/quotainfo/?token=373cc97a-d9e8-4393-bf32-cb4944f604d4 HTTP/1.1" 200 147
+INFO 2024-03-25 01:35:00,847 basehttp 59249 123145398632448 "GET /api/taskadd/?token=373cc97a-d9e8-4393-bf32-cb4944f604d4 HTTP/1.1" 200 64941
+INFO 2024-03-25 01:35:02,751 basehttp 59249 123145398632448 "GET /api/traderdetial/287/?token=373cc97a-d9e8-4393-bf32-cb4944f604d4 HTTP/1.1" 200 447
+INFO 2024-03-25 01:35:02,758 basehttp 59249 123145415421952 "GET /api/tradeorder/287/?token=373cc97a-d9e8-4393-bf32-cb4944f604d4 HTTP/1.1" 200 1575
+INFO 2024-03-25 01:35:02,763 basehttp 59249 123145432211456 "GET /api/taskadd/287/?token=373cc97a-d9e8-4393-bf32-cb4944f604d4 HTTP/1.1" 200 310

@@ -357,6 +357,7 @@ class Trader(threading.Thread):
         obj = OkxOrderInfo(self.user_id, self.task_id)
         while obj.get_order():
             obj.get_position_history(order_type=2)
+        print(f'更新用户{self.user_id}任务{self.task_id}持仓数据成功！')
 
         # # 账户获取剩余额度
         # remaining_quota = get_remaining_quota(self.user_id, int(self.flag))
