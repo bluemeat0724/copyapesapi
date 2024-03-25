@@ -269,6 +269,10 @@ worker_disable_rate_limits = True
 accept_content = ['json', 'pickle']
 # 注册任务
 imports = ('crawler.account.okx_task.tasks','crawler.balance.balance_task.tasks','crawler.account.update_pnl.tasks','crawler.updata_ip_countdown.tasks')
+# 添加worker心跳检测
+broker_heartbeat = 10.0
+# 添加硬时间限制（例如：任务运行超过300秒后丢弃）
+task_time_limit = 300
 
 # 之前定时任务（定时一次调用），使用了apply_async({}, countdown=30);
 # 设置定时任务（定时多次调用）的调用列表，需要单独运行SCHEDULE命令才能让celery执行定时任务：celery -A mycelery.main beat，当然worker还是要启动的
