@@ -353,8 +353,10 @@ class Trader(threading.Thread):
             self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode='cross')
             self.log_to_database("WARNING", '手动结束跟单', f'{instId}已经按市价进行平仓。')
 
-        # 更新收益数据，以及对应可用额度数据
-        OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=2)
+        # 更新收益数据，以及对应可用额度数据。强制更新
+        obj = OkxOrderInfo(self.user_id, self.task_id)
+        while obj.get_order():
+            obj.get_position_history(order_type=2)
 
         # # 账户获取剩余额度
         # remaining_quota = get_remaining_quota(self.user_id, int(self.flag))
