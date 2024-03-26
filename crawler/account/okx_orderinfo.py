@@ -66,7 +66,6 @@ class OkxOrderInfo(object):
         if not data:
             self.get_position_history(order_type=2)
             return
-        print(data)
 
         for item in data:
             instId = item.get('instId')
@@ -118,7 +117,6 @@ class OkxOrderInfo(object):
                     'posSide': posSide,
                     'imr': notionalUsd
                 }
-            print(params)
 
             if record_exists:
                 # 如果存在相同记录，执行更新操作
