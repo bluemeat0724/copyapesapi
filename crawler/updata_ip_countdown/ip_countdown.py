@@ -24,7 +24,9 @@ def get_countdown():
         ip = i.get('ip')
         countdown = float(i.get('countdown').split('天')[0])
         countryName = i.get('countryName')
-        update_countdown(ip, countdown, countryName)
+        username = i.get('username')
+        password = i.get('password')
+        update_countdown(ip, username, password, countdown, countryName)
 
 
 def get_token():
@@ -43,11 +45,13 @@ def get_token():
     return token
 
 
-def update_countdown(ip, countdown, countryName):
+def update_countdown(ip, username, password, countdown, countryName):
     params = {
         'ip': ip,
         'countdown': countdown,
         'countryName': countryName,
+        'username': username,
+        'password': password
     }
     try:
         update_sql = f"""
@@ -55,7 +59,7 @@ def update_countdown(ip, countdown, countryName):
                             SET 
                                 countdown = %(countdown)s,
                                 countryName = %(countryName)s
-                            WHERE ip = %(ip)s;
+                            WHERE ip = %(ip)s AND username = %(username)s AND password = %(password)s;
                         """
         with Connect() as db:
             db.exec(update_sql, **params)

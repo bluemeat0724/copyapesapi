@@ -137,7 +137,7 @@ class IpInfo(models.Model):
     stop_day = models.FloatField(verbose_name="停止交易时间", default=0.5)
     tips_day = models.FloatField(verbose_name="提示ip过期时间", default=3)
     created_at = models.DateTimeField(verbose_name="创建时间", auto_now_add=True)
-    experience_day = models.FloatField(verbose_name="有效天数")
+    experience_day = models.FloatField(verbose_name="有效天数", default=0)
 
 
 class OrderInfo(models.Model):
