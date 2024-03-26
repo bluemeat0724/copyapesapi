@@ -66,6 +66,7 @@ class OkxOrderInfo(object):
         if not data:
             self.get_position_history(order_type=2)
             return
+        print(data)
 
         for item in data:
             instId = item.get('instId')
@@ -77,27 +78,47 @@ class OkxOrderInfo(object):
             mgnMode = item.get('mgnMode')
             posSide = item.get('posSide')
             imr = item.get('imr', 0)
+            notionalUsd = item.get('notionalUsd', 0)
             # print(instId, cTime, openAvgPx, upl, uplRatio, lever, mgnMode, posSide)
 
             # 查询数据库，看是否存在具有相同 instId 和 cTime 的记录
             record_exists = self.check_order(instId, cTime)
 
-            params = {
-                'user_id': self.user_id,
-                'task_id': self.task_id,
-                'api_id': self.api_id,
-                'instId': instId,
-                'cTime': cTime,
-                'openAvgPx': openAvgPx,
-                'pnl': 0,
-                'pnlRatio': 0,
-                'upl': upl,
-                'uplRatio': uplRatio,
-                'lever': lever,
-                'mgnMode': mgnMode,
-                'posSide': posSide,
-                'imr': imr
-            }
+            if mgnMode == 'cross':
+                params = {
+                    'user_id': self.user_id,
+                    'task_id': self.task_id,
+                    'api_id': self.api_id,
+                    'instId': instId,
+                    'cTime': cTime,
+                    'openAvgPx': openAvgPx,
+                    'pnl': 0,
+                    'pnlRatio': 0,
+                    'upl': upl,
+                    'uplRatio': uplRatio,
+                    'lever': lever,
+                    'mgnMode': mgnMode,
+                    'posSide': posSide,
+                    'imr': imr
+                }
+            else:
+                params = {
+                    'user_id': self.user_id,
+                    'task_id': self.task_id,
+                    'api_id': self.api_id,
+                    'instId': instId,
+                    'cTime': cTime,
+                    'openAvgPx': openAvgPx,
+                    'pnl': 0,
+                    'pnlRatio': 0,
+                    'upl': upl,
+                    'uplRatio': uplRatio,
+                    'lever': lever,
+                    'mgnMode': mgnMode,
+                    'posSide': posSide,
+                    'imr': notionalUsd
+                }
+            print(params)
 
             if record_exists:
                 # 如果存在相同记录，执行更新操作
@@ -226,5 +247,5 @@ class OkxOrderInfo(object):
 
 
 if __name__ == '__main__':
-    OkxOrderInfo(1, 304).get_position()
+    OkxOrderInfo(1, 311).get_position()
     # OkxOrderInfo(1, 300).get_position_history(order_type=2)
