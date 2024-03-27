@@ -6,7 +6,8 @@ import random
 # 随机获取所有用户的代理，用于爬虫
 def get_proxies():
     with Connect() as conn:
-        PROXY_DICT = conn.fetch_all("select username,password from api_ipinfo where countdown>0")
+        PROXY_DICT = conn.fetch_all("select username,password from api_ipinfo where countdown>0 AND experience_day=0")
+        # print(PROXY_DICT)
 
     proxies_account = random.choice(PROXY_DICT)
 
@@ -26,28 +27,37 @@ def get_proxies():
 def get_my_proxies(user_id, flag):
     with Connect() as conn:
         ip_dict = conn.fetch_one(
-            "select username,password from api_ipinfo where user_id=%(user_id)s AND countdown>0",
+            "select username,password from api_ipinfo where user_id=%(user_id)s AND countdown>0 AND experience_day=0",
             user_id={user_id})
 
-        # 如果用户用模拟盘测试，但没有提供固定ip，则随机选择一个ip给用户使用
-        if ip_dict is None and flag == '1':
-            # ip_dict = conn.fetch_one(
-            #     "select username,password from api_ipinfo where countdown>0")
-            proxies = get_proxies()
-            return proxies
-
-        if ip_dict is None and flag == '0':
-            return None
-
+    with Connect() as conn:
+        experience_ip_dict = conn.fetch_one(
+            "select username,password from api_ipinfo where user_id=%(user_id)s AND countdown>0 AND experience_day>0 AND created_at > (NOW() - INTERVAL 15 DAY)",
+            user_id={user_id})
+    # print(ip_dict)
+    # print(experience_ip_dict)
+    # 如果用户用模拟盘测试，但没有提供固定ip，则随机选择一个ip给用户使用
+    if ip_dict is None:
+        if experience_ip_dict is None:
+            if flag == '1':
+                proxies = get_proxies()
+                return proxies
+            if flag == '0':
+                return None
+        else:
+            username = str(experience_ip_dict.get('username'))
+            password = str(experience_ip_dict.get('password'))
+    else:
         username = str(ip_dict.get('username'))
         password = str(ip_dict.get('password'))
-        proxy = {
-            'http': 'socks5h://{}:{}@{}:{}'.format(username, password, settings.PROXY_IP, settings.PROXY_PORT),
-            'https': 'socks5h://{}:{}@{}:{}'.format(username, password, settings.PROXY_IP, settings.PROXY_PORT),
-        }
+
+    proxy = {
+        'http': 'socks5h://{}:{}@{}:{}'.format(username, password, settings.PROXY_IP, settings.PROXY_PORT),
+        'https': 'socks5h://{}:{}@{}:{}'.format(username, password, settings.PROXY_IP, settings.PROXY_PORT),
+    }
     return proxy
 
 
 if __name__ == '__main__':
     # print(get_proxies())
-    print(get_my_proxies(2, '0'))
+    print(get_my_proxies(2, '1'))
