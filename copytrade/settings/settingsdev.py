@@ -294,6 +294,6 @@ beat_schedule = {
     },
     "update_ip_countdown": {
         "task": "get_ip_countdown",
-        "schedule": 21600,
+        "schedule": 3600,
     },
 }

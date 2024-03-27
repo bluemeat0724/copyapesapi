@@ -45,8 +45,8 @@ obj.trade.api.flag = '1'
 # 查看账户配置信息
 # print(obj.account.get_config())
 
-a = obj.account.get_positions_history(limit=1)
-print(a)
+# a = obj.account.get_positions_history(limit=1)
+# print(a)
 
 # set_position_mode_result = obj.account.set_position_mode(
 #                 posMode='long_short_mode')
@@ -90,8 +90,8 @@ print(a)
 #                                       tdMode='cross', lever=100)
 # obj.trade.close_market(instId='ETH-USDT-SWAP', posSide='long', quantityCT=220, tdMode='cross')
 # 当前持仓
-# a = obj.account.get_positions()
-# print(a)
+a = obj.account.get_positions()
+print(a)
 # 历史持仓
 # a = obj.account.get_positions_history(limit=2)
 # print(a)
