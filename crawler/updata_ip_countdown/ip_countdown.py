@@ -1,5 +1,8 @@
 import requests
 import json
+
+from django_redis import get_redis_connection
+
 from crawler.utils.db import Connect
 
 
@@ -63,6 +66,39 @@ def update_countdown(ip, username, password, countdown, countryName):
                         """
         with Connect() as db:
             db.exec(update_sql, **params)
+        # 如果ip的 countdown < stop 或者
+        with Connect() as conn:
+            user_dict = conn.fetch_one(
+                f"select id from api_ipinfo where ip='{ip}' AND countdown<stop_day and experience_day=0")
+
+            experience_ip_dict = conn.fetch_one(
+                f"SELECT id FROM api_ipinfo WHERE ip = '{ip}' AND countdown > 0 AND experience_day > 0 AND created_at < (NOW() - INTERVAL `experience_day` DAY)"
+            )
+            if user_dict or experience_ip_dict:
+                ip_ids = []
+                if user_dict:
+                    ip_ids.append(user_dict["id"])
+                if experience_ip_dict:
+                    ip_ids.append(experience_ip_dict["id"])
+                if ip_ids:
+                    tasks = conn.fetch_all(
+                f"select id from api_taskinfo where ip_id in {ip_ids}")
+                    if tasks:
+                        for item in tasks:
+                            # 写入Redis队列
+                            update_params = {
+                                'id': item["id"],
+                                'status': 3
+                            }
+                            update_sql = f""" UPDATE api_taskinfo
+                                                        SET 
+                                                            status = %(status)s,
+                                                        WHERE id = %(id)s;
+                                                    """
+                            # 修改数据库任务状态 发送redis消费
+                            conn.exec(update_sql, **update_params)
+                            redis_conn = get_redis_connection("default")
+                            redis_conn.lpush("TASK_ADD_QUEUE", item["id"])
     except:
         pass
 

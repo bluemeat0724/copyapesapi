@@ -66,6 +66,7 @@ class TaskAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixi
         api_object.save()
 
         # 写入Redis队列{'id': 1, 'status': 2}
+
         # 结束当前任务全部交易
         conn = get_redis_connection("default")
         tid = serializer.data.get('id')

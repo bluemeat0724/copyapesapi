@@ -9,7 +9,7 @@ def spider(uniqueName, follow_type, task_id, trader_platform, sums, lever_set, f
     summary_list_new = []
     url = f'https://www.okx.com/priapi/v5/ecotrade/public/position-summary?t={now}&uniqueName={uniqueName}&instType=SWAP'
     try:
-        data_list = requests.get(url, headers=get_header(), proxies=get_proxies(), timeout=30).json().get('data', list())
+        data_list = requests.get(url, headers=get_header(), proxies=get_proxies()[0], timeout=30).json().get('data', list())
         if not data_list:
             return summary_list_new
         # 数据清洗

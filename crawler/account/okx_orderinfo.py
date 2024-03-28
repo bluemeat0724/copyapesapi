@@ -10,7 +10,7 @@ class OkxOrderInfo(object):
         self.task_id = task_id
         self.api_id = self.get_api_id()
         # 通过api_id获取api信息
-        self.acc, self.flag = api(self.user_id, self.api_id)
+        self.acc, self.flag, self.ip_id = api(self.user_id, self.api_id)
 
     # 获取api_id
     def get_api_id(self):

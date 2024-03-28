@@ -90,6 +90,7 @@ class Trader(threading.Thread):
         self.obj = None
         self.flag = None
         self.acc = None
+        self.ip_id = None
 
     def log_to_database(self, level, title, description=""):
         """
@@ -112,8 +113,10 @@ class Trader(threading.Thread):
 
     def run(self):
         # 获取api信息
-        self.acc, self.flag = api(self.user_id, self.api_id)
+        self.acc, self.flag, self.ip_id = api(self.user_id, self.api_id)
         try:
+            # update task 里面的 ip_id
+            self.update_task_with_ip()
             # 创建okx交易对象
             obj = RetryNetworkOperations(app.OkxSWAP(**self.acc))
             self.obj = obj
@@ -345,4 +348,21 @@ class Trader(threading.Thread):
         # update_remaining_quota(self.user_id, int(self.flag), remaining_quota)
         #
         # print(f'更新用户{self.user_id}可用盈利额度数据成功！')
-        self.log_to_database("WARNING", f'手动结束跟单，任务：{self.task_id}')
+        if self.status == 2:
+            self.log_to_database("WARNING", '手动结束跟单', f'任务：{self.task_id}')
+        elif self.status == 3:
+            self.log_to_database("WARNING", 'IP即将过期，提前被动结束跟单', f'任务：{self.task_id}')
+
+    def update_task_with_ip(self):
+        """
+        更新任务表的ip_id
+        """
+        params = {
+            "ip_id": self.ip_id,
+            "task_id": self.task_id,
+        }
+        update_sql = """
+            UPDATE api_taskinfo SET ip_id = %(ip_id)s WHERE id = %(task_id)s
+        """
+        with Connect() as db:
+            db.exec(update_sql, **params)
