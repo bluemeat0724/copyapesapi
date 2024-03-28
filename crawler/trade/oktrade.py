@@ -208,34 +208,9 @@ class Trader(threading.Thread):
                     # self.thread_logger.success(f'进行开仓操作，品种：{self.instId}，金额：{self.sums}USDT，方向：{self.posSide}')
             except:
                 print(f'任务{self.task_id}错误信息：{result}')
-                try:
-                    s_code_value = result.get('set_order_result', {}).get('data', [{}])[0].get('sCode')
-                    if s_code_value == '51000':
-                        self.log_to_database("WARNING", '交易失败', '交易金额过低，请重新设置任务单笔跟单金额。')
-                    elif s_code_value == '51010':
-                        self.log_to_database("WARNING",
-                                             '交易失败', '当前账户为简单交易模式，请在交易所合约交易页面进行手动调整。无需终止本次跟单任务，交易模式调整完成后，如有新的交易订单，将正常交易。')
-                    elif s_code_value == '51008':
-                        self.log_to_database("WARNING", '交易失败', '账户余额不足！请前往交易所充值！')
-                    elif s_code_value == '51024':
-                        self.log_to_database("WARNING", '交易失败', '交易账户冻结！请联系交易所客服处理！')
-                    elif s_code_value in ['50103', '50104', '50105', '50106', '50107']:
-                        self.log_to_database("WARNING", '交易失败', 'API信息填写错误，请结束任务后重新提交新的API！')
-                    else:
-                        self.log_to_database("WARNING",
-                                             f'交易失败，请根据错误码，自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')
-                except:
-                    try:
-                        s_code_value = result.get('error_result', {}).get('code')
-                        if s_code_value == '51001':
-                            self.log_to_database("WARNING", '模拟盘土狗币交易失败', f'品种：{self.instId}不在交易所模拟盘中！')
-                        elif s_code_value == '59000':
-                            self.log_to_database("WARNING", '设置失败', '请在设置前关闭任何挂单或持仓！')
-                        else:
-                            self.log_to_database("WARNING",
-                                                 '交易失败', f'请根据错误码，自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')
-                    except:
-                        pass
+                self.handle_trade_failure(result)
+
+
         elif self.order_type == 'close':
             if self.posSide == 'net':
                 # 解析订单方向
@@ -308,6 +283,8 @@ class Trader(threading.Thread):
                 self.log_to_database("WARNING", '交易失败', '账户余额不足！请前往交易所充值！')
             elif s_code_value == '51024':
                 self.log_to_database("WARNING", '交易失败', '交易账户冻结！请联系交易所客服处理！')
+            elif s_code_value == '51004':
+                self.log_to_database("WARNING", '交易失败', '当前下单张数、多空持有仓位以及多空挂单张数之和，不能超过当前杠杆倍数允许的持仓上限。请调低杠杆或者使用新的子账户重新下单')
             elif s_code_value in ['50103', '50104', '50105', '50106', '50107']:
                 self.log_to_database("WARNING", '交易失败', 'API信息填写错误，请结束任务后重新提交新的API！')
             else:
