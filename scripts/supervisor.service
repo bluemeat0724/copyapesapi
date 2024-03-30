@@ -4,9 +4,9 @@ After=network.target
 
 [Service]
 Type=forking
-ExecStart=/Users/lichaoyuan/Desktop/copytrade/venv/bin/supervisord -n -c /home/moluo/Desktop/luffycity/luffycityapi/scripts/supervisord.conf
-ExecStop=/Users/lichaoyuan/Desktop/copytrade/venv/bin/supervisorctl $OPTIONS shutdown
-ExecReload=/Users/lichaoyuan/Desktop/copytrade/venv/bin/supervisorctl $OPTIONS reload
+ExecStart=/root/miniconda3/bin/supervisord -n -c /home/moluo/Desktop/luffycity/luffycityapi/scripts/supervisord.conf
+ExecStop=/root/miniconda3/bin/supervisorctl $OPTIONS shutdown
+ExecReload=/root/miniconda3/bin/supervisorctl $OPTIONS reload
 KillMode=process
 Restart=on-failure
 RestartSec=42s

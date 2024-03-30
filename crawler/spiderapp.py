@@ -1,7 +1,7 @@
 from crawler.spiders import app
 from crawler.utils import get_task
 from crawler.utils.reactivate_tasks import reactivate_tasks
-from crawler import settingsdev as settings
+from crawler import settings as settings
 import redis
 import json
 

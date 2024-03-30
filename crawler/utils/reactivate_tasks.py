@@ -1,6 +1,6 @@
 from crawler.utils.db import Connect
 import redis
-from crawler import settingsdev as settings
+from crawler import settings as settings
 
 
 def reactivate_tasks():

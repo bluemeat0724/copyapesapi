@@ -1,5 +1,5 @@
 import pymysql
-from crawler import settingsdev as settings
+from crawler import settings as settings
 from pymysql.cursors import DictCursor
 
 
