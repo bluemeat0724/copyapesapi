@@ -85,7 +85,7 @@ def update_countdown(ip, username, password, countdown, countryName):
 
                 if ip_ids:
                     ip_ids_str = "(" + ",".join(map(str, ip_ids)) + ")"
-                    query = f"select id from api_taskinfo where ip_id in {ip_ids_str}"
+                    query = f"select id,api_id from api_taskinfo where ip_id in {ip_ids_str} AND status=1"
                     tasks = conn.fetch_all(query)
 
                     if tasks:
@@ -95,13 +95,15 @@ def update_countdown(ip, username, password, countdown, countryName):
                                 'id': item.get('id'),
                                 'status': 3
                             }
-                            print(update_params)
+
                             update_sql = f""" UPDATE api_taskinfo
                                               SET 
                                                 status = %(status)s
                                               WHERE id = %(id)s;
                                                     """
                             conn.exec(update_sql, **update_params)
+                            # 释放API
+                            conn.exec(f"UPDATE api_apiinfo SET status = 1 WHERE id = {item.get('api_id')}")
 
                             # 写入Redis队列，发送redis消费
                             redis_conn = redis.Redis(**settings.REDIS_PARAMS)
