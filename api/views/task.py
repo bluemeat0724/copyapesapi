@@ -7,6 +7,8 @@ from rest_framework.response import Response
 from django_redis import get_redis_connection
 from django.conf import settings
 from api.extension.filter import SelfFilterBackend
+from django.utils import timezone
+from datetime import timedelta
 
 
 
@@ -33,6 +35,17 @@ class TaskAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixi
         flag = api_object.flag
         if not ip_object and flag == 0:
             return Response({"code": return_code.VALIDATE_ERROR, "error": "实盘交易请配置固定IP"})
+        # 检查ip是否到期
+        if ip_object:
+            countdown = ip_object.countdown
+            stop_day = ip_object.stop_day
+            created_at = ip_object.created_at
+            experience_day = ip_object.experience_day
+            now = timezone.now()
+            if countdown <= stop_day and experience_day == 0:
+                return Response({"code": return_code.VALIDATE_ERROR, "error": "IP即将过期，无法创建任务"})
+            if experience_day > 0 and created_at < now - timedelta(experience_day - stop_day):
+                return Response({"code": return_code.VALIDATE_ERROR, "error": "IP即将过期，无法创建任务"})
 
         # 检查剩余可用额度
         # quota_object = models.QuotaInfo.objects.filter(Q(user=self.request.user)).first()
