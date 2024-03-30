@@ -2110,3 +2110,68 @@ INFO 2024-03-30 17:05:30,397 autoreload 41627 4496758272 /Users/lichaoyuan/Deskt
 INFO 2024-03-30 17:05:31,352 autoreload 42644 4448679424 Watching for file changes with StatReloader
 INFO 2024-03-30 17:10:39,283 autoreload 42644 4448679424 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py changed, reloading.
 INFO 2024-03-30 17:10:40,083 autoreload 42692 4801357312 Watching for file changes with StatReloader
+INFO 2024-03-30 20:26:45,590 basehttp 42692 123145467146240 "GET /api/ip/?token=b2b1f149-9fe1-4cd4-8689-66dac0a3a639 HTTP/1.1" 200 250
+ERROR 2024-03-30 20:26:45,590 exceptions 42692 123145483935744 [<api.views.task.TaskAddView object at 0x7f8d20a23520>] (1054, "Unknown column 'api_taskinfo.ip_id' in 'field list'")
+ERROR 2024-03-30 20:26:45,592 log 42692 123145483935744 Insufficient Storage: /api/taskadd/
+ERROR 2024-03-30 20:26:45,593 basehttp 42692 123145483935744 "GET /api/taskadd/?token=b2b1f149-9fe1-4cd4-8689-66dac0a3a639 HTTP/1.1" 507 35
+ERROR 2024-03-30 20:27:10,428 exceptions 42692 123145467146240 [<api.views.task.TaskAddView object at 0x7f8d4048b250>] (1054, "Unknown column 'api_taskinfo.ip_id' in 'field list'")
+INFO 2024-03-30 20:27:10,428 basehttp 42692 123145483935744 "GET /api/ip/?token=b2b1f149-9fe1-4cd4-8689-66dac0a3a639 HTTP/1.1" 200 250
+ERROR 2024-03-30 20:27:10,429 log 42692 123145467146240 Insufficient Storage: /api/taskadd/
+ERROR 2024-03-30 20:27:10,430 basehttp 42692 123145467146240 "GET /api/taskadd/?token=b2b1f149-9fe1-4cd4-8689-66dac0a3a639 HTTP/1.1" 507 35
+WARNING 2024-03-30 20:28:12,162 log 42692 123145483935744 Unauthorized: /api/taskadd/
+WARNING 2024-03-30 20:28:12,164 log 42692 123145467146240 Unauthorized: /api/ip/
+WARNING 2024-03-30 20:28:12,236 basehttp 42692 123145483935744 "GET /api/taskadd/?token=a64a0b30-6030-40d3-a742-623880613448 HTTP/1.1" 401 38
+WARNING 2024-03-30 20:28:12,238 basehttp 42692 123145467146240 "GET /api/ip/?token=a64a0b30-6030-40d3-a742-623880613448 HTTP/1.1" 401 38
+INFO 2024-03-30 20:28:50,269 basehttp 42692 123145467146240 "OPTIONS /api/login/ HTTP/1.1" 200 0
+INFO 2024-03-30 20:28:50,275 basehttp 42692 123145467146240 "POST /api/login/ HTTP/1.1" 200 80
+INFO 2024-03-30 20:28:50,733 basehttp 42692 123145483935744 "GET /api/quotainfo/?token=656b22a3-d535-4012-b05f-ba8918408fe9 HTTP/1.1" 200 118
+INFO 2024-03-30 20:28:50,735 basehttp 42692 123145467146240 "GET /api/ip/?token=656b22a3-d535-4012-b05f-ba8918408fe9 HTTP/1.1" 200 20
+WARNING 2024-03-30 20:28:57,420 log 42692 123145467146240 Unauthorized: /api/taskadd/
+WARNING 2024-03-30 20:28:57,421 basehttp 42692 123145467146240 "GET /api/taskadd/?token=a64a0b30-6030-40d3-a742-623880613448 HTTP/1.1" 401 38
+INFO 2024-03-30 20:53:18,726 autoreload 42692 4801357312 /Users/lichaoyuan/Desktop/copytrade/api/views/task.py changed, reloading.
+INFO 2024-03-30 20:53:19,707 autoreload 44123 4446291456 Watching for file changes with StatReloader
+INFO 2024-03-30 21:02:46,921 autoreload 44123 4446291456 /Users/lichaoyuan/Desktop/copytrade/api/views/task.py changed, reloading.
+INFO 2024-03-30 21:02:47,725 autoreload 44272 4554671616 Watching for file changes with StatReloader
+WARNING 2024-03-30 21:03:44,155 log 44272 123145587318784 Unauthorized: /api/traderdetial/330/
+WARNING 2024-03-30 21:03:44,156 log 44272 123145620897792 Unauthorized: /api/taskadd/330/
+WARNING 2024-03-30 21:03:44,156 log 44272 123145570529280 Unauthorized: /api/ip/
+WARNING 2024-03-30 21:03:44,156 log 44272 123145604108288 Unauthorized: /api/tradeorder/330/
+WARNING 2024-03-30 21:03:44,157 basehttp 44272 123145587318784 "GET /api/traderdetial/330/?token=a64a0b30-6030-40d3-a742-623880613448 HTTP/1.1" 401 38
+WARNING 2024-03-30 21:03:44,157 basehttp 44272 123145620897792 "GET /api/taskadd/330/?token=a64a0b30-6030-40d3-a742-623880613448 HTTP/1.1" 401 38
+WARNING 2024-03-30 21:03:44,158 basehttp 44272 123145570529280 "GET /api/ip/?token=a64a0b30-6030-40d3-a742-623880613448 HTTP/1.1" 401 38
+WARNING 2024-03-30 21:03:44,159 basehttp 44272 123145604108288 "GET /api/tradeorder/330/?token=a64a0b30-6030-40d3-a742-623880613448 HTTP/1.1" 401 38
+INFO 2024-03-30 21:03:59,121 basehttp 44272 123145604108288 "POST /api/login/ HTTP/1.1" 200 81
+INFO 2024-03-30 21:03:59,378 basehttp 44272 123145570529280 "GET /api/quotainfo/?token=16ddec79-cd5d-419e-a652-48b3f65680e5 HTTP/1.1" 200 145
+INFO 2024-03-30 21:03:59,380 basehttp 44272 123145604108288 "GET /api/ip/?token=16ddec79-cd5d-419e-a652-48b3f65680e5 HTTP/1.1" 200 20
+INFO 2024-03-30 21:04:00,780 basehttp 44272 123145604108288 "GET /api/ip/?token=16ddec79-cd5d-419e-a652-48b3f65680e5 HTTP/1.1" 200 20
+INFO 2024-03-30 21:04:28,601 basehttp 44272 123145604108288 "GET /api/ip/?token=16ddec79-cd5d-419e-a652-48b3f65680e5 HTTP/1.1" 200 203
+INFO 2024-03-30 21:04:28,608 basehttp 44272 123145570529280 "GET /api/ip/?token=16ddec79-cd5d-419e-a652-48b3f65680e5 HTTP/1.1" 200 203
+INFO 2024-03-30 21:05:02,928 basehttp 44272 123145570529280 "GET /api/ip/?token=16ddec79-cd5d-419e-a652-48b3f65680e5 HTTP/1.1" 200 203
+INFO 2024-03-30 21:05:02,933 basehttp 44272 123145604108288 "GET /api/ip/?token=16ddec79-cd5d-419e-a652-48b3f65680e5 HTTP/1.1" 200 203
+INFO 2024-03-30 21:05:17,385 basehttp 44272 123145604108288 "GET /api/ip/?token=16ddec79-cd5d-419e-a652-48b3f65680e5 HTTP/1.1" 200 203
+INFO 2024-03-30 21:05:17,390 basehttp 44272 123145570529280 "GET /api/ip/?token=16ddec79-cd5d-419e-a652-48b3f65680e5 HTTP/1.1" 200 203
+INFO 2024-03-30 21:05:27,411 basehttp 44272 123145570529280 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-03-30 21:05:27,415 basehttp 44272 123145604108288 "GET /api/apiadd/?token=16ddec79-cd5d-419e-a652-48b3f65680e5 HTTP/1.1" 200 358
+INFO 2024-03-30 21:05:37,211 basehttp 44272 123145604108288 "OPTIONS /api/taskadd/?token=16ddec79-cd5d-419e-a652-48b3f65680e5 HTTP/1.1" 200 0
+ERROR 2024-03-30 21:05:37,220 exceptions 44272 123145604108288 [<api.views.task.TaskAddView object at 0x7fa1781c2220>] (1054, "Unknown column 'api_taskinfo.ip_id' in 'field list'")
+ERROR 2024-03-30 21:05:37,221 log 44272 123145604108288 Insufficient Storage: /api/taskadd/
+ERROR 2024-03-30 21:05:37,222 basehttp 44272 123145604108288 "POST /api/taskadd/?token=16ddec79-cd5d-419e-a652-48b3f65680e5 HTTP/1.1" 507 35
+ERROR 2024-03-30 21:05:38,890 exceptions 44272 123145604108288 [<api.views.task.TaskAddView object at 0x7fa1b89ef1f0>] (1054, "Unknown column 'api_taskinfo.ip_id' in 'field list'")
+ERROR 2024-03-30 21:05:38,891 log 44272 123145604108288 Insufficient Storage: /api/taskadd/
+ERROR 2024-03-30 21:05:38,891 basehttp 44272 123145604108288 "POST /api/taskadd/?token=16ddec79-cd5d-419e-a652-48b3f65680e5 HTTP/1.1" 507 35
+ERROR 2024-03-30 21:05:42,365 exceptions 44272 123145604108288 [<api.views.task.TaskAddView object at 0x7fa1b89aca90>] (1054, "Unknown column 'api_taskinfo.ip_id' in 'field list'")
+ERROR 2024-03-30 21:05:42,365 log 44272 123145604108288 Insufficient Storage: /api/taskadd/
+ERROR 2024-03-30 21:05:42,366 basehttp 44272 123145604108288 "POST /api/taskadd/?token=16ddec79-cd5d-419e-a652-48b3f65680e5 HTTP/1.1" 507 35
+ERROR 2024-03-30 21:05:43,064 exceptions 44272 123145604108288 [<api.views.task.TaskAddView object at 0x7fa1a83850d0>] (1054, "Unknown column 'api_taskinfo.ip_id' in 'field list'")
+ERROR 2024-03-30 21:05:43,065 log 44272 123145604108288 Insufficient Storage: /api/taskadd/
+ERROR 2024-03-30 21:05:43,065 basehttp 44272 123145604108288 "POST /api/taskadd/?token=16ddec79-cd5d-419e-a652-48b3f65680e5 HTTP/1.1" 507 35
+ERROR 2024-03-30 21:05:43,364 exceptions 44272 123145604108288 [<api.views.task.TaskAddView object at 0x7fa1781ec6a0>] (1054, "Unknown column 'api_taskinfo.ip_id' in 'field list'")
+ERROR 2024-03-30 21:05:43,365 log 44272 123145604108288 Insufficient Storage: /api/taskadd/
+ERROR 2024-03-30 21:05:43,365 basehttp 44272 123145604108288 "POST /api/taskadd/?token=16ddec79-cd5d-419e-a652-48b3f65680e5 HTTP/1.1" 507 35
+ERROR 2024-03-30 21:05:43,713 exceptions 44272 123145604108288 [<api.views.task.TaskAddView object at 0x7fa1a83a4ac0>] (1054, "Unknown column 'api_taskinfo.ip_id' in 'field list'")
+ERROR 2024-03-30 21:05:43,714 log 44272 123145604108288 Insufficient Storage: /api/taskadd/
+ERROR 2024-03-30 21:05:43,714 basehttp 44272 123145604108288 "POST /api/taskadd/?token=16ddec79-cd5d-419e-a652-48b3f65680e5 HTTP/1.1" 507 35
+INFO 2024-03-30 21:06:07,441 basehttp 44272 123145604108288 "OPTIONS /api/taskadd/?token=16ddec79-cd5d-419e-a652-48b3f65680e5 HTTP/1.1" 200 0
+ERROR 2024-03-30 21:06:07,449 exceptions 44272 123145604108288 [<api.views.task.TaskAddView object at 0x7fa1c840d190>] (1054, "Unknown column 'api_taskinfo.ip_id' in 'field list'")
+ERROR 2024-03-30 21:06:07,450 log 44272 123145604108288 Insufficient Storage: /api/taskadd/
+ERROR 2024-03-30 21:06:07,450 basehttp 44272 123145604108288 "POST /api/taskadd/?token=16ddec79-cd5d-419e-a652-48b3f65680e5 HTTP/1.1" 507 35
