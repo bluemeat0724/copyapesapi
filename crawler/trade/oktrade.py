@@ -324,7 +324,10 @@ class Trader(threading.Thread):
             #
             # print(f'更新用户{self.user_id}可用盈利额度数据成功！')
             # 打印日志
-            self.log_to_database("WARNING", '手动结束跟单', f'任务：{self.task_id}')
+            if self.status == 2:
+                self.log_to_database("WARNING", '手动结束跟单', f'任务：{self.task_id}')
+            elif self.status == 3:
+                self.log_to_database("WARNING", 'IP即将过期，提前被动结束跟单', f'任务：{self.task_id}')
             return
         for item in data:
             instId = item.get('instId')
