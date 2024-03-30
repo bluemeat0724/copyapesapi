@@ -1,8 +1,8 @@
 import requests
 import json
 
-from django_redis import get_redis_connection
-
+import redis
+from crawler import settings as settings
 from crawler.utils.db import Connect
 
 
@@ -29,6 +29,7 @@ def get_countdown():
         countryName = i.get('countryName')
         username = i.get('username')
         password = i.get('password')
+
         update_countdown(ip, username, password, countdown, countryName)
 
 
@@ -74,33 +75,40 @@ def update_countdown(ip, username, password, countdown, countryName):
             experience_ip_dict = conn.fetch_one(
                 f"SELECT id FROM api_ipinfo WHERE ip = '{ip}' AND countdown > 0 AND experience_day > 0 AND created_at < (NOW() - INTERVAL `experience_day` DAY)"
             )
+
             if user_dict or experience_ip_dict:
                 ip_ids = []
                 if user_dict:
                     ip_ids.append(user_dict["id"])
                 if experience_ip_dict:
                     ip_ids.append(experience_ip_dict["id"])
+
                 if ip_ids:
-                    tasks = conn.fetch_all(
-                f"select id from api_taskinfo where ip_id in {ip_ids}")
+                    ip_ids_str = "(" + ",".join(map(str, ip_ids)) + ")"
+                    query = f"select id from api_taskinfo where ip_id in {ip_ids_str}"
+                    tasks = conn.fetch_all(query)
+
                     if tasks:
                         for item in tasks:
-                            # 写入Redis队列
+                            # 修改数据库任务状态
                             update_params = {
-                                'id': item["id"],
+                                'id': item.get('id'),
                                 'status': 3
                             }
+                            print(update_params)
                             update_sql = f""" UPDATE api_taskinfo
-                                                        SET 
-                                                            status = %(status)s,
-                                                        WHERE id = %(id)s;
+                                              SET 
+                                                status = %(status)s
+                                              WHERE id = %(id)s;
                                                     """
-                            # 修改数据库任务状态 发送redis消费
                             conn.exec(update_sql, **update_params)
-                            redis_conn = get_redis_connection("default")
+
+                            # 写入Redis队列，发送redis消费
+                            redis_conn = redis.Redis(**settings.REDIS_PARAMS)
                             redis_conn.lpush("TASK_ADD_QUEUE", item["id"])
-    except:
-        pass
+
+    except Exception as e:
+        print(e)
 
 
 
