@@ -288,11 +288,13 @@ class Trader(threading.Thread):
                 self.log_to_database("WARNING", '交易失败', '交易账户冻结！请联系交易所客服处理！')
             elif s_code_value == '51004':
                 self.log_to_database("WARNING", '交易失败', '当前下单张数、多空持有仓位以及多空挂单张数之和，不能超过当前杠杆倍数允许的持仓上限。请调低杠杆或者使用新的子账户重新下单')
+            elif s_code_value == '50013':
+                self.log_to_database("WARNING", '交易失败', '交易所系统繁忙，导致交易失败。本次交易放弃。')
             elif s_code_value in ['50103', '50104', '50105', '50106', '50107']:
                 self.log_to_database("WARNING", '交易失败', 'API信息填写错误，请结束任务后重新提交新的API！')
             else:
                 self.log_to_database("WARNING",
-                                     '交易失败', f'请根据错误码，自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')
+                                     '交易失败', f'请根据错误码（sCord），自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')
         except:
             try:
                 s_code_value = result.get('error_result', {}).get('code')
@@ -302,7 +304,7 @@ class Trader(threading.Thread):
                     self.log_to_database("WARNING", '设置失败', '请在设置前关闭任何挂单或持仓！')
                 else:
                     self.log_to_database("WARNING",
-                                         '交易失败', f'请根据错误码，自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')
+                                         '交易失败', f'请根据错误码(code)，自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')
             except:
                 pass
 
