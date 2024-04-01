@@ -173,10 +173,10 @@ class Trader(threading.Thread):
         :return:
         """
         if self.posSide == 'long':
-            if int(self.posSide_set) == 1:
+            if int(self.posSide_set) == 2:
                 self.posSide = 'short'
         elif self.posSide == 'short':
-            if int(self.posSide_set) == 1:
+            if int(self.posSide_set) == 2:
                 self.posSide = 'long'
         elif self.posSide == 'net':
             if availSubPos > 0:
