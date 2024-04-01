@@ -172,16 +172,23 @@ class Trader(threading.Thread):
         :param availSubPos: availSubPos 值
         :return:
         """
-        if availSubPos > 0:
-            if int(self.posSide_set) == 1:
-                self.posSide = 'long'
-            else:
-                self.posSide = 'short'
-        elif availSubPos < 0:
+        if self.posSide == 'long':
             if int(self.posSide_set) == 1:
                 self.posSide = 'short'
-            else:
+        elif self.posSide == 'short':
+            if int(self.posSide_set) == 1:
                 self.posSide = 'long'
+        elif self.posSide == 'net':
+            if availSubPos > 0:
+                if int(self.posSide_set) == 1:
+                    self.posSide = 'long'
+                else:
+                    self.posSide = 'short'
+            elif availSubPos < 0:
+                if int(self.posSide_set) == 1:
+                    self.posSide = 'short'
+                else:
+                    self.posSide = 'long'
         return True
 
     # 执行okx交易
@@ -190,9 +197,8 @@ class Trader(threading.Thread):
             print(f'{self.task_id} 错误')
             return
         if self.order_type == 'open':
-            if self.posSide == 'net':
-                # 解析订单方向
-                self.change_pos_side_set(self.availSubPos)
+            # 解析订单方向
+            self.change_pos_side_set(self.availSubPos)
             # 获取模拟盘/实盘交易倍数
             trade_times = get_trade_times(self.instId, self.flag, self.acc)
             if trade_times is None:
@@ -215,9 +221,8 @@ class Trader(threading.Thread):
 
 
         elif self.order_type == 'close':
-            if self.posSide == 'net':
-                # 解析订单方向
-                self.change_pos_side_set(self.availSubPos)
+            # 解析订单方向
+            self.change_pos_side_set(self.availSubPos)
             # 市价平仓
             print(f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
             self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT='all', tdMode=self.mgnMode)
@@ -229,13 +234,8 @@ class Trader(threading.Thread):
 
         elif self.order_type == 'change':
             ratio = self.new_margin / self.old_margin  # 大于1是加仓，小于1是减仓
-            if self.posSide == 'net':
-                # 解析订单方向
-                self.change_pos_side_set(self.new_availSubPos)
-                # if self.new_availSubPos > 0:
-                #     self.posSide = 'long'
-                # elif self.new_availSubPos < 0:
-                #     self.posSide = 'short'
+            # 解析订单方向
+            self.change_pos_side_set(self.new_availSubPos)
 
             # 获取模拟盘/实盘交易倍数
             trade_times = get_trade_times(self.instId, self.flag, self.acc)
