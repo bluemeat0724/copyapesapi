@@ -311,6 +311,11 @@ class Trader(threading.Thread):
         # 结束全部正在进行中的交易
         try:
             data = self.obj.account.get_positions().get('data')
+            # 从交易所获取改为从数据库获取
+            # with Connect() as db:
+            #     data = db.fetch_all(
+            #         "select * from api_orderinfo where user_id = %(user_id)s and task_id = %(task_id)s and status = 1",
+            #         user_id=self.user_id, task_id=self.task_id)
         except:
             return
         if not data:
