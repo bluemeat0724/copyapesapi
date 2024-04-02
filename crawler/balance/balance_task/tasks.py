@@ -28,7 +28,7 @@ def process_task(task):
             'key': str(task.get('api_key')),
             'secret': str(task.get('secret_key')),
             'passphrase': str(task.get('passPhrase')),
-            'proxies': get_my_proxies(user_id, flag)
+            'proxies': get_my_proxies(user_id, flag)[0]
         }
         get_okx_api_balance(acc, flag, api_id)
 

@@ -106,6 +106,7 @@ class TaskInfo(DeletedModel):
     status_choice = (
         (1, "跟单进行中"),
         (2, "跟单结束"),
+        (3, "自动结束"),
     )
     status = models.IntegerField(verbose_name="状态", choices=status_choice, default=1)
     user = models.ForeignKey(verbose_name="用户", to="UserInfo", on_delete=models.CASCADE)

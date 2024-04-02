@@ -1,5 +1,8 @@
 import requests
 import json
+
+import redis
+from crawler import settingsdev as settings
 from crawler.utils.db import Connect
 
 
@@ -26,6 +29,7 @@ def get_countdown():
         countryName = i.get('countryName')
         username = i.get('username')
         password = i.get('password')
+
         update_countdown(ip, username, password, countdown, countryName)
 
 
@@ -63,8 +67,50 @@ def update_countdown(ip, username, password, countdown, countryName):
                         """
         with Connect() as db:
             db.exec(update_sql, **params)
-    except:
-        pass
+        # 如果ip的 countdown < stop 或者
+        with Connect() as conn:
+            user_dict = conn.fetch_one(
+                f"select id from api_ipinfo where ip='{ip}' AND countdown<stop_day and experience_day=0")
+
+            experience_ip_dict = conn.fetch_one(
+                f"SELECT id FROM api_ipinfo WHERE ip = '{ip}' AND countdown > 0 AND experience_day > 0 AND created_at < (NOW() - INTERVAL `experience_day` DAY)"
+            )
+
+            if user_dict or experience_ip_dict:
+                ip_ids = []
+                if user_dict:
+                    ip_ids.append(user_dict["id"])
+                if experience_ip_dict:
+                    ip_ids.append(experience_ip_dict["id"])
+
+                if ip_ids:
+                    ip_ids_str = "(" + ",".join(map(str, ip_ids)) + ")"
+                    query = f"select id,api_id from api_taskinfo where ip_id in {ip_ids_str} AND status=1"
+                    tasks = conn.fetch_all(query)
+
+                    if tasks:
+                        for item in tasks:
+                            # 修改数据库任务状态
+                            update_params = {
+                                'id': item.get('id'),
+                                'status': 3
+                            }
+
+                            update_sql = f""" UPDATE api_taskinfo
+                                              SET 
+                                                status = %(status)s
+                                              WHERE id = %(id)s;
+                                                    """
+                            conn.exec(update_sql, **update_params)
+                            # 释放API
+                            conn.exec(f"UPDATE api_apiinfo SET status = 1 WHERE id = {item.get('api_id')}")
+
+                            # 写入Redis队列，发送redis消费
+                            redis_conn = redis.Redis(**settings.REDIS_PARAMS)
+                            redis_conn.lpush("TASK_ADD_QUEUE", item["id"])
+
+    except Exception as e:
+        print(e)
 
 
 

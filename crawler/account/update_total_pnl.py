@@ -6,7 +6,7 @@ def update_api_pnl(api_id):
     # 已实现pnl
     update_pnl_sql = """
                 UPDATE api_apiinfo
-                SET pnl = COALESCE((SELECT SUM(pnl) FROM api_taskinfo WHERE status = 2 AND api_id = %(api_id)s), 0)
+                SET pnl = COALESCE((SELECT SUM(pnl) FROM api_taskinfo WHERE status in (2,3) AND api_id = %(api_id)s), 0)
                 WHERE id = %(api_id)s;
             """
     with Connect() as db:

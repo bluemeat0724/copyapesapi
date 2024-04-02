@@ -90,6 +90,7 @@ class Trader(threading.Thread):
         self.obj = None
         self.flag = None
         self.acc = None
+        self.ip_id = None
 
     def log_to_database(self, level, title, description=""):
         """
@@ -112,8 +113,10 @@ class Trader(threading.Thread):
 
     def run(self):
         # 获取api信息
-        self.acc, self.flag = api(self.user_id, self.api_id)
+        self.acc, self.flag, self.ip_id = api(self.user_id, self.api_id)
         try:
+            # update task 里面的 ip_id
+            self.update_task_with_ip()
             # 创建okx交易对象
             obj = RetryNetworkOperations(app.OkxSWAP(**self.acc))
             self.obj = obj
@@ -169,16 +172,23 @@ class Trader(threading.Thread):
         :param availSubPos: availSubPos 值
         :return:
         """
-        if availSubPos > 0:
-            if int(self.posSide_set) == 1:
-                self.posSide = 'long'
-            else:
+        if self.posSide == 'long':
+            if int(self.posSide_set) == 2:
                 self.posSide = 'short'
-        elif availSubPos < 0:
-            if int(self.posSide_set) == 1:
-                self.posSide = 'short'
-            else:
+        elif self.posSide == 'short':
+            if int(self.posSide_set) == 2:
                 self.posSide = 'long'
+        elif self.posSide == 'net':
+            if availSubPos > 0:
+                if int(self.posSide_set) == 1:
+                    self.posSide = 'long'
+                else:
+                    self.posSide = 'short'
+            elif availSubPos < 0:
+                if int(self.posSide_set) == 1:
+                    self.posSide = 'short'
+                else:
+                    self.posSide = 'long'
         return True
 
     # 执行okx交易
@@ -187,9 +197,8 @@ class Trader(threading.Thread):
             print(f'{self.task_id} 错误')
             return
         if self.order_type == 'open':
-            if self.posSide == 'net':
-                # 解析订单方向
-                self.change_pos_side_set(self.availSubPos)
+            # 解析订单方向
+            self.change_pos_side_set(self.availSubPos)
             # 获取模拟盘/实盘交易倍数
             trade_times = get_trade_times(self.instId, self.flag, self.acc)
             if trade_times is None:
@@ -212,9 +221,8 @@ class Trader(threading.Thread):
 
 
         elif self.order_type == 'close':
-            if self.posSide == 'net':
-                # 解析订单方向
-                self.change_pos_side_set(self.availSubPos)
+            # 解析订单方向
+            self.change_pos_side_set(self.availSubPos)
             # 市价平仓
             print(f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
             self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT='all', tdMode=self.mgnMode)
@@ -226,13 +234,8 @@ class Trader(threading.Thread):
 
         elif self.order_type == 'change':
             ratio = self.new_margin / self.old_margin  # 大于1是加仓，小于1是减仓
-            if self.posSide == 'net':
-                # 解析订单方向
-                self.change_pos_side_set(self.new_availSubPos)
-                # if self.new_availSubPos > 0:
-                #     self.posSide = 'long'
-                # elif self.new_availSubPos < 0:
-                #     self.posSide = 'short'
+            # 解析订单方向
+            self.change_pos_side_set(self.new_availSubPos)
 
             # 获取模拟盘/实盘交易倍数
             trade_times = get_trade_times(self.instId, self.flag, self.acc)
@@ -285,11 +288,13 @@ class Trader(threading.Thread):
                 self.log_to_database("WARNING", '交易失败', '交易账户冻结！请联系交易所客服处理！')
             elif s_code_value == '51004':
                 self.log_to_database("WARNING", '交易失败', '当前下单张数、多空持有仓位以及多空挂单张数之和，不能超过当前杠杆倍数允许的持仓上限。请调低杠杆或者使用新的子账户重新下单')
+            elif s_code_value == '50013':
+                self.log_to_database("WARNING", '交易失败', '交易所系统繁忙，导致交易失败。本次交易放弃。')
             elif s_code_value in ['50103', '50104', '50105', '50106', '50107']:
                 self.log_to_database("WARNING", '交易失败', 'API信息填写错误，请结束任务后重新提交新的API！')
             else:
                 self.log_to_database("WARNING",
-                                     '交易失败', f'请根据错误码，自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')
+                                     '交易失败', f'请根据错误码（sCord），自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')
         except:
             try:
                 s_code_value = result.get('error_result', {}).get('code')
@@ -299,7 +304,7 @@ class Trader(threading.Thread):
                     self.log_to_database("WARNING", '设置失败', '请在设置前关闭任何挂单或持仓！')
                 else:
                     self.log_to_database("WARNING",
-                                         '交易失败', f'请根据错误码，自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')
+                                         '交易失败', f'请根据错误码(code)，自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')
             except:
                 pass
 
@@ -308,6 +313,11 @@ class Trader(threading.Thread):
         # 结束全部正在进行中的交易
         try:
             data = self.obj.account.get_positions().get('data')
+            # 从交易所获取改为从数据库获取
+            # with Connect() as db:
+            #     data = db.fetch_all(
+            #         "select * from api_orderinfo where user_id = %(user_id)s and task_id = %(task_id)s and status = 1",
+            #         user_id=self.user_id, task_id=self.task_id)
         except:
             return
         if not data:
@@ -321,7 +331,10 @@ class Trader(threading.Thread):
             #
             # print(f'更新用户{self.user_id}可用盈利额度数据成功！')
             # 打印日志
-            self.log_to_database("WARNING", '手动结束跟单', f'任务：{self.task_id}')
+            if self.status == 2:
+                self.log_to_database("WARNING", '手动结束跟单', f'任务：{self.task_id}')
+            elif self.status == 3:
+                self.log_to_database("WARNING", 'IP即将过期，提前被动结束跟单', f'任务：{self.task_id}')
             return
         for item in data:
             instId = item.get('instId')
@@ -345,4 +358,21 @@ class Trader(threading.Thread):
         # update_remaining_quota(self.user_id, int(self.flag), remaining_quota)
         #
         # print(f'更新用户{self.user_id}可用盈利额度数据成功！')
-        self.log_to_database("WARNING", f'手动结束跟单，任务：{self.task_id}')
+        if self.status == 2:
+            self.log_to_database("WARNING", '手动结束跟单', f'任务：{self.task_id}')
+        elif self.status == 3:
+            self.log_to_database("WARNING", 'IP即将过期，提前被动结束跟单', f'任务：{self.task_id}')
+
+    def update_task_with_ip(self):
+        """
+        更新任务表的ip_id
+        """
+        params = {
+            "ip_id": self.ip_id,
+            "task_id": self.task_id,
+        }
+        update_sql = """
+            UPDATE api_taskinfo SET ip_id = %(ip_id)s WHERE id = %(task_id)s
+        """
+        with Connect() as db:
+            db.exec(update_sql, **params)

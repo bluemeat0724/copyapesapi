@@ -53,19 +53,24 @@ def run():
                 else:
                     print(f"用户：{user_id}的跟单任务{task_id}已存在。")
 
-            elif status == 2:
+            elif status in [2, 3]:
                 # 终止爬虫
                 if task_id in spiders:
                     spider_to_stop = spiders[task_id]
+                    spider_to_stop.status = status
                     spider_to_stop.stop()
                     spider_to_stop.join()
                     del spiders[task_id]
                     # 往redis里的TRADE_TASK_NAME写入{'task_id':task_id,'status': 2}
                     conn = redis.Redis(**settings.REDIS_PARAMS)
-                    conn.lpush(settings.TRADE_TASK_NAME, json.dumps({'task_id': task_id, 'status': 2}))
-                    print(f"用户：{user_id}的跟单任务{task_id}已停止。")
+                    conn.lpush(settings.TRADE_TASK_NAME, json.dumps({'task_id': task_id, 'status': status}))
+                    if status == 2:
+                        print(f"用户：{user_id}的跟单任务{task_id}已停止。")
+                    elif status == 3:
+                        print(f"IP即将过期。用户：{user_id}的跟单任务{task_id}已停止。")
                 else:
                     print(f"用户：{user_id}的跟单任务{task_id}不存在")
+
         except (SyntaxError, NameError):
             print("数据错误！")
 

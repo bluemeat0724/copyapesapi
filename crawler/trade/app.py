@@ -23,6 +23,8 @@ def run_trade_task(task):
                     trader = oktrade.Trader(**task)
                     trader.start()
                     traders[task_id] = trader
+                    # update task 和 ip_id
+
                     print(f"跟单任务{task_id}开始交易。")
                 else:
                     print(f"跟单任务{task_id}的交易平台不支持。")
@@ -33,10 +35,11 @@ def run_trade_task(task):
                 # 开启新线程来异步更新数据
                 threading.Thread(target=update_trader_task).start()
 
-    elif status == 2:  # 假设status为2时表示终止任务
+    elif status in [2, 3]:  # 假设status为2,3时表示终止任务
         with traders_lock:
             if task_id in traders:
                 trader = traders.pop(task_id)
+                trader.status = status
                 trader.stop()
                 # 注意：由于在独立线程中执行，不再需要调用join()等待线程结束
                 print(f"跟单任务{task_id}已结束。")

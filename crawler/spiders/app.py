@@ -28,6 +28,7 @@ class Spider(threading.Thread):
         self.leverage = leverage
         self.posSide_set = posSide_set
         self.stop_flag = threading.Event()  # 用于控制爬虫线程的停止
+        self.status = None  # status 1:开始 2：手动结束 3：ip到期 被动结束
 
     def log_to_database(self, level, title, description=""):
         """
@@ -103,7 +104,11 @@ class Spider(threading.Thread):
     def stop(self):
         # 设置停止标志，用于停止爬虫线程
         self.stop_flag.set()
-        self.log_to_database("WARNING", "手动结束跟单", f"任务ID：{self.task_id}")
+        if self.status == 2:
+            self.log_to_database("WARNING", "手动结束跟单", f"任务ID：{self.task_id}")
+        elif self.status == 3:
+            self.log_to_database("WARNING", "IP即将到期提前结束跟单", f"任务ID：{self.task_id}")
+
 
     # 解耦爬虫脚本，获取交易数据
     def summary(self):
