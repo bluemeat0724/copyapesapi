@@ -302,6 +302,8 @@ class Trader(threading.Thread):
                     self.log_to_database("WARNING", '模拟盘土狗币交易失败', f'品种：{self.instId}不在交易所模拟盘中！')
                 elif s_code_value == '59000':
                     self.log_to_database("WARNING", '设置失败', '请在设置前关闭任何挂单或持仓！')
+                elif s_code_value == '50013':
+                    self.log_to_database("WARNING", '交易失败', '交易所系统繁忙，导致交易失败。本次交易放弃。')
                 else:
                     self.log_to_database("WARNING",
                                          '交易失败', f'请根据错误码(code)，自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')

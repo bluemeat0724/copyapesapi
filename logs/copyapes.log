@@ -2115,3 +2115,4 @@ INFO 2024-03-30 21:26:17,171 basehttp 44586 123145580617728 "OPTIONS /api/taskad
 INFO 2024-03-30 21:26:17,188 basehttp 44586 123145580617728 "POST /api/taskadd/?token=16ddec79-cd5d-419e-a652-48b3f65680e5 HTTP/1.1" 200 59
 INFO 2024-03-30 21:30:57,830 autoreload 44586 4636616192 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
 INFO 2024-03-30 21:30:58,653 autoreload 44689 4729632256 Watching for file changes with StatReloader
+INFO 2024-04-02 21:53:29,811 autoreload 69096 4389303808 Watching for file changes with StatReloader
