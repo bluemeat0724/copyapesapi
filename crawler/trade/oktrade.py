@@ -56,7 +56,7 @@ class RetryNetworkOperations:
 
 
 class Trader(threading.Thread):
-    def __init__(self, task_id, api_id, user_id, trader_platform, uniqueName, follow_type, sums, lever_set,
+    def __init__(self, task_id, api_id, user_id, trader_platform, uniqueName, follow_type, sums, ratio, lever_set,
                  first_order_set, posSide_set,
                  instId=None, mgnMode=None, posSide=None, lever=1, openTime=None, openAvgPx=None, margin=None,
                  availSubPos=None, order_type=None,
@@ -68,6 +68,7 @@ class Trader(threading.Thread):
         self.uniqueName = uniqueName
         self.follow_type = follow_type
         self.sums = sums
+        self.ratio = ratio
         self.lever_set = lever_set
         self.first_order_set = first_order_set
         self.api_id = api_id
@@ -91,6 +92,7 @@ class Trader(threading.Thread):
         self.flag = None
         self.acc = None
         self.ip_id = None
+
 
     def log_to_database(self, level, title, description=""):
         """
@@ -148,6 +150,7 @@ class Trader(threading.Thread):
         self.uniqueName = new_data.get('uniqueName')
         self.follow_type = new_data.get('follow_type')
         self.sums = new_data.get('sums')
+        self.ratio = new_data.get('ratio')
         self.lever_set = new_data.get('lever_set')
         self.first_order_set = new_data.get('first_order_set')
         self.api_id = new_data.get('api_id')
@@ -196,6 +199,9 @@ class Trader(threading.Thread):
         if not self.obj:
             print(f'{self.task_id} 错误')
             return
+
+        if self.follow_type == 2:
+            self.transform_sums()
         if self.order_type == 'open':
             # 解析订单方向
             self.change_pos_side_set(self.availSubPos)
@@ -378,3 +384,7 @@ class Trader(threading.Thread):
         """
         with Connect() as db:
             db.exec(update_sql, **params)
+
+    def transform_sums(self):
+        # todo 可能有全仓和逐仓的区别
+        self.sums = self.margin * self.ratio
