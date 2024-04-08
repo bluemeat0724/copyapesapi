@@ -5,7 +5,7 @@ from crawler.utils.get_header import get_header
 
 
 now = int(time.time()) * 1000
-def spider(uniqueName, follow_type, task_id, trader_platform, sums, lever_set, first_order_set, api_id, user_id):
+def spider(uniqueName, follow_type, task_id, trader_platform, sums, ratio,lever_set, first_order_set, api_id, user_id):
     summary_list_new = []
     url = f'https://www.okx.com/priapi/v5/ecotrade/public/position-summary?t={now}&uniqueName={uniqueName}&instType=SWAP'
     try:
@@ -31,6 +31,7 @@ def spider(uniqueName, follow_type, task_id, trader_platform, sums, lever_set, f
             data_clear['follow_type'] = follow_type
             data_clear['uniqueName'] = uniqueName
             data_clear['sums'] = sums
+            data_clear['ratio'] = ratio
             data_clear['lever_set'] = lever_set
             data_clear['first_order_set'] = first_order_set
             data_clear['api_id'] = api_id

@@ -2115,4 +2115,101 @@ INFO 2024-03-30 21:26:17,171 basehttp 44586 123145580617728 "OPTIONS /api/taskad
 INFO 2024-03-30 21:26:17,188 basehttp 44586 123145580617728 "POST /api/taskadd/?token=16ddec79-cd5d-419e-a652-48b3f65680e5 HTTP/1.1" 200 59
 INFO 2024-03-30 21:30:57,830 autoreload 44586 4636616192 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
 INFO 2024-03-30 21:30:58,653 autoreload 44689 4729632256 Watching for file changes with StatReloader
+INFO 2024-04-05 17:09:14,038 autoreload 9668 7420 Watching for file changes with StatReloader
+WARNING 2024-04-05 17:09:18,012 log 9668 4928 Not Found: /
+WARNING 2024-04-05 17:09:18,013 basehttp 9668 4928 "GET / HTTP/1.1" 404 1945
+WARNING 2024-04-05 17:09:19,137 log 9668 4928 Not Found: /favicon.ico
+WARNING 2024-04-05 17:09:19,138 basehttp 9668 4928 "GET /favicon.ico HTTP/1.1" 404 1996
+WARNING 2024-04-05 17:09:31,359 log 9668 4928 Unauthorized: /api/taskadd/
+WARNING 2024-04-05 17:09:31,359 basehttp 9668 4928 "GET /api/taskadd/ HTTP/1.1" 401 12197
+INFO 2024-04-05 17:09:31,874 basehttp 9668 5272 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3597
+INFO 2024-04-05 17:09:31,877 basehttp 9668 5272 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1719
+INFO 2024-04-05 17:09:31,880 basehttp 9668 4928 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2024-04-05 17:09:31,881 basehttp 9668 5272 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2024-04-05 17:09:31,883 basehttp 9668 4928 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2024-04-05 17:09:31,883 basehttp 9668 5272 "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2024-04-05 17:09:31,889 basehttp 9668 1596 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3597
+INFO 2024-04-05 17:09:31,892 basehttp 9668 10956 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1719
+INFO 2024-04-05 17:09:31,893 basehttp 9668 1496 "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2024-04-05 17:09:31,894 basehttp 9668 4088 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2024-04-05 17:09:31,894 basehttp 9668 5572 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2024-04-05 17:09:32,161 basehttp 9668 6376 "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1" 200 89476
+INFO 2024-04-05 17:09:32,166 basehttp 9668 5572 "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1" 200 89476
+INFO 2024-04-05 17:09:32,166 basehttp 9668 7016 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3385
+INFO 2024-04-05 17:09:32,169 basehttp 9668 4532 "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+INFO 2024-04-05 17:09:32,180 basehttp 9668 9916 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2024-04-05 17:09:32,186 basehttp 9668 9916 "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+INFO 2024-04-05 17:51:39,791 autoreload 10592 10448 Watching for file changes with StatReloader
+INFO 2024-04-05 17:52:01,133 basehttp 10592 12488 "OPTIONS /api/register/ HTTP/1.1" 200 0
+INFO 2024-04-05 17:52:01,337 basehttp 10592 12488 "POST /api/register/ HTTP/1.1" 200 37
+INFO 2024-04-05 17:52:16,068 basehttp 10592 12488 "OPTIONS /api/login/ HTTP/1.1" 200 0
+INFO 2024-04-05 17:52:16,162 basehttp 10592 12488 "POST /api/login/ HTTP/1.1" 200 80
+INFO 2024-04-05 17:52:16,434 basehttp 10592 12788 "GET /api/quotainfo/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 117
+INFO 2024-04-05 17:52:16,435 basehttp 10592 12488 "GET /api/ip/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
+INFO 2024-04-05 17:52:19,828 basehttp 10592 12488 "GET /api/taskadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
+INFO 2024-04-05 17:52:20,611 basehttp 10592 12488 "GET /api/platform/ HTTP/1.1" 200 20
+INFO 2024-04-05 17:52:20,613 basehttp 10592 12788 "GET /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
+INFO 2024-04-05 17:52:21,276 basehttp 10592 12788 "GET /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
+INFO 2024-04-05 17:52:22,798 basehttp 10592 12788 "GET /api/ip/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
+INFO 2024-04-05 17:52:24,363 basehttp 10592 12788 "GET /api/quotainfo/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 117
+INFO 2024-04-05 20:05:53,345 basehttp 10592 2876 "GET /api/taskadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
+INFO 2024-04-05 20:05:55,486 basehttp 10592 4012 "GET /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
+INFO 2024-04-05 20:05:55,488 basehttp 10592 2876 "GET /api/platform/ HTTP/1.1" 200 20
+INFO 2024-04-05 20:05:56,583 basehttp 10592 2876 "GET /api/quotainfo/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 117
+INFO 2024-04-05 20:15:13,103 basehttp 10592 12656 "GET /api/quotainfo/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 117
+INFO 2024-04-05 20:15:13,103 basehttp 10592 12640 "GET /api/ip/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
 INFO 2024-04-02 21:53:29,811 autoreload 69096 4389303808 Watching for file changes with StatReloader
+INFO 2024-04-08 01:55:59,582 autoreload 4268 12460 Watching for file changes with StatReloader
+INFO 2024-04-08 01:56:50,924 basehttp 4268 3928 "GET /api/quotainfo/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 117
+INFO 2024-04-08 01:56:50,932 basehttp 4268 12580 "GET /api/ip/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
+INFO 2024-04-08 01:56:53,832 basehttp 4268 12580 "GET /api/taskadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
+INFO 2024-04-08 01:56:54,754 basehttp 4268 12580 "GET /api/platform/ HTTP/1.1" 200 20
+INFO 2024-04-08 01:56:54,755 basehttp 4268 3928 "GET /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
+INFO 2024-04-08 01:56:57,294 basehttp 4268 3928 "GET /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
+INFO 2024-04-08 01:56:59,365 basehttp 4268 3928 "GET /api/taskadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
+INFO 2024-04-08 01:57:01,579 basehttp 4268 3928 "GET /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
+INFO 2024-04-08 01:57:03,847 basehttp 4268 3928 "GET /api/platform/ HTTP/1.1" 200 20
+INFO 2024-04-08 01:57:03,850 basehttp 4268 12580 "GET /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
+INFO 2024-04-08 01:57:05,449 basehttp 4268 12580 "GET /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
+INFO 2024-04-08 02:00:43,141 basehttp 4268 12580 "OPTIONS /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 0
+INFO 2024-04-08 02:00:43,215 basehttp 4268 12580 "POST /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 187
+INFO 2024-04-08 02:00:43,255 basehttp 4268 12580 "GET /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 189
+INFO 2024-04-08 02:03:56,539 basehttp 4268 12580 "GET /api/platform/ HTTP/1.1" 200 20
+INFO 2024-04-08 02:03:56,546 basehttp 4268 7128 "GET /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 189
+INFO 2024-04-08 02:05:09,698 basehttp 4268 7128 "GET /api/ip/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
+INFO 2024-04-08 02:05:09,698 basehttp 4268 12580 "GET /api/platform/ HTTP/1.1" 200 67
+INFO 2024-04-08 02:05:09,706 basehttp 4268 6520 "GET /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 189
+INFO 2024-04-08 02:13:09,282 basehttp 4268 13100 "GET /api/platform/ HTTP/1.1" 200 67
+INFO 2024-04-08 02:13:09,288 basehttp 4268 5100 "GET /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 189
+INFO 2024-04-08 02:14:52,519 basehttp 4268 5100 "GET /api/platform/ HTTP/1.1" 200 67
+INFO 2024-04-08 02:14:52,519 basehttp 4268 13100 "GET /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 189
+INFO 2024-04-08 02:16:02,398 basehttp 4268 7128 "GET /api/platform/ HTTP/1.1" 200 67
+INFO 2024-04-08 02:16:02,402 basehttp 4268 1376 "GET /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 189
+INFO 2024-04-08 02:16:08,502 basehttp 4268 7128 "GET /api/platform/ HTTP/1.1" 200 67
+INFO 2024-04-08 02:16:08,507 basehttp 4268 1376 "GET /api/ip/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
+INFO 2024-04-08 02:16:08,510 basehttp 4268 14212 "GET /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 189
+INFO 2024-04-08 02:18:17,442 autoreload 4268 12460 C:\Users\copyapes\Desktop\copyapesapi\api\models.py changed, reloading.
+INFO 2024-04-08 02:18:19,627 autoreload 13944 13212 Watching for file changes with StatReloader
+INFO 2024-04-08 02:21:53,667 autoreload 13944 13212 C:\Users\copyapes\Desktop\copyapesapi\api\serializers\task.py changed, reloading.
+INFO 2024-04-08 02:21:55,480 autoreload 13000 2432 Watching for file changes with StatReloader
+INFO 2024-04-08 02:22:00,223 basehttp 13000 12264 "GET /api/platform/ HTTP/1.1" 200 67
+INFO 2024-04-08 02:22:00,229 basehttp 13000 11820 "GET /api/ip/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
+INFO 2024-04-08 02:22:00,233 basehttp 13000 12972 "GET /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 189
+INFO 2024-04-08 02:23:01,393 basehttp 13000 11820 "GET /api/platform/ HTTP/1.1" 200 67
+INFO 2024-04-08 02:23:01,400 basehttp 13000 12264 "GET /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 189
+INFO 2024-04-08 02:23:01,402 basehttp 13000 12972 "GET /api/ip/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
+INFO 2024-04-08 02:26:11,947 basehttp 13000 12972 "GET /api/platform/ HTTP/1.1" 200 67
+INFO 2024-04-08 02:26:11,950 basehttp 13000 12264 "GET /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 189
+INFO 2024-04-08 02:27:09,518 basehttp 13000 12264 "GET /api/platform/ HTTP/1.1" 200 67
+INFO 2024-04-08 02:27:09,522 basehttp 13000 12972 "GET /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 189
+INFO 2024-04-09 00:13:32,121 autoreload 4008 7812 Watching for file changes with StatReloader
+INFO 2024-04-09 00:13:51,638 basehttp 4008 13320 "GET /api/ip/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
+INFO 2024-04-09 00:13:51,645 basehttp 4008 9676 "GET /api/quotainfo/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 117
+INFO 2024-04-09 00:13:54,829 basehttp 4008 9676 "GET /api/ip/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
+INFO 2024-04-09 00:13:54,829 basehttp 4008 13320 "GET /api/quotainfo/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 117
+INFO 2024-04-09 00:13:55,894 basehttp 4008 13320 "GET /api/taskadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
+INFO 2024-04-09 00:13:56,899 basehttp 4008 13320 "GET /api/platform/ HTTP/1.1" 200 67
+INFO 2024-04-09 00:13:56,902 basehttp 4008 9676 "GET /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 189
+INFO 2024-04-09 00:13:58,154 basehttp 4008 9676 "GET /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 189
+INFO 2024-04-09 00:13:58,992 basehttp 4008 9676 "GET /api/platform/ HTTP/1.1" 200 67
+INFO 2024-04-09 00:13:58,997 basehttp 4008 13320 "GET /api/apiadd/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 189

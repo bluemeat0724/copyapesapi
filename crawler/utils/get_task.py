@@ -4,13 +4,14 @@ from crawler.utils.db import Connect
 
 
 class DbRow(object):
-    def __init__(self, id, trader_platform, uniqueName, follow_type, sums, lever_set, first_order_set, api_id, user_id,
+    def __init__(self, id, trader_platform, uniqueName, follow_type, sums, ratio, lever_set, first_order_set, api_id, user_id,
                  status, create_datetime, deleted, leverage, posSide_set):
         self.id = id
         self.trader_platform = trader_platform
         self.uniqueName = uniqueName
         self.follow_type = follow_type
         self.sums = sums
+        self.ratio = ratio
         self.lever_set = lever_set
         self.first_order_set = first_order_set
         self.api_id = api_id

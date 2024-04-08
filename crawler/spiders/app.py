@@ -13,7 +13,7 @@ logger.remove()  # 移除所有默认的handler
 
 
 class Spider(threading.Thread):
-    def __init__(self, task_id, trader_platform, uniqueName, follow_type, sums, lever_set, first_order_set, api_id,
+    def __init__(self, task_id, trader_platform, uniqueName, follow_type, sums, ratio, lever_set, first_order_set, api_id,
                  user_id, leverage, posSide_set):
         super(Spider, self).__init__()
         self.task_id = task_id
@@ -21,6 +21,7 @@ class Spider(threading.Thread):
         self.uniqueName = uniqueName
         self.follow_type = follow_type
         self.sums = sums
+        self.ratio = ratio
         self.lever_set = lever_set
         self.first_order_set = first_order_set
         self.api_id = api_id
@@ -114,7 +115,7 @@ class Spider(threading.Thread):
     def summary(self):
         if self.trader_platform == 1:
             summary_list_new = okx_follow_spider.spider(self.uniqueName, self.follow_type, self.task_id,
-                                                        self.trader_platform, self.sums, self.lever_set,
+                                                        self.trader_platform, self.sums, self.ratio, self.lever_set,
                                                         self.first_order_set, self.api_id, self.user_id)
             return summary_list_new
         else:
@@ -144,6 +145,7 @@ class Spider(threading.Thread):
                 item['follow_type'] = self.follow_type
                 item['uniqueName'] = self.uniqueName
                 item['sums'] = self.sums
+                item['ratio'] = self.ratio
                 item['lever_set'] = self.lever_set
                 item['first_order_set'] = self.first_order_set
                 item['api_id'] = self.api_id
@@ -169,6 +171,7 @@ class Spider(threading.Thread):
                 item['follow_type'] = self.follow_type
                 item['uniqueName'] = self.uniqueName
                 item['sums'] = self.sums
+                item['ratio'] = self.ratio
                 item['lever_set'] = self.lever_set
                 item['first_order_set'] = self.first_order_set
                 item['api_id'] = self.api_id
@@ -201,6 +204,7 @@ class Spider(threading.Thread):
                           'follow_type': self.follow_type,
                           'uniqueName': self.uniqueName,
                           'sums': self.sums,
+                          'ratio': self.ratio,
                           'lever_set': self.lever_set,
                           'first_order_set': self.first_order_set,
                           'api_id': self.api_id,

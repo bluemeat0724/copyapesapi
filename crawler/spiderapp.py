@@ -34,6 +34,7 @@ def run():
             uniqueName = task_data.get('uniqueName')
             follow_type = task_data.get('follow_type')
             sums = task_data.get('sums')
+            ratio = task_data.get('ratio')
             lever_set = task_data.get('lever_set')
             first_order_set = task_data.get('first_order_set')
             api_id = task_data.get('api_id')
@@ -45,7 +46,7 @@ def run():
             if status == 1:
                 # 开启新爬虫
                 if task_id not in spiders:
-                    spider = app.Spider(task_id, trader_platform, uniqueName, follow_type, sums, lever_set,
+                    spider = app.Spider(task_id, trader_platform, uniqueName, follow_type, sums, ratio, lever_set,
                                         first_order_set, api_id, user_id, leverage, posSide_set)
                     spider.start()
                     spiders[task_id] = spider

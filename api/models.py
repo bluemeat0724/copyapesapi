@@ -76,10 +76,11 @@ class TaskInfo(DeletedModel):
 
     follow_choice = (
         (1, "固定金额"),
+        (2, "固定比例"),
     )
     follow_type = models.IntegerField(verbose_name="跟单模式", choices=follow_choice, default=1)
     sums = models.FloatField(verbose_name="单笔跟单金额", default=0.0)
-
+    ratio = models.FloatField(verbose_name="跟单比例", default=0.0)
     lever_choice = (
         (1, "跟随交易员"),
         (2, "自定义杠杆"),
