@@ -86,8 +86,8 @@ obj.trade.api.flag = '1'
 #         except:
 #             pass
 
-a = obj.trade.open_market(instId='ETH-USDT-SWAP', posSide='long', openMoney=100,
-                                      tdMode='cross', lever=100)
+# a = obj.trade.open_market(instId='ETH-USDT-SWAP', posSide='long', openMoney=100,
+#                                       tdMode='cross', lever=100)
 # obj.trade.close_market(instId='ETH-USDT-SWAP', posSide='long', quantityCT=220, tdMode='cross')
 # 当前持仓
 a = obj.account.get_positions()

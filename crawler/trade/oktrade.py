@@ -387,4 +387,8 @@ class Trader(threading.Thread):
 
     def transform_sums(self):
         # todo 可能有全仓和逐仓的区别
+        if self.order_type is None:
+            return
+        if self.order_type == 'change':
+            self.margin = self.new_margin - self.old_margin
         self.sums = self.margin * self.ratio

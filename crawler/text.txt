@@ -1,8 +1,8 @@
 [{
-  "availSubPos": "-0.20",
-  "margin": "362",
+  "availSubPos": "0.20",
+  "margin": "700",
   "instId": "BTC-USDT-SWAP",
-  "mgnMode": "isolated",
+  "mgnMode": "cross",
   "posSide": "net",
   "lever": "20",
   "openTime": "1698235930690",

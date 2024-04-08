@@ -37,7 +37,7 @@ def get_redis_task():
 def get_task_info_by_id(tid):
     with Connect() as conn:
         row_dict = conn.fetch_one(
-            "select id, trader_platform, uniqueName, follow_type, sums, lever_set, first_order_set, api_id, user_id,status, create_datetime, deleted, leverage, posSide_set from api_taskinfo where id=%(id)s",
+            "select id, trader_platform, uniqueName, follow_type, sums, ratio, lever_set, first_order_set, api_id, user_id,status, create_datetime, deleted, leverage, posSide_set from api_taskinfo where id=%(id)s",
             id=tid)
 
     if not row_dict:
