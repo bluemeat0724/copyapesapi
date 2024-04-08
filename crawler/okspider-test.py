@@ -28,7 +28,7 @@ logger.remove()  # 移除所有默认的handler
 
 
 class Spider(threading.Thread):
-    def __init__(self, task_id, trader_platform, uniqueName, follow_type, sums, lever_set, first_order_set, api_id,
+    def __init__(self, task_id, trader_platform, uniqueName, follow_type, sums, ratio, lever_set, first_order_set, api_id,
                  user_id, leverage, posSide_set):
         super(Spider, self).__init__()
         self.task_id = task_id
@@ -36,6 +36,7 @@ class Spider(threading.Thread):
         self.uniqueName = uniqueName
         self.follow_type = follow_type
         self.sums = sums
+        self.ratio = ratio
         self.lever_set = lever_set
         self.first_order_set = first_order_set
         self.api_id = api_id
@@ -111,6 +112,7 @@ class Spider(threading.Thread):
             data_clear['follow_type'] = self.follow_type
             data_clear['uniqueName'] = self.uniqueName
             data_clear['sums'] = self.sums
+            data_clear['ratio'] = self.ratio
             data_clear['lever_set'] = self.lever_set
             data_clear['first_order_set'] = self.first_order_set
             data_clear['api_id'] = self.api_id
@@ -141,6 +143,7 @@ class Spider(threading.Thread):
                 data_clear['follow_type'] = self.follow_type
                 data_clear['uniqueName'] = self.uniqueName
                 data_clear['sums'] = self.sums
+                data_clear['ratio'] = self.ratio
                 data_clear['lever_set'] = self.lever_set
                 data_clear['first_order_set'] = self.first_order_set
                 data_clear['api_id'] = self.api_id
@@ -170,6 +173,7 @@ class Spider(threading.Thread):
                 item['follow_type'] = self.follow_type
                 item['uniqueName'] = self.uniqueName
                 item['sums'] = self.sums
+                item['ratio'] = self.ratio
                 item['lever_set'] = self.lever_set
                 item['first_order_set'] = self.first_order_set
                 item['api_id'] = self.api_id
@@ -195,6 +199,7 @@ class Spider(threading.Thread):
                 item['follow_type'] = self.follow_type
                 item['uniqueName'] = self.uniqueName
                 item['sums'] = self.sums
+                item['ratio'] = self.ratio
                 item['lever_set'] = self.lever_set
                 item['first_order_set'] = self.first_order_set
                 item['api_id'] = self.api_id
@@ -227,6 +232,7 @@ class Spider(threading.Thread):
                           'follow_type': self.follow_type,
                           'uniqueName': self.uniqueName,
                           'sums': self.sums,
+                          'ratio': self.ratio,
                           'lever_set': self.lever_set,
                           'first_order_set': self.first_order_set,
                           'api_id': self.api_id,
@@ -264,6 +270,7 @@ if __name__ == '__main__':
             uniqueName = task_data.get('uniqueName')
             follow_type = task_data.get('follow_type')
             sums = task_data.get('sums')
+            ratio = task_data.get('ratio')
             lever_set = task_data.get('lever_set')
             first_order_set = task_data.get('first_order_set')
             api_id = task_data.get('api_id')
@@ -275,7 +282,7 @@ if __name__ == '__main__':
             if status == 1:
                 # 开启新爬虫
                 if task_id not in spiders:
-                    spider = Spider(task_id, trader_platform, uniqueName, follow_type, sums, lever_set, first_order_set,
+                    spider = Spider(task_id, trader_platform, uniqueName, follow_type, sums, ratio, lever_set, first_order_set,
                                     api_id, user_id, leverage, posSide_set)
                     spider.start()
                     spiders[task_id] = spider
