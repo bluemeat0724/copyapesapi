@@ -2,15 +2,33 @@ from crawler.myokx import app
 # from okx import app
 from okx.api.public import Public
 
-# 模拟
-acc = {'key': 'ba8dccb8-943d-468c-bcbf-8dced96fc7cf',
-       'secret': 'BBA3FF14AC698CDBAA33219F858E7BF6',
+# 模拟子5
+# acc = {'key': '5e773b21-f919-41f1-bdca-62834fbb2d03',
+#        'secret': 'EC9399DC09F9C894F4E4E44EA66FA7C2',
+#        'passphrase': '112233Ww..',
+#        # 'proxies': {
+#        #              'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322',
+#        #              'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322'
+#        #             }
+#        }
+# 模拟子2
+acc = {'key': '2842457e-1d17-4a58-a0d6-25d71044e75a',
+       'secret': 'A3A985254556CAAB007ABB15F7FECC9B',
        'passphrase': '112233Ww..',
        # 'proxies': {
        #              'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322',
        #              'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322'
        #             }
        }
+# 模拟主1
+# acc = {'key': 'ba8dccb8-943d-468c-bcbf-8dced96fc7cf',
+#        'secret': 'BBA3FF14AC698CDBAA33219F858E7BF6',
+#        'passphrase': '112233Ww..',
+#        # 'proxies': {
+#        #              'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322',
+#        #              'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322'
+#        #             }
+#        }
 # 实盘
 # acc = {'key': '63b35cdd-261f-4fd5-ba2a-a607cd7460c9',
 #        'secret': '52A5665FC31BFF7552D2980CE5C7F0F1',

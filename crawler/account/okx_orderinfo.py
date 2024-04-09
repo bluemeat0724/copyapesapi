@@ -77,7 +77,7 @@ class OkxOrderInfo(object):
             mgnMode = item.get('mgnMode')
             posSide = item.get('posSide')
             imr = item.get('imr', 0)
-            notionalUsd = item.get('notionalUsd', 0)
+            margin = item.get('margin', 0)
             # print(instId, cTime, openAvgPx, upl, uplRatio, lever, mgnMode, posSide)
 
             # 查询数据库，看是否存在具有相同 instId 和 cTime 的记录
@@ -115,7 +115,7 @@ class OkxOrderInfo(object):
                     'lever': lever,
                     'mgnMode': mgnMode,
                     'posSide': posSide,
-                    'imr': notionalUsd
+                    'imr': margin
                 }
 
             if record_exists:
