@@ -347,8 +347,9 @@ class Trader(threading.Thread):
         for item in data:
             instId = item.get('instId')
             posSide = item.get('posSide')
+            mgnMode = item.get('mgnMode')
             # 市价平仓
-            self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode='cross')
+            self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
             self.log_to_database("WARNING", '手动结束跟单', f'{instId}已经按市价进行平仓。')
 
         # 更新收益数据，以及对应可用额度数据。强制更新
