@@ -14,6 +14,23 @@ class ApiAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixin
     serializer_class = ApiSerializer
     queryset = models.ApiInfo.objects.filter(deleted=False).order_by('-id')
 
+    # 禁止重复添加
+    def create(self, request, *args, **kwargs):
+        # 从请求中获取api_key和secret_key
+        api_key = request.data.get('api_key')
+        secret_key = request.data.get('secret_key')
+
+        # 检查是否存在相同的api_key和secret_key，且未被删除
+        if models.ApiInfo.objects.filter(api_key=api_key, secret_key=secret_key, deleted=False).exists():
+            # 如果存在，返回错误响应
+            return Response({
+                'code': return_code.EXIST_ERROR,
+                'error': 'API信息已存在，不能重复添加'})
+
+        # 如果不存在，调用父类方法正常创建
+        return super().create(request, *args, **kwargs)
+
+
     def perform_create(self, serializer):
         # flag = serializer.validated_data.get('flag')
         # if flag == 1:

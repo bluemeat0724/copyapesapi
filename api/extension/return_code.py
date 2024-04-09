@@ -1,6 +1,9 @@
 # 成功
 SUCCESS = 0
 
+# 数据已存在
+EXIST_ERROR = 1000
+
 # 用户提交数据校验失败
 VALIDATE_ERROR = 1001
 
