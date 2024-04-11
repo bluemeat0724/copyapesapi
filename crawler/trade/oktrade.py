@@ -379,17 +379,29 @@ class Trader(threading.Thread):
             elif self.status == 3:
                 self.log_to_database("WARNING", 'IP即将过期，提前被动结束跟单', f'任务：{self.task_id}')
             return
+
+        market_data = []
         for item in data:
-            instId = item.get('instId')
-            posSide = item.get('posSide')
-            mgnMode = item.get('mgnMode')
-            # 市价平仓
-            try:
-                self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
-                self.log_to_database("WARNING", '手动结束跟单', f'{instId}已经按市价进行平仓。')
-            except Exception as e:
-                self.log_to_database("WARNING", '手动结束跟单', f'{instId}平仓失败，请手动平仓。')
-                print(e)
+            market_data.append(
+                dict(
+                    instId=item.get('instId'),
+                    posSide=item.get('posSide'),
+                    mgnMode=item.get('mgnMode')
+                )
+            )
+        if market_data:
+            self.run_close_market_concurrently(market_data)
+            # instId = item.get('instId')
+            # posSide = item.get('posSide')
+            # mgnMode = item.get('mgnMode')
+            # # 市价平仓
+            # try:
+            #     self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
+            #     self.log_to_database("WARNING", '手动结束跟单', f'{instId}已经按市价进行平仓。')
+            # except Exception as e:
+            #     self.log_to_database("WARNING", '手动结束跟单', f'{instId}平仓失败，请手动平仓。')
+            #     print(e)
+
 
         # 更新收益数据，以及对应可用额度数据。强制更新
         obj = OkxOrderInfo(self.user_id, self.task_id)
@@ -410,6 +422,32 @@ class Trader(threading.Thread):
             self.log_to_database("WARNING", '手动结束跟单', f'任务：{self.task_id}')
         elif self.status == 3:
             self.log_to_database("WARNING", 'IP即将过期，提前被动结束跟单', f'任务：{self.task_id}')
+
+    def close_pos(self, item):
+        # 平仓
+        instId = item.get('instId')
+        posSide = item.get('posSide')
+        mgnMode = item.get('mgnMode')
+        try:
+            # 假设self.obj是已经实例化的，可以执行trade.close_market的对象
+            self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
+            self.log_to_database("WARNING", '手动结束跟单', f'{instId}已经按市价进行平仓。')
+        except Exception as e:
+            self.log_to_database("WARNING", '手动结束跟单', f'{instId}平仓失败，请手动平仓。')
+            print(e)
+
+    def run_close_market_concurrently(self, data):
+        threads = []
+        for item in data:
+            # 为每个item创建一个线程
+            thread = threading.Thread(target=self.close_pos, args=(item,))
+            threads.append(thread)
+            thread.start()
+
+        # 等待所有线程完成
+        for thread in threads:
+            thread.join()
+
 
     def update_task_with_ip(self):
         """
