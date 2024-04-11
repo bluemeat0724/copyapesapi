@@ -63,10 +63,15 @@ def run():
                     spider_to_stop.status = status
                     spider_to_stop.stop()
                     spider_to_stop.join()
+                    # 组装数据
+                    task_data['task_id'] = task_data.pop('id')
+                    task_data.pop("create_datetime")
+                    task_data.pop("deleted")
+                    task_data.pop("leverage")
                     del spiders[task_id]
                     # 往redis里的TRADE_TASK_NAME写入{'task_id':task_id,'status': 2}
                     conn = redis.Redis(**settings.REDIS_PARAMS)
-                    conn.lpush(settings.TRADE_TASK_NAME, json.dumps({'task_id': task_id, 'status': status}))
+                    conn.lpush(settings.TRADE_TASK_NAME, json.dumps(task_data))
                     if status == 2:
                         print(f"用户：{user_id}的跟单任务{task_id}已停止。")
                     elif status == 3:

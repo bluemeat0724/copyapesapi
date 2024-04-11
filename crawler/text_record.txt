@@ -2,7 +2,7 @@
 "alias": "",
 "avgPx": "598",
 "baseName": "BNB",
-"cTime": "1712827937379",
+"cTime": "1712827937376",
 "fillTime": "1712827937376",
 "instFamily": "BNB-USDT",
 "instId": "BTC-USDT-SWAP",

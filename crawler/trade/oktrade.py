@@ -8,6 +8,7 @@ from functools import wraps
 from loguru import logger
 from crawler.account.okx_orderinfo import OkxOrderInfo
 import datetime
+from concurrent.futures import ThreadPoolExecutor
 from crawler.account.update_quota import get_remaining_quota, check_task_pnl, update_remaining_quota
 
 logger.remove()  # 移除所有默认的handler
@@ -145,35 +146,6 @@ class Trader(threading.Thread):
             self.log_to_database("WARNING", "停止交易，获取api信息失败，请重新提交api，并确认开启交易权限")
             return
 
-    # 更新交易数据，执行最新交易
-    def update_data(self, new_data):
-        self.task_id = new_data.get('task_id')
-        self.order_type = new_data.get('order_type')
-        self.trader_platform = new_data.get('trader_platform')
-        self.uniqueName = new_data.get('uniqueName')
-        self.follow_type = new_data.get('follow_type')
-        self.role_type = new_data.get('role_type')
-        self.reduce_ratio = new_data.get('reduce_ratio')
-        self.sums = new_data.get('sums')
-        self.ratio = new_data.get('ratio')
-        self.lever_set = new_data.get('lever_set')
-        self.first_order_set = new_data.get('first_order_set')
-        self.api_id = new_data.get('api_id')
-        self.user_id = new_data.get('user_id')
-        self.margin = new_data.get('margin')
-        self.availSubPos = new_data.get('availSubPos')
-        self.old_margin = new_data.get('old_margin')
-        self.old_availSubPos = new_data.get('old_availSubPos')
-        self.new_margin = new_data.get('new_margin')
-        self.new_availSubPos = new_data.get('new_availSubPos')
-        self.instId = new_data.get('instId')
-        self.mgnMode = new_data.get('mgnMode')
-        self.posSide = new_data.get('posSide')
-        self.lever = float(new_data.get('lever'))
-        self.openTime = new_data.get('openTime')
-        self.openAvgPx = new_data.get('openAvgPx')
-        # 执行需要的操作
-        self.perform_trade()
 
     def change_pos_side_set(self, availSubPos):
         """

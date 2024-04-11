@@ -24,6 +24,8 @@ def reactivate_tasks():
 
 def reactivate_trade_tasks():
     """
+    作废
+
     第二步：恢复交易实例
     获取所有status=1的任务，以及对应的api信息，封装成实例列表返回。
     trade app在接收到实例列表后，在推送到用来映射任务ID和交易实例的字典里traders = {}

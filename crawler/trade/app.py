@@ -18,48 +18,26 @@ def run_trade_task(task):
     # 根据status决定操作
     if status is None or status == 1:  # 假设status为None或1时表示启动或更新任务
         with traders_lock:  # 使用线程锁来确保线程安全
-            # if task_id not in traders:
             if trader_platform == 1:
                 trader = oktrade.Trader(**task)
                 trader.start()
-                # traders[task_id] = trader
-                # update task 和 ip_id
                 print(f"跟单任务{task_id}开始交易。")
             else:
                 print(f"跟单任务{task_id}的交易平台不支持。")
-            # else:
-            #     trader = traders[task_id]
-            #     trader.update_data(task)
-                # def update_trader_task():
-                #     trader = traders[task_id]
-                #     trader.update_data(task)
-                # # 开启新线程来异步更新数据
-                # threading.Thread(target=update_trader_task).start()
+
 
     elif status in [2, 3]:  # 假设status为2,3时表示终止任务
         with traders_lock:
-            # if task_id in traders:
-            #     trader = traders.pop(task_id)
-            #     trader.status = status
-            #     trader.stop()
-            print(task)
             trader = oktrade.Trader(**task)
             trader.status = status
             trader.stop()
             # 注意：由于在独立线程中执行，不再需要调用join()等待线程结束
             print(f"跟单任务{task_id}已结束。")
-            # else:
-            #     print(f"跟单任务{task_id}不存在。")
+
 
 
 def run():
-    # 恢复交易爬虫
-    # reactivate = reactivate_trade_tasks()
-    # if reactivate:
-    #     for task in reactivate:
-    #         # 使用线程运行任务
-    #         thread = threading.Thread(target=run_trade_task, args=(task,))
-    #         thread.start()
+    print('交易脚本启动...')
     while True:
         try:
             conn = redis.Redis(**settings.REDIS_PARAMS)

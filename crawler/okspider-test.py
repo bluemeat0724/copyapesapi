@@ -386,7 +386,7 @@ if __name__ == '__main__':
                     task_data.pop("create_datetime")
                     task_data.pop("deleted")
                     task_data.pop("leverage")
-                    print(task_data)
+                    # print(task_data)
                     # 往redis里的TRADE_TASK_NAME写入{'task_id':task_id,'status': 2}
                     conn = redis.Redis(**settings.REDIS_PARAMS)
                     conn.lpush(settings.TRADE_TASK_NAME, json.dumps(task_data))
