@@ -422,9 +422,10 @@ class Trader(threading.Thread):
         更新任务日志状态
         用于是否重新插入开始日志
         """
-        res = db.fetch_one("select ip_id from api_taskinfo where id = %(task_id)s and status = 1", task_id=self.task_id)
-        if res.get("ip_id", None) is None:
-            self.log_to_database("INFO", f"跟单猿交易系统启动", f"跟随交易员：{self.uniqueName}")
+        with Connect() as db:
+            res = db.fetch_one("select ip_id from api_taskinfo where id = %(task_id)s and status = 1", task_id=self.task_id)
+            if res.get("ip_id", None) is None:
+                self.log_to_database("INFO", f"跟单猿交易系统启动", f"跟随交易员：{self.uniqueName}")
 
 
     def transform_sums(self):
