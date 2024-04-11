@@ -14,7 +14,7 @@
 "posSide": "long",
 "px": "",
 "quoteName": "USDT",
-"side": "buy",
+"side": "buy1",
 "uTime": "1712827937377",
 "uly": "BNB-USDT",
 "uniqueName": "C343256953163322"

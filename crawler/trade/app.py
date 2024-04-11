@@ -50,12 +50,12 @@ def run_trade_task(task):
 
 def run():
     # 恢复交易爬虫
-    reactivate = reactivate_trade_tasks()
-    if reactivate:
-        for task in reactivate:
-            # 使用线程运行任务
-            thread = threading.Thread(target=run_trade_task, args=(task,))
-            thread.start()
+    # reactivate = reactivate_trade_tasks()
+    # if reactivate:
+    #     for task in reactivate:
+    #         # 使用线程运行任务
+    #         thread = threading.Thread(target=run_trade_task, args=(task,))
+    #         thread.start()
     while True:
         try:
             conn = redis.Redis(**settings.REDIS_PARAMS)
