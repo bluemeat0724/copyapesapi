@@ -38,14 +38,17 @@ def run_trade_task(task):
 
     elif status in [2, 3]:  # 假设status为2,3时表示终止任务
         with traders_lock:
-            if task_id in traders:
-                trader = traders.pop(task_id)
-                trader.status = status
-                trader.stop()
-                # 注意：由于在独立线程中执行，不再需要调用join()等待线程结束
-                print(f"跟单任务{task_id}已结束。")
-            else:
-                print(f"跟单任务{task_id}不存在。")
+            # if task_id in traders:
+            #     trader = traders.pop(task_id)
+            #     trader.status = status
+            #     trader.stop()
+            trader = oktrade.Trader(**task)
+            trader.status = status
+            trader.stop()
+            # 注意：由于在独立线程中执行，不再需要调用join()等待线程结束
+            print(f"跟单任务{task_id}已结束。")
+            # else:
+            #     print(f"跟单任务{task_id}不存在。")
 
 
 def run():

@@ -119,6 +119,7 @@ class Trader(threading.Thread):
         # 获取api信息
         self.acc, self.flag, self.ip_id = api(self.user_id, self.api_id)
         try:
+            self.write_task_log()
             # update task 里面的 ip_id
             self.update_task_with_ip()
             # 创建okx交易对象
@@ -129,7 +130,6 @@ class Trader(threading.Thread):
             obj.account.api.flag = self.flag
             obj.trade.api.flag = self.flag
             # thread_logger.info(f"跟单猿交易系统启动，跟随交易员：{self.uniqueName}")
-            self.write_task_log()
             # okx源码被注释部分，先初始化账户开平仓模式
             set_position_mode_result = obj.account.set_position_mode(
                 posMode='long_short_mode')
