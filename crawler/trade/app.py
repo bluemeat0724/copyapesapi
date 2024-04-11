@@ -18,19 +18,18 @@ def run_trade_task(task):
     # 根据status决定操作
     if status is None or status == 1:  # 假设status为None或1时表示启动或更新任务
         with traders_lock:  # 使用线程锁来确保线程安全
-            if task_id not in traders:
-                if trader_platform == 1:
-                    trader = oktrade.Trader(**task)
-                    trader.start()
-                    traders[task_id] = trader
-                    # update task 和 ip_id
-
-                    print(f"跟单任务{task_id}开始交易。")
-                else:
-                    print(f"跟单任务{task_id}的交易平台不支持。")
+            # if task_id not in traders:
+            if trader_platform == 1:
+                trader = oktrade.Trader(**task)
+                trader.start()
+                # traders[task_id] = trader
+                # update task 和 ip_id
+                print(f"跟单任务{task_id}开始交易。")
             else:
-                trader = traders[task_id]
-                trader.update_data(task)
+                print(f"跟单任务{task_id}的交易平台不支持。")
+            # else:
+            #     trader = traders[task_id]
+            #     trader.update_data(task)
                 # def update_trader_task():
                 #     trader = traders[task_id]
                 #     trader.update_data(task)

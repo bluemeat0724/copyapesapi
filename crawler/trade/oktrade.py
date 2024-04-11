@@ -129,7 +129,7 @@ class Trader(threading.Thread):
             obj.account.api.flag = self.flag
             obj.trade.api.flag = self.flag
             # thread_logger.info(f"跟单猿交易系统启动，跟随交易员：{self.uniqueName}")
-            self.log_to_database("INFO", f"跟单猿交易系统启动", f"跟随交易员：{self.uniqueName}")
+            self.write_task_log()
             # okx源码被注释部分，先初始化账户开平仓模式
             set_position_mode_result = obj.account.set_position_mode(
                 posMode='long_short_mode')
@@ -415,6 +415,17 @@ class Trader(threading.Thread):
         """
         with Connect() as db:
             db.exec(update_sql, **params)
+
+
+    def write_task_log(self):
+        """
+        更新任务日志状态
+        用于是否重新插入开始日志
+        """
+        res = db.fetch_one("select ip_id from api_taskinfo where id = %(task_id)s and status = 1", task_id=self.task_id)
+        if res.get("ip_id", None) is None:
+            self.log_to_database("INFO", f"跟单猿交易系统启动", f"跟随交易员：{self.uniqueName}")
+
 
     def transform_sums(self):
         # todo 可能有全仓和逐仓的区别
