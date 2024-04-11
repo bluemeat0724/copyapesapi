@@ -437,16 +437,22 @@ class Trader(threading.Thread):
             print(e)
 
     def run_close_market_concurrently(self, data):
-        threads = []
-        for item in data:
-            # 为每个item创建一个线程
-            thread = threading.Thread(target=self.close_pos, args=(item,))
-            threads.append(thread)
-            thread.start()
-
-        # 等待所有线程完成
-        for thread in threads:
-            thread.join()
+        # 使用ThreadPoolExecutor创建线程池
+        # max_workers参数可以根据需要调整，这里假定为10
+        with ThreadPoolExecutor(max_workers=10) as executor:
+            # 使用map方法并发执行close_pos方法
+            # data是包含多个item的列表，每个item都会被传递给close_pos方法
+            list(executor.map(self.close_pos, data))
+        # threads = []
+        # for item in data:
+        #     # 为每个item创建一个线程
+        #     thread = threading.Thread(target=self.close_pos, args=(item,))
+        #     threads.append(thread)
+        #     thread.start()
+        #
+        # # 等待所有线程完成
+        # for thread in threads:
+        #     thread.join()
 
 
     def update_task_with_ip(self):
