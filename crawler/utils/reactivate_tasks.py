@@ -30,7 +30,7 @@ def reactivate_trade_tasks():
     """
     with Connect() as db:
         result = db.fetch_all(
-            "SELECT id, api_id,user_id, trader_platform, uniqueName, follow_type, sums, ratio,lever_set, first_order_set, posSide_set FROM api_taskinfo WHERE status = 1")
+            "SELECT id, api_id,user_id, trader_platform, uniqueName, role_type, reduce_ratio, follow_type, sums, ratio,lever_set, first_order_set, posSide_set FROM api_taskinfo WHERE status = 1")
         if not result:
             print("没有需要恢复的任务")
             return

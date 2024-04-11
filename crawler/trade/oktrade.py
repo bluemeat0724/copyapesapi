@@ -56,7 +56,7 @@ class RetryNetworkOperations:
 
 
 class Trader(threading.Thread):
-    def __init__(self, task_id, api_id, user_id, trader_platform, uniqueName, follow_type, sums, ratio, lever_set,
+    def __init__(self, task_id, api_id, user_id, trader_platform, uniqueName, follow_type, role_type, reduce_ratio, sums, ratio, lever_set,
                  first_order_set, posSide_set,
                  instId=None, mgnMode=None, posSide=None, lever=1, openTime=None, openAvgPx=None, margin=None,
                  availSubPos=None, order_type=None,
@@ -67,6 +67,8 @@ class Trader(threading.Thread):
         self.trader_platform = trader_platform
         self.uniqueName = uniqueName
         self.follow_type = follow_type
+        self.role_type = role_type
+        self.reduce_ratio = reduce_ratio
         self.sums = sums
         self.ratio = ratio
         self.lever_set = lever_set
@@ -149,6 +151,8 @@ class Trader(threading.Thread):
         self.trader_platform = new_data.get('trader_platform')
         self.uniqueName = new_data.get('uniqueName')
         self.follow_type = new_data.get('follow_type')
+        self.role_type = new_data.get('role_type')
+        self.reduce_ratio = new_data.get('reduce_ratio')
         self.sums = new_data.get('sums')
         self.ratio = new_data.get('ratio')
         self.lever_set = new_data.get('lever_set')
@@ -280,6 +284,26 @@ class Trader(threading.Thread):
                 percentage = "{:.2f}%".format((1 - ratio) * 100)
                 self.log_to_database("success", '进行减仓操作', f'品种：{self.instId}，减仓占比：{percentage}')
 
+        # 跟单普通用户发生减仓操作
+        elif self.order_type == 'reduce':
+            # 解析订单方向
+            self.change_pos_side_set(self.new_availSubPos)
+            # 获取当前持仓，计算减仓量=当前*self.reduce_ratio
+            try:
+                quantityCT = int(
+                    self.obj.account.get_positions(instId=self.instId, posSide=self.posSide).get('data')[0].get(
+                        'availPos')) * self.reduce_ratio
+            except:
+                self.log_to_database("success", '进行减仓操作', f'品种：{self.instId}，暂时没有仓位，继续跟单中...')
+                return
+            print(f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
+            self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT=quantityCT,
+                                        tdMode=self.mgnMode)
+            # 更新持仓数据
+            OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=1)
+            percentage = "{:.2f}%".format(self.reduce_ratio * 100)
+            self.log_to_database("success", '进行减仓操作', f'品种：{self.instId}，减仓占比：{percentage}')
+
     def handle_trade_failure(self, result):
         try:
             s_code_value = result.get('set_order_result', {}).get('data', [{}])[0].get('sCode')
@@ -351,8 +375,12 @@ class Trader(threading.Thread):
             posSide = item.get('posSide')
             mgnMode = item.get('mgnMode')
             # 市价平仓
-            self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
-            self.log_to_database("WARNING", '手动结束跟单', f'{instId}已经按市价进行平仓。')
+            try:
+                self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
+                self.log_to_database("WARNING", '手动结束跟单', f'{instId}已经按市价进行平仓。')
+            except Exception as e:
+                self.log_to_database("WARNING", '手动结束跟单', f'{instId}平仓失败，请手动平仓。')
+                print(e)
 
         # 更新收益数据，以及对应可用额度数据。强制更新
         obj = OkxOrderInfo(self.user_id, self.task_id)

@@ -73,6 +73,12 @@ class TaskInfo(DeletedModel):
     uniqueName = models.CharField(verbose_name="交易员交易所ID", max_length=32)
 
     api = models.ForeignKey(verbose_name="api", to="ApiInfo", on_delete=models.CASCADE)
+    role_choice = (
+        (1, "带单员"),
+        (2, "普通用户"),
+    )
+    role_type = models.IntegerField(verbose_name="交易员类型", choices=role_choice, default=1)
+    reduce_ratio = models.FloatField(verbose_name="减仓比例", default=0.0)
 
     follow_choice = (
         (1, "固定金额"),

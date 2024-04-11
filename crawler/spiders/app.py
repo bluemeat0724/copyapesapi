@@ -6,6 +6,7 @@ from crawler import settingsdev as settings
 import json
 from loguru import logger
 from crawler.spiders import okx_follow_spider
+from crawler.spiders import okx_personal_spider
 from crawler.utils.db import Connect
 
 logger.remove()  # 移除所有默认的handler
@@ -13,13 +14,15 @@ logger.remove()  # 移除所有默认的handler
 
 
 class Spider(threading.Thread):
-    def __init__(self, task_id, trader_platform, uniqueName, follow_type, sums, ratio, lever_set, first_order_set, api_id,
+    def __init__(self, task_id, trader_platform, uniqueName, follow_type, role_type, reduce_ratio, sums, ratio, lever_set, first_order_set, api_id,
                  user_id, leverage, posSide_set):
         super(Spider, self).__init__()
         self.task_id = task_id
         self.trader_platform = trader_platform
         self.uniqueName = uniqueName
         self.follow_type = follow_type
+        self.role_type = role_type
+        self.reduce_ratio = reduce_ratio
         self.sums = sums
         self.ratio = ratio
         self.lever_set = lever_set
@@ -113,13 +116,21 @@ class Spider(threading.Thread):
 
     # 解耦爬虫脚本，获取交易数据
     def summary(self):
-        if self.trader_platform == 1:
-            summary_list_new = okx_follow_spider.spider(self.uniqueName, self.follow_type, self.task_id,
-                                                        self.trader_platform, self.sums, self.ratio, self.lever_set,
-                                                        self.first_order_set, self.api_id, self.user_id)
-            return summary_list_new
-        else:
-            return None
+        if self.role_type == 1:
+            if self.trader_platform == 1:
+                summary_list_new = okx_follow_spider.spider(self.uniqueName, self.follow_type, self.task_id,
+                                                            self.trader_platform, self.sums, self.ratio, self.lever_set,
+                                                            self.first_order_set, self.api_id, self.user_id)
+                return summary_list_new
+            else:
+                return None
+        elif self.role_type == 2:
+            if self.trader_platform == 1:
+                summary_list_new = okx_personal_spider.spider(self.uniqueName)
+                return summary_list_new
+            else:
+                return None
+
 
     def transform(self, item):
         item['posSide_set'] = self.posSide_set
@@ -130,6 +141,12 @@ class Spider(threading.Thread):
 
     # 数据分析脚本，连接交易脚本
     def analysis(self, old_list, new_list):
+        if self.role_type == 1:
+            self.analysis_1(old_list, new_list)
+        elif self.role_type == 2:
+            self.analysis_2(old_list, new_list)
+
+    def analysis_1(self, old_list, new_list):
         # 如果没有交易数据，则直接返回
         if not new_list and not old_list:
             return
@@ -144,6 +161,8 @@ class Spider(threading.Thread):
                 item['trader_platform'] = self.trader_platform
                 item['follow_type'] = self.follow_type
                 item['uniqueName'] = self.uniqueName
+                item['role_type'] = self.role_type
+                item['reduce_ratio'] = self.reduce_ratio
                 item['sums'] = self.sums
                 item['ratio'] = self.ratio
                 item['lever_set'] = self.lever_set
@@ -170,6 +189,8 @@ class Spider(threading.Thread):
                 item['trader_platform'] = self.trader_platform
                 item['follow_type'] = self.follow_type
                 item['uniqueName'] = self.uniqueName
+                item['role_type'] = self.role_type
+                item['reduce_ratio'] = self.reduce_ratio
                 item['sums'] = self.sums
                 item['ratio'] = self.ratio
                 item['lever_set'] = self.lever_set
@@ -203,6 +224,8 @@ class Spider(threading.Thread):
                           'trader_platform': self.trader_platform,
                           'follow_type': self.follow_type,
                           'uniqueName': self.uniqueName,
+                          'role_type': self.role_type,
+                          'reduce_ratio': self.reduce_ratio,
                           'sums': self.sums,
                           'ratio': self.ratio,
                           'lever_set': self.lever_set,
@@ -219,4 +242,42 @@ class Spider(threading.Thread):
                 # 写入Redis队列
                 conn = redis.Redis(**settings.REDIS_PARAMS)
                 conn.lpush(settings.TRADE_TASK_NAME, json.dumps(change))
+
+    def analysis_2(self, old_list, new_list):
+        # 如果没有当前持仓数据，则直接返回
+        if not new_list and not old_list:
+            return
+
+        # 如果cTime时间不一样，说明有新的交易动作
+        if not old_list or old_list[0]['openTime'] != new_list[0]['openTime']:
+            if new_list[0]['order_type'] == 'open':
+                self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓或加仓操作",
+                                     f"品种：{new_list[0]['instId']}，杠杆：{new_list[0]['lever']}，方向：{new_list[0]['posSide']}")
+            elif new_list[0]['order_type'] == 'close':
+                self.log_to_database("success", f"交易员{self.uniqueName}进行了平仓操作",
+                                     f"品种：{new_list[0]['instId']}，杠杆：{new_list[0]['lever']}，方向：{new_list[0]['posSide']}")
+            elif new_list[0]['order_type'] == 'reduce':
+                self.log_to_database("success", f"交易员{self.uniqueName}进行了减仓操作",
+                                     f"品种：{new_list[0]['instId']}，杠杆：{new_list[0]['lever']}，方向：{new_list[0]['posSide']}")
+
+            # 补全任务数据
+            new_list[0]['task_id'] = self.task_id
+            new_list[0]['trader_platform'] = self.trader_platform
+            new_list[0]['follow_type'] = self.follow_type
+            new_list[0]['uniqueName'] = self.uniqueName
+            new_list[0]['role_type'] = self.role_type
+            new_list[0]['reduce_ratio'] = self.reduce_ratio
+            new_list[0]['sums'] = self.sums
+            new_list[0]['ratio'] = self.ratio
+            new_list[0]['lever_set'] = self.lever_set
+            new_list[0]['first_order_set'] = self.first_order_set
+            new_list[0]['api_id'] = self.api_id
+            new_list[0]['user_id'] = self.user_id
+            if new_list[0]['order_type'] == 'close':
+                new_list[0]['mgnMode'] = old_list[0].get('mgnMode', 'cross')
+            # 重新设置杠杆
+            item = self.transform(new_list[0])
+            # 写入Redis队列
+            conn = redis.Redis(**settings.REDIS_PARAMS)
+            conn.lpush(settings.TRADE_TASK_NAME, json.dumps(item))
 
