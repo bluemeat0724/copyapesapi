@@ -2,7 +2,7 @@
 "alias": "",
 "avgPx": "1.1166",
 "cTime": "1712824421483",
-"instId": "BTC1-USDT-SWAP",
+"instId": "BTC-USDT-SWAP",
 "instType": "SWAP",
 "lever": "20",
 "liqPx": "668.3023604028945",

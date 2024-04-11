@@ -2,7 +2,7 @@
 "alias": "",
 "avgPx": "598",
 "baseName": "BNB",
-"cTime": "1712827937377",
+"cTime": "1712827937379",
 "fillTime": "1712827937376",
 "instFamily": "BNB-USDT",
 "instId": "BTC-USDT-SWAP",
@@ -14,7 +14,7 @@
 "posSide": "long",
 "px": "",
 "quoteName": "USDT",
-"side": "buy1",
+"side": "buy",
 "uTime": "1712827937377",
 "uly": "BNB-USDT",
 "uniqueName": "C343256953163322"

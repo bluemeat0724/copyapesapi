@@ -60,7 +60,7 @@ class Trader(threading.Thread):
                  first_order_set, posSide_set,
                  instId=None, mgnMode=None, posSide=None, lever=1, openTime=None, openAvgPx=None, margin=None,
                  availSubPos=None, order_type=None,
-                 old_margin=None, new_margin=None, old_availSubPos=None, new_availSubPos=None):
+                 old_margin=None, new_margin=None, old_availSubPos=None, new_availSubPos=None, status=None):
         super(Trader, self).__init__()
         self.task_id = task_id
         self.order_type = order_type
@@ -94,6 +94,7 @@ class Trader(threading.Thread):
         self.flag = None
         self.acc = None
         self.ip_id = None
+        self.status = None
 
 
     def log_to_database(self, level, title, description=""):
@@ -344,8 +345,16 @@ class Trader(threading.Thread):
 
     # 手动结束跟单，打印日志
     def stop(self):
-        # 结束全部正在进行中的交易
         try:
+            self.acc, self.flag, self.ip_id = api(self.user_id, self.api_id)
+            # 创建okx交易对象
+            obj = RetryNetworkOperations(app.OkxSWAP(**self.acc))
+            self.obj = obj
+
+            # 根据api选择实盘还是模拟盘
+            obj.account.api.flag = self.flag
+            obj.trade.api.flag = self.flag
+            # 结束全部正在进行中的交易
             data = self.obj.account.get_positions().get('data')
             # 从交易所获取改为从数据库获取
             # with Connect() as db:

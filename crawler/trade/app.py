@@ -42,6 +42,7 @@ def run_trade_task(task):
             #     trader = traders.pop(task_id)
             #     trader.status = status
             #     trader.stop()
+            print(task)
             trader = oktrade.Trader(**task)
             trader.status = status
             trader.stop()

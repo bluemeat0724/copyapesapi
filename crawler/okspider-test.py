@@ -381,9 +381,15 @@ if __name__ == '__main__':
                     spider_to_stop = spiders[task_id]
                     spider_to_stop.stop()
                     spider_to_stop.join()
+                    # 组装数据
+                    task_data['task_id'] = task_data.pop('id')
+                    task_data.pop("create_datetime")
+                    task_data.pop("deleted")
+                    task_data.pop("leverage")
+                    print(task_data)
                     # 往redis里的TRADE_TASK_NAME写入{'task_id':task_id,'status': 2}
                     conn = redis.Redis(**settings.REDIS_PARAMS)
-                    conn.lpush(settings.TRADE_TASK_NAME, json.dumps({'task_id': task_id, 'status': 2}))
+                    conn.lpush(settings.TRADE_TASK_NAME, json.dumps(task_data))
                     del spiders[task_id]
                     print(f"用户：{user_id}的跟单任务{task_id}已停止。")
                 else:
