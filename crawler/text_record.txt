@@ -1,0 +1,21 @@
+[{
+"alias": "",
+"avgPx": "598",
+"baseName": "BNB",
+"cTime": "1712827937377",
+"fillTime": "1712827937376",
+"instFamily": "BNB-USDT",
+"instId": "BTC-USDT-SWAP",
+"instType": "SWAP",
+"lever": "20.0",
+"nickName": "Empty-Rust-Raccoon",
+"ordId": "698586234356391937",
+"ordType": "market",
+"posSide": "long",
+"px": "",
+"quoteName": "USDT",
+"side": "buy",
+"uTime": "1712827937377",
+"uly": "BNB-USDT",
+"uniqueName": "C343256953163322"
+}]
