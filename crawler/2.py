@@ -59,3 +59,32 @@ from okx.api._client import ResponseStatusError
 #                 'description': desc,
 #                 'color': color
 #             })
+
+from datetime import datetime, timedelta, timezone
+
+# Converting another provided timestamp (in milliseconds) to datetime
+new_timestamp_3 = 1712938395148 / 1000  # converting milliseconds to seconds
+new_date_time_3 = datetime.fromtimestamp(new_timestamp_3, tz=timezone.utc)
+
+print(new_date_time_3.strftime("%Y-%m-%d %H:%M:%S %Z"))
+
+# from datetime import datetime
+# import pytz
+#
+# # 定义东八区时区
+# eastern_eight_zone = pytz.timezone('Asia/Shanghai')
+#
+# # 获取当前日期在东八区的时间
+# now_eastern = datetime.now(eastern_eight_zone)
+#
+# # 设置时间为今天的14:00:00，东八区时区
+# specific_time_eastern = now_eastern.replace(hour=16, minute=0, second=0, microsecond=0)
+#
+# # 将东八区时间转换为UTC时间
+# specific_time_utc = specific_time_eastern.astimezone(pytz.utc)
+#
+# # 获取UTC时间的时间戳，并转换为整数（秒）
+# specific_timestamp_utc = int(specific_time_utc.timestamp())
+#
+# print(specific_timestamp_utc)
+

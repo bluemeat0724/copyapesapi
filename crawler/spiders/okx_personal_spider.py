@@ -11,15 +11,13 @@ now = int(time.time()) * 1000
 _now = datetime.now(timezone.utc)
 
 # 获取昨天的日期，时间设为15:59:59
-yesterday_specific_time = (_now - timedelta(days=30)).replace(hour=16, minute=0, second=0, microsecond=0)
-yesterday_specific_time_timestamp = int(yesterday_specific_time.timestamp()) * 1000
+thirty_days_ago_specific_time = (_now - timedelta(days=30)).replace(hour=16, minute=0, second=0, microsecond=0)
+thirty_days_ago_specific_time_timestamp = int(thirty_days_ago_specific_time.timestamp()) * 1000
 
 # Get today's date at 16:00:00
-today_specific_time = _now.replace(hour=16, minute=0, second=0, microsecond=0)
+today_specific_time = (_now + timedelta(days=1)).replace(hour=16, minute=0, second=0, microsecond=0)
 today_specific_time_timestamp = int(today_specific_time.timestamp()) * 1000
 
-# uniqueName = '563E3A78CDBAFB4E'
-# uniqueName = 'C343256953163322'
 
 def spider(uniqueName):
     summary_list_new = []
@@ -31,9 +29,10 @@ def spider(uniqueName):
         if not position_list:
             return summary_list_new
 
-        record_url = f'https://www.okx.com/priapi/v5/ecotrade/public/trade-records?limit=1&startModify={yesterday_specific_time_timestamp}&endModify={today_specific_time_timestamp}&uniqueName={uniqueName}&t={now}'
+        record_url = f'https://www.okx.com/priapi/v5/ecotrade/public/trade-records?limit=1&startModify={thirty_days_ago_specific_time_timestamp}&endModify={today_specific_time_timestamp}&uniqueName={uniqueName}&t={now}'
+        # print(record_url)
         record_list = requests.get(record_url, headers=get_header(), timeout=30).json().get('data', list())
-        print(record_list)
+        # print(record_list)
         data_clear['instId'] = record_list[0].get('instId')
         data_clear['openTime'] = record_list[0].get('cTime')  # 用于判断是否是最新的交易记录
         data_clear['posSide'] = record_list[0].get('posSide')
@@ -46,10 +45,23 @@ def spider(uniqueName):
             if item.get('instId') == record_list[0].get('instId') and item.get('posSide') == record_list[0].get('posSide'):
                 data_clear['mgnMode'] = item.get('mgnMode')
                 exist = True
+                '''
+                开平仓模式下，side和posSide需要进行组合
+                开多：买入开多（side 填写 buy； posSide 填写 long ）
+                开空：卖出开空（side 填写 sell； posSide 填写 short ）
+                平多：卖出平多（side 填写 sell；posSide 填写 long ）
+                平空：买入平空（side 填写 buy； posSide 填写 short ）
+                '''
                 if record_list[0].get('side') == 'buy':
-                    data_clear['order_type'] = 'open'
+                    if data_clear['posSide'] == 'long':
+                        data_clear['order_type'] = 'open'
+                    else:
+                        data_clear['order_type'] = 'reduce'
                 else:
-                    data_clear['order_type'] = 'reduce'  # 减仓
+                    if data_clear['posSide'] == 'short':
+                        data_clear['order_type'] = 'open'
+                    else:
+                        data_clear['order_type'] = 'reduce'  # 减仓
 
         if not exist:
             data_clear['order_type'] = 'close'  # 平仓
@@ -60,4 +72,4 @@ def spider(uniqueName):
 
 
 if __name__ == '__main__':
-    print(spider('C343256953163322'))
+    print(spider('563E3A78CDBAFB4E'))

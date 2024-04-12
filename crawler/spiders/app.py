@@ -274,7 +274,11 @@ class Spider(threading.Thread):
             new_list[0]['api_id'] = self.api_id
             new_list[0]['user_id'] = self.user_id
             if new_list[0]['order_type'] == 'close':
-                new_list[0]['mgnMode'] = old_list[0].get('mgnMode', 'cross')
+                # TODO 只能拿上一条记录的mgnMode，如果有全仓和逐仓同时出现的交易就有拿错的风险，避免风险只能去数据库里拿
+                try:
+                    new_list[0]['mgnMode'] = old_list[0].get('mgnMode', 'cross')
+                except:
+                    pass
             # 重新设置杠杆
             item = self.transform(new_list[0])
             # 写入Redis队列
