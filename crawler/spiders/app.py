@@ -244,44 +244,81 @@ class Spider(threading.Thread):
                 conn.lpush(settings.TRADE_TASK_NAME, json.dumps(change))
 
     def analysis_2(self, old_list, new_list):
-        # 如果没有当前持仓数据，则直接返回
-        if not new_list and not old_list:
-            return
+        def log_trade_action(action):
+            """ 用于记录交易行为到数据库的辅助函数 """
+            self.log_to_database("success", f"交易员{self.uniqueName}进行了{action}操作",
+                                 f"品种：{new_list[0]['instId']}，杠杆：{new_list[0]['lever']}，方向：{new_list[0]['posSide']}")
 
-        # 如果cTime时间不一样，说明有新的交易动作
-        if not old_list or old_list[0]['openTime'] != new_list[0]['openTime']:
-            if new_list[0]['order_type'] == 'open':
-                self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓或加仓操作",
-                                     f"品种：{new_list[0]['instId']}，杠杆：{new_list[0]['lever']}，方向：{new_list[0]['posSide']}")
-            elif new_list[0]['order_type'] == 'close':
-                self.log_to_database("success", f"交易员{self.uniqueName}进行了平仓操作",
-                                     f"品种：{new_list[0]['instId']}，杠杆：{new_list[0]['lever']}，方向：{new_list[0]['posSide']}")
-            elif new_list[0]['order_type'] == 'reduce':
-                self.log_to_database("success", f"交易员{self.uniqueName}进行了减仓操作",
-                                     f"品种：{new_list[0]['instId']}，杠杆：{new_list[0]['lever']}，方向：{new_list[0]['posSide']}")
-
-            # 补全任务数据
-            new_list[0]['task_id'] = self.task_id
-            new_list[0]['trader_platform'] = self.trader_platform
-            new_list[0]['follow_type'] = self.follow_type
-            new_list[0]['uniqueName'] = self.uniqueName
-            new_list[0]['role_type'] = self.role_type
-            new_list[0]['reduce_ratio'] = self.reduce_ratio
-            new_list[0]['sums'] = self.sums
-            new_list[0]['ratio'] = self.ratio
-            new_list[0]['lever_set'] = self.lever_set
-            new_list[0]['first_order_set'] = self.first_order_set
-            new_list[0]['api_id'] = self.api_id
-            new_list[0]['user_id'] = self.user_id
-            if new_list[0]['order_type'] == 'close':
+        def complete_task_data(new, old):
+            '''补全任务数据并发送redis'''
+            new.update({
+                'task_id': self.task_id,
+                'trader_platform': self.trader_platform,
+                'follow_type': self.follow_type,
+                'uniqueName': self.uniqueName,
+                'role_type': self.role_type,
+                'reduce_ratio': self.reduce_ratio,
+                'sums': self.sums,
+                'ratio': self.ratio,
+                'lever_set': self.lever_set,
+                'first_order_set': self.first_order_set,
+                'api_id': self.api_id,
+                'user_id': self.user_id
+            })
+            if new['order_type'] == 'close' and old:
                 # TODO 只能拿上一条记录的mgnMode，如果有全仓和逐仓同时出现的交易就有拿错的风险，避免风险只能去数据库里拿
-                try:
-                    new_list[0]['mgnMode'] = old_list[0].get('mgnMode', 'cross')
-                except:
-                    pass
+                new['mgnMode'] = old.get('mgnMode', 'cross')
             # 重新设置杠杆
-            item = self.transform(new_list[0])
+            item = self.transform(new)
             # 写入Redis队列
             conn = redis.Redis(**settings.REDIS_PARAMS)
             conn.lpush(settings.TRADE_TASK_NAME, json.dumps(item))
+
+        if not new_list:
+            if not old_list:
+                return
+            new_list = okx_personal_spider.spider_close_iitem(self.uniqueName)
+            if not new_list:
+                self.log_to_database("WARNING", f"获取平仓数据失败",
+                                     "交易员已经完全平仓，目前处于空仓状态。请立即手动确认平仓，否则可能造成资金损失。")
+
+        if not old_list:
+            if new_list[0]['order_type'] == 'open':
+                log_trade_action("开仓或加仓")
+                complete_task_data(new_list[0],{})
+        else:
+            if old_list[0]['openTime'] != new_list[0]['openTime']:
+                action_map = {'open': "开仓或加仓", 'close': "平仓", 'reduce': "减仓"}
+                action = action_map.get(new_list[0]['order_type'], "交易")
+                log_trade_action(action)
+                complete_task_data(new_list[0], old_list[0])
+        #
+        # # 如果没有当前持仓数据，则直接返回
+        # if not new_list and not old_list:
+        #     return
+        #
+        # # 如果 new_list 为空，old_list 不为空，则为平仓
+        # if not new_list and old_list:
+        #     new_list = okx_personal_spider.spider_close_iitem(self.uniqueName)
+        #     log_trade_action("平仓")
+        #     complete_task_data(new_list[0])
+        #
+        # # 如果 old_list 为空，我们只需要考虑 new_list 的情况
+        # if not old_list and new_list:
+        #     if new_list[0]['order_type'] == 'open':
+        #         log_trade_action("开仓或加仓")
+        #         complete_task_data(new_list[0])
+        #
+        # # 如果都不为空，且时间戳不一致，说明有新的交易动作
+        # if old_list and new_list:
+        #     if old_list and old_list[0]['openTime'] != new_list[0]['openTime']:
+        #         action_map = {
+        #             'open': "开仓或加仓",
+        #             'close': "平仓",
+        #             'reduce': "减仓"
+        #         }
+        #         action = action_map.get(new_list[0]['order_type'], "交易")
+        #         log_trade_action(action)
+        #         complete_task_data(new_list[0])
+
 

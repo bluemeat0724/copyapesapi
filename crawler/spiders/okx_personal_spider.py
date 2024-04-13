@@ -25,7 +25,7 @@ def spider(uniqueName):
     try:
         position_url = f'https://www.okx.com/priapi/v5/ecotrade/public/positions-v2?limit=10&uniqueName={uniqueName}&t={now}'
         position_list = requests.get(position_url, headers=get_header(), timeout=30).json().get('data', list())[0].get('posData', list())
-        # print(position_list)
+        print(position_list)
         if not position_list:
             return summary_list_new
 
@@ -70,6 +70,31 @@ def spider(uniqueName):
     except Exception as e:
         print(e)
 
+def spider_close_iitem(uniqueName):
+    summary_list_new = []
+    data_clear = {}
+    attempts = 0
+    max_attempts = 10
+    while attempts < max_attempts:
+        try:
+            record_url = f'https://www.okx.com/priapi/v5/ecotrade/public/trade-records?limit=1&startModify={thirty_days_ago_specific_time_timestamp}&endModify={today_specific_time_timestamp}&uniqueName={uniqueName}&t={now}'
+            print(record_url)
+            record_list = requests.get(record_url, headers=get_header(), timeout=30).json().get('data', list())
+            # print(record_list)
+            data_clear['instId'] = record_list[0].get('instId')
+            data_clear['openTime'] = record_list[0].get('cTime')  # 用于判断是否是最新的交易记录
+            data_clear['posSide'] = record_list[0].get('posSide')
+            data_clear['lever'] = record_list[0].get('lever')
+            data_clear['openAvgPx'] = record_list[0].get('avgPx')  # 冗余字段
+            data_clear['order_type'] = 'close'
+            summary_list_new.append(data_clear)
+            return summary_list_new
+        except Exception as e:
+            print(e)
+        finally:
+            attempts += 1
+    return summary_list_new
 
 if __name__ == '__main__':
-    print(spider('563E3A78CDBAFB4E'))
+    print(spider('C343256953163322'))
+    # print(spider_close_iitem('563E3A78CDBAFB4E'))
