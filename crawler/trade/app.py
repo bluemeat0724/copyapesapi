@@ -21,7 +21,7 @@ def run_trade_task(task):
             if trader_platform == 1:
                 trader = oktrade.Trader(**task)
                 trader.start()
-                print(f"跟单任务{task_id}开始交易。")
+                # print(f"跟单任务{task_id}开始交易。")
             else:
                 print(f"跟单任务{task_id}的交易平台不支持。")
 

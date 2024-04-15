@@ -15,17 +15,16 @@ thirty_days_ago_specific_time = (_now - timedelta(days=30)).replace(hour=16, min
 thirty_days_ago_specific_time_timestamp = int(thirty_days_ago_specific_time.timestamp()) * 1000
 
 # Get today's date at 16:00:00
-today_specific_time = (_now + timedelta(days=1)).replace(hour=16, minute=0, second=0, microsecond=0)
+today_specific_time = (_now + timedelta(days=2)).replace(hour=16, minute=0, second=0, microsecond=0)
 today_specific_time_timestamp = int(today_specific_time.timestamp()) * 1000
 
 
 def spider(uniqueName):
     summary_list_new = []
-    data_clear = {}
     try:
         position_url = f'https://www.okx.com/priapi/v5/ecotrade/public/positions-v2?limit=10&uniqueName={uniqueName}&t={now}'
         position_list = requests.get(position_url, headers=get_header(), timeout=30).json().get('data', list())[0].get('posData', list())
-        print(position_list)
+        # print(position_list)
         if not position_list:
             return summary_list_new
 
@@ -33,68 +32,111 @@ def spider(uniqueName):
         # print(record_url)
         record_list = requests.get(record_url, headers=get_header(), timeout=30).json().get('data', list())
         # print(record_list)
-        data_clear['instId'] = record_list[0].get('instId')
-        data_clear['openTime'] = record_list[0].get('cTime')  # 用于判断是否是最新的交易记录
-        data_clear['posSide'] = record_list[0].get('posSide')
-        data_clear['lever'] = record_list[0].get('lever')
-        data_clear['openAvgPx'] = record_list[0].get('avgPx') # 冗余字段
-        # data_clear['side'] = record_list[0].get('side')
+        posSide = record_list[0].get('posSide')
+        side = record_list[0].get('side')
+        data_clear = {
+            'instId': record_list[0].get('instId'),
+            'openTime': record_list[0].get('cTime'),  # 用于判断是否是最新的交易记录
+            'posSide': posSide,
+            'lever': record_list[0].get('lever'),
+            'openAvgPx': record_list[0].get('avgPx'),  # 冗余字段
+        }
 
         exist = False
         for item in position_list:
-            if item.get('instId') == record_list[0].get('instId') and item.get('posSide') == record_list[0].get('posSide'):
+            if item.get('instId') == data_clear['instId'] and item.get('posSide') == data_clear['posSide']:
                 data_clear['mgnMode'] = item.get('mgnMode')
+                pos = int(item.get('pos'))
                 exist = True
                 '''
+                持仓方向
+                买卖模式下：可不填写此参数，默认值net，如果填写，仅可以填写net
+                开平仓模式下： 必须填写此参数，且仅可以填写 long：平多 ，short：平空
+                
+                买卖模式下：交割/永续/期权：pos为正代表开多，pos为负代表开空
+                
                 开平仓模式下，side和posSide需要进行组合
                 开多：买入开多（side 填写 buy； posSide 填写 long ）
                 开空：卖出开空（side 填写 sell； posSide 填写 short ）
                 平多：卖出平多（side 填写 sell；posSide 填写 long ）
                 平空：买入平空（side 填写 buy； posSide 填写 short ）
                 '''
-                if record_list[0].get('side') == 'buy':
-                    if data_clear['posSide'] == 'long':
-                        data_clear['order_type'] = 'open'
+                if data_clear['posSide'] != 'net':
+                    if side == 'buy':
+                        if data_clear['posSide'] == 'long':
+                            data_clear['order_type'] = 'open'
+                        else:
+                            data_clear['order_type'] = 'reduce'
                     else:
+                        if data_clear['posSide'] == 'short':
+                            data_clear['order_type'] = 'open'
+                        else:
+                            data_clear['order_type'] = 'reduce'  # 减仓
+                elif data_clear['posSide'] == 'net':
+                    if side == 'buy' and int(pos) > 0: # 买入开多
+                        data_clear['order_type'] = 'open'
+                        data_clear['posSide'] = 'long'
+                    elif side == 'sell' and pos < 0: # 卖出开空
+                        data_clear['order_type'] = 'open'
+                        data_clear['posSide'] = 'short'
+                    elif side == 'buy' and pos < 0: # 买入平空
                         data_clear['order_type'] = 'reduce'
-                else:
-                    if data_clear['posSide'] == 'short':
-                        data_clear['order_type'] = 'open'
-                    else:
-                        data_clear['order_type'] = 'reduce'  # 减仓
+                        data_clear['posSide']= 'short'
+                    elif side == 'sell' and pos > 0: # 卖出平多
+                        data_clear['order_type'] = 'reduce'
+                        data_clear['posSide'] = 'long'
 
         if not exist:
             data_clear['order_type'] = 'close'  # 平仓
+            if posSide == 'net':
+                if side == 'buy':
+                    data_clear['posSide'] = 'short'
+                elif side == 'sell':
+                    data_clear['posSide'] = 'long'
         summary_list_new.append(data_clear)
         return summary_list_new
     except Exception as e:
-        print(e)
+        # print('personal_spider',datetime.now())
+        # print(e)
+        pass
 
-def spider_close_iitem(uniqueName):
+def spider_close_item(uniqueName):
     summary_list_new = []
-    data_clear = {}
     attempts = 0
     max_attempts = 10
     while attempts < max_attempts:
         try:
             record_url = f'https://www.okx.com/priapi/v5/ecotrade/public/trade-records?limit=1&startModify={thirty_days_ago_specific_time_timestamp}&endModify={today_specific_time_timestamp}&uniqueName={uniqueName}&t={now}'
-            print(record_url)
+            # print(record_url)
             record_list = requests.get(record_url, headers=get_header(), timeout=30).json().get('data', list())
             # print(record_list)
-            data_clear['instId'] = record_list[0].get('instId')
-            data_clear['openTime'] = record_list[0].get('cTime')  # 用于判断是否是最新的交易记录
-            data_clear['posSide'] = record_list[0].get('posSide')
-            data_clear['lever'] = record_list[0].get('lever')
-            data_clear['openAvgPx'] = record_list[0].get('avgPx')  # 冗余字段
-            data_clear['order_type'] = 'close'
+
+            posSide = record_list[0].get('posSide')
+            side = record_list[0].get('side')
+            if posSide == 'net':
+                if side == 'buy':
+                    posSide = 'short'
+                elif side == 'sell':
+                    posSide = 'long'
+
+            data_clear = {
+                'instId': record_list[0].get('instId'),
+                'openTime': record_list[0].get('cTime'),
+                'posSide': posSide,
+                'lever': record_list[0].get('lever'),
+                'openAvgPx': record_list[0].get('avgPx'),
+                'order_type': 'close'
+            }
             summary_list_new.append(data_clear)
             return summary_list_new
         except Exception as e:
-            print(e)
+            time.sleep(1)
+            # print('spider_close', datetime.now())
+            # print(e)
         finally:
             attempts += 1
     return summary_list_new
 
 if __name__ == '__main__':
-    print(spider('C343256953163322'))
-    # print(spider_close_iitem('563E3A78CDBAFB4E'))
+    print(spider('B6E95F6A0334E66B'))
+    # print(spider_close_item('B6E95F6A0334E66B'))

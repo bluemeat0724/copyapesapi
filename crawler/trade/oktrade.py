@@ -132,19 +132,20 @@ class Trader(threading.Thread):
             obj.account.api.flag = self.flag
             obj.trade.api.flag = self.flag
             # thread_logger.info(f"跟单猿交易系统启动，跟随交易员：{self.uniqueName}")
+            obj.account.set_position_mode(posMode='long_short_mode')
             # okx源码被注释部分，先初始化账户开平仓模式
-            set_position_mode_result = obj.account.set_position_mode(
-                posMode='long_short_mode')
-            if set_position_mode_result['code'] == '0':
-                print('[SUCCESS] 设置持仓方式为双向持仓成功，posMode="long_short_mode"')
-            else:
-                print('[FAILURE] 设置持仓方式为双向持仓失败，请手动设置：posMode="long_short_mode"')
-            self.perform_trade()
+            # set_position_mode_result = obj.account.set_position_mode(
+            #     posMode='long_short_mode')
+            # if set_position_mode_result['code'] == '0':
+            #     print('[SUCCESS] 设置持仓方式为双向持仓成功，posMode="long_short_mode"')
+            # else:
+            #     print('[FAILURE] 设置持仓方式为双向持仓失败，请手动设置：posMode="long_short_mode"')
         except Exception as e:
             print(f"交易失败，原因: {e}")
             # thread_logger.WARNING("停止交易，获取api信息失败，请重新提交api，并确认开启交易权限")
             self.log_to_database("WARNING", "停止交易，获取api信息失败，请重新提交api，并确认开启交易权限")
             return
+        self.perform_trade()
 
 
     def change_pos_side_set(self, availSubPos):
@@ -345,6 +346,11 @@ class Trader(threading.Thread):
             # update_remaining_quota(self.user_id, int(self.flag), remaining_quota)
             #
             # print(f'更新用户{self.user_id}可用盈利额度数据成功！')
+            # 更新收益数据，以及对应可用额度数据。强制更新
+            obj = OkxOrderInfo(self.user_id, self.task_id)
+            while obj.get_order():
+                obj.get_position_history(order_type=2)
+            print(f'更新用户{self.user_id}任务{self.task_id}持仓数据成功！')
             # 打印日志
             if self.status == 2:
                 self.log_to_database("WARNING", '手动结束跟单', f'任务：{self.task_id}')

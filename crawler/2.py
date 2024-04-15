@@ -60,13 +60,13 @@ from okx.api._client import ResponseStatusError
 #                 'color': color
 #             })
 
-from datetime import datetime, timedelta, timezone
+# from datetime import datetime, timedelta, timezone
 
-# Converting another provided timestamp (in milliseconds) to datetime
-new_timestamp_3 = 1713110400000 / 1000  # converting milliseconds to seconds
-new_date_time_3 = datetime.fromtimestamp(new_timestamp_3, tz=timezone.utc)
+# # Converting another provided timestamp (in milliseconds) to datetime
+# new_timestamp_3 = 1713096015257 / 1000  # converting milliseconds to seconds
+# new_date_time_3 = datetime.fromtimestamp(new_timestamp_3, tz=timezone.utc)
 
-print(new_date_time_3.strftime("%Y-%m-%d %H:%M:%S %Z"))
+# print(new_date_time_3.strftime("%Y-%m-%d %H:%M:%S %Z"))
 
 # from datetime import datetime
 # import pytz
@@ -88,3 +88,6 @@ print(new_date_time_3.strftime("%Y-%m-%d %H:%M:%S %Z"))
 #
 # print(specific_timestamp_utc)
 
+a = [{'instId': 'DOGE-USDT-SWAP', 'openTime': '1713115983581', 'posSide': 'long', 'lever': '10.0', 'openAvgPx': '0.15118', 'order_type': 'close'}]
+if not a:
+    print('1')

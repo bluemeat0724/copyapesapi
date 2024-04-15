@@ -169,7 +169,7 @@ class OkxOrderInfo(object):
                 obj = app.OkxSWAP(**self.acc)
                 obj.account.api.flag = self.flag
                 # 查看前10条交易记录
-                history_data = obj.account.get_positions_history(limit='10').get('data')
+                history_data = obj.account.get_positions_history(limit='40').get('data')
                 if not history_data:
                     continue
                 break

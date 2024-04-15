@@ -1,15 +1,18 @@
 import requests
 import time
+from datetime import datetime
 from crawler.utils.get_proxies import get_proxies
 from crawler.utils.get_header import get_header
 
-
 now = int(time.time()) * 1000
-def spider(uniqueName, follow_type, task_id, trader_platform, sums, ratio,lever_set, first_order_set, api_id, user_id):
+
+
+def spider(uniqueName, follow_type, task_id, trader_platform, sums, ratio, lever_set, first_order_set, api_id, user_id):
     summary_list_new = []
     url = f'https://www.okx.com/priapi/v5/ecotrade/public/position-summary?t={now}&uniqueName={uniqueName}&instType=SWAP'
     try:
-        data_list = requests.get(url, headers=get_header(), proxies=get_proxies()[0], timeout=30).json().get('data', list())
+        #  proxies=get_proxies()[0],
+        data_list = requests.get(url, headers=get_header(), timeout=30).json().get('data', list())
         if not data_list:
             return summary_list_new
         # 数据清洗
@@ -38,9 +41,11 @@ def spider(uniqueName, follow_type, task_id, trader_platform, sums, ratio,lever_
             data_clear['user_id'] = user_id
             summary_list_new.append(data_clear)
         return summary_list_new
-    except:
+    except Exception as e:
+        # print('follow_spider', datetime.now())
+        # print(e)
         pass
 
 
 if __name__ == '__main__':
-    print(spider('67A85F8BC1B67E17', 1,1,1,1,1,1,1,1))
+    print(spider('67A85F8BC1B67E17', 1, 1, 1, 1, 1, 1, 1, 1))

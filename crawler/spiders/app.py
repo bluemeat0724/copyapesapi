@@ -59,11 +59,11 @@ class Spider(threading.Thread):
         while True:
             try:
                 old_list = self.summary()
-                if old_list == None:
+                if old_list is None:
                     continue
                 break
             except:
-                self.log_to_database("error", "跟单猿跟单系统启动失败", "请检查API是否添加正确，代理IP是否还在有效期！")
+                self.log_to_database("error", "跟单猿跟单系统启动失败", "请检查代理IP是否还在有效期！")
 
         if old_list:
             self.log_to_database("INFO", f"交易员{self.uniqueName}有正在进行中的交易", "等待新的交易发生后开始跟随！")
@@ -71,39 +71,15 @@ class Spider(threading.Thread):
         else:
             self.log_to_database("INFO", f"交易员{self.uniqueName}尚未开始交易", "等待新的交易发生后开始跟随！")
 
-        # 断线次数
-        count = 0
-        max_count = 1
-        # 是否打印日志的标记
-        log_print = True
-        # 网络超时判断
-        timeout = False
 
         while not self.stop_flag.is_set():
-            try:
-                new_list = self.summary()
-                if new_list == None:
-                    continue
-                # 网络恢复
-                if timeout:
-                    timeout = False
-                    print(f"任务{self.task_id}网络恢复")
-                    count = 0  # 重置计数器
-                    log_print = True  # 重置日志打印标记
-            except:
-                timeout = True
-                count += 1
-                if count <= max_count and log_print:
-                    print(f"任务{self.task_id}网络中断，正在尝试重新连接网络...")
-                elif count > max_count and log_print:
-                    log_print = False  # 超过{max_count}次后停止打印日志
-
-                time.sleep(10)
+            new_list = self.summary()
+            if new_list is None:
                 continue
-
-            self.analysis(old_list, new_list)
-            old_list = new_list
-            time.sleep(1)
+            res = self.analysis(old_list, new_list)
+            if res is True:
+                old_list = new_list
+            time.sleep(1.5)
 
     def stop(self):
         # 设置停止标志，用于停止爬虫线程
@@ -143,13 +119,16 @@ class Spider(threading.Thread):
     def analysis(self, old_list, new_list):
         if self.role_type == 1:
             self.analysis_1(old_list, new_list)
+            return True
         elif self.role_type == 2:
-            self.analysis_2(old_list, new_list)
+            res = self.analysis_2(old_list, new_list)
+            if res is True:
+                return True
 
     def analysis_1(self, old_list, new_list):
         # 如果没有交易数据，则直接返回
         if not new_list and not old_list:
-            return
+            return None
         # 查找新增的交易数据
         name_set = set(i['instId'] for i in old_list)
         added_items = list(filter(lambda x: x['instId'] not in name_set, new_list))
@@ -276,11 +255,14 @@ class Spider(threading.Thread):
 
         if not new_list:
             if not old_list:
-                return
-            new_list = okx_personal_spider.spider_close_iitem(self.uniqueName)
+                return None
+            new_list = okx_personal_spider.spider_close_item(self.uniqueName)
+            print("平仓new_list",new_list)
+            print("平仓old_list", old_list)
             if not new_list:
-                self.log_to_database("WARNING", f"获取平仓数据失败",
-                                     "交易员已经完全平仓，目前处于空仓状态。请立即手动确认平仓，否则可能造成资金损失。")
+                print('return')
+                self.log_to_database("WARNING", "网络错误", f"任务ID：{self.task_id}网络发生错误，交易员可能已经完全平仓。")
+                return None
 
         if not old_list:
             if new_list[0]['order_type'] == 'open':
@@ -292,6 +274,7 @@ class Spider(threading.Thread):
                 action = action_map.get(new_list[0]['order_type'], "交易")
                 log_trade_action(action)
                 complete_task_data(new_list[0], old_list[0])
+        return True
         #
         # # 如果没有当前持仓数据，则直接返回
         # if not new_list and not old_list:
