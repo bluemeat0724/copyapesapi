@@ -121,6 +121,13 @@ class Spider(threading.Thread):
             self.analysis_1(old_list, new_list)
             return True
         elif self.role_type == 2:
+            # 将记录列表写入文本文件
+            with open(f'test_old_new_list_{self.uniqueName}.txt', 'w') as file:
+                # 使用json.dumps将列表转换为字符串格式，便于阅读
+                file.write("old:\n")
+                file.write(json.dumps(old_list, indent=4))
+                file.write("new:\n")
+                file.write(json.dumps(new_list, indent=4))
             res = self.analysis_2(old_list, new_list)
             if res is True:
                 return True
