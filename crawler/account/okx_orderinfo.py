@@ -171,7 +171,7 @@ class OkxOrderInfo(object):
                 # 查看前10条交易记录
                 history_data = obj.account.get_positions_history(limit='40').get('data')
                 if not history_data:
-                    continue
+                    return
                 break
             except:
                 time.sleep(10)

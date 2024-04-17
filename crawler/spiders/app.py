@@ -54,7 +54,7 @@ class Spider(threading.Thread):
             db.exec(insert_sql, **params)
 
     def run(self):
-        self.log_to_database("INFO", f"跟单猿跟单系统启动，跟随交易员：{self.uniqueName}")
+        self.log_to_database("INFO", "跟单猿跟单系统启动", f"跟随交易员：{self.uniqueName}")
         # 第一次获取当前交易数据
         while True:
             try:
@@ -79,7 +79,7 @@ class Spider(threading.Thread):
             res = self.analysis(old_list, new_list)
             if res is True:
                 old_list = new_list
-            time.sleep(1.5)
+            time.sleep(1)
 
     def stop(self):
         # 设置停止标志，用于停止爬虫线程
@@ -121,13 +121,14 @@ class Spider(threading.Thread):
             self.analysis_1(old_list, new_list)
             return True
         elif self.role_type == 2:
-            # 将记录列表写入文本文件
-            with open(f'test_old_new_list_{self.uniqueName}.txt', 'w') as file:
-                # 使用json.dumps将列表转换为字符串格式，便于阅读
-                file.write("old:\n")
-                file.write(json.dumps(old_list, indent=4))
-                file.write("new:\n")
-                file.write(json.dumps(new_list, indent=4))
+            # # 将记录列表写入文本文件
+            # with open(f'test_old_new_list_{self.uniqueName}.txt', 'a') as file:
+            #     # 使用json.dumps将列表转换为字符串格式，便于阅读
+            #     file.write(f'{datetime.datetime.now()}\n')
+            #     file.write("old:\n")
+            #     file.write(json.dumps(old_list, indent=4))
+            #     file.write("new:\n")
+            #     file.write(json.dumps(new_list, indent=4))
             res = self.analysis_2(old_list, new_list)
             if res is True:
                 return True
@@ -230,13 +231,19 @@ class Spider(threading.Thread):
                 conn.lpush(settings.TRADE_TASK_NAME, json.dumps(change))
 
     def analysis_2(self, old_list, new_list):
-        def log_trade_action(action):
+        def log_trade_action(action, item):
             """ 用于记录交易行为到数据库的辅助函数 """
+            openTime = transform_time(item['openTime'])
             self.log_to_database("success", f"交易员{self.uniqueName}进行了{action}操作",
-                                 f"品种：{new_list[0]['instId']}，杠杆：{new_list[0]['lever']}，方向：{new_list[0]['posSide']}")
+                                 f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}，订单创建时间：{openTime}")
 
         def complete_task_data(new, old):
-            '''补全任务数据并发送redis'''
+            """补全任务数据并发送redis"""
+            # new_list为空，说明交易员已完全平仓
+            if not new:
+                new = {
+                    'order_type': 'close_all'
+                }
             new.update({
                 'task_id': self.task_id,
                 'trader_platform': self.trader_platform,
@@ -260,55 +267,46 @@ class Spider(threading.Thread):
             conn = redis.Redis(**settings.REDIS_PARAMS)
             conn.lpush(settings.TRADE_TASK_NAME, json.dumps(item))
 
+        def transform_time(openTime):
+            timestamp_seconds = int(openTime) / 1000
+            dt_utc = datetime.datetime.utcfromtimestamp(timestamp_seconds)
+            timezone_offset = datetime.timedelta(hours=8)
+            dt_east_asian = dt_utc + timezone_offset
+            formatted_datetime = dt_east_asian.strftime('%Y-%m-%d %H:%M:%S')
+            return formatted_datetime
+
         if not new_list:
             if not old_list:
                 return None
-            new_list = okx_personal_spider.spider_close_item(self.uniqueName)
-            print("平仓new_list",new_list)
-            print("平仓old_list", old_list)
-            if not new_list:
-                print('return')
-                self.log_to_database("WARNING", "网络错误", f"任务ID：{self.task_id}网络发生错误，交易员可能已经完全平仓。")
-                return None
+            # new_list = okx_personal_spider.spider_close_item(self.uniqueName)
+            # 如果old_list不为空，new_list为空，说明交易员已完全平仓，给交易脚本推送全部平仓命令
+            complete_task_data({}, {})
+            self.log_to_database("success", f"交易员{self.uniqueName}进行了平仓操作",
+                                 "交易员当前没有任何持仓！")
+            return True
+            # if not new_list:
+            #     print('return')
+            #     self.log_to_database("WARNING", "网络错误", f"任务ID：{self.task_id}网络发生错误，交易员可能已经完全平仓。")
+            #     return None
 
         if not old_list:
             if new_list[0]['order_type'] == 'open':
-                log_trade_action("开仓或加仓")
+                openTime = transform_time(new_list[0]['openTime'])
+                self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓或加仓操作",
+                                     f"品种：{new_list[0]['instId']}，杠杆：{new_list[0]['lever']}，方向：{new_list[0]['posSide']}，订单创建时间：{openTime}")
                 complete_task_data(new_list[0],{})
         else:
-            if old_list[0]['openTime'] != new_list[0]['openTime']:
-                action_map = {'open': "开仓或加仓", 'close': "平仓", 'reduce': "减仓"}
-                action = action_map.get(new_list[0]['order_type'], "交易")
-                log_trade_action(action)
-                complete_task_data(new_list[0], old_list[0])
+            # 查找新增的交易数据
+            time_set = set(i['openTime'] for i in old_list)
+            added_items = list(filter(lambda x: x['openTime'] not in time_set, new_list))
+            if added_items:
+                for item in added_items:
+                    action_map = {'open': "开仓或加仓", 'close': "平仓", 'reduce': "减仓"}
+                    action = action_map.get(item['order_type'], "交易")
+                    # if float(item['openTime']) < float(new_list[0]['openTime']):
+                    #     openTime = transform_time(item['openTime'])
+                    #     self.log_to_database("WARNING", "交易所插入数据", f"当前获取的交易记录非实时最近记录，可能交易所数据有延迟，请检查确认，必要时可在交易所手动处理。品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}，操作{item['order_type']}，交易员交易所交易时间：{openTime}")
+                    log_trade_action(action, item)
+                    complete_task_data(item, old_list[0])
         return True
-        #
-        # # 如果没有当前持仓数据，则直接返回
-        # if not new_list and not old_list:
-        #     return
-        #
-        # # 如果 new_list 为空，old_list 不为空，则为平仓
-        # if not new_list and old_list:
-        #     new_list = okx_personal_spider.spider_close_iitem(self.uniqueName)
-        #     log_trade_action("平仓")
-        #     complete_task_data(new_list[0])
-        #
-        # # 如果 old_list 为空，我们只需要考虑 new_list 的情况
-        # if not old_list and new_list:
-        #     if new_list[0]['order_type'] == 'open':
-        #         log_trade_action("开仓或加仓")
-        #         complete_task_data(new_list[0])
-        #
-        # # 如果都不为空，且时间戳不一致，说明有新的交易动作
-        # if old_list and new_list:
-        #     if old_list and old_list[0]['openTime'] != new_list[0]['openTime']:
-        #         action_map = {
-        #             'open': "开仓或加仓",
-        #             'close': "平仓",
-        #             'reduce': "减仓"
-        #         }
-        #         action = action_map.get(new_list[0]['order_type'], "交易")
-        #         log_trade_action(action)
-        #         complete_task_data(new_list[0])
-
 

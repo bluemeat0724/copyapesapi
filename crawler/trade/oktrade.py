@@ -277,6 +277,23 @@ class Trader(threading.Thread):
             OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=1)
             percentage = "{:.2f}%".format(self.reduce_ratio * 100)
             self.log_to_database("success", '进行减仓操作', f'品种：{self.instId}，减仓占比：{percentage}')
+        elif self.order_type == 'close_all':
+            # 结束全部正在进行中的交易
+            data = self.obj.account.get_positions().get('data')
+            market_data = []
+            for item in data:
+                market_data.append(
+                    dict(
+                        instId=item.get('instId'),
+                        posSide=item.get('posSide'),
+                        mgnMode=item.get('mgnMode'),
+                        order_type='close_all'
+                    )
+                )
+            if market_data:
+                self.run_close_market_concurrently(market_data)
+            OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=2)
+
 
     def handle_trade_failure(self, result):
         try:
@@ -346,11 +363,6 @@ class Trader(threading.Thread):
             # update_remaining_quota(self.user_id, int(self.flag), remaining_quota)
             #
             # print(f'更新用户{self.user_id}可用盈利额度数据成功！')
-            # 更新收益数据，以及对应可用额度数据。强制更新
-            obj = OkxOrderInfo(self.user_id, self.task_id)
-            while obj.get_order():
-                obj.get_position_history(order_type=2)
-            print(f'更新用户{self.user_id}任务{self.task_id}持仓数据成功！')
             # 打印日志
             if self.status == 2:
                 self.log_to_database("WARNING", '手动结束跟单', f'任务：{self.task_id}')
@@ -406,13 +418,21 @@ class Trader(threading.Thread):
         instId = item.get('instId')
         posSide = item.get('posSide')
         mgnMode = item.get('mgnMode')
-        try:
-            # 假设self.obj是已经实例化的，可以执行trade.close_market的对象
-            self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
-            self.log_to_database("WARNING", '手动结束跟单', f'{instId}已经按市价进行平仓。')
-        except Exception as e:
-            self.log_to_database("WARNING", '手动结束跟单', f'{instId}平仓失败，请手动平仓。')
-            print(e)
+        if item.get('order_type') == 'close_all':
+            try:
+                self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
+                self.log_to_database("success", f"进行平仓操作", f"品种:{instId}，方向：{posSide}")
+            except Exception as e:
+                self.log_to_database("WARNING", '进行平仓操作', f'{instId}平仓失败，请手动平仓。')
+                print(e)
+        else:
+            try:
+                # 假设self.obj是已经实例化的，可以执行trade.close_market的对象
+                self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
+                self.log_to_database("WARNING", '手动结束跟单', f'{instId}已经按市价进行平仓。')
+            except Exception as e:
+                self.log_to_database("WARNING", '手动结束跟单', f'{instId}平仓失败，请手动平仓。')
+                print(e)
 
     def run_close_market_concurrently(self, data):
         # 使用ThreadPoolExecutor创建线程池

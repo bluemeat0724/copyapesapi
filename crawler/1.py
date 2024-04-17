@@ -3,14 +3,14 @@ from crawler.myokx import app
 from okx.api.public import Public
 
 # 模拟子5
-# acc = {'key': '5e773b21-f919-41f1-bdca-62834fbb2d03',
-#        'secret': 'EC9399DC09F9C894F4E4E44EA66FA7C2',
-#        'passphrase': '112233Ww..',
-#        # 'proxies': {
-#        #              'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322',
-#        #              'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322'
-#        #             }
-#        }
+acc = {'key': '5e773b21-f919-41f1-bdca-62834fbb2d03',
+       'secret': 'EC9399DC09F9C894F4E4E44EA66FA7C2',
+       'passphrase': '112233Ww..',
+       # 'proxies': {
+       #              'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322',
+       #              'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322'
+       #             }
+       }
 # 模拟子2
 # acc = {'key': '2842457e-1d17-4a58-a0d6-25d71044e75a',
 #        'secret': 'A3A985254556CAAB007ABB15F7FECC9B',
@@ -108,11 +108,11 @@ obj.trade.api.flag = '1'
 #                                       tdMode='cross', lever=100)
 # obj.trade.close_market(instId='ETH-USDT-SWAP', posSide='long', quantityCT=220, tdMode='cross')
 # 当前持仓
-a = obj.account.get_positions()
-print(a)
-# 历史持仓
-# a = obj.account.get_positions_history(limit=2)
+# a = obj.account.get_positions()
 # print(a)
+# 历史持仓
+a = obj.account.get_positions_history(limit=2)
+print(a)
 # 账户信息
 # a = obj.account.get_balance(ccy='BTC,ETH,USDT').get('data')[0].get('details') # 限速：10次/2s
 # result = {}
