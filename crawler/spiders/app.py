@@ -12,9 +12,9 @@ from crawler.utils.db import Connect
 logger.remove()  # 移除所有默认的handler
 
 
-
 class Spider(threading.Thread):
-    def __init__(self, task_id, trader_platform, uniqueName, follow_type, role_type, reduce_ratio, sums, ratio, lever_set, first_order_set, api_id,
+    def __init__(self, task_id, trader_platform, uniqueName, follow_type, role_type, reduce_ratio, sums, ratio,
+                 lever_set, first_order_set, api_id,
                  user_id, leverage, posSide_set):
         super(Spider, self).__init__()
         self.task_id = task_id
@@ -71,7 +71,6 @@ class Spider(threading.Thread):
         else:
             self.log_to_database("INFO", f"交易员{self.uniqueName}尚未开始交易", "等待新的交易发生后开始跟随！")
 
-
         while not self.stop_flag.is_set():
             new_list = self.summary()
             if new_list is None:
@@ -89,7 +88,6 @@ class Spider(threading.Thread):
         elif self.status == 3:
             self.log_to_database("WARNING", "IP即将到期提前结束跟单", f"任务ID：{self.task_id}")
 
-
     # 解耦爬虫脚本，获取交易数据
     def summary(self):
         if self.role_type == 1:
@@ -106,7 +104,6 @@ class Spider(threading.Thread):
                 return summary_list_new
             else:
                 return None
-
 
     def transform(self, item):
         item['posSide_set'] = self.posSide_set
@@ -165,7 +162,6 @@ class Spider(threading.Thread):
                 conn = redis.Redis(**settings.REDIS_PARAMS)
                 conn.lpush(settings.TRADE_TASK_NAME, json.dumps(item))
 
-
         # 查找减少的交易数据
         removed_items = [i for i in old_list if i['instId'] not in set(map(lambda x: x['instId'], new_list))]
         # logger.debug('removed_items:',removed_items)
@@ -192,7 +188,6 @@ class Spider(threading.Thread):
                 # 写入Redis队列
                 conn = redis.Redis(**settings.REDIS_PARAMS)
                 conn.lpush(settings.TRADE_TASK_NAME, json.dumps(item))
-
 
         # 查找值变化的数据
         changed_items = []
@@ -235,7 +230,7 @@ class Spider(threading.Thread):
             """ 用于记录交易行为到数据库的辅助函数 """
             openTime = transform_time(item['openTime'])
             self.log_to_database("success", f"交易员{self.uniqueName}进行了{action}操作",
-                                 f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}，订单创建时间：{openTime}")
+                                 f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}，交易创建时间：{openTime}")
 
         def complete_task_data(new, old):
             """补全任务数据并发送redis"""
@@ -293,8 +288,8 @@ class Spider(threading.Thread):
             if new_list[0]['order_type'] == 'open':
                 openTime = transform_time(new_list[0]['openTime'])
                 self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓或加仓操作",
-                                     f"品种：{new_list[0]['instId']}，杠杆：{new_list[0]['lever']}，方向：{new_list[0]['posSide']}，订单创建时间：{openTime}")
-                complete_task_data(new_list[0],{})
+                                     f"品种：{new_list[0]['instId']}，杠杆：{new_list[0]['lever']}，方向：{new_list[0]['posSide']}，交易创建时间：{openTime}")
+                complete_task_data(new_list[0], {})
         else:
             # 查找新增的交易数据
             time_set = set(i['openTime'] for i in old_list)
@@ -303,10 +298,6 @@ class Spider(threading.Thread):
                 for item in added_items:
                     action_map = {'open': "开仓或加仓", 'close': "平仓", 'reduce': "减仓"}
                     action = action_map.get(item['order_type'], "交易")
-                    # if float(item['openTime']) < float(new_list[0]['openTime']):
-                    #     openTime = transform_time(item['openTime'])
-                    #     self.log_to_database("WARNING", "交易所插入数据", f"当前获取的交易记录非实时最近记录，可能交易所数据有延迟，请检查确认，必要时可在交易所手动处理。品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}，操作{item['order_type']}，交易员交易所交易时间：{openTime}")
                     log_trade_action(action, item)
                     complete_task_data(item, old_list[0])
         return True
-

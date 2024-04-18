@@ -2,15 +2,24 @@ from crawler.myokx import app
 # from okx import app
 from okx.api.public import Public
 
+# 模拟子1
+# acc = {'key': '2f071928-25bf-4ea9-b171-efe4b6e4eefd',
+#        'secret': '0BE4E80811E950DBA93FA013D1F36516',
+#        'passphrase': '112233Ww..',
+#        # 'proxies': {
+#        #              'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322',
+#        #              'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322'
+#        #             }
+#        }
 # 模拟子5
-acc = {'key': '5e773b21-f919-41f1-bdca-62834fbb2d03',
-       'secret': 'EC9399DC09F9C894F4E4E44EA66FA7C2',
-       'passphrase': '112233Ww..',
-       # 'proxies': {
-       #              'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322',
-       #              'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322'
-       #             }
-       }
+# acc = {'key': '5e773b21-f919-41f1-bdca-62834fbb2d03',
+#        'secret': 'EC9399DC09F9C894F4E4E44EA66FA7C2',
+#        'passphrase': '112233Ww..',
+#        # 'proxies': {
+#        #              'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322',
+#        #              'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322'
+#        #             }
+#        }
 # 模拟子2
 # acc = {'key': '2842457e-1d17-4a58-a0d6-25d71044e75a',
 #        'secret': 'A3A985254556CAAB007ABB15F7FECC9B',
@@ -21,14 +30,14 @@ acc = {'key': '5e773b21-f919-41f1-bdca-62834fbb2d03',
 #        #             }
 #        }
 # 模拟主1
-# acc = {'key': 'ba8dccb8-943d-468c-bcbf-8dced96fc7cf',
-#        'secret': 'BBA3FF14AC698CDBAA33219F858E7BF6',
-#        'passphrase': '112233Ww..',
-#        # 'proxies': {
-#        #              'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322',
-#        #              'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322'
-#        #             }
-#        }
+acc = {'key': 'ba8dccb8-943d-468c-bcbf-8dced96fc7cf',
+       'secret': 'BBA3FF14AC698CDBAA33219F858E7BF6',
+       'passphrase': '112233Ww..',
+       # 'proxies': {
+       #              'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322',
+       #              'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322'
+       #             }
+       }
 # 实盘
 # acc = {'key': '63b35cdd-261f-4fd5-ba2a-a607cd7460c9',
 #        'secret': '52A5665FC31BFF7552D2980CE5C7F0F1',
@@ -56,7 +65,7 @@ acc = {'key': '5e773b21-f919-41f1-bdca-62834fbb2d03',
 #                    }
 #        }
 
-
+#
 obj = app.OkxSWAP(**acc)
 obj.account.api.flag = '1'
 obj.trade.api.flag = '1'
@@ -74,8 +83,9 @@ obj.trade.api.flag = '1'
 #     print('[FAILURE] 设置持仓方式为双向持仓失败，请手动设置：posMode="long_short_mode"')
 #
 #
-# obj.trade.open_market(instId="SATS-USDT-SWAP", posSide="long", openMoney=10 * 10, tdMode='cross',
-#                                   lever=10)
+a = obj.trade.open_market(instId="BTC-USDT-SWAP", posSide="long", openMoney=10 * 10, tdMode='cross',
+                                  lever=10)
+print(a)
 
 # result = obj.trade.open_market(instId="LTC-USDT-SWAP", posSide="long", openMoney=5, tdMode='cross',
 #                                   lever=3)
@@ -111,8 +121,8 @@ obj.trade.api.flag = '1'
 # a = obj.account.get_positions()
 # print(a)
 # 历史持仓
-a = obj.account.get_positions_history(limit=2)
-print(a)
+# a = obj.account.get_positions_history(limit=2)
+# print(a)
 # 账户信息
 # a = obj.account.get_balance(ccy='BTC,ETH,USDT').get('data')[0].get('details') # 限速：10次/2s
 # result = {}
@@ -232,3 +242,21 @@ print(a)
 imr 持仓量（当前）  openMaxPos最大持仓量（历史）
 
 """
+# from okx.api.trade import Trade
+#
+# # API 初始化
+# apikey = "2f071928-25bf-4ea9-b171-efe4b6e4eefd"
+# secretkey = "0BE4E80811E950DBA93FA013D1F36516"
+# passphrase = "112233Ww.."
+#
+# flag = "1"  # 实盘: 0, 模拟盘: 1
+#
+# tradeAPI = Trade(apikey, secretkey, passphrase, flag)
+#
+# # 查询币币历史订单（7天内）
+# # 已经撤销的未成交单 只保留2小时
+# result = tradeAPI.get_orders_history(
+#     instType="SWAP",
+#     state='canceled'
+# )
+# print(result)

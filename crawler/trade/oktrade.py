@@ -143,7 +143,7 @@ class Trader(threading.Thread):
         except Exception as e:
             print(f"交易失败，原因: {e}")
             # thread_logger.WARNING("停止交易，获取api信息失败，请重新提交api，并确认开启交易权限")
-            self.log_to_database("WARNING", "停止交易，获取api信息失败，请重新提交api，并确认开启交易权限")
+            self.log_to_database("WARNING", "停止交易", "请确认APIKEY和实盘或者模拟盘环境匹配！")
             return
         self.perform_trade()
 
@@ -290,6 +290,7 @@ class Trader(threading.Thread):
                         order_type='close_all'
                     )
                 )
+                print(f"时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{item.get('instId')}")
             if market_data:
                 self.run_close_market_concurrently(market_data)
             OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=2)
@@ -321,6 +322,8 @@ class Trader(threading.Thread):
                 s_code_value = result.get('error_result', {}).get('code')
                 if s_code_value == '51001':
                     self.log_to_database("WARNING", '模拟盘土狗币交易失败', f'品种：{self.instId}不在交易所模拟盘中！')
+                elif s_code_value == '50001':
+                    self.log_to_database("WARNING", '设置失败', '交易所服务器异常，服务暂时不可用，请稍后重试！')
                 elif s_code_value == '59000':
                     self.log_to_database("WARNING", '设置失败', '请在设置前关闭任何挂单或持仓！')
                 elif s_code_value == '50110':
