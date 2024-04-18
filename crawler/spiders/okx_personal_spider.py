@@ -24,7 +24,7 @@ def spider(uniqueName):
     summary_list_new = []
     try:
         position_url = f'https://www.okx.com/priapi/v5/ecotrade/public/positions-v2?limit=10&uniqueName={uniqueName}&t={now}'
-        position_list = requests.get(position_url, headers=get_header(), timeout=30).json().get('data', list())[0].get('posData', list())
+        position_list = requests.get(position_url, headers=get_header(), proxies=get_proxies()[0], timeout=30).json().get('data', list())[0].get('posData', list())
         # test_record_url = f'https://www.okx.com/priapi/v5/ecotrade/public/trade-records?limit=5&startModify={thirty_days_ago_specific_time_timestamp}&endModify={today_specific_time_timestamp}&uniqueName={uniqueName}&t={now}'
         # test_record_list = requests.get(test_record_url, headers=get_header(), timeout=30).json().get('data', list())
         # # 将记录列表写入文本文件

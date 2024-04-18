@@ -1,5 +1,5 @@
 import random
-from crawler import settingsdev as settings
+from crawler import settingsprod as settings
 
 # 动态header
 def get_header():

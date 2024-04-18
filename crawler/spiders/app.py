@@ -2,7 +2,7 @@ import datetime
 import threading
 import time
 import redis
-from crawler import settingsdev as settings
+from crawler import settingsprod as settings
 import json
 from loguru import logger
 from crawler.spiders import okx_follow_spider

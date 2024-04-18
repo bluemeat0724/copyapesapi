@@ -2,7 +2,7 @@ import requests
 import json
 
 import redis
-from crawler import settingsdev as settings
+from crawler import settingsprod as settings
 from crawler.utils.db import Connect
 
 

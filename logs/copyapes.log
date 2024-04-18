@@ -2302,6 +2302,7 @@ INFO 2024-04-09 01:50:10,205 basehttp 17536 17060 "PATCH /api/apiadd/1/?token=91
 INFO 2024-04-09 01:50:11,530 basehttp 17536 17060 "GET /api/traderdetial/5/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 344
 INFO 2024-04-09 01:50:11,533 basehttp 17536 14784 "GET /api/tradeorder/5/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 20
 INFO 2024-04-09 01:50:11,536 basehttp 17536 5092 "GET /api/taskadd/5/?token=91212294-4fd1-4916-b011-27c95694ed11 HTTP/1.1" 200 297
+INFO 2024-04-18 23:28:10,404 autoreload 41702 4416333312 Watching for file changes with StatReloader
 INFO 2024-04-09 16:58:00,619 autoreload 5425 4494644736 Watching for file changes with StatReloader
 INFO 2024-04-09 16:58:42,629 autoreload 5434 4701668864 Watching for file changes with StatReloader
 INFO 2024-04-09 16:59:57,213 autoreload 5434 4701668864 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
@@ -4500,3 +4501,8 @@ INFO 2024-04-15 23:13:47,107 basehttp 14898 123145573392384 "GET /api/ip/?token=
 INFO 2024-04-15 23:13:47,110 basehttp 14898 123145606971392 "GET /api/taskadd/346/?token=2f8991e0-8093-4aac-9238-a4ca02eae34a HTTP/1.1" 200 335
 INFO 2024-04-15 23:13:47,118 basehttp 14898 123145590181888 "GET /api/tradeorder/346/?token=2f8991e0-8093-4aac-9238-a4ca02eae34a HTTP/1.1" 200 20
 INFO 2024-04-15 23:13:47,118 basehttp 14898 123145623760896 "GET /api/traderdetial/346/?token=2f8991e0-8093-4aac-9238-a4ca02eae34a HTTP/1.1" 200 14563
+INFO 2024-04-18 23:28:43,572 autoreload 41781 4364768768 Watching for file changes with StatReloader
+INFO 2024-04-18 23:39:30,146 autoreload 41781 4364768768 /Users/lichaoyuan/Desktop/copytrade/copytrade/celery.py changed, reloading.
+INFO 2024-04-18 23:39:31,229 autoreload 41955 4519970304 Watching for file changes with StatReloader
+INFO 2024-04-18 23:45:25,903 autoreload 41955 4519970304 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py changed, reloading.
+INFO 2024-04-18 23:45:27,131 autoreload 42060 4368815616 Watching for file changes with StatReloader

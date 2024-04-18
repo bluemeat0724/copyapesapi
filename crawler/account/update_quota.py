@@ -1,5 +1,5 @@
 from crawler.utils.db import Connect
-from crawler import settingsdev as settings
+from crawler import settingsprod as settings
 import redis
 
 def calculate_and_stop_tasks():

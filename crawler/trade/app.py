@@ -1,4 +1,4 @@
-from crawler import settingsdev as settings
+from crawler import settingsprod as settings
 import json
 import redis
 from crawler.trade import oktrade
