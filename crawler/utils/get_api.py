@@ -11,7 +11,7 @@ def api(user_id, api_id):
         'key': str(api_dict.get('api_key')),
         'secret': str(api_dict.get('secret_key')),
         'passphrase': str(api_dict.get('passPhrase')),
-        # 'proxies': proxies
+        'proxies': proxies
     }
     return acc, flag, ip_id
 
