@@ -40,8 +40,8 @@ def get_my_proxies(user_id, flag):
     if ip_dict is None:
         if experience_ip_dict is None:
             if flag == '1':
-                proxies = get_proxies()
-                return proxies
+                proxies, ip_id = get_proxies()
+                return proxies, ip_id
             if flag == '0':
                 return None
         else:
