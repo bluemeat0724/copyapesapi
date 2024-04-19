@@ -132,7 +132,7 @@ class Trader(threading.Thread):
             obj.account.api.flag = self.flag
             obj.trade.api.flag = self.flag
             # thread_logger.info(f"跟单猿交易系统启动，跟随交易员：{self.uniqueName}")
-            obj.account.set_position_mode(posMode='long_short_mode')
+            result = obj.account.set_position_mode(posMode='long_short_mode')
             # okx源码被注释部分，先初始化账户开平仓模式
             # set_position_mode_result = obj.account.set_position_mode(
             #     posMode='long_short_mode')
@@ -142,8 +142,9 @@ class Trader(threading.Thread):
             #     print('[FAILURE] 设置持仓方式为双向持仓失败，请手动设置：posMode="long_short_mode"')
         except Exception as e:
             print(f"交易失败，原因: {e}")
+            self.handle_trade_failure(result)
             # thread_logger.WARNING("停止交易，获取api信息失败，请重新提交api，并确认开启交易权限")
-            self.log_to_database("WARNING", "停止交易", "请确认APIKEY和实盘或者模拟盘环境匹配！")
+            # self.log_to_database("WARNING", "停止交易", "请确认APIKEY和实盘或者模拟盘环境匹配！")
             return
         self.perform_trade()
 
