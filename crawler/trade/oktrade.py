@@ -143,7 +143,7 @@ class Trader(threading.Thread):
         except Exception as e:
             print(f"交易失败，原因: {e}")
             # thread_logger.WARNING("停止交易，获取api信息失败，请重新提交api，并确认开启交易权限")
-            self.log_to_database("WARNING", "停止交易", "请确认APIKEY和实盘或者模拟盘环境匹配！")
+            self.log_to_database("WARNING", "停止交易", "请确认API提交正确，并且和实盘或者模拟盘环境匹配！")
             return
         self.perform_trade()
 
@@ -324,6 +324,10 @@ class Trader(threading.Thread):
                     self.log_to_database("WARNING", '模拟盘土狗币交易失败', f'品种：{self.instId}不在交易所模拟盘中！')
                 elif s_code_value == '50001':
                     self.log_to_database("WARNING", '设置失败', '交易所服务器异常，服务暂时不可用，请稍后重试！')
+                elif s_code_value == '50105':
+                    self.log_to_database("WARNING", 'API错误', 'PASSPHRASE填写错误，请结束任务，重新提交！')
+                elif s_code_value == '50101':
+                    self.log_to_database("WARNING", 'API错误', '添加的API并非模拟盘（或实盘）API，请重新提交对应环境的API！')
                 elif s_code_value == '59000':
                     self.log_to_database("WARNING", '设置失败', '请在设置前关闭任何挂单或持仓！')
                 elif s_code_value == '50110':

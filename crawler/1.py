@@ -47,15 +47,11 @@ acc = {'key': 'ba8dccb8-943d-468c-bcbf-8dced96fc7cf',
 #                     'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10099'
 #                    }
 #        }
-# 大宝实盘
-# acc = {'key': '3aa701e1-a4f4-4d97-bd6d-f9891b57da16',
-#        'secret': '6B83B04A90AE2DEB423D5624BB4C4F85',
-#        'passphrase': 'guobaoying94DG@',
-#        'proxies': {
-#                     'http': 'socks5h://16616640507srt-1:veg19mrb@14.29.122.96:10950',
-#                     'https': 'socks5h://16616640507srt-1:veg19mrb@14.29.122.96:10950'
-#                    }
-#        }
+# 测试
+acc = {'key': '3fb304e4-2723-4b9a-aa86-7fbcb1661ac4',
+       'secret': 'DC44B17155DDEB723DF944D73632B6C2',
+       'passphrase': 'Rr749291263.',
+       }
 # acc = {'key': 'da5fea7c-99e8-4892-9fdf-369a0d35fe6e',
 #        'secret': '6A47EAA50207A62E332F9A1D1B3EF97C',
 #        'passphrase': 'Yaoyao103123..',
@@ -67,8 +63,8 @@ acc = {'key': 'ba8dccb8-943d-468c-bcbf-8dced96fc7cf',
 
 #
 obj = app.OkxSWAP(**acc)
-obj.account.api.flag = '1'
-obj.trade.api.flag = '1'
+obj.account.api.flag = '0'
+obj.trade.api.flag = '0'
 # 查看账户配置信息
 # print(obj.account.get_config())
 
@@ -83,9 +79,9 @@ obj.trade.api.flag = '1'
 #     print('[FAILURE] 设置持仓方式为双向持仓失败，请手动设置：posMode="long_short_mode"')
 #
 #
-a = obj.trade.open_market(instId="BTC-USDT-SWAP", posSide="long", openMoney=10 * 10, tdMode='cross',
-                                  lever=10)
-print(a)
+# a = obj.trade.open_market(instId="BTC-USDT-SWAP", posSide="long", openMoney=10 * 10, tdMode='cross',
+#                                   lever=10)
+# print(a)
 
 # result = obj.trade.open_market(instId="LTC-USDT-SWAP", posSide="long", openMoney=5, tdMode='cross',
 #                                   lever=3)
@@ -118,8 +114,8 @@ print(a)
 #                                       tdMode='cross', lever=100)
 # obj.trade.close_market(instId='ETH-USDT-SWAP', posSide='long', quantityCT=220, tdMode='cross')
 # 当前持仓
-# a = obj.account.get_positions()
-# print(a)
+a = obj.account.get_positions()
+print(a)
 # 历史持仓
 # a = obj.account.get_positions_history(limit=2)
 # print(a)
