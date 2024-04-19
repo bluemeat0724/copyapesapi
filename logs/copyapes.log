@@ -4506,3 +4506,30 @@ INFO 2024-04-18 23:39:30,146 autoreload 41781 4364768768 /Users/lichaoyuan/Deskt
 INFO 2024-04-18 23:39:31,229 autoreload 41955 4519970304 Watching for file changes with StatReloader
 INFO 2024-04-18 23:45:25,903 autoreload 41955 4519970304 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/db.py changed, reloading.
 INFO 2024-04-18 23:45:27,131 autoreload 42060 4368815616 Watching for file changes with StatReloader
+WARNING 2024-04-19 01:47:08,805 log 42060 123145486577664 Not Found: /api/
+WARNING 2024-04-19 01:47:08,806 basehttp 42060 123145486577664 "GET /api/ HTTP/1.1" 404 4595
+WARNING 2024-04-19 01:47:10,594 log 42060 123145486577664 Not Found: /favicon.ico
+WARNING 2024-04-19 01:47:10,595 basehttp 42060 123145486577664 "GET /favicon.ico HTTP/1.1" 404 1996
+WARNING 2024-04-19 01:47:16,320 log 42060 123145486577664 Method Not Allowed: /api/login/
+WARNING 2024-04-19 01:47:16,320 basehttp 42060 123145486577664 "GET /api/login/ HTTP/1.1" 405 5580
+INFO 2024-04-19 01:47:16,403 basehttp 42060 123145570525184 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3597
+INFO 2024-04-19 01:47:16,403 basehttp 42060 123145503367168 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3385
+INFO 2024-04-19 01:47:16,405 basehttp 42060 123145536946176 "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+INFO 2024-04-19 01:47:16,408 basehttp 42060 123145520156672 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2024-04-19 01:47:16,420 basehttp 42060 123145570525184 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1719
+INFO 2024-04-19 01:47:16,424 basehttp 42060 123145553735680 "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1" 200 89476
+INFO 2024-04-19 01:47:16,425 basehttp 42060 123145503367168 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2024-04-19 01:47:16,427 basehttp 42060 123145520156672 "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2024-04-19 01:47:16,428 basehttp 42060 123145486577664 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2024-04-19 01:47:16,428 basehttp 42060 123145536946176 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2024-04-19 01:47:16,441 basehttp 42060 123145520156672 "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+INFO 2024-04-19 01:47:16,477 basehttp 42060 123145587314688 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3597
+INFO 2024-04-19 01:47:16,499 basehttp 42060 123145604104192 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1719
+INFO 2024-04-19 01:47:16,500 basehttp 42060 123145671262208 "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2024-04-19 01:47:16,502 basehttp 42060 123145654472704 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2024-04-19 01:47:16,502 basehttp 42060 123145637683200 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2024-04-19 01:47:16,507 basehttp 42060 123145620893696 "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1" 200 89476
+INFO 2024-04-19 02:10:24,987 basehttp 42060 123145486577664 "GET /api/ip/?token=2f8991e0-8093-4aac-9238-a4ca02eae34a HTTP/1.1" 200 250
+INFO 2024-04-19 02:10:25,002 basehttp 42060 123145520156672 "GET /api/tradeorder/351/?token=2f8991e0-8093-4aac-9238-a4ca02eae34a HTTP/1.1" 200 20
+INFO 2024-04-19 02:10:25,006 basehttp 42060 123145503367168 "GET /api/taskadd/351/?token=2f8991e0-8093-4aac-9238-a4ca02eae34a HTTP/1.1" 200 329
+INFO 2024-04-19 02:10:25,015 basehttp 42060 123145536946176 "GET /api/traderdetial/351/?token=2f8991e0-8093-4aac-9238-a4ca02eae34a HTTP/1.1" 200 41470

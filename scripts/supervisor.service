@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=forking
-ExecStart=/root/miniconda3/bin/supervisord -n -c /home/moluo/Desktop/luffycity/luffycityapi/scripts/supervisord.conf
+ExecStart=/root/miniconda3/bin/supervisord -n -c /copyapesapi/scripts/supervisord.conf
 ExecStop=/root/miniconda3/bin/supervisorctl $OPTIONS shutdown
 ExecReload=/root/miniconda3/bin/supervisorctl $OPTIONS reload
 KillMode=process
