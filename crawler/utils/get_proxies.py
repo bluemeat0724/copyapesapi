@@ -37,25 +37,28 @@ def get_my_proxies(user_id, flag):
     # print(ip_dict)
     # print(experience_ip_dict)
     # 如果用户用模拟盘测试，但没有提供固定ip，则随机选择一个ip给用户使用
+    ip_id = None
     if ip_dict is None:
         if experience_ip_dict is None:
             if flag == '1':
                 proxies, ip_id = get_proxies()
                 return proxies, ip_id
             if flag == '0':
-                return None
+                return None, None
         else:
             username = str(experience_ip_dict.get('username'))
             password = str(experience_ip_dict.get('password'))
+            ip_id = experience_ip_dict.get('id')
     else:
         username = str(ip_dict.get('username'))
         password = str(ip_dict.get('password'))
+        ip_id = ip_dict.get('id')
 
     proxy = {
         'http': 'socks5h://{}:{}@{}:{}'.format(username, password, settings.PROXY_IP, settings.PROXY_PORT),
         'https': 'socks5h://{}:{}@{}:{}'.format(username, password, settings.PROXY_IP, settings.PROXY_PORT),
     }
-    return proxy, ip_dict.get('id')
+    return proxy, ip_id
 
 
 if __name__ == '__main__':
