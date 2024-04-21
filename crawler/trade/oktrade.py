@@ -125,7 +125,8 @@ class Trader(threading.Thread):
             # update task 里面的 ip_id
             self.update_task_with_ip()
             # 创建okx交易对象
-            obj = RetryNetworkOperations(app.OkxSWAP(**self.acc))
+            # obj = RetryNetworkOperations(app.OkxSWAP(**self.acc))
+            obj = app.OkxSWAP(**self.acc)
             self.obj = obj
 
             # 根据api选择实盘还是模拟盘
