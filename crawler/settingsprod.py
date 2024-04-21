@@ -1,5 +1,5 @@
 REDIS_PARAMS = {
-    'host': '83.229.121.26',
+    'host': '38.147.173.111',
     'port': 6379,
     'password':'112233Ww..',
     'db': 0,
@@ -13,7 +13,7 @@ MYSQL_CONN_PARAMS = {
     'db': 'copytrade',  # 数据库名字
     'user': 'admin',
     'password': '112233ww',
-    'host': '83.229.121.26',  # ip
+    'host': '38.147.173.111',  # ip
     'port': 3306,
     'charset': 'utf8'
 }

@@ -97,7 +97,7 @@ DATABASES = {
         'NAME': 'copytrade',  # 数据库名字
         'USER': 'admin',
         'PASSWORD': '112233ww',
-        'HOST': '83.229.121.26',  # ip
+        'HOST': '38.147.173.111',  # ip
         'PORT': 3306,
         'OPTIONS': {
             'charset': 'utf8mb4',
@@ -113,7 +113,7 @@ DATABASES = {
         'NAME': 'copytrade',  # 数据库名字
         'USER': 'admin',
         'PASSWORD': '112233ww',
-        'HOST': '83.229.121.26',  # ip
+        'HOST': '38.147.173.111',  # ip
         'PORT': 3306,
         'OPTIONS': {
             'charset': 'utf8mb4',
@@ -131,7 +131,7 @@ DATABASE_ROUTERS = ["copytrade.db_router.DBRouter"]
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://:112233Ww..@83.229.121.26:6379/0",
+        "LOCATION": "redis://:112233Ww..@38.147.173.111:6379/0",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
             # "PASSWORD": "qwe123",
@@ -262,9 +262,9 @@ LOGGING = {
 
 # Celery异步任务队列框架的配置项[注意：django的配置项必须大写，所以这里的所有配置项必须全部大写]
 # 任务队列
-broker_url = 'redis://:112233Ww..@83.229.121.26:6379/14'
+broker_url = 'redis://:112233Ww..@38.147.173.111:6379/14'
 # 结果队列
-result_backend = 'redis://:112233Ww..@83.229.121.26:6379/15'
+result_backend = 'redis://:112233Ww..@38.147.173.111:6379/15'
 # 时区，与django的时区同步
 timezone = TIME_ZONE
 # 防止死锁
