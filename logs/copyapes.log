@@ -4534,3 +4534,8 @@ INFO 2024-04-19 02:10:25,002 basehttp 42060 123145520156672 "GET /api/tradeorder
 INFO 2024-04-19 02:10:25,006 basehttp 42060 123145503367168 "GET /api/taskadd/351/?token=2f8991e0-8093-4aac-9238-a4ca02eae34a HTTP/1.1" 200 329
 INFO 2024-04-19 02:10:25,015 basehttp 42060 123145536946176 "GET /api/traderdetial/351/?token=2f8991e0-8093-4aac-9238-a4ca02eae34a HTTP/1.1" 200 41470
 INFO 2024-04-19 22:17:17,879 autoreload 48642 4592240128 Watching for file changes with StatReloader
+INFO 2024-04-20 20:23:53,492 autoreload 51961 4523755008 Watching for file changes with StatReloader
+INFO 2024-04-21 01:14:19,723 basehttp 51961 123145494474752 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-04-21 01:14:19,729 basehttp 51961 123145511264256 "GET /api/apiadd/?token=2f8991e0-8093-4aac-9238-a4ca02eae34a HTTP/1.1" 200 2144
+INFO 2024-04-21 14:03:49,222 autoreload 51961 4523755008 /Users/lichaoyuan/Desktop/copytrade/crawler/settingsprod.py changed, reloading.
+INFO 2024-04-21 14:03:50,631 autoreload 56700 4824815104 Watching for file changes with StatReloader
