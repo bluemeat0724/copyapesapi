@@ -3,6 +3,7 @@ from crawler.myokx import app
 import threading
 from crawler.utils.get_api import api
 from crawler.utils.get_trade_times import get_trade_times
+import re
 import time
 from crawler.account.okx_orderinfo import OkxOrderInfo
 import datetime
@@ -99,7 +100,13 @@ class Trader(threading.Thread):
             #     print('[FAILURE] 设置持仓方式为双向持仓失败，请手动设置：posMode="long_short_mode"')
         except Exception as e:
             print(f"交易失败，原因: {e}")
-            self.handle_trade_failure(result)
+            match = re.search(r'"code":"(\d+)"', str(e))
+            if match:
+                code_value = match.group(1)
+                if code_value == '50101':
+                    self.log_to_database("WARNING", "停止交易", "请确认APIKEY和实盘或者模拟盘环境匹配！")
+                elif code_value == '50105':
+                    self.log_to_database("WARNING", 'API错误', 'PASSPHRASE填写错误，请结束任务，重新提交！')
             # thread_logger.WARNING("停止交易，获取api信息失败，请重新提交api，并确认开启交易权限")
             # self.log_to_database("WARNING", "停止交易", "请确认APIKEY和实盘或者模拟盘环境匹配！")
             return
