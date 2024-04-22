@@ -60,13 +60,13 @@ from okx.api._client import ResponseStatusError
 #                 'color': color
 #             })
 
-from datetime import datetime, timedelta, timezone
-
-# Converting another provided timestamp (in milliseconds) to datetime
-new_timestamp_3 = 1713375550489 / 1000  # converting milliseconds to seconds
-new_date_time_3 = datetime.fromtimestamp(new_timestamp_3, tz=timezone.utc)
-
-print(new_date_time_3.strftime("%Y-%m-%d %H:%M:%S %Z"))
+# from datetime import datetime, timedelta, timezone
+#
+# # Converting another provided timestamp (in milliseconds) to datetime
+# new_timestamp_3 = 1713375550489 / 1000  # converting milliseconds to seconds
+# new_date_time_3 = datetime.fromtimestamp(new_timestamp_3, tz=timezone.utc)
+#
+# print(new_date_time_3.strftime("%Y-%m-%d %H:%M:%S %Z"))
 
 # from datetime import datetime
 # import pytz
@@ -91,3 +91,22 @@ print(new_date_time_3.strftime("%Y-%m-%d %H:%M:%S %Z"))
 # a = [{'instId': 'DOGE-USDT-SWAP', 'openTime': '1713115983581', 'posSide': 'long', 'lever': '10.0', 'openAvgPx': '0.15118', 'order_type': 'close'}]
 # if not a:
 #     print('1')
+
+
+import socket
+
+def get_local_ip():
+    try:
+        # 创建一个socket对象
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        # 使用Google的公共DNS服务器地址来获取socket的连接
+        s.connect(("8.8.8.8", 80))
+        # 获取本地接口的IP地址
+        ip = s.getsockname()[0]
+    finally:
+        # 关闭socket连接
+        s.close()
+    return ip
+
+# 调用函数并打印本地IP地址
+print(get_local_ip())

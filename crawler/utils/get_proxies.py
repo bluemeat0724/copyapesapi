@@ -1,5 +1,5 @@
 from crawler.utils.db import Connect
-from crawler import settings as settings
+from crawler import settingsprod as settings
 import random
 
 

@@ -4539,3 +4539,5 @@ INFO 2024-04-21 01:14:19,723 basehttp 51961 123145494474752 "GET /api/platform/ 
 INFO 2024-04-21 01:14:19,729 basehttp 51961 123145511264256 "GET /api/apiadd/?token=2f8991e0-8093-4aac-9238-a4ca02eae34a HTTP/1.1" 200 2144
 INFO 2024-04-21 14:03:49,222 autoreload 51961 4523755008 /Users/lichaoyuan/Desktop/copytrade/crawler/settingsprod.py changed, reloading.
 INFO 2024-04-21 14:03:50,631 autoreload 56700 4824815104 Watching for file changes with StatReloader
+INFO 2024-04-22 02:54:58,485 autoreload 56700 4824815104 /Users/lichaoyuan/Desktop/copytrade/crawler/settingsprod.py changed, reloading.
+INFO 2024-04-22 02:54:59,613 autoreload 62274 4724209152 Watching for file changes with StatReloader
