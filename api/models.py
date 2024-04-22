@@ -63,6 +63,12 @@ class ApiInfo(DeletedModel):
     """api收益，通过api关联任务收益累加"""
     pnl = models.FloatField(verbose_name="已实现跟单收益", default=0)
     upl = models.FloatField(verbose_name="未实现跟单收益", default=0)
+    """API交易所账号信息补全"""
+    acctLv = models.CharField(verbose_name="账户等级", max_length=8, null=True, blank=True)
+    ip = models.CharField(verbose_name="ip", max_length=128, null=True, blank=True)
+    roleType = models.CharField(verbose_name="角色", max_length=8, null=True, blank=True)
+    level = models.CharField(verbose_name="等级", max_length=8, null=True, blank=True)
+    perm = models.CharField(verbose_name="权限", max_length=32, null=True, blank=True)
 
 
 class TaskInfo(DeletedModel):

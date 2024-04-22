@@ -4501,3 +4501,1023 @@ INFO 2024-04-15 23:13:47,110 basehttp 14898 123145606971392 "GET /api/taskadd/34
 INFO 2024-04-15 23:13:47,118 basehttp 14898 123145590181888 "GET /api/tradeorder/346/?token=2f8991e0-8093-4aac-9238-a4ca02eae34a HTTP/1.1" 200 20
 INFO 2024-04-15 23:13:47,118 basehttp 14898 123145623760896 "GET /api/traderdetial/346/?token=2f8991e0-8093-4aac-9238-a4ca02eae34a HTTP/1.1" 200 14563
 INFO 2024-04-22 22:53:15,473 autoreload 66783 4675393024 Watching for file changes with StatReloader
+INFO 2024-04-23 00:51:31,374 autoreload 66783 4675393024 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-23 00:51:32,823 autoreload 67708 4598969856 Watching for file changes with StatReloader
+INFO 2024-04-23 00:59:08,957 autoreload 67708 4598969856 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-23 00:59:10,050 autoreload 67822 4628731392 Watching for file changes with StatReloader
+INFO 2024-04-23 01:13:13,797 autoreload 67822 4628731392 /Users/lichaoyuan/Desktop/copytrade/api/extension/return_code.py changed, reloading.
+INFO 2024-04-23 01:13:14,800 autoreload 67959 4518970880 Watching for file changes with StatReloader
+INFO 2024-04-23 01:14:01,217 autoreload 67959 4518970880 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-23 01:14:02,298 autoreload 67981 4629685760 Watching for file changes with StatReloader
+INFO 2024-04-23 01:14:30,112 autoreload 67981 4629685760 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-23 01:14:31,039 autoreload 67993 4512019968 Watching for file changes with StatReloader
+INFO 2024-04-23 01:14:57,790 autoreload 67993 4512019968 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-23 01:14:58,761 autoreload 68005 4605130240 Watching for file changes with StatReloader
+INFO 2024-04-23 01:16:36,796 autoreload 68005 4605130240 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-23 01:16:37,999 autoreload 68021 4688479744 Watching for file changes with StatReloader
+INFO 2024-04-23 01:20:20,524 autoreload 68021 4688479744 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-23 01:20:21,515 autoreload 68077 4660114944 Watching for file changes with StatReloader
+INFO 2024-04-23 01:22:49,790 autoreload 68077 4660114944 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-23 01:22:50,958 autoreload 68128 4637922816 Watching for file changes with StatReloader
+INFO 2024-04-23 01:23:18,782 autoreload 68128 4637922816 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-23 01:23:19,815 autoreload 68147 4560229888 Watching for file changes with StatReloader
+INFO 2024-04-23 01:29:47,065 autoreload 68147 4560229888 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-23 01:29:48,363 autoreload 68228 4593128960 Watching for file changes with StatReloader
+INFO 2024-04-23 01:33:30,555 autoreload 68228 4593128960 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-23 01:33:31,553 autoreload 68264 4482725376 Watching for file changes with StatReloader
+INFO 2024-04-23 01:33:42,324 autoreload 68273 4340708864 Watching for file changes with StatReloader
+ERROR 2024-04-23 01:33:53,479 exceptions 68273 123145489133568 [<api.views.accountApi.ApiAddView object at 0x7f97907581f0>] (1054, "Unknown column 'api_apiinfo.acctLv' in 'field list'")
+ERROR 2024-04-23 01:33:53,480 log 68273 123145489133568 Insufficient Storage: /api/apiadd/
+ERROR 2024-04-23 01:33:53,481 basehttp 68273 123145489133568 "GET /api/apiadd/?token=2f8991e0-8093-4aac-9238-a4ca02eae34a HTTP/1.1" 507 35
+ERROR 2024-04-23 01:33:58,328 exceptions 68273 123145489133568 [<api.views.accountApi.ApiAddView object at 0x7f97c0367be0>] (1054, "Unknown column 'api_apiinfo.acctLv' in 'field list'")
+ERROR 2024-04-23 01:33:58,329 log 68273 123145489133568 Insufficient Storage: /api/apiadd/
+ERROR 2024-04-23 01:33:58,329 basehttp 68273 123145489133568 "GET /api/apiadd/?token=2f8991e0-8093-4aac-9238-a4ca02eae34a HTTP/1.1" 507 35
+INFO 2024-04-23 01:34:03,678 basehttp 68273 123145489133568 "GET /api/ip/?token=2f8991e0-8093-4aac-9238-a4ca02eae34a HTTP/1.1" 200 250
+ERROR 2024-04-23 01:34:07,110 exceptions 68273 123145489133568 [<api.views.task.TaskAddView object at 0x7f97e0494d60>] (1054, "Unknown column 'api_taskinfo.fast_mode' in 'field list'")
+ERROR 2024-04-23 01:34:07,110 log 68273 123145489133568 Insufficient Storage: /api/taskadd/
+ERROR 2024-04-23 01:34:07,111 basehttp 68273 123145489133568 "GET /api/taskadd/?token=2f8991e0-8093-4aac-9238-a4ca02eae34a HTTP/1.1" 507 35
+INFO 2024-04-23 01:34:08,812 basehttp 68273 123145489133568 "GET /api/quotainfo/?token=2f8991e0-8093-4aac-9238-a4ca02eae34a HTTP/1.1" 200 147
+ERROR 2024-04-23 01:34:10,377 exceptions 68273 123145489133568 [<api.views.task.TaskAddView object at 0x7f97906e9dc0>] (1054, "Unknown column 'api_taskinfo.fast_mode' in 'field list'")
+ERROR 2024-04-23 01:34:10,377 log 68273 123145489133568 Insufficient Storage: /api/taskadd/
+ERROR 2024-04-23 01:34:10,377 basehttp 68273 123145489133568 "GET /api/taskadd/?token=2f8991e0-8093-4aac-9238-a4ca02eae34a HTTP/1.1" 507 35
+INFO 2024-04-23 01:36:05,842 autoreload 68313 4394894848 Watching for file changes with StatReloader
+WARNING 2024-04-23 01:39:15,126 log 68313 123145436119040 Unauthorized: /api/taskadd/
+WARNING 2024-04-23 01:39:15,127 log 68313 123145419329536 Unauthorized: /api/ip/
+WARNING 2024-04-23 01:39:15,127 basehttp 68313 123145436119040 "GET /api/taskadd/?token=ba6db1d8-79ea-48e9-88b6-fcd051328b04 HTTP/1.1" 401 38
+WARNING 2024-04-23 01:39:15,127 basehttp 68313 123145419329536 "GET /api/ip/?token=ba6db1d8-79ea-48e9-88b6-fcd051328b04 HTTP/1.1" 401 38
+INFO 2024-04-23 01:39:22,707 basehttp 68313 123145419329536 "OPTIONS /api/login/ HTTP/1.1" 200 0
+INFO 2024-04-23 01:39:22,713 basehttp 68313 123145419329536 "POST /api/login/ HTTP/1.1" 200 80
+INFO 2024-04-23 01:39:23,034 basehttp 68313 123145419329536 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 01:39:23,037 basehttp 68313 123145436119040 "GET /api/quotainfo/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 147
+INFO 2024-04-23 01:39:26,474 basehttp 68313 123145436119040 "GET /api/taskadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 101356
+INFO 2024-04-23 01:39:43,259 basehttp 68313 123145436119040 "GET /api/quotainfo/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 147
+INFO 2024-04-23 01:39:49,797 basehttp 68313 123145436119040 "GET /api/taskadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 101356
+INFO 2024-04-23 01:39:52,803 basehttp 68313 123145436119040 "OPTIONS /api/taskadd/356/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 01:39:52,835 basehttp 68313 123145436119040 "PATCH /api/taskadd/356/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 343
+INFO 2024-04-23 01:39:53,313 basehttp 68313 123145436119040 "GET /api/taskadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 101356
+INFO 2024-04-23 01:39:54,952 basehttp 68313 123145436119040 "OPTIONS /api/taskadd/355/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 01:39:54,967 basehttp 68313 123145436119040 "PATCH /api/taskadd/355/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 343
+INFO 2024-04-23 01:39:55,512 basehttp 68313 123145436119040 "GET /api/taskadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 101356
+INFO 2024-04-23 01:39:56,952 basehttp 68313 123145436119040 "OPTIONS /api/taskadd/354/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 01:39:56,967 basehttp 68313 123145436119040 "PATCH /api/taskadd/354/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 342
+INFO 2024-04-23 01:39:57,455 basehttp 68313 123145436119040 "GET /api/taskadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 101356
+INFO 2024-04-23 01:39:58,752 basehttp 68313 123145436119040 "OPTIONS /api/taskadd/353/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 01:39:58,767 basehttp 68313 123145436119040 "PATCH /api/taskadd/353/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 356
+INFO 2024-04-23 01:39:59,283 basehttp 68313 123145436119040 "GET /api/taskadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 101356
+INFO 2024-04-23 01:40:00,935 basehttp 68313 123145436119040 "OPTIONS /api/taskadd/352/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 01:40:00,950 basehttp 68313 123145436119040 "PATCH /api/taskadd/352/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 343
+INFO 2024-04-23 01:40:01,436 basehttp 68313 123145436119040 "GET /api/taskadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 101356
+INFO 2024-04-23 01:40:02,986 basehttp 68313 123145436119040 "OPTIONS /api/taskadd/351/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 01:40:03,000 basehttp 68313 123145436119040 "PATCH /api/taskadd/351/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 343
+INFO 2024-04-23 01:40:03,459 basehttp 68313 123145436119040 "GET /api/taskadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 101356
+INFO 2024-04-23 01:40:04,085 basehttp 68313 123145436119040 "GET /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 2144
+INFO 2024-04-23 01:40:24,819 basehttp 68313 123145436119040 "OPTIONS /api/apiadd/24/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 01:40:24,827 basehttp 68313 123145436119040 "DELETE /api/apiadd/24/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 35
+INFO 2024-04-23 01:40:24,839 basehttp 68313 123145436119040 "GET /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 1966
+INFO 2024-04-23 01:40:50,681 basehttp 68313 123145436119040 "OPTIONS /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 01:40:50,687 basehttp 68313 123145436119040 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 63
+INFO 2024-04-23 01:41:28,486 basehttp 68313 123145436119040 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 01:41:36,420 basehttp 68313 123145436119040 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 01:41:36,953 basehttp 68313 123145436119040 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 01:41:37,253 basehttp 68313 123145436119040 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 01:41:37,504 basehttp 68313 123145436119040 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 01:41:39,302 basehttp 68313 123145436119040 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 01:41:39,471 basehttp 68313 123145436119040 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 01:44:08,602 autoreload 68401 4481652224 Watching for file changes with StatReloader
+INFO 2024-04-23 01:44:39,094 basehttp 68401 123145451925504 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 01:44:53,187 basehttp 68401 123145451925504 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 01:46:44,342 basehttp 68401 123145451925504 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 01:47:07,569 basehttp 68401 123145451925504 "OPTIONS /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 01:47:07,576 basehttp 68401 123145451925504 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 01:48:25,773 autoreload 68448 4623394304 Watching for file changes with StatReloader
+INFO 2024-04-23 01:48:31,555 basehttp 68448 123145577951232 "OPTIONS /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 01:48:31,567 basehttp 68448 123145577951232 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 01:49:02,043 autoreload 68468 4469208576 Watching for file changes with StatReloader
+INFO 2024-04-23 01:49:07,950 basehttp 68468 123145552748544 "OPTIONS /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 01:49:07,960 basehttp 68468 123145552748544 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 01:49:28,580 autoreload 68476 4579472896 Watching for file changes with StatReloader
+INFO 2024-04-23 01:49:34,751 basehttp 68476 123145469493248 "OPTIONS /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 01:49:34,760 basehttp 68476 123145469493248 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 01:50:09,702 autoreload 68486 4355188224 Watching for file changes with StatReloader
+INFO 2024-04-23 01:50:16,757 basehttp 68486 123145455448064 "OPTIONS /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 01:51:40,035 autoreload 68518 4637332992 Watching for file changes with StatReloader
+INFO 2024-04-23 01:51:42,986 basehttp 68518 123145409449984 "OPTIONS /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 01:51:43,002 basehttp 68518 123145409449984 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 01:53:38,298 autoreload 68557 4480583168 Watching for file changes with StatReloader
+INFO 2024-04-23 01:53:42,785 basehttp 68557 123145452998656 "OPTIONS /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 01:53:42,816 basehttp 68557 123145452998656 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 01:54:11,227 autoreload 68572 4498605568 Watching for file changes with StatReloader
+INFO 2024-04-23 01:54:17,584 basehttp 68572 123145505501184 "OPTIONS /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 01:54:17,597 basehttp 68572 123145505501184 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 01:54:51,306 autoreload 68587 4511991296 Watching for file changes with StatReloader
+INFO 2024-04-23 01:54:56,218 basehttp 68587 123145598357504 "OPTIONS /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 01:55:02,228 basehttp 68587 123145598357504 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 183
+INFO 2024-04-23 01:55:02,356 basehttp 68587 123145598357504 "GET /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 2132
+INFO 2024-04-23 01:57:32,955 autoreload 68636 4644611584 Watching for file changes with StatReloader
+ERROR 2024-04-23 01:58:17,647 log 68636 123145401192448 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 75, in create
+    ip = obj.account.get_config().get('data')[0].get('ip')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 429
+response_content={"msg":"Too Many Requests","code":"50011"}
+ERROR 2024-04-23 01:58:17,649 basehttp 68636 123145401192448 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 120873
+ERROR 2024-04-23 01:58:17,699 log 68636 123145486213120 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 69, in create
+    acctLv = obj.account.get_config().get('data')[0].get('acctLv')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 429
+response_content={"msg":"Too Many Requests","code":"50011"}
+ERROR 2024-04-23 01:58:17,700 basehttp 68636 123145486213120 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 120593
+ERROR 2024-04-23 01:58:18,032 log 68636 123145419055104 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 75, in create
+    ip = obj.account.get_config().get('data')[0].get('ip')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 429
+response_content={"msg":"Too Many Requests","code":"50011"}
+ERROR 2024-04-23 01:58:18,034 basehttp 68636 123145419055104 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 120873
+ERROR 2024-04-23 01:58:18,493 log 68636 123145435844608 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 75, in create
+    ip = obj.account.get_config().get('data')[0].get('ip')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 429
+response_content={"msg":"Too Many Requests","code":"50011"}
+ERROR 2024-04-23 01:58:18,498 basehttp 68636 123145435844608 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 120873
+ERROR 2024-04-23 01:58:19,632 log 68636 123145452634112 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 77, in create
+    roleType = obj.account.get_config().get('data')[0].get('roleType')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 429
+response_content={"msg":"Too Many Requests","code":"50011"}
+ERROR 2024-04-23 01:58:19,643 basehttp 68636 123145452634112 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 120976
+ERROR 2024-04-23 01:58:19,682 log 68636 123145435844608 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 69, in create
+    acctLv = obj.account.get_config().get('data')[0].get('acctLv')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 429
+response_content={"msg":"Too Many Requests","code":"50011"}
+ERROR 2024-04-23 01:58:19,683 basehttp 68636 123145435844608 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 120593
+ERROR 2024-04-23 01:58:20,004 log 68636 123145401192448 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 75, in create
+    ip = obj.account.get_config().get('data')[0].get('ip')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 429
+response_content={"msg":"Too Many Requests","code":"50011"}
+ERROR 2024-04-23 01:58:20,006 basehttp 68636 123145401192448 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 120873
+ERROR 2024-04-23 01:58:20,052 log 68636 123145469423616 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 77, in create
+    roleType = obj.account.get_config().get('data')[0].get('roleType')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 429
+response_content={"msg":"Too Many Requests","code":"50011"}
+ERROR 2024-04-23 01:58:20,052 basehttp 68636 123145469423616 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 120976
+ERROR 2024-04-23 01:58:20,366 log 68636 123145486213120 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 75, in create
+    ip = obj.account.get_config().get('data')[0].get('ip')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 429
+response_content={"msg":"Too Many Requests","code":"50011"}
+ERROR 2024-04-23 01:58:20,367 basehttp 68636 123145486213120 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 120873
+ERROR 2024-04-23 01:58:20,529 log 68636 123145419055104 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 75, in create
+    ip = obj.account.get_config().get('data')[0].get('ip')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 429
+response_content={"msg":"Too Many Requests","code":"50011"}
+ERROR 2024-04-23 01:58:20,530 basehttp 68636 123145419055104 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 120873
+ERROR 2024-04-23 01:58:21,688 log 68636 123145419055104 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 69, in create
+    acctLv = obj.account.get_config().get('data')[0].get('acctLv')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 429
+response_content={"msg":"Too Many Requests","code":"50011"}
+ERROR 2024-04-23 01:58:21,689 basehttp 68636 123145419055104 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 120593
+ERROR 2024-04-23 01:58:21,947 log 68636 123145452634112 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 75, in create
+    ip = obj.account.get_config().get('data')[0].get('ip')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 429
+response_content={"msg":"Too Many Requests","code":"50011"}
+ERROR 2024-04-23 01:58:21,951 basehttp 68636 123145452634112 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 120873
+ERROR 2024-04-23 01:58:22,003 log 68636 123145435844608 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 75, in create
+    ip = obj.account.get_config().get('data')[0].get('ip')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 429
+response_content={"msg":"Too Many Requests","code":"50011"}
+ERROR 2024-04-23 01:58:22,004 basehttp 68636 123145435844608 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 120873
+ERROR 2024-04-23 01:58:22,453 log 68636 123145401192448 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 75, in create
+    ip = obj.account.get_config().get('data')[0].get('ip')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 429
+response_content={"msg":"Too Many Requests","code":"50011"}
+ERROR 2024-04-23 01:58:22,467 log 68636 123145469423616 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 75, in create
+    ip = obj.account.get_config().get('data')[0].get('ip')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 429
+response_content={"msg":"Too Many Requests","code":"50011"}
+ERROR 2024-04-23 01:58:22,468 basehttp 68636 123145401192448 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 120873
+ERROR 2024-04-23 01:58:22,469 basehttp 68636 123145469423616 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 120873
+ERROR 2024-04-23 01:58:22,633 log 68636 123145486213120 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 75, in create
+    ip = obj.account.get_config().get('data')[0].get('ip')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 429
+response_content={"msg":"Too Many Requests","code":"50011"}
+ERROR 2024-04-23 01:58:22,633 basehttp 68636 123145486213120 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 120873
+INFO 2024-04-23 01:58:27,048 basehttp 68636 123145419055104 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 248
+INFO 2024-04-23 01:58:27,226 basehttp 68636 123145419055104 "GET /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 2977
+INFO 2024-04-23 02:00:54,764 autoreload 68689 4502550016 Watching for file changes with StatReloader
+INFO 2024-04-23 02:03:27,142 autoreload 68712 4576105984 Watching for file changes with StatReloader
+ERROR 2024-04-23 02:04:14,656 log 68712 123145547718656 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 94, in create
+    return super().create(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/extension/mixins.py", line 14, in create
+    res = self.perform_create(serializer)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 105, in perform_create
+    serializer.save(user=self.request.user)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/serializers.py", line 191, in save
+    assert not hasattr(self, '_data'), (
+AssertionError: You cannot call `.save()` after accessing `serializer.data`.If you need to access data before committing to the database then inspect 'serializer.validated_data' instead. 
+ERROR 2024-04-23 02:04:14,659 basehttp 68712 123145547718656 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 128102
+INFO 2024-04-23 02:04:26,225 autoreload 68735 4629972480 Watching for file changes with StatReloader
+INFO 2024-04-23 02:04:44,312 basehttp 68735 123145342660608 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 258
+INFO 2024-04-23 02:04:44,380 basehttp 68735 123145342660608 "GET /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 2987
+INFO 2024-04-23 02:15:00,219 basehttp 68735 123145342660608 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 63
+INFO 2024-04-23 02:15:07,181 basehttp 68735 123145342660608 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 63
+ERROR 2024-04-23 02:15:22,224 log 68735 123145342660608 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 69, in create
+    acctLv = obj.account.get_config().get('data')[0].get('acctLv')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 401
+response_content={"msg":"Request header OK-ACCESS-PASSPHRASE incorrect.","code":"50105"}
+ERROR 2024-04-23 02:15:22,226 basehttp 68735 123145342660608 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 120813
+INFO 2024-04-23 02:16:25,559 basehttp 68735 123145342660608 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+ERROR 2024-04-23 02:17:05,122 log 68735 123145342660608 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/socks.py", line 787, in connect
+    super(socksocket, self).connect(proxy_addr)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/urllib3/contrib/socks.py", line 96, in _new_conn
+    conn = socks.create_connection(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/socks.py", line 209, in create_connection
+    raise err
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/socks.py", line 199, in create_connection
+    sock.connect((remote_host, remote_port))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/socks.py", line 47, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/socks.py", line 800, in connect
+    raise ProxyConnectionError(msg, error)
+socks.ProxyConnectionError: Error connecting to SOCKS5 proxy 14.29.122.97:10322: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/urllib3/connection.py", line 358, in connect
+    self.sock = conn = self._new_conn()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/urllib3/contrib/socks.py", line 127, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x7f95202dff70>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: SOCKSHTTPSConnectionPool(host='www.okex.com', port=443): Max retries exceeded with url: /api/v5/account/config (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x7f95202dff70>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 69, in create
+    acctLv = obj.account.get_config().get('data')[0].get('acctLv')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 50, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 138, in inner
+    response = requests.get(url, headers=header, proxies=proxies)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: SOCKSHTTPSConnectionPool(host='www.okex.com', port=443): Max retries exceeded with url: /api/v5/account/config (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x7f95202dff70>: Failed to establish a new connection: [Errno 61] Connection refused'))
+ERROR 2024-04-23 02:17:05,124 basehttp 68735 123145342660608 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 236617
+INFO 2024-04-23 02:17:33,686 basehttp 68735 123145342660608 "OPTIONS /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+ERROR 2024-04-23 02:17:41,172 log 68735 123145342660608 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/socks.py", line 787, in connect
+    super(socksocket, self).connect(proxy_addr)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/urllib3/contrib/socks.py", line 96, in _new_conn
+    conn = socks.create_connection(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/socks.py", line 209, in create_connection
+    raise err
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/socks.py", line 199, in create_connection
+    sock.connect((remote_host, remote_port))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/socks.py", line 47, in wrapper
+    return function(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/socks.py", line 800, in connect
+    raise ProxyConnectionError(msg, error)
+socks.ProxyConnectionError: Error connecting to SOCKS5 proxy 14.29.122.97:10322: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 703, in urlopen
+    httplib_response = self._make_request(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 386, in _make_request
+    self._validate_conn(conn)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 1042, in _validate_conn
+    conn.connect()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/urllib3/connection.py", line 358, in connect
+    self.sock = conn = self._new_conn()
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/urllib3/contrib/socks.py", line 127, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x7f94f8810d00>: Failed to establish a new connection: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    retries = retries.increment(
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/urllib3/util/retry.py", line 592, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: SOCKSHTTPSConnectionPool(host='www.okex.com', port=443): Max retries exceeded with url: /api/v5/account/config (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x7f94f8810d00>: Failed to establish a new connection: [Errno 61] Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 69, in create
+    acctLv = obj.account.get_config().get('data')[0].get('acctLv')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 50, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 138, in inner
+    response = requests.get(url, headers=header, proxies=proxies)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: SOCKSHTTPSConnectionPool(host='www.okex.com', port=443): Max retries exceeded with url: /api/v5/account/config (Caused by NewConnectionError('<urllib3.contrib.socks.SOCKSHTTPSConnection object at 0x7f94f8810d00>: Failed to establish a new connection: [Errno 61] Connection refused'))
+ERROR 2024-04-23 02:17:41,172 basehttp 68735 123145342660608 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 236882
+INFO 2024-04-23 02:19:29,919 basehttp 68735 123145342660608 "OPTIONS /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+ERROR 2024-04-23 02:19:30,989 log 68735 123145342660608 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 69, in create
+    acctLv = obj.account.get_config().get('data')[0].get('acctLv')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 401
+response_content={"msg":"Request header OK-ACCESS-PASSPHRASE incorrect.","code":"50105"}
+ERROR 2024-04-23 02:19:30,990 basehttp 68735 123145342660608 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 121078
+INFO 2024-04-23 02:19:58,736 basehttp 68735 123145342660608 "OPTIONS /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+ERROR 2024-04-23 02:19:59,938 log 68735 123145342660608 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 69, in create
+    acctLv = obj.account.get_config().get('data')[0].get('acctLv')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 401
+response_content={"msg":"Request header OK-ACCESS-PASSPHRASE incorrect.","code":"50105"}
+ERROR 2024-04-23 02:19:59,939 basehttp 68735 123145342660608 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 121078
+INFO 2024-04-23 02:21:56,542 autoreload 68949 4628207104 Watching for file changes with StatReloader
+INFO 2024-04-23 02:22:04,977 basehttp 68949 123145439834112 "OPTIONS /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 02:22:12,383 basehttp 68949 123145439834112 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 02:46:23,292 basehttp 68949 123145457696768 "GET /api/quotainfo/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 147
+INFO 2024-04-23 02:46:23,292 basehttp 68949 123145439834112 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 02:46:50,158 basehttp 68949 123145439834112 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 02:47:27,004 basehttp 68949 123145439834112 "OPTIONS /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 02:47:34,441 basehttp 68949 123145439834112 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 02:49:26,190 basehttp 68949 123145439834112 "OPTIONS /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 02:49:32,602 basehttp 68949 123145457696768 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 02:49:33,566 basehttp 68949 123145439834112 - Broken pipe from ('127.0.0.1', 64397)
+
+INFO 2024-04-23 02:49:49,077 basehttp 68949 123145457696768 "OPTIONS /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 02:49:59,510 basehttp 68949 123145457696768 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 02:56:34,810 basehttp 68949 123145439834112 "OPTIONS /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 02:56:43,184 basehttp 68949 123145439834112 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 02:56:52,297 basehttp 68949 123145439834112 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 02:57:09,609 basehttp 68949 123145439834112 "OPTIONS /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 02:57:17,033 basehttp 68949 123145439834112 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 02:58:09,210 basehttp 68949 123145439834112 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 02:58:31,064 basehttp 68949 123145439834112 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 02:59:18,197 basehttp 68949 123145439834112 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 02:59:37,881 basehttp 68949 123145439834112 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:00:38,581 basehttp 68949 123145457696768 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 03:00:43,501 basehttp 68949 123145439834112 - Broken pipe from ('127.0.0.1', 53554)
+
+INFO 2024-04-23 03:00:57,050 basehttp 68949 123145457696768 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:03,179 basehttp 68949 123145439834112 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:04,433 basehttp 68949 123145474486272 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:04,687 basehttp 68949 123145457696768 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:05,170 basehttp 68949 123145508065280 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:05,655 basehttp 68949 123145524854784 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:06,040 basehttp 68949 123145491275776 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:10,589 basehttp 68949 123145439834112 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:23,067 basehttp 68949 123145439834112 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:23,226 basehttp 68949 123145491275776 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:23,545 basehttp 68949 123145508065280 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:23,696 basehttp 68949 123145457696768 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:24,288 basehttp 68949 123145524854784 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:24,896 basehttp 68949 123145474486272 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:30,560 basehttp 68949 123145439834112 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:30,706 basehttp 68949 123145491275776 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:31,159 basehttp 68949 123145457696768 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:31,706 basehttp 68949 123145524854784 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:31,969 basehttp 68949 123145508065280 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:32,346 basehttp 68949 123145474486272 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:38,074 basehttp 68949 123145439834112 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:38,671 basehttp 68949 123145457696768 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:39,424 basehttp 68949 123145508065280 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:40,120 basehttp 68949 123145491275776 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:01:40,139 basehttp 68949 123145524854784 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:05:12,490 basehttp 68949 123145524854784 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 03:05:32,776 basehttp 68949 123145524854784 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:11:03,048 basehttp 68949 123145439834112 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 03:11:24,684 basehttp 68949 123145439834112 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:15:28,071 basehttp 68949 123145439834112 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 03:15:46,887 basehttp 68949 123145439834112 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:16:00,142 basehttp 68949 123145439834112 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 258
+INFO 2024-04-23 03:16:00,221 basehttp 68949 123145439834112 "GET /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 2987

@@ -1,6 +1,7 @@
 from crawler.myokx import app
 # from okx import app
 from okx.api.public import Public
+import time
 
 # 模拟子1
 # acc = {'key': '2f071928-25bf-4ea9-b171-efe4b6e4eefd',
@@ -33,11 +34,19 @@ from okx.api.public import Public
 acc = {'key': 'ba8dccb8-943d-468c-bcbf-8dced96fc7cf',
        'secret': 'BBA3FF14AC698CDBAA33219F858E7BF6',
        'passphrase': '112233Ww..',
-       # 'proxies': {
-       #              'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322',
-       #              'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322'
-       #             }
+    #    'proxies': {
+    #                 'http': 'socks5h://copyapes:12345678@38.147.173.111:5001',
+    #                 'https': 'socks5h://copyapes:12345678@38.147.173.111:5001'
+    #                }
        }
+# acc = {'key': '5853686f-a0ed-4c76-a382-5ac480740883',
+#        'secret': '2DCFFF11C68C2E88C6437268B28A87FE',
+#        'passphrase': '112233Ww..',
+#        'proxies': {
+#            'http': 'socks5h://copyapes:12345678@proxy.zhizhuip.com:5001',
+#            'https': 'socks5h://copyapes:12345678@proxy.zhizhuip.com:5001'
+#        }
+#        }
 # 实盘
 # acc = {'key': '63b35cdd-261f-4fd5-ba2a-a607cd7460c9',
 #        'secret': '52A5665FC31BFF7552D2980CE5C7F0F1',
@@ -47,14 +56,10 @@ acc = {'key': 'ba8dccb8-943d-468c-bcbf-8dced96fc7cf',
 #                     'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10099'
 #                    }
 #        }
-# 大宝实盘
-# acc = {'key': '3aa701e1-a4f4-4d97-bd6d-f9891b57da16',
-#        'secret': '6B83B04A90AE2DEB423D5624BB4C4F85',
-#        'passphrase': 'guobaoying94DG@',
-#        'proxies': {
-#                     'http': 'socks5h://16616640507srt-1:veg19mrb@14.29.122.96:10950',
-#                     'https': 'socks5h://16616640507srt-1:veg19mrb@14.29.122.96:10950'
-#                    }
+# 测试
+# acc = {'key': '3fb304e4-2723-4b9a-aa86-7fbcb1661ac4',
+#        'secret': 'DC44B17155DDEB723DF944D73632B6C2',
+#        'passphrase': 'Rr749291263.',
 #        }
 # acc = {'key': 'da5fea7c-99e8-4892-9fdf-369a0d35fe6e',
 #        'secret': '6A47EAA50207A62E332F9A1D1B3EF97C',
@@ -69,8 +74,9 @@ acc = {'key': 'ba8dccb8-943d-468c-bcbf-8dced96fc7cf',
 obj = app.OkxSWAP(**acc)
 obj.account.api.flag = '1'
 obj.trade.api.flag = '1'
+start_time = time.time()
 # 查看账户配置信息
-# print(obj.account.get_config())
+print(obj.account.get_config())
 
 # a = obj.account.get_positions_history(limit=1)
 # print(a)
@@ -83,9 +89,13 @@ obj.trade.api.flag = '1'
 #     print('[FAILURE] 设置持仓方式为双向持仓失败，请手动设置：posMode="long_short_mode"')
 #
 #
-a = obj.trade.open_market(instId="BTC-USDT-SWAP", posSide="long", openMoney=10 * 10, tdMode='cross',
-                                  lever=10)
-print(a)
+#
+# a = obj.trade.open_market(instId="BTC-USDT-SWAP", posSide="long", openMoney=10 * 10, tdMode='cross',
+#                           lever=10)
+end_time = time.time()
+t = start_time - end_time
+# print(a)
+print(t)
 
 # result = obj.trade.open_market(instId="LTC-USDT-SWAP", posSide="long", openMoney=5, tdMode='cross',
 #                                   lever=3)
@@ -140,7 +150,6 @@ print(a)
 # a = Public().get_instruments(instType='SWAP')
 
 
-
 #
 # import requests
 #
@@ -152,20 +161,6 @@ print(a)
 # a = requests.get(url = 'https://www.okx.com/api/v5/public/instruments?instType=SWAP&instId=DYDX-USDT-SWAP',headers={'x-simulated-trading': '1'},proxies=proxies).json()
 
 # print(a)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 """
 实盘信息
@@ -182,7 +177,7 @@ print(a)
              'quoteInterest': '', 'realizedPnl': '-0.09994775', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '',
              'thetaPA': '', 'tradeId': '30646646', 'uTime': '1702229518344', 'upl': '0.0198999999999923', 'uplLastPx': '0',
              'uplRatio': '0.0002986560477851', 'uplRatioLastPx': '0', 'usdPx': '', 'vegaBS': '', 'vegaPA': ''},
-        
+
             {'adl': '1', 'availPos': '27', 'avgPx': '73.18', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '',
              'bePx': '73.2312516258129', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702228492444', 'ccy': 'USDT',
              'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.0395172', 'fundingFee': '0', 'gammaBS': '',
@@ -198,7 +193,7 @@ print(a)
          ], 
  'msg': ''
  }
- 
+
  历史持仓
  {'code': '0', 'data': [], 'msg': ''}
  {
@@ -217,11 +212,9 @@ print(a)
             ], 
      'msg': ''
  }
- 
- 
+
+
  """
-
-
 
 """
 'instId':'ETH-USDT-SWAP',
