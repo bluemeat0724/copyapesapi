@@ -314,6 +314,7 @@ class Trader(threading.Thread):
             #         "select * from api_orderinfo where user_id = %(user_id)s and task_id = %(task_id)s and status = 1",
             #         user_id=self.user_id, task_id=self.task_id)
         except:
+            self.handle_trade_failure(data)
             return
         if not data:
             # # 账户获取剩余额度
