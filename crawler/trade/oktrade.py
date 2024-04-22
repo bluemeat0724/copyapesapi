@@ -4,56 +4,11 @@ import threading
 from crawler.utils.get_api import api
 from crawler.utils.get_trade_times import get_trade_times
 import time
-from functools import wraps
-from loguru import logger
 from crawler.account.okx_orderinfo import OkxOrderInfo
 import datetime
 from concurrent.futures import ThreadPoolExecutor
 from crawler.account.update_quota import get_remaining_quota, check_task_pnl, update_remaining_quota
 
-logger.remove()  # 移除所有默认的handler
-
-
-def retry(max_attempts=5, delay=1):
-    def decorator(func):
-        @wraps(func)
-        def wrapper(*args, **kwargs):
-            attempts = 0
-            while attempts < max_attempts:
-                try:
-                    return func(*args, **kwargs)
-                except Exception as e:  # 捕获所有异常
-                    print(f"操作失败，原因: {e}. 正在重试...")
-                    attempts += 1
-                    time.sleep(delay)
-            print("多次尝试失败，放弃本次交易操作。")
-
-        return wrapper
-
-    return decorator
-
-
-class RetryDecoratorProxy:
-    def __init__(self, obj):
-        self._obj = obj
-
-    def __getattr__(self, name):
-        attr = getattr(self._obj, name)
-        if callable(attr):
-            return retry()(attr)
-        return attr
-
-
-class RetryNetworkOperations:
-    def __init__(self, network_operations):
-        self._operations = network_operations
-
-    def __getattr__(self, name):
-        attr = getattr(self._operations, name)
-        # 如果 attr 是对象实例，为其方法应用 retry 装饰器
-        if not callable(attr) and not name.startswith("__"):
-            return RetryDecoratorProxy(attr)
-        return attr
 
 
 class Trader(threading.Thread):
@@ -125,7 +80,7 @@ class Trader(threading.Thread):
             # update task 里面的 ip_id
             self.update_task_with_ip()
             # 创建okx交易对象
-            obj = RetryNetworkOperations(app.OkxSWAP(**self.acc))
+            obj = app.OkxSWAP(**self.acc)
             self.obj = obj
 
             # 根据api选择实盘还是模拟盘
