@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from api.extension import return_code
 from crawler.myokx import app
 from crawler.utils.get_proxies import get_my_proxies
+import re
 
 
 class ApiAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixin, CopyUpdateModelMixin):
@@ -26,7 +27,6 @@ class ApiAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixin
             passPhrase = request.data.get('passPhrase')
         api_key = request.data.get('api_key')
         secret_key = request.data.get('secret_key')
-        print(user_id,platform,flag,passPhrase,api_key,secret_key)
 
         # 检查是否存在相同的api_key和secret_key，且未被删除
         if models.ApiInfo.objects.filter(api_key=api_key, secret_key=secret_key, deleted=False).exists():
@@ -74,7 +74,13 @@ class ApiAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixin
                 # api权限
                 perm = obj.account.get_config().get('data')[0].get('perm')
             except Exception as e:
-                print(e)
+                match = re.search(r'"code":"(\d+)"', str(e))
+                if match:
+                    code_value = match.group(1)
+                    if code_value == '50105':
+                        return Response({
+                            'code': return_code.API_ERROR,
+                            'error': 'PASSPHRASE错误，请检查！'})
                 return Response({
                     'code': return_code.API_ERROR,
                     'error': 'API信息错误，请检查！'})

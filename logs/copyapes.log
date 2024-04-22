@@ -5521,3 +5521,276 @@ INFO 2024-04-23 03:15:28,071 basehttp 68949 123145439834112 "GET /api/ip/?token=
 INFO 2024-04-23 03:15:46,887 basehttp 68949 123145439834112 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
 INFO 2024-04-23 03:16:00,142 basehttp 68949 123145439834112 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 258
 INFO 2024-04-23 03:16:00,221 basehttp 68949 123145439834112 "GET /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 2987
+INFO 2024-04-23 03:24:38,450 basehttp 68949 123145439834112 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:25:30,486 basehttp 68949 123145439834112 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:26:57,504 basehttp 68949 123145439834112 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 03:46:12,179 autoreload 68949 4628207104 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-23 03:46:13,314 autoreload 69791 4533097984 Watching for file changes with StatReloader
+INFO 2024-04-23 03:46:22,935 autoreload 69807 4566124032 Watching for file changes with StatReloader
+INFO 2024-04-23 03:46:44,449 basehttp 69807 123145592012800 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:47:53,182 autoreload 69807 4566124032 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-23 03:47:54,030 autoreload 69821 4546283008 Watching for file changes with StatReloader
+INFO 2024-04-23 03:48:21,714 basehttp 69821 123145521438720 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:49:12,796 basehttp 69821 123145521438720 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 03:52:36,653 autoreload 69821 4546283008 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-23 03:52:37,499 autoreload 69905 4705252864 Watching for file changes with StatReloader
+INFO 2024-04-23 03:52:57,024 autoreload 69905 4705252864 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-23 03:52:57,968 autoreload 71575 4412499456 Watching for file changes with StatReloader
+INFO 2024-04-23 03:54:41,513 autoreload 71603 4615845376 Watching for file changes with StatReloader
+ERROR 2024-04-23 03:54:48,621 log 71603 123145552539648 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 63, in create
+    acctLv = obj.account.get_config().get('data')[0].get('acctLv')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 401
+response_content={"msg":"Request header OK-ACCESS-PASSPHRASE incorrect.","code":"50105"}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 78, in create
+    match = re.search(r'"code":"(\d+)"', e)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/re.py", line 201, in search
+    return _compile(pattern, flags).search(string)
+TypeError: expected string or bytes-like object
+ERROR 2024-04-23 03:54:48,626 basehttp 71603 123145552539648 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 131471
+ERROR 2024-04-23 03:54:54,128 log 71603 123145552539648 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 63, in create
+    acctLv = obj.account.get_config().get('data')[0].get('acctLv')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 401
+response_content={"msg":"Request header OK-ACCESS-PASSPHRASE incorrect.","code":"50105"}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 78, in create
+    match = re.search(r'"code":"(\d+)"', e)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/re.py", line 201, in search
+    return _compile(pattern, flags).search(string)
+TypeError: expected string or bytes-like object
+ERROR 2024-04-23 03:54:54,129 basehttp 71603 123145552539648 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 131471
+INFO 2024-04-23 03:56:12,801 autoreload 71622 4472358400 Watching for file changes with StatReloader
+ERROR 2024-04-23 03:56:18,488 log 71622 123145458663424 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 63, in create
+    acctLv = obj.account.get_config().get('data')[0].get('acctLv')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 401
+response_content={"msg":"Request header OK-ACCESS-PASSPHRASE incorrect.","code":"50105"}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 78, in create
+    print(acctLv)
+UnboundLocalError: local variable 'acctLv' referenced before assignment
+ERROR 2024-04-23 03:56:18,494 basehttp 71622 123145458663424 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 127083
+INFO 2024-04-23 03:57:03,588 autoreload 71622 4472358400 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-23 03:57:04,499 autoreload 71640 4602762752 Watching for file changes with StatReloader
+ERROR 2024-04-23 03:57:06,949 log 71640 123145415098368 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 63, in create
+    acctLv = obj.account.get_config().get('data')[0].get('acctLv')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 401
+response_content={"msg":"Request header OK-ACCESS-PASSPHRASE incorrect.","code":"50105"}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 78, in create
+    print(acctLv)
+UnboundLocalError: local variable 'acctLv' referenced before assignment
+ERROR 2024-04-23 03:57:06,951 basehttp 71640 123145415098368 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 127085
+INFO 2024-04-23 03:57:17,507 autoreload 71649 4675433984 Watching for file changes with StatReloader
+ERROR 2024-04-23 03:57:22,376 log 71649 123145585557504 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 63, in create
+    acctLv = obj.account.get_config().get('data')[0].get('acctLv')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 401
+response_content={"msg":"Request header OK-ACCESS-PASSPHRASE incorrect.","code":"50105"}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 78, in create
+    print(acctLv)
+UnboundLocalError: local variable 'acctLv' referenced before assignment
+ERROR 2024-04-23 03:57:22,378 basehttp 71649 123145585557504 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 127085
+INFO 2024-04-23 03:57:39,378 autoreload 71649 4675433984 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-23 03:57:40,369 autoreload 71659 4436182528 Watching for file changes with StatReloader
+ERROR 2024-04-23 03:57:42,378 log 71659 123145551040512 Internal Server Error: /api/apiadd/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 63, in create
+    acctLv = obj.account.get_config().get('data')[0].get('acctLv')
+  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/accountSWAP.py", line 246, in get_config
+    result = self.api.get_config(proxies=proxies, proxy_host=proxy_host)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/account.py", line 437, in get_config
+    return self.send_request(*_AccountEndpoints.get_config, **to_local(locals()))
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 152, in send_request
+    return inner(path, method, **params)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 37, in wrapper2
+    result = func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/okx/api/_client.py", line 149, in inner
+    raise ResponseStatusError(msg)
+okx.api._client.ResponseStatusError: Error response_status_code 401
+response_content={"msg":"Request header OK-ACCESS-PASSPHRASE incorrect.","code":"50105"}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py", line 78, in create
+    match = re.search(r'"code":"(\d+)"', e)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/re.py", line 201, in search
+    return _compile(pattern, flags).search(string)
+TypeError: expected string or bytes-like object
+ERROR 2024-04-23 03:57:42,383 basehttp 71659 123145551040512 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 131471
+INFO 2024-04-23 04:00:23,099 autoreload 71699 4663637504 Watching for file changes with StatReloader
+INFO 2024-04-23 04:00:28,003 basehttp 71699 123145353093120 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 55
+INFO 2024-04-23 04:00:48,887 basehttp 71699 123145353093120 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
+INFO 2024-04-23 04:01:32,580 autoreload 71699 4663637504 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-23 04:01:33,532 autoreload 71716 4673324544 Watching for file changes with StatReloader
