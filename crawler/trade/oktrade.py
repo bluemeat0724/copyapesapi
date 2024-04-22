@@ -15,7 +15,7 @@ class Trader(threading.Thread):
                  first_order_set, posSide_set,
                  instId=None, mgnMode=None, posSide=None, lever=1, openTime=None, openAvgPx=None, margin=None,
                  availSubPos=None, order_type=None,
-                 old_margin=None, new_margin=None, old_availSubPos=None, new_availSubPos=None, status=None):
+                 old_margin=None, new_margin=None, old_availSubPos=None, new_availSubPos=None, status=None, fast_mode=0):
         super(Trader, self).__init__()
         self.task_id = task_id
         self.order_type = order_type
@@ -50,6 +50,7 @@ class Trader(threading.Thread):
         self.acc = None
         self.ip_id = None
         self.status = None
+        self.fast_mode = fast_mode
 
 
     def log_to_database(self, level, title, description=""):
@@ -74,6 +75,8 @@ class Trader(threading.Thread):
     def run(self):
         # 获取api信息
         self.acc, self.flag, self.ip_id = api(self.user_id, self.api_id)
+        if int(self.fast_mode) == 1:
+            self.acc.pop("proxies")
         try:
             self.write_task_log()
             # update task 里面的 ip_id

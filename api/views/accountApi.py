@@ -19,6 +19,9 @@ class ApiAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixin
         # 从请求中获取api_key和secret_key
         api_key = request.data.get('api_key')
         secret_key = request.data.get('secret_key')
+        # 查看
+
+
 
         # 检查是否存在相同的api_key和secret_key，且未被删除
         if models.ApiInfo.objects.filter(api_key=api_key, secret_key=secret_key, deleted=False).exists():
