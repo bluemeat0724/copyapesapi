@@ -120,7 +120,11 @@ class TaskInfo(DeletedModel):
     create_datetime = models.DateTimeField(verbose_name="创建时间", auto_now_add=True)
     pnl = models.FloatField(verbose_name="已实现跟单收益", default=0)
     ip_id = models.IntegerField(verbose_name="ip的id", null=True)
-
+    fast_mode_choice = (
+        (0, "否"),
+        (1, "是"),
+    )
+    fast_mode = models.IntegerField(verbose_name="是否极速", choices=fast_mode_choice, default=0)
 
 
 

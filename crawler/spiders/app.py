@@ -15,7 +15,7 @@ logger.remove()  # 移除所有默认的handler
 class Spider(threading.Thread):
     def __init__(self, task_id, trader_platform, uniqueName, follow_type, role_type, reduce_ratio, sums, ratio,
                  lever_set, first_order_set, api_id,
-                 user_id, leverage, posSide_set):
+                 user_id, leverage, posSide_set, fast_mode):
         super(Spider, self).__init__()
         self.task_id = task_id
         self.trader_platform = trader_platform
@@ -33,6 +33,7 @@ class Spider(threading.Thread):
         self.posSide_set = posSide_set
         self.stop_flag = threading.Event()  # 用于控制爬虫线程的停止
         self.status = None  # status 1:开始 2：手动结束 3：ip到期 被动结束
+        self.fast_mode = fast_mode  # 0:否 1:是
 
     def log_to_database(self, level, title, description=""):
         """
@@ -153,6 +154,7 @@ class Spider(threading.Thread):
                 item['first_order_set'] = self.first_order_set
                 item['api_id'] = self.api_id
                 item['user_id'] = self.user_id
+                item['fast_mode'] = self.fast_mode
                 item = self.transform(item)
                 # thread_logger.success(
                 #     f"交易员{self.uniqueName}进行了开仓操作，品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}")
@@ -180,6 +182,7 @@ class Spider(threading.Thread):
                 item['first_order_set'] = self.first_order_set
                 item['api_id'] = self.api_id
                 item['user_id'] = self.user_id
+                item['fast_mode'] = self.fast_mode
                 item = self.transform(item)
                 # thread_logger.success(
                 #     f"交易员{self.uniqueName}进行了平仓操作，品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}")
@@ -214,6 +217,7 @@ class Spider(threading.Thread):
                           'first_order_set': self.first_order_set,
                           'api_id': self.api_id,
                           'user_id': self.user_id,
+                          'fast_mode': self.fast_mode
                           }
                 change = self.transform(change)
                 changed_items.append(change)
@@ -251,7 +255,8 @@ class Spider(threading.Thread):
                 'lever_set': self.lever_set,
                 'first_order_set': self.first_order_set,
                 'api_id': self.api_id,
-                'user_id': self.user_id
+                'user_id': self.user_id,
+                'fast_mode': self.fast_mode
             })
             if new['order_type'] == 'close' and old:
                 # TODO 只能拿上一条记录的mgnMode，如果有全仓和逐仓同时出现的交易就有拿错的风险，避免风险只能去数据库里拿
