@@ -69,6 +69,7 @@ class ApiInfo(DeletedModel):
     roleType = models.CharField(verbose_name="角色", max_length=8, null=True, blank=True)
     level = models.CharField(verbose_name="等级", max_length=8, null=True, blank=True)
     perm = models.CharField(verbose_name="权限", max_length=32, null=True, blank=True)
+    uid = models.CharField(verbose_name="uid", max_length=32, null=True, blank=True)
 
 
 class TaskInfo(DeletedModel):

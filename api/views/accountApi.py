@@ -65,6 +65,13 @@ class ApiAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixin
                     return Response({
                         'code': return_code.API_ERROR,
                         'error': '当前API无法进行合约交易，请在交易所合约交易页面手动设置！'})
+                # uid
+                uid = obj.account.get_config().get('data')[0].get('uid')
+                if models.ApiInfo.objects.filter(uid=uid, deleted=False).exists():
+                    return Response({
+                        'code': return_code.EXIST_ERROR,
+                        'error': '当前交易所账户已授权，请勿重复绑定！可在交易所申请子账户继续绑定！'})
+
                 # ip白名单
                 ip = obj.account.get_config().get('data')[0].get('ip')
                 # 用户角色
@@ -73,6 +80,7 @@ class ApiAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixin
                 level = obj.account.get_config().get('data')[0].get('level')
                 # api权限
                 perm = obj.account.get_config().get('data')[0].get('perm')
+
             except Exception as e:
                 match = re.search(r'"code":"(\d+)"', str(e))
                 if match:
@@ -91,7 +99,8 @@ class ApiAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixin
             'ip': ip,
             'roleType': roleType,
             'level': level,
-            'perm': perm
+            'perm': perm,
+            'uid': uid
         })
         print(kwargs)
 

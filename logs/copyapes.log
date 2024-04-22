@@ -5794,3 +5794,14 @@ INFO 2024-04-23 04:00:28,003 basehttp 71699 123145353093120 "POST /api/apiadd/?t
 INFO 2024-04-23 04:00:48,887 basehttp 71699 123145353093120 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 54
 INFO 2024-04-23 04:01:32,580 autoreload 71699 4663637504 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
 INFO 2024-04-23 04:01:33,532 autoreload 71716 4673324544 Watching for file changes with StatReloader
+INFO 2024-04-23 04:18:16,230 autoreload 71716 4673324544 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-23 04:18:17,162 autoreload 71973 4457694720 Watching for file changes with StatReloader
+INFO 2024-04-23 04:24:35,180 autoreload 72066 4570510848 Watching for file changes with StatReloader
+INFO 2024-04-23 04:24:55,489 basehttp 72066 123145486311424 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 285
+INFO 2024-04-23 04:24:55,572 basehttp 72066 123145486311424 "GET /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 3146
+INFO 2024-04-23 04:28:04,050 basehttp 72066 123145486311424 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 123
+INFO 2024-04-23 04:28:18,103 basehttp 72066 123145486311424 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 123
+INFO 2024-04-23 04:28:31,024 basehttp 72066 123145486311424 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 123
+INFO 2024-04-23 04:28:40,005 basehttp 72066 123145486311424 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 123
+INFO 2024-04-23 04:28:47,398 basehttp 72066 123145486311424 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 123
+INFO 2024-04-23 04:28:55,167 basehttp 72066 123145486311424 "POST /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 123

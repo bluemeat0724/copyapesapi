@@ -10,7 +10,7 @@ class ApiSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.ApiInfo
         fields = ['id', "platform", "api_name", "flag", "passPhrase", "api_key", "secret_key", "status", "user",
-                  "create_datetime", 'acctLv', 'ip', 'roleType', 'level', 'perm']
+                  "create_datetime", 'acctLv', 'ip', 'roleType', 'level', 'perm', 'uid']
         # read_only_fields = ['status']
         extra_kwargs = {
             'passPhrase': {'write_only': True},
