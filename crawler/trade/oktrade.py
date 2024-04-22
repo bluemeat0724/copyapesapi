@@ -10,7 +10,6 @@ from concurrent.futures import ThreadPoolExecutor
 from crawler.account.update_quota import get_remaining_quota, check_task_pnl, update_remaining_quota
 
 
-
 class Trader(threading.Thread):
     def __init__(self, task_id, api_id, user_id, trader_platform, uniqueName, follow_type, role_type, reduce_ratio, sums, ratio, lever_set,
                  first_order_set, posSide_set,
@@ -301,7 +300,7 @@ class Trader(threading.Thread):
         try:
             self.acc, self.flag, self.ip_id = api(self.user_id, self.api_id)
             # 创建okx交易对象
-            obj = RetryNetworkOperations(app.OkxSWAP(**self.acc))
+            obj = app.OkxSWAP(**self.acc)
             self.obj = obj
 
             # 根据api选择实盘还是模拟盘
