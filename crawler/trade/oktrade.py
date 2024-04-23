@@ -1,3 +1,4 @@
+from crawler.settingsprod import HOST_IP
 from crawler.utils.db import Connect
 from crawler.myokx import app
 import threading
@@ -77,7 +78,9 @@ class Trader(threading.Thread):
         # 获取api信息
         self.acc, self.flag, self.ip_id = api(self.user_id, self.api_id)
         if int(self.fast_mode) == 1:
-            self.acc.pop("proxies")
+            res = self.check_ip()
+            if res:
+                self.acc.pop("proxies")
         try:
             self.write_task_log()
             # update task 里面的 ip_id
@@ -472,3 +475,18 @@ class Trader(threading.Thread):
         if self.order_type == 'change':
             self.margin = self.new_margin - self.old_margin
         self.sums = self.margin * self.ratio
+
+    def check_ip(self):
+        """
+        更新任务表的ip_id
+        """
+        result = False
+        with Connect() as db:
+            res = db.fetch_one("select ip from  api_apiinfo  WHERE key = %(key)s and secret = %(secret)s", key=self.acc.get("key"), secret=self.acc.get("secret"))
+            if res.get("ip", None):
+                arr = res["ip"].split(",")
+                if HOST_IP in arr:
+                    result = True
+            else:
+                result = True
+        return result
