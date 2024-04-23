@@ -220,10 +220,10 @@ class Trader(threading.Thread):
                 print(f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
                 self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT=quantityCT,
                                             tdMode=self.mgnMode)
-                # 更新持仓数据
-                OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=1)
                 percentage = "{:.2f}%".format((1 - ratio) * 100)
                 self.log_to_database("success", '进行减仓操作', f'品种：{self.instId}，减仓占比：{percentage}')
+                # 更新持仓数据
+                OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=1)
 
         # 跟单普通用户发生减仓操作
         elif self.order_type == 'reduce':
@@ -240,10 +240,10 @@ class Trader(threading.Thread):
             print(f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
             self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT=quantityCT,
                                         tdMode=self.mgnMode)
-            # 更新持仓数据
-            OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=1)
             percentage = "{:.2f}%".format(self.reduce_ratio * 100)
             self.log_to_database("success", '进行减仓操作', f'品种：{self.instId}，减仓占比：{percentage}')
+            # 更新持仓数据
+            OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=1)
         elif self.order_type == 'close_all':
             # 结束全部正在进行中的交易
             data = self.obj.account.get_positions().get('data')
@@ -311,6 +311,8 @@ class Trader(threading.Thread):
     def stop(self):
         try:
             self.acc, self.flag, self.ip_id = api(self.user_id, self.api_id)
+            if int(self.fast_mode) == 1:
+                self.acc.pop("proxies")
             # 创建okx交易对象
             obj = app.OkxSWAP(**self.acc)
             self.obj = obj
@@ -325,8 +327,17 @@ class Trader(threading.Thread):
             #     data = db.fetch_all(
             #         "select * from api_orderinfo where user_id = %(user_id)s and task_id = %(task_id)s and status = 1",
             #         user_id=self.user_id, task_id=self.task_id)
-        except:
-            self.handle_trade_failure(data)
+        except Exception as e:
+            print(f"{self.task_id}交易失败，原因: {e}")
+            match = re.search(r'"code":"(\d+)"', str(e))
+            if match:
+                code_value = match.group(1)
+                if code_value == '50101':
+                    self.log_to_database("WARNING", "停止交易", "请确认APIKEY和实盘或者模拟盘环境匹配！")
+                elif code_value == '50105':
+                    self.log_to_database("WARNING", 'API错误', 'PASSPHRASE填写错误，请结束任务，重新提交！')
+                elif code_value == '50001':
+                    self.log_to_database("WARNING", '交易所服务错误', '交易所服务暂时不可用，请稍后重试！')
             return
         if not data:
             # # 账户获取剩余额度

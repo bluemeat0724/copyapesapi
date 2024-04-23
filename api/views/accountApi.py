@@ -89,6 +89,10 @@ class ApiAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixin
                         return Response({
                             'code': return_code.API_ERROR,
                             'error': 'PASSPHRASE错误，请检查！'})
+                    elif code_value == '50101':
+                        return Response({
+                            'code': return_code.API_ERROR,
+                            'error': '请确认APIKEY和实盘或者模拟盘环境匹配！'})
                 return Response({
                     'code': return_code.API_ERROR,
                     'error': 'API信息错误，请检查！'})

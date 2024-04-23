@@ -44,12 +44,13 @@ def run():
             user_id = task_data.get('user_id')
             leverage = task_data.get('leverage')
             posSide_set = task_data.get('posSide_set')
+            fast_mode = task_data.get('fast_mode')
 
             if status == 1:
                 # 开启新爬虫
                 if task_id not in spiders:
                     spider = app.Spider(task_id, trader_platform, uniqueName, follow_type, role_type, reduce_ratio,sums, ratio, lever_set,
-                                        first_order_set, api_id, user_id, leverage, posSide_set)
+                                        first_order_set, api_id, user_id, leverage, posSide_set, fast_mode)
                     spider.start()
                     spiders[task_id] = spider
                     print(f"用户：{user_id}的最新跟单任务{task_id}已经开始。")
