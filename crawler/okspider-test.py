@@ -8,6 +8,7 @@ import requests
 import json
 from loguru import logger
 from crawler.utils import get_task
+from crawler.utils.reactivate_tasks import reactivate_tasks
 
 # proxies = {
 #     'http': 'socks5h://{}:{}@{}:{}'.format(settings.PROXY_USERNAME, settings.PROXY_PASSWORD, settings.PROXY_IP,
@@ -29,7 +30,7 @@ logger.remove()  # 移除所有默认的handler
 
 class Spider(threading.Thread):
     def __init__(self, task_id, trader_platform, uniqueName, follow_type, role_type, reduce_ratio, sums, ratio, lever_set, first_order_set, api_id,
-                 user_id, leverage, posSide_set):
+                 user_id, leverage, posSide_set, fast_mode):
         super(Spider, self).__init__()
         self.task_id = task_id
         self.trader_platform = trader_platform
@@ -45,6 +46,7 @@ class Spider(threading.Thread):
         self.user_id = user_id
         self.leverage = leverage
         self.posSide_set = posSide_set
+        self.fast_mode = fast_mode
         self.stop_flag = threading.Event()  # 用于控制爬虫线程的停止
 
     def log_to_database(self, level, title, description=""):
@@ -120,6 +122,7 @@ class Spider(threading.Thread):
                 data_clear['first_order_set'] = self.first_order_set
                 data_clear['api_id'] = self.api_id
                 data_clear['user_id'] = self.user_id
+                data_clear['fast_mode'] = self.fast_mode
                 summary_list_new.append(data_clear)
             return summary_list_new
 
@@ -218,6 +221,7 @@ class Spider(threading.Thread):
                 item['first_order_set'] = self.first_order_set
                 item['api_id'] = self.api_id
                 item['user_id'] = self.user_id
+                item['fast_mode'] = self.fast_mode
                 item = self.transform(item)
                 # thread_logger.success(f"交易员{self.uniqueName}进行了开仓操作，品种：{item['instId']}，杠杆：{item['lever']}")
                 self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
@@ -246,6 +250,7 @@ class Spider(threading.Thread):
                 item['first_order_set'] = self.first_order_set
                 item['api_id'] = self.api_id
                 item['user_id'] = self.user_id
+                item['fast_mode'] = self.fast_mode
                 item = self.transform(item)
                 # self.thread_logger.success(
                 #     f"交易员{self.uniqueName}进行了平仓操作，品种：{item['instId']}，杠杆：{item['lever']}")
@@ -281,9 +286,11 @@ class Spider(threading.Thread):
                           'first_order_set': self.first_order_set,
                           'api_id': self.api_id,
                           'user_id': self.user_id,
+                          'fast_mode':self.fast_mode
                           }
                 change = self.transform(change)
                 changed_items.append(change)
+                print(change)
                 self.log_to_database("success", f"交易员{self.uniqueName}进行了调仓操作",
                                      f"品种：{old_item['instId']}，原仓位：{old_item['margin']}，现仓位：{new_item['margin']}")
                 # thread_logger.success(
@@ -337,6 +344,8 @@ class Spider(threading.Thread):
 spiders = {}
 
 if __name__ == '__main__':
+    # 查看taskinfo表，看是否有需要恢复的任务
+    reactivate_tasks()
     while True:
         try:
             # 去redis里获取跟单任务id
@@ -363,12 +372,13 @@ if __name__ == '__main__':
             user_id = task_data.get('user_id')
             leverage = task_data.get('leverage')
             posSide_set = task_data.get('posSide_set')
+            fast_mode = task_data.get('fast_mode')
 
             if status == 1:
                 # 开启新爬虫
                 if task_id not in spiders:
                     spider = Spider(task_id, trader_platform, uniqueName, follow_type,role_type,reduce_ratio, sums, ratio, lever_set, first_order_set,
-                                    api_id, user_id, leverage, posSide_set)
+                                    api_id, user_id, leverage, posSide_set, fast_mode)
                     spider.start()
                     spiders[task_id] = spider
                     print(f"用户：{user_id}的最新跟单任务{task_id}已经开始。")

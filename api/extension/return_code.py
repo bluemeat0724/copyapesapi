@@ -1,6 +1,12 @@
 # 成功
 SUCCESS = 0
 
+# 没有添加IP
+PROXY_ERROR = 1004
+
+# API错误
+API_ERROR = 1005
+
 # 数据已存在
 EXIST_ERROR = 1000
 

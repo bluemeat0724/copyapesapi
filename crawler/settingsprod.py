@@ -17,7 +17,7 @@ MYSQL_CONN_PARAMS = {
     'port': 3306,
     'charset': 'utf8'
 }
-
+HOST_IP = '38.147.173.111'
 # SOCKS5代理服务器配置
 # PROXY_IP = '38.147.173.111'
 # PROXY_IP = '38.45.108.138'
@@ -25,8 +25,6 @@ MYSQL_CONN_PARAMS = {
 PROXY_IP = 'proxy.zhizhuip.com'  #蜘蛛ip官方
 # PROXY_PORT = 5003
 PROXY_PORT = 5001
-
-
 
 USER_AGENTS = [
     "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36",

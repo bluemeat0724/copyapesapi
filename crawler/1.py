@@ -47,6 +47,14 @@ acc = {'key': '5853686f-a0ed-4c76-a382-5ac480740883',
     #                 'https': 'socks5h://copyapes:12345678@38.147.173.111:5001'
     #                }
        }
+# acc = {'key': '5853686f-a0ed-4c76-a382-5ac480740883',
+#        'secret': '2DCFFF11C68C2E88C6437268B28A87FE',
+#        'passphrase': '112233Ww..',
+#        'proxies': {
+#            'http': 'socks5h://copyapes:12345678@proxy.zhizhuip.com:5001',
+#            'https': 'socks5h://copyapes:12345678@proxy.zhizhuip.com:5001'
+#        }
+#        }
 # 实盘
 # acc = {'key': '63b35cdd-261f-4fd5-ba2a-a607cd7460c9',
 #        'secret': '52A5665FC31BFF7552D2980CE5C7F0F1',
@@ -76,7 +84,7 @@ obj.account.api.flag = '1'
 obj.trade.api.flag = '1'
 start_time = time.time()
 # 查看账户配置信息
-print(obj.account.get_config().get('data')[0].get('ip'))
+print(obj.account.get_config())
 
 # a = obj.account.get_positions_history(limit=1)
 # print(a)
@@ -90,8 +98,9 @@ print(obj.account.get_config().get('data')[0].get('ip'))
 #
 #
 
+#
 # a = obj.trade.open_market(instId="BTC-USDT-SWAP", posSide="long", openMoney=10 * 10, tdMode='cross',
-#                                   lever=10)
+#                           lever=10)
 end_time = time.time()
 t = start_time - end_time
 # print(a)
@@ -161,7 +170,6 @@ print(t)
 # a = requests.get(url = 'https://www.okx.com/api/v5/public/instruments?instType=SWAP&instId=DYDX-USDT-SWAP',headers={'x-simulated-trading': '1'},proxies=proxies).json()
 
 # print(a)
-
 
 """
 实盘信息

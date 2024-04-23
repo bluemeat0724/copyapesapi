@@ -3,57 +3,12 @@ from crawler.myokx import app
 import threading
 from crawler.utils.get_api import api
 from crawler.utils.get_trade_times import get_trade_times
+import re
 import time
-from functools import wraps
-from loguru import logger
 from crawler.account.okx_orderinfo import OkxOrderInfo
 import datetime
 from concurrent.futures import ThreadPoolExecutor
 from crawler.account.update_quota import get_remaining_quota, check_task_pnl, update_remaining_quota
-
-logger.remove()  # 移除所有默认的handler
-
-
-def retry(max_attempts=5, delay=1):
-    def decorator(func):
-        @wraps(func)
-        def wrapper(*args, **kwargs):
-            attempts = 0
-            while attempts < max_attempts:
-                try:
-                    return func(*args, **kwargs)
-                except Exception as e:  # 捕获所有异常
-                    print(f"操作失败，原因: {e}. 正在重试...")
-                    attempts += 1
-                    time.sleep(delay)
-            print("多次尝试失败，放弃本次交易操作。")
-
-        return wrapper
-
-    return decorator
-
-
-class RetryDecoratorProxy:
-    def __init__(self, obj):
-        self._obj = obj
-
-    def __getattr__(self, name):
-        attr = getattr(self._obj, name)
-        if callable(attr):
-            return retry()(attr)
-        return attr
-
-
-class RetryNetworkOperations:
-    def __init__(self, network_operations):
-        self._operations = network_operations
-
-    def __getattr__(self, name):
-        attr = getattr(self._operations, name)
-        # 如果 attr 是对象实例，为其方法应用 retry 装饰器
-        if not callable(attr) and not name.startswith("__"):
-            return RetryDecoratorProxy(attr)
-        return attr
 
 
 class Trader(threading.Thread):
@@ -61,7 +16,7 @@ class Trader(threading.Thread):
                  first_order_set, posSide_set,
                  instId=None, mgnMode=None, posSide=None, lever=1, openTime=None, openAvgPx=None, margin=None,
                  availSubPos=None, order_type=None,
-                 old_margin=None, new_margin=None, old_availSubPos=None, new_availSubPos=None, status=None):
+                 old_margin=None, new_margin=None, old_availSubPos=None, new_availSubPos=None, status=None, fast_mode=0):
         super(Trader, self).__init__()
         self.task_id = task_id
         self.order_type = order_type
@@ -96,6 +51,7 @@ class Trader(threading.Thread):
         self.acc = None
         self.ip_id = None
         self.status = None
+        self.fast_mode = fast_mode
 
 
     def log_to_database(self, level, title, description=""):
@@ -120,12 +76,13 @@ class Trader(threading.Thread):
     def run(self):
         # 获取api信息
         self.acc, self.flag, self.ip_id = api(self.user_id, self.api_id)
+        if int(self.fast_mode) == 1:
+            self.acc.pop("proxies")
         try:
             self.write_task_log()
             # update task 里面的 ip_id
             self.update_task_with_ip()
             # 创建okx交易对象
-            # obj = RetryNetworkOperations(app.OkxSWAP(**self.acc))
             obj = app.OkxSWAP(**self.acc)
             self.obj = obj
 
@@ -142,10 +99,18 @@ class Trader(threading.Thread):
             # else:
             #     print('[FAILURE] 设置持仓方式为双向持仓失败，请手动设置：posMode="long_short_mode"')
         except Exception as e:
-            print(f"交易失败，原因: {e}")
-            self.handle_trade_failure(result)
+            print(f"{self.task_id}交易失败，原因: {e}")
+            match = re.search(r'"code":"(\d+)"', str(e))
+            if match:
+                code_value = match.group(1)
+                if code_value == '50101':
+                    self.log_to_database("WARNING", "停止交易", "请确认APIKEY和实盘或者模拟盘环境匹配！")
+                elif code_value == '50105':
+                    self.log_to_database("WARNING", 'API错误', 'PASSPHRASE填写错误，请结束任务，重新提交！')
+                elif code_value == '50001':
+                    self.log_to_database("WARNING", '交易所服务错误', '交易所服务暂时不可用，请稍后重试！')
             # thread_logger.WARNING("停止交易，获取api信息失败，请重新提交api，并确认开启交易权限")
-            # self.log_to_database("WARNING", "停止交易", "请确认API提交正确，并且和实盘或者模拟盘环境匹配！")
+            # self.log_to_database("WARNING", "停止交易", "请确认APIKEY和实盘或者模拟盘环境匹配！")
             return
         self.perform_trade()
 
@@ -255,10 +220,10 @@ class Trader(threading.Thread):
                 print(f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
                 self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT=quantityCT,
                                             tdMode=self.mgnMode)
-                # 更新持仓数据
-                OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=1)
                 percentage = "{:.2f}%".format((1 - ratio) * 100)
                 self.log_to_database("success", '进行减仓操作', f'品种：{self.instId}，减仓占比：{percentage}')
+                # 更新持仓数据
+                OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=1)
 
         # 跟单普通用户发生减仓操作
         elif self.order_type == 'reduce':
@@ -275,10 +240,10 @@ class Trader(threading.Thread):
             print(f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
             self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT=quantityCT,
                                         tdMode=self.mgnMode)
-            # 更新持仓数据
-            OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=1)
             percentage = "{:.2f}%".format(self.reduce_ratio * 100)
             self.log_to_database("success", '进行减仓操作', f'品种：{self.instId}，减仓占比：{percentage}')
+            # 更新持仓数据
+            OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=1)
         elif self.order_type == 'close_all':
             # 结束全部正在进行中的交易
             data = self.obj.account.get_positions().get('data')
@@ -346,8 +311,10 @@ class Trader(threading.Thread):
     def stop(self):
         try:
             self.acc, self.flag, self.ip_id = api(self.user_id, self.api_id)
+            if int(self.fast_mode) == 1:
+                self.acc.pop("proxies")
             # 创建okx交易对象
-            obj = RetryNetworkOperations(app.OkxSWAP(**self.acc))
+            obj = app.OkxSWAP(**self.acc)
             self.obj = obj
 
             # 根据api选择实盘还是模拟盘
@@ -360,7 +327,17 @@ class Trader(threading.Thread):
             #     data = db.fetch_all(
             #         "select * from api_orderinfo where user_id = %(user_id)s and task_id = %(task_id)s and status = 1",
             #         user_id=self.user_id, task_id=self.task_id)
-        except:
+        except Exception as e:
+            print(f"{self.task_id}交易失败，原因: {e}")
+            match = re.search(r'"code":"(\d+)"', str(e))
+            if match:
+                code_value = match.group(1)
+                if code_value == '50101':
+                    self.log_to_database("WARNING", "停止交易", "请确认APIKEY和实盘或者模拟盘环境匹配！")
+                elif code_value == '50105':
+                    self.log_to_database("WARNING", 'API错误', 'PASSPHRASE填写错误，请结束任务，重新提交！')
+                elif code_value == '50001':
+                    self.log_to_database("WARNING", '交易所服务错误', '交易所服务暂时不可用，请稍后重试！')
             return
         if not data:
             # # 账户获取剩余额度
