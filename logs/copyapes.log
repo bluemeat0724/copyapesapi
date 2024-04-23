@@ -5808,3 +5808,290 @@ INFO 2024-04-23 04:28:55,167 basehttp 72066 123145486311424 "POST /api/apiadd/?t
 INFO 2024-04-23 13:22:28,788 autoreload 72066 4570510848 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
 INFO 2024-04-23 13:22:29,960 autoreload 73105 4571444736 Watching for file changes with StatReloader
 INFO 2024-04-23 13:44:23,171 autoreload 73295 4752107008 Watching for file changes with StatReloader
+INFO 2024-04-23 14:02:50,443 autoreload 73295 4752107008 /Users/lichaoyuan/Desktop/copytrade/api/views/ipinfo.py changed, reloading.
+INFO 2024-04-23 14:02:51,633 autoreload 73590 4554888704 Watching for file changes with StatReloader
+INFO 2024-04-23 14:04:19,164 autoreload 73590 4554888704 /Users/lichaoyuan/Desktop/copytrade/api/views/ipinfo.py changed, reloading.
+INFO 2024-04-23 14:04:20,396 autoreload 73638 4552152576 Watching for file changes with StatReloader
+INFO 2024-04-23 14:07:57,951 autoreload 73638 4552152576 /Users/lichaoyuan/Desktop/copytrade/api/views/ipinfo.py changed, reloading.
+INFO 2024-04-23 14:07:59,084 autoreload 73700 4692772352 Watching for file changes with StatReloader
+INFO 2024-04-23 14:11:31,411 autoreload 73700 4692772352 /Users/lichaoyuan/Desktop/copytrade/api/views/ipinfo.py changed, reloading.
+INFO 2024-04-23 14:11:32,441 autoreload 73748 4560606720 Watching for file changes with StatReloader
+INFO 2024-04-23 14:13:00,378 autoreload 73748 4560606720 /Users/lichaoyuan/Desktop/copytrade/api/views/ipinfo.py changed, reloading.
+INFO 2024-04-23 14:13:01,267 autoreload 73769 4495775232 Watching for file changes with StatReloader
+INFO 2024-04-23 14:44:09,366 basehttp 73769 123145493352448 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 14:44:14,723 basehttp 73769 123145493352448 "GET /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 3146
+INFO 2024-04-23 14:44:16,324 basehttp 73769 123145493352448 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 14:44:59,788 basehttp 73769 123145493352448 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 14:45:08,198 basehttp 73769 123145493352448 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 14:48:30,677 basehttp 73769 123145493352448 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 14:48:30,685 basehttp 73769 123145510141952 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 14:50:52,248 basehttp 73769 123145510141952 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 14:50:52,254 basehttp 73769 123145493352448 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 14:53:02,036 basehttp 73769 123145493352448 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 14:53:02,041 basehttp 73769 123145510141952 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 14:54:08,138 basehttp 73769 123145510141952 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 14:54:08,144 basehttp 73769 123145493352448 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 14:55:15,655 basehttp 73769 123145510141952 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 14:55:15,655 basehttp 73769 123145493352448 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 14:55:20,227 basehttp 73769 123145493352448 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 14:55:20,240 basehttp 73769 123145493352448 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 31
+INFO 2024-04-23 14:57:03,410 autoreload 74069 4612167168 Watching for file changes with StatReloader
+INFO 2024-04-23 14:57:08,589 basehttp 74069 123145526853632 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+ERROR 2024-04-23 14:57:09,835 log 74069 123145526853632 Internal Server Error: /api/ip/3/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/ipinfo.py", line 65, in update
+    self.check_ip(ip, username, password)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/ipinfo.py", line 93, in check_ip
+    ip_list = data.get('data').get('rows')
+AttributeError: 'NoneType' object has no attribute 'get'
+ERROR 2024-04-23 14:57:09,836 basehttp 74069 123145526853632 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 106025
+INFO 2024-04-23 14:57:13,639 basehttp 74069 123145526853632 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+ERROR 2024-04-23 14:57:14,885 log 74069 123145526853632 Internal Server Error: /api/ip/3/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/ipinfo.py", line 65, in update
+    self.check_ip(ip, username, password)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/ipinfo.py", line 93, in check_ip
+    ip_list = data.get('data').get('rows')
+AttributeError: 'NoneType' object has no attribute 'get'
+ERROR 2024-04-23 14:57:14,886 basehttp 74069 123145526853632 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 106025
+INFO 2024-04-23 14:57:17,621 basehttp 74069 123145526853632 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+ERROR 2024-04-23 14:57:19,006 log 74069 123145526853632 Internal Server Error: /api/ip/3/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/ipinfo.py", line 65, in update
+    self.check_ip(ip, username, password)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/ipinfo.py", line 93, in check_ip
+    ip_list = data.get('data').get('rows')
+AttributeError: 'NoneType' object has no attribute 'get'
+ERROR 2024-04-23 14:57:19,007 basehttp 74069 123145526853632 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 106025
+INFO 2024-04-23 14:58:38,524 autoreload 74089 4610471424 Watching for file changes with StatReloader
+INFO 2024-04-23 14:58:42,537 basehttp 74089 123145589727232 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+ERROR 2024-04-23 14:58:43,947 log 74089 123145589727232 Internal Server Error: /api/ip/3/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/ipinfo.py", line 65, in update
+    self.check_ip(ip, username, password)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/ipinfo.py", line 94, in check_ip
+    ip_list = data.get('data').get('rows')
+AttributeError: 'NoneType' object has no attribute 'get'
+ERROR 2024-04-23 14:58:43,948 basehttp 74089 123145589727232 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 106035
+INFO 2024-04-23 14:59:10,776 autoreload 74105 4802754048 Watching for file changes with StatReloader
+INFO 2024-04-23 14:59:14,486 basehttp 74105 123145378009088 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 14:59:16,804 basehttp 74105 123145378009088 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 31
+INFO 2024-04-23 15:01:16,230 autoreload 74130 4671931904 Watching for file changes with StatReloader
+INFO 2024-04-23 15:01:19,632 basehttp 74130 123145560768512 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 15:01:21,820 basehttp 74130 123145560768512 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 31
+INFO 2024-04-23 15:02:40,028 autoreload 74147 4479313408 Watching for file changes with StatReloader
+INFO 2024-04-23 15:02:43,330 basehttp 74147 123145372495872 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 15:02:45,669 basehttp 74147 123145372495872 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 31
+INFO 2024-04-23 15:03:31,661 autoreload 74147 4479313408 /Users/lichaoyuan/Desktop/copytrade/api/views/ipinfo.py changed, reloading.
+INFO 2024-04-23 15:03:32,463 autoreload 74163 4306716160 Watching for file changes with StatReloader
+INFO 2024-04-23 15:05:14,791 autoreload 74205 4604569088 Watching for file changes with StatReloader
+INFO 2024-04-23 15:05:25,547 basehttp 74205 123145523015680 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 15:05:27,779 basehttp 74205 123145523015680 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 67
+INFO 2024-04-23 15:07:54,007 basehttp 74205 123145523015680 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 15:07:56,078 basehttp 74205 123145523015680 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 67
+INFO 2024-04-23 15:09:34,094 basehttp 74205 123145523015680 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 15:09:34,101 basehttp 74205 123145540341760 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-04-23 15:09:34,101 basehttp 74205 123145557131264 "GET /api/apiadd/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 3146
+INFO 2024-04-23 15:09:35,788 basehttp 74205 123145557131264 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 15:09:41,349 basehttp 74205 123145540341760 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 15:09:41,349 basehttp 74205 123145557131264 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 15:09:50,672 basehttp 74205 123145557131264 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 67
+INFO 2024-04-23 15:10:25,676 basehttp 74205 123145540341760 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 15:10:25,677 basehttp 74205 123145557131264 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 15:10:32,996 basehttp 74205 123145557131264 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 15:10:35,259 basehttp 74205 123145557131264 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 67
+INFO 2024-04-23 15:12:27,806 basehttp 74205 123145540341760 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 15:12:27,806 basehttp 74205 123145557131264 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 15:12:32,421 basehttp 74205 123145557131264 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 15:12:34,574 basehttp 74205 123145557131264 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 67
+INFO 2024-04-23 15:14:21,444 basehttp 74205 123145557131264 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 15:14:21,447 basehttp 74205 123145540341760 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 15:14:23,924 basehttp 74205 123145540341760 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 15:14:26,246 basehttp 74205 123145540341760 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 67
+INFO 2024-04-23 15:16:29,903 basehttp 74205 123145540341760 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 15:16:29,906 basehttp 74205 123145557131264 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 15:16:34,204 basehttp 74205 123145557131264 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 67
+INFO 2024-04-23 15:17:15,214 basehttp 74205 123145557131264 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 15:17:15,222 basehttp 74205 123145540341760 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 15:17:19,492 basehttp 74205 123145540341760 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 67
+INFO 2024-04-23 15:17:28,321 basehttp 74205 123145540341760 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 15:17:30,391 basehttp 74205 123145540341760 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 67
+INFO 2024-04-23 15:19:07,943 basehttp 74205 123145540341760 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 15:19:07,943 basehttp 74205 123145557131264 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 15:19:11,386 basehttp 74205 123145557131264 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 15:19:13,540 basehttp 74205 123145557131264 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 67
+INFO 2024-04-23 15:20:59,846 basehttp 74205 123145557131264 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 15:20:59,850 basehttp 74205 123145540341760 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 250
+INFO 2024-04-23 15:21:01,701 basehttp 74205 123145540341760 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 15:21:03,997 basehttp 74205 123145540341760 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 67
+INFO 2024-04-23 15:21:23,947 basehttp 74205 123145540341760 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 15:21:26,351 basehttp 74205 123145540341760 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 67
+INFO 2024-04-23 15:22:38,357 basehttp 74205 123145540341760 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 15:22:40,542 basehttp 74205 123145540341760 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 67
+INFO 2024-04-23 15:23:31,733 autoreload 74376 4641412608 Watching for file changes with StatReloader
+INFO 2024-04-23 15:23:37,481 basehttp 74376 123145359990784 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 15:23:39,650 basehttp 74376 123145359990784 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 67
+INFO 2024-04-23 15:24:09,603 autoreload 74395 4521043456 Watching for file changes with StatReloader
+INFO 2024-04-23 15:24:12,761 basehttp 74395 123145494183936 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 15:24:14,906 basehttp 74395 123145494183936 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 67
+INFO 2024-04-23 15:25:01,992 autoreload 74413 4396688896 Watching for file changes with StatReloader
+INFO 2024-04-23 15:25:05,327 basehttp 74413 123145535553536 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 15:25:07,433 basehttp 74413 123145535553536 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 67
+INFO 2024-04-23 15:27:08,777 autoreload 74439 4555085312 Watching for file changes with StatReloader
+INFO 2024-04-23 15:27:11,292 basehttp 74439 123145453207552 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 15:27:13,532 basehttp 74439 123145453207552 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 67
+INFO 2024-04-23 15:29:25,561 autoreload 74465 4669314560 Watching for file changes with StatReloader
+INFO 2024-04-23 15:29:28,856 basehttp 74465 123145468116992 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 15:29:30,893 basehttp 74465 123145468116992 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 67
+INFO 2024-04-23 15:30:35,625 autoreload 74485 4572845568 Watching for file changes with StatReloader
+INFO 2024-04-23 15:30:41,057 basehttp 74485 123145495666688 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 15:30:43,179 basehttp 74485 123145495666688 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 67
+INFO 2024-04-23 15:32:41,617 autoreload 74513 4621919744 Watching for file changes with StatReloader
+INFO 2024-04-23 15:32:51,294 autoreload 74520 4534191616 Watching for file changes with StatReloader
+INFO 2024-04-23 15:32:54,621 basehttp 74520 123145471639552 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 15:32:56,757 basehttp 74520 123145471639552 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 31
+INFO 2024-04-23 15:33:06,942 basehttp 74520 123145471639552 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 242
+INFO 2024-04-23 15:33:06,950 basehttp 74520 123145488965632 "GET /api/ip/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 242
+INFO 2024-04-23 15:44:07,504 autoreload 74625 4705314304 Watching for file changes with StatReloader
+INFO 2024-04-23 15:44:18,721 basehttp 74625 123145370902528 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+ERROR 2024-04-23 15:44:20,968 log 74625 123145370902528 Internal Server Error: /api/ip/3/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/ipinfo.py", line 70, in update
+    countdown, countryName = self.check_ip(ip, username, password)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/ipinfo.py", line 108, in check_ip
+    return countdown,countryName
+UnboundLocalError: local variable 'countdown' referenced before assignment
+ERROR 2024-04-23 15:44:20,969 basehttp 74625 123145370902528 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 115652
+INFO 2024-04-23 15:44:29,797 basehttp 74625 123145370902528 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+ERROR 2024-04-23 15:44:31,895 log 74625 123145370902528 Internal Server Error: /api/ip/3/
+Traceback (most recent call last):
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/venv/lib/python3.9/site-packages/rest_framework/mixins.py", line 82, in partial_update
+    return self.update(request, *args, **kwargs)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/ipinfo.py", line 70, in update
+    countdown, countryName = self.check_ip(ip, username, password)
+  File "/Users/lichaoyuan/Desktop/copytrade/api/views/ipinfo.py", line 108, in check_ip
+    return countdown,countryName
+UnboundLocalError: local variable 'countdown' referenced before assignment
+ERROR 2024-04-23 15:44:31,896 basehttp 74625 123145370902528 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 500 115652
+INFO 2024-04-23 15:47:55,453 autoreload 74625 4705314304 /Users/lichaoyuan/Desktop/copytrade/crawler/updata_ip_countdown/ip_countdown.py changed, reloading.
+INFO 2024-04-23 15:47:56,231 autoreload 74668 4714739200 Watching for file changes with StatReloader
+INFO 2024-04-23 15:48:05,674 autoreload 74677 4649494016 Watching for file changes with StatReloader
+INFO 2024-04-23 15:48:09,515 basehttp 74677 123145497501696 "OPTIONS /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 0
+INFO 2024-04-23 15:48:11,798 basehttp 74677 123145497501696 "PATCH /api/ip/3/?token=c07bf419-ecf6-4785-a670-f049bd4a3c05 HTTP/1.1" 200 31
+INFO 2024-04-23 15:48:37,459 basehttp 74677 123145497501696 "OPTIONS /api/login/ HTTP/1.1" 200 0
+INFO 2024-04-23 15:48:37,466 basehttp 74677 123145497501696 "POST /api/login/ HTTP/1.1" 200 81
+INFO 2024-04-23 15:48:37,911 basehttp 74677 123145497501696 "GET /api/ip/?token=6dcd42dc-f13d-4db2-83a9-e617826b316d HTTP/1.1" 200 242
+INFO 2024-04-23 15:48:37,917 basehttp 74677 123145514827776 "GET /api/quotainfo/?token=6dcd42dc-f13d-4db2-83a9-e617826b316d HTTP/1.1" 200 145
+INFO 2024-04-23 15:48:43,404 basehttp 74677 123145514827776 "GET /api/ip/?token=6dcd42dc-f13d-4db2-83a9-e617826b316d HTTP/1.1" 200 242
+INFO 2024-04-23 15:49:04,228 basehttp 74677 123145497501696 "GET /api/ip/?token=6dcd42dc-f13d-4db2-83a9-e617826b316d HTTP/1.1" 200 20
+INFO 2024-04-23 15:49:04,228 basehttp 74677 123145514827776 "GET /api/ip/?token=6dcd42dc-f13d-4db2-83a9-e617826b316d HTTP/1.1" 200 20
+INFO 2024-04-23 15:49:59,190 basehttp 74677 123145514827776 "OPTIONS /api/ip/?token=6dcd42dc-f13d-4db2-83a9-e617826b316d HTTP/1.1" 200 0
+INFO 2024-04-23 15:50:01,486 basehttp 74677 123145514827776 "POST /api/ip/?token=6dcd42dc-f13d-4db2-83a9-e617826b316d HTTP/1.1" 200 235
+INFO 2024-04-23 15:50:14,156 basehttp 74677 123145514827776 "GET /api/ip/?token=6dcd42dc-f13d-4db2-83a9-e617826b316d HTTP/1.1" 200 237
+INFO 2024-04-23 15:50:14,156 basehttp 74677 123145497501696 "GET /api/ip/?token=6dcd42dc-f13d-4db2-83a9-e617826b316d HTTP/1.1" 200 237

@@ -14,7 +14,7 @@ def get_countdown():
         'type': '2',
         'status': '1',
         'page': '1',
-        'pagesize': '10'
+        'pagesize': '500'
     }
     headers = {
         'User-Agent': 'Apifox/1.0.0 (https://apifox.com)'
@@ -22,7 +22,7 @@ def get_countdown():
 
     response = requests.get(url, params=params, headers=headers)
     data = json.loads(response.text)
-    ip_list = data.get('data').get('rows')
+    ip_list = data.get('data', {}).get('rows', [])
     for i in ip_list:
         ip = i.get('ip')
         countdown = float(i.get('countdown').split('天')[0])

@@ -1,3 +1,5 @@
+import json
+import requests
 from api.extension.filter import SelfFilterBackend
 from api.extension.mixins import CopyListModelMixin, CopyCreateModelMixin, CopyUpdateModelMixin
 from api import models
@@ -7,6 +9,7 @@ from django.utils import timezone
 from datetime import timedelta
 from rest_framework.response import Response
 from api.extension import return_code
+from crawler.updata_ip_countdown.ip_countdown import get_token
 
 
 class IpView(CopyListModelMixin, CopyCreateModelMixin, CopyUpdateModelMixin):
@@ -15,6 +18,7 @@ class IpView(CopyListModelMixin, CopyCreateModelMixin, CopyUpdateModelMixin):
     filter_backends = [SelfFilterBackend]
 
     serializer_class = IpSerializer
+
     # 筛选有效期>0的ip
     # queryset = models.IpInfo.objects.filter(countdown__gt=0)
     # 构建查询条件：ip有效期>0, 或者试用有效期>0天（试用期days=15天）
@@ -22,8 +26,8 @@ class IpView(CopyListModelMixin, CopyCreateModelMixin, CopyUpdateModelMixin):
         now = timezone.now()
         # 构建查询条件
         conditions = (Q(countdown__gt=0) & Q(experience_day=0)) | (
-            Q(experience_day__gt=0) &
-            Q(created_at__gt=now - timedelta(days=15))
+                Q(experience_day__gt=0) &
+                Q(created_at__gt=now - timedelta(days=15))
         )
         queryset = models.IpInfo.objects.filter(conditions)
         return queryset
@@ -36,6 +40,12 @@ class IpView(CopyListModelMixin, CopyCreateModelMixin, CopyUpdateModelMixin):
         ip_obj = models.IpInfo.objects.filter(ip=ip, username=username, password=password).first()
         if ip_obj:
             return Response({"code": return_code.VALIDATE_ERROR, "error": "IP已被使用，需添加独享IP"})
+        # 校验IP真实性
+        countdown, countryName = self.check_ip(ip, username, password)
+        if countdown is None:
+            return Response({"code": return_code.VALIDATE_ERROR, "error": "IP不存在，请填写正确的IP信息！"})
+        else:
+            serializer.validated_data.update(countdown=countdown, countryName=countryName)
 
         serializer.save(user=self.request.user)
 
@@ -49,12 +59,19 @@ class IpView(CopyListModelMixin, CopyCreateModelMixin, CopyUpdateModelMixin):
         ip = serializer.validated_data.get('ip')
         username = serializer.validated_data.get('username')
         password = serializer.validated_data.get('password')
-
         # 确保更新的IP不会违反唯一性约束
-        ip_obj = models.IpInfo.objects.filter(ip=ip, username=username, password=password).exclude(id=instance.id).first()
+        ip_obj = models.IpInfo.objects.filter(ip=ip, username=username, password=password).exclude(
+            id=instance.id).first()
 
         if ip_obj:
             return Response({"code": return_code.VALIDATE_ERROR, "error": "IP已被使用，需添加独享IP"})
+
+        # 校验IP真实性
+        countdown, countryName = self.check_ip(ip, username, password)
+        if countdown is None:
+            return Response({"code": return_code.VALIDATE_ERROR, "error": "IP不存在，请填写正确的IP信息！"})
+        else:
+            serializer.validated_data.update(countdown=countdown, countryName=countryName)
 
         self.perform_update(serializer)
 
@@ -65,3 +82,28 @@ class IpView(CopyListModelMixin, CopyCreateModelMixin, CopyUpdateModelMixin):
 
         return Response({"code": return_code.SUCCESS, "msg": "修改成功"})
 
+    def check_ip(self, ip, username, password):
+        """在线校验IP"""
+        token = get_token()
+        url = "https://www.zhizhuip.cc/externalapi/device/accountList"
+        params = {
+            'access_token': token,
+            'type': '2',
+            'status': '1',
+            'page': '1',
+            'pagesize': '500'
+        }
+        headers = {
+            'User-Agent': 'Apifox/1.0.0 (https://apifox.com)'
+        }
+
+        response = requests.get(url, params=params, headers=headers)
+        data = json.loads(response.text)
+        ip_list = data.get('data', {}).get('rows', [])
+        # print(ip_list)
+        for i in ip_list:
+            if i.get('ip') == ip and i.get('username') == username and i.get('password') == password:
+                countdown = float(i.get('countdown').split('天')[0])
+                countryName = i.get('countryName')
+                return countdown,countryName
+        return None, None
