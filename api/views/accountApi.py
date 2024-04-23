@@ -102,7 +102,6 @@ class ApiAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixin
             'perm': perm,
             'uid': uid
         })
-        print(kwargs)
 
         # 如果不存在，调用父类方法正常创建
         return super().create(request, *args, **kwargs)
