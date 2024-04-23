@@ -107,6 +107,8 @@ class Trader(threading.Thread):
                     self.log_to_database("WARNING", "停止交易", "请确认APIKEY和实盘或者模拟盘环境匹配！")
                 elif code_value == '50105':
                     self.log_to_database("WARNING", 'API错误', 'PASSPHRASE填写错误，请结束任务，重新提交！')
+                elif code_value == '5001':
+                    self.log_to_database("WARNING", '交易所服务错误', '交易所服务暂时不可用，请稍后重试！')
             # thread_logger.WARNING("停止交易，获取api信息失败，请重新提交api，并确认开启交易权限")
             # self.log_to_database("WARNING", "停止交易", "请确认APIKEY和实盘或者模拟盘环境匹配！")
             return
