@@ -99,7 +99,7 @@ class Trader(threading.Thread):
             # else:
             #     print('[FAILURE] 设置持仓方式为双向持仓失败，请手动设置：posMode="long_short_mode"')
         except Exception as e:
-            print(f"交易失败，原因: {e}")
+            print(f"{self.task_id}交易失败，原因: {e}")
             match = re.search(r'"code":"(\d+)"', str(e))
             if match:
                 code_value = match.group(1)
