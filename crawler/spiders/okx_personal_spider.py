@@ -36,7 +36,7 @@ def spider(uniqueName):
             return summary_list_new
         record_url = f'https://www.okx.com/priapi/v5/ecotrade/public/trade-records?limit=10&startModify={thirty_days_ago_specific_time_timestamp}&endModify={today_specific_time_timestamp}&uniqueName={uniqueName}&t={now}'
         # print(record_url)
-        record_list = requests.get(record_url, headers=get_header(), timeout=30).json().get('data', list())
+        record_list = requests.get(record_url, headers=get_header(), proxies=get_proxies()[0], timeout=30).json().get('data', list())
         # print(record_list)
         for record in record_list:
             posSide = record.get('posSide')
