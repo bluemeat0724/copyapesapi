@@ -315,7 +315,9 @@ class Trader(threading.Thread):
         try:
             self.acc, self.flag, self.ip_id = api(self.user_id, self.api_id)
             if int(self.fast_mode) == 1:
-                self.acc.pop("proxies")
+                res = self.check_ip()
+                if res:
+                    self.acc.pop("proxies")
             # 创建okx交易对象
             obj = app.OkxSWAP(**self.acc)
             self.obj = obj
@@ -482,7 +484,7 @@ class Trader(threading.Thread):
         """
         result = False
         with Connect() as db:
-            res = db.fetch_one("select ip from  api_apiinfo  WHERE key = %(key)s and secret = %(secret)s", key=self.acc.get("key"), secret=self.acc.get("secret"))
+            res = db.fetch_one("select ip from  api_apiinfo  WHERE api_key = %(api_key)s and secret_key = %(secret_key)s", api_key=self.acc.get("key"), secret_key=self.acc.get("secret"))
             if res.get("ip", None):
                 arr = res["ip"].split(",")
                 if HOST_IP in arr:
