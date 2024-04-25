@@ -108,8 +108,22 @@ class Spider(threading.Thread):
 
     def transform(self, item):
         item['posSide_set'] = self.posSide_set
-        if item.get("lever_set", None):
-            if item["lever_set"] == 2:
+        # 当 lever_set == 2 时，根据 follow_type 的不同情况处理
+        if item.get("lever_set") == 2:
+            # 如果 follow_type == 1，简单地设置 lever
+            if item.get("follow_type") == 1:
+                item["lever"] = self.leverage
+
+            # 如果 follow_type == 2，进一步处理
+            elif item.get("follow_type") == 2:
+                # 根据 order_type 调整 margin 值
+                if item.get("order_type") != 'change':
+                    item["margin"] = item["margin"] * item["lever"] / self.leverage
+                else:
+                    item["old_margin"] = item["old_margin"] * item["lever"] / self.leverage
+                    item["new_margin"] = item["new_margin"] * item["lever"] / self.leverage
+
+                # 最后设置 lever
                 item["lever"] = self.leverage
         return item
 
@@ -219,12 +233,12 @@ class Spider(threading.Thread):
                           'user_id': self.user_id,
                           'fast_mode': self.fast_mode
                           }
-                change = self.transform(change)
-                changed_items.append(change)
                 # thread_logger.success(
                 #     f"交易员{self.uniqueName}进行了调仓操作，品种：{old_item['instId']}，原仓位保证金：{round(float(old_item['margin']),2)}USDT，现仓位保证金：{round(float(new_item['margin']),2)}USDT")
                 self.log_to_database("success", f"交易员{self.uniqueName}进行了调仓操作",
                                      f"品种：{old_item['instId']}，原仓位保证金：{round(float(old_item['margin']), 2)}USDT，现仓位保证金：{round(float(new_item['margin']), 2)}USDT")
+                change = self.transform(change)
+                changed_items.append(change)
                 # 写入Redis队列
                 conn = redis.Redis(**settings.REDIS_PARAMS)
                 conn.lpush(settings.TRADE_TASK_NAME, json.dumps(change))

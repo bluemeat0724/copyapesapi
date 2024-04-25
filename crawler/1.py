@@ -76,7 +76,7 @@ obj.account.api.flag = '1'
 obj.trade.api.flag = '1'
 start_time = time.time()
 # 查看账户配置信息
-print(obj.account.get_config())
+# print(obj.account.get_config())
 
 # a = obj.account.get_positions_history(limit=1)
 # print(a)
@@ -92,15 +92,15 @@ print(obj.account.get_config())
 #
 # a = obj.trade.open_market(instId="BTC-USDT-SWAP", posSide="long", openMoney=10 * 10, tdMode='cross',
 #                           lever=10)
-end_time = time.time()
-t = start_time - end_time
+# end_time = time.time()
+# t = start_time - end_time
 # print(a)
-print(t)
+# print(t)
 
-# result = obj.trade.open_market(instId="LTC-USDT-SWAP", posSide="long", openMoney=5, tdMode='cross',
-#                                   lever=3)
+result = obj.trade.open_market(instId="BTC-USDT-SWAP", posSide="long", openMoney=65, tdMode='cross',
+                                  lever=8)
 # result = {'instType': 'SWAP', 'instId': 'LTC-USDT-SWAP', 'state': None, 'ordId': None, 'meta': {}, 'request_param': {'instId': 'LTC-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'long', 'side': 'buy', 'ordType': 'market', 'sz': '0', 'clOrdId': '', 'tag': ''}, 'func_param': {'instId': 'LTC-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'long', 'lever': 3, 'openMoney': 5, 'quantityCT': None, 'meta': {}, 'timeout': 60, 'delay': 0.2, 'cancel': True, 'clOrdId': '', 'tag': '', 'newThread': False, 'callback': None, 'errorback': None}, 'get_order_result': None, 'set_order_result': {'code': '1', 'data': [{'clOrdId': '', 'ordId': '', 'sCode': '51000', 'sMsg': 'Parameter sz error', 'tag': ''}], 'inTime': '1704986885902318', 'msg': 'All operations failed', 'outTime': '1704986885902391'}, 'error_result': {'code': 'FUNC_EXCEPTION', 'data': {}, 'msg': 'Traceback (most recent call last):\n  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/open.py", line 557, in inner_func\n    error_result = main_func(**main_data)\n  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/open.py", line 507, in main_func\n    ordId = set_order_result[\'data\'][\'ordId\']\nTypeError: list indices must be integers or slices, not str\n'}, 'cancel_result': None}
-# print(result)
+print(result)
 # try:
 #     s_code_value = result.get('set_order_result', {}).get('data', {}).get('sCode')
 #     if s_code_value == '0':
