@@ -95,7 +95,7 @@ class ApiAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixin
                             'error': '请确认APIKEY和实盘或者模拟盘环境匹配！'})
                 return Response({
                     'code': return_code.API_ERROR,
-                    'error': 'API信息错误，请检查！'})
+                    'error': 'API信息错误，请检查是否有设置IP白名单！'})
 
         # 更新kwargs以包含新获取的信息
         request.data.update({
