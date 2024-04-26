@@ -59,27 +59,29 @@ class ApiAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixin
                 obj = app.OkxSWAP(**acc)
                 obj.account.api.flag = str(flag)
                 obj.trade.api.flag = str(flag)
+                # 账户信息
+                res =  obj.account.get_config()
                 # 账户层级
-                acctLv = obj.account.get_config().get('data')[0].get('acctLv')
+                acctLv = res.get('data')[0].get('acctLv')
                 if acctLv == '1':
                     return Response({
                         'code': return_code.API_ERROR,
                         'error': '当前API无法进行合约交易，请在交易所合约交易页面手动设置！'})
                 # uid
-                uid = obj.account.get_config().get('data')[0].get('uid')
+                uid = res.get('data')[0].get('uid')
                 if models.ApiInfo.objects.filter(uid=uid, deleted=False).exists():
                     return Response({
                         'code': return_code.EXIST_ERROR,
                         'error': '当前交易所账户已授权，请勿重复绑定！可在交易所申请子账户继续绑定！'})
 
                 # ip白名单
-                ip = obj.account.get_config().get('data')[0].get('ip')
+                ip = res.get('data')[0].get('ip')
                 # 用户角色
-                roleType = obj.account.get_config().get('data')[0].get('roleType')
+                roleType = res.get('data')[0].get('roleType')
                 # 用户等级
-                level = obj.account.get_config().get('data')[0].get('level')
+                level = res.get('data')[0].get('level')
                 # api权限
-                perm = obj.account.get_config().get('data')[0].get('perm')
+                perm = res.get('data')[0].get('perm')
 
             except Exception as e:
                 match = re.search(r'"code":"(\d+)"', str(e))
