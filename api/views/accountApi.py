@@ -60,7 +60,7 @@ class ApiAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixin
                 obj.account.api.flag = str(flag)
                 obj.trade.api.flag = str(flag)
                 # 账户信息
-                res =  obj.account.get_config()
+                res = obj.account.get_config()
                 # 账户层级
                 acctLv = res.get('data')[0].get('acctLv')
                 if acctLv == '1':
