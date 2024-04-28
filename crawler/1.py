@@ -96,11 +96,33 @@ start_time = time.time()
 # t = start_time - end_time
 # print(a)
 # print(t)
-
-result = obj.trade.open_market(instId="BTC-USDT-SWAP", posSide="long", openMoney=65, tdMode='cross',
-                                  lever=8)
+from crawler.utils.get_trade_times import get_trade_times
+trade_times = get_trade_times("ETH-USDT-SWAP", '1', acc)
+print(trade_times)
+result = obj.trade.open_market(instId="ETH-USDT-SWAP", posSide="long", openMoney=1*trade_times, tdMode='cross',
+                                  lever=5)
 # result = {'instType': 'SWAP', 'instId': 'LTC-USDT-SWAP', 'state': None, 'ordId': None, 'meta': {}, 'request_param': {'instId': 'LTC-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'long', 'side': 'buy', 'ordType': 'market', 'sz': '0', 'clOrdId': '', 'tag': ''}, 'func_param': {'instId': 'LTC-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'long', 'lever': 3, 'openMoney': 5, 'quantityCT': None, 'meta': {}, 'timeout': 60, 'delay': 0.2, 'cancel': True, 'clOrdId': '', 'tag': '', 'newThread': False, 'callback': None, 'errorback': None}, 'get_order_result': None, 'set_order_result': {'code': '1', 'data': [{'clOrdId': '', 'ordId': '', 'sCode': '51000', 'sMsg': 'Parameter sz error', 'tag': ''}], 'inTime': '1704986885902318', 'msg': 'All operations failed', 'outTime': '1704986885902391'}, 'error_result': {'code': 'FUNC_EXCEPTION', 'data': {}, 'msg': 'Traceback (most recent call last):\n  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/open.py", line 557, in inner_func\n    error_result = main_func(**main_data)\n  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/open.py", line 507, in main_func\n    ordId = set_order_result[\'data\'][\'ordId\']\nTypeError: list indices must be integers or slices, not str\n'}, 'cancel_result': None}
 print(result)
+# get_ticker_result = obj.trade._market.get_ticker(instId="ETH-USDT-SWAP")
+# print(get_ticker_result)
+# openPrice = float(get_ticker_result['data']['askPx'])
+# print(openPrice)
+# get_quantity_result = obj.trade.get_quantity(
+#                         openPrice=openPrice, openMoney=1*trade_times,
+#                         instId="ETH-USDT-SWAP", ordType='market',
+#                         leverage=5,
+#                     )
+# print(get_quantity_result['data'])
+# exchangeInfo = obj.trade._market.get_exchangeInfo(
+#             instId="ETH-USDT-SWAP",
+#             expire_seconds=60 * 5
+#         )
+# ctVal = exchangeInfo['data']['ctVal']
+# print(ctVal)
+# quantity = 1*trade_times * 5 / openPrice / float(ctVal)
+# print(quantity)
+# import math
+# print(math.floor(quantity))
 # try:
 #     s_code_value = result.get('set_order_result', {}).get('data', {}).get('sCode')
 #     if s_code_value == '0':
