@@ -6383,3 +6383,7 @@ INFO 2024-04-23 23:02:47,408 basehttp 77385 123145497206784 "GET /api/taskadd/36
 INFO 2024-04-23 23:02:47,413 basehttp 77385 123145480417280 "GET /api/tradeorder/363/?token=6dcd42dc-f13d-4db2-83a9-e617826b316d HTTP/1.1" 200 20
 INFO 2024-04-23 23:02:47,413 basehttp 77385 123145446301696 "GET /api/ip/?token=6dcd42dc-f13d-4db2-83a9-e617826b316d HTTP/1.1" 200 237
 INFO 2024-04-23 23:02:47,414 basehttp 77385 123145463627776 "GET /api/traderdetial/363/?token=6dcd42dc-f13d-4db2-83a9-e617826b316d HTTP/1.1" 200 2539
+INFO 2024-04-26 16:58:40,871 autoreload 99796 4506412544 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-26 16:58:41,938 autoreload 99848 4592961024 Watching for file changes with StatReloader
+INFO 2024-04-26 18:15:36,129 basehttp 99848 123145521016832 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-04-26 18:15:36,129 basehttp 99848 123145537806336 "GET /api/apiadd/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 531
