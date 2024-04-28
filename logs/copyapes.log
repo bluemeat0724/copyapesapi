@@ -6445,3 +6445,43 @@ INFO 2024-04-28 20:00:19,964 autoreload 8739 4823684608 /Users/lichaoyuan/Deskto
 INFO 2024-04-28 20:00:20,800 autoreload 8939 4635661824 Watching for file changes with StatReloader
 INFO 2024-04-28 20:01:39,270 autoreload 8939 4635661824 /Users/lichaoyuan/Desktop/copytrade/crawler/myokx/quantity_and_price.py changed, reloading.
 INFO 2024-04-28 20:01:40,566 autoreload 8957 4771001856 Watching for file changes with StatReloader
+INFO 2024-04-29 02:19:21,099 autoreload 11164 4421649920 Watching for file changes with StatReloader
+INFO 2024-04-29 02:43:25,777 autoreload 11390 4554835456 Watching for file changes with StatReloader
+INFO 2024-04-29 02:43:36,521 basehttp 11390 123145365655552 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-04-29 02:43:36,522 basehttp 11390 123145348866048 "GET /api/ip/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 237
+INFO 2024-04-29 02:43:36,525 basehttp 11390 123145382445056 "GET /api/apiadd/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 531
+INFO 2024-04-29 02:43:40,278 basehttp 11390 123145382445056 "GET /api/ip/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 237
+INFO 2024-04-29 02:43:43,635 basehttp 11390 123145382445056 "GET /api/apiadd/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 531
+INFO 2024-04-29 02:44:04,705 basehttp 11390 123145382445056 "GET /api/taskadd/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 11288
+INFO 2024-04-29 02:44:14,124 basehttp 11390 123145382445056 "OPTIONS /api/taskadd/365/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 0
+INFO 2024-04-29 02:44:14,142 basehttp 11390 123145382445056 "PATCH /api/taskadd/365/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 335
+INFO 2024-04-29 02:44:14,211 basehttp 11390 123145382445056 "GET /api/taskadd/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 11288
+INFO 2024-04-29 02:44:18,273 basehttp 11390 123145382445056 "GET /api/apiadd/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 531
+INFO 2024-04-29 02:48:25,303 autoreload 11390 4554835456 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-29 02:48:26,094 autoreload 11425 4550989312 Watching for file changes with StatReloader
+INFO 2024-04-29 02:57:24,771 basehttp 11425 123145499758592 "OPTIONS /api/apiadd/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 0
+INFO 2024-04-29 02:57:26,342 basehttp 11425 123145499758592 "POST /api/apiadd/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 80
+INFO 2024-04-29 02:58:42,310 basehttp 11425 123145499758592 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-04-29 02:58:42,316 basehttp 11425 123145517084672 "GET /api/apiadd/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 531
+INFO 2024-04-29 03:00:44,027 basehttp 11425 123145517084672 "POST /api/apiadd/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 80
+INFO 2024-04-29 03:00:51,516 basehttp 11425 123145517084672 "POST /api/apiadd/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 80
+INFO 2024-04-29 03:04:24,667 autoreload 11526 4521698816 Watching for file changes with StatReloader
+INFO 2024-04-29 03:06:10,730 basehttp 11526 123145660116992 "GET /api/ip/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 237
+INFO 2024-04-29 03:12:09,225 autoreload 11600 4508014080 Watching for file changes with StatReloader
+INFO 2024-04-29 03:12:14,916 basehttp 11600 123145547669504 "OPTIONS /api/apiadd/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 0
+INFO 2024-04-29 03:12:16,279 basehttp 11600 123145547669504 "POST /api/apiadd/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 95
+INFO 2024-04-29 03:12:22,186 basehttp 11600 123145547669504 "POST /api/apiadd/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 95
+INFO 2024-04-29 03:14:41,662 autoreload 11600 4508014080 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-29 03:14:42,507 autoreload 11639 4524115456 Watching for file changes with StatReloader
+INFO 2024-04-29 03:14:45,176 basehttp 11639 123145603747840 "POST /api/apiadd/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 123
+INFO 2024-04-29 03:15:16,657 autoreload 11639 4524115456 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-29 03:15:17,474 autoreload 11649 4607874560 Watching for file changes with StatReloader
+INFO 2024-04-29 03:15:20,022 basehttp 11649 123145602445312 "POST /api/apiadd/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 100
+INFO 2024-04-29 03:15:49,535 autoreload 11649 4607874560 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-29 03:15:50,395 autoreload 11657 4681917952 Watching for file changes with StatReloader
+INFO 2024-04-29 03:15:53,333 basehttp 11657 123145446154240 "POST /api/apiadd/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 96
+INFO 2024-04-29 03:15:59,172 basehttp 11657 123145446154240 "POST /api/apiadd/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 96
+INFO 2024-04-29 03:16:38,821 basehttp 11657 123145446154240 "POST /api/apiadd/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 318
+INFO 2024-04-29 03:16:38,870 basehttp 11657 123145446154240 "GET /api/apiadd/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 832
+INFO 2024-04-29 03:17:19,430 autoreload 11657 4681917952 /Users/lichaoyuan/Desktop/copytrade/api/views/accountApi.py changed, reloading.
+INFO 2024-04-29 03:17:20,346 autoreload 11674 4606658048 Watching for file changes with StatReloader

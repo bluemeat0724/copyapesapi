@@ -93,7 +93,7 @@ class Trader(threading.Thread):
             obj.account.api.flag = self.flag
             obj.trade.api.flag = self.flag
             # thread_logger.info(f"跟单猿交易系统启动，跟随交易员：{self.uniqueName}")
-            result = obj.account.set_position_mode(posMode='long_short_mode')
+            obj.account.set_position_mode(posMode='long_short_mode')
             # okx源码被注释部分，先初始化账户开平仓模式
             # set_position_mode_result = obj.account.set_position_mode(
             #     posMode='long_short_mode')

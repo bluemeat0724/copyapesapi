@@ -55,6 +55,7 @@ class ApiAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixin
                     'secret': secret_key,
                     'proxies': proxies
                 }
+                ip_address = models.IpInfo.objects.filter(id=ip_id).first().ip
             try:
                 obj = app.OkxSWAP(**acc)
                 obj.account.api.flag = str(flag)
@@ -76,6 +77,12 @@ class ApiAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixin
 
                 # ip白名单
                 ip = res.get('data')[0].get('ip')
+                if flag == '0':
+                    arr = ip.split(",")
+                    if ip_address not in arr:
+                        return Response({
+                            'code': return_code.API_ERROR,
+                            'error': f'{ip_address}不在IP白名单中，请先在交易所设置白名单！'})
                 # 用户角色
                 roleType = res.get('data')[0].get('roleType')
                 # 用户等级
