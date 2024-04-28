@@ -6433,3 +6433,15 @@ INFO 2024-04-28 16:48:51,876 autoreload 7233 4748117504 /Users/lichaoyuan/Deskto
 INFO 2024-04-28 16:48:52,870 autoreload 7255 4343842304 Watching for file changes with StatReloader
 INFO 2024-04-28 16:50:17,463 autoreload 7255 4343842304 /Users/lichaoyuan/Desktop/copytrade/crawler/myokx/quantity_and_price.py changed, reloading.
 INFO 2024-04-28 16:50:18,197 autoreload 7277 4702221824 Watching for file changes with StatReloader
+INFO 2024-04-28 17:26:21,221 autoreload 7828 4764435968 Watching for file changes with StatReloader
+INFO 2024-04-28 17:27:05,808 basehttp 7828 123145454788608 "GET /api/ip/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 237
+INFO 2024-04-28 17:27:05,809 basehttp 7828 123145471578112 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-04-28 17:27:05,812 basehttp 7828 123145488367616 "GET /api/apiadd/?token=bed46318-7358-4952-bc7f-199bd40bf139 HTTP/1.1" 200 531
+INFO 2024-04-28 19:21:46,981 autoreload 7828 4764435968 /Users/lichaoyuan/Desktop/copytrade/crawler/myokx/quantity_and_price.py changed, reloading.
+INFO 2024-04-28 19:21:47,826 autoreload 8702 4524537344 Watching for file changes with StatReloader
+INFO 2024-04-28 19:25:46,793 autoreload 8702 4524537344 /Users/lichaoyuan/Desktop/copytrade/crawler/myokx/quantity_and_price.py changed, reloading.
+INFO 2024-04-28 19:25:47,569 autoreload 8739 4823684608 Watching for file changes with StatReloader
+INFO 2024-04-28 20:00:19,964 autoreload 8739 4823684608 /Users/lichaoyuan/Desktop/copytrade/crawler/myokx/quantity_and_price.py changed, reloading.
+INFO 2024-04-28 20:00:20,800 autoreload 8939 4635661824 Watching for file changes with StatReloader
+INFO 2024-04-28 20:01:39,270 autoreload 8939 4635661824 /Users/lichaoyuan/Desktop/copytrade/crawler/myokx/quantity_and_price.py changed, reloading.
+INFO 2024-04-28 20:01:40,566 autoreload 8957 4771001856 Watching for file changes with StatReloader
