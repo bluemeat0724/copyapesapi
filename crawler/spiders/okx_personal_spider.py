@@ -145,5 +145,5 @@ def spider_close_item(uniqueName):
     return summary_list_new
 
 if __name__ == '__main__':
-    print(spider('A8AF8AFFAB6051B3'))
+    print(spider('563E3A78CDBAFB4E'))
     # print(spider_close_item('032805718789399F'))

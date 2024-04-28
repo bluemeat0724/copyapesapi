@@ -161,7 +161,8 @@ class TradeQuantityAndPrice(TradeBase):
         # 有合约面值 -> 合约
         if ctVal:
             # 合约张数取整
-            quantity = math.floor(openMoney * leverage / openPrice / float(ctVal))
+            # 此处为修改源码部分，源码为向下取整到个位，修改为向下取整到0.1位
+            quantity = math.floor((openMoney * leverage / openPrice / float(ctVal)) * 10)/10
             quantity_result = {
                 'code': '0',
                 'data': quantity,

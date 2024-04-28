@@ -1,10 +1,10 @@
 [{
   "availSubPos": "0.20",
-  "margin": "103",
-  "instId": "BTC-USDT-SWAP",
+  "margin": "107",
+  "instId": "ETH-USDT-SWAP",
   "mgnMode": "cross",
   "posSide": "net",
-  "lever": "20",
+  "lever": "5",
   "openTime": "1698235930690",
   "openAvgPx": "35585.7863874345549738",
   "task_id": 4,

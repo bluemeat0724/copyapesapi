@@ -60,13 +60,14 @@ from okx.api._client import ResponseStatusError
 #                 'color': color
 #             })
 
-# from datetime import datetime, timedelta, timezone
-#
-# # Converting another provided timestamp (in milliseconds) to datetime
-# new_timestamp_3 = 1713375550489 / 1000  # converting milliseconds to seconds
-# new_date_time_3 = datetime.fromtimestamp(new_timestamp_3, tz=timezone.utc)
-#
-# print(new_date_time_3.strftime("%Y-%m-%d %H:%M:%S %Z"))
+
+from datetime import datetime, timedelta, timezone
+
+# Converting another provided timestamp (in milliseconds) to datetime
+new_timestamp_3 = 1714273934090 / 1000  # converting milliseconds to seconds
+new_date_time_3 = datetime.fromtimestamp(new_timestamp_3, tz=timezone.utc)
+
+print(new_date_time_3.strftime("%Y-%m-%d %H:%M:%S %Z"))
 
 # from datetime import datetime
 # import pytz
