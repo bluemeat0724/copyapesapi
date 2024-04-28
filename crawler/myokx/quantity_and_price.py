@@ -163,6 +163,7 @@ class TradeQuantityAndPrice(TradeBase):
             # 合约张数取整
             # 此处为修改源码部分，源码为向下取整到个位，修改为向下取整到0.1位
             quantity = math.floor((openMoney * leverage / openPrice / float(ctVal)) * 10)/10
+            # quantity = math.floor(openMoney * leverage / openPrice / float(ctVal))
             quantity_result = {
                 'code': '0',
                 'data': quantity,
@@ -200,6 +201,9 @@ class TradeQuantityAndPrice(TradeBase):
             return exchangeInfo
 
         stepSize = lotSz = exchangeInfo['data']['lotSz']
+        # 兼容不同品种的开仓精度
+        if float(stepSize) >= 1:
+            quantity = math.floor(quantity)
         # code : 0 | -1
         quantity_to_f_result = _order.quantity_to_f(
             quantity=quantity,
