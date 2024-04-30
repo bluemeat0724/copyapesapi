@@ -118,7 +118,7 @@ class Spider(threading.Thread):
             elif item.get("follow_type") == 2:
                 # 根据 order_type 调整 margin 值
                 if item.get("order_type") != 'change':
-                    item["margin"] = item["margin"] * item["lever"] / self.leverage
+                    item["margin"] = item["margin"] * float(item["lever"]) / self.leverage
                 else:
                     item["old_margin"] = item["old_margin"] * float(item["lever"]) / self.leverage
                     item["new_margin"] = item["new_margin"] * float(item["lever"]) / self.leverage
