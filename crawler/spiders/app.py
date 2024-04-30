@@ -177,6 +177,7 @@ class Spider(threading.Thread):
                 # 写入Redis队列
                 conn = redis.Redis(**settings.REDIS_PARAMS)
                 conn.lpush(settings.TRADE_TASK_NAME, json.dumps(item))
+                time.sleep(0.5)
 
         # 查找减少的交易数据
         removed_items = [i for i in old_list if i['instId'] not in set(map(lambda x: x['instId'], new_list))]
@@ -205,6 +206,7 @@ class Spider(threading.Thread):
                 # 写入Redis队列
                 conn = redis.Redis(**settings.REDIS_PARAMS)
                 conn.lpush(settings.TRADE_TASK_NAME, json.dumps(item))
+                time.sleep(0.5)
 
         # 查找值变化的数据
         changed_items = []
@@ -242,6 +244,7 @@ class Spider(threading.Thread):
                 # 写入Redis队列
                 conn = redis.Redis(**settings.REDIS_PARAMS)
                 conn.lpush(settings.TRADE_TASK_NAME, json.dumps(change))
+                time.sleep(0.5)
 
     def analysis_2(self, old_list, new_list):
         def log_trade_action(action, item):
@@ -280,6 +283,7 @@ class Spider(threading.Thread):
             # 写入Redis队列
             conn = redis.Redis(**settings.REDIS_PARAMS)
             conn.lpush(settings.TRADE_TASK_NAME, json.dumps(item))
+            time.sleep(0.5)
 
         def transform_time(openTime):
             timestamp_seconds = int(openTime) / 1000
