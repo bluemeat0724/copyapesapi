@@ -130,7 +130,7 @@ class Spider(threading.Thread):
     # 数据分析脚本，连接交易脚本
     def analysis(self, old_list, new_list):
         if self.role_type == 1:
-            self.analysis_1(old_list, new_list)
+            self.analysis_okx_follow(old_list, new_list)
             return True
         elif self.role_type == 2:
             # # 将记录列表写入文本文件
@@ -141,11 +141,11 @@ class Spider(threading.Thread):
             #     file.write(json.dumps(old_list, indent=4))
             #     file.write("new:\n")
             #     file.write(json.dumps(new_list, indent=4))
-            res = self.analysis_2(old_list, new_list)
+            res = self.analysis_okx_personal(old_list, new_list)
             if res is True:
                 return True
 
-    def analysis_1(self, old_list, new_list):
+    def analysis_okx_follow(self, old_list, new_list):
         # 如果没有交易数据，则直接返回
         if not new_list and not old_list:
             return None
@@ -246,7 +246,7 @@ class Spider(threading.Thread):
                 conn.lpush(settings.TRADE_TASK_NAME, json.dumps(change))
                 time.sleep(0.5)
 
-    def analysis_2(self, old_list, new_list):
+    def analysis_okx_personal(self, old_list, new_list):
         def log_trade_action(action, item):
             """ 用于记录交易行为到数据库的辅助函数 """
             openTime = transform_time(item['openTime'])
