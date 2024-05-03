@@ -83,7 +83,7 @@ class Spider(threading.Thread):
             new_list = self.test()
             self.analysis(old_list, new_list)
             old_list = new_list
-            time.sleep(1)
+            time.sleep(2)
 
     def stop(self):
         # 设置停止标志，用于停止爬虫线程
@@ -96,7 +96,6 @@ class Spider(threading.Thread):
 
     def test(self):
         summary_list_new = []
-        data_clear = {}
         if self.role_type == 1:
             with self.file_lock:
                 with open('text.txt', 'r') as f:
@@ -104,6 +103,7 @@ class Spider(threading.Thread):
             if not data_list:
                 return summary_list_new
             for data in data_list:
+                data_clear = {}
                 data_clear['margin'] = data.get('margin')
                 data_clear['availSubPos'] = float(data.get('availSubPos'))
                 data_clear['instId'] = data.get('instId')
@@ -127,6 +127,7 @@ class Spider(threading.Thread):
             return summary_list_new
 
         elif self.role_type == 2:
+            data_clear = {}
             with self.file_lock:
                 with open('text_personal.txt', 'r') as f:
                     data_list = json.loads(f.read())
@@ -203,8 +204,10 @@ class Spider(threading.Thread):
 
     def analysis_1(self, old_list, new_list):
         # 查找新增的交易数据
-        name_set = set(i['instId'] for i in old_list)
-        added_items = list(filter(lambda x: x['instId'] not in name_set, new_list))
+        # 将旧列表中的(instId, mgnMode)对存入集合
+        old_set = set((i['instId'], i['mgnMode']) for i in old_list)
+        # 使用(instId, mgnMode)对来判断新列表中的新增项
+        added_items = list(filter(lambda x: (x['instId'], x['mgnMode']) not in old_set, new_list))
         # logger.debug('added_items:',added_items)
         if added_items:
             for item in added_items:
@@ -227,13 +230,13 @@ class Spider(threading.Thread):
                 self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
                                      f"品种：{item['instId']}，杠杆：{item['lever']}")
                 # 写入Redis队列
-
+                print('open',json.dumps(item))
                 conn = redis.Redis(**settings.REDIS_PARAMS)
                 conn.lpush(settings.TRADE_TASK_NAME, json.dumps(item))
             # return added_items
 
         # 查找减少的交易数据
-        removed_items = [i for i in old_list if i['instId'] not in set(map(lambda x: x['instId'], new_list))]
+        removed_items = [i for i in old_list if (i['instId'], i['mgnMode'])not in set(map(lambda x: (x['instId'], x['mgnMode']), new_list))]
         # logger.debug('removed_items:',removed_items)
         if removed_items:
             for item in removed_items:
@@ -256,6 +259,7 @@ class Spider(threading.Thread):
                 #     f"交易员{self.uniqueName}进行了平仓操作，品种：{item['instId']}，杠杆：{item['lever']}")
                 self.log_to_database("success", f"交易员{self.uniqueName}进行了平仓操作",
                                      f"品种：{item['instId']}，杠杆：{item['lever']}")
+                print('close',json.dumps(item))
                 # 写入Redis队列
                 conn = redis.Redis(**settings.REDIS_PARAMS)
                 conn.lpush(settings.TRADE_TASK_NAME, json.dumps(item))
@@ -264,7 +268,7 @@ class Spider(threading.Thread):
         # 查找值变化的数据
         changed_items = []
         for old_item, new_item in zip(old_list, new_list):
-            if old_item["instId"] == new_item["instId"] and old_item['margin'] != new_item['margin']:
+            if old_item["instId"] == new_item["instId"] and old_item["mgnMode"] == new_item["mgnMode"] and old_item['margin'] != new_item['margin']:
                 change = {'order_type': 'change',
                           'instId': old_item['instId'],
                           'old_availSubPos': old_item['availSubPos'],
@@ -290,7 +294,7 @@ class Spider(threading.Thread):
                           }
                 change = self.transform(change)
                 changed_items.append(change)
-                print(change)
+                print('change',change)
                 self.log_to_database("success", f"交易员{self.uniqueName}进行了调仓操作",
                                      f"品种：{old_item['instId']}，原仓位：{old_item['margin']}，现仓位：{new_item['margin']}")
                 # thread_logger.success(
@@ -298,7 +302,7 @@ class Spider(threading.Thread):
                 # 写入Redis队列
                 conn = redis.Redis(**settings.REDIS_PARAMS)
                 conn.lpush(settings.TRADE_TASK_NAME, json.dumps(change))
-        return added_items, removed_items, changed_items
+
 
     def analysis_2(self, old_list, new_list):
         # 如果没有当前持仓数据，则直接返回

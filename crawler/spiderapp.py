@@ -5,9 +5,32 @@ from crawler import settingsprod as settings
 import redis
 import json
 
+import threading
+import time
+import datetime
+
+
+# 定义保活检查间隔（秒）
+KEEP_ALIVE_INTERVAL = 10
 # 用字典映射任务ID和爬虫实例
 spiders = {}
 
+# 保活检查
+def keep_spiders_alive():
+    while True:
+        for task_id, spider in list(spiders.items()):
+            if spider.is_alive():  # 如果爬虫线程仍然活跃
+                pass
+                # print(f"任务 {task_id} 的爬虫仍然活跃。")
+            else:  # 如果爬虫线程不再活跃
+                print(f"{datetime.datetime.now()}，任务 {task_id} 的爬虫不再活跃，尝试重新启动。")
+                # 重新启动爬虫
+                new_spider = app.Spider(spider.task_id, spider.trader_platform, spider.uniqueName, spider.follow_type, spider.role_type,
+                                        spider.reduce_ratio, spider.sums, spider.ratio, spider.lever_set, spider.first_order_set,
+                                        spider.api_id, spider.user_id, spider.leverage, spider.posSide_set, spider.fast_mode)
+                new_spider.start()
+                spiders[task_id] = new_spider
+        time.sleep(KEEP_ALIVE_INTERVAL)
 
 def run():
     """
@@ -63,7 +86,7 @@ def run():
                     spider_to_stop = spiders[task_id]
                     spider_to_stop.status = status
                     spider_to_stop.stop()
-                    spider_to_stop.join()
+                    spider_to_stop.join(timeout=10)
                     # 组装数据
                     task_data['task_id'] = task_data.pop('id')
                     task_data.pop("create_datetime")
@@ -79,10 +102,14 @@ def run():
                         print(f"IP即将过期。用户：{user_id}的跟单任务{task_id}已停止。")
                 else:
                     print(f"用户：{user_id}的跟单任务{task_id}不存在")
-
-        except (SyntaxError, NameError):
-            print("数据错误！")
+        except Exception as e:
+            print(e)
+            print(f'{datetime.datetime.now()}，程序异常退出。')
 
 
 if __name__ == '__main__':
+    # 启动保活线程
+    keep_alive_thread = threading.Thread(target=keep_spiders_alive)
+    keep_alive_thread.daemon = True  # 设置为守护线程，当主线程结束时自动退出
+    keep_alive_thread.start()
     run()

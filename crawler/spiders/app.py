@@ -130,7 +130,7 @@ class Spider(threading.Thread):
     # 数据分析脚本，连接交易脚本
     def analysis(self, old_list, new_list):
         if self.role_type == 1:
-            self.analysis_1(old_list, new_list)
+            self.analysis_okx_follow(old_list, new_list)
             return True
         elif self.role_type == 2:
             # # 将记录列表写入文本文件
@@ -141,17 +141,19 @@ class Spider(threading.Thread):
             #     file.write(json.dumps(old_list, indent=4))
             #     file.write("new:\n")
             #     file.write(json.dumps(new_list, indent=4))
-            res = self.analysis_2(old_list, new_list)
+            res = self.analysis_okx_personal(old_list, new_list)
             if res is True:
                 return True
 
-    def analysis_1(self, old_list, new_list):
+    def analysis_okx_follow(self, old_list, new_list):
         # 如果没有交易数据，则直接返回
         if not new_list and not old_list:
             return None
         # 查找新增的交易数据
-        name_set = set(i['instId'] for i in old_list)
-        added_items = list(filter(lambda x: x['instId'] not in name_set, new_list))
+        # 将旧列表中的(instId, mgnMode)对存入集合
+        old_set = set((i['instId'], i['mgnMode']) for i in old_list)
+        # 使用(instId, mgnMode)对来判断新列表中的新增项
+        added_items = list(filter(lambda x: (x['instId'], x['mgnMode']) not in old_set, new_list))
 
         if added_items:
             for item in added_items:
@@ -180,7 +182,7 @@ class Spider(threading.Thread):
                 time.sleep(0.5)
 
         # 查找减少的交易数据
-        removed_items = [i for i in old_list if i['instId'] not in set(map(lambda x: x['instId'], new_list))]
+        removed_items = [i for i in old_list if (i['instId'], i['mgnMode'])not in set(map(lambda x: (x['instId'], x['mgnMode']), new_list))]
         # logger.debug('removed_items:',removed_items)
         if removed_items:
             for item in removed_items:
@@ -211,7 +213,7 @@ class Spider(threading.Thread):
         # 查找值变化的数据
         changed_items = []
         for old_item, new_item in zip(old_list, new_list):
-            if old_item["instId"] == new_item["instId"] and old_item['availSubPos'] != new_item['availSubPos']:
+            if old_item["instId"] == new_item["instId"] and old_item["mgnMode"] == new_item["mgnMode"] and old_item['availSubPos'] != new_item['availSubPos']:
                 change = {'order_type': 'change',
                           'instId': old_item['instId'],
                           'old_availSubPos': old_item['availSubPos'],
@@ -246,7 +248,7 @@ class Spider(threading.Thread):
                 conn.lpush(settings.TRADE_TASK_NAME, json.dumps(change))
                 time.sleep(0.5)
 
-    def analysis_2(self, old_list, new_list):
+    def analysis_okx_personal(self, old_list, new_list):
         def log_trade_action(action, item):
             """ 用于记录交易行为到数据库的辅助函数 """
             openTime = transform_time(item['openTime'])
