@@ -150,8 +150,10 @@ class Spider(threading.Thread):
         if not new_list and not old_list:
             return None
         # 查找新增的交易数据
-        name_set = set(i['instId'] for i in old_list)
-        added_items = list(filter(lambda x: x['instId'] not in name_set, new_list))
+        # 将旧列表中的(instId, mgnMode)对存入集合
+        old_set = set((i['instId'], i['mgnMode']) for i in old_list)
+        # 使用(instId, mgnMode)对来判断新列表中的新增项
+        added_items = list(filter(lambda x: (x['instId'], x['mgnMode']) not in old_set, new_list))
 
         if added_items:
             for item in added_items:
@@ -180,7 +182,7 @@ class Spider(threading.Thread):
                 time.sleep(0.5)
 
         # 查找减少的交易数据
-        removed_items = [i for i in old_list if i['instId'] not in set(map(lambda x: x['instId'], new_list))]
+        removed_items = [i for i in old_list if (i['instId'], i['mgnMode'])not in set(map(lambda x: (x['instId'], x['mgnMode']), new_list))]
         # logger.debug('removed_items:',removed_items)
         if removed_items:
             for item in removed_items:
@@ -211,7 +213,7 @@ class Spider(threading.Thread):
         # 查找值变化的数据
         changed_items = []
         for old_item, new_item in zip(old_list, new_list):
-            if old_item["instId"] == new_item["instId"] and old_item['availSubPos'] != new_item['availSubPos']:
+            if old_item["instId"] == new_item["instId"] and old_item["mgnMode"] == new_item["mgnMode"] and old_item['availSubPos'] != new_item['availSubPos']:
                 change = {'order_type': 'change',
                           'instId': old_item['instId'],
                           'old_availSubPos': old_item['availSubPos'],
