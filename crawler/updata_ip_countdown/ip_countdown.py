@@ -37,7 +37,7 @@ def get_token():
     url = "https://www.zhizhuip.cc/externalapi/user/login"
     payload = {
         'account': '15755149931',
-        'password': '112233ww'
+        'password': '112233Ww..'
     }
     headers = {
         'User-Agent': 'Apifox/1.0.0 (https://apifox.com)'
