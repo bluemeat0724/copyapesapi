@@ -11,7 +11,7 @@ import datetime
 
 
 # 定义保活检查间隔（秒）
-KEEP_ALIVE_INTERVAL = 10
+KEEP_ALIVE_INTERVAL = 60
 # 用字典映射任务ID和爬虫实例
 spiders = {}
 
@@ -27,7 +27,7 @@ def keep_spiders_alive():
                 # 重新启动爬虫
                 new_spider = app.Spider(spider.task_id, spider.trader_platform, spider.uniqueName, spider.follow_type, spider.role_type,
                                         spider.reduce_ratio, spider.sums, spider.ratio, spider.lever_set, spider.first_order_set,
-                                        spider.api_id, spider.user_id, spider.leverage, spider.posSide_set, spider.fast_mode)
+                                        spider.api_id, spider.user_id, spider.leverage, spider.posSide_set, spider.fast_mode, spider.investment)
                 new_spider.start()
                 spiders[task_id] = new_spider
         time.sleep(KEEP_ALIVE_INTERVAL)
@@ -68,12 +68,13 @@ def run():
             leverage = task_data.get('leverage')
             posSide_set = task_data.get('posSide_set')
             fast_mode = task_data.get('fast_mode')
+            investment = task_data.get('investment')
 
             if status == 1:
                 # 开启新爬虫
                 if task_id not in spiders:
                     spider = app.Spider(task_id, trader_platform, uniqueName, follow_type, role_type, reduce_ratio,sums, ratio, lever_set,
-                                        first_order_set, api_id, user_id, leverage, posSide_set, fast_mode)
+                                        first_order_set, api_id, user_id, leverage, posSide_set, fast_mode, investment)
                     spider.start()
                     spiders[task_id] = spider
                     print(f"用户：{user_id}的最新跟单任务{task_id}已经开始。")

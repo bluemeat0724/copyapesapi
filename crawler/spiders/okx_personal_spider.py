@@ -23,21 +23,16 @@ today_specific_time_timestamp = int(today_specific_time.timestamp()) * 1000
 def spider(uniqueName):
     summary_list_new = []
     try:
-        position_url = f'https://www.okx.com/priapi/v5/ecotrade/public/positions-v2?limit=10&uniqueName={uniqueName}&t={now}'
-        position_list = requests.get(position_url, headers=get_header(), proxies=get_proxies()[0],timeout=30).json().get('data', list())[0].get('posData', list())
-        # test_record_url = f'https://www.okx.com/priapi/v5/ecotrade/public/trade-records?limit=5&startModify={thirty_days_ago_specific_time_timestamp}&endModify={today_specific_time_timestamp}&uniqueName={uniqueName}&t={now}'
-        # test_record_list = requests.get(test_record_url, headers=get_header(), timeout=30).json().get('data', list())
-        # # 将记录列表写入文本文件
-        # with open(f'test_record_list_{uniqueName}.txt', 'a') as file:
-        #     # 使用json.dumps将列表转换为字符串格式，便于阅读
-        #     file.write(f'{datetime.now()}\n')
-        #     file.write(json.dumps(test_record_list, indent=4))
-        if not position_list:
-            return summary_list_new
         record_url = f'https://www.okx.com/priapi/v5/ecotrade/public/trade-records?limit=10&startModify={thirty_days_ago_specific_time_timestamp}&endModify={today_specific_time_timestamp}&uniqueName={uniqueName}&t={now}'
-        # print(record_url)
-        record_list = requests.get(record_url, headers=get_header(), proxies=get_proxies()[0], timeout=30).json().get('data', list())
-        # print(record_list)
+        # print(record_url) proxies=get_proxies()[0],
+        record_list = requests.get(record_url, headers=get_header(), timeout=30).json().get('data', list())
+
+        position_url = f'https://www.okx.com/priapi/v5/ecotrade/public/positions-v2?limit=10&uniqueName={uniqueName}&t={now}'
+        position_list = requests.get(position_url, headers=get_header(), timeout=30).json().get('data', list())[0].get('posData', list())
+
+        if not position_list:
+            return summary_list_new, position_list
+
         for record in record_list:
             posSide = record.get('posSide')
             side = record.get('side')
@@ -53,6 +48,7 @@ def spider(uniqueName):
             for item in position_list:
                 if item.get('instId') == data_clear['instId'] and item.get('posSide') == data_clear['posSide']:
                     data_clear['mgnMode'] = item.get('mgnMode')
+                    data_clear['posSpace'] = float(item.get('posSpace'))  # 仓位大小：当前仓位价值/交易账户权益
                     pos = int(item.get('pos'))
                     exist = True
                     '''
@@ -101,7 +97,7 @@ def spider(uniqueName):
                     elif side == 'sell':
                         data_clear['posSide'] = 'long'
             summary_list_new.append(data_clear)
-        return summary_list_new
+        return summary_list_new, position_list
     except Exception as e:
         # print('personal_spider',datetime.now())
         # print(e)
@@ -144,6 +140,25 @@ def spider_close_item(uniqueName):
             attempts += 1
     return summary_list_new
 
+def get_position(uniqueName):
+    set_flg = True
+    while set_flg:
+        try:
+            position_url = f'https://www.okx.com/priapi/v5/ecotrade/public/positions-v2?limit=10&uniqueName={uniqueName}&t={now}'
+            position_list = requests.get(position_url, headers=get_header(), timeout=30).json().get('data', list())[0].get('posData', list())
+            if position_list is None:
+                time.sleep(0.1)
+                continue
+            set_flg = False
+            return position_list
+        except Exception as e:
+            # print('get_position', datetime.now())
+            # print(e)
+            pass
+
+
 if __name__ == '__main__':
     print(spider('563E3A78CDBAFB4E'))
+    # print(spider('585D2CBB1B3E2A79'))
+    # print(get_position('585D2CBB1B3E2A79'))
     # print(spider_close_item('032805718789399F'))

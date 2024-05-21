@@ -22,23 +22,23 @@ import time
 #        #             }
 #        }
 # 模拟子2
-# acc = {'key': '2842457e-1d17-4a58-a0d6-25d71044e75a',
-#        'secret': 'A3A985254556CAAB007ABB15F7FECC9B',
-#        'passphrase': '112233Ww..',
-#        # 'proxies': {
-#        #              'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322',
-#        #              'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322'
-#        #             }
-#        }
-# 模拟主1
-acc = {'key': 'ba8dccb8-943d-468c-bcbf-8dced96fc7cf',
-       'secret': 'BBA3FF14AC698CDBAA33219F858E7BF6',
+acc = {'key': '2842457e-1d17-4a58-a0d6-25d71044e75a',
+       'secret': 'A3A985254556CAAB007ABB15F7FECC9B',
        'passphrase': '112233Ww..',
-    #    'proxies': {
-    #                 'http': 'socks5h://copyapes:12345678@38.147.173.111:5001',
-    #                 'https': 'socks5h://copyapes:12345678@38.147.173.111:5001'
-    #                }
+       'proxies': {
+                    'http': 'socks5h://15755149931drf-1:m1ktqqts@154.9.255.134:5001',
+                    'https': 'socks5h://15755149931drf-1:m1ktqqts@154.9.255.134:5001'
+                   }
        }
+# 模拟主1
+# acc = {'key': 'ba8dccb8-943d-468c-bcbf-8dced96fc7cf',
+#        'secret': 'BBA3FF14AC698CDBAA33219F858E7BF6',
+#        'passphrase': '112233Ww..',
+#     #    'proxies': {
+#     #                 'http': 'socks5h://copyapes:12345678@38.147.173.111:5001',
+#     #                 'https': 'socks5h://copyapes:12345678@38.147.173.111:5001'
+#     #                }
+#        }
 # acc = {'key': '5853686f-a0ed-4c76-a382-5ac480740883',
 #        'secret': '2DCFFF11C68C2E88C6437268B28A87FE',
 #        'passphrase': '112233Ww..',
@@ -74,9 +74,9 @@ acc = {'key': 'ba8dccb8-943d-468c-bcbf-8dced96fc7cf',
 obj = app.OkxSWAP(**acc)
 obj.account.api.flag = '1'
 obj.trade.api.flag = '1'
-start_time = time.time()
+# start_time = time.time()
 # 查看账户配置信息
-# print(obj.account.get_config())
+print(obj.account.get_config())
 
 # a = obj.account.get_positions_history(limit=1)
 # print(a)
@@ -90,39 +90,54 @@ start_time = time.time()
 #
 #
 #
-# a = obj.trade.open_market(instId="BTC-USDT-SWAP", posSide="long", openMoney=10 * 10, tdMode='cross',
-#                           lever=10)
+# a = obj.trade.open_market(instId="DOGE-USDT-SWAP", posSide="long", openMoney=28800, tdMode='cross',
+#                           lever=50)
 # end_time = time.time()
 # t = start_time - end_time
 # print(a)
 # print(t)
-from crawler.utils.get_trade_times import get_trade_times
-trade_times = get_trade_times("BTC-USDT-SWAP", '1', acc)
-print(trade_times)
-result = obj.trade.open_market(instId="BTC-USDT-SWAP", posSide="long", openMoney=10*trade_times, tdMode='cross',
-                                  lever=5)
+# from crawler.utils.get_trade_times import get_trade_times
+# trade_times = get_trade_times("ETH-USDT-SWAP", '1', acc)
+# print(trade_times)
+# result = obj.trade.open_market(instId="BTC-USDT-SWAP", posSide="long", openMoney=10*trade_times, tdMode='cross',
+#                                   lever=5)
 # result = {'instType': 'SWAP', 'instId': 'LTC-USDT-SWAP', 'state': None, 'ordId': None, 'meta': {}, 'request_param': {'instId': 'LTC-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'long', 'side': 'buy', 'ordType': 'market', 'sz': '0', 'clOrdId': '', 'tag': ''}, 'func_param': {'instId': 'LTC-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'long', 'lever': 3, 'openMoney': 5, 'quantityCT': None, 'meta': {}, 'timeout': 60, 'delay': 0.2, 'cancel': True, 'clOrdId': '', 'tag': '', 'newThread': False, 'callback': None, 'errorback': None}, 'get_order_result': None, 'set_order_result': {'code': '1', 'data': [{'clOrdId': '', 'ordId': '', 'sCode': '51000', 'sMsg': 'Parameter sz error', 'tag': ''}], 'inTime': '1704986885902318', 'msg': 'All operations failed', 'outTime': '1704986885902391'}, 'error_result': {'code': 'FUNC_EXCEPTION', 'data': {}, 'msg': 'Traceback (most recent call last):\n  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/open.py", line 557, in inner_func\n    error_result = main_func(**main_data)\n  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/open.py", line 507, in main_func\n    ordId = set_order_result[\'data\'][\'ordId\']\nTypeError: list indices must be integers or slices, not str\n'}, 'cancel_result': None}
-print(result)
+# print(result)
+
+#
 # get_ticker_result = obj.trade._market.get_ticker(instId="ETH-USDT-SWAP")
 # print(get_ticker_result)
 # openPrice = float(get_ticker_result['data']['askPx'])
 # print(openPrice)
 # get_quantity_result = obj.trade.get_quantity(
-#                         openPrice=openPrice, openMoney=1*trade_times,
+#                         openPrice=openPrice, openMoney=3668.28*trade_times,
 #                         instId="ETH-USDT-SWAP", ordType='market',
-#                         leverage=5,
+#                         leverage=20,
 #                     )
-# print(get_quantity_result['data'])
+# print('get_quantity_result',get_quantity_result['data'],type(get_quantity_result['data']))
 # exchangeInfo = obj.trade._market.get_exchangeInfo(
-#             instId="ETH-USDT-SWAP",
+#             instId="W-USDT-SWAP",
 #             expire_seconds=60 * 5
 #         )
 # ctVal = exchangeInfo['data']['ctVal']
 # print(ctVal)
 # quantity = 1*trade_times * 5 / openPrice / float(ctVal)
 # print(quantity)
+# stepSize = exchangeInfo['data']['lotSz']
 # import math
-# print(math.floor(quantity))
+# if float(stepSize) >= 1:
+#     quantity = math.floor(quantity)
+#     print('1', quantity)
+# else:
+#     quantity = math.floor(quantity * 10) / 10
+#     print('0', quantity)
+
+#
+# a = obj.trade.close_market(instId="ETH-USDT-SWAP", posSide='long', quantityCT=get_quantity_result['data'],
+#                                         tdMode='cross')
+# print(a)
+
+
 # try:
 #     s_code_value = result.get('set_order_result', {}).get('data', {}).get('sCode')
 #     if s_code_value == '0':

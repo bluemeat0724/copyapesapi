@@ -100,17 +100,17 @@ class TaskInfo(DeletedModel):
     )
     lever_set = models.IntegerField(verbose_name="杠杆设置", choices=lever_choice, default=1)
 
-    # leverage
     leverage = models.IntegerField(
         verbose_name="杠杆倍数",
         default=1  # 默认值
     )
 
+    investment = models.FloatField(verbose_name="投资金额", default=0)
+
     posSide_set = models.IntegerField(
         verbose_name="反向跟单",
         default=1  # 默认值 1：否 2：是
     )
-
 
     first_order_choice = (
         (1, "交易员新开订单后跟随"),

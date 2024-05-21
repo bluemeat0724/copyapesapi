@@ -14,7 +14,7 @@ from crawler.account.update_quota import get_remaining_quota, check_task_pnl, up
 
 class Trader(threading.Thread):
     def __init__(self, task_id, api_id, user_id, trader_platform, uniqueName, follow_type, role_type, reduce_ratio, sums, ratio, lever_set,
-                 first_order_set, posSide_set,
+                 first_order_set, posSide_set,investment,
                  instId=None, mgnMode=None, posSide=None, lever=1, openTime=None, openAvgPx=None, margin=None,
                  availSubPos=None, order_type=None,
                  old_margin=None, new_margin=None, old_availSubPos=None, new_availSubPos=None, status=None, fast_mode=0):
@@ -29,6 +29,7 @@ class Trader(threading.Thread):
         self.sums = sums
         self.ratio = ratio
         self.lever_set = lever_set
+        self.investment = investment
         self.first_order_set = first_order_set
         self.api_id = api_id
         self.user_id = user_id
@@ -179,7 +180,8 @@ class Trader(threading.Thread):
             self.change_pos_side_set(self.availSubPos)
             # 市价平仓
             print(f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
-            self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT='all', tdMode=self.mgnMode)
+            res = self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT='all', tdMode=self.mgnMode)
+            print(f'{self.task_id}###{res}')
             # self.thread_logger.success(f'进行平仓操作，品种:{self.instId}，方向：{self.posSide}')
             self.log_to_database("success", f"进行平仓操作", f"品种:{self.instId}，方向：{self.posSide}")
             # 更新持仓数据
@@ -232,19 +234,36 @@ class Trader(threading.Thread):
         elif self.order_type == 'reduce':
             # 解析订单方向
             self.change_pos_side_set(self.new_availSubPos)
-            # 获取当前持仓，计算减仓量=当前*self.reduce_ratio
-            try:
-                quantityCT = int(
-                    self.obj.account.get_positions(instId=self.instId, posSide=self.posSide).get('data')[0].get(
-                        'availPos')) * self.reduce_ratio
-            except:
-                self.log_to_database("success", '进行减仓操作', f'品种：{self.instId}，暂时没有仓位，继续跟单中...')
-                return
+            if self.follow_type == 1:
+                # 获取当前持仓，计算减仓量=当前*self.reduce_ratio
+                try:
+                    quantityCT = int(
+                        self.obj.account.get_positions(instId=self.instId, posSide=self.posSide).get('data')[0].get(
+                            'availPos')) * self.reduce_ratio
+                except:
+                    self.log_to_database("success", '进行减仓操作', f'品种：{self.instId}，暂时没有仓位，继续跟单中...')
+                    return
+            else:
+                # 按仓位比例跟单，将减仓金额转换为张数
+                trade_times = get_trade_times(self.instId, self.flag, self.acc)
+                if trade_times is None:
+                    self.log_to_database("WARNING", "模拟盘土狗币交易失败", f"品种：{self.instId}不在交易所模拟盘中！")
+                    return
+                get_ticker_result = self.obj.trade._market.get_ticker(instId=self.instId)
+                openPrice = float(get_ticker_result['data']['askPx'])
+                quantityCT = self.obj.trade.get_quantity(
+                    openPrice=openPrice, openMoney=self.sums * trade_times,
+                    instId=self.instId, ordType='market',
+                    leverage=self.lever,
+                ).get('data')
             print(f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
             self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT=quantityCT,
                                         tdMode=self.mgnMode)
-            percentage = "{:.2f}%".format(self.reduce_ratio * 100)
-            self.log_to_database("success", '进行减仓操作', f'品种：{self.instId}，减仓占比：{percentage}')
+            if self.follow_type == 1:
+                percentage = "{:.2f}%".format(self.reduce_ratio * 100)
+                self.log_to_database("success", '进行减仓操作', f'品种：{self.instId}，减仓占比：{percentage}')
+            else:
+                self.log_to_database("success", '进行减仓操作', f'品种：{self.instId}，减仓保证金：{self.sums}USDT')
             # 更新持仓数据
             OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=1)
         elif self.order_type == 'close_all':
@@ -270,18 +289,24 @@ class Trader(threading.Thread):
         try:
             s_code_value = result.get('set_order_result', {}).get('data', [{}])[0].get('sCode')
             if s_code_value == '51000':
-                self.log_to_database("WARNING", '交易失败', '交易金额过低，请重新设置任务单笔跟单金额。')
+                self.log_to_database("WARNING", '交易失败', '交易金额过低，请重新设置任务单笔跟单金额。如果是智能跟单模式，当前仓位大于交易员仓位比例，本次不进行加仓。')
             elif s_code_value == '51010':
                 self.log_to_database("WARNING",
                                      '交易失败', '当前账户为简单交易模式，请在交易所合约交易页面进行手动调整。无需终止本次跟单任务，交易模式调整完成后，如有新的交易订单，将正常交易。')
             elif s_code_value == '51008':
                 self.log_to_database("WARNING", '交易失败', '账户余额不足！请前往交易所充值！')
+            elif s_code_value == '51169':
+                self.log_to_database("WARNING", '交易失败', '下单失败，当前合约无持仓！')
+            elif s_code_value == '51202':
+                self.log_to_database("WARNING", '交易失败', '市价单下单数量超出最大值！')
             elif s_code_value == '51024':
                 self.log_to_database("WARNING", '交易失败', '交易账户冻结！请联系交易所客服处理！')
             elif s_code_value == '51004':
                 self.log_to_database("WARNING", '交易失败', '当前下单张数、多空持有仓位以及多空挂单张数之和，不能超过当前杠杆倍数允许的持仓上限。请调低杠杆或者使用新的子账户重新下单')
             elif s_code_value == '50013':
                 self.log_to_database("WARNING", '交易失败', '交易所系统繁忙，导致交易失败。本次交易放弃。')
+            elif s_code_value == '51202':
+                self.log_to_database("WARNING", '交易失败', '市价单下单数量超出最大值。本次交易放弃。如果当前为模拟盘跟单，出现该错误为正常现象，不会影响实盘跟单。')
             elif s_code_value in ['50103', '50104', '50105', '50106', '50107']:
                 self.log_to_database("WARNING", '交易失败', 'API信息填写错误，请结束任务后重新提交新的API！')
             else:
@@ -471,14 +496,15 @@ class Trader(threading.Thread):
 
 
     def transform_sums(self):
-        # todo 可能有全仓和逐仓的区别
         if self.order_type is None:
             return
         if self.order_type == 'change':
             self.margin = self.new_margin - self.old_margin
-        self.sums = self.margin * self.ratio
+        if self.role_type == 1:
+            self.sums = self.margin * self.ratio
 
     def check_ip(self):
+
         """
         更新任务表的ip_id
         """
