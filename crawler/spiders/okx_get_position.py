@@ -11,6 +11,8 @@ def get_api_id(task_id):
 def get_position(user_id, task_id):
     api_id = get_api_id(task_id)
     acc, flag, ip_id = api(user_id, api_id)
+    # 获取账户持仓走本地ip，加快速度
+    acc.pop('proxies')
 
     obj = app.OkxSWAP(**acc)
     obj.account.api.flag = flag
