@@ -126,7 +126,8 @@ class OkxOrderInfo(object):
                                     upl = %(upl)s,
                                     imr = %(imr)s,
                                     openAvgPx = %(openAvgPx)s,
-                                    uplRatio = %(uplRatio)s
+                                    uplRatio = %(uplRatio)s,
+                                    lever = %(lever)s
                                 WHERE instId = %(instId)s AND cTime = %(cTime)s;
                             """
                 with Connect() as db:
