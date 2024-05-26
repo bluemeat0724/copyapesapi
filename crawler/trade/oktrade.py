@@ -244,6 +244,12 @@ class Trader(threading.Thread):
                     self.log_to_database("success", '进行减仓操作', f'品种：{self.instId}，暂时没有仓位，继续跟单中...')
                     return
             else:
+                if self.sums == 0:
+                    self.log_to_database("success", '进行减仓操作', f'品种：{self.instId}，暂时没有仓位，继续跟单中...')
+                    return
+                elif self.sums < 0:
+                    self.log_to_database("success", '进行减仓操作', f'品种：{self.instId}，当前仓位小于交易员仓位比例，无需减仓！')
+                    return
                 # 按仓位比例跟单，将减仓金额转换为张数
                 trade_times = get_trade_times(self.instId, self.flag, self.acc)
                 if trade_times is None:
@@ -289,7 +295,7 @@ class Trader(threading.Thread):
         try:
             s_code_value = result.get('set_order_result', {}).get('data', [{}])[0].get('sCode')
             if s_code_value == '51000':
-                self.log_to_database("WARNING", '交易失败', '交易金额过低，请重新设置任务单笔跟单金额。如果是智能跟单模式，当前仓位大于交易员仓位比例，本次不进行加仓。')
+                self.log_to_database("WARNING", '交易失败', '交易金额过低，请重新设置任务单笔跟单金额。如果是智能跟单模式，当前仓位大于交易员仓位比例，本次不进行交易。')
             elif s_code_value == '51010':
                 self.log_to_database("WARNING",
                                      '交易失败', '当前账户为简单交易模式，请在交易所合约交易页面进行手动调整。无需终止本次跟单任务，交易模式调整完成后，如有新的交易订单，将正常交易。')
