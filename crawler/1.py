@@ -25,10 +25,10 @@ import time
 acc = {'key': '2842457e-1d17-4a58-a0d6-25d71044e75a',
        'secret': 'A3A985254556CAAB007ABB15F7FECC9B',
        'passphrase': '112233Ww..',
-       'proxies': {
-                    'http': 'socks5h://15755149931drf-1:m1ktqqts@154.9.255.134:5001',
-                    'https': 'socks5h://15755149931drf-1:m1ktqqts@154.9.255.134:5001'
-                   }
+       # 'proxies': {
+       #              'http': 'socks5h://15755149931drf-1:m1ktqqts@154.9.255.134:5001',
+       #              'https': 'socks5h://15755149931drf-1:m1ktqqts@154.9.255.134:5001'
+       #             }
        }
 # 模拟主1
 # acc = {'key': 'ba8dccb8-943d-468c-bcbf-8dced96fc7cf',
@@ -76,7 +76,7 @@ obj.account.api.flag = '1'
 obj.trade.api.flag = '1'
 # start_time = time.time()
 # 查看账户配置信息
-print(obj.account.get_config())
+# print(obj.account.get_config())
 
 # a = obj.account.get_positions_history(limit=1)
 # print(a)
@@ -96,25 +96,25 @@ print(obj.account.get_config())
 # t = start_time - end_time
 # print(a)
 # print(t)
-# from crawler.utils.get_trade_times import get_trade_times
-# trade_times = get_trade_times("ETH-USDT-SWAP", '1', acc)
-# print(trade_times)
+from crawler.utils.get_trade_times import get_trade_times
+trade_times = get_trade_times("ETH-USDT-SWAP", '1', acc)
+print(trade_times)
 # result = obj.trade.open_market(instId="BTC-USDT-SWAP", posSide="long", openMoney=10*trade_times, tdMode='cross',
 #                                   lever=5)
 # result = {'instType': 'SWAP', 'instId': 'LTC-USDT-SWAP', 'state': None, 'ordId': None, 'meta': {}, 'request_param': {'instId': 'LTC-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'long', 'side': 'buy', 'ordType': 'market', 'sz': '0', 'clOrdId': '', 'tag': ''}, 'func_param': {'instId': 'LTC-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'long', 'lever': 3, 'openMoney': 5, 'quantityCT': None, 'meta': {}, 'timeout': 60, 'delay': 0.2, 'cancel': True, 'clOrdId': '', 'tag': '', 'newThread': False, 'callback': None, 'errorback': None}, 'get_order_result': None, 'set_order_result': {'code': '1', 'data': [{'clOrdId': '', 'ordId': '', 'sCode': '51000', 'sMsg': 'Parameter sz error', 'tag': ''}], 'inTime': '1704986885902318', 'msg': 'All operations failed', 'outTime': '1704986885902391'}, 'error_result': {'code': 'FUNC_EXCEPTION', 'data': {}, 'msg': 'Traceback (most recent call last):\n  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/open.py", line 557, in inner_func\n    error_result = main_func(**main_data)\n  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/open.py", line 507, in main_func\n    ordId = set_order_result[\'data\'][\'ordId\']\nTypeError: list indices must be integers or slices, not str\n'}, 'cancel_result': None}
 # print(result)
 
-#
-# get_ticker_result = obj.trade._market.get_ticker(instId="ETH-USDT-SWAP")
-# print(get_ticker_result)
-# openPrice = float(get_ticker_result['data']['askPx'])
-# print(openPrice)
-# get_quantity_result = obj.trade.get_quantity(
-#                         openPrice=openPrice, openMoney=3668.28*trade_times,
-#                         instId="ETH-USDT-SWAP", ordType='market',
-#                         leverage=20,
-#                     )
-# print('get_quantity_result',get_quantity_result['data'],type(get_quantity_result['data']))
+
+get_ticker_result = obj.trade._market.get_ticker(instId="ETH-USDT-SWAP")
+print(get_ticker_result)
+openPrice = float(get_ticker_result['data']['askPx'])
+print(openPrice)
+get_quantity_result = obj.trade.get_quantity(
+                        openPrice=openPrice, openMoney=-10*trade_times,
+                        instId="ETH-USDT-SWAP", ordType='market',
+                        leverage=20,
+                    )
+print('get_quantity_result',get_quantity_result['data'],type(get_quantity_result['data']))
 # exchangeInfo = obj.trade._market.get_exchangeInfo(
 #             instId="W-USDT-SWAP",
 #             expire_seconds=60 * 5

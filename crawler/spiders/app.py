@@ -59,8 +59,24 @@ class Spider(threading.Thread):
         with Connect() as db:
             db.exec(insert_sql, **params)
 
+    def write_task_log(self, log_type):
+        """
+        更新任务日志状态
+        用于是否重新插入开始日志
+        """
+        with Connect() as db:
+            res = db.fetch_one("select ip_id from api_taskinfo where id = %(task_id)s and status = 1", task_id=self.task_id)
+            if res.get("ip_id", None) is None:
+                if log_type == 1:
+                    self.log_to_database("INFO", f"跟单猿交易系统启动", f"跟随交易员：{self.uniqueName}")
+                elif log_type == 2:
+                    self.log_to_database("INFO", f"交易员{self.uniqueName}有正在进行中的交易", "等待新的交易发生后开始跟随！")
+                elif log_type == 3:
+                    self.log_to_database("INFO", f"交易员{self.uniqueName}尚未开始交易", "等待新的交易发生后开始跟随！")
+
     def run(self):
-        self.log_to_database("INFO", "跟单猿跟单系统启动", f"跟随交易员：{self.uniqueName}")
+        self.write_task_log(1)
+        # self.log_to_database("INFO", "跟单猿跟单系统启动", f"跟随交易员：{self.uniqueName}")
         # 第一次获取当前交易数据
         while True:
             try:
@@ -73,9 +89,11 @@ class Spider(threading.Thread):
                 self.log_to_database("error", "跟单猿跟单系统启动失败", "请检查代理IP是否还在有效期！")
 
         if old_list:
-            self.log_to_database("INFO", f"交易员{self.uniqueName}有正在进行中的交易", "等待新的交易发生后开始跟随！")
+            self.write_task_log(2)
+            # self.log_to_database("INFO", f"交易员{self.uniqueName}有正在进行中的交易", "等待新的交易发生后开始跟随！")
         else:
-            self.log_to_database("INFO", f"交易员{self.uniqueName}尚未开始交易", "等待新的交易发生后开始跟随！")
+            self.write_task_log(3)
+            # self.log_to_database("INFO", f"交易员{self.uniqueName}尚未开始交易", "等待新的交易发生后开始跟随！")
 
         while not self.stop_flag.is_set():
             new_list = self.summary()
@@ -170,8 +188,8 @@ class Spider(threading.Thread):
                             new_notionalUsd = float(usdt) * item['posSpace']
                         print(f'notionalUsd:{notionalUsd}, new_notionalUsd:{new_notionalUsd}')
                         item['sums'] = (float(notionalUsd) - float(new_notionalUsd)) / float(item['lever'])
-                        if item['sums'] < 0:
-                            item['sums'] = 0
+                        # if item['sums'] < 0:
+                        #     item['sums'] = 0
                         print(f'【2-减仓】任务id:{self.task_id}，减仓金额：{item["sums"]}')
                 else:
                     if item.get("order_type") == 'open':
