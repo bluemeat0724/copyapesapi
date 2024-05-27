@@ -444,6 +444,6 @@ class Spider(threading.Thread):
                                 item['mgnMode'] = position['mgnMode']
                                 self.old_position.remove(position)
                                 print(f"【{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}1-平仓】任务id:{self.task_id}，平仓：{item['instId']}，{item['mgnMode']}")
-                    self.old_position = self.new_position
                     complete_task_data(item)
+                self.old_position = self.new_position
 
