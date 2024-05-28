@@ -325,6 +325,8 @@ class Trader(threading.Thread):
                     self.log_to_database("WARNING", '模拟盘土狗币交易失败', f'品种：{self.instId}不在交易所模拟盘中！')
                 elif s_code_value == '50001':
                     self.log_to_database("WARNING", '设置失败', '交易所服务器异常，服务暂时不可用，请稍后重试！')
+                elif s_code_value == '59102':
+                    self.log_to_database("WARNING", '交易失败', '杠杆倍数超过最大杠杆倍数，请降低杠杆倍数！')
                 elif s_code_value == '50105':
                     self.log_to_database("WARNING", 'API错误', 'PASSPHRASE填写错误，请结束任务，重新提交！')
                 elif s_code_value == '50101':
