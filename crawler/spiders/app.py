@@ -437,6 +437,7 @@ class Spider(threading.Thread):
 
                     if item['order_type'] == 'close':
                         print(f"{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}【1-平仓】任务id:{self.task_id}")
+                        print(f'{item}')
                         removed_items = [i for i in self.old_position if (i['instId'], i['mgnMode']) not in set(
                             map(lambda x: (x['instId'], x['mgnMode']), self.new_position))]
                         for position in removed_items:
