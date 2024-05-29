@@ -59,8 +59,8 @@ if __name__ == '__main__':
            'secret': '6A840C3EC6D18D4E4127B13ADA7A1091',
            'passphrase': '112233Ww..',
            'proxies': {
-                        'http': 'socks5h://15755149931sct-5:8ivtkleb@38.147.173.111:5001',
-                        'https': 'socks5h://15755149931sct-5:8ivtkleb@38.147.173.111:5001'
+                        'http': 'socks5h://15755149931sct-5:8ivtkleb@47.245.61.29:5001',
+                        'https': 'socks5h://15755149931sct-5:8ivtkleb@47.245.61.29:5001'
                        }
            }
     flag = '1'
