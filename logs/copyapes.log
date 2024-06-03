@@ -1,0 +1,3 @@
+INFO 2024-06-03 23:46:50,807 autoreload 44235 4422804992 Watching for file changes with StatReloader
+INFO 2024-06-03 23:51:16,200 autoreload 44235 4422804992 /Users/lichaoyuan/Desktop/copytrade/crawler/settingsprod.py changed, reloading.
+INFO 2024-06-03 23:51:17,207 autoreload 45856 4592756224 Watching for file changes with StatReloader
