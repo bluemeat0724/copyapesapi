@@ -444,7 +444,8 @@ class Trader(threading.Thread):
         mgnMode = item.get('mgnMode')
         if item.get('order_type') == 'close_all':
             try:
-                self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
+                res = self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
+                print(f'##任务{self.task_id}全部平仓：品种:{instId}###{res}')
                 self.log_to_database("success", f"进行平仓操作", f"品种:{instId}，方向：{posSide}")
             except Exception as e:
                 self.log_to_database("WARNING", '进行平仓操作', f'{instId}平仓失败，请手动平仓。')
@@ -452,7 +453,8 @@ class Trader(threading.Thread):
         else:
             try:
                 # 假设self.obj是已经实例化的，可以执行trade.close_market的对象
-                self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
+                res = self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
+                print(f'##任务{self.task_id}全部平仓：品种:{instId}###{res}')
                 self.log_to_database("WARNING", '手动结束跟单', f'{instId}已经按市价进行平仓。')
             except Exception as e:
                 self.log_to_database("WARNING", '手动结束跟单', f'{instId}平仓失败，请手动平仓。')
