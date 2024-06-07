@@ -5,6 +5,7 @@ from api import models
 from rest_framework.response import Response
 from api.extension import return_code
 from crawler.myokx import app
+from crawler import settingsprod
 from crawler.utils.get_proxies import get_my_proxies
 import re
 
@@ -83,6 +84,11 @@ class ApiAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixin
                         return Response({
                             'code': return_code.API_ERROR,
                             'error': f'{ip_address}不在IP白名单中，请先在交易所设置白名单！'})
+                    if settingsprod.HOST_IP not in arr:
+                        return Response({
+                            'code': return_code.API_ERROR,
+                            'error': f'{settingsprod.HOST_IP}不在IP白名单中，无法使用极速交易模式，请先在交易所设置白名单！'})
+
                 # 用户角色
                 roleType = res.get('data')[0].get('roleType')
                 # 用户等级
