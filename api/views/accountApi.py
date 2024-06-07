@@ -90,6 +90,13 @@ class ApiAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixin
                 # api权限
                 perm = res.get('data')[0].get('perm')
 
+                # 权限判断是否有交易权限
+                perm_arr = perm.split(",")
+                if 'trade' not in perm_arr:
+                    return Response({
+                        'code': return_code.API_ERROR,
+                        'error': '当前API没有交易权限，请前往交易所设置！'})
+
             except Exception as e:
                 match = re.search(r'"code":"(\d+)"', str(e))
                 if match:
