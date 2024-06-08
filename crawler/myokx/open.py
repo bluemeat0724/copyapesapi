@@ -326,6 +326,7 @@ class TradeOpen(TradeOrder, TradeQuantityAndPrice):
             newThread: bool = False,
             callback: object = None,
             errorback: object = None,
+            **kwargs
     ) -> dict:
         '''
         :param instId: 产品ID

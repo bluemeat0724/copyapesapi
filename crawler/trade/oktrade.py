@@ -47,13 +47,21 @@ class Trader(threading.Thread):
         self.openAvgPx = openAvgPx
         self.posSide_set = posSide_set
         self.logger_id = None
-        # self.thread_logger = None
         self.obj = None
         self.flag = None
         self.acc = None
         self.ip_id = None
         self.status = None
         self.fast_mode = fast_mode
+        
+        # 止盈/损模块
+        # 止损比例
+        self.sl_trigger_px = None
+        # 止盈比例
+        self.tp_trigger_px = None
+        # 跟单用户开仓价格
+        self.open_tarde_base_price = None
+        
 
 
     def log_to_database(self, level, title, description=""):
@@ -63,14 +71,13 @@ class Trader(threading.Thread):
         params = {
             "user_id": self.user_id,
             "task_id": self.task_id,
-            "date": datetime.datetime.now(),
             "color": level,
             "title": title,
             "description": description,
         }
         insert_sql = """
                         INSERT INTO api_tradelog (user_id, task_id, date, color, title, description, created_at, updated_at)
-                        VALUES (%(user_id)s, %(task_id)s, %(date)s, %(color)s, %(title)s, %(description)s, NOW(), NOW())
+                        VALUES (%(user_id)s, %(task_id)s, NOW(), %(color)s, %(title)s, %(description)s, NOW(), NOW())
                     """
         with Connect() as db:
             db.exec(insert_sql, **params)
@@ -142,29 +149,60 @@ class Trader(threading.Thread):
                 else:
                     self.posSide = 'long'
         return True
-
+    def get_sl_trigger_px(self, open_total_money: float) -> str:
+        """ 
+        获取止损价格
+        """
+        # 获取总止损额度
+        open_total_money * self.sl_trigger_px
+        # 根据 开仓价格&杠杆&方向 获取止损挂单价
+        sl_trigger_px_price = ""
+        return sl_trigger_px_price
+    
+    def get_tp_trigger_px(self, open_total_money: float) -> str:
+        """ 
+        获取止盈价格
+        """
+        # 获取总止损额度
+        open_total_money * self.sl_trigger_px
+        # 根据 开仓价格&杠杆&方向 获取止损挂单价
+        sl_trigger_px_price = ""
+        return str("")
     # 执行okx交易
     def perform_trade(self):
         if not self.obj:
             print(f'{self.task_id} 错误')
             return
-
+        # 仓位变动操作
         if self.follow_type == 2:
             self.transform_sums()
+        # 开仓操作
         if self.order_type == 'open':
             # 解析订单方向
             self.change_pos_side_set(self.availSubPos)
             # 获取模拟盘/实盘交易倍数
             trade_times = get_trade_times(self.instId, self.flag, self.acc)
             if trade_times is None:
-                # self.thread_logger.WARNING(f'模拟盘土狗币交易失败，品种：{self.instId}不在交易所模拟盘中！')
                 self.log_to_database("WARNING", "模拟盘土狗币交易失败", f"品种：{self.instId}不在交易所模拟盘中！")
                 return
             # 市价开仓
             print(f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
-            result = self.obj.trade.open_market(instId=self.instId, posSide=self.posSide,
-                                                openMoney=self.sums * trade_times, tdMode=self.mgnMode,
-                                                lever=self.lever)
+            # 开单总金额
+            open_total_money = self.sums * trade_times
+            params = dict(
+                        instId=self.instId, 
+                        posSide=self.posSide,
+                        openMoney=open_total_money, 
+                        tdMode=self.mgnMode,
+                        lever=self.lever)
+            # 增加止损
+            if self.sl_trigger_px: 
+                params.update({"slTriggerPx": self.get_sl_trigger_px(open_total_money=open_total_money)})
+            # 增加止盈
+            if self.tp_trigger_px:
+                params.update({"tpTriggerPx": self.get_tp_trigger_px(open_total_money=open_total_money)})
+            
+            result = self.obj.trade.open_market(**params)
             try:
                 s_code_value = result.get('set_order_result', {}).get('data', {}).get('sCode')
                 if s_code_value == '0':
