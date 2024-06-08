@@ -36,16 +36,16 @@ import time
 #        'secret': 'BBA3FF14AC698CDBAA33219F858E7BF6',
 #        'passphrase': '112233Ww..',
 #        #    'proxies': {
-#        #                 'http': 'socks5h://copyapes:12345678@38.147.173.111:5001',
-#        #                 'https': 'socks5h://copyapes:12345678@38.147.173.111:5001'
+#        #                 'http': 'socks5h://copyapes:12345678@18.167.134.231:5001',
+#        #                 'https': 'socks5h://copyapes:12345678@18.167.134.231:5001'
 #        #                }
 #        }
 acc = {'key': '5853686f-a0ed-4c76-a382-5ac480740883',
        'secret': '2DCFFF11C68C2E88C6437268B28A87FE',
        'passphrase': '112233Ww..',
     #    'proxies': {
-    #                 'http': 'socks5h://copyapes:12345678@38.147.173.111:5001',
-    #                 'https': 'socks5h://copyapes:12345678@38.147.173.111:5001'
+    #                 'http': 'socks5h://copyapes:12345678@18.167.134.231:5001',
+    #                 'https': 'socks5h://copyapes:12345678@18.167.134.231:5001'
     #                }
        }
 # 模拟主1
@@ -53,8 +53,8 @@ acc = {'key': '5853686f-a0ed-4c76-a382-5ac480740883',
 #        'secret': 'BBA3FF14AC698CDBAA33219F858E7BF6',
 #        'passphrase': '112233Ww..',
 #     #    'proxies': {
-#     #                 'http': 'socks5h://copyapes:12345678@38.147.173.111:5001',
-#     #                 'https': 'socks5h://copyapes:12345678@38.147.173.111:5001'
+#     #                 'http': 'socks5h://copyapes:12345678@18.167.134.231:5001',
+#     #                 'https': 'socks5h://copyapes:12345678@18.167.134.231:5001'
 #     #                }
 #        }
 # acc = {'key': '5853686f-a0ed-4c76-a382-5ac480740883',
@@ -210,8 +210,8 @@ print(obj.account.get_config())
 # import requests
 #
 # proxies = {
-#        'http': 'socks5h://15755149931sct-5:8ivtkleb@38.147.173.111:5001',
-#         'https': 'socks5h://15755149931sct-5:8ivtkleb@38.147.173.111:5001'
+#        'http': 'socks5h://15755149931sct-5:8ivtkleb@18.167.134.231:5001',
+#         'https': 'socks5h://15755149931sct-5:8ivtkleb@18.167.134.231:5001'
 #        }
 #
 # a = requests.get(url = 'https://www.okx.com/api/v5/public/instruments?instType=SWAP&instId=DYDX-USDT-SWAP',headers={'x-simulated-trading': '1'},proxies=proxies).json()

@@ -15,8 +15,8 @@ from crawler.utils.reactivate_tasks import reactivate_tasks
 #                                            settings.PROXY_PORT),
 #     'https': 'socks5h://{}:{}@{}:{}'.format(settings.PROXY_USERNAME, settings.PROXY_PASSWORD, settings.PROXY_IP,
 #                                             settings.PROXY_PORT),
-#     # 'https': 'socks5h://15755149931sct-5:8ivtkleb@38.147.173.111:5003'
-#     # 'all': 'socks5h://15755149931sct-5:8ivtkleb@38.147.173.111:5003'
+#     # 'https': 'socks5h://15755149931sct-5:8ivtkleb@18.167.134.231:5003'
+#     # 'all': 'socks5h://15755149931sct-5:8ivtkleb@18.167.134.231:5003'
 # }
 
 header = {

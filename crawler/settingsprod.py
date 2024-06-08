@@ -1,5 +1,5 @@
 REDIS_PARAMS = {
-    'host': '38.147.173.111',
+    'host': '18.167.134.231',
     'port': 6379,
     'password':'112233Ww..',
     'db': 0,
@@ -13,13 +13,13 @@ MYSQL_CONN_PARAMS = {
     'db': 'copytrade',  # 数据库名字
     'user': 'admin',
     'password': '112233ww',
-    'host': '38.147.173.111',  # ip
+    'host': '18.167.134.231',  # ip
     'port': 3306,
     'charset': 'utf8'
 }
-HOST_IP = '38.147.173.111'
+HOST_IP = '18.167.134.231'
 # SOCKS5代理服务器配置
-# PROXY_IP = '38.147.173.111'
+# PROXY_IP = '18.167.134.231'
 # PROXY_IP = '38.45.108.138'
 # PROXY_IP = '128.1.97.145'  #蜘蛛ip官方
 PROXY_IP = 'proxy.zhizhuip.com'  #蜘蛛ip官方
