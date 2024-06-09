@@ -16,7 +16,7 @@ logger.remove()  # 移除所有默认的handler
 class Spider(threading.Thread):
     def __init__(self, task_id, trader_platform, uniqueName, follow_type, role_type, reduce_ratio, sums, ratio,
                  lever_set, first_order_set, api_id,
-                 user_id, leverage, posSide_set, fast_mode, investment, sl_trigger_px, tp_trigger_px):
+                 user_id, leverage, posSide_set, fast_mode, investment, trade_trigger_mode, sl_trigger_px, tp_trigger_px):
         super(Spider, self).__init__()
         self.task_id = task_id
         self.trader_platform = trader_platform
@@ -36,6 +36,7 @@ class Spider(threading.Thread):
         self.status = None  # status 1:开始 2：手动结束 3：ip到期 被动结束
         self.fast_mode = fast_mode  # 0:否 1:是
         self.investment = investment
+        self.trade_trigger_mode = trade_trigger_mode
         self.sl_trigger_px = sl_trigger_px
         self.tp_trigger_px = tp_trigger_px
         self.old_position = []
@@ -258,6 +259,7 @@ class Spider(threading.Thread):
                 item['user_id'] = self.user_id
                 item['fast_mode'] = self.fast_mode
                 item['investment'] = self.investment
+                item['trade_trigger_mode'] = self.trade_trigger_mode
                 item['sl_trigger_px'] = self.sl_trigger_px
                 item['tp_trigger_px'] = self.tp_trigger_px
                 item = self.transform(item)
@@ -290,6 +292,7 @@ class Spider(threading.Thread):
                 item['user_id'] = self.user_id
                 item['fast_mode'] = self.fast_mode
                 item['investment'] = self.investment
+                item['trade_trigger_mode'] = self.trade_trigger_mode
                 item['sl_trigger_px'] = self.sl_trigger_px
                 item['tp_trigger_px'] = self.tp_trigger_px
                 item = self.transform(item)
@@ -329,6 +332,7 @@ class Spider(threading.Thread):
                           'user_id': self.user_id,
                           'fast_mode': self.fast_mode,
                           'investment': self.investment,
+                          'trade_trigger_mode': self.trade_trigger_mode,
                           'sl_trigger_px': self.sl_trigger_px,
                           'tp_trigger_px': self.tp_trigger_px
                           }
@@ -372,6 +376,7 @@ class Spider(threading.Thread):
                 'user_id': self.user_id,
                 'fast_mode': self.fast_mode,
                 'investment': self.investment,
+                'trade_trigger_mode': self.trade_trigger_mode,
                 'sl_trigger_px': self.sl_trigger_px,
                 'tp_trigger_px': self.tp_trigger_px
             })

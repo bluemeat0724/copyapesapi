@@ -14,7 +14,7 @@ from crawler.account.update_quota import get_remaining_quota, check_task_pnl, up
 
 class Trader(threading.Thread):
     def __init__(self, task_id, api_id, user_id, trader_platform, uniqueName, follow_type, role_type, reduce_ratio, sums, ratio, lever_set,
-                 first_order_set, posSide_set,investment, sl_trigger_px, tp_trigger_px,
+                 first_order_set, posSide_set,investment, trade_trigger_mode, sl_trigger_px, tp_trigger_px,
                  instId=None, mgnMode=None, posSide=None, lever=1, openTime=None, openAvgPx=None, margin=None,
                  availSubPos=None, order_type=None,
                  old_margin=None, new_margin=None, old_availSubPos=None, new_availSubPos=None, status=None, fast_mode=0):
@@ -30,6 +30,7 @@ class Trader(threading.Thread):
         self.ratio = ratio
         self.lever_set = lever_set
         self.investment = investment
+        self.trade_trigger_mode = trade_trigger_mode
         self.first_order_set = first_order_set
         self.api_id = api_id
         self.user_id = user_id

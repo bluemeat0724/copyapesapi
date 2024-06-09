@@ -5,7 +5,7 @@ from crawler.utils.db import Connect
 
 class DbRow(object):
     def __init__(self, id, trader_platform, uniqueName, follow_type, role_type, reduce_ratio, sums, ratio, lever_set, first_order_set, api_id, user_id,
-                 status, create_datetime, deleted, leverage, posSide_set, fast_mode, investment, sl_trigger_px, tp_trigger_px):
+                 status, create_datetime, deleted, leverage, posSide_set, fast_mode, investment, trade_trigger_mode, sl_trigger_px, tp_trigger_px):
         self.id = id
         self.trader_platform = trader_platform
         self.uniqueName = uniqueName
@@ -25,6 +25,7 @@ class DbRow(object):
         self.posSide_set = posSide_set
         self.fast_mode = fast_mode
         self.investment = investment
+        self.trade_trigger_mode = trade_trigger_mode
         self.sl_trigger_px = sl_trigger_px
         self.tp_trigger_px = tp_trigger_px
 
@@ -43,7 +44,7 @@ def get_redis_task():
 def get_task_info_by_id(tid):
     with Connect() as conn:
         row_dict = conn.fetch_one(
-            "select id, trader_platform, uniqueName, follow_type, role_type, reduce_ratio, sums, ratio, lever_set, first_order_set, api_id, user_id,status, create_datetime, deleted, leverage, posSide_set, fast_mode, investment, sl_trigger_px, tp_trigger_px from api_taskinfo where id=%(id)s",
+            "select id, trader_platform, uniqueName, follow_type, role_type, reduce_ratio, sums, ratio, lever_set, first_order_set, api_id, user_id,status, create_datetime, deleted, leverage, posSide_set, fast_mode, investment, trade_trigger_mode, sl_trigger_px, tp_trigger_px from api_taskinfo where id=%(id)s",
             id=tid)
 
     if not row_dict:
