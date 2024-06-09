@@ -6,6 +6,7 @@ from rest_framework.response import Response
 from api.extension import return_code
 from crawler import settingsprod
 from crawler.myokx import app
+from crawler import settingsprod
 from crawler.utils.get_proxies import get_my_proxies
 import re
 

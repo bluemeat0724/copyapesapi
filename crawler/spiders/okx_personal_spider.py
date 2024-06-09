@@ -5,7 +5,6 @@ from crawler.utils.get_header import get_header
 from crawler.utils.get_proxies import get_proxies
 import json
 
-
 now = int(time.time()) * 1000
 
 # 获取当前日期和时间
@@ -25,10 +24,11 @@ def spider(uniqueName):
     try:
         record_url = f'https://www.okx.com/priapi/v5/ecotrade/public/trade-records?limit=10&startModify={thirty_days_ago_specific_time_timestamp}&endModify={today_specific_time_timestamp}&uniqueName={uniqueName}&t={now}'
         # print(record_url) proxies=get_proxies()[0],
-        record_list = requests.get(record_url, headers=get_header(), timeout=30).json().get('data', list())
+        record_list = requests.get(record_url, headers=get_header(),proxies=get_proxies()[0], timeout=30).json().get('data', list())
 
         position_url = f'https://www.okx.com/priapi/v5/ecotrade/public/positions-v2?limit=10&uniqueName={uniqueName}&t={now}'
-        position_list = requests.get(position_url, headers=get_header(), timeout=30).json().get('data', list())[0].get('posData', list())
+        position_list = requests.get(position_url, headers=get_header(),proxies=get_proxies()[0], timeout=30).json().get('data', list())[0].get(
+            'posData', list())
 
         if not position_list:
             return summary_list_new, position_list
@@ -55,9 +55,9 @@ def spider(uniqueName):
                     持仓方向
                     买卖模式下：可不填写此参数，默认值net，如果填写，仅可以填写net
                     开平仓模式下： 必须填写此参数，且仅可以填写 long：平多 ，short：平空
-                    
+
                     买卖模式下：交割/永续/期权：pos为正代表开多，pos为负代表开空
-                    
+
                     开平仓模式下，side和posSide需要进行组合
                     开多：买入开多（side 填写 buy； posSide 填写 long ）
                     开空：卖出开空（side 填写 sell； posSide 填写 short ）
@@ -76,16 +76,16 @@ def spider(uniqueName):
                             else:
                                 data_clear['order_type'] = 'reduce'  # 减仓
                     elif data_clear['posSide'] == 'net':
-                        if side == 'buy' and int(pos) > 0: # 买入开多
+                        if side == 'buy' and int(pos) > 0:  # 买入开多
                             data_clear['order_type'] = 'open'
                             data_clear['posSide'] = 'long'
-                        elif side == 'sell' and pos < 0: # 卖出开空
+                        elif side == 'sell' and pos < 0:  # 卖出开空
                             data_clear['order_type'] = 'open'
                             data_clear['posSide'] = 'short'
-                        elif side == 'buy' and pos < 0: # 买入平空
+                        elif side == 'buy' and pos < 0:  # 买入平空
                             data_clear['order_type'] = 'reduce'
-                            data_clear['posSide']= 'short'
-                        elif side == 'sell' and pos > 0: # 卖出平多
+                            data_clear['posSide'] = 'short'
+                        elif side == 'sell' and pos > 0:  # 卖出平多
                             data_clear['order_type'] = 'reduce'
                             data_clear['posSide'] = 'long'
 
@@ -103,6 +103,7 @@ def spider(uniqueName):
         # print(e)
         pass
 
+
 def spider_close_item(uniqueName):
     summary_list_new = []
     attempts = 0
@@ -111,7 +112,7 @@ def spider_close_item(uniqueName):
         try:
             record_url = f'https://www.okx.com/priapi/v5/ecotrade/public/trade-records?limit=1&startModify={thirty_days_ago_specific_time_timestamp}&endModify={today_specific_time_timestamp}&uniqueName={uniqueName}&t={now}'
             # print(record_url)
-            record_list = requests.get(record_url, headers=get_header(), timeout=30).json().get('data', list())
+            record_list = requests.get(record_url, headers=get_header(),proxies=get_proxies()[0], timeout=30).json().get('data', list())
             print(record_list)
 
             posSide = record_list[0].get('posSide')
@@ -140,12 +141,14 @@ def spider_close_item(uniqueName):
             attempts += 1
     return summary_list_new
 
+
 def get_position(uniqueName):
     set_flg = True
     while set_flg:
         try:
             position_url = f'https://www.okx.com/priapi/v5/ecotrade/public/positions-v2?limit=10&uniqueName={uniqueName}&t={now}'
-            position_list = requests.get(position_url, headers=get_header(), timeout=30).json().get('data', list())[0].get('posData', list())
+            position_list = requests.get(position_url, headers=get_header(),proxies=get_proxies()[0], timeout=30).json().get('data', list())[
+                0].get('posData', list())
             if position_list is None:
                 time.sleep(0.1)
                 continue

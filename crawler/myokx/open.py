@@ -326,6 +326,7 @@ class TradeOpen(TradeOrder, TradeQuantityAndPrice):
             newThread: bool = False,
             callback: object = None,
             errorback: object = None,
+            **kwargs
     ) -> dict:
         '''
         :param instId: 产品ID
@@ -502,6 +503,7 @@ class TradeOpen(TradeOrder, TradeQuantityAndPrice):
             )
             # 购买
             information['request_param'] = request_param
+            request_param.update(kwargs)
             set_order_result = self.set_order(**request_param)
             information['set_order_result'] = set_order_result
             ordId = set_order_result['data']['ordId']

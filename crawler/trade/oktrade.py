@@ -14,7 +14,7 @@ from crawler.account.update_quota import get_remaining_quota, check_task_pnl, up
 
 class Trader(threading.Thread):
     def __init__(self, task_id, api_id, user_id, trader_platform, uniqueName, follow_type, role_type, reduce_ratio, sums, ratio, lever_set,
-                 first_order_set, posSide_set,investment,
+                 first_order_set, posSide_set,investment, sl_trigger_px, tp_trigger_px,
                  instId=None, mgnMode=None, posSide=None, lever=1, openTime=None, openAvgPx=None, margin=None,
                  availSubPos=None, order_type=None,
                  old_margin=None, new_margin=None, old_availSubPos=None, new_availSubPos=None, status=None, fast_mode=0):
@@ -44,16 +44,24 @@ class Trader(threading.Thread):
         self.posSide = posSide
         self.lever = float(lever)
         self.openTime = openTime
-        self.openAvgPx = openAvgPx
+        
         self.posSide_set = posSide_set
         self.logger_id = None
-        # self.thread_logger = None
         self.obj = None
         self.flag = None
         self.acc = None
         self.ip_id = None
         self.status = None
         self.fast_mode = fast_mode
+        
+        # 止盈/损模块
+        # 止损比例
+        self.sl_trigger_px = sl_trigger_px
+        # 止盈比例
+        self.tp_trigger_px = tp_trigger_px
+        # 跟单用户开仓价格
+        self.openAvgPx = openAvgPx
+        
 
 
     def log_to_database(self, level, title, description=""):
@@ -63,14 +71,13 @@ class Trader(threading.Thread):
         params = {
             "user_id": self.user_id,
             "task_id": self.task_id,
-            "date": datetime.datetime.now(),
             "color": level,
             "title": title,
             "description": description,
         }
         insert_sql = """
                         INSERT INTO api_tradelog (user_id, task_id, date, color, title, description, created_at, updated_at)
-                        VALUES (%(user_id)s, %(task_id)s, %(date)s, %(color)s, %(title)s, %(description)s, NOW(), NOW())
+                        VALUES (%(user_id)s, %(task_id)s, NOW(), %(color)s, %(title)s, %(description)s, NOW(), NOW())
                     """
         with Connect() as db:
             db.exec(insert_sql, **params)
@@ -142,29 +149,87 @@ class Trader(threading.Thread):
                 else:
                     self.posSide = 'long'
         return True
-
+    def get_sl_trigger_px(self) -> str:
+        """ 
+        获取止损价格
+        """
+        if self.sl_trigger_px >= 1:
+            raise ValueError("sl_trigger_px参数错误")
+        # 根据 开仓价格 & 杠杆 & 方向 获取止损挂单价
+        # 开空
+        if self.posSide == "short":
+            # 止损价格 = 开仓价格 * (1 - 止损未亏损比例) 
+            _sl_price = (1 + self.sl_trigger_px) * self.openAvgPx
+            # 平仓止损挂单价格 = 开仓价格 + （（开仓价格 - 止损价格） / 杠杆倍数）
+            sl_trigger_px_price = self.openAvgPx + (self.openAvgPx - ((self.openAvgPx - _sl_price) / self.lever))
+        # 开多
+        elif self.posSide == "long":
+            # 止损价格 = 开仓价格 * (1 - 止损未亏损比例) 
+            _sl_price = (1 - self.sl_trigger_px) * self.openAvgPx
+            # 平仓止损挂单价格 = 开仓价格 - （（开仓价格 - 止损价格） / 杠杆倍数）
+            sl_trigger_px_price = self.openAvgPx - (self.openAvgPx - ((self.openAvgPx - _sl_price) / self.lever))
+        else:
+            raise ValueError("posSide参数错误")
+        return str(sl_trigger_px_price)
+    
+    def get_tp_trigger_px(self) -> str:
+        """ 
+        获取止盈价格
+        """
+        if self.tp_trigger_px >= 1:
+            raise ValueError("sl_trigger_px参数错误")
+        # 根据 开仓价格 & 杠杆 & 方向 获取止损挂单价
+        # 开多
+        if self.posSide == "long":
+            # 止盈价格 = 开仓价格 * (1 - 止损未亏损比例) 
+            _tp_price = (1 + self.tp_trigger_px) * self.openAvgPx
+            # 平仓止损挂单价格 = 开仓价格 + （（开仓价格 - 止盈价格 / 杠杆倍数）
+            tp_trigger_px_price = self.openAvgPx + (self.openAvgPx - ((self.openAvgPx - _tp_price) / self.lever))
+        # 开空
+        elif self.posSide == "short":
+            # 止损价格 = 开仓价格 * (1 - 止损未亏损比例) 
+            _tp_price = (1 - self.tp_trigger_px) * self.openAvgPx
+            # 平仓止损挂单价格 = 开仓价格 - （（开仓价格 - 止损价格） / 杠杆倍数）
+            tp_trigger_px_price = self.openAvgPx - (self.openAvgPx - ((self.openAvgPx - _tp_price) / self.lever))
+        else:
+            raise ValueError("posSide参数错误")
+        return str(tp_trigger_px_price)
+    
     # 执行okx交易
     def perform_trade(self):
         if not self.obj:
             print(f'{self.task_id} 错误')
             return
-
+        # 仓位变动操作
         if self.follow_type == 2:
             self.transform_sums()
+        # 开仓操作
         if self.order_type == 'open':
             # 解析订单方向
             self.change_pos_side_set(self.availSubPos)
             # 获取模拟盘/实盘交易倍数
             trade_times = get_trade_times(self.instId, self.flag, self.acc)
             if trade_times is None:
-                # self.thread_logger.WARNING(f'模拟盘土狗币交易失败，品种：{self.instId}不在交易所模拟盘中！')
                 self.log_to_database("WARNING", "模拟盘土狗币交易失败", f"品种：{self.instId}不在交易所模拟盘中！")
                 return
             # 市价开仓
             print(f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
-            result = self.obj.trade.open_market(instId=self.instId, posSide=self.posSide,
-                                                openMoney=self.sums * trade_times, tdMode=self.mgnMode,
-                                                lever=self.lever)
+            # 开单总金额
+            open_total_money = self.sums * trade_times
+            params = dict(
+                        instId=self.instId, 
+                        posSide=self.posSide,
+                        openMoney=open_total_money, 
+                        tdMode=self.mgnMode,
+                        lever=self.lever)
+            # 增加止损
+            if self.sl_trigger_px: 
+                params.update({"slTriggerPx": self.get_sl_trigger_px()})
+            # 增加止盈
+            if self.tp_trigger_px:
+                params.update({"tpTriggerPx": self.get_tp_trigger_px()})
+            
+            result = self.obj.trade.open_market(**params)
             try:
                 s_code_value = result.get('set_order_result', {}).get('data', {}).get('sCode')
                 if s_code_value == '0':

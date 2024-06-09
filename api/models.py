@@ -132,7 +132,8 @@ class TaskInfo(DeletedModel):
         (1, "是"),
     )
     fast_mode = models.IntegerField(verbose_name="是否极速", choices=fast_mode_choice, default=0)
-
+    sl_trigger_px = models.FloatField(verbose_name="止损触发比例", default=0, null=True, blank=True)
+    tp_trigger_px = models.FloatField(verbose_name="止盈触发比例", default=0, null=True, blank=True)
 
 
 class IpInfo(models.Model):

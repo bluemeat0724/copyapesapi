@@ -16,7 +16,7 @@ logger.remove()  # 移除所有默认的handler
 class Spider(threading.Thread):
     def __init__(self, task_id, trader_platform, uniqueName, follow_type, role_type, reduce_ratio, sums, ratio,
                  lever_set, first_order_set, api_id,
-                 user_id, leverage, posSide_set, fast_mode, investment):
+                 user_id, leverage, posSide_set, fast_mode, investment, sl_trigger_px, tp_trigger_px):
         super(Spider, self).__init__()
         self.task_id = task_id
         self.trader_platform = trader_platform
@@ -36,6 +36,8 @@ class Spider(threading.Thread):
         self.status = None  # status 1:开始 2：手动结束 3：ip到期 被动结束
         self.fast_mode = fast_mode  # 0:否 1:是
         self.investment = investment
+        self.sl_trigger_px = sl_trigger_px
+        self.tp_trigger_px = tp_trigger_px
         self.old_position = []
         self.new_position = []
         self.my_position = [] # {'instId': '', 'mgnMode': '','posSide': '', 'margin': ''}记录当前自己的仓位价值，计算需要加减仓量
@@ -256,6 +258,8 @@ class Spider(threading.Thread):
                 item['user_id'] = self.user_id
                 item['fast_mode'] = self.fast_mode
                 item['investment'] = self.investment
+                item['sl_trigger_px'] = self.sl_trigger_px
+                item['tp_trigger_px'] = self.tp_trigger_px
                 item = self.transform(item)
                 # thread_logger.success(
                 #     f"交易员{self.uniqueName}进行了开仓操作，品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}")
@@ -286,6 +290,8 @@ class Spider(threading.Thread):
                 item['user_id'] = self.user_id
                 item['fast_mode'] = self.fast_mode
                 item['investment'] = self.investment
+                item['sl_trigger_px'] = self.sl_trigger_px
+                item['tp_trigger_px'] = self.tp_trigger_px
                 item = self.transform(item)
                 # thread_logger.success(
                 #     f"交易员{self.uniqueName}进行了平仓操作，品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}")
@@ -322,7 +328,9 @@ class Spider(threading.Thread):
                           'api_id': self.api_id,
                           'user_id': self.user_id,
                           'fast_mode': self.fast_mode,
-                          'investment': self.investment
+                          'investment': self.investment,
+                          'sl_trigger_px': self.sl_trigger_px,
+                          'tp_trigger_px': self.tp_trigger_px
                           }
                 # thread_logger.success(
                 #     f"交易员{self.uniqueName}进行了调仓操作，品种：{old_item['instId']}，原仓位保证金：{round(float(old_item['margin']),2)}USDT，现仓位保证金：{round(float(new_item['margin']),2)}USDT")
@@ -363,7 +371,9 @@ class Spider(threading.Thread):
                 'api_id': self.api_id,
                 'user_id': self.user_id,
                 'fast_mode': self.fast_mode,
-                'investment': self.investment
+                'investment': self.investment,
+                'sl_trigger_px': self.sl_trigger_px,
+                'tp_trigger_px': self.tp_trigger_px
             })
             # if new['order_type'] == 'close' and old:
             #     # TODO 只能拿上一条记录的mgnMode，如果有全仓和逐仓同时出现的交易就有拿错的风险，避免风险只能去数据库里拿
