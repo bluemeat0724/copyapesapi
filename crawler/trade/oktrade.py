@@ -14,7 +14,7 @@ from crawler.account.update_quota import get_remaining_quota, check_task_pnl, up
 
 class Trader(threading.Thread):
     def __init__(self, task_id, api_id, user_id, trader_platform, uniqueName, follow_type, role_type, reduce_ratio, sums, ratio, lever_set,
-                 first_order_set, posSide_set,investment,
+                 first_order_set, posSide_set,investment, sl_trigger_px, tp_trigger_px,
                  instId=None, mgnMode=None, posSide=None, lever=1, openTime=None, openAvgPx=None, margin=None,
                  availSubPos=None, order_type=None,
                  old_margin=None, new_margin=None, old_availSubPos=None, new_availSubPos=None, status=None, fast_mode=0):
@@ -56,9 +56,9 @@ class Trader(threading.Thread):
         
         # 止盈/损模块
         # 止损比例
-        self.sl_trigger_px = None
+        self.sl_trigger_px = sl_trigger_px
         # 止盈比例
-        self.tp_trigger_px = None
+        self.tp_trigger_px = tp_trigger_px
         # 跟单用户开仓价格
         self.openAvgPx = openAvgPx
         
