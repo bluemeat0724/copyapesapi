@@ -44,7 +44,7 @@ class Trader(threading.Thread):
         self.posSide = posSide
         self.lever = float(lever)
         self.openTime = openTime
-        self.openAvgPx = openAvgPx
+        
         self.posSide_set = posSide_set
         self.logger_id = None
         self.obj = None
@@ -60,7 +60,7 @@ class Trader(threading.Thread):
         # 止盈比例
         self.tp_trigger_px = None
         # 跟单用户开仓价格
-        self.open_tarde_base_price = None
+        self.openAvgPx = openAvgPx
         
 
 
@@ -149,25 +149,52 @@ class Trader(threading.Thread):
                 else:
                     self.posSide = 'long'
         return True
-    def get_sl_trigger_px(self, open_total_money: float) -> str:
+    def get_sl_trigger_px(self) -> str:
         """ 
         获取止损价格
         """
-        # 获取总止损额度
-        open_total_money * self.sl_trigger_px
-        # 根据 开仓价格&杠杆&方向 获取止损挂单价
-        sl_trigger_px_price = ""
-        return sl_trigger_px_price
+        if self.sl_trigger_px >= 1:
+            raise ValueError("sl_trigger_px参数错误")
+        # 根据 开仓价格 & 杠杆 & 方向 获取止损挂单价
+        # 开空
+        if self.posSide == "short":
+            # 止损价格 = 开仓价格 * (1 - 止损未亏损比例) 
+            _sl_price = (1 + self.sl_trigger_px) * self.openAvgPx
+            # 平仓止损挂单价格 = 开仓价格 + （（开仓价格 - 止损价格） / 杠杆倍数）
+            sl_trigger_px_price = self.openAvgPx + (self.openAvgPx - ((self.openAvgPx - _sl_price) / self.lever))
+        # 开多
+        elif self.posSide == "long":
+            # 止损价格 = 开仓价格 * (1 - 止损未亏损比例) 
+            _sl_price = (1 - self.sl_trigger_px) * self.openAvgPx
+            # 平仓止损挂单价格 = 开仓价格 - （（开仓价格 - 止损价格） / 杠杆倍数）
+            sl_trigger_px_price = self.openAvgPx - (self.openAvgPx - ((self.openAvgPx - _sl_price) / self.lever))
+        else:
+            raise ValueError("posSide参数错误")
+        return str(sl_trigger_px_price)
     
-    def get_tp_trigger_px(self, open_total_money: float) -> str:
+    def get_tp_trigger_px(self) -> str:
         """ 
         获取止盈价格
         """
-        # 获取总止损额度
-        open_total_money * self.sl_trigger_px
-        # 根据 开仓价格&杠杆&方向 获取止损挂单价
-        sl_trigger_px_price = ""
-        return str("")
+        if self.tp_trigger_px >= 1:
+            raise ValueError("sl_trigger_px参数错误")
+        # 根据 开仓价格 & 杠杆 & 方向 获取止损挂单价
+        # 开多
+        if self.posSide == "long":
+            # 止盈价格 = 开仓价格 * (1 - 止损未亏损比例) 
+            _tp_price = (1 + self.tp_trigger_px) * self.openAvgPx
+            # 平仓止损挂单价格 = 开仓价格 + （（开仓价格 - 止盈价格 / 杠杆倍数）
+            tp_trigger_px_price = self.openAvgPx + (self.openAvgPx - ((self.openAvgPx - _tp_price) / self.lever))
+        # 开空
+        elif self.posSide == "short":
+            # 止损价格 = 开仓价格 * (1 - 止损未亏损比例) 
+            _tp_price = (1 - self.tp_trigger_px) * self.openAvgPx
+            # 平仓止损挂单价格 = 开仓价格 - （（开仓价格 - 止损价格） / 杠杆倍数）
+            tp_trigger_px_price = self.openAvgPx - (self.openAvgPx - ((self.openAvgPx - _tp_price) / self.lever))
+        else:
+            raise ValueError("posSide参数错误")
+        return str(tp_trigger_px_price)
+    
     # 执行okx交易
     def perform_trade(self):
         if not self.obj:
@@ -197,10 +224,10 @@ class Trader(threading.Thread):
                         lever=self.lever)
             # 增加止损
             if self.sl_trigger_px: 
-                params.update({"slTriggerPx": self.get_sl_trigger_px(open_total_money=open_total_money)})
+                params.update({"slTriggerPx": self.get_sl_trigger_px()})
             # 增加止盈
             if self.tp_trigger_px:
-                params.update({"tpTriggerPx": self.get_tp_trigger_px(open_total_money=open_total_money)})
+                params.update({"tpTriggerPx": self.get_tp_trigger_px()})
             
             result = self.obj.trade.open_market(**params)
             try:
