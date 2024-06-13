@@ -13,11 +13,13 @@ from crawler.account.update_quota import get_remaining_quota, check_task_pnl, up
 
 
 class Trader(threading.Thread):
-    def __init__(self, task_id, api_id, user_id, trader_platform, uniqueName, follow_type, role_type, reduce_ratio, sums, ratio, lever_set,
-                 first_order_set, posSide_set,investment, trade_trigger_mode, sl_trigger_px, tp_trigger_px,
+    def __init__(self, task_id, api_id, user_id, trader_platform, uniqueName, follow_type, role_type, reduce_ratio,
+                 sums, ratio, lever_set,
+                 first_order_set, posSide_set, investment, trade_trigger_mode, sl_trigger_px, tp_trigger_px,
                  instId=None, mgnMode=None, posSide=None, lever=1, openTime=None, openAvgPx=None, margin=None,
                  availSubPos=None, order_type=None,
-                 old_margin=None, new_margin=None, old_availSubPos=None, new_availSubPos=None, status=None, fast_mode=0):
+                 old_margin=None, new_margin=None, old_availSubPos=None, new_availSubPos=None, status=None,
+                 fast_mode=0):
         super(Trader, self).__init__()
         self.task_id = task_id
         self.order_type = order_type
@@ -30,7 +32,6 @@ class Trader(threading.Thread):
         self.ratio = ratio
         self.lever_set = lever_set
         self.investment = investment
-        self.trade_trigger_mode = trade_trigger_mode
         self.first_order_set = first_order_set
         self.api_id = api_id
         self.user_id = user_id
@@ -45,7 +46,6 @@ class Trader(threading.Thread):
         self.posSide = posSide
         self.lever = float(lever)
         self.openTime = openTime
-        
         self.posSide_set = posSide_set
         self.logger_id = None
         self.obj = None
@@ -54,16 +54,15 @@ class Trader(threading.Thread):
         self.ip_id = None
         self.status = None
         self.fast_mode = fast_mode
-        
-        # 止盈/损模块
+
+        # 止盈/损模块 是否开启
+        self.trade_trigger_mode = trade_trigger_mode
         # 止损比例
-        self.sl_trigger_px = sl_trigger_px
+        self.sl_trigger_px = float(sl_trigger_px) / 100
         # 止盈比例
-        self.tp_trigger_px = tp_trigger_px
+        self.tp_trigger_px = float(tp_trigger_px) / 100
         # 跟单用户开仓价格
         self.openAvgPx = openAvgPx
-        
-
 
     def log_to_database(self, level, title, description=""):
         """
@@ -126,7 +125,6 @@ class Trader(threading.Thread):
             return
         self.perform_trade()
 
-
     def change_pos_side_set(self, availSubPos):
         """
         :param availSubPos: availSubPos 值
@@ -150,52 +148,53 @@ class Trader(threading.Thread):
                 else:
                     self.posSide = 'long'
         return True
+
     def get_sl_trigger_px(self) -> str:
-        """ 
+        """
         获取止损价格
         """
-        if self.sl_trigger_px >= 1:
-            raise ValueError("sl_trigger_px参数错误")
+        get_ticker_result = self.obj.trade._market.get_ticker(instId=self.instId)
+        open_price = float(get_ticker_result['data']['askPx'])
         # 根据 开仓价格 & 杠杆 & 方向 获取止损挂单价
         # 开空
         if self.posSide == "short":
-            # 止损价格 = 开仓价格 * (1 - 止损未亏损比例) 
-            _sl_price = (1 + self.sl_trigger_px) * self.openAvgPx
+            # 止损价格 = 开仓价格 * (1 - 止损未亏损比例)
+            _sl_price = (1 + self.sl_trigger_px) * open_price
             # 平仓止损挂单价格 = 开仓价格 + （（开仓价格 - 止损价格） / 杠杆倍数）
-            sl_trigger_px_price = self.openAvgPx + (self.openAvgPx - ((self.openAvgPx - _sl_price) / self.lever))
+            sl_trigger_px_price = float() + (open_price - ((open_price - _sl_price) / self.lever))
         # 开多
         elif self.posSide == "long":
-            # 止损价格 = 开仓价格 * (1 - 止损未亏损比例) 
-            _sl_price = (1 - self.sl_trigger_px) * self.openAvgPx
+            # 止损价格 = 开仓价格 * (1 - 止损未亏损比例)
+            _sl_price = (1 - self.sl_trigger_px) * open_price
             # 平仓止损挂单价格 = 开仓价格 - （（开仓价格 - 止损价格） / 杠杆倍数）
-            sl_trigger_px_price = self.openAvgPx - (self.openAvgPx - ((self.openAvgPx - _sl_price) / self.lever))
+            sl_trigger_px_price = open_price - (open_price - ((open_price - _sl_price) / self.lever))
         else:
             raise ValueError("posSide参数错误")
         return str(sl_trigger_px_price)
-    
+
     def get_tp_trigger_px(self) -> str:
-        """ 
+        """
         获取止盈价格
         """
-        if self.tp_trigger_px >= 1:
-            raise ValueError("sl_trigger_px参数错误")
+        get_ticker_result = self.obj.trade._market.get_ticker(instId=self.instId)
+        open_price = float(get_ticker_result['data']['askPx'])
         # 根据 开仓价格 & 杠杆 & 方向 获取止损挂单价
         # 开多
         if self.posSide == "long":
-            # 止盈价格 = 开仓价格 * (1 - 止损未亏损比例) 
-            _tp_price = (1 + self.tp_trigger_px) * self.openAvgPx
+            # 止盈价格 = 开仓价格 * (1 - 止损未亏损比例)
+            _tp_price = (1 + self.tp_trigger_px) * open_price
             # 平仓止损挂单价格 = 开仓价格 + （（开仓价格 - 止盈价格 / 杠杆倍数）
-            tp_trigger_px_price = self.openAvgPx + (self.openAvgPx - ((self.openAvgPx - _tp_price) / self.lever))
+            tp_trigger_px_price = open_price + (open_price - ((open_price - _tp_price) / self.lever))
         # 开空
         elif self.posSide == "short":
-            # 止损价格 = 开仓价格 * (1 - 止损未亏损比例) 
-            _tp_price = (1 - self.tp_trigger_px) * self.openAvgPx
+            # 止损价格 = 开仓价格 * (1 - 止损未亏损比例)
+            _tp_price = (1 - self.tp_trigger_px) * open_price
             # 平仓止损挂单价格 = 开仓价格 - （（开仓价格 - 止损价格） / 杠杆倍数）
-            tp_trigger_px_price = self.openAvgPx - (self.openAvgPx - ((self.openAvgPx - _tp_price) / self.lever))
+            tp_trigger_px_price = open_price - (open_price - ((open_price - _tp_price) / self.lever))
         else:
             raise ValueError("posSide参数错误")
         return str(tp_trigger_px_price)
-    
+
     # 执行okx交易
     def perform_trade(self):
         if not self.obj:
@@ -218,18 +217,24 @@ class Trader(threading.Thread):
             # 开单总金额
             open_total_money = self.sums * trade_times
             params = dict(
-                        instId=self.instId, 
-                        posSide=self.posSide,
-                        openMoney=open_total_money, 
-                        tdMode=self.mgnMode,
-                        lever=self.lever)
+                instId=self.instId,
+                posSide=self.posSide,
+                openMoney=open_total_money,
+                tdMode=self.mgnMode,
+                lever=self.lever)
             # 增加止损
-            if self.sl_trigger_px: 
+            if self.trade_trigger_mode and self.sl_trigger_px:
                 params.update({"slTriggerPx": self.get_sl_trigger_px()})
+                params.update({"slOrdPx": -1})
+                print(
+                    f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}，止损触发：{self.get_sl_trigger_px()}')
             # 增加止盈
-            if self.tp_trigger_px:
+            if self.trade_trigger_mode and self.tp_trigger_px:
                 params.update({"tpTriggerPx": self.get_tp_trigger_px()})
-            
+                params.update({"tpOrdPx": -1})
+                print(
+                    f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}，止盈触发：{self.get_tp_trigger_px()}')
+
             result = self.obj.trade.open_market(**params)
             try:
                 s_code_value = result.get('set_order_result', {}).get('data', {}).get('sCode')
@@ -246,7 +251,8 @@ class Trader(threading.Thread):
             self.change_pos_side_set(self.availSubPos)
             # 市价平仓
             print(f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
-            res = self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT='all', tdMode=self.mgnMode)
+            res = self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT='all',
+                                              tdMode=self.mgnMode)
             print(f'{self.task_id}###{res}')
             # self.thread_logger.success(f'进行平仓操作，品种:{self.instId}，方向：{self.posSide}')
             self.log_to_database("success", f"进行平仓操作", f"品种:{self.instId}，方向：{self.posSide}")
@@ -273,7 +279,8 @@ class Trader(threading.Thread):
                 try:
                     s_code_value = result.get('set_order_result', {}).get('data', {}).get('sCode')
                     if s_code_value == '0':
-                        self.log_to_database("success", '进行加仓操作', f'品种：{self.instId}，金额：{self.sums}USDT，方向：{self.posSide}')
+                        self.log_to_database("success", '进行加仓操作',
+                                             f'品种：{self.instId}，金额：{self.sums}USDT，方向：{self.posSide}')
                 except:
                     print(f'任务{self.task_id}错误信息：{result}')
                     self.handle_trade_failure(result)
@@ -356,7 +363,6 @@ class Trader(threading.Thread):
                 self.run_close_market_concurrently(market_data)
             OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=2)
 
-
     def handle_trade_failure(self, result):
         try:
             s_code_value = result.get('set_order_result', {}).get('data', [{}])[0].get('sCode')
@@ -405,7 +411,8 @@ class Trader(threading.Thread):
                     self.log_to_database("WARNING", '交易失败', '交易所系统繁忙，导致交易失败。本次交易放弃。')
                 else:
                     self.log_to_database("WARNING",
-                                         '交易失败', f'请根据错误码(code)，自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')
+                                         '交易失败',
+                                         f'请根据错误码(code)，自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}')
             except:
                 pass
 
@@ -482,7 +489,6 @@ class Trader(threading.Thread):
             #     self.log_to_database("WARNING", '手动结束跟单', f'{instId}平仓失败，请手动平仓。')
             #     print(e)
 
-
         # 更新收益数据，以及对应可用额度数据。强制更新
         obj = OkxOrderInfo(self.user_id, self.task_id)
         while obj.get_order():
@@ -544,7 +550,6 @@ class Trader(threading.Thread):
         # for thread in threads:
         #     thread.join()
 
-
     def update_task_with_ip(self):
         """
         更新任务表的ip_id
@@ -559,17 +564,16 @@ class Trader(threading.Thread):
         with Connect() as db:
             db.exec(update_sql, **params)
 
-
     def write_task_log(self):
         """
         更新任务日志状态
         用于是否重新插入开始日志
         """
         with Connect() as db:
-            res = db.fetch_one("select ip_id from api_taskinfo where id = %(task_id)s and status = 1", task_id=self.task_id)
+            res = db.fetch_one("select ip_id from api_taskinfo where id = %(task_id)s and status = 1",
+                               task_id=self.task_id)
             if res.get("ip_id", None) is None:
                 self.log_to_database("INFO", f"跟单猿交易系统启动", f"跟随交易员：{self.uniqueName}")
-
 
     def transform_sums(self):
         if self.order_type is None:
@@ -586,7 +590,9 @@ class Trader(threading.Thread):
         """
         result = False
         with Connect() as db:
-            res = db.fetch_one("select ip from  api_apiinfo  WHERE api_key = %(api_key)s and secret_key = %(secret_key)s", api_key=self.acc.get("key"), secret_key=self.acc.get("secret"))
+            res = db.fetch_one(
+                "select ip from  api_apiinfo  WHERE api_key = %(api_key)s and secret_key = %(secret_key)s",
+                api_key=self.acc.get("key"), secret_key=self.acc.get("secret"))
             if res.get("ip", None):
                 arr = res["ip"].split(",")
                 if HOST_IP in arr:
