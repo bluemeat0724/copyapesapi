@@ -153,15 +153,23 @@ class Trader(threading.Thread):
         """
         获取止损价格
         """
-        get_ticker_result = self.obj.trade._market.get_ticker(instId=self.instId)
-        open_price = float(get_ticker_result['data']['askPx'])
+        _re_try = 0 
+        open_price = 0
+        while _re_try < 3 and open_price is 0:
+            _re_try += 1
+            try:
+                get_ticker_result = self.obj.trade._market.get_ticker(instId=self.instId)
+                # 获取市价
+                open_price = float(get_ticker_result['data']['askPx'])
+            except:
+                continue
         # 根据 开仓价格 & 杠杆 & 方向 获取止损挂单价
         # 开空
         if self.posSide == "short":
             # 止损价格 = 开仓价格 * (1 - 止损未亏损比例)
             _sl_price = (1 + self.sl_trigger_px) * open_price
             # 平仓止损挂单价格 = 开仓价格 + （（开仓价格 - 止损价格） / 杠杆倍数）
-            sl_trigger_px_price = float() + (open_price - ((open_price - _sl_price) / self.lever))
+            sl_trigger_px_price = open_price + (open_price - ((open_price - _sl_price) / self.lever))
         # 开多
         elif self.posSide == "long":
             # 止损价格 = 开仓价格 * (1 - 止损未亏损比例)
@@ -176,8 +184,17 @@ class Trader(threading.Thread):
         """
         获取止盈价格
         """
-        get_ticker_result = self.obj.trade._market.get_ticker(instId=self.instId)
-        open_price = float(get_ticker_result['data']['askPx'])
+        _re_try = 0 
+        open_price = 0
+        while _re_try < 3 and open_price is 0:
+            _re_try += 1
+            try:
+                get_ticker_result = self.obj.trade._market.get_ticker(instId=self.instId)
+                # 获取市价
+                open_price = float(get_ticker_result['data']['askPx'])
+            except:
+                continue
+       
         # 根据 开仓价格 & 杠杆 & 方向 获取止损挂单价
         # 开多
         if self.posSide == "long":
