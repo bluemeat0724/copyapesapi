@@ -1,3 +1,4 @@
+import uuid
 from crawler.settingsprod import HOST_IP
 from crawler.utils.db import Connect
 from crawler.myokx import app
@@ -268,8 +269,15 @@ class Trader(threading.Thread):
             self.change_pos_side_set(self.availSubPos)
             # 市价平仓
             print(f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}')
-            res = self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT='all',
-                                              tdMode=self.mgnMode)
+            # res = self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT='all',
+            #                                   tdMode=self.mgnMode)
+            clOrdId = uuid.uuid4().hex
+            res = self.obj.trade.set_close_position(instId=self.instId, posSide=self.posSide, mgnMode=self.mgnMode, autoCxl=True, clOrdId=clOrdId)
+            if res.get("clOrdId") == clOrdId:
+                self.log_to_database("success", "进行平仓操作", f"品种：{self.instId}，方向：{self.posSide}")
+            else:
+                # TODO 自定义关闭ID不一致得情况? 
+                self.log_to_database("warning", "进行平仓操作", f"品种：{self.instId}，方向：{self.posSide}")
             print(f'{self.task_id}###{res}')
             # self.thread_logger.success(f'进行平仓操作，品种:{self.instId}，方向：{self.posSide}')
             self.log_to_database("success", f"进行平仓操作", f"品种:{self.instId}，方向：{self.posSide}")
@@ -533,8 +541,15 @@ class Trader(threading.Thread):
         mgnMode = item.get('mgnMode')
         if item.get('order_type') == 'close_all':
             try:
-                res = self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
-                print(f'##任务{self.task_id}全部平仓：品种:{instId}###{res}')
+                clOrdId = uuid.uuid4().hex
+                # res = self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
+                # autoCxl 自动撤单 撤销已存在得非市价平单
+                res = self.obj.trade.set_close_position(instId=instId, posSide=posSide,mgnMode=mgnMode, autoCxl=True, clOrdId=clOrdId)
+                if res.get("clOrdId") == clOrdId:
+                    print(f'##任务{self.task_id}全部平仓：品种:{instId}###{res}, 订单ID： {clOrdId}')
+                else:
+                    # TODO 返回值确认
+                    print(f'##任务{self.task_id}全部平仓：品种:{instId}###{res}, 无效订单情况. 待检查')
                 self.log_to_database("success", f"进行平仓操作", f"品种:{instId}，方向：{posSide}")
             except Exception as e:
                 self.log_to_database("WARNING", '进行平仓操作', f'{instId}平仓失败，请手动平仓。')
@@ -542,7 +557,14 @@ class Trader(threading.Thread):
         else:
             try:
                 # 假设self.obj是已经实例化的，可以执行trade.close_market的对象
-                res = self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
+                # res = self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
+                clOrdId = uuid.uuid4().hex
+                res = self.obj.trade.set_close_position(instId=instId, posSide=posSide,mgnMode=mgnMode, autoCxl=True, clOrdId=clOrdId)
+                if res.get("clOrdId") == clOrdId:
+                    print(f'##任务{self.task_id}全部平仓：品种:{instId}###{res}, 订单ID： {clOrdId}')
+                else:
+                    # TODO 返回值确认
+                    print(f'##任务{self.task_id}全部平仓：品种:{instId}###{res}, 无效订单情况. 待检查')
                 print(f'##任务{self.task_id}全部平仓：品种:{instId}###{res}')
                 self.log_to_database("WARNING", '手动结束跟单', f'{instId}已经按市价进行平仓。')
             except Exception as e:
