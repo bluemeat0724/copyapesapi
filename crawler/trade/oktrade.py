@@ -161,7 +161,7 @@ class Trader(threading.Thread):
             # 止损价格 = 开仓价格 * (1 - 止损未亏损比例)
             _sl_price = (1 + self.sl_trigger_px) * open_price
             # 平仓止损挂单价格 = 开仓价格 + （（开仓价格 - 止损价格） / 杠杆倍数）
-            sl_trigger_px_price = float() + (open_price - ((open_price - _sl_price) / self.lever))
+            sl_trigger_px_price = open_price + (open_price - ((open_price - _sl_price) / self.lever))
         # 开多
         elif self.posSide == "long":
             # 止损价格 = 开仓价格 * (1 - 止损未亏损比例)
