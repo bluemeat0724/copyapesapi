@@ -106,8 +106,8 @@ class Spider(threading.Thread):
             old_list = new_list
             # if self.trader_platform == 1 and self.role_type == 2:
             #     self.old_position = self.new_position
-            if self.trader_platform == 1 and self.role_type == 1:
-                time.sleep(1)
+            # if self.trader_platform == 1 and self.role_type == 1:
+            time.sleep(1)
 
     def stop(self):
         # 设置停止标志，用于停止爬虫线程
@@ -372,6 +372,9 @@ class Spider(threading.Thread):
                 item['sl_trigger_px'] = self.sl_trigger_px
                 item['tp_trigger_px'] = self.tp_trigger_px
                 item = self.transform(item)
+
+                item.pop('posSpace')
+                item.pop('pos')
                 # thread_logger.success(
                 #     f"交易员{self.uniqueName}进行了开仓操作，品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}")
                 self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
@@ -405,6 +408,9 @@ class Spider(threading.Thread):
                 item['sl_trigger_px'] = self.sl_trigger_px
                 item['tp_trigger_px'] = self.tp_trigger_px
                 item = self.transform(item)
+
+                item.pop('posSpace')
+                item.pop('pos')
                 # thread_logger.success(
                 #     f"交易员{self.uniqueName}进行了平仓操作，品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}")
                 self.log_to_database("success", f"交易员{self.uniqueName}进行了平仓操作",
@@ -430,17 +436,15 @@ class Spider(threading.Thread):
                     change_percentage = 0
 
                 # 检查变动是否超过10%
-                if abs(change_percentage) > 0.1:
+                if abs(change_percentage) > 0.3:
                     print("原始仓位old-new-差值", old_posSpace, new_posSpace, change_percentage)
                     order_type = 'open' if change_percentage > 0 else 'reduce'
                     change = {
                         'order_type': order_type,
                         'instId': old_item['instId'],
-                        # 其他字段保持不变，因为示例中未提及需要修改或添加的其他字段
                         'mgnMode': old_item['mgnMode'],
                         'posSide': old_item['posSide'],
                         'lever': old_item['lever'],
-                        # 假设以下字段在您的类中已定义
                         'task_id': self.task_id,
                         'trader_platform': self.trader_platform,
                         'follow_type': self.follow_type,
@@ -457,13 +461,15 @@ class Spider(threading.Thread):
                         'investment': self.investment,
                         'trade_trigger_mode': self.trade_trigger_mode,
                         'sl_trigger_px': self.sl_trigger_px,
-                        'tp_trigger_px': self.tp_trigger_px
+                        'tp_trigger_px': self.tp_trigger_px,
+                        'posSpace': new_posSpace,
                     }
-                    # 假设log_to_database和transform方法已在您的类中定义
                     self.log_to_database("success", f"交易员{self.uniqueName}进行了调仓操作",
-                                         f"品种：{old_item['instId']}，操作类型：{order_type}")
+                                     f"品种：{old_item['instId']}，原仓位：{round(old_posSpace * 100, 2)}%，现仓位：{round(new_posSpace * 100, 2)}%")
                     change = self.transform(change)
+                    change.pop('posSpace')
                     changed_items.append(change)
+
                     # 写入Redis队列
                     conn = redis.Redis(**settings.REDIS_PARAMS)
                     conn.lpush(settings.TRADE_TASK_NAME, json.dumps(change))
