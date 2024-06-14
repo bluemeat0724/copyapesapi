@@ -242,7 +242,7 @@ tp_trigger_px = 0.2
 
 params = dict(
     instId='BTC-USDT-SWAP',
-    posSide='long',
+    posSide='short',
     openMoney=200,
     tdMode='cross',
     lever=10)
@@ -321,10 +321,53 @@ if tp_trigger_px:
     params.update({"tpTriggerPx": b})
     params.update({"tpOrdPx": str(float(b)-1)})
 
-# result = obj.trade.open_market(**params)
+result = obj.trade.open_market(**params)
+# result = obj.trade.close_market(instId="BTC-USDT-SWAP", posSide='long', quantityCT='all',tdMode='cross')
 # print(result)
-# obj.trade.close_market(instId="BTC-USDT-SWAP", posSide='long', quantityCT='all',tdMode='cross')
-import uuid
-clOrdId = uuid.uuid4().hex
-res = obj.trade.set_close_position(instId="BTC-USDT-SWAP", posSide='long', mgnMode='cross', autoCxl=True, clOrdId=clOrdId)
-print(res)
+# if result.get('set_order_result', {}).get('data', {}).get('sCode') == '0':
+#     print(111)
+def close_market_2nd(obj, params):
+    import random
+    def split_into_parts(total, parts=5):
+        # 生成前 parts-1 个随机正整数
+        random_parts = [random.randint(1, int(total - parts + 1)) for _ in range(parts - 1)]
+
+        # 确保随机部分的和小于 total
+        while sum(random_parts) >= total:
+            random_parts = [random.randint(1, int(total - parts + 1)) for _ in range(parts - 1)]
+
+        # 计算剩余部分，并确保其为正数
+        remaining = total - sum(random_parts)
+        if remaining <= 0:
+            return split_into_parts(total, parts)
+
+        split_parts = random_parts + [remaining]
+
+        return split_parts
+
+    data = obj.account.get_positions().get('data')
+    for d in data:
+        if d['instId'] == params['instId'] and \
+                d['mgnMode'] == params['tdMode'] and \
+                d['posSide'] == params['posSide']:
+            availPos = float(d['availPos'])
+
+    # 获取分好的部分
+    split_parts = split_into_parts(availPos)
+    # 将最后一个部分替换为 'all'
+    split_parts[-1] = 'all'
+    market_data = []
+    for i in split_parts:
+        market_data.append(
+            dict(
+                instId=params.get('instId'),
+                posSide=params.get('posSide'),
+                mgnMode=params.get('tdMode'),
+                order_type='close_2nd',
+                quantityCT=i
+            )
+        )
+
+    return market_data
+
+close_market_2nd(obj, params)

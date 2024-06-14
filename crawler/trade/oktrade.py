@@ -272,6 +272,13 @@ class Trader(threading.Thread):
             res = self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT='all',
                                               tdMode=self.mgnMode)
             print(f'{self.task_id}###{res}')
+            if res.get('set_order_result', {}).get('data', {}).get('sCode') != '0':
+                # 平仓出错，拆分平仓
+                print(f'任务：{self.task_id}平仓出错，拆分平仓！')
+                market_data = self.close_market_2nd()
+                if market_data:
+                    self.run_close_market_concurrently(market_data)
+
             # self.thread_logger.success(f'进行平仓操作，品种:{self.instId}，方向：{self.posSide}')
             self.log_to_database("success", f"进行平仓操作", f"品种:{self.instId}，方向：{self.posSide}")
             # 更新持仓数据
@@ -532,23 +539,26 @@ class Trader(threading.Thread):
         instId = item.get('instId')
         posSide = item.get('posSide')
         mgnMode = item.get('mgnMode')
+        quantityCT = item.get('quantityCT')
         if item.get('order_type') == 'close_all':
-            try:
-                res = self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
-                print(f'##任务{self.task_id}全部平仓：品种:{instId}###{res}')
-                self.log_to_database("success", f"进行平仓操作", f"品种:{instId}，方向：{posSide}")
-            except Exception as e:
-                self.log_to_database("WARNING", '进行平仓操作', f'{instId}平仓失败，请手动平仓。')
-                print(e)
+            res = self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
+            print(f'##任务{self.task_id}全部平仓：品种:{instId}###{res}')
+            if res.get('set_order_result', {}).get('data', {}).get('sCode') != '0':
+                # 平仓出错，拆分平仓
+                print(f'任务：{self.task_id}平仓出错，拆分平仓！')
+                market_data = self.close_market_2nd()
+                if market_data:
+                    self.run_close_market_concurrently(market_data)
+            self.log_to_database("success", f"进行平仓操作", f"品种:{instId}，方向：{posSide}")
+
+        elif item.get('order_type') == 'close_2nd':
+            res = self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT=quantityCT, tdMode=mgnMode)
+            print(f'##任务{self.task_id}分批平仓：品种:{instId}###{res}')
         else:
-            try:
-                # 假设self.obj是已经实例化的，可以执行trade.close_market的对象
-                res = self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
-                print(f'##任务{self.task_id}全部平仓：品种:{instId}###{res}')
-                self.log_to_database("WARNING", '手动结束跟单', f'{instId}已经按市价进行平仓。')
-            except Exception as e:
-                self.log_to_database("WARNING", '手动结束跟单', f'{instId}平仓失败，请手动平仓。')
-                print(e)
+            # 假设self.obj是已经实例化的，可以执行trade.close_market的对象
+            res = self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
+            print(f'##任务{self.task_id}全部平仓：品种:{instId}###{res}')
+            self.log_to_database("WARNING", '手动结束跟单', f'{instId}已经按市价进行平仓。')
 
     def run_close_market_concurrently(self, data):
         # 使用ThreadPoolExecutor创建线程池
@@ -618,3 +628,47 @@ class Trader(threading.Thread):
             else:
                 result = True
         return result
+
+    def close_market_2nd(self):
+        import random
+        def split_into_parts(total, parts=5):
+            # 生成前 parts-1 个随机正整数
+            random_parts = [random.randint(1, int(total - parts + 1)) for _ in range(parts - 1)]
+
+            # 确保随机部分的和小于 total
+            while sum(random_parts) >= total:
+                random_parts = [random.randint(1, int(total - parts + 1)) for _ in range(parts - 1)]
+
+            # 计算剩余部分，并确保其为正数
+            remaining = total - sum(random_parts)
+            if remaining <= 0:
+                return split_into_parts(total, parts)
+
+            split_parts = random_parts + [remaining]
+
+            return split_parts
+
+        data = self.obj.account.get_positions().get('data')
+        for d in data:
+            if d['instId'] == self.instId and \
+                    d['mgnMode'] == self.mgnMode and \
+                    d['posSide'] == self.posSide:
+                availPos = float(d['availPos'])
+
+        # 获取分好的部分
+        split_parts = split_into_parts(availPos)
+        # 将最后一个部分替换为 'all'
+        split_parts[-1] = 'all'
+        market_data = []
+        for i in split_parts:
+            market_data.append(
+                dict(
+                    instId=self.instId,
+                    posSide=self.posSide,
+                    mgnMode=self.mgnMode,
+                    order_type='close_2nd',
+                    quantityCT=i
+                )
+            )
+
+        return market_data
