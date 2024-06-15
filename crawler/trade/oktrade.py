@@ -164,23 +164,13 @@ class Trader(threading.Thread):
                 open_price = float(get_ticker_result['data']['askPx'])
             except:
                 continue
-        _re_try = 0 
-        open_price = 0
-        while _re_try < 3 and open_price == 0:
-            _re_try += 1
-            try:
-                get_ticker_result = self.obj.trade._market.get_ticker(instId=self.instId)
-                # 获取市价
-                open_price = float(get_ticker_result['data']['askPx'])
-            except:
-                continue
         # 根据 开仓价格 & 杠杆 & 方向 获取止损挂单价
         # 开空
         if self.posSide == "short":
             # 止损价格 = 开仓价格 * (1 - 止损未亏损比例)
             _sl_price = (1 + self.sl_trigger_px) * open_price
             # 平仓止损挂单价格 = 开仓价格 + （（开仓价格 - 止损价格） / 杠杆倍数）
-            sl_trigger_px_price = open_price + (open_price - ((open_price - _sl_price) / self.lever))
+            # sl_trigger_px_price = open_price + (open_price - ((open_price - _sl_price) / self.lever))
         # 开多
         elif self.posSide == "long":
             # 止损价格 = 开仓价格 * (1 - 止损未亏损比例)
@@ -196,16 +186,6 @@ class Trader(threading.Thread):
         获取止盈价格
         """
         _re_try = 0
-        open_price = 0
-        while _re_try < 3 and open_price == 0:
-            _re_try += 1
-            try:
-                get_ticker_result = self.obj.trade._market.get_ticker(instId=self.instId)
-                # 获取市价
-                open_price = float(get_ticker_result['data']['askPx'])
-            except:
-                continue
-        _re_try = 0 
         open_price = 0
         while _re_try < 3 and open_price == 0:
             _re_try += 1
@@ -264,14 +244,14 @@ class Trader(threading.Thread):
             if self.trade_trigger_mode and self.sl_trigger_px:
                 _sl_price = self.get_sl_trigger_px()
                 params.update({"slTriggerPx": _sl_price})
-                params.update({"slOrdPx": str(float(_sl_price)-1)})
+                params.update({"slOrdPx": _sl_price})
                 print(
                     f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}，止损触发：{self.get_sl_trigger_px()}')
             # 增加止盈
             if self.trade_trigger_mode and self.tp_trigger_px:
                 _tp_price = self.get_tp_trigger_px()
                 params.update({"tpTriggerPx": _tp_price})
-                params.update({"tpOrdPx": str(float(_tp_price)-1)})
+                params.update({"tpOrdPx": _tp_price})
                 print(
                     f'时间：{datetime.datetime.now()}，用户id：{self.user_id}，任务id：{self.task_id}，品种：{self.instId}，止盈触发：{self.get_tp_trigger_px()}')
 
@@ -295,19 +275,16 @@ class Trader(threading.Thread):
             #                                   tdMode=self.mgnMode)
             clOrdId = uuid.uuid4().hex
             res = self.obj.trade.set_close_position(instId=self.instId, posSide=self.posSide, mgnMode=self.mgnMode, autoCxl=True, clOrdId=clOrdId)
-            if res.get("clOrdId") == clOrdId:
+            print(f'{self.task_id}###{res}')
+
+            if res.get('code') == '0' and res.get('data')[0].get("clOrdId") == clOrdId:
                 self.log_to_database("success", "进行平仓操作", f"品种：{self.instId}，方向：{self.posSide}")
             else:
-                # TODO 自定义关闭ID不一致得情况? 
-                self.log_to_database("warning", "进行平仓操作", f"品种：{self.instId}，方向：{self.posSide}")
-            print(f'{self.task_id}###{res}')
-            if res.get('set_order_result', {}) is not None:
-                if res.get('set_order_result', {}).get('data', {}).get('sCode') != '0':
-                    # 平仓出错，拆分平仓
-                    print(f'任务：{self.task_id}平仓出错，拆分平仓！')
-                    market_data = self.close_market_2nd()
-                    if market_data:
-                        self.run_close_market_concurrently(market_data)
+                # 平仓出错，拆分平仓
+                print(f'任务：{self.task_id}平仓出错，拆分平仓！')
+                market_data = self.close_market_2nd()
+                if market_data:
+                    self.run_close_market_concurrently(market_data)
 
             # self.thread_logger.success(f'进行平仓操作，品种:{self.instId}，方向：{self.posSide}')
             self.log_to_database("success", f"进行平仓操作", f"品种:{self.instId}，方向：{self.posSide}")
@@ -576,26 +553,39 @@ class Trader(threading.Thread):
                 # res = self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
                 # autoCxl 自动撤单 撤销已存在得非市价平单
                 res = self.obj.trade.set_close_position(instId=instId, posSide=posSide,mgnMode=mgnMode, autoCxl=True, clOrdId=clOrdId)
-                if res.get("clOrdId") == clOrdId:
+                if res.get("data")[0].get("clOrdId") == clOrdId:
                     print(f'##任务{self.task_id}全部平仓：品种:{instId}###{res}, 订单ID： {clOrdId}')
                 else:
                     # TODO 返回值确认
-                    print(f'##任务{self.task_id}全部平仓：品种:{instId}###{res}, 无效订单情况. 待检查')
+                    # 平仓出错，拆分平仓
+                    print(f'任务：{self.task_id}平仓出错，拆分平仓！')
+                    market_data = self.close_market_2nd()
+                    if market_data:
+                        self.run_close_market_concurrently(market_data)
                 self.log_to_database("success", f"进行平仓操作", f"品种:{instId}，方向：{posSide}")
             except Exception as e:
                 self.log_to_database("WARNING", '进行平仓操作', f'{instId}平仓失败，请手动平仓。')
                 print(e)
+        elif item.get('order_type') == 'close_2nd':
+            res = self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT=quantityCT, tdMode=mgnMode)
+            print(f'##任务{self.task_id}分批平仓：品种:{instId}###{res}')
+            if res.get('set_order_result', {}) is not None:
+                self.log_to_database("WARNING", f"平仓操作失败", f"品种:{instId}，方向：{posSide}，请手动平仓。")
         else:
             try:
                 # 假设self.obj是已经实例化的，可以执行trade.close_market的对象
                 # res = self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
                 clOrdId = uuid.uuid4().hex
                 res = self.obj.trade.set_close_position(instId=instId, posSide=posSide,mgnMode=mgnMode, autoCxl=True, clOrdId=clOrdId)
-                if res.get("clOrdId") == clOrdId:
+                if res.get("data")[0].get("clOrdId") == clOrdId:
                     print(f'##任务{self.task_id}全部平仓：品种:{instId}###{res}, 订单ID： {clOrdId}')
                 else:
                     # TODO 返回值确认
-                    print(f'##任务{self.task_id}全部平仓：品种:{instId}###{res}, 无效订单情况. 待检查')
+                    # 平仓出错，拆分平仓
+                    print(f'任务：{self.task_id}平仓出错，拆分平仓！')
+                    market_data = self.close_market_2nd()
+                    if market_data:
+                        self.run_close_market_concurrently(market_data)
                 print(f'##任务{self.task_id}全部平仓：品种:{instId}###{res}')
                 self.log_to_database("WARNING", '手动结束跟单', f'{instId}已经按市价进行平仓。')
             except Exception as e:
@@ -691,6 +681,8 @@ class Trader(threading.Thread):
             return split_parts
 
         data = self.obj.account.get_positions().get('data')
+        if data == []:
+            return
         for d in data:
             if d['instId'] == self.instId and \
                     d['mgnMode'] == self.mgnMode and \

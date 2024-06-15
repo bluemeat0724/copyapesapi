@@ -1,29 +1,22 @@
-[{
-"alias": "",
-"avgPx": "1.1166",
-"cTime": "1712824421483",
-"instId": "BTC-USDT-SWAP",
-"instType": "SWAP",
-"lever": "20",
-"liqPx": "668.3023604028945",
-"mgnMode": "cross",
-"pos": "1",
-"posCcy": "",
-"posSide": "long",
-"posSpace": "0.0045903283406341",
-"uplRatio": "0.0107469102632995"
-},{
-"alias": "",
-"avgPx": "9.257",
-"cTime": "1712824214333",
-"instId": "UNI-USDT-SWAP",
-"instType": "SWAP",
-"lever": "20",
-"liqPx": "",
-"mgnMode": "cross",
-"pos": "1",
-"posCcy": "",
-"posSide": "short",
-"posSpace": "0.0029621103724128",
-"uplRatio": "-0.0259263260235487"
-}]
+[
+    {
+        "instId": "CRV-USDT-SWAP",
+        "openTime": "1718192383843",
+        "posSide": "long",
+        "lever": "50",
+        "pos": "1",
+        "openAvgPx": "0.3079230769230771",
+        "mgnMode": "cross",
+        "posSpace": 2.3091200781572892
+    },
+    {
+        "instId": "CEL-USDT-SWAP",
+        "openTime": "1714955298321",
+        "posSide": "short",
+        "lever": "50",
+        "pos": "-1",
+        "openAvgPx": "0.5707",
+        "mgnMode": "cross",
+        "posSpace": 0.2909957582117317
+    }
+]

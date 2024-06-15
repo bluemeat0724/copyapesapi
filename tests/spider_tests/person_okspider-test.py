@@ -11,10 +11,12 @@ from crawler.spiders import okx_get_position
 from crawler.utils.db import Connect
 import requests
 import time
-from datetime import datetime, timedelta, timezone
+# from datetime import datetime, timedelta, timezone
 from crawler.utils.get_header import get_header
 from crawler.utils.get_proxies import get_proxies
 import json
+from crawler.utils.reactivate_tasks import reactivate_tasks
+from crawler.utils import get_task
 
 logger.remove()  # 移除所有默认的handler
 
@@ -141,7 +143,7 @@ class Spider(threading.Thread):
                 #     return summary_list_new
                 # else:
                 #     return None
-                result = spider(self.uniqueName)
+                result = self.test()
                 if result is not None:
                     return result
                 else:
@@ -598,12 +600,10 @@ class Spider(threading.Thread):
                 self.old_position = self.new_position
 
 
-def spider(uniqueName):
-    summary_list_new = []
-    with open('text.txt', 'r') as f:
-        data_list = json.loads(f.read())
-    if not data_list:
-        return summary_list_new
+    def test(self):
+        with open('text_personal.txt', 'r') as f:
+            data_list = json.loads(f.read())
+            return data_list
     # try:
     #     position_url = f'https://www.okx.com/priapi/v5/ecotrade/public/positions-v2?limit=10&uniqueName={uniqueName}&t={now}'
     #     position_list = requests.get(position_url, headers=get_header(), timeout=30).json().get('data', list())[
@@ -636,19 +636,74 @@ def spider(uniqueName):
     #     print(e)
     #     pass
 
+# 用字典映射任务ID和爬虫实例
+spiders = {}
 
 if __name__ == '__main__':
-    print(spider('2C3212F0BE59CC81'))
-    # _list = spider('2C3212F0BE59CC81')
-    # analysis_okx_follow(_list, _list)
-    # 示例使用
-    # uniqueName = "2C3212F0BE59CC81"
-    # history_positions = get_history_positions(uniqueName)
-    # print(history_positions)
+    # 查看taskinfo表，看是否有需要恢复的任务
+    reactivate_tasks()
+    while True:
+        try:
+            # 去redis里获取跟单任务id
+            tid = get_task.get_redis_task()
+            if not tid:
+                continue
+            # 获取任务信息
+            row_object = get_task.get_task_info_by_id(tid)
+            if not row_object:
+                continue
+            task_data = row_object.__dict__  # 解析任务的字典
+            task_id = task_data.get('id')
+            trader_platform = task_data.get('trader_platform')
+            uniqueName = task_data.get('uniqueName')
+            follow_type = task_data.get('follow_type')
+            role_type = task_data.get('role_type')
+            reduce_ratio = task_data.get('reduce_ratio')
+            sums = task_data.get('sums')
+            ratio = task_data.get('ratio')
+            lever_set = task_data.get('lever_set')
+            first_order_set = task_data.get('first_order_set')
+            api_id = task_data.get('api_id')
+            status = task_data.get('status')
+            user_id = task_data.get('user_id')
+            leverage = task_data.get('leverage')
+            posSide_set = task_data.get('posSide_set')
+            fast_mode = task_data.get('fast_mode')
+            investment = task_data.get('investment')
+            trade_trigger_mode = task_data.get('trade_trigger_mode')
+            sl_trigger_px = task_data.get('sl_trigger_px')
+            tp_trigger_px = task_data.get('tp_trigger_px')
 
-    # print(spider('67A85F8BC1B67E17'))
-    # print(spider('585D2CBB1B3E2A79'))
-    # print(get_position('585D2CBB1B3E2A79'))
-    # print(spider_close_item('032805718789399F'))
+            if status == 1:
+                # 开启新爬虫
+                if task_id not in spiders:
+                    spider = Spider(task_id, trader_platform, uniqueName, follow_type,role_type,reduce_ratio, sums, ratio, lever_set, first_order_set,
+                                    api_id, user_id, leverage, posSide_set, fast_mode, investment, trade_trigger_mode, sl_trigger_px, tp_trigger_px)
+                    spider.start()
+                    spiders[task_id] = spider
+                    print(f"用户：{user_id}的最新跟单任务{task_id}已经开始。")
+                else:
+                    print(f"用户：{user_id}的跟单任务{task_id}已存在。")
 
-# 当需要退出程序时，你可以在控制台输入Ctrl+C 来中断程序运行。{'id': 2, 'status': 1}{'id': 1, 'status': 1}
+            elif status == 2:
+                # 终止爬虫
+                if task_id in spiders:
+                    spider_to_stop = spiders[task_id]
+                    spider_to_stop.stop()
+                    spider_to_stop.join()
+                    # 组装数据
+                    task_data['task_id'] = task_data.pop('id')
+                    task_data.pop("create_datetime")
+                    task_data.pop("deleted")
+                    task_data.pop("leverage")
+                    # print(task_data)
+                    # 往redis里的TRADE_TASK_NAME写入{'task_id':task_id,'status': 2}
+                    conn = redis.Redis(**settings.REDIS_PARAMS)
+                    conn.lpush(settings.TRADE_TASK_NAME, json.dumps(task_data))
+                    del spiders[task_id]
+                    print(f"用户：{user_id}的跟单任务{task_id}已停止。")
+                else:
+                    print(f"用户：{user_id}的跟单任务{task_id}不存在")
+
+        except (SyntaxError, NameError):
+            print("数据错误！")
