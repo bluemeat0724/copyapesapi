@@ -535,3 +535,43 @@ class TradeClose(TradeOrder, TradeQuantityAndPrice):
             t = Thread(target=inner_func)
             t.start()
             return t
+
+    # POST / 市价仓位全平
+    def set_close_position(self, instId: str, mgnMode: str, posSide: str = '', ccy: str = '', autoCxl: bool = '',
+                           clOrdId: str = '', tag: str = '', proxies={}, proxy_host: str = None):
+        '''
+        市价平掉指定交易产品的持仓
+        https://www.okx.com/docs-v5/zh/#order-book-trading-trade-post-close-positions
+        
+        限速：20次/2s
+        
+    
+        请求参数:
+        Parameter         	Type    	Required	Description
+
+        instId            	String  	是       	产品ID
+        posSide           	String  	可选      	持仓方向买卖模式下：可不填写此参数，默认值net，如果填写，仅可以填写net开平仓模式下： 必须填写此参数，且仅可以填写long：平多 ，short：平空
+        mgnMode           	String  	是       	保证金模式cross：全仓 ；isolated：逐仓
+        ccy               	String  	可选      	保证金币种，单币种保证金模式的全仓币币杠杆平仓必填
+        autoCxl           	Boolean 	否       	当市价全平时，平仓单是否需要自动撤销,默认为false.false：不自动撤单true：自动撤单
+        clOrdId           	String  	否       	客户自定义ID字母（区分大小写）与数字的组合，可以是纯字母、纯数字且长度要在1-32位之间。
+        tag               	String  	否       	订单标签字母（区分大小写）与数字的组合，可以是纯字母、纯数字，且长度在1-16位之间。
+        返回参数:
+        Parameter         	Type    	Description
+        instId            	String  	产品ID
+        posSide           	String  	持仓方向
+        clOrdId           	String  	客户自定义ID字母（区分大小写）与数字的组合，可以是纯字母、纯数字且长度要在1-32位之间。
+        tag               	String  	订单标签字母（区分大小写）与数字的组合，可以是纯字母、纯数字，且长度在1-16位之间。
+        '''
+        request_param = dict(
+            instId=instId,
+            mgnMode=mgnMode,
+            posSide=posSide,
+            ccy=ccy,
+            autoCxl=autoCxl,
+            clOrdId=clOrdId,
+            tag=tag,
+            proxies=proxies,
+            proxy_host=proxy_host,
+        )
+        return self.api.set_close_position(**request_param)
