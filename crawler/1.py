@@ -321,7 +321,7 @@ if tp_trigger_px:
     params.update({"tpTriggerPx": b})
     params.update({"tpOrdPx": str(float(b)-1)})
 
-result = obj.trade.open_market(**params)
+# result = obj.trade.open_market(**params)
 # result = obj.trade.close_market(instId="BTC-USDT-SWAP", posSide='long', quantityCT='all',tdMode='cross')
 # print(result)
 # if result.get('set_order_result', {}).get('data', {}).get('sCode') == '0':
@@ -370,4 +370,12 @@ def close_market_2nd(obj, params):
 
     return market_data
 
-close_market_2nd(obj, params)
+# close_market_2nd(obj, params)
+
+
+res = {'instType': 'SWAP', 'instId': 'BTC-USDT-SWAP', 'state': None, 'ordId': None, 'meta': {}, 'request_param': None,
+       'func_param': {'instId': 'BTC-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'short', 'quantityCT': 'all', 'meta': {}, 'timeout': 60, 'delay': 0.2, 'cancel': True, 'clOrdId': '', 'tag': '', 'newThread': False, 'callback': None, 'errorback': None},
+       'get_order_result': None, 'set_order_result': None, 'error_result': {'code': 'FUNC_EXCEPTION', 'data': {}, 'msg': 'Traceback (most recent call last):\n  File "/crawler/myokx/close.py", line 513, in inner_func\n    error_result = main_func(**main_data)\n  File "/crawler/myokx/close.py", line 422, in main_func\n    availPos = positionMap_result[\'data\'][tdMode][posSide][instId][\'availPos\']\nKeyError: \'BTC-USDT-SWAP\'\n'}, 'cancel_result': None}
+if res.get('set_order_result', {}) is not None:
+    if res.get('set_order_result', {}).get('data', {}).get('sCode') != '0':
+        print(111)

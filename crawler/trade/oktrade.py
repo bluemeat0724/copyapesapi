@@ -272,12 +272,13 @@ class Trader(threading.Thread):
             res = self.obj.trade.close_market(instId=self.instId, posSide=self.posSide, quantityCT='all',
                                               tdMode=self.mgnMode)
             print(f'{self.task_id}###{res}')
-            if res.get('set_order_result', {}).get('data', {}).get('sCode') != '0':
-                # 平仓出错，拆分平仓
-                print(f'任务：{self.task_id}平仓出错，拆分平仓！')
-                market_data = self.close_market_2nd()
-                if market_data:
-                    self.run_close_market_concurrently(market_data)
+            if res.get('set_order_result', {}) is not None:
+                if res.get('set_order_result', {}).get('data', {}).get('sCode') != '0':
+                    # 平仓出错，拆分平仓
+                    print(f'任务：{self.task_id}平仓出错，拆分平仓！')
+                    market_data = self.close_market_2nd()
+                    if market_data:
+                        self.run_close_market_concurrently(market_data)
 
             # self.thread_logger.success(f'进行平仓操作，品种:{self.instId}，方向：{self.posSide}')
             self.log_to_database("success", f"进行平仓操作", f"品种:{self.instId}，方向：{self.posSide}")
@@ -543,12 +544,13 @@ class Trader(threading.Thread):
         if item.get('order_type') == 'close_all':
             res = self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
             print(f'##任务{self.task_id}全部平仓：品种:{instId}###{res}')
-            if res.get('set_order_result', {}).get('data', {}).get('sCode') != '0':
-                # 平仓出错，拆分平仓
-                print(f'任务：{self.task_id}平仓出错，拆分平仓！')
-                market_data = self.close_market_2nd()
-                if market_data:
-                    self.run_close_market_concurrently(market_data)
+            if res.get('set_order_result', {}) is not None:
+                if res.get('set_order_result', {}).get('data', {}).get('sCode') != '0':
+                    # 平仓出错，拆分平仓
+                    print(f'任务：{self.task_id}平仓出错，拆分平仓！')
+                    market_data = self.close_market_2nd()
+                    if market_data:
+                        self.run_close_market_concurrently(market_data)
             self.log_to_database("success", f"进行平仓操作", f"品种:{instId}，方向：{posSide}")
 
         elif item.get('order_type') == 'close_2nd':
