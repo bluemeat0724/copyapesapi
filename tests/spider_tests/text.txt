@@ -1,0 +1,39 @@
+[{
+	'instId': 'CRV-USDT-SWAP',
+	'openTime': '1718192383843',
+	'posSide': 'long',
+	'lever': '50',
+	'pos': '1',
+	'openAvgPx': '0.3079230769230771',
+	'mgnMode': 'cross',
+	'posSpace': 0.3091200781572892
+},
+{
+	'instId': 'TURBO-USDT-SWAP',
+	'openTime': '1715872980845',
+	'posSide': 'short',
+	'lever': '20',
+	'pos': '-1',
+	'openAvgPx': '0.0016144623529417',
+	'mgnMode': 'cross',
+	'posSpace': 0.3431724145949962
+},
+{
+	'instId': 'BTC-USDT-SWAP',
+	'openTime': '1715864457038',
+	'posSide': 'short',
+	'lever': '50',
+	'pos': '-1',
+	'openAvgPx': '69902.8222222222222223',
+	'mgnMode': 'cross',
+	'posSpace': 0.3194287366689758
+}, {
+	'instId': 'CEL-USDT-SWAP',
+	'openTime': '1714955298321',
+	'posSide': 'short',
+	'lever': '50',
+	'pos': '-1',
+	'openAvgPx': '0.5707',
+	'mgnMode': 'cross',
+	'posSpace': 0.2909957582117317
+}]

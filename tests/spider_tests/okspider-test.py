@@ -98,7 +98,7 @@ class Spider(threading.Thread):
         summary_list_new = []
         if self.role_type == 1:
             with self.file_lock:
-                with open('text.txt', 'r') as f:
+                with open('text_personal.txt', 'r') as f:
                     data_list = json.loads(f.read())
             if not data_list:
                 return summary_list_new
