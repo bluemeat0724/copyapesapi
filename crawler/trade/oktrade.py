@@ -556,6 +556,8 @@ class Trader(threading.Thread):
         elif item.get('order_type') == 'close_2nd':
             res = self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT=quantityCT, tdMode=mgnMode)
             print(f'##任务{self.task_id}分批平仓：品种:{instId}###{res}')
+            if res.get('set_order_result', {}) is not None:
+                self.log_to_database("WARNING", f"平仓操作失败", f"品种:{instId}，方向：{posSide}，请手动平仓。")
         else:
             # 假设self.obj是已经实例化的，可以执行trade.close_market的对象
             res = self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT='all', tdMode=mgnMode)
