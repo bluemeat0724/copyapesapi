@@ -1,3 +1,17 @@
+import sys, os, platform
+
+# 获取当前操作系统
+current_os = platform.system()
+
+if current_os == 'Windows':
+    # 获取当前文件的目录路径
+    current_dir = os.path.dirname(__file__)
+    sys.path.append(current_dir.rsplit("\\tests", -1)[0])
+else:
+    # 获取当前文件的目录路径
+    current_dir = os.path.dirname(__file__)
+    sys.path.append(current_dir.rsplit("/tests", -1)[0])
+
 from crawler.myokx import app
 # from okx import app
 from okx.api.public import Public
@@ -74,6 +88,8 @@ acc = {'key': '2f071928-25bf-4ea9-b171-efe4b6e4eefd',
 obj = app.OkxSWAP(**acc)
 obj.account.api.flag = '1'
 obj.trade.api.flag = '1'
+
+print(time.time())
 # start_time = time.time()
 # 查看账户配置信息
 # print(obj.account.get_config())
@@ -312,18 +328,18 @@ def get_tp_trigger_px(obj, instId, posSide, lever, tp_trigger_px) -> str:
     return str(_tp_price)
 
 
-if sl_trigger_px:
-    a = get_sl_trigger_px(obj, params.get('instId'), params.get('posSide'), params.get('lever'), sl_trigger_px)
-    params.update({"slTriggerPx": a})
-    params.update({"slOrdPx": str(float(a)-1)})
-if tp_trigger_px:
-    b = get_tp_trigger_px(obj,params.get('instId'),params.get('posSide'),params.get('lever'),tp_trigger_px)
-    params.update({"tpTriggerPx": b})
-    params.update({"tpOrdPx": str(float(b)-1)})
+# if sl_trigger_px:
+#     a = get_sl_trigger_px(obj, params.get('instId'), params.get('posSide'), params.get('lever'), sl_trigger_px)
+#     params.update({"slTriggerPx": a})
+#     params.update({"slOrdPx": str(float(a)-1)})
+# if tp_trigger_px:
+#     b = get_tp_trigger_px(obj,params.get('instId'),params.get('posSide'),params.get('lever'),tp_trigger_px)
+#     params.update({"tpTriggerPx": b})
+#     params.update({"tpOrdPx": str(float(b)-1)})
 
-# result = obj.trade.open_market(**params)
+result = obj.trade.open_market(**params)
 # result = obj.trade.close_market(instId="BTC-USDT-SWAP", posSide='long', quantityCT='all',tdMode='cross')
-# print(result)
+print(result)
 # if result.get('set_order_result', {}).get('data', {}).get('sCode') == '0':
 #     print(111)
 def close_market_2nd(obj, params):
