@@ -4,14 +4,14 @@ from okx.api.public import Public
 import time
 
 # 模拟子1
-# acc = {'key': '2f071928-25bf-4ea9-b171-efe4b6e4eefd',
-#        'secret': '0BE4E80811E950DBA93FA013D1F36516',
-#        'passphrase': '112233Ww..',
-#        # 'proxies': {
-#        #              'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322',
-#        #              'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322'
-#        #             }
-#        }
+acc = {'key': '2f071928-25bf-4ea9-b171-efe4b6e4eefd',
+       'secret': '0BE4E80811E950DBA93FA013D1F36516',
+       'passphrase': '112233Ww..',
+       # 'proxies': {
+       #              'http': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322',
+       #              'https': 'socks5h://15755149931sct-5:8ivtkleb@14.29.122.97:10322'
+       #             }
+       }
 # 模拟子5
 # acc = {'key': '5e773b21-f919-41f1-bdca-62834fbb2d03',
 #        'secret': 'EC9399DC09F9C894F4E4E44EA66FA7C2',
@@ -22,14 +22,14 @@ import time
 #        #             }
 #        }
 # 模拟子2
-acc = {'key': '2842457e-1d17-4a58-a0d6-25d71044e75a',
-       'secret': 'A3A985254556CAAB007ABB15F7FECC9B',
-       'passphrase': '112233Ww..',
-       # 'proxies': {
-       #              'http': 'socks5h://15755149931drf-1:m1ktqqts@154.9.255.134:5001',
-       #              'https': 'socks5h://15755149931drf-1:m1ktqqts@154.9.255.134:5001'
-       #             }
-       }
+# acc = {'key': '2842457e-1d17-4a58-a0d6-25d71044e75a',
+#        'secret': 'A3A985254556CAAB007ABB15F7FECC9B',
+#        'passphrase': '112233Ww..',
+#        # 'proxies': {
+#        #              'http': 'socks5h://15755149931drf-1:m1ktqqts@154.9.255.134:5001',
+#        #              'https': 'socks5h://15755149931drf-1:m1ktqqts@154.9.255.134:5001'
+#        #             }
+#        }
 # 模拟主1
 # acc = {'key': 'ba8dccb8-943d-468c-bcbf-8dced96fc7cf',
 #        'secret': 'BBA3FF14AC698CDBAA33219F858E7BF6',
@@ -88,33 +88,40 @@ obj.trade.api.flag = '1'
 # else:
 #     print('[FAILURE] 设置持仓方式为双向持仓失败，请手动设置：posMode="long_short_mode"')
 #
-#
-#
+'''
+市价开仓
+'''
 # a = obj.trade.open_market(instId="DOGE-USDT-SWAP", posSide="long", openMoney=28800, tdMode='cross',
 #                           lever=50)
 # end_time = time.time()
 # t = start_time - end_time
 # print(a)
 # print(t)
-from crawler.utils.get_trade_times import get_trade_times
-trade_times = get_trade_times("ETH-USDT-SWAP", '1', acc)
-print(trade_times)
+
+'''
+查询模拟盘倍数
+'''
+# from crawler.utils.get_trade_times import get_trade_times
+# trade_times = get_trade_times("ETH-USDT-SWAP", '1', acc)
+# print(trade_times)
 # result = obj.trade.open_market(instId="BTC-USDT-SWAP", posSide="long", openMoney=10*trade_times, tdMode='cross',
 #                                   lever=5)
 # result = {'instType': 'SWAP', 'instId': 'LTC-USDT-SWAP', 'state': None, 'ordId': None, 'meta': {}, 'request_param': {'instId': 'LTC-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'long', 'side': 'buy', 'ordType': 'market', 'sz': '0', 'clOrdId': '', 'tag': ''}, 'func_param': {'instId': 'LTC-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'long', 'lever': 3, 'openMoney': 5, 'quantityCT': None, 'meta': {}, 'timeout': 60, 'delay': 0.2, 'cancel': True, 'clOrdId': '', 'tag': '', 'newThread': False, 'callback': None, 'errorback': None}, 'get_order_result': None, 'set_order_result': {'code': '1', 'data': [{'clOrdId': '', 'ordId': '', 'sCode': '51000', 'sMsg': 'Parameter sz error', 'tag': ''}], 'inTime': '1704986885902318', 'msg': 'All operations failed', 'outTime': '1704986885902391'}, 'error_result': {'code': 'FUNC_EXCEPTION', 'data': {}, 'msg': 'Traceback (most recent call last):\n  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/open.py", line 557, in inner_func\n    error_result = main_func(**main_data)\n  File "/Users/lichaoyuan/Desktop/copytrade/crawler/myokx/open.py", line 507, in main_func\n    ordId = set_order_result[\'data\'][\'ordId\']\nTypeError: list indices must be integers or slices, not str\n'}, 'cancel_result': None}
 # print(result)
 
-
-get_ticker_result = obj.trade._market.get_ticker(instId="ETH-USDT-SWAP")
-print(get_ticker_result)
-openPrice = float(get_ticker_result['data']['askPx'])
-print(openPrice)
-get_quantity_result = obj.trade.get_quantity(
-                        openPrice=openPrice, openMoney=-10*trade_times,
-                        instId="ETH-USDT-SWAP", ordType='market',
-                        leverage=20,
-                    )
-print('get_quantity_result',get_quantity_result['data'],type(get_quantity_result['data']))
+'''
+查询币价、开仓保证金转换张数
+'''
+# get_ticker_result = obj.trade._market.get_ticker(instId="ETH-USDT-SWAP")
+# print(get_ticker_result)
+# openPrice = float(get_ticker_result['data']['askPx'])
+# print(openPrice)
+# get_quantity_result = obj.trade.get_quantity(
+#                         openPrice=openPrice, openMoney=-10*trade_times,
+#                         instId="ETH-USDT-SWAP", ordType='market',
+#                         leverage=20,
+#                     )
+# print('get_quantity_result',get_quantity_result['data'],type(get_quantity_result['data']))
 # exchangeInfo = obj.trade._market.get_exchangeInfo(
 #             instId="W-USDT-SWAP",
 #             expire_seconds=60 * 5
@@ -137,7 +144,9 @@ print('get_quantity_result',get_quantity_result['data'],type(get_quantity_result
 #                                         tdMode='cross')
 # print(a)
 
-
+'''
+错误信息解析
+'''
 # try:
 #     s_code_value = result.get('set_order_result', {}).get('data', {}).get('sCode')
 #     if s_code_value == '0':
@@ -161,6 +170,9 @@ print('get_quantity_result',get_quantity_result['data'],type(get_quantity_result
 #         except:
 #             pass
 
+'''
+查询当前、历史持仓
+'''
 # a = obj.trade.open_market(instId='ETH-USDT-SWAP', posSide='long', openMoney=100,
 #                                       tdMode='cross', lever=100)
 # obj.trade.close_market(instId='ETH-USDT-SWAP', posSide='long', quantityCT=220, tdMode='cross')
@@ -199,79 +211,9 @@ print('get_quantity_result',get_quantity_result['data'],type(get_quantity_result
 
 # print(a)
 
-"""
-实盘信息
-{'code': '0', 
- 'data': [
-            {'adl': '1', 'availPos': '199', 'avgPx': '0.10045', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '',
-             'bePx': '0.1005505002501251', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702229518344', 'ccy': 'USDT',
-             'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.09994775', 'fundingFee': '0', 'gammaBS': '',
-             'gammaPA': '', 'idxPx': '0.100373', 'imr': '', 'instId': 'DOGE-USDT-SWAP', 'instType': 'SWAP', 'interest': '',
-             'last': '0.10045', 'lever': '3', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '0.0673870202781967',
-             'margin': '66.6318333333333333', 'markPx': '0.10046', 'mgnMode': 'isolated', 'mgnRatio': '60.618126315916484',
-             'mmr': '0.999577', 'notionalUsd': '199.96537885', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0',
-             'pos': '199', 'posCcy': '', 'posId': '654133243020668928', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '',
-             'quoteInterest': '', 'realizedPnl': '-0.09994775', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '',
-             'thetaPA': '', 'tradeId': '30646646', 'uTime': '1702229518344', 'upl': '0.0198999999999923', 'uplLastPx': '0',
-             'uplRatio': '0.0002986560477851', 'uplRatioLastPx': '0', 'usdPx': '', 'vegaBS': '', 'vegaPA': ''},
-
-            {'adl': '1', 'availPos': '27', 'avgPx': '73.18', 'baseBal': '', 'baseBorrowed': '', 'baseInterest': '',
-             'bePx': '73.2312516258129', 'bizRefId': '', 'bizRefType': '', 'cTime': '1702228492444', 'ccy': 'USDT',
-             'closeOrderAlgo': [], 'deltaBS': '', 'deltaPA': '', 'fee': '-0.0395172', 'fundingFee': '0', 'gammaBS': '',
-             'gammaPA': '', 'idxPx': '72.6786', 'imr': '', 'instId': 'SOL-USDT-SWAP', 'instType': 'SWAP', 'interest': '',
-             'last': '72.7', 'lever': '3', 'liab': '', 'liabCcy': '', 'liqPenalty': '0', 'liqPx': '49.06647729177141',
-             'margin': '65.862', 'markPx': '72.71', 'mgnMode': 'isolated', 'mgnRatio': '59.82254118686518', 'mmr': '0.981585',
-             'notionalUsd': '196.36607925', 'optVal': '', 'pendingCloseOrdLiabVal': '', 'pnl': '0', 'pos': '27', 'posCcy': '',
-             'posId': '654128940084195328', 'posSide': 'long', 'quoteBal': '', 'quoteBorrowed': '', 'quoteInterest': '',
-             'realizedPnl': '-0.0395172', 'spotInUseAmt': '', 'spotInUseCcy': '', 'thetaBS': '', 'thetaPA': '',
-             'tradeId': '46349075', 'uTime': '1702228492444', 'upl': '-1.2690000000000354', 'uplLastPx': '-1.296000000000011',
-             'uplRatio': '-0.0192675594424713', 'uplRatioLastPx': '-0.0196775075157147', 'usdPx': '', 'vegaBS': '',
-             'vegaPA': ''}
-         ], 
- 'msg': ''
- }
-
- 历史持仓
- {'code': '0', 'data': [], 'msg': ''}
- {
-    'code': '0', 
-     'data': [
-                {'cTime': '1702256227724', 'ccy': 'USDT', 'closeAvgPx': '2277.59', 'closeTotalPos': '3849', 'direction': 'long',
-                 'fee': '-88.77616815', 'fundingFee': '0', 'instId': 'ETH-USDT-SWAP', 'instType': 'SWAP', 'lever': '100.0',
-                 'liqPenalty': '-350.6577564', 'mgnMode': 'cross', 'openAvgPx': '2335.3571628994544037', 'openMaxPos': '3849',
-                 'pnl': '-2223.4581', 'pnlRatio': '-2.9624589154923515', 'posId': '651930173952069635',
-                 'realizedPnl': '-2662.89202455', 'triggerPx': '2277.59', 'type': '3', 'uTime': '1702260761272', 'uly': 'ETH-USDT'},
-                {'cTime': '1702232959213', 'ccy': 'USDT', 'closeAvgPx': '2345.3531862938164632', 'closeTotalPos': '2539',
-                 'direction': 'short', 'fee': '-59.7383012', 'fundingFee': '12.852102471434275', 'instId': 'ETH-USDT-SWAP',
-                 'instType': 'SWAP', 'lever': '100.0', 'liqPenalty': '0', 'mgnMode': 'cross', 'openAvgPx': '2360.3026782197715636',
-                 'openMaxPos': '2539', 'pnl': '379.5676', 'pnlRatio': '0.555134376931007', 'posId': '649318532001398784',
-                 'realizedPnl': '332.681401271434275', 'triggerPx': '', 'type': '2', 'uTime': '1702256168356', 'uly': 'ETH-USDT'}
-            ], 
-     'msg': ''
- }
-
-
- """
-
-"""
-'instId':'ETH-USDT-SWAP',
-
-'cTime': '1702256227724',    开仓时间
-'uTime': '1702260761272',    平仓时间
-'openAvgPx': '2335.3571628994544037',     开仓均价avgPx
-'closeAvgPx': '2277.59',     平仓均价
-'pnl': '-2223.4581',       收益
-'pnlRatio': '-2.9624589154923515',       收益率
-
-'lever': '100.0',       杠杆
-'mgnMode': 'cross',     全仓   isolated：逐仓
-
-'posSide': 'long',   当前订单持仓方向
-'direction': 'long'，  历史订单持仓方向
-
-imr 持仓量（当前）  openMaxPos最大持仓量（历史）
-
-"""
+'''
+查询历史委托订单
+'''
 # from okx.api.trade import Trade
 #
 # # API 初始化
@@ -290,3 +232,150 @@ imr 持仓量（当前）  openMaxPos最大持仓量（历史）
 #     state='canceled'
 # )
 # print(result)
+
+
+'''
+止盈止损开单
+'''
+sl_trigger_px = 0.2
+tp_trigger_px = 0.2
+
+params = dict(
+    instId='BTC-USDT-SWAP',
+    posSide='short',
+    openMoney=200,
+    tdMode='cross',
+    lever=10)
+
+
+def get_sl_trigger_px(obj, instId, posSide, lever, sl_trigger_px) -> str:
+    """
+    获取止损价格
+    """
+    _re_try = 0
+    open_price = 0
+    while _re_try < 3 and open_price == 0:
+        _re_try += 1
+        try:
+            get_ticker_result = obj.trade._market.get_ticker(instId=instId)
+            # 获取市价
+            open_price = float(get_ticker_result['data']['askPx'])
+        except:
+            continue
+    # 根据 开仓价格 & 杠杆 & 方向 获取止损挂单价
+    # 开空
+    if posSide == "short":
+        # 止损价格 = 开仓价格 * (1 - 止损未亏损比例)
+        _sl_price = (1 + sl_trigger_px) * open_price
+        # 平仓止损挂单价格 = 开仓价格 + （（开仓价格 - 止损价格） / 杠杆倍数）
+        # sl_trigger_px_price = open_price + (open_price - ((open_price - _sl_price) / lever))
+    # 开多
+    elif posSide == "long":
+        # 止损价格 = 开仓价格 * (1 - 止损未亏损比例)
+        _sl_price = (1 - sl_trigger_px) * open_price
+        # 平仓止损挂单价格 = 开仓价格 - （（开仓价格 - 止损价格） / 杠杆倍数）
+        # sl_trigger_px_price = open_price - (open_price - ((open_price - _sl_price) / lever))
+    else:
+        raise ValueError("posSide参数错误")
+    return str(_sl_price)
+
+
+def get_tp_trigger_px(obj, instId, posSide, lever, tp_trigger_px) -> str:
+    """
+    获取止盈价格
+    """
+    _re_try = 0
+    open_price = 0
+    while _re_try < 3 and open_price == 0:
+        _re_try += 1
+        try:
+            get_ticker_result = obj.trade._market.get_ticker(instId=instId)
+            # 获取市价
+            open_price = float(get_ticker_result['data']['askPx'])
+        except:
+            continue
+    # 根据 开仓价格 & 杠杆 & 方向 获取止损挂单价
+    # 开多
+    if posSide == "long":
+        # 止盈价格 = 开仓价格 * (1 - 止损未亏损比例)
+        _tp_price = (1 + tp_trigger_px) * open_price
+        # 平仓止损挂单价格 = 开仓价格 + （（开仓价格 - 止盈价格 / 杠杆倍数）
+        # tp_trigger_px_price = open_price + (open_price - ((open_price - _tp_price) / lever))
+    # 开空
+    elif posSide == "short":
+        # 止损价格 = 开仓价格 * (1 - 止损未亏损比例)
+        _tp_price = (1 - tp_trigger_px) * open_price
+        # 平仓止损挂单价格 = 开仓价格 - （（开仓价格 - 止损价格） / 杠杆倍数）
+        # tp_trigger_px_price = open_price - (open_price - ((open_price - _tp_price) / lever))
+    else:
+        raise ValueError("posSide参数错误")
+    return str(_tp_price)
+
+
+if sl_trigger_px:
+    a = get_sl_trigger_px(obj, params.get('instId'), params.get('posSide'), params.get('lever'), sl_trigger_px)
+    params.update({"slTriggerPx": a})
+    params.update({"slOrdPx": str(float(a)-1)})
+if tp_trigger_px:
+    b = get_tp_trigger_px(obj,params.get('instId'),params.get('posSide'),params.get('lever'),tp_trigger_px)
+    params.update({"tpTriggerPx": b})
+    params.update({"tpOrdPx": str(float(b)-1)})
+
+# result = obj.trade.open_market(**params)
+# result = obj.trade.close_market(instId="BTC-USDT-SWAP", posSide='long', quantityCT='all',tdMode='cross')
+# print(result)
+# if result.get('set_order_result', {}).get('data', {}).get('sCode') == '0':
+#     print(111)
+def close_market_2nd(obj, params):
+    import random
+    def split_into_parts(total, parts=5):
+        # 生成前 parts-1 个随机正整数
+        random_parts = [random.randint(1, int(total - parts + 1)) for _ in range(parts - 1)]
+
+        # 确保随机部分的和小于 total
+        while sum(random_parts) >= total:
+            random_parts = [random.randint(1, int(total - parts + 1)) for _ in range(parts - 1)]
+
+        # 计算剩余部分，并确保其为正数
+        remaining = total - sum(random_parts)
+        if remaining <= 0:
+            return split_into_parts(total, parts)
+
+        split_parts = random_parts + [remaining]
+
+        return split_parts
+
+    data = obj.account.get_positions().get('data')
+    for d in data:
+        if d['instId'] == params['instId'] and \
+                d['mgnMode'] == params['tdMode'] and \
+                d['posSide'] == params['posSide']:
+            availPos = float(d['availPos'])
+
+    # 获取分好的部分
+    split_parts = split_into_parts(availPos)
+    # 将最后一个部分替换为 'all'
+    split_parts[-1] = 'all'
+    market_data = []
+    for i in split_parts:
+        market_data.append(
+            dict(
+                instId=params.get('instId'),
+                posSide=params.get('posSide'),
+                mgnMode=params.get('tdMode'),
+                order_type='close_2nd',
+                quantityCT=i
+            )
+        )
+
+    return market_data
+
+# close_market_2nd(obj, params)
+
+
+res = {'instType': 'SWAP', 'instId': 'BTC-USDT-SWAP', 'state': None, 'ordId': None, 'meta': {}, 'request_param': None,
+       'func_param': {'instId': 'BTC-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'short', 'quantityCT': 'all', 'meta': {}, 'timeout': 60, 'delay': 0.2, 'cancel': True, 'clOrdId': '', 'tag': '', 'newThread': False, 'callback': None, 'errorback': None},
+       'get_order_result': None, 'set_order_result': None, 'error_result': {'code': 'FUNC_EXCEPTION', 'data': {}, 'msg': 'Traceback (most recent call last):\n  File "/crawler/myokx/close.py", line 513, in inner_func\n    error_result = main_func(**main_data)\n  File "/crawler/myokx/close.py", line 422, in main_func\n    availPos = positionMap_result[\'data\'][tdMode][posSide][instId][\'availPos\']\nKeyError: \'BTC-USDT-SWAP\'\n'}, 'cancel_result': None}
+if res.get('set_order_result', {}) is not None:
+    if res.get('set_order_result', {}).get('data', {}).get('sCode') != '0':
+        print(111)

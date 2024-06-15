@@ -5,7 +5,7 @@ import redis
 from crawler import settingsdev as settings
 import json
 from loguru import logger
-from crawler.spiders import okx_follow_spider
+from crawler.spiders import okx_follow_spider, okx_personal_spider_1
 from crawler.spiders import okx_personal_spider
 from crawler.spiders import okx_get_position
 from crawler.utils.db import Connect
@@ -106,8 +106,8 @@ class Spider(threading.Thread):
             old_list = new_list
             # if self.trader_platform == 1 and self.role_type == 2:
             #     self.old_position = self.new_position
-            if self.trader_platform == 1 and self.role_type == 1:
-                time.sleep(1)
+            # if self.trader_platform == 1 and self.role_type == 1:
+            time.sleep(1)
 
     def stop(self):
         # 设置停止标志，用于停止爬虫线程
@@ -129,10 +129,15 @@ class Spider(threading.Thread):
                 return None
         elif self.role_type == 2:
             if self.trader_platform == 1:
-                result = okx_personal_spider.spider(self.uniqueName)
+                # result = okx_personal_spider.spider(self.uniqueName)
+                # if result is not None:
+                #     summary_list_new, self.new_position = result
+                #     return summary_list_new
+                # else:
+                #     return None
+                result = okx_personal_spider_1.spider(self.uniqueName)
                 if result is not None:
-                    summary_list_new, self.new_position = result
-                    return summary_list_new
+                    return result
                 else:
                     return None
             else:
@@ -222,15 +227,8 @@ class Spider(threading.Thread):
             self.analysis_okx_follow(old_list, new_list)
             return True
         elif self.role_type == 2:
-            # # 将记录列表写入文本文件
-            # with open(f'test_old_new_list_{self.uniqueName}.txt', 'a') as file:
-            #     # 使用json.dumps将列表转换为字符串格式，便于阅读
-            #     file.write(f'{datetime.datetime.now()}\n')
-            #     file.write("old:\n")
-            #     file.write(json.dumps(old_list, indent=4))
-            #     file.write("new:\n")
-            #     file.write(json.dumps(new_list, indent=4))
-            self.analysis_okx_personal(old_list, new_list)
+            # self.analysis_okx_personal(old_list, new_list)
+            self.analysis_okx_personal_1(old_list, new_list)
 
     def analysis_okx_follow(self, old_list, new_list):
         # 如果没有交易数据，则直接返回
@@ -347,6 +345,136 @@ class Spider(threading.Thread):
                 conn.lpush(settings.TRADE_TASK_NAME, json.dumps(change))
                 time.sleep(0.5)
 
+    def analysis_okx_personal_1(self, old_list, new_list):
+        # 查找新增的交易数据
+        old_set = set((i['instId'], i['mgnMode']) for i in old_list)
+        # 使用(instId, mgnMode)对来判断新列表中的新增项
+        added_items = list(filter(lambda x: (x['instId'], x['mgnMode']) not in old_set, new_list))
+
+        if added_items:
+            for item in added_items:
+                item['order_type'] = 'open'
+                item['task_id'] = self.task_id
+                item['trader_platform'] = self.trader_platform
+                item['follow_type'] = self.follow_type
+                item['uniqueName'] = self.uniqueName
+                item['role_type'] = self.role_type
+                item['reduce_ratio'] = self.reduce_ratio
+                item['sums'] = self.sums
+                item['ratio'] = self.ratio
+                item['lever_set'] = self.lever_set
+                item['first_order_set'] = self.first_order_set
+                item['api_id'] = self.api_id
+                item['user_id'] = self.user_id
+                item['fast_mode'] = self.fast_mode
+                item['investment'] = self.investment
+                item['trade_trigger_mode'] = self.trade_trigger_mode
+                item['sl_trigger_px'] = self.sl_trigger_px
+                item['tp_trigger_px'] = self.tp_trigger_px
+                item = self.transform(item)
+
+                item.pop('posSpace')
+                item.pop('pos')
+                # thread_logger.success(
+                #     f"交易员{self.uniqueName}进行了开仓操作，品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}")
+                self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
+                                     f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}")
+                # 写入Redis队列
+                conn = redis.Redis(**settings.REDIS_PARAMS)
+                conn.lpush(settings.TRADE_TASK_NAME, json.dumps(item))
+                time.sleep(0.5)
+
+        # 查找减少的交易数据
+        removed_items = [i for i in old_list if (i['instId'], i['mgnMode'])not in set(map(lambda x: (x['instId'], x['mgnMode']), new_list))]
+        # logger.debug('removed_items:',removed_items)
+        if removed_items:
+            for item in removed_items:
+                item['order_type'] = 'close'
+                item['task_id'] = self.task_id
+                item['trader_platform'] = self.trader_platform
+                item['follow_type'] = self.follow_type
+                item['uniqueName'] = self.uniqueName
+                item['role_type'] = self.role_type
+                item['reduce_ratio'] = self.reduce_ratio
+                item['sums'] = self.sums
+                item['ratio'] = self.ratio
+                item['lever_set'] = self.lever_set
+                item['first_order_set'] = self.first_order_set
+                item['api_id'] = self.api_id
+                item['user_id'] = self.user_id
+                item['fast_mode'] = self.fast_mode
+                item['investment'] = self.investment
+                item['trade_trigger_mode'] = self.trade_trigger_mode
+                item['sl_trigger_px'] = self.sl_trigger_px
+                item['tp_trigger_px'] = self.tp_trigger_px
+                item = self.transform(item)
+
+                item.pop('posSpace')
+                item.pop('pos')
+                # thread_logger.success(
+                #     f"交易员{self.uniqueName}进行了平仓操作，品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}")
+                self.log_to_database("success", f"交易员{self.uniqueName}进行了平仓操作",
+                                     f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}")
+                # 写入Redis队列
+                conn = redis.Redis(**settings.REDIS_PARAMS)
+                conn.lpush(settings.TRADE_TASK_NAME, json.dumps(item))
+                time.sleep(0.5)
+
+        # 查找值变化的数据
+        changed_items = []
+        for old_item, new_item in zip(old_list, new_list):
+            # 检查instId, mgnMode, posSide是否相同，并且availSubPos字段不存在于原始代码中，因此忽略这个条件
+            if old_item["instId"] == new_item["instId"] and old_item["mgnMode"] == new_item["mgnMode"] and old_item[
+                "posSide"] == new_item["posSide"]:
+                old_posSpace = old_item.get('posSpace', 0)
+                new_posSpace = new_item.get('posSpace', 0)
+                # 计算posSpace的变动比例
+
+                if old_posSpace != 0:
+                    change_percentage = new_posSpace - old_posSpace
+                else:
+                    change_percentage = 0
+
+                # 检查变动是否超过10%
+                if abs(change_percentage) > 0.3:
+                    print("原始仓位old-new-差值", old_posSpace, new_posSpace, change_percentage)
+                    order_type = 'open' if change_percentage > 0 else 'reduce'
+                    change = {
+                        'order_type': order_type,
+                        'instId': old_item['instId'],
+                        'mgnMode': old_item['mgnMode'],
+                        'posSide': old_item['posSide'],
+                        'lever': old_item['lever'],
+                        'task_id': self.task_id,
+                        'trader_platform': self.trader_platform,
+                        'follow_type': self.follow_type,
+                        'uniqueName': self.uniqueName,
+                        'role_type': self.role_type,
+                        'reduce_ratio': self.reduce_ratio,
+                        'sums': self.sums,
+                        'ratio': self.ratio,
+                        'lever_set': self.lever_set,
+                        'first_order_set': self.first_order_set,
+                        'api_id': self.api_id,
+                        'user_id': self.user_id,
+                        'fast_mode': self.fast_mode,
+                        'investment': self.investment,
+                        'trade_trigger_mode': self.trade_trigger_mode,
+                        'sl_trigger_px': self.sl_trigger_px,
+                        'tp_trigger_px': self.tp_trigger_px,
+                        'posSpace': new_posSpace,
+                    }
+                    self.log_to_database("success", f"交易员{self.uniqueName}进行了调仓操作",
+                                     f"品种：{old_item['instId']}，原仓位：{round(old_posSpace * 100, 2)}%，现仓位：{round(new_posSpace * 100, 2)}%")
+                    change = self.transform(change)
+                    change.pop('posSpace')
+                    changed_items.append(change)
+
+                    # 写入Redis队列
+                    conn = redis.Redis(**settings.REDIS_PARAMS)
+                    conn.lpush(settings.TRADE_TASK_NAME, json.dumps(change))
+                    time.sleep(0.5)
+
     def analysis_okx_personal(self, old_list, new_list):
         def log_trade_action(action, item):
             """ 用于记录交易行为到数据库的辅助函数 """
@@ -462,4 +590,3 @@ class Spider(threading.Thread):
                                 print(f"【{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}1-平仓】任务id:{self.task_id}，平仓：{item['instId']}，{item['mgnMode']}")
                     complete_task_data(item)
                 self.old_position = self.new_position
-
