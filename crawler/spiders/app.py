@@ -431,13 +431,13 @@ class Spider(threading.Thread):
                 # 计算posSpace的变动比例
 
                 if old_posSpace != 0:
-                    change_percentage = new_posSpace - old_posSpace
+                    change_percentage = (new_posSpace - old_posSpace) / old_posSpace
                 else:
                     change_percentage = 0
 
                 # 检查变动是否超过10%
-                if abs(change_percentage) > 0.3:
-                    print("原始仓位old-new-差值", old_posSpace, new_posSpace, change_percentage)
+                if abs(change_percentage) > 0.02:
+                    print("原始仓位old-new-差值", old_posSpace, new_posSpace, change_percentage, old_item['lever'])
                     order_type = 'open' if change_percentage > 0 else 'reduce'
                     change = {
                         'order_type': order_type,

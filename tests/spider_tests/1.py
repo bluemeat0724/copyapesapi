@@ -265,19 +265,19 @@ def get_sl_trigger_px(obj, instId, posSide, lever, sl_trigger_px) -> str:
     # 根据 开仓价格 & 杠杆 & 方向 获取止损挂单价
     # 开空
     if posSide == "short":
-        # 止损价格 = 开仓价格 * (1 - 止损未亏损比例)
-        _sl_price = (1 + sl_trigger_px) * open_price
-        # 平仓止损挂单价格 = 开仓价格 + （（开仓价格 - 止损价格） / 杠杆倍数）
-        # sl_trigger_px_price = open_price + (open_price - ((open_price - _sl_price) / lever))
+        # 止损比例转化为币价涨幅比例
+        _r = sl_trigger_px / lever
+        # 止损挂单价格 = 开仓价格 *（ 1+ _r ）
+        sl_trigger_px_price = open_price * (1 + _r)
     # 开多
     elif posSide == "long":
-        # 止损价格 = 开仓价格 * (1 - 止损未亏损比例)
-        _sl_price = (1 - sl_trigger_px) * open_price
-        # 平仓止损挂单价格 = 开仓价格 - （（开仓价格 - 止损价格） / 杠杆倍数）
-        # sl_trigger_px_price = open_price - (open_price - ((open_price - _sl_price) / lever))
+        # 止损比例转化为币价涨幅比例
+        _r = sl_trigger_px / lever
+        # 止损挂单价格 = 开仓价格 *（ 1 - _r ）
+        sl_trigger_px_price = open_price * (1 - _r)
     else:
         raise ValueError("posSide参数错误")
-    return str(_sl_price)
+    return str(sl_trigger_px_price)
 
 
 def get_tp_trigger_px(obj, instId, posSide, lever, tp_trigger_px) -> str:
@@ -297,29 +297,29 @@ def get_tp_trigger_px(obj, instId, posSide, lever, tp_trigger_px) -> str:
     # 根据 开仓价格 & 杠杆 & 方向 获取止损挂单价
     # 开多
     if posSide == "long":
-        # 止盈价格 = 开仓价格 * (1 - 止损未亏损比例)
-        _tp_price = (1 + tp_trigger_px) * open_price
-        # 平仓止损挂单价格 = 开仓价格 + （（开仓价格 - 止盈价格 / 杠杆倍数）
-        # tp_trigger_px_price = open_price + (open_price - ((open_price - _tp_price) / lever))
+        # 止盈比例转化为币价涨幅比例
+        _r = tp_trigger_px / lever
+        # 止盈挂单价格 = 开仓价格 *（ 1 + _r ）
+        tp_trigger_px_price = open_price * (1 + _r)
     # 开空
     elif posSide == "short":
-        # 止损价格 = 开仓价格 * (1 - 止损未亏损比例)
-        _tp_price = (1 - tp_trigger_px) * open_price
-        # 平仓止损挂单价格 = 开仓价格 - （（开仓价格 - 止损价格） / 杠杆倍数）
-        # tp_trigger_px_price = open_price - (open_price - ((open_price - _tp_price) / lever))
+        # 止盈比例转化为币价涨幅比例
+        _r = tp_trigger_px / lever
+        # 止盈挂单价格 = 开仓价格 *（ 1 - _r ）
+        tp_trigger_px_price = open_price * (1 - _r)
     else:
         raise ValueError("posSide参数错误")
-    return str(_tp_price)
+    return str(tp_trigger_px_price)
 
 
 if sl_trigger_px:
     a = get_sl_trigger_px(obj, params.get('instId'), params.get('posSide'), params.get('lever'), sl_trigger_px)
     params.update({"slTriggerPx": a})
-    params.update({"slOrdPx": str(float(a)-1)})
+    params.update({"slOrdPx": a})
 if tp_trigger_px:
     b = get_tp_trigger_px(obj,params.get('instId'),params.get('posSide'),params.get('lever'),tp_trigger_px)
     params.update({"tpTriggerPx": b})
-    params.update({"tpOrdPx": str(float(b)-1)})
+    params.update({"tpOrdPx": a})
 
 # result = obj.trade.open_market(**params)
 # result = obj.trade.close_market(instId="BTC-USDT-SWAP", posSide='long', quantityCT='all',tdMode='cross')
@@ -373,9 +373,10 @@ def close_market_2nd(obj, params):
 # close_market_2nd(obj, params)
 
 
-res = {'instType': 'SWAP', 'instId': 'BTC-USDT-SWAP', 'state': None, 'ordId': None, 'meta': {}, 'request_param': None,
-       'func_param': {'instId': 'BTC-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'short', 'quantityCT': 'all', 'meta': {}, 'timeout': 60, 'delay': 0.2, 'cancel': True, 'clOrdId': '', 'tag': '', 'newThread': False, 'callback': None, 'errorback': None},
-       'get_order_result': None, 'set_order_result': None, 'error_result': {'code': 'FUNC_EXCEPTION', 'data': {}, 'msg': 'Traceback (most recent call last):\n  File "/crawler/myokx/close.py", line 513, in inner_func\n    error_result = main_func(**main_data)\n  File "/crawler/myokx/close.py", line 422, in main_func\n    availPos = positionMap_result[\'data\'][tdMode][posSide][instId][\'availPos\']\nKeyError: \'BTC-USDT-SWAP\'\n'}, 'cancel_result': None}
-if res.get('set_order_result', {}) is not None:
-    if res.get('set_order_result', {}).get('data', {}).get('sCode') != '0':
-        print(111)
+# res = {'instType': 'SWAP', 'instId': 'BTC-USDT-SWAP', 'state': None, 'ordId': None, 'meta': {}, 'request_param': None,
+#        'func_param': {'instId': 'BTC-USDT-SWAP', 'tdMode': 'cross', 'posSide': 'short', 'quantityCT': 'all', 'meta': {}, 'timeout': 60, 'delay': 0.2, 'cancel': True, 'clOrdId': '', 'tag': '', 'newThread': False, 'callback': None, 'errorback': None},
+#        'get_order_result': None, 'set_order_result': None, 'error_result': {'code': 'FUNC_EXCEPTION', 'data': {}, 'msg': 'Traceback (most recent call last):\n  File "/crawler/myokx/close.py", line 513, in inner_func\n    error_result = main_func(**main_data)\n  File "/crawler/myokx/close.py", line 422, in main_func\n    availPos = positionMap_result[\'data\'][tdMode][posSide][instId][\'availPos\']\nKeyError: \'BTC-USDT-SWAP\'\n'}, 'cancel_result': None}
+# if res.get('set_order_result', {}) is not None:
+#     if res.get('set_order_result', {}).get('data', {}).get('sCode') != '0':
+#         print(111)
+

@@ -23,8 +23,8 @@ def spider(uniqueName):
     summary_list_new = []
     try:
         position_url = f'https://www.okx.com/priapi/v5/ecotrade/public/positions-v2?limit=10&uniqueName={uniqueName}&t={now}'
-        position_list = requests.get(position_url, headers=get_header(), timeout=30).json().get('data', list())[0].get(
-            'posData', list())
+        position_list = requests.get(position_url, headers=get_header(), timeout=30).json().get('data', [{}])[0].get(
+            'posData', [])
         if not position_list:
             return summary_list_new
 
@@ -49,7 +49,7 @@ def spider(uniqueName):
         return summary_list_new
     except Exception as e:
         print('personal_spider',datetime.now())
-        print(e)
+        print('1',e)
         pass
 
 
