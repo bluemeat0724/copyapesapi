@@ -708,7 +708,7 @@ class Trader(threading.Thread):
         # 获取分好的部分
         split_parts = split_into_parts(availPos)
         # 将最后一个部分替换为 'all'
-        split_parts[-1] = 'all'
+        split_parts[0] = 'all'
         market_data = []
         for i in split_parts:
             market_data.append(
