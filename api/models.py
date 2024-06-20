@@ -142,7 +142,13 @@ class TaskInfo(DeletedModel):
     sl_trigger_px = models.FloatField(verbose_name="止损触发比例", default=0, null=True, blank=True)
     tp_trigger_px = models.FloatField(verbose_name="止盈触发比例", default=0, null=True, blank=True)
 
-    uplRatio = models.FloatField(verbose_name="交易员未实现收益率", default=0)
+    """开仓模式"""
+    first_open_type_choice = (
+        (1, "当前市价"),
+        (2, "区间限价"),
+    )
+    first_open_type = models.IntegerField(verbose_name="开仓模式", choices=first_open_type_choice, default=1)
+    uplRatio = models.FloatField(verbose_name="交易员当前收益率", default=0)
 
 
 class IpInfo(models.Model):

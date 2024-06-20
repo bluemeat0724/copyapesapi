@@ -7953,3 +7953,170 @@ INFO 2024-06-17 02:43:19,128 basehttp 39238 123145489453056 - Broken pipe from (
 
 INFO 2024-06-17 02:43:19,944 basehttp 39238 123145455874048 "GET /api/ip/?token=2ef27664-08ff-495a-9f5b-68fa2845cf0a HTTP/1.1" 200 242
 INFO 2024-06-17 02:43:21,418 basehttp 39238 123145472663552 "GET /api/taskadd/?token=2ef27664-08ff-495a-9f5b-68fa2845cf0a HTTP/1.1" 200 141447
+INFO 2024-06-20 22:55:33,810 autoreload 56312 4573439488 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2024-06-20 22:55:35,496 autoreload 56571 4364154368 Watching for file changes with StatReloader
+INFO 2024-06-20 23:28:52,552 basehttp 56571 123145570885632 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-20 23:28:52,559 basehttp 56571 123145587675136 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 02:06:11,606 autoreload 56571 4364154368 /Users/lichaoyuan/Desktop/copytrade/api/serializers/task.py changed, reloading.
+INFO 2024-06-21 02:06:12,854 autoreload 91432 4503344640 Watching for file changes with StatReloader
+INFO 2024-06-21 02:12:15,428 basehttp 91432 123145371389952 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 02:12:15,428 basehttp 91432 123145354600448 "GET /api/ip/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 242
+INFO 2024-06-21 02:12:15,428 basehttp 91432 123145388179456 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 02:12:19,053 basehttp 91432 123145388179456 "GET /api/ip/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 242
+INFO 2024-06-21 02:14:30,154 basehttp 91432 123145388179456 "GET /api/ip/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 242
+INFO 2024-06-21 02:14:30,154 basehttp 91432 123145354600448 "GET /api/quotainfo/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 147
+INFO 2024-06-21 02:16:11,178 basehttp 91432 123145354600448 "GET /api/ip/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 242
+INFO 2024-06-21 02:20:42,427 basehttp 91432 123145354600448 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 02:20:42,438 basehttp 91432 123145371389952 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 02:22:16,207 basehttp 91432 123145371389952 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 02:22:16,219 basehttp 91432 123145354600448 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 02:26:06,771 basehttp 91432 123145354600448 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 02:26:06,777 basehttp 91432 123145371389952 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 02:29:26,169 autoreload 91432 4503344640 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2024-06-21 02:29:27,137 autoreload 95867 4491589120 Watching for file changes with StatReloader
+INFO 2024-06-21 02:39:32,124 autoreload 95867 4491589120 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2024-06-21 02:39:32,998 autoreload 97725 4547044864 Watching for file changes with StatReloader
+INFO 2024-06-21 02:43:57,062 autoreload 97725 4547044864 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2024-06-21 02:43:57,874 autoreload 98548 4467422720 Watching for file changes with StatReloader
+INFO 2024-06-21 02:48:04,009 basehttp 98548 123145515986944 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 02:48:04,018 basehttp 98548 123145532776448 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 02:52:28,748 basehttp 98548 123145532776448 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 02:52:28,753 basehttp 98548 123145515986944 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 02:53:13,790 basehttp 98548 123145515986944 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 02:53:13,798 basehttp 98548 123145532776448 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 02:55:44,720 basehttp 98548 123145515986944 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 02:55:44,721 basehttp 98548 123145532776448 "GET /api/ip/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 242
+INFO 2024-06-21 02:55:44,727 basehttp 98548 123145549565952 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 02:57:13,098 basehttp 98548 123145549565952 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 02:57:13,105 basehttp 98548 123145532776448 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 02:57:23,297 basehttp 98548 123145549565952 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 02:57:23,298 basehttp 98548 123145532776448 "GET /api/ip/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 242
+INFO 2024-06-21 02:57:23,301 basehttp 98548 123145515986944 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 03:02:16,712 basehttp 98548 123145515986944 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 03:02:16,717 basehttp 98548 123145532776448 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 03:10:35,145 basehttp 98548 123145515986944 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 03:10:35,150 basehttp 98548 123145532776448 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 03:10:37,199 basehttp 98548 123145515986944 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 03:10:37,208 basehttp 98548 123145549565952 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 03:10:37,209 basehttp 98548 123145532776448 "GET /api/ip/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 242
+ERROR 2024-06-21 03:11:03,644 exceptions 98548 123145532776448 [<api.views.task.TaskAddView object at 0x7fbde87a6ac0>] (1054, "Unknown column 'api_taskinfo.first_order_type' in 'field list'")
+ERROR 2024-06-21 03:11:03,644 log 98548 123145532776448 Insufficient Storage: /api/taskadd/
+ERROR 2024-06-21 03:11:03,645 basehttp 98548 123145532776448 "GET /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 507 35
+INFO 2024-06-21 03:11:04,286 basehttp 98548 123145532776448 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 03:11:04,293 basehttp 98548 123145549565952 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 03:14:57,390 basehttp 98548 123145549565952 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 03:14:57,397 basehttp 98548 123145532776448 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 03:32:09,342 autoreload 98548 4467422720 /Users/lichaoyuan/Desktop/copytrade/api/models.py changed, reloading.
+INFO 2024-06-21 03:32:10,324 autoreload 7919 4752946688 Watching for file changes with StatReloader
+INFO 2024-06-21 03:38:06,539 basehttp 7919 123145441714176 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 03:38:06,540 basehttp 7919 123145458503680 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 03:38:57,685 basehttp 7919 123145458503680 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 03:38:57,690 basehttp 7919 123145441714176 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 03:40:02,779 basehttp 7919 123145441714176 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 03:40:02,786 basehttp 7919 123145458503680 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 03:41:21,735 basehttp 7919 123145458503680 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 03:41:21,740 basehttp 7919 123145441714176 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 03:43:36,492 basehttp 7919 123145441714176 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 03:43:36,497 basehttp 7919 123145458503680 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 03:45:05,229 basehttp 7919 123145458503680 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 03:45:05,240 basehttp 7919 123145441714176 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 03:46:14,298 basehttp 7919 123145458503680 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 03:46:14,301 basehttp 7919 123145441714176 "GET /api/ip/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 242
+INFO 2024-06-21 03:46:14,306 basehttp 7919 123145475293184 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+ERROR 2024-06-21 03:48:27,724 exceptions 7919 123145475293184 [<api.views.task.TaskAddView object at 0x7fe4f8647520>] (1054, "Unknown column 'api_taskinfo.first_order_type' in 'field list'")
+ERROR 2024-06-21 03:48:27,725 log 7919 123145475293184 Insufficient Storage: /api/taskadd/
+ERROR 2024-06-21 03:48:27,726 basehttp 7919 123145475293184 "GET /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 507 35
+INFO 2024-06-21 03:48:28,280 basehttp 7919 123145475293184 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 03:48:28,285 basehttp 7919 123145441714176 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+ERROR 2024-06-21 03:48:57,463 exceptions 7919 123145441714176 [<api.views.task.TaskAddView object at 0x7fe5285411f0>] (1054, "Unknown column 'api_taskinfo.first_order_type' in 'field list'")
+ERROR 2024-06-21 03:48:57,464 log 7919 123145441714176 Insufficient Storage: /api/taskadd/
+ERROR 2024-06-21 03:48:57,464 basehttp 7919 123145441714176 "GET /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 507 35
+INFO 2024-06-21 03:48:57,990 basehttp 7919 123145441714176 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 03:48:57,997 basehttp 7919 123145475293184 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 03:49:01,970 basehttp 7919 123145441714176 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 03:49:01,972 basehttp 7919 123145475293184 "GET /api/ip/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 242
+INFO 2024-06-21 03:49:01,975 basehttp 7919 123145458503680 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 03:57:27,927 autoreload 7919 4752946688 /Users/lichaoyuan/Desktop/copytrade/api/serializers/task.py changed, reloading.
+INFO 2024-06-21 03:57:28,931 autoreload 12584 4685030912 Watching for file changes with StatReloader
+INFO 2024-06-21 04:00:21,584 basehttp 12584 123145425715200 "OPTIONS /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 0
+INFO 2024-06-21 04:00:21,610 basehttp 12584 123145425715200 "POST /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 462
+INFO 2024-06-21 04:00:21,634 basehttp 12584 123145425715200 "OPTIONS /api/apiadd/30/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 0
+INFO 2024-06-21 04:00:21,677 basehttp 12584 123145425715200 "PATCH /api/apiadd/30/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 241
+INFO 2024-06-21 04:00:22,280 basehttp 12584 123145425715200 "GET /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 154236
+INFO 2024-06-21 04:00:26,376 basehttp 12584 123145425715200 "OPTIONS /api/taskadd/423/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 0
+INFO 2024-06-21 04:00:26,392 basehttp 12584 123145425715200 "PATCH /api/taskadd/423/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 463
+INFO 2024-06-21 04:00:26,943 basehttp 12584 123145425715200 "GET /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 154236
+INFO 2024-06-21 04:00:30,748 basehttp 12584 123145425715200 "GET /api/traderdetial/424/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 161
+INFO 2024-06-21 04:00:30,760 basehttp 12584 123145442504704 "GET /api/tradeorder/424/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 20
+INFO 2024-06-21 04:00:30,760 basehttp 12584 123145459294208 "GET /api/taskadd/424/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 444
+INFO 2024-06-21 04:00:36,753 basehttp 12584 123145459294208 "GET /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 154236
+INFO 2024-06-21 04:01:14,200 basehttp 12584 123145459294208 "OPTIONS /api/taskadd/424/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 0
+INFO 2024-06-21 04:01:14,215 basehttp 12584 123145459294208 "PATCH /api/taskadd/424/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 444
+INFO 2024-06-21 04:01:14,694 basehttp 12584 123145459294208 "GET /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 154236
+INFO 2024-06-21 04:01:15,847 basehttp 12584 123145459294208 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 04:01:15,854 basehttp 12584 123145442504704 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 04:01:41,832 basehttp 12584 123145442504704 "POST /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 462
+INFO 2024-06-21 04:01:41,890 basehttp 12584 123145442504704 "OPTIONS /api/apiadd/35/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 0
+INFO 2024-06-21 04:01:41,916 basehttp 12584 123145442504704 "PATCH /api/apiadd/35/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 267
+INFO 2024-06-21 04:01:42,506 basehttp 12584 123145459294208 "GET /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 154681
+INFO 2024-06-21 04:01:52,221 basehttp 12584 123145459294208 "OPTIONS /api/taskadd/425/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 0
+INFO 2024-06-21 04:01:52,239 basehttp 12584 123145459294208 "PATCH /api/taskadd/425/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 444
+INFO 2024-06-21 04:01:52,740 basehttp 12584 123145459294208 "GET /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 154681
+INFO 2024-06-21 04:03:45,027 basehttp 12584 123145459294208 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 04:03:45,032 basehttp 12584 123145442504704 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 04:04:58,796 basehttp 12584 123145442504704 "OPTIONS /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 0
+INFO 2024-06-21 04:04:58,812 basehttp 12584 123145442504704 "POST /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 462
+INFO 2024-06-21 04:04:58,886 basehttp 12584 123145442504704 "OPTIONS /api/apiadd/35/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 0
+INFO 2024-06-21 04:04:58,913 basehttp 12584 123145442504704 "PATCH /api/apiadd/35/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 267
+INFO 2024-06-21 04:04:59,468 basehttp 12584 123145459294208 "GET /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 155126
+INFO 2024-06-21 04:08:09,341 basehttp 12584 123145459294208 "OPTIONS /api/taskadd/426/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 0
+INFO 2024-06-21 04:08:09,360 basehttp 12584 123145459294208 "PATCH /api/taskadd/426/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 444
+INFO 2024-06-21 04:08:10,365 basehttp 12584 123145459294208 "GET /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 155126
+INFO 2024-06-21 04:08:13,564 basehttp 12584 123145459294208 "GET /api/ip/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 242
+INFO 2024-06-21 04:08:14,201 basehttp 12584 123145442504704 "GET /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 155126
+INFO 2024-06-21 04:08:14,930 basehttp 12584 123145442504704 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 04:08:14,935 basehttp 12584 123145459294208 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 04:08:27,715 basehttp 12584 123145459294208 "POST /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 463
+INFO 2024-06-21 04:08:27,800 basehttp 12584 123145459294208 "PATCH /api/apiadd/35/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 267
+INFO 2024-06-21 04:08:28,329 basehttp 12584 123145442504704 "GET /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 155572
+INFO 2024-06-21 04:08:47,315 basehttp 12584 123145442504704 "OPTIONS /api/taskadd/427/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 0
+INFO 2024-06-21 04:08:47,335 basehttp 12584 123145442504704 "PATCH /api/taskadd/427/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 445
+INFO 2024-06-21 04:08:47,922 basehttp 12584 123145442504704 "GET /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 155572
+INFO 2024-06-21 04:08:49,727 basehttp 12584 123145442504704 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 04:08:49,731 basehttp 12584 123145459294208 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 04:11:12,744 basehttp 12584 123145442504704 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 04:11:12,744 basehttp 12584 123145459294208 "GET /api/ip/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 242
+INFO 2024-06-21 04:11:12,749 basehttp 12584 123145425715200 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 04:11:27,670 basehttp 12584 123145425715200 "POST /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 463
+INFO 2024-06-21 04:11:27,689 basehttp 12584 123145425715200 "PATCH /api/apiadd/35/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 267
+INFO 2024-06-21 04:11:28,303 basehttp 12584 123145425715200 "GET /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 156018
+INFO 2024-06-21 04:11:40,757 basehttp 12584 123145425715200 "OPTIONS /api/taskadd/428/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 0
+INFO 2024-06-21 04:11:40,774 basehttp 12584 123145425715200 "PATCH /api/taskadd/428/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 445
+INFO 2024-06-21 04:11:41,337 basehttp 12584 123145425715200 "GET /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 156018
+INFO 2024-06-21 04:11:45,677 basehttp 12584 123145425715200 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 04:11:45,682 basehttp 12584 123145459294208 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+INFO 2024-06-21 04:11:57,589 basehttp 12584 123145459294208 "OPTIONS /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 0
+INFO 2024-06-21 04:11:57,604 basehttp 12584 123145459294208 "POST /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 463
+INFO 2024-06-21 04:11:57,668 basehttp 12584 123145459294208 "OPTIONS /api/apiadd/35/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 0
+INFO 2024-06-21 04:11:57,698 basehttp 12584 123145459294208 "PATCH /api/apiadd/35/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 267
+INFO 2024-06-21 04:11:58,365 basehttp 12584 123145425715200 "GET /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 156464
+INFO 2024-06-21 04:14:15,910 autoreload 12584 4685030912 /Users/lichaoyuan/Desktop/copytrade/api/serializers/task.py changed, reloading.
+INFO 2024-06-21 04:14:16,728 autoreload 15643 4632856064 Watching for file changes with StatReloader
+INFO 2024-06-21 04:14:33,095 basehttp 15643 123145476096000 "GET /api/ip/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 242
+ERROR 2024-06-21 04:14:33,098 exceptions 15643 123145492885504 [<api.views.task.TaskAddView object at 0x7fb4d0789ca0>] (1054, "Unknown column 'api_taskinfo.first_open_type' in 'field list'")
+ERROR 2024-06-21 04:14:33,099 log 15643 123145492885504 Insufficient Storage: /api/taskadd/
+ERROR 2024-06-21 04:14:33,100 basehttp 15643 123145492885504 "GET /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 507 35
+INFO 2024-06-21 04:14:41,119 basehttp 15643 123145492885504 "GET /api/platform/ HTTP/1.1" 200 119
+INFO 2024-06-21 04:14:41,124 basehttp 15643 123145476096000 "GET /api/apiadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 3146
+ERROR 2024-06-21 04:14:55,927 exceptions 15643 123145476096000 [<api.views.task.TaskAddView object at 0x7fb4e0af0ca0>] (1054, "Unknown column 'api_taskinfo.first_open_type' in 'field list'")
+ERROR 2024-06-21 04:14:55,928 log 15643 123145476096000 Insufficient Storage: /api/taskadd/
+ERROR 2024-06-21 04:14:55,928 basehttp 15643 123145476096000 "POST /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 507 35
+INFO 2024-06-21 04:15:31,592 basehttp 15643 123145476096000 "POST /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 462
+INFO 2024-06-21 04:15:31,687 basehttp 15643 123145476096000 "PATCH /api/apiadd/30/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 241
+INFO 2024-06-21 04:15:32,150 basehttp 15643 123145492885504 "GET /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 156572
+INFO 2024-06-21 04:15:42,314 basehttp 15643 123145492885504 "OPTIONS /api/taskadd/430/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 0
+INFO 2024-06-21 04:15:42,333 basehttp 15643 123145492885504 "PATCH /api/taskadd/430/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 444
+INFO 2024-06-21 04:15:42,838 basehttp 15643 123145492885504 "GET /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 156572
+INFO 2024-06-21 04:15:44,256 basehttp 15643 123145492885504 "OPTIONS /api/taskadd/429/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 0
+INFO 2024-06-21 04:15:44,274 basehttp 15643 123145492885504 "PATCH /api/taskadd/429/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 444
+INFO 2024-06-21 04:15:44,771 basehttp 15643 123145492885504 "GET /api/taskadd/?token=bc28c9ec-37ee-4f10-ad0c-5d4f8cece791 HTTP/1.1" 200 156572
