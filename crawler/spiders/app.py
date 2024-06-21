@@ -261,6 +261,7 @@ class Spider(threading.Thread):
             item['investment'] = self.investment
             item['trade_trigger_mode'] = self.trade_trigger_mode
             item['sl_trigger_px'] = self.sl_trigger_px
+            item['tp_trigger_px'] = self.tp_trigger_px
             item = self.transform(item)
             # 判断是否符合要求, 如何符合则开单，不符合则跳过
             res = self.check_open_type_and_upl_ratio(self.first_open_type, self.uplRatio, item['upl_ratio'])

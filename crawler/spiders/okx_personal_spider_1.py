@@ -1,6 +1,6 @@
 import sys
 
-sys.path.append("D:\\my_source\\apes\\copyapesapi\\")
+sys.path.append("/Users/lichaoyuan/Desktop/copyapes/copyapesapi")
 import requests
 import time
 from datetime import datetime, timedelta, timezone

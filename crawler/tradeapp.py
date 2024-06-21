@@ -1,3 +1,5 @@
+import sys
+sys.path.append("/Users/lichaoyuan/Desktop/copyapes/copyapesapi")
 from crawler.trade.app import run
 
 

@@ -16,7 +16,7 @@ MYSQL_CONN_PARAMS = {
     'port': 3306,
     'charset': 'utf8'
 }
-
+HOST_IP = '127.0.0.1'
 # SOCKS5代理服务器配置
 # PROXY_IP = '14.29.122.97'
 PROXY_IP = '14.29.122.97'

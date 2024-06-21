@@ -1,5 +1,5 @@
 import uuid
-from crawler.settingsprod import HOST_IP
+from crawler.settingsdev import HOST_IP
 from crawler.utils.db import Connect
 from crawler.myokx import app
 import threading
