@@ -1,18 +1,23 @@
-import requests
-import time
-from datetime import datetime
-from crawler.utils.get_proxies import get_proxies
+import sys
+sys.path.append("D:\\my_source\\apes\\copyapesapi\\")
 from crawler.utils.get_header import get_header
+from crawler.utils.get_proxies import get_proxies
+from datetime import datetime
+import time
+import requests
+
 
 now = int(time.time()) * 1000
 
 
 def spider(uniqueName, follow_type, task_id, trader_platform, sums, ratio, lever_set, first_order_set, api_id, user_id):
     summary_list_new = []
-    url = f'https://www.okx.com/priapi/v5/ecotrade/public/position-summary?t={now}&uniqueName={uniqueName}&instType=SWAP'
+    url = f"https://www.okx.com/priapi/v5/ecotrade/public/position-summary?t={now}&uniqueName={uniqueName}&instType=SWAP"
+    print(url)
     try:
         #  proxies=get_proxies()[0],
-        data_list = requests.get(url, headers=get_header(), proxies=get_proxies()[0], timeout=30).json().get('data', list())
+        data_list = requests.get(url, headers=get_header(), timeout=30).json().get('data', list())
+        # data_list = requests.get(url, headers=get_header(), proxies=get_proxies()[0], timeout=30).json().get('data', list())
         if not data_list:
             return summary_list_new
         # 数据清洗
@@ -27,6 +32,7 @@ def spider(uniqueName, follow_type, task_id, trader_platform, sums, ratio, lever
             data_clear['lever'] = data.get('lever')
             data_clear['openTime'] = data.get('openTime')
             data_clear['openAvgPx'] = data.get('openAvgPx')
+            data_clear['uplRatio'] = float(data.get('pnlRatio'))
 
             # 添加原始数据
             data_clear['task_id'] = task_id
@@ -48,4 +54,4 @@ def spider(uniqueName, follow_type, task_id, trader_platform, sums, ratio, lever
 
 
 if __name__ == '__main__':
-    print(spider('67A85F8BC1B67E17', 1, 1, 1, 1, 1, 1, 1, 1))
+    print(spider('BFF709C3E154E021', 1, 1, 1, 1, 1, 1, 1, 1, 1))
