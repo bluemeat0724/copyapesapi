@@ -1,5 +1,5 @@
 import uuid
-from crawler.settingsdev import HOST_IP
+from crawler.settingsprod import HOST_IP
 from crawler.utils.db import Connect
 from crawler.myokx import app
 import threading
@@ -295,6 +295,8 @@ class Trader(threading.Thread):
 
             if res.get('code') == '0' and res.get('data')[0].get("clOrdId") == clOrdId:
                 self.log_to_database("success", "进行平仓操作", f"品种：{self.instId}，方向：{self.posSide}")
+            elif res.get('code') == '51023':
+                self.log_to_database("success", f"进行平仓操作", f"品种:{self.instId}仓位不存在")
             else:
                 # 平仓出错，拆分平仓
                 print(f'任务：{self.task_id}平仓出错，拆分平仓！')
@@ -303,7 +305,7 @@ class Trader(threading.Thread):
                     self.run_close_market_concurrently(market_data)
 
             # self.thread_logger.success(f'进行平仓操作，品种:{self.instId}，方向：{self.posSide}')
-            self.log_to_database("success", f"进行平仓操作", f"品种:{self.instId}，方向：{self.posSide}")
+            # self.log_to_database("success", f"进行平仓操作", f"品种:{self.instId}，方向：{self.posSide}")
             # 更新持仓数据
             # OkxOrderInfo(self.user_id, self.task_id).get_position()
             OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=2)
