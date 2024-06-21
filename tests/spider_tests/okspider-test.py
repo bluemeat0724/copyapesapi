@@ -1,3 +1,6 @@
+import sys
+
+sys.path.append("/Users/yb/my_project/copyapesapi")
 import datetime
 import threading
 import time
