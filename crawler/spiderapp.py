@@ -27,7 +27,8 @@ def keep_spiders_alive():
                 # 重新启动爬虫
                 new_spider = app.Spider(spider.task_id, spider.trader_platform, spider.uniqueName, spider.follow_type, spider.role_type,
                                         spider.reduce_ratio, spider.sums, spider.ratio, spider.lever_set, spider.first_order_set,
-                                        spider.api_id, spider.user_id, spider.leverage, spider.posSide_set, spider.fast_mode, spider.investment, spider.trade_trigger_mode, spider.sl_trigger_px, spider.sl_trigger_px)
+                                        spider.api_id, spider.user_id, spider.leverage, spider.posSide_set, spider.fast_mode, spider.investment, spider.trade_trigger_mode, spider.sl_trigger_px, spider.sl_trigger_px,
+                                        spider.first_open_type, spider.uplRatio)
                 new_spider.start()
                 spiders[task_id] = new_spider
         time.sleep(KEEP_ALIVE_INTERVAL)
@@ -72,12 +73,14 @@ def run():
             trade_trigger_mode = task_data.get('trade_trigger_mode')
             sl_trigger_px = task_data.get('sl_trigger_px')
             tp_trigger_px = task_data.get('tp_trigger_px')
+            first_open_type = task_data.get('first_open_type')
+            uplRatio = task_data.get('uplRatio')
 
             if status == 1:
                 # 开启新爬虫
                 if task_id not in spiders:
                     spider = app.Spider(task_id, trader_platform, uniqueName, follow_type, role_type, reduce_ratio,sums, ratio, lever_set,
-                                        first_order_set, api_id, user_id, leverage, posSide_set, fast_mode, investment, trade_trigger_mode, sl_trigger_px, tp_trigger_px)
+                                        first_order_set, api_id, user_id, leverage, posSide_set, fast_mode, investment, trade_trigger_mode, sl_trigger_px, tp_trigger_px, first_open_type, uplRatio)
                     spider.start()
                     spiders[task_id] = spider
                     print(f"用户：{user_id}的最新跟单任务{task_id}已经开始。")
