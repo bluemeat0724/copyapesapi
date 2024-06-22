@@ -114,6 +114,7 @@ class TaskInfo(DeletedModel):
 
     first_order_choice = (
         (1, "交易员新开订单后跟随"),
+        (2, "跟单后立即复制仓位"),
     )
     first_order_set = models.IntegerField(verbose_name="首单跟单设置", choices=first_order_choice, default=1)
 

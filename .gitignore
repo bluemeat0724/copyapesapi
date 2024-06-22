@@ -43,3 +43,4 @@ local_config.yaml
 www/
 .pyc
 *.json
+data/
