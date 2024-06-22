@@ -241,7 +241,7 @@ class Spider(threading.Thread):
         old_set = set(i for i in old_list)
         # 使用(instId, mgnMode)对来判断新列表中的新增项
         added_items = list(filter(lambda x: x not in old_set, new_list))
-        redis_server = RedisHandler(settings.REDIS_PARAMS)
+        redis_server = RedisHandler(self.role_type, settings.REDIS_PARAMS)
         # 获取redis 队列中的数据
         # 判断待跟单的交易是否满足开仓要求
         for item in new_list:
@@ -426,7 +426,7 @@ class Spider(threading.Thread):
         # 使用(instId, mgnMode)对来判断新列表中的新增项
         added_items = list(filter(lambda x: (x['instId'], x['mgnMode']) not in old_set, new_list))
         # 判断待跟单的交易是否满足开仓要求
-        redis_server = RedisHandler(settings.REDIS_PARAMS)
+        redis_server = RedisHandler(self.role_type, settings.REDIS_PARAMS)
         for item in new_list:
             if redis_server.hget_task(self.task_id, item):
                 item['order_type'] = 'open'
@@ -776,7 +776,8 @@ class Spider(threading.Thread):
 
 
 class RedisHandler:
-    def __init__(self, redis_params):
+    def __init__(self, role_type, redis_params):
+        self.role_type = role_type
         self.conn = redis.Redis(**redis_params)
 
     def hset_task(self, task_id, item):
