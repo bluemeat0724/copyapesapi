@@ -264,10 +264,11 @@ class Spider(threading.Thread):
                 item['trade_trigger_mode'] = self.trade_trigger_mode
                 item['sl_trigger_px'] = self.sl_trigger_px
                 item['tp_trigger_px'] = self.tp_trigger_px
-                item = self.transform(item)
+
                 # 判断是否符合要求, 如何符合则开单，不符合则跳过
                 res = self.check_open_type_and_upl_ratio(self.first_open_type, self.uplRatio, item['upl_ratio'])
                 if res:
+                    item = self.transform(item)
                     # 写入Redis队列
                     self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
                                          f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}, 当前交易员的盈利率为：{item['upl_ratio']}, 符合开仓条件")
@@ -306,10 +307,11 @@ class Spider(threading.Thread):
                 item['trade_trigger_mode'] = self.trade_trigger_mode
                 item['sl_trigger_px'] = self.sl_trigger_px
                 item['tp_trigger_px'] = self.tp_trigger_px
-                item = self.transform(item)
+
                 # 判断是否符合要求, 如何符合则开单，不符合则跳过
                 res = self.check_open_type_and_upl_ratio(self.first_open_type, self.uplRatio, item['upl_ratio'])
                 if res:
+                    item = self.transform(item)
                     # 写入Redis队列
                     self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
                                          f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}, 当前交易员的盈利率为：{item['upl_ratio']}, 符合开仓条件")
@@ -402,13 +404,14 @@ class Spider(threading.Thread):
                         }
                 # thread_logger.success(
                 #     f"交易员{self.uniqueName}进行了调仓操作，品种：{old_item['instId']}，原仓位保证金：{round(float(old_item['margin']),2)}USDT，现仓位保证金：{round(float(new_item['margin']),2)}USDT")
-                change = self.transform(change)
-                changed_items.append(change)
+
+                # changed_items.append(change)
                 # 判断是否符合要求, 如何符合则开单，不符合则跳过
                 if redis_server.hget_task(self.task_id, change):
                     self.log_to_database("success", f"交易员{self.uniqueName}进行了调仓操作",
                                          f"品种：{old_item['instId']}，尚未达到开仓条件，不进行调仓！")
                 else:
+                    change = self.transform(change)
                     self.log_to_database("success", f"交易员{self.uniqueName}进行了调仓操作",
                                          f"品种：{old_item['instId']}，原仓位保证金：{round(float(old_item['margin']), 2)}USDT，现仓位保证金：{round(float(new_item['margin']), 2)}USDT")
                     # 写入Redis队列
@@ -447,10 +450,11 @@ class Spider(threading.Thread):
                 item['trade_trigger_mode'] = self.trade_trigger_mode
                 item['sl_trigger_px'] = self.sl_trigger_px
                 item['tp_trigger_px'] = self.tp_trigger_px
-                item = self.transform(item)
+
                 # 判断是否符合要求, 如何符合则开单，不符合则跳过
                 res = self.check_open_type_and_upl_ratio(self.first_open_type, self.uplRatio, item['upl_ratio'])
                 if res:
+                    item = self.transform(item)
                     # 写入Redis队列
                     self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
                                          f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}, 当前交易员的盈利率为：{item['upl_ratio']}, 符合开仓条件")
@@ -490,10 +494,11 @@ class Spider(threading.Thread):
                 item['trade_trigger_mode'] = self.trade_trigger_mode
                 item['sl_trigger_px'] = self.sl_trigger_px
                 item['tp_trigger_px'] = self.tp_trigger_px
-                item = self.transform(item)
+
                 # 判断是否符合要求, 如何符合则开单，不符合则跳过
                 res = self.check_open_type_and_upl_ratio(self.first_open_type, self.uplRatio, item['upl_ratio'])
                 if res:
+                    item = self.transform(item)
                     # 写入Redis队列
                     self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
                                          f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}, 当前交易员的盈利率为：{item['upl_ratio']}, 符合开仓条件")
@@ -609,7 +614,7 @@ class Spider(threading.Thread):
                         'tp_trigger_px': self.tp_trigger_px,
                         'posSpace': new_posSpace,
                     }
-                    change = self.transform(change)
+
 
                     # 判断是否符合要求, 如何符合则开单，不符合则跳过
                     if redis_server.hget_task(self.task_id, change):
@@ -618,7 +623,7 @@ class Spider(threading.Thread):
                     else:
                         self.log_to_database("success", f"交易员{self.uniqueName}进行了调仓操作",
                                              f"品种：{old_item['instId']}，原仓位：{round(old_posSpace * 100, 2)}%，现仓位：{round(new_posSpace * 100, 2)}%")
-
+                        change = self.transform(change)
                         change.pop('posSpace')
                         change.pop('pos')
                         change.pop('upl_ratio', None)
