@@ -99,6 +99,8 @@ def run():
                     task_data.pop("create_datetime")
                     task_data.pop("deleted")
                     task_data.pop("leverage")
+                    task_data.pop("first_open_type")
+                    task_data.pop("uplRatio")
                     del spiders[task_id]
                     # 往redis里的TRADE_TASK_NAME写入{'task_id':task_id,'status': 2}
                     conn = redis.Redis(**settings.REDIS_PARAMS)

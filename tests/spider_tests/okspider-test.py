@@ -586,10 +586,13 @@ if __name__ == '__main__':
                     spider_to_stop.stop()
                     spider_to_stop.join()
                     # 组装数据
+                    print(task_data)
                     task_data['task_id'] = task_data.pop('id')
                     task_data.pop("create_datetime")
                     task_data.pop("deleted")
                     task_data.pop("leverage")
+                    task_data.pop("first_open_type")
+                    task_data.pop("uplRatio")
                     # print(task_data)
                     # 往redis里的TRADE_TASK_NAME写入{'task_id':task_id,'status': 2}
                     conn = redis.Redis(**settings.REDIS_PARAMS)

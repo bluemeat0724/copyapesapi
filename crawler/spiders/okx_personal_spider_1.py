@@ -51,7 +51,7 @@ def spider(uniqueName):
                 "pos": item.get("pos"),
                 "openAvgPx": item.get("avgPx"),  # 冗余字段
                 "mgnMode": item.get("mgnMode"),
-                "uplRatio": item.get("uplRatio"),
+                "upl_ratio": item.get("uplRatio"),
                 "posSpace": float(item.get("posSpace")),
             }
             pos = int(item.get("pos"))
@@ -61,16 +61,15 @@ def spider(uniqueName):
                 elif pos < 0:
                     data_clear["posSide"] = "short"
             summary_list_new.append(data_clear)
-        print(summary_list_new)
         return summary_list_new
     except Exception as e:
-        print("personal_spider", datetime.now())
-        print("1", e)
+        # print("personal_spider", datetime.now())
+        # print("1", e)
         pass
 
 
 if __name__ == "__main__":
-    print(spider("2C3212F0BE59CC81"))
+    print(spider("563E3A78CDBAFB4E"))
     # _list = spider('2C3212F0BE59CC81')
     # analysis_okx_follow(_list, _list)
     # 示例使用

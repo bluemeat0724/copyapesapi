@@ -24,7 +24,8 @@ logger.remove()  # 移除所有默认的handler
 class Spider(threading.Thread):
     def __init__(self, task_id, trader_platform, uniqueName, follow_type, role_type, reduce_ratio, sums, ratio,
                  lever_set, first_order_set, api_id,
-                 user_id, leverage, posSide_set, fast_mode, investment, trade_trigger_mode, sl_trigger_px, tp_trigger_px):
+                 user_id, leverage, posSide_set, fast_mode, investment, trade_trigger_mode, sl_trigger_px,
+                 tp_trigger_px, first_open_type, uplRatio):
         super(Spider, self).__init__()
         self.task_id = task_id
         self.trader_platform = trader_platform
@@ -47,6 +48,8 @@ class Spider(threading.Thread):
         self.trade_trigger_mode = trade_trigger_mode
         self.sl_trigger_px = sl_trigger_px
         self.tp_trigger_px = tp_trigger_px
+        self.first_open_type = first_open_type
+        self.uplRatio = uplRatio
         self.old_position = []
         self.new_position = []
         self.my_position = [] # {'instId': '', 'mgnMode': '','posSide': '', 'margin': ''}记录当前自己的仓位价值，计算需要加减仓量
@@ -358,6 +361,50 @@ class Spider(threading.Thread):
         old_set = set((i['instId'], i['mgnMode']) for i in old_list)
         # 使用(instId, mgnMode)对来判断新列表中的新增项
         added_items = list(filter(lambda x: (x['instId'], x['mgnMode']) not in old_set, new_list))
+        # 判断待跟单的交易是否满足开仓要求
+        redis_server = RedisHandler(settings.REDIS_PARAMS)
+        for item in new_list:
+            if redis_server.hget_task(self.task_id, item):
+                item['order_type'] = 'open'
+                item['task_id'] = self.task_id
+                item['trader_platform'] = self.trader_platform
+                item['follow_type'] = self.follow_type
+                item['uniqueName'] = self.uniqueName
+                item['role_type'] = self.role_type
+                item['reduce_ratio'] = self.reduce_ratio
+                item['sums'] = self.sums
+                item['ratio'] = self.ratio
+                item['lever_set'] = self.lever_set
+                item['first_order_set'] = self.first_order_set
+                item['api_id'] = self.api_id
+                item['user_id'] = self.user_id
+                item['fast_mode'] = self.fast_mode
+                item['investment'] = self.investment
+                item['trade_trigger_mode'] = self.trade_trigger_mode
+                item['sl_trigger_px'] = self.sl_trigger_px
+                item['tp_trigger_px'] = self.tp_trigger_px
+                item = self.transform(item)
+                # 判断是否符合要求, 如何符合则开单，不符合则跳过
+                res = self.check_open_type_and_upl_ratio(self.first_open_type, self.uplRatio, item['upl_ratio'])
+                if res:
+                    # 写入Redis队列
+                    self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
+                                         f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}, 当前交易员的盈利率为：{item['upl_ratio']}, 符合开仓条件")
+                    # 删除redis task item
+                    redis_server.hdel_task(self.task_id, item)
+                    item.pop('upl_ratio', None)
+                    item.pop('pos')
+                    item.pop('posSpace')
+                    conn = redis.Redis(**settings.REDIS_PARAMS)
+                    conn.lpush(settings.TRADE_TASK_NAME, json.dumps(item))
+                    time.sleep(0.5)
+                else:
+                    task_instId = redis_server.hget_task(self.task_id, item)
+                    if not task_instId:
+                        # 存入redis
+                        redis_server.hset_task(self.task_id, item)
+                        self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
+                                             f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}, 当前交易员的盈利率为：{item['upl_ratio']}，不符合开仓条件")
 
         if added_items:
             for item in added_items:
@@ -380,17 +427,39 @@ class Spider(threading.Thread):
                 item['sl_trigger_px'] = self.sl_trigger_px
                 item['tp_trigger_px'] = self.tp_trigger_px
                 item = self.transform(item)
+                # 判断是否符合要求, 如何符合则开单，不符合则跳过
+                res = self.check_open_type_and_upl_ratio(self.first_open_type, self.uplRatio, item['upl_ratio'])
+                if res:
+                    # 写入Redis队列
+                    self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
+                                         f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}, 当前交易员的盈利率为：{item['upl_ratio']}, 符合开仓条件")
+                    # 删除redis task item
+                    redis_server.hdel_task(self.task_id, item)
+                    item.pop('upl_ratio', None)
+                    item.pop('pos')
+                    item.pop('posSpace')
+                    conn = redis.Redis(**settings.REDIS_PARAMS)
+                    conn.lpush(settings.TRADE_TASK_NAME, json.dumps(item))
+                    time.sleep(0.5)
+                else:
+                    task_instId = redis_server.hget_task(self.task_id, item)
+                    if not task_instId:
+                        # 存入redis
+                        redis_server.hset_task(self.task_id, item)
+                        self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
+                                             f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}, 当前交易员的盈利率为：{item['upl_ratio']}，不符合开仓条件")
 
-                item.pop('posSpace')
-                item.pop('pos')
-                # thread_logger.success(
-                #     f"交易员{self.uniqueName}进行了开仓操作，品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}")
-                self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
-                                     f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}")
-                # 写入Redis队列
-                conn = redis.Redis(**settings.REDIS_PARAMS)
-                conn.lpush(settings.TRADE_TASK_NAME, json.dumps(item))
-                time.sleep(0.5)
+                # item.pop('posSpace')
+                # item.pop('pos')
+                # item.pop('upl_ratio', None)
+                # # thread_logger.success(
+                # #     f"交易员{self.uniqueName}进行了开仓操作，品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}")
+                # self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
+                #                      f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}")
+                # # 写入Redis队列
+                # conn = redis.Redis(**settings.REDIS_PARAMS)
+                # conn.lpush(settings.TRADE_TASK_NAME, json.dumps(item))
+                # time.sleep(0.5)
 
         # 查找减少的交易数据
         removed_items = [i for i in old_list if (i['instId'], i['mgnMode'])not in set(map(lambda x: (x['instId'], x['mgnMode']), new_list))]
@@ -417,8 +486,12 @@ class Spider(threading.Thread):
                 item['tp_trigger_px'] = self.tp_trigger_px
                 item = self.transform(item)
 
+                # 删除redis
+                redis_server.hdel_task(self.task_id, item)
                 item.pop('posSpace')
                 item.pop('pos')
+                item.pop('upl_ratio', None)
+                print(item)
                 # thread_logger.success(
                 #     f"交易员{self.uniqueName}进行了平仓操作，品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}")
                 self.log_to_database("success", f"交易员{self.uniqueName}进行了平仓操作",
@@ -439,13 +512,13 @@ class Spider(threading.Thread):
                 # 计算posSpace的变动比例
 
                 if old_posSpace != 0:
-                    change_percentage = (new_posSpace - old_posSpace) / old_posSpace
+                    change_percentage = (float(new_posSpace) - float(old_posSpace)) / float(old_posSpace)
                 else:
                     change_percentage = 0
 
                 # 检查变动是否超过10%
                 if abs(change_percentage) > 0.02:
-                    print("原始仓位old-new-差值", old_posSpace, new_posSpace, change_percentage)
+                    print("原始仓位old-new-差值", old_posSpace, new_posSpace, change_percentage, old_item['lever'])
                     order_type = 'open' if change_percentage > 0 else 'reduce'
                     change = {
                         'order_type': order_type,
@@ -453,6 +526,7 @@ class Spider(threading.Thread):
                         'mgnMode': old_item['mgnMode'],
                         'posSide': old_item['posSide'],
                         'lever': old_item['lever'],
+                        'pos': old_item['pos'],
                         'task_id': self.task_id,
                         'trader_platform': self.trader_platform,
                         'follow_type': self.follow_type,
@@ -472,16 +546,25 @@ class Spider(threading.Thread):
                         'tp_trigger_px': self.tp_trigger_px,
                         'posSpace': new_posSpace,
                     }
-                    self.log_to_database("success", f"交易员{self.uniqueName}进行了调仓操作",
-                                     f"品种：{old_item['instId']}，原仓位：{round(old_posSpace * 100, 2)}%，现仓位：{round(new_posSpace * 100, 2)}%")
                     change = self.transform(change)
-                    change.pop('posSpace')
-                    changed_items.append(change)
 
-                    # 写入Redis队列
-                    conn = redis.Redis(**settings.REDIS_PARAMS)
-                    conn.lpush(settings.TRADE_TASK_NAME, json.dumps(change))
-                    time.sleep(0.5)
+                    # 判断是否符合要求, 如何符合则开单，不符合则跳过
+                    if redis_server.hget_task(self.task_id, change):
+                        self.log_to_database("success", f"交易员{self.uniqueName}进行了调仓操作",
+                                             f"品种：{old_item['instId']}，尚未达到开仓条件，不进行加仓！")
+                    else:
+                        self.log_to_database("success", f"交易员{self.uniqueName}进行了调仓操作",
+                                             f"品种：{old_item['instId']}，原仓位：{round(float(old_posSpace) * 100, 2)}%，现仓位：{round(float(new_posSpace) * 100, 2)}%")
+
+                        change.pop('posSpace')
+                        change.pop('pos')
+                        change.pop('upl_ratio', None)
+                        changed_items.append(change)
+
+                        # 写入Redis队列
+                        conn = redis.Redis(**settings.REDIS_PARAMS)
+                        conn.lpush(settings.TRADE_TASK_NAME, json.dumps(change))
+                        time.sleep(0.5)
 
     def analysis_okx_personal(self, old_list, new_list):
         def log_trade_action(action, item):
@@ -604,37 +687,87 @@ class Spider(threading.Thread):
         with open('text_personal.txt', 'r') as f:
             data_list = json.loads(f.read())
             return data_list
-    # try:
-    #     position_url = f'https://www.okx.com/priapi/v5/ecotrade/public/positions-v2?limit=10&uniqueName={uniqueName}&t={now}'
-    #     position_list = requests.get(position_url, headers=get_header(), timeout=30).json().get('data', list())[
-    #         0].get(
-    #         'posData', list())
-    #     if not position_list:
-    #         return summary_list_new
-    #
-    #     for item in position_list:
-    #         data_clear = {
-    #             'instId': item.get('instId'),
-    #             'openTime': item.get('cTime'),  # 用于判断是否是最新的交易记录
-    #             'posSide': item.get('posSide'),
-    #             'lever': item.get('lever'),
-    #             'pos': item.get('pos'),
-    #             'openAvgPx': item.get('avgPx'),  # 冗余字段
-    #             'mgnMode': item.get('mgnMode'),
-    #             'posSpace': float(item.get('posSpace'))
-    #         }
-    #         pos = int(item.get('pos'))
-    #         if data_clear['posSide'] == 'net':
-    #             if pos > 0:
-    #                 data_clear['posSide'] = 'long'
-    #             elif pos < 0:
-    #                 data_clear['posSide'] = 'short'
-    #         summary_list_new.append(data_clear)
-    #     return summary_list_new
-    # except Exception as e:
-    #     print('personal_spider', datetime.now())
-    #     print(e)
-    #     pass
+
+    def check_open_type_and_upl_ratio(self, first_open_type, uplRatio, upl_ratio):
+        """
+        检查开仓模式和用户收益率，并根据条件返回结果。
+
+        参数:
+        first_open_type (int): 开仓模式，1表示当前市价，2表示区间限价。
+        uplRatio (float): 用户收益率。
+        upl_ratio (float): 交易员当前收益率。
+
+        返回:
+        bool: 如果满足条件返回True，否则返回False。
+        """
+        # 将交易员当前收益率除以100
+        uplRatio /= 100
+        # 判断开仓模式
+        if first_open_type == 1:
+            return True
+        elif first_open_type == 2:
+            # 判断用户收益率是否小于交易员当前收益率
+            # import pdb
+            # pdb.set_trace()
+            if float(upl_ratio) < float(uplRatio):
+                return True
+            else:
+                return False
+        else:
+            # 如果开仓模式不是1或2，返回False
+            return False
+
+
+class RedisHandler:
+    def __init__(self, redis_params):
+        self.conn = redis.Redis(**redis_params)
+
+    def hset_task(self, task_id, item):
+        """
+        设置 Redis 哈希表中的值。
+
+        参数:
+        task_id (str): 任务ID。
+        item (dict): 包含 instId, mgnMode, posSide, side 的字典。
+        """
+        key = f"{task_id}_{item['instId']}_{item['mgnMode']}_{item['posSide']}_{item['pos']}"
+        value = 1
+        self.conn.hset(task_id, key, value)
+
+    def hget_task(self, task_id, item):
+        """
+        查询 Redis 哈希表中的值。
+
+        参数:
+        task_id (str): 任务ID。
+        item (dict): 包含 instId, mgnMode, posSide, side 的字典。
+
+        返回:
+        str: 查询到的值，如果不存在则返回 None。
+        """
+        key = f"{task_id}_{item['instId']}_{item['mgnMode']}_{item['posSide']}_{item['pos']}"
+        return self.conn.hget(task_id, key)
+
+    def hdel_task(self, task_id, item):
+        """
+        删除 Redis 哈希表中的值。
+
+        参数:
+        task_id (str): 任务ID。
+        item (dict): 包含 instId, mgnMode, posSide, side 的字典。
+        """
+        key = f"{task_id}_{item['instId']}_{item['mgnMode']}_{item['posSide']}_{item['pos']}"
+        self.conn.hdel(task_id, key)
+
+    def delete_task(self, task_id):
+        """
+        删除 Redis 中指定 task_id 的整个哈希表。
+
+        参数:
+        task_id (str): 任务ID。
+        """
+        self.conn.delete(task_id)
+
 
 # 用字典映射任务ID和爬虫实例
 spiders = {}
@@ -673,12 +806,17 @@ if __name__ == '__main__':
             trade_trigger_mode = task_data.get('trade_trigger_mode')
             sl_trigger_px = task_data.get('sl_trigger_px')
             tp_trigger_px = task_data.get('tp_trigger_px')
+            first_open_type = task_data.get('first_open_type')
+            uplRatio = task_data.get('uplRatio')
 
             if status == 1:
                 # 开启新爬虫
                 if task_id not in spiders:
-                    spider = Spider(task_id, trader_platform, uniqueName, follow_type,role_type,reduce_ratio, sums, ratio, lever_set, first_order_set,
-                                    api_id, user_id, leverage, posSide_set, fast_mode, investment, trade_trigger_mode, sl_trigger_px, tp_trigger_px)
+                    spider = Spider(task_id, trader_platform, uniqueName, follow_type, role_type, reduce_ratio, sums,
+                                    ratio,
+                                    lever_set, first_order_set, api_id, user_id, leverage, posSide_set, fast_mode,
+                                    investment, trade_trigger_mode, sl_trigger_px, tp_trigger_px, first_open_type,
+                                    uplRatio)
                     spider.start()
                     spiders[task_id] = spider
                     print(f"用户：{user_id}的最新跟单任务{task_id}已经开始。")
@@ -696,6 +834,8 @@ if __name__ == '__main__':
                     task_data.pop("create_datetime")
                     task_data.pop("deleted")
                     task_data.pop("leverage")
+                    task_data.pop("first_open_type")
+                    task_data.pop("uplRatio")
                     # print(task_data)
                     # 往redis里的TRADE_TASK_NAME写入{'task_id':task_id,'status': 2}
                     conn = redis.Redis(**settings.REDIS_PARAMS)
