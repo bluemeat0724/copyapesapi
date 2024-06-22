@@ -32,7 +32,7 @@ def spider(uniqueName, follow_type, task_id, trader_platform, sums, ratio, lever
             data_clear['lever'] = data.get('lever')
             data_clear['openTime'] = data.get('openTime')
             data_clear['openAvgPx'] = data.get('openAvgPx')
-            data_clear['uplRatio'] = float(data.get('pnlRatio'))
+            data_clear['upl_ratio'] = float(data.get('pnlRatio'))
             data_clear['side'] = data.get('side')
 
             # 添加原始数据
