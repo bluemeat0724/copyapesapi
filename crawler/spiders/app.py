@@ -238,9 +238,9 @@ class Spider(threading.Thread):
             return None
         # 查找新增的交易数据
         # 将旧列表中的(instId, mgnMode)对存入集合
-        old_set = set(i for i in old_list)
+        old_set = set((i['instId'], i['mgnMode']) for i in old_list)
         # 使用(instId, mgnMode)对来判断新列表中的新增项
-        added_items = list(filter(lambda x: x not in old_set, new_list))
+        added_items = list(filter(lambda x: (x['instId'], x['mgnMode']) not in old_set, new_list))
         redis_server = RedisHandler(self.role_type, settings.REDIS_PARAMS)
         # 获取redis 队列中的数据
         # 判断待跟单的交易是否满足开仓要求
