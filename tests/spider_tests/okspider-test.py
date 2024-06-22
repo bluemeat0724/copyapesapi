@@ -384,21 +384,22 @@ class Spider(threading.Thread):
                           'trade_trigger_mode': self.trade_trigger_mode,
                           'sl_trigger_px': self.sl_trigger_px,
                           'tp_trigger_px': self.tp_trigger_px,
+                          'side': old_item['posSide']
                           }
                 # thread_logger.success(
                 #     f"交易员{self.uniqueName}进行了调仓操作，品种：{old_item['instId']}，原仓位保证金：{round(float(old_item['margin']),2)}USDT，现仓位保证金：{round(float(new_item['margin']),2)}USDT")
                 change = self.transform(change)
                 changed_items.append(change)
                 # 判断是否符合要求, 如何符合则开单，不符合则跳过
-                if redis_server.hget_task(self.task_id, item):
+                if redis_server.hget_task(self.task_id, change):
                     self.log_to_database("success", f"交易员{self.uniqueName}进行了调仓操作",
                                          f"品种：{old_item['instId']}，尚未达到开仓条件，不进行加仓！")
                 else:
                     self.log_to_database("success", f"交易员{self.uniqueName}进行了调仓操作",
                                          f"品种：{old_item['instId']}，原仓位保证金：{round(float(old_item['margin']), 2)}USDT，现仓位保证金：{round(float(new_item['margin']), 2)}USDT")
                     # 写入Redis队列
-                    item.pop('upl_ratio', None)
-                    item.pop('side', None)
+                    change.pop('upl_ratio', None)
+                    change.pop('side', None)
                     conn = redis.Redis(**settings.REDIS_PARAMS)
                     conn.lpush(settings.TRADE_TASK_NAME, json.dumps(change))
                     print(change)
