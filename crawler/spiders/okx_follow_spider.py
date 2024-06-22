@@ -13,7 +13,7 @@ now = int(time.time()) * 1000
 def spider(uniqueName, follow_type, task_id, trader_platform, sums, ratio, lever_set, first_order_set, api_id, user_id):
     summary_list_new = []
     url = f"https://www.okx.com/priapi/v5/ecotrade/public/position-summary?t={now}&uniqueName={uniqueName}&instType=SWAP"
-    print(url)
+
     try:
         #  proxies=get_proxies()[0],
         data_list = requests.get(url, headers=get_header(), timeout=30).json().get('data', list())
@@ -33,6 +33,7 @@ def spider(uniqueName, follow_type, task_id, trader_platform, sums, ratio, lever
             data_clear['openTime'] = data.get('openTime')
             data_clear['openAvgPx'] = data.get('openAvgPx')
             data_clear['uplRatio'] = float(data.get('pnlRatio'))
+            data_clear['side'] = data.get('side')
 
             # 添加原始数据
             data_clear['task_id'] = task_id
