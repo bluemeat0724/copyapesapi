@@ -375,7 +375,6 @@ class Spider(threading.Thread):
                 time.sleep(0.5)
 
         # 查找值变化的数据
-        changed_items = []
         for old_item, new_item in zip(old_list, new_list):
             if old_item["instId"] == new_item["instId"] and old_item["mgnMode"] == new_item["mgnMode"] and old_item[
                 'availSubPos'] != new_item['availSubPos']:
@@ -424,7 +423,6 @@ class Spider(threading.Thread):
                     change.pop('side', None)
                     conn = redis.Redis(**settings.REDIS_PARAMS)
                     conn.lpush(settings.TRADE_TASK_NAME, json.dumps(change))
-                    print(change)
                     time.sleep(0.5)
 
 
@@ -576,7 +574,6 @@ class Spider(threading.Thread):
                 time.sleep(0.5)
 
         # 查找值变化的数据
-        changed_items = []
         for old_item, new_item in zip(old_list, new_list):
             # 检查instId, mgnMode, posSide是否相同，并且availSubPos字段不存在于原始代码中，因此忽略这个条件
             if old_item["instId"] == new_item["instId"] and old_item["mgnMode"] == new_item["mgnMode"] and old_item[
@@ -633,7 +630,6 @@ class Spider(threading.Thread):
                         change.pop('posSpace')
                         change.pop('pos')
                         change.pop('upl_ratio', None)
-                        changed_items.append(change)
 
                         # 写入Redis队列
                         conn = redis.Redis(**settings.REDIS_PARAMS)
