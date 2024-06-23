@@ -590,7 +590,7 @@ class Spider(threading.Thread):
 
                 # 检查变动是否超过0.025
                 if abs(change_percentage) > 0.025:
-                    print("原始仓位old-new-差值", old_posSpace, new_posSpace, change_percentage, old_item['lever'])
+                    print(f"任务ID：{self.task_id}, instId：{old_item['instId']}, 原始仓位old-new-差值：{old_posSpace}, {new_posSpace}, {change_percentage}, {old_item['lever']}")
                     order_type = 'open' if change_percentage > 0 else 'reduce'
                     change = {
                         'order_type': order_type,
