@@ -1,6 +1,6 @@
 import sys
 
-sys.path.append("/Users/lichaoyuan/Desktop/copyapes/copyapesapi")
+sys.path.append("/Users/yb/my_project/copyapesapi")
 import requests
 import time
 from datetime import datetime, timedelta, timezone
@@ -68,8 +68,33 @@ def spider(uniqueName):
         pass
 
 
+
+def person_history(uniqueName):
+    history_dict = {}
+    try:
+        # 获取历史交易记录
+        history_url = f"https://www.okx.com/priapi/v5/ecotrade/public/history-positions?limit=10&uniqueName={uniqueName}&t={now}"
+        history_list = (
+            requests.get(history_url, headers=get_header(), timeout=30)
+            .json()
+            .get("data", [])
+        )
+
+        if not history_list:
+            return history_dict
+        
+        #  key -> value
+        #  instId-mgnMode -> cTime
+        history_dict = {f"{item.get('instId')}-{item.get('mgnMode')}": item.get("uTime") for item in history_list}
+        return history_dict
+    except Exception as e:
+        # print("personal_spider", datetime.now())
+        # print("1", e)
+        return {}
+
 if __name__ == "__main__":
-    print(spider("563E3A78CDBAFB4E"))
+    # print(spider("563E3A78CDBAFB4E"))
+    print(person_history("563E3A78CDBAFB4E"))
     # _list = spider('2C3212F0BE59CC81')
     # analysis_okx_follow(_list, _list)
     # 示例使用
