@@ -276,7 +276,7 @@ class Spider(threading.Thread):
                     item = self.transform(item)
                     # 写入Redis队列
                     self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
-                                         f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}, 当前交易员的盈利率为：{item['upl_ratio']}, 符合开仓条件")
+                                         f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}, 当前交易员的盈利率为：{item['upl_ratio']}，符合开仓条件")
                     # 删除redis task item
                     redis_server.hdel_task(self.task_id, item)
                     item.pop('upl_ratio', None)
