@@ -1,13 +1,13 @@
 [
 {
-    "instId": "BTC-USDT-SWAP",
-    "openTime": "1718979227297",
-    "posSide": "long",
-    "lever": "10",
-    "pos": "1",
-    "openAvgPx": "63795.2547758284600514",
-    "mgnMode": "cross",
-    "upl_ratio": "-0.1014723158401454",
-    "posSpace": "10.097668334449102"
+"instId": "BTC-USDT-SWAP",
+"openTime": "1718979227297",
+"posSide": "long",
+"lever": "10",
+"pos": "1",
+"openAvgPx": "63795.2547758284600514",
+"mgnMode": "cross",
+"upl_ratio": "-0.0528636848236741",
+"posSpace": "9.479223617890607"
 }
 ]

@@ -1,32 +1,10 @@
-import sys
-
-sys.path.append("/Users/yb/my_project/copyapesapi")
 import requests
 import time
-from datetime import datetime, timedelta, timezone
 from crawler.utils.get_header import get_header
 from crawler.utils.get_proxies import get_proxies
 import json
 
 now = int(time.time()) * 1000
-
-# 获取当前日期和时间
-_now = datetime.now(timezone.utc)
-
-# 获取昨天的日期，时间设为15:59:59
-thirty_days_ago_specific_time = (_now - timedelta(days=30)).replace(
-    hour=16, minute=0, second=0, microsecond=0
-)
-thirty_days_ago_specific_time_timestamp = (
-    int(thirty_days_ago_specific_time.timestamp()) * 1000
-)
-
-# Get today's date at 16:00:00
-today_specific_time = (_now + timedelta(days=2)).replace(
-    hour=16, minute=0, second=0, microsecond=0
-)
-today_specific_time_timestamp = int(today_specific_time.timestamp()) * 1000
-
 
 def spider(uniqueName):
     summary_list_new = []
@@ -93,8 +71,8 @@ def person_history(uniqueName):
         return {}
 
 if __name__ == "__main__":
-    # print(spider("563E3A78CDBAFB4E"))
-    print(person_history("563E3A78CDBAFB4E"))
+    print(spider("563E3A78CDBAFB4E"))
+    # print(person_history("563E3A78CDBAFB4E"))
     # _list = spider('2C3212F0BE59CC81')
     # analysis_okx_follow(_list, _list)
     # 示例使用
