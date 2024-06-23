@@ -295,7 +295,7 @@ class Trader(threading.Thread):
 
             if res.get('code') == '0' and res.get('data')[0].get("clOrdId") == clOrdId:
                 self.log_to_database("success", "进行平仓操作", f"品种：{self.instId}，方向：{self.posSide}")
-            elif res.get('code') == '51023':
+            elif res.get('code') in ['51001', '51023']:
                 self.log_to_database("success", f"进行平仓操作", f"品种:{self.instId}仓位不存在")
             else:
                 # 平仓出错，拆分平仓
