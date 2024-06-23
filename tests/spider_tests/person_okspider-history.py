@@ -201,10 +201,10 @@ class Spider(threading.Thread):
                     elif item.get("order_type") == 'reduce':
                         if float(usdt) > self.investment:
                             print(f"【2-减仓-1】任务id:{self.task_id}，总投资：{self.investment}，{item['instId']}仓位：{item['posSpace']}")
-                            new_notionalUsd = self.investment * item['posSpace']
+                            new_notionalUsd = self.investment * float(item['posSpace'])
                         else:
                             print(f"【2-减仓-2】任务id:{self.task_id}，总投资：{usdt}，{item['instId']}仓位：{item['posSpace']}")
-                            new_notionalUsd = float(usdt) * item['posSpace']
+                            new_notionalUsd = float(usdt) * float(item['posSpace'])
                         print(f'notionalUsd:{notionalUsd}, new_notionalUsd:{new_notionalUsd}')
                         item['sums'] = (float(notionalUsd) - float(new_notionalUsd)) / float(item['lever'])
                         # if item['sums'] < 0:
@@ -214,10 +214,10 @@ class Spider(threading.Thread):
                     if item.get("order_type") == 'open':
                         if float(usdt) > self.investment:
                             print(f"【2-开加仓-1】任务id:{self.task_id}，总投资：{self.investment}，{item['instId']}仓位：{item['posSpace']}")
-                            item['sums'] = self.investment * item['posSpace'] / float(item['lever'])
+                            item['sums'] = self.investment * float(item['posSpace']) / float(item['lever'])
                         else:
                             print(f"【2-开加仓-2】任务id:{self.task_id}，总投资：{usdt}，{item['instId']}仓位：{item['posSpace']}")
-                            item['sums'] = float(usdt) * item['posSpace'] / float(item['lever'])
+                            item['sums'] = float(usdt) * float(item['posSpace']) / float(item['lever'])
                         print(f'【2-开加仓】任务id:{self.task_id}，开单金额：{item["sums"]}')
                     else:
                         item['sums'] = 0
@@ -504,11 +504,6 @@ class Spider(threading.Thread):
         # 查找值变化的数据
         changed_items = []
         # history_dict = okx_personal_spider_1.person_history(self.uniqueName)
-        history_dict = {}
-        with self.file_lock:
-                with open('history_personal.txt', 'r') as f:
-                    data_list = json.loads(f.read())
-                    history_dict = {f"{item.get('instId')}-{item.get('mgnMode')}": item.get("uTime") for item in data_list}
         
         for old_item, new_item in zip(old_list, new_list):
             # 检查instId, mgnMode, posSide是否相同，并且availSubPos字段不存在于原始代码中，因此忽略这个条件
@@ -553,20 +548,24 @@ class Spider(threading.Thread):
                         'tp_trigger_px': self.tp_trigger_px,
                         'posSpace': new_posSpace,
                     }
-                    change = self.transform(change)
 
                     # 判断是否符合要求, 如何符合则开单，不符合则跳过
                     if redis_server.hget_task(self.task_id, change):
                         self.log_to_database("success", f"交易员{self.uniqueName}进行了调仓操作",
                                              f"品种：{old_item['instId']}，尚未达到开仓条件，不进行加仓！")
                     else:
-                        new_ratio = change["new_margin"] / change["old_margin"]
-                        # 减仓操作  new_ratio 小于1             
-                        if history_dict.get(f"{new_item.get('instId')}-{new_item.get('mgnMode')}", 0) < new_item.get("openTime", 0) and new_ratio < 1:
-                            # 历史持仓里面不存在开单时间后的数据，不可以进行调仓
-                            self.log_to_database("success", f"交易员{self.uniqueName}往账户转入了保证金",
-                                             f"品种：{old_item['instId']}，原仓位：{round(old_posSpace * 100, 2)}%，现仓位：{round(new_posSpace * 100, 2)}%，不进行调仓操作。")
-                            continue
+                        change = self.transform(change)
+                        if change['order_type'] == 'reduce':
+                            with open('history_personal.txt', 'r') as f:
+                                data_list = json.loads(f.read())
+                                history_dict = {f"{item.get('instId')}-{item.get('mgnMode')}": item.get("uTime") for
+                                                item in data_list}
+                            if history_dict.get(f"{new_item.get('instId')}-{new_item.get('mgnMode')}",
+                                                0) < new_item.get("openTime", 0):
+                                # 历史持仓里面不存在开单时间后的数据，不可以进行调仓
+                                self.log_to_database("success", f"交易员{self.uniqueName}往账户转入了保证金",
+                                                     f"品种：{old_item['instId']}，原仓位：{round(float(old_posSpace) * 100, 2)}%，现仓位：{round(float(new_posSpace) * 100, 2)}%，不进行调仓操作。")
+                                continue
                         self.log_to_database("success", f"交易员{self.uniqueName}进行了调仓操作",
                                              f"品种：{old_item['instId']}，原仓位：{round(float(old_posSpace) * 100, 2)}%，现仓位：{round(float(new_posSpace) * 100, 2)}%")
 
@@ -579,122 +578,6 @@ class Spider(threading.Thread):
                         conn = redis.Redis(**settings.REDIS_PARAMS)
                         conn.lpush(settings.TRADE_TASK_NAME, json.dumps(change))
                         time.sleep(0.5)
-
-    def analysis_okx_personal(self, old_list, new_list):
-        def log_trade_action(action, item):
-            """ 用于记录交易行为到数据库的辅助函数 """
-            openTime = transform_time(item['openTime'])
-            self.log_to_database("success", f"交易员{self.uniqueName}进行了{action}操作",
-                                 f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}，交易创建时间：{openTime}")
-
-        def complete_task_data(new):
-            """补全任务数据并发送redis"""
-            # new_list为空，说明交易员已完全平仓
-            if not new:
-                new = {
-                    'order_type': 'close_all'
-                }
-            new.update({
-                'task_id': self.task_id,
-                'trader_platform': self.trader_platform,
-                'follow_type': self.follow_type,
-                'uniqueName': self.uniqueName,
-                'role_type': self.role_type,
-                'reduce_ratio': self.reduce_ratio,
-                'sums': self.sums,
-                'ratio': self.ratio,
-                'lever_set': self.lever_set,
-                'first_order_set': self.first_order_set,
-                'api_id': self.api_id,
-                'user_id': self.user_id,
-                'fast_mode': self.fast_mode,
-                'investment': self.investment,
-                'trade_trigger_mode': self.trade_trigger_mode,
-                'sl_trigger_px': self.sl_trigger_px,
-                'tp_trigger_px': self.tp_trigger_px
-            })
-            # if new['order_type'] == 'close' and old:
-            #     # TODO 只能拿上一条记录的mgnMode，如果有全仓和逐仓同时出现的交易就有拿错的风险，避免风险只能去数据库里拿
-            #     new['mgnMode'] = old.get('mgnMode', 'cross')
-            # 重新设置杠杆
-            item = self.transform(new)
-            if item['order_type'] != 'close' and item['order_type'] != 'close_all':
-                item.pop('posSpace')
-            # 写入Redis队列
-            conn = redis.Redis(**settings.REDIS_PARAMS)
-            conn.lpush(settings.TRADE_TASK_NAME, json.dumps(item))
-            time.sleep(0.5)
-
-        def transform_time(openTime):
-            timestamp_seconds = int(openTime) / 1000
-            dt_utc = datetime.datetime.utcfromtimestamp(timestamp_seconds)
-            timezone_offset = datetime.timedelta(hours=8)
-            dt_east_asian = dt_utc + timezone_offset
-            formatted_datetime = dt_east_asian.strftime('%Y-%m-%d %H:%M:%S')
-            return formatted_datetime
-
-        if not new_list:
-            if not old_list:
-                return
-            # new_list = okx_personal_spider.spider_close_item(self.uniqueName)
-            # 如果old_list不为空，new_list为空，说明交易员已完全平仓，给交易脚本推送全部平仓命令
-            complete_task_data({})
-            self.log_to_database("success", f"交易员{self.uniqueName}进行了平仓操作",
-                                 "交易员当前没有任何持仓！")
-            print(f'{self.task_id}new_position:', self.new_position)
-            return
-
-        if not old_list:
-            if new_list[0]['order_type'] == 'open':
-                openTime = transform_time(new_list[0]['openTime'])
-                self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓或加仓操作",
-                                     f"品种：{new_list[0]['instId']}，杠杆：{new_list[0]['lever']}，方向：{new_list[0]['posSide']}，交易创建时间：{openTime}")
-                if self.follow_type == 2:
-                    for position in self.new_position:
-                        if new_list[0]['instId'] == position.get('instId') and new_list[0]['mgnMode'] == position.get('mgnMode'):
-                            new_list[0]['posSpace'] = float(position.get('posSpace'))
-                            print(f"{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}【1-开仓】任务id:{self.task_id}，开仓：{new_list[0]['posSpace']}")
-                self.old_position = self.new_position
-                complete_task_data(new_list[0])
-                print(f'{self.task_id}new_position:', self.new_position)
-        else:
-            # 查找新增的交易数据
-            time_set = set(i['openTime'] for i in old_list)
-            added_items = list(filter(lambda x: x['openTime'] not in time_set, new_list))
-            if added_items:
-                for item in added_items:
-                    action_map = {'open': "开仓或加仓", 'close': "平仓", 'reduce': "减仓"}
-                    action = action_map.get(item['order_type'], "交易")
-                    log_trade_action(action, item)
-
-                    if self.follow_type == 2:
-                        if item['order_type'] == 'open':
-                            for position in self.new_position:
-                                if position.get('instId') == item['instId'] and position.get('mgnMode') == item['mgnMode']:
-                                    item['posSpace'] = float(position.get('posSpace'))
-                                    print(f"{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}【1-加仓】任务id:{self.task_id}，仓位：{item['posSpace']}")
-
-                        elif item['order_type'] == 'reduce':
-                            for position in self.new_position:
-                                if position.get('instId') == item['instId'] and position.get('mgnMode') == item['mgnMode']:
-                                    item['posSpace'] = float(position.get('posSpace'))
-                                    print(f'{time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())}【1-减仓】任务id:{self.task_id}，仓位：{item["posSpace"]}')
-
-                    print(f'{self.task_id}new_position:', self.new_position)
-                    print(f'{self.task_id}old_position:', self.old_position)
-
-                    if item['order_type'] == 'close':
-                        print(f"{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}【1-平仓】任务id:{self.task_id}")
-                        print(f'{item}')
-                        removed_items = [i for i in self.old_position if (i['instId'], i['mgnMode']) not in set(
-                            map(lambda x: (x['instId'], x['mgnMode']), self.new_position))]
-                        for position in removed_items:
-                            if position['instId'] == item['instId']:
-                                item['mgnMode'] = position['mgnMode']
-                                self.old_position.remove(position)
-                                print(f"【{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}1-平仓】任务id:{self.task_id}，平仓：{item['instId']}，{item['mgnMode']}")
-                    complete_task_data(item)
-                self.old_position = self.new_position
 
 
     def test(self):

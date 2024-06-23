@@ -572,7 +572,8 @@ class Spider(threading.Thread):
                 conn = redis.Redis(**settings.REDIS_PARAMS)
                 conn.lpush(settings.TRADE_TASK_NAME, json.dumps(item))
                 time.sleep(0.5)
-        history_dict = okx_personal_spider_1.person_history(self.uniqueName)
+
+
         # 查找值变化的数据
         for old_item, new_item in zip(old_list, new_list):
             # 检查instId, mgnMode, posSide是否相同，并且availSubPos字段不存在于原始代码中，因此忽略这个条件
@@ -624,17 +625,17 @@ class Spider(threading.Thread):
                         self.log_to_database("success", f"交易员{self.uniqueName}进行了调仓操作",
                                              f"品种：{old_item['instId']}，尚未达到开仓条件，不进行调仓！")
                     else:
-                        # u_time
-                        new_ratio = change["new_margin"] / change["old_margin"]
-                        # 减仓操作  new_ratio 小于1             
-                        if history_dict.get(f"{new_item.get('instId')}-{new_item.get('mgnMode')}", 0) < new_item.get("openTime", 0) and new_ratio < 1:
-                            # 历史持仓里面不存在开单时间后的数据，不可以进行调仓
-                            self.log_to_database("success", f"交易员{self.uniqueName}往账户转入了保证金",
-                                             f"品种：{old_item['instId']}，原仓位：{round(old_posSpace * 100, 2)}%，现仓位：{round(new_posSpace * 100, 2)}%，不进行调仓操作。")
-                            continue
+                        change = self.transform(change)
+                        if change['order_type'] == 'reduce':
+                            history_dict = okx_personal_spider_1.person_history(self.uniqueName)
+                            if history_dict.get(f"{new_item.get('instId')}-{new_item.get('mgnMode')}", 0) < new_item.get("openTime", 0):
+                                # 历史持仓里面不存在开单时间后的数据，不可以进行调仓
+                                self.log_to_database("success", f"交易员{self.uniqueName}往账户转入了保证金",
+                                                 f"品种：{old_item['instId']}，原仓位：{round(old_posSpace * 100, 2)}%，现仓位：{round(new_posSpace * 100, 2)}%，不进行调仓操作")
+                                continue
                         self.log_to_database("success", f"交易员{self.uniqueName}进行了调仓操作",
                                              f"品种：{old_item['instId']}，原仓位：{round(old_posSpace * 100, 2)}%，现仓位：{round(new_posSpace * 100, 2)}%")
-                        change = self.transform(change)
+
                         change.pop('posSpace')
                         change.pop('pos')
                         change.pop('upl_ratio', None)

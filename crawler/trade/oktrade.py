@@ -360,7 +360,7 @@ class Trader(threading.Thread):
             if self.follow_type == 1:
                 # 获取当前持仓，计算减仓量=当前*self.reduce_ratio
                 try:
-                    quantityCT = int(
+                    quantityCT = float(
                         self.obj.account.get_positions(instId=self.instId, posSide=self.posSide).get('data')[0].get(
                             'availPos')) * self.reduce_ratio
                 except:
