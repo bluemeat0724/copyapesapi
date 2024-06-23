@@ -503,7 +503,13 @@ class Spider(threading.Thread):
 
         # 查找值变化的数据
         changed_items = []
-        history_dict = okx_personal_spider_1.person_history(self.uniqueName)
+        # history_dict = okx_personal_spider_1.person_history(self.uniqueName)
+        history_dict = {}
+        with self.file_lock:
+                with open('history_personal.txt', 'r') as f:
+                    data_list = json.loads(f.read())
+                    history_dict = {f"{item.get('instId')}-{item.get('mgnMode')}": item.get("uTime") for item in data_list}
+        
         for old_item, new_item in zip(old_list, new_list):
             # 检查instId, mgnMode, posSide是否相同，并且availSubPos字段不存在于原始代码中，因此忽略这个条件
             if old_item["instId"] == new_item["instId"] and old_item["mgnMode"] == new_item["mgnMode"] and old_item[
