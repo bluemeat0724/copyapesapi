@@ -276,7 +276,7 @@ class Spider(threading.Thread):
                     item = self.transform(item)
                     # 写入Redis队列
                     self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
-                                         f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}, 当前交易员的盈利率为：{item['upl_ratio']}，符合开仓条件")
+                                         f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}, 当前交易员的收益率为：{item['upl_ratio']}，符合开仓条件")
                     # 删除redis task item
                     redis_server.hdel_task(self.task_id, item)
                     item.pop('upl_ratio', None)
@@ -290,7 +290,7 @@ class Spider(threading.Thread):
                         # 存入redis
                         redis_server.hset_task(self.task_id, item)
                         self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
-                                             f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}, 当前交易员的盈利率为：{item['upl_ratio']}，不符合开仓条件")
+                                             f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}, 当前交易员的收益率为：{item['upl_ratio']}，不符合开仓条件")
 
         if added_items:
             for item in added_items:
@@ -319,7 +319,7 @@ class Spider(threading.Thread):
                     item = self.transform(item)
                     # 写入Redis队列
                     self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
-                                         f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}, 当前交易员的盈利率为：{item['upl_ratio']}, 符合开仓条件")
+                                         f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}，当前交易员的收益率为：{item['upl_ratio']}，开仓均价为：{item['openAvgPx']}，符合开仓条件")
                     # 删除redis task item
                     redis_server.hdel_task(self.task_id, item)
                     item.pop('upl_ratio', None)
@@ -333,7 +333,7 @@ class Spider(threading.Thread):
                         # 存入redis
                         redis_server.hset_task(self.task_id, item)
                         self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
-                                             f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}, 当前交易员的盈利率为：{item['upl_ratio']}，不符合开仓条件")
+                                             f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}，当前交易员的收益率为：{item['upl_ratio']}，开仓均价为：{item['openAvgPx']}，不符合开仓条件")
 
         # 查找减少的交易数据
         removed_items = [i for i in old_list if
@@ -460,7 +460,7 @@ class Spider(threading.Thread):
                     item = self.transform(item)
                     # 写入Redis队列
                     self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
-                                         f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}, 当前交易员的盈利率为：{item['upl_ratio']}, 符合开仓条件")
+                                         f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}, 当前交易员的收益率为：{item['upl_ratio']}, 符合开仓条件")
                     # 删除redis task item
                     redis_server.hdel_task(self.task_id, item)
                     item.pop('upl_ratio', None)
@@ -475,7 +475,7 @@ class Spider(threading.Thread):
                         # 存入redis
                         redis_server.hset_task(self.task_id, item)
                         self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
-                                             f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}, 当前交易员的盈利率为：{item['upl_ratio']}，不符合开仓条件")
+                                             f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}, 当前交易员的收益率为：{item['upl_ratio']}，不符合开仓条件")
 
         if added_items:
             for item in added_items:
@@ -504,7 +504,7 @@ class Spider(threading.Thread):
                     item = self.transform(item)
                     # 写入Redis队列
                     self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
-                                         f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}, 当前交易员的盈利率为：{item['upl_ratio']}, 符合开仓条件")
+                                         f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}，当前交易员的收益率为：{item['upl_ratio']}，开仓均价为：{item['openAvgPx']}，符合开仓条件")
                     # 删除redis task item
                     redis_server.hdel_task(self.task_id, item)
                     item.pop('upl_ratio', None)
@@ -519,7 +519,7 @@ class Spider(threading.Thread):
                         # 存入redis
                         redis_server.hset_task(self.task_id, item)
                         self.log_to_database("success", f"交易员{self.uniqueName}进行了开仓操作",
-                                             f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}, 当前交易员的盈利率为：{item['upl_ratio']}，不符合开仓条件")
+                                             f"品种：{item['instId']}，杠杆：{item['lever']}，方向：{item['posSide']}，当前交易员的收益率为：{item['upl_ratio']}，开仓均价为：{item['openAvgPx']}，不符合开仓条件")
 
                 # item.pop('posSpace')
                 # item.pop('pos')
@@ -628,7 +628,7 @@ class Spider(threading.Thread):
                         change = self.transform(change)
                         if change['order_type'] == 'reduce':
                             history_dict = okx_personal_spider_1.person_history(self.uniqueName)
-                            if history_dict.get(f"{new_item.get('instId')}-{new_item.get('mgnMode')}", 0) < new_item.get("openTime", 0):
+                            if int(history_dict.get(f"{new_item.get('instId')}-{new_item.get('mgnMode')}", 0)) < int(new_item.get("openTime", 0)):
                                 # 历史持仓里面不存在开单时间后的数据，不可以进行调仓
                                 self.log_to_database("success", f"交易员{self.uniqueName}往账户转入了保证金",
                                                  f"品种：{old_item['instId']}，原仓位：{round(old_posSpace * 100, 2)}%，现仓位：{round(new_posSpace * 100, 2)}%，不进行调仓操作")

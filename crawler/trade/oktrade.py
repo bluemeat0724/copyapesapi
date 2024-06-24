@@ -62,7 +62,7 @@ class Trader(threading.Thread):
         self.sl_trigger_px = float(sl_trigger_px) / 100
         # 止盈比例
         self.tp_trigger_px = float(tp_trigger_px) / 100
-        # 跟单用户开仓价格
+        # 跟单用户开仓均价
         self.openAvgPx = openAvgPx
 
     def log_to_database(self, level, title, description=""):
