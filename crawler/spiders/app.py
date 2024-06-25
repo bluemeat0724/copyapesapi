@@ -185,7 +185,7 @@ class Spider(threading.Thread):
                             new_notionalUsd = self.investment * item['posSpace']
                         else:
                             print(f"【2-开加仓-2】任务id:{self.task_id}，总投资：{usdt}，{item['instId']}仓位：{item['posSpace']}")
-                            new_notionalUsd = float(usdt) * item['posSpace'] * 0.95  # 防止顶格开仓失败
+                            new_notionalUsd = float(usdt) * item['posSpace'] * 0.9  # 防止顶格开仓失败
                         print(f'notionalUsd:{notionalUsd}, new_notionalUsd:{new_notionalUsd}')
                         item['sums'] = (float(new_notionalUsd) - float(notionalUsd)) / float(item['lever'])
                         # 如果计算的开仓金额小于0，说明当前仓位比例过高，则不进行开仓
@@ -199,7 +199,7 @@ class Spider(threading.Thread):
                             new_notionalUsd = self.investment * item['posSpace']
                         else:
                             print(f"【2-减仓-2】任务id:{self.task_id}，总投资：{usdt}，{item['instId']}仓位：{item['posSpace']}")
-                            new_notionalUsd = float(usdt) * item['posSpace'] * 0.95  # 防止顶格开仓失败
+                            new_notionalUsd = float(usdt) * item['posSpace'] * 0.9  # 防止顶格开仓失败
                         print(f'notionalUsd:{notionalUsd}, new_notionalUsd:{new_notionalUsd}')
                         item['sums'] = (float(notionalUsd) - float(new_notionalUsd)) / float(item['lever'])
                         # if item['sums'] < 0:
@@ -213,7 +213,7 @@ class Spider(threading.Thread):
                             item['sums'] = self.investment * item['posSpace'] / float(item['lever'])
                         else:
                             print(f"【2-开加仓-2】任务id:{self.task_id}，总投资：{usdt}，{item['instId']}仓位：{item['posSpace']}")
-                            item['sums'] = float(usdt) * item['posSpace'] / float(item['lever']) * 0.95  # 防止顶格开仓失败
+                            item['sums'] = float(usdt) * item['posSpace'] / float(item['lever']) * 0.9  # 防止顶格开仓失败
                         print(f'【2-开加仓】任务id:{self.task_id}，开单金额：{item["sums"]}')
                     else:
                         item['sums'] = 0
