@@ -62,5 +62,5 @@ def get_my_proxies(user_id, flag):
 
 
 if __name__ == '__main__':
-    # print(get_proxies())
-    print(get_my_proxies(39, '0'))
+    print(get_proxies())
+    # print(get_my_proxies(39, '0'))

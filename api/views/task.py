@@ -35,6 +35,13 @@ class TaskAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixi
         flag = api_object.flag
         if not ip_object and flag == 0:
             return Response({"code": return_code.VALIDATE_ERROR, "error": "实盘交易请配置固定IP"})
+
+        # 判断是否有固定ip且是否开跟单普通用户
+        role_type = serializer.validated_data.get('role_type')
+        if not ip_object and role_type == 2:
+            return Response({"code": return_code.VALIDATE_ERROR, "error": "跟单普通用户请配置固定IP"})
+
+
         # 检查ip是否到期
         if ip_object:
             countdown = ip_object.countdown
@@ -46,6 +53,10 @@ class TaskAddView(CopyCreateModelMixin, CopyListModelMixin, CopyDestroyModelMixi
                 return Response({"code": return_code.VALIDATE_ERROR, "error": "IP即将过期，无法创建任务"})
             if experience_day > 0 and created_at < now - timedelta(experience_day - stop_day):
                 return Response({"code": return_code.VALIDATE_ERROR, "error": "IP即将过期，无法创建任务"})
+
+        # 检查是否有正在进行中的任务
+        if models.TaskInfo.objects.filter(Q(user=self.request.user) & Q(status=1)).exists():
+            return Response({"code": return_code.VALIDATE_ERROR, "error": "已有任务在运行，由于访问频率限制，不支持同时开多个任务"})
 
         # 检查剩余可用额度
         # quota_object = models.QuotaInfo.objects.filter(Q(user=self.request.user)).first()
