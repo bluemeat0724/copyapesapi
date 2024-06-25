@@ -74,7 +74,7 @@ def person_history(uniqueName):
 
 if __name__ == "__main__":
     # print(spider("563E3A78CDBAFB4E"))
-    # print(person_history("563E3A78CDBAFB4E"))
+    print(person_history("563E3A78CDBAFB4E"))
     # _list = spider('2C3212F0BE59CC81')
     # analysis_okx_follow(_list, _list)
     # 示例使用
@@ -86,8 +86,8 @@ if __name__ == "__main__":
     # print(spider('585D2CBB1B3E2A79'))
     # print(get_position('585D2CBB1B3E2A79'))
     # print(spider_close_item('032805718789399F'))
-    while True:
+    # while True:
         # person_history("563E3A78CDBAFB4E")
         # spider('EE8655800B2F193F')
-        print(spider("EE8655800B2F193F"))
+        # print(spider("EE8655800B2F193F"))
         # time.sleep(3)
