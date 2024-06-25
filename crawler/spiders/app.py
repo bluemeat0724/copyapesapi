@@ -139,7 +139,7 @@ class Spider(threading.Thread):
                 #     return summary_list_new
                 # else:
                 #     return None
-                result = okx_personal_spider_1.spider(self.uniqueName)
+                result = okx_personal_spider_1.spider(self.uniqueName, self.user_id)
                 if result is not None:
                     return result
                 else:
@@ -627,7 +627,7 @@ class Spider(threading.Thread):
                     else:
                         change = self.transform(change)
                         if change['order_type'] == 'reduce':
-                            history_dict = okx_personal_spider_1.person_history(self.uniqueName)
+                            history_dict = okx_personal_spider_1.person_history(self.uniqueName, self.user_id)
                             if int(history_dict.get(f"{new_item.get('instId')}-{new_item.get('mgnMode')}", 0)) < int(new_item.get("openTime", 0)):
                                 # 历史持仓里面不存在开单时间后的数据，不可以进行调仓
                                 self.log_to_database("success", f"交易员{self.uniqueName}往账户转入了保证金",

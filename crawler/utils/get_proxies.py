@@ -60,7 +60,23 @@ def get_my_proxies(user_id, flag):
     }
     return proxy, ip_id
 
+# 获取用户自己的代理，用于爬虫
+def get_my_spider_proxies(user_id):
+    with Connect() as conn:
+        ip_dict = conn.fetch_one(
+            "select username,password,id from api_ipinfo where user_id=%(user_id)s AND countdown>0 AND experience_day=0",
+            user_id={user_id})
+
+    username = str(ip_dict.get('username'))
+    password = str(ip_dict.get('password'))
+
+    proxy = {
+        'http': 'socks5h://{}:{}@{}:{}'.format(username, password, settings.PROXY_IP, settings.PROXY_PORT),
+        'https': 'socks5h://{}:{}@{}:{}'.format(username, password, settings.PROXY_IP, settings.PROXY_PORT),
+    }
+    return proxy
+
 
 if __name__ == '__main__':
-    print(get_proxies())
+    print(get_my_spider_proxies(1))
     # print(get_my_proxies(39, '0'))

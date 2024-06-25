@@ -1,18 +1,18 @@
 import requests
 import time
 from crawler.utils.get_header import get_header
-from crawler.utils.get_proxies import get_my_proxies
+from crawler.utils.get_proxies import get_my_spider_proxies
 import json
 
 now = int(time.time()) * 1000
 
 
-def spider(uniqueName):
+def spider(uniqueName, user_id):
     summary_list_new = []
     try:
         # proxies=get_my_proxies()[0],
         position_url = f"https://www.okx.com/priapi/v5/ecotrade/public/positions-v2?limit=10&uniqueName={uniqueName}&t={now}"
-        position_res = requests.get(position_url, headers=get_header(), timeout=30).json()
+        position_res = requests.get(position_url, headers=get_header(), proxies=get_my_spider_proxies(user_id), timeout=30).json()
         if int(position_res.get("code", 0)) == 0:
             position_list = position_res.get("data",
                                              [{}])[0].get("posData", [])
@@ -49,12 +49,12 @@ def spider(uniqueName):
         pass
 
 
-def person_history(uniqueName):
+def person_history(uniqueName, user_id):
     history_dict = {}
     try:
         # 获取历史交易记录
         history_url = f"https://www.okx.com/priapi/v5/ecotrade/public/history-positions?limit=1&uniqueName={uniqueName}&t={now}"
-        history_list = requests.get(history_url, headers=get_header(), timeout=30).json().get("data", [])
+        history_list = requests.get(history_url, headers=get_header(),proxies=get_my_spider_proxies(user_id), timeout=30).json().get("data", [])
         # print("history_list", history_list)
         if not history_list:
             return history_dict
@@ -73,8 +73,8 @@ def person_history(uniqueName):
 
 
 if __name__ == "__main__":
-    # print(spider("563E3A78CDBAFB4E"))
-    print(person_history("563E3A78CDBAFB4E"))
+    print(spider("2C3212F0BE59CC81",1))
+    # print(person_history("563E3A78CDBAFB4E",1))
     # _list = spider('2C3212F0BE59CC81')
     # analysis_okx_follow(_list, _list)
     # 示例使用

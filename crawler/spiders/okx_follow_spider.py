@@ -1,5 +1,5 @@
 from crawler.utils.get_header import get_header
-from crawler.utils.get_proxies import get_my_proxies
+from crawler.utils.get_proxies import get_my_spider_proxies
 import time
 import requests
 
@@ -12,8 +12,8 @@ def spider(uniqueName, follow_type, task_id, trader_platform, sums, ratio, lever
     url = f"https://www.okx.com/priapi/v5/ecotrade/public/position-summary?t={now}&uniqueName={uniqueName}&instType=SWAP"
 
     try:
-        #  proxies=get_my_proxies()[0],
-        data_list = requests.get(url, headers=get_header(), timeout=30).json().get('data', list())
+        #  proxies=get_my_spider_proxies(user_id),
+        data_list = requests.get(url, headers=get_header(),proxies=get_my_spider_proxies(user_id), timeout=30).json().get('data', list())
         if not data_list:
             return summary_list_new
         # 数据清洗
