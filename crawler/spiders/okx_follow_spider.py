@@ -1,5 +1,5 @@
-import sys
-sys.path.append("D:\\my_source\\apes\\copyapesapi\\")
+# import sys
+# sys.path.append("D:\\my_source\\apes\\copyapesapi\\")
 from crawler.utils.get_header import get_header
 from crawler.utils.get_proxies import get_proxies
 from datetime import datetime
