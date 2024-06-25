@@ -8362,3 +8362,10 @@ INFO 2024-06-24 00:44:21,676 basehttp 3221 123145601683456 "GET /api/traderdetia
 INFO 2024-06-24 00:44:21,690 basehttp 3221 123145584893952 "GET /api/tradeorder/437/?token=4d7976cd-ce40-4f64-9883-a2498cb7b8a9 HTTP/1.1" 200 20
 INFO 2024-06-24 00:44:21,692 basehttp 3221 123145568104448 "GET /api/ip/?token=4d7976cd-ce40-4f64-9883-a2498cb7b8a9 HTTP/1.1" 200 242
 INFO 2024-06-24 00:44:21,693 basehttp 3221 123145618472960 "GET /api/taskadd/437/?token=4d7976cd-ce40-4f64-9883-a2498cb7b8a9 HTTP/1.1" 200 444
+INFO 2024-06-26 03:01:07,926 autoreload 27331 4524103168 Watching for file changes with StatReloader
+INFO 2024-06-26 03:04:09,050 autoreload 27331 4524103168 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/get_proxies.py changed, reloading.
+INFO 2024-06-26 03:04:10,185 autoreload 27394 4431373824 Watching for file changes with StatReloader
+INFO 2024-06-26 03:04:21,388 autoreload 27394 4431373824 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/get_proxies.py changed, reloading.
+INFO 2024-06-26 03:04:22,315 autoreload 27402 4592698880 Watching for file changes with StatReloader
+INFO 2024-06-26 03:04:26,292 autoreload 27402 4592698880 /Users/lichaoyuan/Desktop/copytrade/crawler/utils/get_proxies.py changed, reloading.
+INFO 2024-06-26 03:04:27,194 autoreload 27408 4411430400 Watching for file changes with StatReloader

@@ -67,8 +67,27 @@ def get_my_spider_proxies(user_id):
             "select username,password,id from api_ipinfo where user_id=%(user_id)s AND countdown>0 AND experience_day=0",
             user_id={user_id})
 
-    username = str(ip_dict.get('username'))
-    password = str(ip_dict.get('password'))
+    if ip_dict:
+        username = str(ip_dict.get('username'))
+        password = str(ip_dict.get('password'))
+    else:
+        # 模拟盘随机分配
+        with Connect() as conn:
+            PROXY_DICT = conn.fetch_all(
+                "select username,password,id from api_ipinfo where countdown>0 AND experience_day=0")
+            # print(PROXY_DICT)
+
+        proxies_account = random.choice(PROXY_DICT)
+        proxies = {
+            'http': 'socks5h://{}:{}@{}:{}'.format(proxies_account['username'], proxies_account['password'],
+                                                   settings.PROXY_IP,
+                                                   settings.PROXY_PORT),
+            'https': 'socks5h://{}:{}@{}:{}'.format(proxies_account['username'], proxies_account['password'],
+                                                    settings.PROXY_IP,
+                                                    settings.PROXY_PORT)
+        }
+        return proxies
+
 
     proxy = {
         'http': 'socks5h://{}:{}@{}:{}'.format(username, password, settings.PROXY_IP, settings.PROXY_PORT),
@@ -78,5 +97,5 @@ def get_my_spider_proxies(user_id):
 
 
 if __name__ == '__main__':
-    print(get_my_spider_proxies(1))
+    print(get_my_spider_proxies(1010))
     # print(get_my_proxies(39, '0'))

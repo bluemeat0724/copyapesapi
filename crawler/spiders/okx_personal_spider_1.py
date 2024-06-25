@@ -10,7 +10,7 @@ now = int(time.time()) * 1000
 def spider(uniqueName, user_id):
     summary_list_new = []
     try:
-        # proxies=get_my_proxies()[0],
+        # proxies=get_my_spider_proxies(user_id),
         position_url = f"https://www.okx.com/priapi/v5/ecotrade/public/positions-v2?limit=10&uniqueName={uniqueName}&t={now}"
         position_res = requests.get(position_url, headers=get_header(), proxies=get_my_spider_proxies(user_id), timeout=30).json()
         if int(position_res.get("code", 0)) == 0:
