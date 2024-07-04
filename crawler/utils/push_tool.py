@@ -25,23 +25,23 @@ class Push:
         self.lever = lever
 
     def push(self):
-        try:
-            if self.wx:
-                push_url = 'http://wxapi.copyapes.com/api/send_wx_message'
-                data = {
-                    "auth_code": self.wx_code,
-                    "template_id": "tiS1Yw0EuNSwF3vFwlUPCqeXpVPH6z4mnzUG6Q_9h0c",
-                    "send_data":  {
-                        "time3": {"value": f"{self.time_now.strftime('%Y-%m-%d %H:%M:%S')}"},
-                        "thing4": {"value": f"{self.instId.split('-')[0]}_{self.posSide}_x{self.lever}"},
-                        "thing13":{"value": f"{self.order_info}"}
-                    }
+        if self.wx:
+            push_url = 'http://wxapi.copyapes.com/api/send_wx_message'
+            data = {
+                "auth_code": self.wx_code,
+                "template_id": "tiS1Yw0EuNSwF3vFwlUPCqeXpVPH6z4mnzUG6Q_9h0c",
+                "send_data":  {
+                    "time3": {"value": f"{self.time_now.strftime('%Y-%m-%d %H:%M:%S')}"},
+                    "thing4": {"value": f"{self.instId.split('-')[0]}_{self.posSide}_x{self.lever}"},
+                    "thing13":{"value": f"{self.order_info}"}
                 }
+            }
+            try:
                 res = requests.post(push_url, json=data)
-                # if res.json().get('errmsg') == 'ok':
-                #     print('推送成功')
-        except Exception as e:
-            print(e)
+            # if res.json().get('errmsg') == 'ok':
+            #     print('推送成功')
+            except Exception as e:
+                print(e)
 
 
 
