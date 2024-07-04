@@ -22,6 +22,10 @@ class WxView(APIView):
         user_id = request.user.id
         wx = request.data.get('wx')
 
+        # 查询是否有代理ip，有ip的才支持给通知
+        if not models.IpInfo.objects.filter(user_id=user_id).exists():
+            return Response({"code": return_code.PROXY_ERROR, 'msg': '请先绑定代理IP后再开启服务！'})
+
         # 在 Notification 模型中查询是否已有该用户的记录
         notify, created = models.Notification.objects.get_or_create(user_id=user_id)
         notify.wx = wx
