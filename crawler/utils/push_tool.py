@@ -26,7 +26,7 @@ class Push:
 
     def push(self):
         if self.wx:
-            push_url = 'http://wxapi.copyapes.com/api/send_wx_message'
+            push_url = 'http://wxapi.aiyao.top/api/send_wx_message'
             data = {
                 "auth_code": self.wx_code,
                 "template_id": "tiS1Yw0EuNSwF3vFwlUPCqeXpVPH6z4mnzUG6Q_9h0c",
@@ -38,6 +38,7 @@ class Push:
             }
             try:
                 res = requests.post(push_url, json=data)
+                print(res.text)
             # if res.json().get('errmsg') == 'ok':
             #     print('推送成功')
             except Exception as e:
