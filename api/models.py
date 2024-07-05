@@ -33,6 +33,9 @@ class Notification(models.Model):
     user = models.ForeignKey(verbose_name="用户", to="UserInfo", on_delete=models.CASCADE)
     wx = models.BooleanField(verbose_name="微信", default=False)
     wx_code = models.CharField(verbose_name="微信服务号授权码", max_length=64, null=True, blank=True)
+    qq_mail = models.BooleanField(verbose_name="QQ邮箱", default=False)
+    qq = models.CharField(verbose_name="QQ", max_length=12, null=True, blank=True)
+    password = models.CharField(verbose_name="邮箱授权码", max_length=32, null=True, blank=True)
 
 
 class Platform(DeletedModel):

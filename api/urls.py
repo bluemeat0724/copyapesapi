@@ -18,6 +18,8 @@ urlpatterns = [
     path('quotainfo/', quotainfo.QuotaView.as_view()),
     path('redeemcode/', redeemcode.RedeemCodesView.as_view()),
     path('wx/', notification.WxView.as_view()),
+    path('qqmail/', notification.QqmailView.as_view()),
+    path('notify/', notification.NotifyView.as_view()),
     path('trader/', ok_trader.TraderDataView.as_view()),
 ]
 
