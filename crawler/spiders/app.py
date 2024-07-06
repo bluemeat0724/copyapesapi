@@ -116,6 +116,9 @@ class Spider(threading.Thread):
     def stop(self):
         # 设置停止标志，用于停止爬虫线程
         self.stop_flag.set()
+        # 清除redis内的任务缓存
+        redis_server = RedisHandler(self.role_type, settings.REDIS_PARAMS)
+        redis_server.delete_task(self.task_id)
         if self.status == 2:
             self.log_to_database("WARNING", "手动结束跟单", f"任务ID：{self.task_id}")
         elif self.status == 3:
