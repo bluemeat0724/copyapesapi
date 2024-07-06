@@ -38,8 +38,9 @@ def push_info(user_id):
 
 
 class Push:
-    def __init__(self, user_id, time_now, instId, posSide, lever, order_info, **kwargs):
+    def __init__(self, user_id, task_id, time_now, instId, posSide, lever, order_info, **kwargs):
         self.user_id = user_id
+        self.task_id = task_id
         self.time_now = time_now
         self.order_info = order_info
         self.instId = instId
@@ -62,10 +63,11 @@ class Push:
         push_url = 'http://wxapi.aiyao.top/api/send_wx_message'
         data = {
             "auth_code": self.wx_code,
-            "template_id": "tiS1Yw0EuNSwF3vFwlUPCqeXpVPH6z4mnzUG6Q_9h0c",
+            "template_id": "tiS1Yw0EuNSwF3vFwlUPCvk39lxvtjiMpNGxnP462fk",
             "send_data": {
-                # "time3": {"value": f"{self.time_now.strftime('%Y-%m-%d %H:%M:%S')}"},
-                "time3": {"value": f"{self.time_now}"},
+                "time3": {"value": f"{self.time_now.strftime('%Y-%m-%d %H:%M:%S')}"},
+                # "time3": {"value": f"{self.time_now}"},
+                "character_string5": {"value": f"{self.task_id}"},
                 "thing4": {"value": f"{self.instId.split('-')[0]}_{self.posSide}_x{self.lever}"},
                 "thing13": {"value": f"{self.order_info}"}
             }
@@ -87,9 +89,9 @@ class Push:
         receiver = sender = self.sender
         # 邮件的内容
         if '失败' in self.order_info:
-            subject = self.instId + self.subject
+            subject = '#' + str(self.task_id) + '#' + self.instId + self.subject
         else:
-            subject = self.subject
+            subject = '#' + str(self.task_id) + '#' + self.subject
         body = self.body
         msg = MIMEMultipart()
         msg['From'] = formataddr((sender_name, sender))
@@ -142,5 +144,5 @@ class Push:
 
 if __name__ == '__main__':
     s_code_value = 51000
-    # Push(1, '2021-09-01 09:00:00', 'BTC-USDT-SWAP', 'long', 10, f'开仓失败(code:{s_code_value})', subject='交易失败', body='当前IP不在你的API白名单内，请前往交易所API管理页面添加IP白名单！').push()
-    Push(1, '2021-09-01 09:00:00', 'BTC-USDT-SWAP', 'long', 10, f'open', subject='进行开仓操作', body='品种：BTC-USDT-SWAP，金额：100.0USDT，方向：long').push()
+    Push(1, 666, '2021-09-01 09:00:00', 'BTC-USDT-SWAP', 'long', 10, f'开仓失败(code:{s_code_value})', subject='交易失败', body='当前IP不在你的API白名单内，请前往交易所API管理页面添加IP白名单！').push()
+    # Push(1, 666, '2021-09-01 09:00:00', 'BTC-USDT-SWAP', 'long', 10, f'open', subject='进行开仓操作', body='品种：BTC-USDT-SWAP，金额：100.0USDT，方向：long').push()

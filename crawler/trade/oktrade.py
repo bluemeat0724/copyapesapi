@@ -280,7 +280,7 @@ class Trader(threading.Thread):
                     title = "进行开仓操作"
                     content = f"品种：{self.instId}，金额：{self.sums}USDT，方向：{self.posSide}"
                     self.log_to_database("success", title, content)
-                    Push(self.user_id, time_now, self.instId, self.posSide, self.lever, self.order_type, subject=title, body=content).push()
+                    Push(self.user_id, self.task_id, time_now, self.instId, self.posSide, self.lever, self.order_type, subject=title, body=content).push()
                     # self.thread_logger.success(f'进行开仓操作，品种：{self.instId}，金额：{self.sums}USDT，方向：{self.posSide}')
             except:
                 print(f'任务{self.task_id}错误信息：{result}')
@@ -303,7 +303,7 @@ class Trader(threading.Thread):
                 title = "进行平仓操作"
                 content = f"品种：{self.instId}，方向：{self.posSide}"
                 self.log_to_database("success", title, content)
-                Push(self.user_id, time_now, self.instId, self.posSide, self.lever, self.order_type, subject=title, body=content).push()
+                Push(self.user_id, self.task_id, time_now, self.instId, self.posSide, self.lever, self.order_type, subject=title, body=content).push()
             elif res.get('code') in ['51001', '51023']:
                 self.log_to_database("success", f"进行平仓操作", f"品种:{self.instId}仓位不存在")
             else:
@@ -342,7 +342,7 @@ class Trader(threading.Thread):
                         title = "进行加仓操作"
                         content = f"品种：{self.instId}，金额：{self.sums}USDT，方向：{self.posSide}"
                         self.log_to_database("success", title, content)
-                        Push(self.user_id, time_now, self.instId, self.posSide, self.lever, 'open', subject=title, body=content).push()
+                        Push(self.user_id, self.task_id, time_now, self.instId, self.posSide, self.lever, 'open', subject=title, body=content).push()
                 except:
                     print(f'任务{self.task_id}错误信息：{result}')
                     self.handle_trade_failure(result)
@@ -364,7 +364,7 @@ class Trader(threading.Thread):
                 title = "进行减仓操作"
                 content = f"品种：{self.instId}，减仓占比：{percentage}"
                 self.log_to_database("success", title, content)
-                Push(self.user_id, time_now, self.instId, self.posSide, self.lever, f'close({percentage})', subject=title, body=content).push()
+                Push(self.user_id, self.task_id, time_now, self.instId, self.posSide, self.lever, f'close({percentage})', subject=title, body=content).push()
                 # 更新持仓数据
                 OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=1)
 
@@ -409,12 +409,12 @@ class Trader(threading.Thread):
                 title = "进行减仓操作"
                 content = f"品种：{self.instId}，减仓占比：{percentage}"
                 self.log_to_database("success", title, content)
-                Push(self.user_id, time_now, self.instId, self.posSide, self.lever, f'close({percentage})', subject=title, body=content).push()
+                Push(self.user_id, self.task_id, time_now, self.instId, self.posSide, self.lever, f'close({percentage})', subject=title, body=content).push()
             else:
                 title = "进行减仓操作"
                 content = f"品种：{self.instId}，减仓保证金：{self.sums}USDT"
                 self.log_to_database("success", title, content)
-                Push(self.user_id, time_now, self.instId, self.posSide, self.lever, f'close({self.sums}USDT)', subject=title, body=content).push()
+                Push(self.user_id, self.task_id, time_now, self.instId, self.posSide, self.lever, f'close({self.sums}USDT)', subject=title, body=content).push()
             # 更新持仓数据
             OkxOrderInfo(self.user_id, self.task_id).get_position_history(order_type=1)
         elif self.order_type == 'close_all':
@@ -462,7 +462,7 @@ class Trader(threading.Thread):
                 content = f'请根据错误码（sCord），自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}'
 
             self.log_to_database("WARNING", '交易失败', content)
-            Push(self.user_id, datetime.datetime.now(), self.instId, self.posSide, self.lever, f'开仓失败（sCord:{s_code_value}）', subject='交易失败', body=content).push()
+            Push(self.user_id, self.task_id, datetime.datetime.now(), self.instId, self.posSide, self.lever, f'开仓失败（sCord:{s_code_value}）', subject='交易失败', body=content).push()
         except:
             try:
                 s_code_value = result.get('error_result', {}).get('code')
@@ -495,7 +495,7 @@ class Trader(threading.Thread):
                     content = f'请根据错误码(code)，自行在官网https://www.okx.com/docs-v5/zh/?python#error-code查看错误原因。错误信息：{result}'
 
                 self.log_to_database("WARNING", title, content)
-                Push(self.user_id, datetime.datetime.now(), self.instId, self.posSide, self.lever,
+                Push(self.user_id, self.task_id, datetime.datetime.now(), self.instId, self.posSide, self.lever,
                      f'开仓失败(code:{s_code_value})', subject=title, body=content).push()
             except:
                 pass
@@ -617,12 +617,12 @@ class Trader(threading.Thread):
                 title = "进行平仓操作"
                 content = f"品种:{instId}，方向：{posSide}"
                 self.log_to_database("success", title, content)
-                Push(self.user_id, datetime.datetime.now(), self.instId, self.posSide, self.lever, 'close', subject=title, body=content).push()
+                Push(self.user_id, self.task_id, datetime.datetime.now(), self.instId, self.posSide, self.lever, 'close', subject=title, body=content).push()
             except Exception as e:
                 title = "平仓操作失败"
                 content = f"品种:{instId}，方向：{posSide}，平仓失败，请手动平仓。"
                 self.log_to_database("WARNING", title, content)
-                Push(self.user_id, datetime.datetime.now(), self.instId, self.posSide, self.lever, '平仓失败，请手动平仓', subject=title, body=content).push()
+                Push(self.user_id, self.task_id, datetime.datetime.now(), self.instId, self.posSide, self.lever, '平仓失败，请手动平仓', subject=title, body=content).push()
                 print(e)
         elif item.get('order_type') == 'close_2nd':
             res = self.obj.trade.close_market(instId=instId, posSide=posSide, quantityCT=quantityCT, tdMode=mgnMode)
@@ -631,7 +631,7 @@ class Trader(threading.Thread):
                 title = "平仓操作失败"
                 content = f"品种:{instId}，方向：{posSide}，平仓失败，请手动平仓。"
                 self.log_to_database("WARNING", title, content)
-                Push(self.user_id, datetime.datetime.now(), self.instId, self.posSide, self.lever, '平仓失败，请手动平仓', subject=title, body=content).push()
+                Push(self.user_id, self.task_id, datetime.datetime.now(), self.instId, self.posSide, self.lever, '平仓失败，请手动平仓', subject=title, body=content).push()
         else:
             try:
                 # 假设self.obj是已经实例化的，可以执行trade.close_market的对象
@@ -653,7 +653,7 @@ class Trader(threading.Thread):
                 title = "手动结束跟单"
                 content = f"品种:{instId}，方向：{posSide}，平仓失败，请手动平仓。"
                 self.log_to_database("WARNING", title, content)
-                Push(self.user_id, datetime.datetime.now(), self.instId, self.posSide, self.lever, '平仓失败，请手动平仓', subject=title, body=content).push()
+                Push(self.user_id, self.task_id, datetime.datetime.now(), self.instId, self.posSide, self.lever, '平仓失败，请手动平仓', subject=title, body=content).push()
                 print(e)
 
     def run_close_market_concurrently(self, data):
