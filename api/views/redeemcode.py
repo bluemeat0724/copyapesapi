@@ -55,7 +55,7 @@ class RedeemCodesView(APIView):
         ip_id, ip, token = buy_ip()
         # print("ip_id:", ip_id, "ip:", ip, "token:", token)
         if not ip:
-            return Response({"code": return_code.REDEEM_CODE_ERROR, 'detail': "购买IP失败，请稍后再试。"})
+            return Response({"code": return_code.REDEEM_CODE_ERROR, 'detail': "兑换IP失败！请联系客服处理！"})
 
         username = change_username(ip_id, token)
         if not username:
