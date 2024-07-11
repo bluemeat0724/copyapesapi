@@ -7,13 +7,16 @@ django在接收到请求后，提取出code值，在models.RedeemCodes里进行�
 同时，使用user_id在models.QuotaInfo里查询quota_0和quota_1，将value的值分别和quota_0、quota_1相加后保存
 """
 
-
+from crawler.updata_ip_countdown.ip_countdown import get_token
 from api import models
 from rest_framework import serializers
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from api.extension import return_code
 import datetime
+import requests
+import secrets
+import string
 
 
 
@@ -42,21 +45,92 @@ class RedeemCodesView(APIView):
             return Response({"code": return_code.REDEEM_CODE_ERROR, 'detail': "兑换码已使用！"})
 
         # 更新 RedeemCodes 模型中的状态和用户ID
+        user_id = request.user.id
         redeem_code.status = 2
-        redeem_code.user_id = request.user.id
+        redeem_code.user_id = user_id
         redeem_code.save()
 
-        # 在 QuotaInfo 模型中查询对应用户的配额信息
-        try:
-            quota_info = models.QuotaInfo.objects.get(user_id=request.user.id)
-        except models.QuotaInfo.DoesNotExist:
-            return Response({"code": return_code.PERMISSION_DENIED, 'detail': "账户受限，请联系客服！"})
+        # 登录蜘蛛ip购买ip，同时修改子账号账号和密码
 
-        # 更新配额信息
-        quota_info.quota_0 += redeem_code.value
-        quota_info.quota_1 += redeem_code.value
-        quota_info.verification_datetime = datetime.datetime.now()
-        quota_info.save()
+        ip_id, ip, token = buy_ip()
+        # print("ip_id:", ip_id, "ip:", ip, "token:", token)
+        if not ip:
+            return Response({"code": return_code.REDEEM_CODE_ERROR, 'detail': "购买IP失败，请稍后再试。"})
 
-        return Response({"code": return_code.SUCCESS, 'detail': "充值成功！"})
+        username = change_username(ip_id, token)
+        if not username:
+            return Response({"code": return_code.REDEEM_CODE_ERROR, 'detail': "兑换IP失败！请联系客服处理！"})
 
+        # 写进IP表
+        ip_obj, created = models.IpInfo.objects.get_or_create(user_id=user_id,defaults={
+                'ip': ip,
+                'username': username,
+                'password': '12345678',
+                'countryName': '中国台湾省',
+                'countdown': 30,
+                'stop_day': 0.5,
+                'tips_day': 3,
+                'created_at': datetime.datetime.now(),
+                'experience_day': 0
+            })
+        if not created:
+            ip_obj.ip = ip
+            ip_obj.username = username
+            ip_obj.password = '12345678'
+            ip_obj.countryName = '中国台湾省'
+            ip_obj.countdown = 30
+            ip_obj.stop_day = 0.5
+            ip_obj.tips_day = 3
+            ip_obj.created_at = datetime.datetime.now()
+            ip_obj.experience_day = 0
+            ip_obj.save()
+        return Response({"code": return_code.SUCCESS, 'detail': "兑换IP成功！"})
+
+
+
+def buy_ip():
+    token = get_token()
+    url = "https://www.zhizhuip.cc/externalapi/product_order/createProductOrder"
+    payload = {
+        'access_token': token,
+        'type': 2,
+        'status': 1,
+        'conpon_id': 0,
+        'num': 1,
+        'country': 'TW',
+        'timelen': 1,
+        'agree': 'SOCKS5',
+        'city': 'Taipei',
+        'use_random_username': 0
+    }
+    headers = {
+        'User-Agent': 'Apifox/1.0.0 (https://apifox.com)'
+    }
+
+    res = requests.post(url, data=payload, headers=headers).json().get('data').get('subAccounts')[0]
+    ip_id = res.get('id')
+    ip = res.get('ip')
+    return ip_id, ip, token
+
+def change_username(ip_id, token):
+    characters = string.ascii_letters + string.digits
+    username = ''.join(secrets.choice(characters) for _ in range(8))
+
+    url = "https://www.zhizhuip.cc/externalapi/device/batchUpdateSubAccountUsernamePassword"
+    payload = {
+        'access_token': token,
+        'type': 2,
+        'status': 1,
+        'content[0][id]': ip_id,
+        'content[0][customUsername]': username,
+        'content[0][customPassword]': '12345678',
+    }
+    headers = {
+        'User-Agent': 'Apifox/1.0.0 (https://apifox.com)'
+    }
+
+    res = requests.put(url, data=payload, headers=headers).json()
+    if res.get('code') == 1:
+        return username
+    else:
+        return False
