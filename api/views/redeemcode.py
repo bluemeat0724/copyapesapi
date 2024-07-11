@@ -17,6 +17,7 @@ import datetime
 import requests
 import secrets
 import string
+import json
 
 
 
@@ -50,9 +51,21 @@ class RedeemCodesView(APIView):
         redeem_code.user_id = user_id
         redeem_code.save()
 
-        # 登录蜘蛛ip购买ip，同时修改子账号账号和密码
+        # 非首次购买，需要续期（countdown>0）
+        token = get_token()
+        ip_obj = models.IpInfo.objects.filter(user_id=user_id).first()
+        if ip_obj:
+            # 续期
+            ip = ip_obj.ip
+            countdown = ip_obj.countdown
+            if countdown > 0:
+                if renew_ip(token, ip):
+                    return Response({"code": return_code.SUCCESS, 'detail': "IP续费成功！"})
+                else:
+                    return Response({"code": return_code.REDEEM_CODE_ERROR, 'detail': "IP续费失败！请联系客服处理！"})
 
-        ip_id, ip, token = buy_ip()
+        # 登录蜘蛛ip购买ip，同时修改子账号账号和密码
+        ip_id, ip = buy_ip(token)
         # print("ip_id:", ip_id, "ip:", ip, "token:", token)
         if not ip:
             return Response({"code": return_code.REDEEM_CODE_ERROR, 'detail': "兑换IP失败！请联系客服处理！"})
@@ -61,7 +74,7 @@ class RedeemCodesView(APIView):
         if not username:
             return Response({"code": return_code.REDEEM_CODE_ERROR, 'detail': "兑换IP失败！请联系客服处理！"})
 
-        # 写进IP表
+        # 首次购买写进IP表
         ip_obj, created = models.IpInfo.objects.get_or_create(user_id=user_id,defaults={
                 'ip': ip,
                 'username': username,
@@ -73,6 +86,7 @@ class RedeemCodesView(APIView):
                 'created_at': datetime.datetime.now(),
                 'experience_day': 0
             })
+        # 非首次购买，旧IP不在有效期
         if not created:
             ip_obj.ip = ip
             ip_obj.username = username
@@ -88,8 +102,7 @@ class RedeemCodesView(APIView):
 
 
 
-def buy_ip():
-    token = get_token()
+def buy_ip(token):
     url = "https://www.zhizhuip.cc/externalapi/product_order/createProductOrder"
     payload = {
         'access_token': token,
@@ -110,7 +123,7 @@ def buy_ip():
     res = requests.post(url, data=payload, headers=headers).json().get('data').get('subAccounts')[0]
     ip_id = res.get('id')
     ip = res.get('ip')
-    return ip_id, ip, token
+    return ip_id, ip
 
 def change_username(ip_id, token):
     characters = string.ascii_letters + string.digits
@@ -134,3 +147,50 @@ def change_username(ip_id, token):
         return username
     else:
         return False
+
+def renew_ip(token, ip):
+    ip_id, country = get_ip_id(token, ip)
+    url = "https://www.zhizhuip.cc/externalapi/set_meal/renewOrder"
+    payload = {
+        'access_token': token,
+        'type': 2,
+        'status': 1,
+        'conpon_id': '',
+        'content': [
+            {
+                'country': country,
+                'ids': [int(ip_id)],
+                'timelen': 1
+            }
+        ]
+    }
+    headers = {
+        'User-Agent': 'Apifox/1.0.0 (https://apifox.com)',
+        'Content-Type': 'application/json'
+    }
+
+    res = requests.post(url, json=payload, headers=headers).json()
+    if res.get('code') == 1:
+        return True
+    else:
+        return False
+
+def get_ip_id(token,ip):
+    url = "https://www.zhizhuip.cc/externalapi/device/accountList"
+    params = {
+        'access_token': token,
+        'type': '2',
+        'status': '1',
+        'page': '1',
+        'pagesize': '500'
+    }
+    headers = {
+        'User-Agent': 'Apifox/1.0.0 (https://apifox.com)'
+    }
+
+    response = requests.get(url, params=params, headers=headers)
+    data = json.loads(response.text)
+    ip_list = data.get('data', {}).get('rows', [])
+    for i in ip_list:
+        if i.get('ip') == ip:
+            return i.get('id'), i.get('country')

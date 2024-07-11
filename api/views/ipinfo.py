@@ -39,7 +39,8 @@ class IpView(CopyListModelMixin, CopyCreateModelMixin, CopyUpdateModelMixin):
         password = serializer.validated_data.get('password')
         ip_obj = models.IpInfo.objects.filter(ip=ip, username=username, password=password).first()
         if ip_obj:
-            return Response({"code": return_code.VALIDATE_ERROR, "error": "IP已被使用，需添加独享IP"})
+            if ip_obj.countdown > 0:
+                return Response({"code": return_code.VALIDATE_ERROR, "error": "IP已被使用，需添加独享IP"})
         # 校验IP真实性
         countdown, countryName = self.check_ip(ip, username, password)
         if countdown is None:
@@ -64,7 +65,8 @@ class IpView(CopyListModelMixin, CopyCreateModelMixin, CopyUpdateModelMixin):
             id=instance.id).first()
 
         if ip_obj:
-            return Response({"code": return_code.VALIDATE_ERROR, "error": "IP已被使用，需添加独享IP"})
+            if ip_obj.countdown > 0:
+                return Response({"code": return_code.VALIDATE_ERROR, "error": "IP已被使用，需添加独享IP"})
 
         # 校验IP真实性
         countdown, countryName = self.check_ip(ip, username, password)
