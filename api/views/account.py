@@ -81,6 +81,15 @@ class Login(APIView):
 
         return Response({"code": return_code.SUCCESS, "data": {"token": token, "name": user_object.username}})
 
+    def get(self, request):
+        """ 获取当前登录用户信息 """
+        token = request.query_params.get("token")
+        if not token:
+            return Response({"code": return_code.VALIDATE_ERROR, "error": "用户未登录"})
+        user_object = models.UserInfo.objects.filter(token=token).first()
+        username = user_object.username
+        return Response({"code": return_code.SUCCESS, "data": {"username": username}})
+
 class ChangePassword(APIView):
     """ 修改密码 """
 
