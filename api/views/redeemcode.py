@@ -110,10 +110,10 @@ def buy_ip(token):
         'status': 1,
         'conpon_id': 0,
         'num': 1,
-        'country': 'TW',
+        'country': 'JP',
         'timelen': 1,
         'agree': 'SOCKS5',
-        'city': 'Taipei',
+        'city': 'Tokyo',
         'use_random_username': 0
     }
     headers = {
@@ -194,3 +194,13 @@ def get_ip_id(token,ip):
     for i in ip_list:
         if i.get('ip') == ip:
             return i.get('id'), i.get('country')
+
+# def set_white(token):
+#     url = "https://www.zhizhuip.cc/api/tool/setSubAccountWhite"
+#     payload = {
+#         'access_token': token
+#         }
+#     headers = {
+#         'User-Agent': 'Apifox/1.0.0 (https://apifox.com)'
+#     }
+#     res = requests.post(url, json=payload, headers=headers).json()
