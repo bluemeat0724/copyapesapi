@@ -99,7 +99,7 @@ def merge_data(uniqueName):
             'total_qty': aggregated['qty'], # 持仓数量
             'total_realizedProfit': aggregated['realizedProfit'] # 持仓收益
         })
-    # print(result)
+    print(result)
     return result
 
 # def test(uniqueName, page):
@@ -246,12 +246,13 @@ def blance(uniqueName):
 
 class Spider():
     def __init__(self, uniqueName):
-        super(Spider, self).__init__()
         self.uniqueName = uniqueName
         self.position = []
+        self.average_price_dic = {}
 
     def run(self):
         while True:
+            # old_list = position(self.uniqueName)
             old_list = position(self.uniqueName)
             if old_list is None:
                 continue
@@ -265,40 +266,92 @@ class Spider():
             new_list = position(self.uniqueName)
             if new_list is None:
                 continue
-            self.analysis(old_list, new_list)
+            # self.analysis(old_list, new_list)
+            self.analysis_1(old_list, new_list)
             old_list = new_list
             time.sleep(1)
 
     def analysis(self, old_list, new_list):
         for old_item, new_item in zip(old_list, new_list):
-            # 新旧数据无变化，更新持仓后直接返回，如没有则添加
+            # 新旧数据无变化，更新持仓后直接返回，如没有则添加，此处只做模拟仓位更新，不做交易推送
+            # 判断：realizedProfit为0（开仓加仓记录）
             if old_item["symbol"] == new_item["symbol"] and old_item["side"] == new_item["side"] and old_item[
                 'total_qty'] == new_item['total_qty'] and old_item[
-                'total_realizedProfit'] == new_item['total_realizedProfit']:
+                'total_realizedProfit'] == new_item['total_realizedProfit'] == 0:
                 found = False
                 for idx, pos_item in enumerate(self.position):
+                    # 判断：symbol、side、total_qty相同，相同说明new_list是单一币种连续加仓，最后一次加仓后的记录，直接覆盖更新数据
                     if pos_item["symbol"] == new_item["symbol"] and pos_item["side"] == new_item["side"]:
+                    # if pos_item["symbol"] == new_item["symbol"] and pos_item["side"] == new_item["side"] and pos_item['total_qty'] == new_item['total_qty']:
                         self.position[idx] = new_item  # 更新现有条目
                         return
-                if not found and new_item['total_realizedProfit'] == 0:
+                    # 判断：symbol、side、total_qty不相同，不相同说明new_list是单一币种没有连续加仓，中间有其他币种操作，手动更新仓位数据，不直接覆盖
+                    # else:
+                    #     if self.average_price_dic.get(f'{pos_item["symbol"]}-{pos_item["side"]}', 0) == pos_item["average_price"]:
+                    #         return
+                        # pos_item["average_price"] = (pos_item["average_price"] + new_item["average_price"])/2
+                        # # 将更新后的持仓平均开仓价格存入average_price_dic
+                        # self.average_price_dic[f'{pos_item["symbol"]}-{pos_item["side"]}'] = pos_item["average_price"]
+                        #
+                        # market_price = markPrice(pos_item["symbol"])
+                        # self.position[idx]['upl_ratio'] = market_price / pos_item["average_price"] - 1
+                        # self.position[idx]['upl'] = (market_price - pos_item["average_price"]) * self.position[idx][
+                        #     'total_qty']
+                        # self.position[idx]['posSpace'] = self.position[idx]['total_quantity'] / blance(self.uniqueName)
+
+                if not found:
                     self.position.append(new_item)  # 添加新条目
                     return
+            # # 判断：realizedProfit不为0（减仓平仓记录）
+            # elif old_item["symbol"] == new_item["symbol"] and old_item["side"] == new_item["side"] and old_item[
+            #     'total_qty'] == new_item['total_qty'] and old_item[
+            #     'total_realizedProfit'] == new_item['total_realizedProfit'] != 0:
+            #     return
 
             # 新旧数据有变化，更新持仓
-            # 加仓
+            # 加仓（单一币种连续加仓，中间没有掺杂其他币种操作）
             if old_item["symbol"] == new_item["symbol"] and old_item["side"] == new_item["side"] and old_item[
                 'total_qty'] != new_item['total_qty'] and old_item[
-                'total_realizedProfit'] == new_item['total_realizedProfit']:
+                'total_realizedProfit'] == new_item['total_realizedProfit'] == 0:
                 for idx, pos_item in enumerate(self.position):
                     if pos_item["symbol"] == new_item["symbol"] and pos_item["side"] == new_item["side"]:
                         self.position[idx] = new_item  # 更新现有条目
-                        market_price = markPrice(pos_item["symbol"])
+                        # 加仓量
+                        sum = new_item['total_qty'] - pos_item['total_qty']
+
+                        # market_price = markPrice(pos_item["symbol"])
+                        # self.position[idx]['upl_ratio'] = market_price / pos_item["average_price"] - 1
+                        # self.position[idx]['upl'] = (market_price - pos_item["average_price"]) * self.position[idx][
+                        #     'total_qty']
+                        # self.position[idx]['posSpace'] = self.position[idx]['total_quantity'] / blance(self.uniqueName)
+                        print(f"交易员{self.uniqueName}加仓了{pos_item['symbol']}{sum}")
+                        return
+            # 新旧数据有变化，更新持仓
+            # 减仓平仓（单一币种连续减仓，中间没有掺杂其他币种操作）
+            elif old_item["symbol"] == new_item["symbol"] and old_item["side"] == new_item["side"] and old_item[
+                'total_qty'] != new_item['total_qty'] and old_item[
+                'total_realizedProfit'] == new_item['total_realizedProfit'] != 0:
+                # 查看当前是否有模拟持仓记录
+                for idx, pos_item in enumerate(self.position):
+                    if pos_item["symbol"] == new_item["symbol"] and pos_item["side"] != new_item["side"]:
+                        self.position[idx]['total_qty'] -= new_item['total_qty']
+                        if self.position[idx]['total_qty'] < 0.01:  # 考虑到精度问题，移仓数量小于 0.01 则移除，平仓
+                            self.position.remove(self.position[idx])
+                            print(f"交易员{self.uniqueName}平仓了{pos_item['symbol']}")
+                            return
+                        self.position[idx]['total_realizedProfit'] = new_item['total_realizedProfit']
+                        self.position[idx]['total_quantity'] -= new_item['total_quantity']
+
+                        market_price = new_item["average_price"]
                         self.position[idx]['upl_ratio'] = market_price / pos_item["average_price"] - 1
                         self.position[idx]['upl'] = (market_price - pos_item["average_price"]) * self.position[idx][
                             'total_qty']
                         self.position[idx]['posSpace'] = self.position[idx]['total_quantity'] / blance(self.uniqueName)
-                        print(f"交易员{self.uniqueName}加仓了{pos_item['symbol']}")
+                        # 减仓量
+                        sum = pos_item['total_qty'] - new_item['total_qty']
+                        print(f"交易员{self.uniqueName}减仓了{pos_item['symbol']}{sum}")
                         return
+
 
         # 新增交易记录，判断加仓减仓
         old_set = set((i['symbol'], i['side'], i['total_realizedProfit']) for i in old_list)
@@ -345,6 +398,82 @@ class Spider():
                 print(f"没有找到持仓信息{pos_item['symbol']}")
                 return
 
+    def analysis_1(self, old_list, new_list):
+        # 如果old_list和new_list一样，则返回（有持仓则，更新当前持仓）
+        if old_list == new_list:
+            if self.position:
+                """更新持仓数据"""
+                for item in self.position:
+                    market_price = markPrice(item["symbol"])
+                    item['upl_ratio'] = market_price / item['average_price'] - 1
+                    item['upl'] = (market_price - item['average_price']) * item['total_qty']
+                    item['posSpace'] = item['total_quantity'] / blance(self.uniqueName)
+                """再查看是否有hold住的交易符合开仓条件"""
+            return
+        # 查找新增项
+        added_items = list(filter(lambda x: x not in old_list, new_list))
+        if not added_items:
+            return
+        for item in added_items:
+            # 开仓、加仓
+            if item['total_realizedProfit'] == 0:
+                found = False
+                for idx, pos_item in enumerate(self.position):
+                    if pos_item["symbol"] == item["symbol"] and pos_item["side"] == item["side"]:
+                        """更新模拟持仓"""
+                        self.position[idx]['total_qty'] += item['total_qty']
+                        self.position[idx]['total_quantity'] += item['total_quantity']
+                        market_price = markPrice(pos_item["symbol"])
+                        self.position[idx]['average_price'] = (pos_item["average_price"] + item["average_price"]) / 2
+                        self.position[idx]['upl_ratio'] = market_price / self.position[idx]['average_price'] - 1
+                        self.position[idx]['upl'] = (market_price - self.position[idx]['average_price']) * self.position[idx][
+                            'total_qty']
+                        self.position[idx]['posSpace'] = self.position[idx]['total_quantity'] / blance(
+                            self.uniqueName)
+                        found = True
+
+                        """数据打包"""
+                        item['order_type'] = 'open'
+
+                        """判断是否符合要求, 如何符合则开单，不符合则跳过"""
+
+                if not found:
+                    self.position.append(item)
+                    """数据打包"""
+                    item['order_type'] = 'open'
+
+                    """判断是否符合要求, 如何符合则开单，不符合则跳过"""
+            # 平仓、减仓
+            else:
+                found = False
+                for idx, pos_item in enumerate(self.position):
+                    # 有持仓，减仓或平仓
+                    if pos_item["symbol"] == item["symbol"] and pos_item["side"] != item["side"]:
+                        """发送交易信号"""
+                        item['order_type'] = 'close'
+
+
+                        """更新模拟持仓"""
+                        self.position[idx]['total_qty'] -= item['total_qty']
+                        # 平仓
+                        if self.position[idx]['total_qty'] < 0.01:
+                            self.position.remove(self.position[idx])
+                        # 减仓
+                        else:
+                            self.position[idx]['total_realizedProfit'] += item['total_realizedProfit']
+                            self.position[idx]['total_quantity'] -= item['total_quantity']
+                            market_price = item["average_price"]
+                            self.position[idx]['upl_ratio'] = market_price / pos_item['average_price'] - 1
+                            self.position[idx]['upl'] = (market_price - pos_item['average_price']) * \
+                                                        self.position[idx]['total_qty']
+                            self.position[idx]['posSpace'] = self.position[idx]['total_quantity'] / blance(
+                                self.uniqueName)
+                            found = True
+                if not found:
+                    return
+
+
+
 
 
 
@@ -353,9 +482,9 @@ if __name__ == '__main__':
     # fetch_all_pages('3968633605600864001')
 
     # start = time.time()
-    # merge_data('4025553485863672065')
-    # position('4025553485863672065')
-    Spider('4025553485863672065').run()
+    merge_data('3901846209383087104')
+    # position('3901846209383087104')
+    # Spider('4025553485863672065').run()
 
     # while True:
     #     markPrice('ALTUSDT')
