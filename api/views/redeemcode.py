@@ -62,9 +62,6 @@ class RedeemCodesView(APIView):
             # 首次购买写进IP表
             ip_obj, created = models.IpInfo.objects.get_or_create(user_id=user_id, defaults={
                 'ip': proxy_obj.ip,
-                # 'username': username,
-                # 'password': '12345678',
-                # 'countryName': '中国台湾省',
                 'countdown': 30,
                 'stop_day': 0.5,
                 'tips_day': 3,
@@ -74,9 +71,6 @@ class RedeemCodesView(APIView):
             # 非首次购买，旧IP不在有效期
             if not created:
                 ip_obj.ip = proxy_obj.ip
-                # ip_obj.username = username
-                # ip_obj.password = '12345678'
-                # ip_obj.countryName = '中国台湾省'
                 ip_obj.countdown = 30
                 ip_obj.stop_day = 0.5
                 ip_obj.tips_day = 3

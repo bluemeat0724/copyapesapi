@@ -268,7 +268,7 @@ worker_disable_rate_limits = True
 # celery的任务结果内容格式
 accept_content = ['json', 'pickle']
 # 注册任务
-imports = ('crawler.account.okx_task.tasks','crawler.balance.balance_task.tasks','crawler.account.update_pnl.tasks','crawler.updata_ip_countdown.tasks')
+imports = ('crawler.account.okx_task.tasks','crawler.balance.balance_task.tasks','crawler.account.update_pnl.tasks','copytrade.tasks.ip_countdown.tasks','crawler.updata_ip_countdown.tasks')
 # 添加worker心跳检测
 broker_heartbeat = 10.0
 # 添加硬时间限制（例如：任务运行超过300秒后丢弃）
@@ -295,5 +295,9 @@ beat_schedule = {
     "update_ip_countdown": {
         "task": "get_ip_countdown",
         "schedule": 3600,
+    },
+    "ip_countdown": {
+        "task": "ip_countdown",
+        "schedule": crontab(hour=0, minute=0, day_of_week='*')
     },
 }
