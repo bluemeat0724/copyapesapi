@@ -28,6 +28,73 @@ class RedeemCodesSerializer(serializers.ModelSerializer):
 
 class RedeemCodesView(APIView):
     """兑换码核销"""
+    def patch(self, request):
+        # 获取请求体中的code值
+        serializer = RedeemCodesSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        code = serializer.validated_data.get('code')
+
+        # 在 RedeemCodes 模型中查询 code
+        try:
+            redeem_code = models.RedeemCodes.objects.get(code=code)
+        except models.RedeemCodes.DoesNotExist:
+            return Response({"code": return_code.REDEEM_CODE_ERROR, 'detail': "兑换码不存在！"})
+
+        # 检查 code 是否已经使用
+        if redeem_code.status == 2:
+            return Response({"code": return_code.REDEEM_CODE_ERROR, 'detail': "兑换码已使用！"})
+
+        # 更新 RedeemCodes 模型中的状态和用户ID
+        user_id = request.user.id
+        redeem_code.status = 2
+        redeem_code.user_id = user_id
+        redeem_code.save()
+
+        # 非首次购买，需要续期（countdown>0）
+        ip_obj = models.IpInfo.objects.filter(user_id=user_id, countdown__gt=0).first()
+        proxy_obj = models.ProxyInfo.objects.filter(count__lt=8).first()
+        if ip_obj:
+            ip_obj.countdown += 30
+            ip_obj.save()
+            return Response({"code": return_code.SUCCESS, 'detail': "兑换IP成功！"})
+        else:
+            # 重新分配ip
+            # 首次购买写进IP表
+            ip_obj, created = models.IpInfo.objects.get_or_create(user_id=user_id, defaults={
+                'ip': proxy_obj.ip,
+                # 'username': username,
+                # 'password': '12345678',
+                # 'countryName': '中国台湾省',
+                'countdown': 30,
+                'stop_day': 0.5,
+                'tips_day': 3,
+                'created_at': datetime.datetime.now(),
+                'experience_day': 0
+            })
+            # 非首次购买，旧IP不在有效期
+            if not created:
+                ip_obj.ip = proxy_obj.ip
+                # ip_obj.username = username
+                # ip_obj.password = '12345678'
+                # ip_obj.countryName = '中国台湾省'
+                ip_obj.countdown = 30
+                ip_obj.stop_day = 0.5
+                ip_obj.tips_day = 3
+                ip_obj.created_at = datetime.datetime.now()
+                ip_obj.experience_day = 0
+                ip_obj.save()
+
+            proxy_obj.count += 1
+            if proxy_obj.user_list is None:
+                proxy_obj.user_list = []
+            proxy_obj.user_list.append(user_id)
+            proxy_obj.save()
+            return Response({"code": return_code.SUCCESS, 'detail': "兑换IP成功！"})
+
+
+
+class RedeemCodesView_1(APIView):
+    """兑换码核销"""
 
     def patch(self, request):
         # 获取请求体中的code值

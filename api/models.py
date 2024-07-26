@@ -166,8 +166,8 @@ class TaskInfo(DeletedModel):
 class IpInfo(models.Model):
     """IP代理"""
     ip = models.GenericIPAddressField(verbose_name="IP地址")
-    username = models.CharField(verbose_name="代理用户名", max_length=32, db_index=True)
-    password = models.CharField(verbose_name="代理密码", max_length=64)
+    username = models.CharField(verbose_name="代理用户名", max_length=32, null=True, blank=True)
+    password = models.CharField(verbose_name="代理密码", max_length=64, null=True, blank=True)
     countryName = models.CharField(verbose_name="地区", max_length=32, null=True, blank=True, default='')
     countdown = models.FloatField(verbose_name="有效期", default=30)
     user = models.ForeignKey(verbose_name="用户", to="UserInfo", on_delete=models.CASCADE)
@@ -175,6 +175,14 @@ class IpInfo(models.Model):
     tips_day = models.FloatField(verbose_name="提示ip过期时间", default=3)
     created_at = models.DateTimeField(verbose_name="创建时间", auto_now_add=True)
     experience_day = models.FloatField(verbose_name="有效天数", default=0)
+
+
+class ProxyInfo(models.Model):
+    """代理池信息"""
+    ip = models.GenericIPAddressField(verbose_name="IP地址")
+    count = models.IntegerField(verbose_name="分配用户数", default=0)
+    user_list = models.JSONField(verbose_name="分配用户", null=True, default=list)
+
 
 
 class OrderInfo(models.Model):
