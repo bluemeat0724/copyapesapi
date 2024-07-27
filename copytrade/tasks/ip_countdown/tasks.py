@@ -29,12 +29,18 @@ def ip_countdown():
             sql = f"UPDATE api_ipinfo SET countdown = {new_countdown_value} WHERE id = {ip_id}"
             db.exec(sql)
 
+            # 如果ip有效期归零，则刷新代理统计数据
+            # todo 终止该用户正在进行中的任务 可从updata_ip_countdown里找到
             if new_countdown_value == 0:
                 ip = row['ip']
                 user_id = row['user_id']
                 proxy_renew(ip, user_id)
 
 def proxy_renew(ip, user_id):
+    """
+    代理统计刷新
+    代理使用用户数-1，用户列表删除该用户
+    """
     with Connect() as db:
         result = db.fetch_one(f"SELECT * FROM api_proxyinfo WHERE ip='{ip}'")
         count = result['count'] - 1
