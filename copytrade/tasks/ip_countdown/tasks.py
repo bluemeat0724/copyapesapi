@@ -30,7 +30,7 @@ def ip_countdown():
             db.exec(sql)
 
             # 如果ip有效期归零，则刷新代理统计数据
-            # todo 终止该用户正在进行中的任务 可从updata_ip_countdown里找到
+            # todo 终止该用户正在进行中的任务 可从updata_ip_countdown/ip_countdown.py里找到
             if new_countdown_value == 0:
                 ip = row['ip']
                 user_id = row['user_id']
