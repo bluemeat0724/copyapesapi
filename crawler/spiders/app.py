@@ -585,6 +585,8 @@ class Spider(threading.Thread):
                 old_posSpace = old_item.get('posSpace', 0)
                 new_posSpace = new_item.get('posSpace', 0)
                 # 计算posSpace的变动比例
+                if not new_posSpace:
+                    continue
 
                 if old_posSpace != 0:
                     change_percentage = (new_posSpace - old_posSpace) / old_posSpace
@@ -629,13 +631,13 @@ class Spider(threading.Thread):
                                              f"品种：{old_item['instId']}，尚未达到开仓条件，不进行调仓！")
                     else:
                         change = self.transform(change)
-                        if change['order_type'] == 'reduce':
-                            history_dict = okx_personal_spider_1.person_history(self.uniqueName, self.user_id)
-                            if int(history_dict.get(f"{new_item.get('instId')}-{new_item.get('mgnMode')}", 0)) < int(new_item.get("openTime", 0)):
-                                # 历史持仓里面不存在开单时间后的数据，不可以进行调仓
-                                self.log_to_database("success", f"交易员{self.uniqueName}往账户转入了保证金",
-                                                 f"品种：{old_item['instId']}，原仓位：{round(old_posSpace * 100, 2)}%，现仓位：{round(new_posSpace * 100, 2)}%，不进行调仓操作")
-                                continue
+                        # if change['order_type'] == 'reduce':
+                            # history_dict = okx_personal_spider_1.person_history(self.uniqueName, self.user_id)
+                            # if int(history_dict.get(f"{new_item.get('instId')}-{new_item.get('mgnMode')}", 0)) < int(new_item.get("openTime", 0)):
+                            #     # 历史持仓里面不存在开单时间后的数据，不可以进行调仓
+                            #     self.log_to_database("success", f"交易员{self.uniqueName}往账户转入了保证金",
+                            #                      f"品种：{old_item['instId']}，原仓位：{round(old_posSpace * 100, 2)}%，现仓位：{round(new_posSpace * 100, 2)}%，不进行调仓操作")
+                            #     continue
                         self.log_to_database("success", f"交易员{self.uniqueName}进行了调仓操作",
                                              f"品种：{old_item['instId']}，原仓位：{round(old_posSpace * 100, 2)}%，现仓位：{round(new_posSpace * 100, 2)}%")
 
